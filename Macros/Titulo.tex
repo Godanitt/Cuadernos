@@ -1,0 +1,36 @@
+
+% Define el campo de subtitle como variable
+\newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
+
+% Macro para hacer el título
+\newcommand{\MakeTitle}[2]{%
+  \begin{titlepage}
+    \begin{tikzpicture}[remember picture, overlay]
+      % Fondo de color (opcional)
+      \fill[#1!50] (current page.south west) rectangle (current page.north east);
+
+
+      % Texto centrado
+      \node[align=center, text width=0.9\paperwidth] at (current page.center) {
+        {\Huge\bfseries\color{white} \thetitle\par}
+        \vspace{1em}
+
+        {\LARGE\itshape\color{white} \@subtitle\par}
+        \vspace{3em}
+
+        {\Large\color{white} \theauthor\par}
+
+        \vspace{4em}d
+        {\large\color{white} \today}
+      };
+    \end{tikzpicture}
+    \null % Para evitar espacios verticales no deseados
+    \thispagestyle{empty}
+    \clearpage
+  \end{titlepage}
+}
+
+% Para que \title y \author funcionen con \thetitle y \theauthor
+\pretitle{\gdef\thetitle}
+\preauthor{\gdef\theauthor}
+

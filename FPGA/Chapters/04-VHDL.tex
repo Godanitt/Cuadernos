@@ -1,0 +1,369 @@
+\chapter{VHDL}
+
+\section{Elementos básicos VHDL}
+
+Un sistema digital está descrito por sus entradas, sus salidas, y la relación que existe entre ellas. En el caso de VHDL por ul sado se describe el aspecto exterior del circuito: entradas y salidas; y por otro la forma de relacionar las entradas con las salidas. El aspecto exterior, cuántos puertos es lo que denominamos \textbf{entity}. La descricpión del comportamiento del circuito es \textbf{architecture}. Toda \textit{architecture} debe estar asociada a una \textit{entity}.
+
+Además, podemos definir bibliotecas y paquetes que vamos a usar que nos indica el tipo de puertos y operadores qeu podemos utilizar. Siempre ha de aparecer la definición de las bibliotecas y paqeutes antes de la \textit{entity}. 
+
+\subsection{Entidad}
+
+La entidad es la abstracción de un circuito, ya sea desde un complejo sistema electrónico o una simple puerta lógica. La entidad únicamente describe la forma externa del circuito, en ella se enumearn las entradas y las salidas del diseño. Una entidad es análoga a un símbolo esquemático en los diagramas electrónicos, el cual describe las conexiones hacia el resto del diseño. 
+
+\begin{itemize}
+    \item Define externamente al circuito o subcircuito.
+    \item Nombre y número de puertos, tipos de entrada y salida. 
+    \item Tienes toda la información necesaria para conectar el circuito a otros circuitos. 
+\end{itemize}
+
+\begin{lstlisting}
+    entity nombre is 
+        generic (cte1: tipo:= valor1; cte2: tipo = valor2: ...)
+        port (entrada1,entrada2,...: in tipo;
+              salida1, salida2,...: out tipo;
+              puertoi: modo tipo);
+    end nombre
+\end{lstlisting}
+Los puertos pueden ser de entrada \textbf{in} de salida \textbf{out} o de entrada-salida \textbf{inout}. Los puertos de entrada sólo se pueden leer y no se pueden modificar su valor internamente en la descripción del comportamiento interno (\textit{architecture}). 
+
+Además se pueden generar unos valores genéricos (\textbf{generic}) que se utilizarán para declarar propiedades y constantes del circuito, independientemente de cual sea la arquitectura. A nivel de simulación, utilizaremos \textit{generic} para definir retardos de seañles y ciclos de reloj, independientemente de cual sea la atquitectura. También se podrían usar para introducir constantes utilizadas posteriormente en \textit{architecture} (como el número de registros). 
+
+\subsection{Arquitectura}
+
+Los pares de entidades y artquitecturas se utilizan para representar la descripción completa de un diseño. Una arquitectura describe ell funcionameinto de la entidada a la que hace referencia. Una arquitectura describe el funcioanemiento de la entidad a la que se hace refeencia, es decir, dentro de \textit{architecture} tendremos que describir el funcionamiento de la entidad utilizando las sentencias y expresiones propias de VHDL. 
+
+\begin{itemize}
+    \item Define internamente el circuito. 
+    \item Señales internas, funciones, procedimientos, constantes...
+    \item La descripción de la arquitectura puede ser estructural o por comportamiento. 
+\end{itemize}
+
+\begin{lstlisting}
+    architecture arch_name of entity_name is 
+    -- declaraciones de la arquitectura: 
+    -- tipos 
+    -- señales
+    -- componentes
+
+    begin 
+    -- codigo de descripción
+    -- instrucciones concurrentes 
+    -- ecuaciones booleanas
+    -- componentes
+        processs (lista de sensibilidad)
+        begin 
+        -- codigo de descripcion
+        end process
+    end arch_name
+\end{lstlisting}
+El codigo VDHL se escribe dentro de \textit{architecture}. Cada \textit{architecture} va asociada a una \textit{entity} y se indica en la primera sentencia. A continuación, antes de \textit{begin} se finen todas las variables (señales) internas que vas a necesitar para describir el comportamietno de nuestro circuito, se definen los tipos particulares que vamos a utlizar y los componentes, otros circuitos ya definidos y compilados de los cuales conocemos su interfaz en VHDL.
+
+El \textbf{process} es una estrucutra particular de VDHL que se reserva principalmente para contener sentencias que no tengan que tener definido su valor para todas las entradas. Esto obliga a que la estructura process almacene los valores de sus señales y pueda da lugar a circuitso secuenciales. Además, en simulación solo se ejecutan las sentencias internas a esta estrucura cuando alguna de las eñales de su lista de sensibildad carece de valor. 
+
+\subsection{Indentificadores}
+
+En VDHL existen tres clases de objetos por defecto: 
+
+\begin{itemize}
+    \item \texttt{\textbf{Constant.}} Los objetos de esta clase tienen un valor inicial que les es asignado de manear previa a la simulación y no puede ser modificado.   
+    
+    \begin{lstlisting}
+        constant indentificador: tipo := valor
+    \end{lstlisting}
+
+    \item \texttt{\textbf{Variable.}} Los ibjetos de esta clase contiene un único valor que puede ser modificado durante la simulación con una sentencia de asignación. Las variables se usan como índices, o para tomar v alores que permiten modelar las componentes.  
+    
+    \begin{lstlisting}
+        variable indentificador: tipo [:=valor]
+    \end{lstlisting}
+
+    \item \texttt{\textbf{Signal.}} Las señales representan elementos de memoria o conexiones que sí pueden ser sintetizados, dicho de otra manera, a cada objeto de nuestro codigo de VHDL que sea declarado como \textit{signal} le corresponde un cable o un elemento de memoria en nuestro circuito. Por lo tnato, su comportamiento en simulación será el esperado de ese elemento físico aunque no lo describamos explícitamente. Tienen que ser usados antes del \textit{begin} de \textit{architecture}. Los puertos de una entidad son implícitamente declarados como señales en el momento de la declaración, ya que estos representan conexiones. 
+
+    \begin{lstlisting}
+        signal indentificador: tipo
+    \end{lstlisting}
+
+    La asignacion se hace a través del operador $<=$
+
+    \begin{lstlisting}
+        nomrbe señal <= valor o expresión; 
+        A <= 10
+    \end{lstlisting}
+
+\end{itemize}
+Cuando se usen únicamente \textit{constant} y \textit{signal} no se observarán efectos perversos. Además, el código obtenido podrá ser sintetizado en cualquier herramient. Por eso mismo en este manual a partir de este momento cuando nos refiramos a una señal nos referiremos a un objeto \textit{signal} y solo trabajaremos con estos. 
+
+Existen varios tipos de objetos: 
+
+\begin{itemize}
+    \item \textbf{std\_logic}. Tipo predefinido en el estandar IEE 1164. Este tipo reprsenta una lógica multivaluada de 9 valores. Tenemos el 0 y 1 lógicos, así como Z (alta impedancia), X (desconocido), U (sin inicializar).
+    \item  \textbf{std\_logic}(rango). Representa un vector de elementos \textit{std\_logic}. Para un vector de N elementos el rnago será \textit{N-1 dowto 0}. 
+\end{itemize}
+Podemos escribir todas las asignaciones del código ya sean operaciones sencillas, opoeraciones aritmeticológicas y comparaciones utilizando \textit{std\_logic\_vector}, sin complicar el código y ayudando a su interación en XILINX. 
+
+\begin{itemize}
+    \item \texttt{Alias.} Los alias no son un tipo de indentificador, es una manera de nombrar a un elemento ya existente. El alias nos ayuda a mejorar la legilidad del código que estamos implementando, admeás nos puede ayudar a simplificar el manejo del identificador. 
+    \begin{lstlisting}
+        alias nombre: tipo is indentificador(rango);
+    \end{lstlisting}
+\end{itemize}
+Un ejemplo del uso de alias: 
+
+\begin{lstlisting}
+    signal CTRL: std_logic_vector (7 downto 0); 
+    alias c_mux_8a1: std_logic_vector (2 dowto 0) is CTRL (7 downto 5)
+    alias load_ref1: std_logic is CTRL(4)
+\end{lstlisting}
+
+\subsection{Operadadores}
+
+Un operador nos permite constuir diferentes signos de expreisones mediante los cuales podemos calcular datos utilizando diferentes señales. 
+
+
+\section{Estructura básica de un archivo fuente en VHDL}
+
+Como hemos dicho, los modelos VDHL están formados por dos partes: la entidad y la arquitectura. En esta última es donde se escriben las setencias que describen el comportamiento del circuito, a este modelo de programación se suele denominar \textit{behavioral}. El esquema básico será: 
+
+\begin{lstlisting}
+    architecture circuito of nombre es 
+    -- señales
+    begin 
+    -- sentencias concurrentes
+    process (lista de sensibilidad)
+    begin 
+    -- sentencias secuenciales
+    -- setencias condicionales
+    end process
+    end architecture circuito; 
+\end{lstlisting}
+Dentro de la arquitectura se encuentra: 
+\begin{enumerate}
+    \item Tipos y sñales intermedias necesarias para la descripción del comportamiento. 
+    \item Setencias de asingación que deben realizarse siempre así como secuencias concurrentes.
+    \item Uno o varios \textit{process} qeu tienen lugar en su interior sentencias condicionales y/o asignaciones a señales qeu dan lugar a hardware secuencial. 
+\end{enumerate}
+
+\subsection{Sentencias concurrentes}
+
+Son sentencias condicionales que tienen al menos un valor por defecto para cuando no se cumplen niguna de las condicoines. Podría utilizarse una setencia común con un if y un else, los desarrolladores de VDHL prefirieron históricamente otras setencias.
+
+\begin{itemize}
+    \item 
+La sentencia \texttt{when-else} evalúa condiciones de forma jerárquica. Es similar a una cascada de \texttt{if-else}. Ejemplos: 
+
+
+\begin{lstlisting}[caption={Ejemplo de \texttt{when-else}}]
+    Y <= "00" when "A=B" else
+         "01" when "A<B" else
+         "10" when "10",
+         "11" when others;
+\end{lstlisting}
+
+    \item 
+La sentencia \texttt{with-select-when} selecciona un valor de salida en función de una expresión y múltiples valores constantes. Ejemplos: 
+
+\begin{lstlisting}[caption={Ejemplo de \texttt{with-select-when}}]
+with entrada select
+    salida <= "00" when "001",
+         "01" when "010",
+         "10" when "100",
+         "11" when others;
+\end{lstlisting}
+
+
+\end{itemize}
+El buen programador de VHDL debe acostrumbrarse a utilizar estas setnecias ya que le quitará muchos problemas que aparezcan: 
+\begin{itemize}
+    \item \texttt{when-else} es útil para condiciones booleanas.
+    \item \texttt{with-select-when} es ideal para valores discretos (como multiplexores).
+\end{itemize}
+
+\subsection{Sentencias condicionales}
+El programa VHDL permite utilizar otro tipo de setencias condicionales más parecidas a los leguajes de programción modernos. Todas estas setencias tienen que ir obligatoriamente en un \textit{processs}. Las mas comunes son:  
+
+\begin{itemize}
+    \item La sentencia \texttt{if-then-else} constituye de: 
+    \begin{lstlisting}
+    process (lista de sensibilidad)
+    begin
+    if condición then 
+    -- asignaciones 
+    elsif otra_condicioón then
+    -- asignaciones 
+    else 
+    -- asignaciones 
+    end if;
+    end process;
+    \end{lstlisting}
+    Las sentencias if-else deben, en general, acabar con un else. 
+    \item La sentencia \texttt{case-when} es: 
+    \begin{lstlisting}
+    process (lista de sensibilidad)
+    begin
+    cas señal_condición is 
+        when valor_condicion_1 => 
+        -- asignaciones
+        ...
+        when valor_condición_n =>
+        -- asignaciones 
+        when others ->
+        -- asiginaciones
+    end case: 
+    end process;
+    \end{lstlisting}
+    Es necesario que aparezca \textit{when others}.   
+    \item La sentencia \texttt{for-loop} es: 
+    \begin{lstlisting}
+    process (lista de sensibilidad)
+    begin 
+    for loop_var in range loop
+        -- asignaciones
+    end loop;
+    end process;
+    \end{lstlisting}
+    Para el for, \textit{range} puede ser 0 to N o N downto 0.
+    \item La sentencia \texttt{while-loop} es: 
+    \begin{lstlisting}
+    process (lista de sensibilidad)
+    begin
+    while condición loop    
+        -- asignaciones
+    end loop;
+    end process;
+    \end{lstlisting}
+    El bucle for está soportado si elrango del índice es estático (\textit{0 to N}) y el cuerpo contiene sentencias \textit{wait}. 
+\end{itemize}
+
+
+\subsection{Setencias process}
+
+VHDL presenta una estructura particular denominada \textit{process} que define los límites de un dominio que se ejecutará (simulará) si y sólo si alguna de las señales de su lista de sensibilidad se ha modificado en el anterior paso de simulación. Un process tiene la siguiente estructura: 
+
+\begin{lstlisting}
+    process (lista_de_sensibildad)
+    -- asingacion de variables
+    -- opcional no recomendable
+    begin 
+    -- Setencias condicionales
+    -- Asingaciones 
+    end process; 
+\end{lstlisting}
+Es una de las sentencias mas utilizadas ya que tanto las setencias condicionales como la descricpión del Hard-Ware secuencia se realiza dentro de él. Veamos algunas de las propiedades: 
+
+\begin{itemize}
+    \item \textbf{Propiedad I}: solo se ejecutan las intrucciones internas en el instante 0 de simulación y cuando varía alguna de las señales de su lista de sensibilidad. Para solucionar el posible problema lo que necesitamos es incluir al menos todas las señales que se lean dentro del \textit{process}.
+    
+    \vspace*{1em}
+    
+\begin{minipage}{0.47\linewidth} \centering
+    \begin{lstlisting}
+    process (A)
+    begin
+        if B='1' then
+            C <= A;
+        end if;
+    end process;
+    \end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}{0.47\linewidth} \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{t} & \textbf{0 ns} & \textbf{5 ns} & \textbf{10 ns} \\
+    \hline
+    \textbf{A} & 0 & 0 & 1 \\
+    \hline
+    \textbf{B} & 0 & 1 & 1 \\
+    \hline
+    \textbf{C} & U & U & 1 \\
+    \hline
+    \end{tabular}
+\end{minipage}
+%\end{itemize}
+%\begin{itemize}
+    
+\vspace*{-0.5em}
+    
+    Como podemos ver no se asigna a C un valor hasta que en el instante 10 ns, pese a que B  cambió en el instante 5 ns, esto es, deibido a que no se entra dentro del process hasta que A no varía (instante 10 ns). Sin embargo a nivel Hardware esperaríamos que C tomase el valor de A en el mismo instante en el que B cambia a 1 (en 5 ns). La solución sería: 
+    
+\vspace*{1em}
+    
+
+\begin{minipage}{0.47\linewidth} \centering
+    \begin{lstlisting}
+    process (A,B)
+    begin
+        if B='1' then
+            C <= A;
+        end if;
+    end process;
+    \end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}{0.47\linewidth} \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{t} & \textbf{0 ns} & \textbf{5 ns} & \textbf{10 ns} \\
+    \hline
+    \textbf{A} & 0 & 0 & 1 \\
+    \hline
+    \textbf{B} & 0 & 1 & 1 \\
+    \hline
+    \textbf{C} & U & 1 & 1 \\
+    \hline
+    \end{tabular}
+\end{minipage}
+
+    \item \textbf{Propiedad II}: las asignaciones a señales que se realizan dentro de un process tienen memoria. Si en un paso de simulación se entra dentro del \textit{process} y debido a las sentencias internas se modficia el valor de la señal C, y en otro paso de simulación posterior se entra dentro del \textit{process} pero no se modifica C, la señal C cosnervará el valor asignado con anterioridad. 
+    \item \textbf{Propiedad III}: dentro de un \textit{process} todas las intrucciones se ejecutan en paralelo, igual que ocurre con las intrucciones qeu se encuentran fuera de los process. Sin embargo si dentro del \textit{process} se asigna valor a una señal en dos sitios diferentes, el resultado será aquel de la última asingación, exactamente igual qeu en los leguajes de programación. Siempre hay qeu comprobar qeu no estamos asignado el valor a unsa señal en dos sitios diferentes del \textit{process} (si puede hacerse en dos ramas diferentes del mismo \textit{if}).
+    \item \textbf{Propiedad IV}: los \textit{process} se ejecutan en paralelo. Siempre hay qeu comprobar que no se modidfica la misma señal en dos \textit{process} diferentes, en caso de que esto ocurra habrá que fusionar los  \textit{process}. 
+    \item \textbf{Propiedad V}: los valores de las señales que se modfiican internamente en los \textit{process} no se actualizan hasta que no se ha ejectuado el \textit{process} completo.
+\end{itemize}
+
+\subsection{Descripción estructural}
+
+Esta descripción utiliza para la creación de la arquitectura de la entidad entidades descritas y compiladas previamente, de manera en VHDL podemos aprovechar diseños ya realizados  o realizar diseños sabiendo qeu se utilizarán otros más complicados. Así se ahorra trabajo al diseñador-programador. 
+
+Se declaran los componentes qeu se van a utilizar 
+
+\section{Simulación en VHDL}
+
+VHDL realiza la simulación siguiendl a ténica de \textbf{simulación por eventos discretos} (\textit{Discrete Event Time Model}). Esta es una ténica que permite avanzar e ne ltiempo a intervalos variables, en función de la planificación de ocurrencia de eventos (cambio de valor de alguna señal). Esto significa que no se simula el comportamiento del circuito pico-segundo a pico-segundo, si no desde qeu ocurre un evento hasta el siguiente, donde puede pasar un pico-sigundo o varios segundos. Durante el intervalo de itempo en el uqe nose produce ningún evento, se mantiene el valor de todas las señales. 
+
+\subsection{Sentencias de simulación}
+
+VDHL presenta una sentencia específica, WAIT, que detiene la ejecución del código hasta qeu se cumpla la condición. La setencia \textit{wait} debe aparecer obligatoriamente en el \textit{process} no tiene lista de sensibilidad. Además en muchos tutoriales se utliza para generar hardware secuencial. 
+
+\begin{itemize}
+    \item \texttt{wait on lista\_de\_señales}: no se ejecutan las intrucciones posteriores hasta que no se modifique alguna de las señales de la lista. 
+    \item \texttt{wait for tiempo}: no se ejecutan intrudcciones posteriores hasta que no pase el tiempo indicado desde que se llegó a la instrucción \textit{wait}.
+    \item \texttt{wait ultil condicion}: no se ejecutan las intrucciones posteirores hasta que no se cumpla la condición. 
+\end{itemize}
+
+\section{Descripción de Lógica Secuencial}
+
+Una de las propiedas más importantesdel \textit{process} es la capacidad de la estructura para almacenar los valores de las señales que se asignan en su interior di surante el paso de simulación no se entra dentro del process o no se relaiza ninguna asignación a esta señal. Debido a esta característica se utlizarán los process para generar hardware secuencial. 
+
+\subsection{Hardware secuencial}
+
+Para la descripción de los biestables (latches) y registros utilizaremos \textit{process} en los que la señal de reloj CLK (clk) actúe por flanco conjuntamente con un \textit{if} sin rama \textit{else}.
+
+\begin{lstlisting}
+    if (CLK'event and CLK='1') then ...
+\end{lstlisting}
+Así pues si se quiere representar un bietable deberíamos añadir el siguietne process: 
+
+\begin{lstlisting}
+    entity Biestable_D is 
+        port (d,clk: in std_logic; q: out std_logic);
+    end Biestable_D;
+
+    architecture ARCH of Biestable_D is
+    begin
+        process (clk,d)
+        begin
+            if (clk'event and clk='1') then q<=d;
+            end if
+        end processs
+    end ARCH;
+\end{lstlisting}
+
+\subsection{Contadores}
