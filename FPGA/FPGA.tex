@@ -1,0 +1,44 @@
+\documentclass{../Template}
+\addbibresource{../Bibliografia.bib} % si quieres incluir la bibliografía
+
+\RequirePackage{transparent}
+
+\input{../Macros/Titulo.tex}
+\input{../Macros/Indice.tex}
+
+% Definiciones del título
+\title{FPGA}
+\subtitle{Introducción Moderna}
+\author{Daniel Vázquez Lago}
+
+% Documento
+\begin{document}
+\MakeTitle{1}{Aquamarine4}{Aquamarine4}{../FPGA/Arty100.png}
+
+
+\setlength{\parskip}{2.2mm} % Cambia el espacio entre párrafos
+
+\newpage
+
+\tableofcontents
+
+\setlength{\parskip}{2.2mm} % Cambia el espacio entre párrafos
+
+\input{Chapters/01-FPGA.tex}
+\input{Chapters/02-TecnologiaVLSI.tex}
+\input{Chapters/03-FPGA.tex}
+\input{Chapters/04-VHDL.tex}
+
+\input{Chapters/05-Vivado.tex}
+
+\appendix
+\input{Chapters/A-Definiciones.tex}
+
+\nocite{*}
+\newpage
+\addcontentsline{toc}{section}{Referencias}
+\printbibliography
+
+
+
+\end{document}

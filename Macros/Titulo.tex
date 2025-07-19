@@ -2,28 +2,100 @@
 % Define el campo de subtitle como variable
 \newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
 
+\usetikzlibrary{fadings}
+\definecolor{mydarkcolor}{named}{#1!90!black}
+
 % Macro para hacer el título
-\newcommand{\MakeTitle}[2]{%
-  \begin{titlepage}
-    \begin{tikzpicture}[remember picture, overlay]
+\newcommand{\MakeTitle}[4]{%
+  \begin{titlepage} \ifcase #1
+
+      %-----------------------------
+      % --- CASO 0: MODO FOTO ----
+      %-----------------------------
+
+      \begin{tikzpicture}[remember picture, overlay,x=\linewidth, y=-\paperheight]
+     
       % Fondo de color (opcional)
-      \fill[#1!50] (current page.south west) rectangle (current page.north east);
+      \fill[#2] (current page.south west) rectangle (current page.north east);
+      
+      \node[opacity=1]  at (0.5,0.1) {\includegraphics[width=1.2\linewidth]{#4}};
+
+      % Sombra para autores
+      \shade [opacity=0.3]
+          (0.0, 0.23) rectangle (1.5, 0.35);
+      \fill [opacity=0.2]
+          (0.0, 0.23) rectangle (1.5, 0.35);
+
+      \node [anchor=south west,align=left] at (0.05,0.32) {\fontsize{22pt}{24pt}\selectfont\bfseries \color{white} \theauthor\par};
+
+      % Sombra para Titulo
+      \shade [opacity=0.1,color = #1]
+          (0.0, 0.35) rectangle (1.5,1.2);
+      \fill [opacity=0.4,color = #1!10]
+          (0.0, 0.35) rectangle (1.5,1.2);
 
 
-      % Texto centrado
-      \node[align=center, text width=0.9\paperwidth] at (current page.center) {
-        {\Huge\bfseries\color{white} \thetitle\par}
-        \vspace{1em}
+      \node[anchor=north west,align=left,width=0.9\linewidth] at (0.05,0.38) {
+        {\fontsize{60pt}{70pt}\selectfont \bfseries\color{white} \thetitle\par}
+        \vspace{1em} \\[1 em]
 
         {\LARGE\itshape\color{white} \@subtitle\par}
         \vspace{3em}
-
-        {\Large\color{white} \theauthor\par}
-
-        \vspace{4em}d
-        {\large\color{white} \today}
       };
-    \end{tikzpicture}
+
+      % Lineas + Caja lado
+
+      \fill [color=#2!50] (-0.2, 0.45) rectangle (-0.05, 0.36);
+
+      
+      \draw [ultra thick, opacity=0.8, color=white] (0.0,-1.5) -- (0.0,1.5);
+      \draw [ultra thick, opacity=0.8, color=white] (-1.5,0.35) -- (1.5,0.35);
+      
+      \end{tikzpicture}
+
+    
+      
+      %-----------------------------
+      % --- CASO 2: MODO SIMPLE ----
+      %-----------------------------
+
+      \or 
+
+      \begin{tikzpicture}[remember picture, overlay,x=\linewidth, y=-\paperheight]
+     
+      % Fondo de color (opcional)
+      \fill[#2] (current page.south west) rectangle (current page.north east);
+
+      % Fondo (patron)
+
+      % Sombra para autores
+      \shade [ opacity=0.2, left color=white, right color=#2]
+          (0.0, 0.0) rectangle (1.5, 0.15);
+      \node [anchor=north west,align=left] at (0.05,0.03) {\fontsize{22pt}{24pt}\selectfont\bfseries \color{white} \theauthor\par}
+
+      % Sombra para Titulo
+      \shade [opacity=0.3, left color=white, right color=#2]
+          (0.0, 0.15) rectangle (1.5,1.2);
+          
+      \fill [ opacity=0.2, color = white]
+          (-0.2, 0.15) rectangle (-0.01, 0.3);
+
+      \node[anchor=north west,align=left,width=0.9\linewidth] at (0.05,0.18) {
+        {\fontsize{60pt}{70pt}\selectfont \bfseries\color{white} \thetitle\par}
+        \vspace{1em} \\[1 em]
+
+        {\LARGE\itshape\color{white} \@subtitle\par}
+        \vspace{3em}
+      };
+      \end{tikzpicture}
+      
+      %-----------------------------
+      % --- CASO 3:            ----
+      %-----------------------------
+
+      \fi
+      
+
     \null % Para evitar espacios verticales no deseados
     \thispagestyle{empty}
     \clearpage

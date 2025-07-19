@@ -20,7 +20,7 @@
 \RequirePackage{makeidx}
 \RequirePackage{graphicx}
 \RequirePackage{lmodern}
-\RequirePackage[dvipsnames]{xcolor} 
+\RequirePackage[dvipsnames,x11names]{xcolor} 
 \RequirePackage{fancyhdr}
 \RequirePackage{geometry}
 \RequirePackage{lastpage}		
@@ -452,3 +452,7 @@
 \newcommand{\hni}{\hat{\mathbf{i}}}
 \newcommand{\hnj}{\hat{\mathbf{j}}}
 \renewcommand{\hnk}{\hat{\mathbf{k}}}
+
+
+%% MACROS 
+
