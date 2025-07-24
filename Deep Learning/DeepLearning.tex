@@ -5,6 +5,7 @@
 
 \input{../Macros/Titulo.tex}
 \input{../Macros/Indice.tex}
+\input{../Macros/Entornos.tex}
 
 % Definiciones del título
 \title{Deep Learning}
@@ -14,7 +15,7 @@
 % Documento
 
 \begin{document}
-\MakeTitle{1}{blue!80!black}{orange!80!black}
+\MakeTitle{1}{blue!80!black}{Snow1}
 
 
 \setlength{\parskip}{2.2mm} % Cambia el espacio entre párrafos
@@ -23,7 +24,24 @@
 
 \tableofcontents
 
-\chapter{Introducción}
+
+\NewPart{Redes Neuronales}{0.31}
+
+\input{Chapters/01-Introduccion.tex}
+\input{Chapters/02-Fundamentos.tex}
+\input{Chapters/03-Redes Neuronales Feedfoward.tex}
+\input{Chapters/04-Redes Convolucionales.tex}
+\input{Chapters/05-Redes Recurrentes.tex}
+
+\NewPart{Librerías de Python}{0.3}
+
+\input{Chapters/06-Theano.tex}
+\input{Chapters/07-Keras.tex}
+\chapter{PyTorch}
+\chapter{Tensor Flow}
+
+
+
 
 
 

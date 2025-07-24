@@ -1,0 +1,20 @@
+
+
+%----------------------------------------------------------------------------
+% ÍNDICE PERSONALIZADO
+%----------------------------------------------------------------------------
+
+\addto\captionsspanish{\renewcommand{\contentsname}{Índice general}}
+\let\oldtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{\begingroup\oldtableofcontents\endgroup}
+
+% Comandos para poder hacer la división en lineas -> Aun hay que modificar las líneas 
+\newcommand{\hLinefill}[1]{\rule[0.5ex]{#1\linewidth}{0.4pt}}
+\newcommand{\NewPart}[2]{
+    \addtocontents{toc}{%
+        \begingroup%
+            \setlength{\parindent}{0pt}%
+            \protect \Large\bfseries \hLinefill{#2} \hspace*{4mm} \ #1 \ \hspace*{4mm} \hLinefill{#2} \protect\par%
+        \endgroup%
+    }%
+}

@@ -3,22 +3,23 @@
 \newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
 
 \usetikzlibrary{fadings}
-\definecolor{mydarkcolor}{named}{#1!90!black}
 
 % Macro para hacer el título
 \newcommand{\MakeTitle}[4]{%
-  \begin{titlepage} \ifcase #1
+\begin{titlepage} 
 
       %-----------------------------
       % --- CASO 0: MODO FOTO ----
       %-----------------------------
 
-      \begin{tikzpicture}[remember picture, overlay,x=\linewidth, y=-\paperheight]
+      \ifcase #1
+
+      \begin{tikzpicture}[remember picture, overlay,x=\paperwidth, y=-\paperheight]
      
       % Fondo de color (opcional)
       \fill[#2] (current page.south west) rectangle (current page.north east);
       
-      \node[opacity=1]  at (0.5,0.1) {\includegraphics[width=1.2\linewidth]{#4}};
+      \node[opacity=1]  at (0.5,0.1) {\includegraphics[width=1.2\paperwidth]{#4}};
 
       % Sombra para autores
       \shade [opacity=0.3]
@@ -29,13 +30,13 @@
       \node [anchor=south west,align=left] at (0.05,0.32) {\fontsize{22pt}{24pt}\selectfont\bfseries \color{white} \theauthor\par};
 
       % Sombra para Titulo
-      \shade [opacity=0.1,color = #1]
+      \shade [opacity=0.1,color = #2]
           (0.0, 0.35) rectangle (1.5,1.2);
-      \fill [opacity=0.4,color = #1!10]
+      \fill [opacity=0.4,color = #2!10]
           (0.0, 0.35) rectangle (1.5,1.2);
 
 
-      \node[anchor=north west,align=left,width=0.9\linewidth] at (0.05,0.38) {
+      \node[anchor=north west,align=left,text width=0.9\paperwidth] at (0.05,0.38) {
         {\fontsize{60pt}{70pt}\selectfont \bfseries\color{white} \thetitle\par}
         \vspace{1em} \\[1 em]
 
@@ -61,28 +62,32 @@
 
       \or 
 
-      \begin{tikzpicture}[remember picture, overlay,x=\linewidth, y=-\paperheight]
+      \begin{tikzpicture}[remember picture, overlay,x=\paperwidth, y=-\paperheight]
      
+      
       % Fondo de color (opcional)
       \fill[#2] (current page.south west) rectangle (current page.north east);
+
+      % Patron de color al fondo: 
+
 
       % Fondo (patron)
 
       % Sombra para autores
-      \shade [ opacity=0.2, left color=white, right color=#2]
+      \shade [ opacity=0.3, left color=#3, right color=#2]
           (0.0, 0.0) rectangle (1.5, 0.15);
-      \node [anchor=north west,align=left] at (0.05,0.03) {\fontsize{22pt}{24pt}\selectfont\bfseries \color{white} \theauthor\par}
+      \node [anchor=north west,align=left] at (0.05,0.03) {\fontsize{22pt}{24pt}\selectfont\bfseries \color{white} \theauthor\par};
 
       % Sombra para Titulo
-      \shade [opacity=0.3, left color=white, right color=#2]
+      \shade [opacity=0.4, left color=#3, right color=#2]
           (0.0, 0.15) rectangle (1.5,1.2);
           
-      \fill [ opacity=0.2, color = white]
+      \fill [ opacity=0.3, color = #3]
           (-0.2, 0.15) rectangle (-0.01, 0.3);
 
-      \node[anchor=north west,align=left,width=0.9\linewidth] at (0.05,0.18) {
+      \node[anchor=north west,align=left,text width=0.9\paperwidth] at (0.05,0.18) {
         {\fontsize{60pt}{70pt}\selectfont \bfseries\color{white} \thetitle\par}
-        \vspace{1em} \\[1 em]
+        \vspace{1em} \vspace*{2em}
 
         {\LARGE\itshape\color{white} \@subtitle\par}
         \vspace{3em}

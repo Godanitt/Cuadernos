@@ -28,6 +28,8 @@
 \RequirePackage{relsize}
 
 \RequirePackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix,fit}
 \RequirePackage[compat=1.1.0]{tikz-feynman}
 \RequirePackage[siunitx]{circuitikz}
 \usetikzlibrary{shapes.gates.logic.US, positioning, circuits, circuits.logic.US}
@@ -61,13 +63,6 @@
 \RequirePackage{slashed}
 \RequirePackage{multicol}
 
-%----------------------------------------------------------------------------
-% ÍNDICE PERSONALIZADO
-%----------------------------------------------------------------------------
-
-\addto\captionsspanish{\renewcommand{\contentsname}{Índice general}}
-\let\oldtableofcontents\tableofcontents
-\renewcommand{\tableofcontents}{\begingroup\oldtableofcontents\endgroup}
 
 %----------------------------------------------------------------------------
 % Tamaño de secciones y subsecciones 
@@ -91,7 +86,7 @@
 
 %\setcounter{minitocdepth}{1} % Define la profundidad que quieres (secciones, subsecciones...)
 %\setcounter{secttocdepth}{2} % Esto es importante para las secciones
-\dominitoc % Activa las minitoc (chapter)
+%\dominitoc % Activa las minitoc (chapter)
 %\dosecttoc % Activa las minitoc (section)
 
 
@@ -122,63 +117,6 @@
 % ----------------------------------------------------------------------------
 % CONFIGURACIÓN DE Tcolorbox 
 % ----------------------------------------------------------------------------
-
-\newtcolorbox{Enunciado}{
-  colback=Gray!40,    % Color de fondo
-  colframe=Gray!40,   % Color del borde
-  sharp corners,      % Esquinas cuadradas
-  boxrule=0pt,        % Grosor del borde (0pt para que desaparezca)
-  left=5pt,           % Margen izquierdo interno
-  right=5pt,          % Margen derecho interno
-  top=5pt,            % Margen superior interno
-  bottom=5pt          % Margen inferior interno
-}
-\newtcolorbox{Ejemplo}{
-  colback=Gray!40,    % Color de fondo
-  colframe=Gray!40,   % Color del borde
-  sharp corners,      % Esquinas cuadradas
-  boxrule=0pt,        % Grosor del borde (0pt para que desaparezca)
-  left=5pt,           % Margen izquierdo interno
-  right=5pt,          % Margen derecho interno
-  top=5pt,            % Margen superior interno
-  bottom=5pt          % Margen inferior interno
-}
-
-\newtcolorbox{Resaltar}{
-  colback=Blue!20,    % Color de fondo
-  colframe=Blue!20,   % Color del borde
-  sharp corners,      % Esquinas cuadradas
-  boxrule=0pt,        % Grosor del borde (0pt para que desaparezca)
-  left=5pt,           % Margen izquierdo interno
-  right=5pt,          % Margen derecho interno
-  top=5pt,            % Margen superior interno
-  bottom=5pt          % Margen inferior interno
-}
-
-\newtcolorbox{Anotacion}{
-  colback=Red!20,    % Color de fondo
-  colframe=Red!20,   % Color del borde
-  sharp corners,      % Esquinas cuadradas
-  boxrule=0pt,        % Grosor del borde (0pt para que desaparezca)
-  left=5pt,           % Margen izquierdo interno
-  right=5pt,          % Margen derecho interno
-  top=5pt,            % Margen superior interno
-  bottom=5pt          % Margen inferior interno
-}
-\newtcolorbox{Formulario}{
-	colback=Gray!20,    % Color de fondo
-	colframe=Gray!20,   % Color del borde
-	sharp corners,      % Esquinas cuadradas
-	boxrule=0pt,        % Grosor del borde (0pt para que desaparezca)
-	left=5pt,           % Margen izquierdo interno
-	right=5pt,          % Margen derecho interno
-	top=5pt,            % Margen superior interno
-	bottom=5pt,          % Margen inferior interno
-  fontupper=\small,    % Tamaño de la fuente -> Pequeño
-  halign=center       % Centrado -> Centro
-}
-
-\newtcolorbox{mybox}{colback=black!5!white, colframe=black!75!black}
 
 
 % ----------------------------------------------------------------------------
@@ -241,25 +179,6 @@
 %----------------------------------------------------------------------------
 % FORMATO DE PÁGINA
 %----------------------------------------------------------------------------
-% Cambia el título grande del índice
-\renewcommand{\contentsname}{\sffamily\bfseries Índice general}
-
-% Redefinimos el índice
-\makeatletter
-\renewcommand{\tableofcontents}{%
-  \cleardoublepage
-  \phantomsection
-  \markboth{Indice general}{} % Ponemos 'Indice general' en la cabecera
-  {\centering\Large\sffamily\bfseries Índice general\par} % Título grande
-  \vspace{1cm}
-  \@starttoc{toc}
-}
-\makeatother
-
-\renewcommand{\cftchapfont}{\large\bfseries}
-\renewcommand{\cftchappagefont}{\large\bfseries}
-\renewcommand{\cftsecfont}{}
-\renewcommand{\cftsecpagefont}{}
 
 \makeatletter
 \renewcommand{\chaptermark}[1]{%
@@ -323,6 +242,7 @@
   tabsize=2,
   title=\lstname
 }
+
 
 %----------------------------------------------------------------------------
 % COMANDOS PERSONALIZADOS

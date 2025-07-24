@@ -1,0 +1,31 @@
+\chapter{Fundamentos del aprendizaje máquina}
+
+\section{Clasficiación Binaria}
+
+Para poder avanzar en el tema, primero tenemos que definir algunos de los términos que hemos usado de manera intuitiva: aprendizaje, experiencia, mejora y tarea. Empecemos con la tarea de la clasificación binaria. 
+
+Supongamos un problema abstracto en el cual tenemos los datos de la siguiente forma: 
+
+\begin{equation}
+    D = \{ (x_1,y_1),(x_2,y_2),\ldots, (x_n,y_n) \}
+\end{equation}
+donde $x\in \mathbb{R}^n$ e $y=\pm 1$. A pesar de que $D$ represente todos los datos, nosotros solo tenemos acesso a un subconjunto de ellos, $S\in D$. Usando $S$, nuestra tarea será generar un proceso computacional que implemente la función $f:x\to y$  tal que podemos usar $f$ para predecir los datos no pertenecientes a $S$, esto es,  $x_i, y_i\notin S$, tal que $f(x_i)=y_i$. Si dennotamos  $U$ como el conjunto contario a $S$ ($U=\bar{S}$), podemos suponer que una medida de la eficiencia/calidad de nuestro sistema para realizar esta tarea vendrá dada por una función error sobre los datos no vistos: 
+
+\begin{equation}
+    E(f,D,U) = \frac{\sum_{x_i,y_i \in U} [f(x_i)\neq y_i] }{|U|}
+\end{equation} 
+Medimos el rendimiento de la tarea usando la función error $E(f,D,U)$ sobre los datos no conocidos $U$. EL tamaño de los datos conocidos $S$ será nuestra ``experiencia''. Lo que nosotros queremos hacer es crear algoritmos que generen funciones $f$ (comunmente denominadas modelos).  En general a los valores $x$ se le llaman valores de entradas o \textit{inputs}, mientras que a $y$ valores de salida o \textit{outputs}.
+
+Como en cualquier otra disciplina, las características computacionales es un aspecto relevante, pero además de tener en cuenta los costos computacionales, tendremos que tratar de hallar el modelo $f$ que tenga el menor errror posible $E(f,D,S)$ con el menor $|S|$ posible. 
+
+\begin{Ejemplo}{Web de Comercio Electrónico}
+    Supongamos que queremos implementar en una página web una página personalizada para usuarios registrados, que les muestre los productos que más dispuestos estarían a comprar. La web registra la información de los usuarios. ¿Cómo se relaciona este problema con la clasificación binaria? 
+
+    Esta claro que el problema relaciona productos con personas. Centremonos entonces en la relación entre un solo producto y un solo usuario. Lo que nosotros queremos saber es si va a ser comprado. Podemos denotar el estado ``deseado'' con $y=+1$ mientras que el estado ``no deseado'' por $y=-1$. Lo siguiente que debemos hacer es coger información del producto (tipo de producto...) y la información histórica de búsqueda y compra del usuario, representado todo esto en un vector $x \in \mathbb{R}^n$. Basados en esta información y en el mapeo conocido $\{(x_1,y_1),(x_2,y_2),\ldots,(x_n,y_n)\}$, entonces podemos generar la función modelo $f:x\to y$ a partir lo cual podemos determinar que productos querrá comprar y llenarle la página con esta información. Podríamos medir lo ``buena'' que es esta medida en función de si el usuario compra los productos mostrados, evaluando luego la función error con los datos predichos y si los compra o no. 
+
+\end{Ejemplo}
+
+
+\section{Regresión}
+
+\section{Regularización}
