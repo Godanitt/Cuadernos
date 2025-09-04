@@ -1,0 +1,51 @@
+\documentclass{../../Template}
+\addbibresource{../../Bibliografia.bib} % si quieres incluir la bibliografía
+
+\RequirePackage{transparent}
+
+\input{../../0_Macros/Titulo.tex}
+\input{../../0_Macros/Indice.tex}
+\input{../../0_Macros/Entornos.tex}
+
+% Definiciones del título
+\title{Página Web}
+\subtitle{CSS, HTML, JavaScript, PHP y MySQL}
+\author{Daniel Vázquez Lago}
+
+% Documento
+
+\begin{document}
+\MakeTitle{1}{blue!80!black}{Snow1}
+
+
+\setlength{\parskip}{2.2mm} % Cambia el espacio entre párrafos
+
+\newpage
+
+\tableofcontents
+
+\NewPart{HTML y CSS}{0.34}
+
+\input{Chapters/01-Introduccion.tex}
+
+\NewPart{Javascript}{0.36}
+
+\input{Chapters/01-Introduccion.tex}
+
+\NewPart{PHP y MySQL}{0.34}
+
+\input{Chapters/01-Introduccion.tex}
+
+\NewPart{Página Web}{0.35}
+
+\input{Chapters/01-Introduccion.tex}
+
+\nocite{*}
+
+\addcontentsline{toc}{chapter}{Bibliografia}
+\printbibliography 
+
+
+
+
+\end{document}

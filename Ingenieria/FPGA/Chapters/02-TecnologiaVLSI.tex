@@ -31,7 +31,7 @@ La estructura básica de una puerta CMOS está basa en las \textbf{puertas está
 Está divida en la \textbf{\textit{red pullup}} y \textbf{\textit{red pulldown}}, hechas de transistores tipo-p y tipo-n. La salida de la puerta puede ser conectadas al potencial $V_{DD}$ (\textit{Voltaje Drain to Drain}, normalmente 5 V o el 1 lógico) o al potencial $V_{SS}$ (\textit{Voltaje Source to Source}, normalmente 0 V o el 0 lógico). Las dos redes deben ser complementarias para que podamos obtener una salida no indeterminada, y para que además no exista ningún caso de que la salida esté conectada a ambas a la vez. Veamos algunos ejemplos. 
 
 \begin{Ejemplo}
-    \subsubsection*{Ejemplo 2.1: inversor}
+    Ejemplo 2.1: inversor
 \end{Ejemplo}
 
 \begin{minipage}{0.65\linewidth}
@@ -59,7 +59,7 @@ El esquema para el inversor es extremadamente sencillo pero extremadamente ilust
 \addplot[
     color=blue,
     mark=*,
-] table [x=V2, y={V(n002)}, col sep=space] {/home/daniel/GitHub/CITIUS/LTspice/Inversor/Inversor_V.txt};
+] table [x=V2, y={V(n002)}, col sep=space] {Imagenes/02/Inversor_V.txt};
 \addlegendentry{$V_{in}$ vs $V_{out}$}
 \end{axis}
 \end{tikzpicture}

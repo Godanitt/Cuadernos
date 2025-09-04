@@ -92,7 +92,7 @@ Los ejemplos siguientes describen los elementos lógicos en dos FPGAs. Estos eje
 \vspace*{1em}
 
 \begin{Ejemplo}
-\subsection*{Ejemplo 3.1: Elementos lógicos Xlinx Spartan-II}
+Ejemplo 3.1: Elementos lógicos Xlinx Spartan-II
 \end{Ejemplo}
 
 En la \cref{Fig:03-Xilinx-Spartan-II} vemos el bloque lógico combinacional Xilinx Spartan II. Una slice incluye dos celdas lógicas (LCs). La base de una celda lógica es el par de tablas de búsqueda de cuatro bits. Sus entradas son F1-F4 y G1-G4. Cada tabla de búsqueda también puede usarse como una memoria RAM síncrona de 16 bits o como un registro de desplazamiento de 16 bits. Cada \textit{slice}\footnote{Un slice es como un mini-bloque lógico que puedes programar para implementar una pequeña parte de tu diseño: una puerta lógica, un bit de un registro, una parte de un sumador, etc.}  (LUTs, flip-flops..) también contiene lógica de acarreo para cada LUT, de modo que se puedan realizar sumas. Un acarreo de entrada al slice ingresa por la entrada CIN, pasa a través de los dos bits de la cadena de acarreo, y sale por COUT. La lógica aritmética también incluye una puerta XOR. Para construir un sumador, la puerta XOR se usa para generar la suma y la LUT se usa para el cálculo del acarreo. Cada slice incluye un multiplexor que se utiliza para combinar los resultados de los dos generadores de funciones en un slice. Otro multiplexor combina las salidas de los multiplexores en los dos slices, generando un resultado para todo el CLB.
@@ -108,7 +108,7 @@ Los registros pueden configurarse como flip-flops tipo D o como latches. Cada re
 \vspace*{1em}
 
 \begin{Ejemplo}
-\subsection*{Ejemplo 3.2: Elementos lógicos Altera APEX II}
+Ejemplo 3.2: Elementos lógicos Altera APEX II
 \end{Ejemplo}
 
 
