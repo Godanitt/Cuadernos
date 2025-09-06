@@ -75,6 +75,7 @@
         "biber-with-build",
         "lualatex-with-build",
         "lualatex-with-build",
+        "copy-pdf",
         "move-pdf"
       ]
     }
@@ -101,12 +102,24 @@
     },
     {
       "name": "move-pdf",
-      "command": "bash",
+      "command": "texlua",
       "args": [
-        "-c",
-        "mv -f build/$(basename \"%DOCFILE%\" .tex).pdf $(dirname \"%DOCFILE%\")/"
+        "../../.vscode/move_pdf.lua",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "copy-pdf",
+      "command": "texlua",
+      "args": [
+        "../../.vscode/copy_pdf.lua",
+        "%DOC%",
+        "build",
+        "../../0_Pdf"
       ]
     }
+
+
   ],
 
   "latex-workshop.latex.autoBuild.run": "never",
