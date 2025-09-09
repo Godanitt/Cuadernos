@@ -11,7 +11,7 @@ La estructura es sencilla. Tenemos una carpeta donde se almacenan todos las macr
 Luego tenemos 4 carpetas: Física, Matemáticas, Ingeniería y Programación, donde se colocarán los diferentes temas. Por cada una de estas tendremos varias. Entre las más destacadas tenemos: 
 
   -  [Física](https://github.com/Godanitt/Cuadernos/tree/main/Fisica):
-    - [Astrofísica](https://github.com/Godanitt/Cuadernos/tree/main/Fisica/Astrofisica)
+      - [Astrofísica](https://github.com/Godanitt/Cuadernos/tree/main/Fisica/Astrofisica)
     - [Teoría Cuántica de Campos (TCC)](https://github.com/Godanitt/Cuadernos/tree/main/Fisica/TCC)
     - [Física de Partículas](https://github.com/Godanitt/Cuadernos/tree/main/Fisica/Particulas)
   - [Ingeniería](https://github.com/Godanitt/Cuadernos/tree/main/Ingenieria): 
