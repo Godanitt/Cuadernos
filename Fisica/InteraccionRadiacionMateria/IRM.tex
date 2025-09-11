@@ -1,15 +1,17 @@
 \documentclass{../../Template}
 \addbibresource{../../Bibliografia.bib} % si quieres incluir la bibliografía
 
-\RequirePackage{transparent} 
+\RequirePackage{transparent}
+
+\RequirePackage{revsymb}
 
 \input{../../0_Macros/Titulo.tex}
 \input{../../0_Macros/Indice.tex}
 \input{../../0_Macros/Entornos.tex}
 
 % Definiciones del título
-\title{Teoría  \ Cuántica \\ de \ Campos}
-\subtitle{Desde Mecánica Clásica a Teoría de Campos Gauge}
+\title{Interacción \\ Radiación-Materia}
+\subtitle{Partículas Cargadas y No Cargadas}
 \author{Daniel Vázquez Lago}
 
 % Documento
@@ -24,18 +26,7 @@
 
 \tableofcontents
 
-\NewPart{Fundamentos de la teoría cuántica de campos}{0.1}
-\input{Chapters/01-Introduccion.tex}
-\chapter{Mañana}
-
-\NewPart{Interacciones y teoría de perturbaciones}{0.1}
-\input{Chapters/01-Introduccion.tex}
-
-\NewPart{Renormalización y estructuras avanzadas}{0.1}
-\input{Chapters/01-Introduccion.tex}
-
-\NewPart{Simetrías y teorías de gauge}{0.2}
-\input{Chapters/01-Introduccion.tex}
+\input{Chapters/01-ParticulasCargadas.tex}
 
 
 \nocite{*}

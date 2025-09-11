@@ -257,7 +257,6 @@
 \newcommand{\derivadas}[2]{\frac{\D #1}{\D #2}}
 
 \newcommand{\tquad}{\quad \quad \quad}
-%\newcommand{\vnabla}{\vec{\nabla}}
 
 \newcommand{\Ccal}{\mathcal{C}}
 \newcommand{\Ecal}{\mathcal{E}}
@@ -307,6 +306,8 @@
 \newcommand{\cte}{\text{cte}}
 
 \newcommand{\adjunto}{\overline{\psi}}
+
+\newcommand{\Ruth}{\text{Ruth}}
 
 
 % Comandos vectoriales

@@ -5,54 +5,9 @@
 \newcounter{Definicion}[chapter]
 \newcounter{Ejercicio}[chapter]
 
-\colorlet{ColorEjemplo}{red!75!black}
-\colorlet{ColorTeorema}{blue!75!black}
-\colorlet{ColorDefinicion}{green!75!black}
-\colorlet{ColorEjercicio}{gray!65!black}
-
-\newtcolorbox[use counter=Ejemplo]{Ejemplo}[1]{%
-empty,title={Ejemplo \thechapter.\thetcbcounter: #1},attach boxed title to top left,
-boxed title style={empty,size=minimal,toprule=2pt,top=4pt,
-overlay={\draw[ColorEjemplo,line width=2pt]
-([yshift=-1pt]frame.north west)--([yshift=-1pt]frame.north east);}},
-coltitle=ColorEjemplo,fonttitle=\large\bfseries,
-before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=0pt,right=3mm,top=4pt,
-breakable,pad at break*=0mm,vfill before first,
-overlay unbroken={\draw[ColorEjemplo,line width=1pt]
-([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
---([xshift=-0.5pt]frame.south east)--(frame.south west); },
-overlay first={\draw[ColorEjemplo,line width=1pt]
-([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
---([xshift=-0.5pt]frame.south east); },
-overlay middle={\draw[ColorEjemplo,line width=1pt] ([xshift=-0.5pt]frame.north east)
---([xshift=-0.5pt]frame.south east); },
-overlay last={\draw[ColorEjemplo,line width=1pt] ([xshift=-0.5pt]frame.north east)
---([xshift=-0.5pt]frame.south east)--(frame.south west);},%
-}
 
 
-\newtcolorbox[use counter=Teorema]{Teorema}[1]{%
-empty,title={Teorema \thechapter.\thetcbcounter: #1},attach boxed title to top left,
-boxed title style={empty,size=minimal,toprule=2pt,top=4pt,
-overlay={\draw[ColorTeorema,line width=2pt]
-([yshift=-1pt]frame.north west)--([yshift=-1pt]frame.north east);}},
-coltitle=ColorTeorema,fonttitle=\large\bfseries,
-before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=0pt,right=3mm,top=4pt,
-breakable,pad at break*=0mm,vfill before first,
-overlay unbroken={\draw[ColorTeorema,line width=1pt]
-([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
---([xshift=-0.5pt]frame.south east)--(frame.south west); },
-overlay first={\draw[ColorTeorema,line width=1pt]
-([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
---([xshift=-0.5pt]frame.south east); },
-overlay middle={\draw[ColorTeorema,line width=1pt] ([xshift=-0.5pt]frame.north east) 
---([xshift=-0.5pt]frame.south east); },
-overlay last={\draw[ColorTeorema,line width=1pt] ([xshift=-0.5pt]frame.north east)
---([xshift=-0.5pt]frame.south east)--(frame.south west);},%
-}
-
-
-\newtcolorbox{Resaltar}{
+\newtcolorbox{Ejercicio}{
   colback=Gray!40,    % Color de fondo
   colframe=Gray!40,   % Color del borde
   sharp corners,      % Esquinas cuadradas
