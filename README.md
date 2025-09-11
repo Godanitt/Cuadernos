@@ -12,7 +12,7 @@ Luego tenemos 4 carpetas: Física, Matemáticas, Ingeniería y Programación, do
 
   -  [Física](https://github.com/Godanitt/Cuadernos/tree/main/Fisica):
       - [Astrofísica](https://github.com/Godanitt/Cuadernos/tree/main/Fisica/Astrofisica)
-      - [Interaccion Radiacion Materia](https://github.com/Godanitt/Cuadernos/tree/main/Fisica/InteraccionRaciacionMateria)
+      - [Interaccion Radiacion Materia](https://github.com/Godanitt/Cuadernos/tree/main/Fisica/InteraccionRadiacionMateria)
       - [Teoría Cuántica de Campos (TCC)](https://github.com/Godanitt/Cuadernos/tree/main/Fisica/TCC)
       - [Física de Partículas](https://github.com/Godanitt/Cuadernos/tree/main/Fisica/Particulas)
   - [Ingeniería](https://github.com/Godanitt/Cuadernos/tree/main/Ingenieria): 
