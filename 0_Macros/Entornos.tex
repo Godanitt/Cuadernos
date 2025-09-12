@@ -1,19 +1,139 @@
 % Macro De Ejemplo
 
-\newcounter{Ejemplo}[chapter]
+\RequirePackage[most]{tcolorbox}
+\tcbuselibrary{skins}
+
 \newcounter{Teorema}[chapter]
 \newcounter{Definicion}[chapter]
-\newcounter{Ejercicio}[chapter]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ejercicio
+
+\newcounter{exercise}[chapter]
+\renewcommand{\theexercise}{\thechapter.\arabic{exercise}}
+
+% Entorno Ejercicio
+\newenvironment{Ejercicio}[1][]{%
+  \refstepcounter{exercise}% <-- ancla de hyperref
+  \begin{tcolorbox}[
+  colback=Gray!40,
+  colframe=Gray!40,
+  sharp corners,
+  boxrule=0pt,
+  left=5pt,
+  right=5pt,
+  top=5pt,
+  bottom=5pt,
+  top=1.0em,          % margen superior interno (por encima del título y contenido)
+  before title={\vspace{0.5em}}, % añade espacio encima del título
+  %%
+    title={\textcolor{black}{\bfseries \large Ejercicio~\theexercise}}, #1]%
+}{%
+  \end{tcolorbox}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ejemplo
+
+\newcounter{example}[chapter]
+\renewcommand{\theexample}{\thechapter.\arabic{example}}
+
+% Entorno Ejemplo
+
+\newenvironment{Ejemplo}[1][]{%
+  \refstepcounter{example}% <-- ancla de hyperref
+  \begin{tcolorbox}[
+  enhanced,         %
+  colback=Gray!20,  %
+  colframe=Gray!20, %
+  sharp corners,    %
+  left=5pt,         %
+  right=5pt,        % 
+  top=1.0em,        % margen superior interno (por encima del título y contenido)
+  bottom=5pt,       %
+  borderline south={3pt}{-3pt}{Gray}, % ← franja a la izquierda
+  borderline north={3pt}{-3pt}{Gray}, % ← franja a la izquierda
+  before title={\vspace{0.5em}}, % añade espacio encima del título
+  title={\textcolor{black}{\bfseries Ejemplo~\theexample}}, #1]%
+}{%
+  \end{tcolorbox}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Teorema
+
+
+\newcounter{theorem}[chapter]
+\renewcommand{\thetheorem}{\thechapter.\arabic{theorem}}
+
+% Entorno Teorema
+
+\newenvironment{Teorema}[1][]{%
+  \refstepcounter{theorem}% <-- ancla de hyperref
+  \begin{tcolorbox}[
+  enhanced,         %
+  colback=Gray!30,  %
+  colframe=Gray!30, %
+  sharp corners,    %
+  left=5pt,         %
+  right=5pt,        % 
+  top=1.0em,        % margen superior interno (por encima del título y contenido)
+  bottom=5pt,       %
+  borderline west={3pt}{-3pt}{Black!60}, % ← franja a la izquierda
+  before title={\vspace{0.5em}}, % añade espacio encima del título
+  title={\textcolor{black}{\bfseries Teorema~\thetheorem}}, #1]%
+}{%
+  \end{tcolorbox}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definicion
+
+
+\newcounter{definition}[chapter]
+\renewcommand{\thedefinition}{\thechapter.\arabic{definition}}
+
+% Entorno definicion
+
+\newenvironment{Definicion}[1][]{%
+  \refstepcounter{definition}% <-- ancla de hyperref
+  \begin{tcolorbox}[
+  enhanced,         %
+  colback=Gray!20,  %
+  colframe=Gray!20, %
+  sharp corners,    %
+  left=5pt,         %
+  right=5pt,        % 
+  top=1.0em,        % margen superior interno (por encima del título y contenido)
+  bottom=5pt,       %
+  borderline west={3pt}{-3pt}{Black!40}, % ← franja a la izquierda
+  before title={\vspace{0.5em}}, % añade espacio encima del título
+  title={\textcolor{black}{\bfseries Definición~\thedefinition}}, #1]%
+}{%
+  \end{tcolorbox}%
+}
 
 
 
-\newtcolorbox{Ejercicio}{
-  colback=Gray!40,    % Color de fondo
-  colframe=Gray!40,   % Color del borde
-  sharp corners,      % Esquinas cuadradas
-  boxrule=0pt,        % Grosor del borde (0pt para que desaparezca)
-  left=5pt,           % Margen izquierdo interno
-  right=5pt,          % Margen derecho interno
-  top=5pt,            % Margen superior interno
-  bottom=5pt          % Margen inferior interno
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Resalte
+
+
+\newenvironment{Resalte}[1][]{%
+  \begin{tcolorbox}[
+  enhanced,         %
+  colback=Gray!20,  %
+  colframe=Gray!20, %
+  sharp corners,    %
+  left=5pt,         %
+  right=5pt,        % 
+  %left skip = 1cm,
+  %rigth skip = 1 cm
+  top=1.0em,        % margen superior interno (por encima del título y contenido)
+  bottom=5pt,       %
+  ]
+}{%
+  \end{tcolorbox}%
 }
