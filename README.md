@@ -60,24 +60,24 @@ Las portadas tiene un color definido para cada archivo (aunque se puede cambiar 
 <table>
   <tr>
     <td align="center">
-      <strong> Física </strong><br>
+      <strong style="font-size: 24px;"> Física </strong><br>
         <img src=".images/F-IRM.png" width="400px">
       </a>
     </td>
     <td align="center">
-      <strong> Matemáticas</strong><br>
+      <strong style="font-size: 24px;">Matemáticas</strong><br>
         <img src=".images/M-GeometríaDiferencial.png" width="400px">
       </a>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <strong> Ingeniería </strong><br>
+      <strong style="font-size: 24px;"> Ingeniería </strong><br>
         <img src=".images/I-FPGA.png" width="400px">
       </a>
     </td>
     <td align="center">
-      <strong> Programación </strong><br>
+      <strong style="font-size: 24px;"> Programación </strong><br>
         <img src=".images/P-PaginaWeb.png" width="400px">
       </a>
     </td>
