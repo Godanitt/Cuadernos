@@ -13,7 +13,7 @@
 \renewcommand{\theexercise}{\thechapter.\arabic{exercise}}
 
 % Entorno Ejercicio
-\newenvironment{Ejercicio}[1][]{%
+\newenvironment{Ejercicio}[1]{%
   \refstepcounter{exercise}% <-- ancla de hyperref
   \begin{tcolorbox}[
   colback=Gray!40,
@@ -27,8 +27,7 @@
   top=1.0em,          % margen superior interno (por encima del título y contenido)
   before title={\vspace{0.5em}}, % añade espacio encima del título
   %%
-    title={\textcolor{black}{\bfseries \large Ejercicio~\theexercise}}, #1]%
-}{%
+  title={\textcolor{black}{\bfseries Ejercicio~\theexercise\ --\ #1}}]}{%
   \end{tcolorbox}%
 }
 
@@ -40,21 +39,19 @@
 
 % Entorno Ejemplo
 
-\newenvironment{Ejemplo}[1][]{%
-  \refstepcounter{example}% <-- ancla de hyperref
+\newenvironment{Ejemplo}[1]{%
+  \refstepcounter{example}%
   \begin{tcolorbox}[
-  enhanced,         %
-  colback=Gray!20,  %
-  colframe=Gray!20, %
-  sharp corners,    %
-  left=5pt,         %
-  right=5pt,        % 
-  top=1.0em,        % margen superior interno (por encima del título y contenido)
-  bottom=5pt,       %
-  borderline south={3pt}{-3pt}{Gray}, % ← franja a la izquierda
-  borderline north={3pt}{-3pt}{Gray}, % ← franja a la izquierda
-  before title={\vspace{0.5em}}, % añade espacio encima del título
-  title={\textcolor{black}{\bfseries Ejemplo~\theexample}}, #1]%
+    enhanced,
+    colback=Gray!20,
+    colframe=Gray!20,
+    sharp corners,
+    left=5pt,right=5pt,top=1em,bottom=5pt,
+    borderline south={3pt}{-3pt}{Gray},
+    borderline north={3pt}{-3pt}{Gray},
+    before title={\vspace{0.5em}},
+    title={\textcolor{black}{\bfseries Ejemplo~\theexample\ --\ #1}}
+  ]%
 }{%
   \end{tcolorbox}%
 }

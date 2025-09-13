@@ -55,29 +55,29 @@ La plantilla trata de ser lo más sencilla posible, de tal modo que cualquiera p
 
 ## Portada
 
-Las portadas tiene un color definido para cada archivo (aunque se puede cambiar en la entrada de cada archivo), de tal modo que 
+Las portadas tiene un color definido para cada archivo (aunque se puede cambiar en la entrada de cada archivo). Veamos algunos ejemplos: 
 
 <table>
   <tr>
     <td align="center">
-      <strong style="font-size: 24px;"> Física </strong><br>
+      <strong style="font-size: 26px;"> Física </strong><br>
         <img src=".images/F-IRM.png" width="400px">
       </a>
     </td>
     <td align="center">
-      <strong style="font-size: 24px;">Matemáticas</strong><br>
+      <strong style="font-size: 26px;">Matemáticas</strong><br>
         <img src=".images/M-GeometríaDiferencial.png" width="400px">
       </a>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <strong style="font-size: 24px;"> Ingeniería </strong><br>
+      <strong style="font-size: 26px;"> Ingeniería </strong><br>
         <img src=".images/I-FPGA.png" width="400px">
       </a>
     </td>
     <td align="center">
-      <strong style="font-size: 24px;"> Programación </strong><br>
+      <strong style="font-size: 26px;"> Programación </strong><br>
         <img src=".images/P-PaginaWeb.png" width="400px">
       </a>
     </td>

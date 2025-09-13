@@ -1,0 +1,192 @@
+\chapter{Partículas Cargadas}
+
+\section{Dispersión de Rutherford}
+
+\subsection{Introducción}
+
+Rutherford describió la dispersión de una partícula $\alpha$ por núcleos atómicos (con $m_\alpha \ll M, z=2$) sobre una trayectoria hiperbólica a través del potencial de Coulomb. La energía total viene dada como la suma de la energía cinética y potencial, y permanece \textit{constante} sobre toda la trayectoria:
+
+\begin{equation}
+    E(r) = E_K(r) + E_p (r) \qquad  E_p (r) = \frac{ z Z e^2}{4\pi \varepsilon_0} \frac{1}{R}
+\end{equation}
+La distancia de máxima aproximación se define como la distancia a la cual se para una partícula con parámetro de impacto $b=0$, i.e. colisión frontal. Así, denotando $E_K$ como la \textit{energía cinética inicial}, tenemos que
+
+\begin{equation}
+   E_K = \frac{zZe^2}{4\pi\varepsilon_0} \frac{1}{D_{\alpha-N}}
+\end{equation}
+aunque lógicamente esta expresión no será del todo cierta, ya que el potencial no es infinito en $r=0$, debido a que el núcleo es finito. Aún así es una buena aproximación.
+
+
+\subsection{Relación entre el parámetro de impacto y el ángulo de dispersión}
+
+El momento transferido en la interacción, siempre y cuando $|\pn_i |= |\pn_f|=p$ vale 
+
+\begin{equation}
+    \Delta p = 2 p \sin (\theta/2)
+\end{equation}
+siendo $\theta$ el \textbf{ángulo de dispersión}. Es fácil de deducir matemáticamente, pero incluso físicamente tiene sentido: cuando $\theta=\pi$ la trasferencia de momento es máxima (la partícula se da la vuelta completamente) lo que implicla un intercambio de $2$ veces el momento inicial. Definimos como \textbf{parámetro de impacto} 
+
+\begin{equation}
+    b = r \sin \theta
+\end{equation}
+cuando la partícula está en el infinito. Además, también se conserva el momento angular $L = |\rn \times \pn|=L p \sin \theta$, lo que lleva a la relación 
+
+\begin{equation}
+    v_i b = \omega r^2
+\end{equation}
+siendo $\omega=\dv{\phi}{t}$ en el vértice, definiendo $\phi$ como el ángulo entre el vértice y la partícula desde el núcleo. En el vértice, que es el punto en el cual la posición respecto el átomo y el momento lineal de la partícula son perpendiculares. Por definición $L = m_\alpha r^2 \omega$, y en el infinito se cumple que
+
+\begin{equation}
+    L_\infty = |\rn \times \pn | = m_\alpha b v_i
+\end{equation}
+El momento transferido $\Delta p$ se calcula como la acción total en el tiempo de la fuerza de Coulomb proyectada sobre el eje de la hipérbola, tal que
+
+\begin{equation}
+    \Delta p = \int_{-\infty}^{\infty} F_{\Delta p} \d t = (\ldots) = 
+\end{equation}
+de lo que se puede deducir que el parámetro de impacto $b$ y el ángulo de dispersión se relacionan tal que:
+
+\begin{equation}
+    b = \frac{1}{2} D_{\alpha - N} \cot (\theta/2) = \frac{1}{2} D_{\alpha-N} \sqrt{\frac{1+\cos \theta}{1-\cos \theta}} \qquad D_{\alpha-N} = \frac{zZe^2}{4\pi \varepsilon_0} \frac{1}{E_K}
+\end{equation}
+siendo $\D_{\alpha-N}$ la distancia de máxima aproximación y $E_K$ la energía cinética. 
+
+\subsection{La sección eficaz diferencial de Rutherford}
+
+La dispersión de las partículas alfa que halló Rutherford la describió en función de su sección diferencial, tal que:
+
+\begin{Resalte}
+\begin{equation}
+    \dv{\sigma_{\Ruth}}{\Omega} =  \pqty{\frac{D_{\alpha-N}}{4}}^2 \frac{1}{\sin^4 \frac{\theta}{2}} \qquad D_{\alpha-N} = \frac{zZe^2}{4\pi\varepsilon_0} \frac{1}{E_K}
+\end{equation}
+\end{Resalte}
+Esta ecuación, aunque fue calculado con la mecánica clásica, también puede ser hallada en la mecánica cuántica, usando las aproximaciones de Born a primer orden ya vistas. Se propone el ejercicio 
+ 
+Como podemos comprobar, \textit{diverge} para $\theta=0$, lo cual es debido al carácter ideal del núcleo puntual. La razón por la que en realidad no diverge, o la solución a esta divergencia, es que la carga nuclear está apantallada por los \textit{electrones orbitales atómicos}, lo que conduce a un ángulo mínimo $\theta_{\min}$. La dispersión hacia atrás ($\theta \to \pi, b \to 0$) tampoco se logra nunca, debido al radio finito del núcleo. 
+
+
+\subsection{Ángulo mínimo: corrección por apantallamiento}
+Un modelo que tiene en cuenta el apantallamiento es el \textit{modelo atómico estadístico de Fermi}, el cual introduce una exponencial tabulada por un \textit{radio efectivo} $\alpha_{TF}$ de tal modo que el potencial de Coulomb no caiga ``lentamente''. Así pues: 
+
+\begin{equation}
+    V_{TF} (r) = \frac{zZe^2}{4\pi\varepsilon_0} \frac{1}{r} e^{-\frac{r}{a_{TF}}}
+\end{equation}
+el \textit{radio efectivo} $a_{TF}$ de la nube electrónica (de Thomas-Fermi) decrece por debajo del radio de Bohr $\alpha_0$ al aumentar $Z$, como $a_{TF}=\frac{\zeta a_0}{\sqrt[3]{Z}}$, debido a la disminución del tamaño de los orbitales más internos, por el teorema de Gauss. 
+
+La aproximación de Born requiere ahora, con $\Delta k = K=(2p/\hbar) \sin(\theta/2) (p=p_i)$ el momento de onda transferido ($p = \hbar k$), el cálculo de la transformada seno de $V_{TF}(r)$, que es finita. Rutherford reciba entonces un \textit{factor corrector} tal que:
+
+\begin{equation}
+    \dv{\sigma_{\Ruth}}{\Omega} = \vqty{\frac{2m_\alpha}{\hbar^2}\int_{0}^{\infty} r^2 V_{TF}(r) \frac{\sin Kr}{Kr} \D r }^2 = \pqty{\ldots} = \pqty{\frac{D_{\alpha-N}}{4}}^2 \frac{1}{\sin^4 \theta/2} \pqty{\frac{1}{1+\frac{1}{K^2 a_{TF}^2}}}
+\end{equation}
+Cuando $\theta<<1$, tenemos que: 
+
+\begin{equation}
+    \dv{\sigma_{\Ruth}}{\Omega} = \frac{D_{\alpha-N}^2}{\theta^4} \frac{1}{\bqty{1+\pqty{\frac{\theta_{\min}^2}{\theta^2}}^2}} = \frac{D_{\alpha-N}^2}{\theta^2+\theta_{\min}^2} 
+\end{equation}
+donde se introduce el concepto el concepto de ángulo mínimo, que como podemos ver viene expresado: 
+
+\begin{equation}
+    \theta_{\min} = \frac{\hbar}{p a_{TF}} = \frac{\hbar \sqrt[3]{Z}}{pa_{TF}} = \frac{\hbar c \sqrt[3]{Z}}{a_0 \sqrt[root]{E_K(E_K+2Mc^2)}} 
+\end{equation}
+La mejora de la aparición de este ángulo mńimo es que ahora \textit{la sección eficaz total es finita}, lo cual se corresponde a un resultado mucho más físico. Este ángulo mínimo tiene un \textit{origen cuántico} debido al \textit{principio de incertidumbre}. Se produce por la localización de la partícula sobre el radio $a_{TF}$, que le imprime un momento \textit{transversal} inevitable $\Delta p$, relacionado con la longitud de onda: 
+\begin{equation}
+    \theta_{\min} = \frac{\Delta p}{p} \approx \frac{\hbar}{pa_{TF}} = \frac{\lambdabar}{a_{TF}}
+\end{equation}
+\subsection{Ángulo máximo: corrección por radio finito del núcleo}
+
+El potencial que ve una carga elemental $z$ cerca del núcleo $V(r)$ tiene un plateu en su interior hasta $r=R$ y para $r>R$ adopta la forma de Coulomb $E_p(r)$. 
+
+\section{Dispersión de Mott} 
+
+\subsection{Correcciones relativistas}
+
+\subsection{Correcciones por espín del electrón}
+
+\subsection{Correcciones por retroceso del núcleo}
+
+\subsection{Correcciones por factor de forma nuclear}
+
+\section{Poder de frenado másico de partículas cargadas en la materia}
+
+\section{El rango másico $R_{CSDA}$}
+%\section{Belleza}
+
+\begin{Ejemplo}{mi padre quiere un ejemplo}
+
+    Aqui se pone lo de abajo
+    
+\end{Ejemplo}
+
+
+
+\section*{Ejercicios}
+\addcontentsline{toc}{section}{Ejercicios}
+
+
+
+
+\begin{Ejercicio}{Sección eficaz de Rutherford con modelo atómico de Fermi} \label{Ej:02.02}
+    Obten la expresión de la sección de eficaz de Rutherford, ahora con el potencial del modelo atómico estadístico de Fermi, usando la aproximación de Born con ondas planas incidentes y salientes
+
+    \begin{equation*}
+        \dv{\sigma_{\Ruth}}{\Omega} =  \pqty{\frac{D_{\alpha-N}}{4}}^2 \frac{1}{\sin^4 \theta/2} \pqty{\frac{1}{1+\frac{1}{K^2 a_{TF}^2}}}
+    \end{equation*}
+    y luego llegar a la expresión final cuando $\theta\ll 1$: 
+\end{Ejercicio}
+
+
+
+\begin{Ejercicio}{Dependencias genéricas de la fórmula de Bethe con $Z, M, \beta$ y $z$} \label{Ej:02.05}
+    
+
+Se ha visto que el poder de frenado másico $S_\text{col}$ de un medio absorbente $(Z,A)$ para una 
+partícula cargada $(z, M, \beta)$ viene dado por la fórmula cuántica y relativista de Bethe--Bloch, 
+reforzada con los factores de Fano $(C,\delta)$:
+
+\[
+S_\text{col} = 4\pi N_e \left( \frac{e^2}{4\pi \epsilon_0} \right)^2 
+\frac{z^2}{m_e c^2 \beta^2} 
+\left[ \ln \frac{2 m_e c^2}{I} + \ln \frac{\beta^2}{1 - \beta^2} - \beta^2 - \frac{C}{Z} - \delta \right]
+\equiv C_1 \frac{N_e z^2}{\beta^2} \, \bar{B}_\text{col}
+\]
+
+donde $N_e \equiv ZN_A/A$ es el número de \emph{electrones por gramo} del medio absorbente.  
+
+Para focalizar y separar adecuadamente las dependencias características de $S_\text{col}$ con los 
+parámetros de la partícula y del medio, responde razonadamente a las preguntas siguientes:
+
+\begin{enumerate}[label=\alph*)]
+
+\item ¿Hizo Bethe la hipótesis original de que la velocidad de la partícula era muy superior a la 
+velocidad de los electrones atómicos $v \gg v_\text{orb}$?  
+¿Sobreestima esto el potencial de ionización $I$ cuando no lo es?  
+Explica por qué son los electrones de la capa $K$ los más afectados en el término $C/Z$, y por qué la corrección es negativa.
+
+\item ¿Por qué la corrección por densidad $\delta$ es más importante para las colisiones 
+\emph{distantes} (suaves) y por qué es negativa?  
+¿Sabes, sin embargo, si dicha corrección es también importante en el límite ultrarrelativista para electrones y positrones?
+
+\item Observa que la dependencia en $Z$ de $S_\text{col}$ ocurre a través de dos vías distintas: 
+una \emph{directa} en $N_e$, y otra \emph{indirecta} a través de $I(Z)$.  
+Comenta separadamente sobre ellas.  
+¿Empujan ambas en la misma dirección de subir o bajar $S_\text{col}$?  
+¿Por qué, pese a la gran diferencia de los potenciales de ionización (entre $I=19$ eV para H y $I\sim 900$ eV para el Uranio), la dependencia con $I(Z)$ es suave?
+
+\item ¿Puede decirse que, para una velocidad fija $\beta = v/c$ (o energía cinética fija $E_K$), 
+$S_\text{col}$ es \emph{independiente} de la masa del proyectil $M$?  
+Comenta sobre esto.
+
+\item Analiza la dependencia de $S_\text{col}$ con $\beta$, señalando los términos específicos que 
+son decisivos en cada una de las \textbf{tres regiones}:  
+baja velocidad (con Fano), velocidad relativista intermedia, y velocidad ultrarrelativista.  
+Comenta sobre el aumento o disminución de $S_\text{col}$ con $E_K$ en cada caso.
+
+\item ¿Cómo depende $S_\text{col}$ de la carga $z$ de la partícula incidente?  
+¿Existen también aquí dependencias indirectas?
+
+\end{enumerate}
+
+\end{Ejercicio}
+
+% Igual estaría bien hacer la demostración aquí, aunque sea trivial
+
