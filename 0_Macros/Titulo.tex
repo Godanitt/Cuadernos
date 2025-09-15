@@ -44,6 +44,11 @@
         \vspace{3em}
       };
 
+
+      \node[anchor=south west,align=left,text width=0.9\paperwidth] at (0.05,0.82) {
+        {\textcolor{#3}{\faGithub}}
+      };
+
       % Lineas + Caja lado
 
       \fill [color=#2!50] (-0.2, 0.45) rectangle (-0.05, 0.36);
@@ -88,9 +93,20 @@
       \node[anchor=north west,align=left,text width=0.9\paperwidth] at (0.05,0.18) {
         {\fontsize{56pt}{66pt}\selectfont \bfseries\color{white} \thetitle\par}
         \vspace{1em} \vspace*{2em}
-
         {\LARGE\itshape\color{white} \@subtitle\par}
         \vspace{3em}
+      };
+
+      % Ahora el simbolo del github
+      \node[anchor=mid west,align=left,text width=0.9\paperwidth] at (0.05,0.84)  {
+      {\begingroup
+        \hypersetup{colorlinks=true, urlcolor=white}%
+        \fontsize{32pt}{32pt}\selectfont \color{white} 
+        {\href{https://github.com/Godanitt/Cuadernos}{\faGithub \ \  
+        \begingroup
+          \fontsize{24pt}{24pt}\selectfont %Godanitt
+        \endgroup}}
+      \endgroup}
       };
       \end{tikzpicture}
       

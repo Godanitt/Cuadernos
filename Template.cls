@@ -62,6 +62,9 @@
 \RequirePackage{minitoc} % para hacer tableofcontents de ejercicios
 \RequirePackage{slashed}
 \RequirePackage{multicol}
+\RequirePackage{fontawesome} % para los iconos FontAwesome v4
+\RequirePackage{bm}
+
 
 
 %----------------------------------------------------------------------------
@@ -164,8 +167,10 @@
 
 
 %\usepackage{newtxtext,newtxmath} % Cambia la fuente (pero mola)
-\RequirePackage{mathptmx}   % Loads the Times-Roman Math Fonts
-\RequirePackage{libertinus} % Cambia la fuente -> Papers
+
+\RequirePackage{unicode-math}
+\setmainfont{Libertinus Serif}
+\setmathfont{XITS Math}             % Matemáticas estilo Times
 
 % ----------------------------------------------------------------------------
 % CONFIGURACIÓN DE CAPÍTULOS
@@ -217,6 +222,7 @@
 \crefname{subsection}{Apartado}{Apartados}
 \crefname{section}{Seccion}{Secciones}
 \crefname{appendix}{Apéndice}{Apendices}
+\crefname{equation}{ec.}{ecs.}
 %----------------------------------------------------------------------------
 % LISTINGS CONFIGURACIÓN
 %----------------------------------------------------------------------------
@@ -373,7 +379,8 @@
 \newcommand{\hni}{\hat{\mathbf{i}}}
 \newcommand{\hnj}{\hat{\mathbf{j}}}
 \renewcommand{\hnk}{\hat{\mathbf{k}}}
-
+ 
 
 %% MACROS 
+
 

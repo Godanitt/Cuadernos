@@ -2,14 +2,91 @@
 
 \section{Teoría de dispersiónes: mecánica clásica y  mecánica cuántica}
 
+\subsection{Mecánica clásica}
+
+
+\subsection{Mecánica cuántica}
+
 Para describir la dispersión de una partícula por un potencial (Coulomb) en la mecánica cuántica en principio deberíamos estudiar la evolución temporal de un paquete de ondas, que representará la partícula incidente con una energía (y anchura) y una localización espacial (y anchura). Sin embargo, se suelen usar ondas planas, ya que en general las dimensiones del paquete de ondas suele ser mucho más grande que el tamaño del rango efectivo del potencial. La expresión de Rutherford no es una excepción.  
 
-Para poder entender como se obtiene en la mecánica cuántica la expresión de la sección eficaz lo primero que debemos hacer es entender que la sección eficaz está realcionada directamente con el cuadrado de la amplitud de probabilidad:
+%Para poder entender como se obtiene en la mecánica cuántica la expresión de la sección eficaz lo primero que debemos hacer es entender que la sección eficaz está realcionada directamente con el cuadrado de la amplitud de probabilidad:
 
+%%\begin{equation}
+%    \dv{\sigma}{\Omega} = |f(\theta,\varphi)|^2 
+%%\end{equation}
+%Uno podría plantearse ¿por qué es así? En la mecánica cuántica la sección eficaz diferencial representa la probabilidad de que una partícula salga dispersada en un ángulo sólido diferencial $\D \Omega$, aunque también nos habla de la tasa de partículas que atarviesan una superficie diferencial perpendicular $\D \Omega$. En la mecánica cuántica toda probabilidad es representada por una amplitud de probaiblidad por su complejo, por lo que la relación es directa. 
+
+
+Partimos de la ecuación de Schrödinger no relativista (masa $m$):
 \begin{equation}
-    \dv{\sigma}{\Omega} = |f(\theta,\varphi)|^2 
+i\hbar\,\partial_t\psi=\left(-\frac{\hbar^2}{2m}\nabla^2+V\right)\psi.
 \end{equation}
-Uno podría plantearse ¿por qué es así? En la mecánica cuántica la sección eficaz diferencial representa la probabilidad de que una partícula salga dispersada en un ángulo sólido diferencial $\D \Omega$, aunque también nos habla de la tasa de partículas que atarviesan una superficie diferencial perpendicular $\D \Omega$. En la mecánica cuántica toda probabilidad es representada por una amplitud de probaiblidad por su complejo, por lo que la relación es directa. 
+Restando la ecuación conjugada se obtiene la \emph{ecuación de continuidad}
+\begin{equation}
+\partial_t \abs{\psi}^2 + \nabla\cdot\mathbf{j}=0,
+\end{equation}
+con \emph{corriente de probabilidad}
+\begin{equation}
+{\;\mathbf{j}=\frac{\hbar}{m}\,\Im\!\big(\psi^{*}\nabla\psi\big)\;}
+\qquad \text{(sustituir $m\to \mu$ si se usa masa reducida).}
+\end{equation}
+
+Lejos del blanco ($r\to\infty$), la función de onda toma la forma estándar (no es más que una suposición, una posible solución)
+\begin{equation}
+\psi(\mathbf r)\;\xrightarrow{r\to\infty}\; e^{ik z}
+\;+\; \frac{f(\theta,\phi)}{r}\,e^{ik'r},
+\end{equation}
+donde $e^{ik z}$ es la onda plana incidente (número de onda $k$) y
+$(f/r)\,e^{ik'r}$ es la onda esférica saliente (número de onda $k'$).
+
+Para $\psi_{\rm in}=e^{ikz}$,
+\begin{equation}
+\mathbf j_{\rm in}=\frac{\hbar}{m}\,\Im\!\big(\psi_{\rm in}^*\nabla\psi_{\rm in}\big)
+=\frac{\hbar k}{m}\,\hat{\mathbf z},
+\qquad
+\Rightarrow\quad
+j_{\rm in}=\frac{\hbar k}{m}.
+\end{equation}
+
+Para $\psi_{\rm sc}=\dfrac{f(\theta,\phi)}{r}\,e^{ik'r}$, con $f$ independiente de $r$,
+\begin{equation}
+\partial_r\!\left(\frac{e^{ik'r}}{r}\right)
+=\left(\frac{ik'}{r}-\frac{1}{r^2}\right)e^{ik'r}.
+\end{equation}
+Usando $\mathbf j=(\hbar/m)\Im(\psi^*\nabla\psi)$, el componente radial dominante a gran $r$ es
+\begin{equation}
+{\;j_r^{(\rm sc)}=\frac{\hbar k'}{m}\,\frac{\abs{f(\theta,\phi)}^2}{r^2}\;}.
+\end{equation}
+(El término $\propto 1/r^3$ es real y no contribuye a la parte imaginaria.)
+
+El número de partículas por unidad de tiempo que atraviesan el casquete sólido $d\Omega$ a radio $r$ es
+\begin{equation}
+\frac{dN}{dt}=j_r^{(\rm sc)}\,r^2\,d\Omega
+= \frac{\hbar k'}{m}\,\abs{f(\theta,\phi)}^2\, d\Omega.
+\end{equation}
+Por definición,
+\begin{equation}
+{\;
+\frac{d\sigma}{d\Omega}
+=\frac{(dN/dt)}{j_{\rm in}}
+=\frac{\hbar k'}{m}\frac{\abs{f}^2}{\hbar k/m}
+=\frac{k'}{k}\,\abs{f(\theta,\phi)}^2\;}.
+\end{equation}
+Aquí aparece el factor cinemático \emph{espacio de fases/flujo} $k'/k$. Se puede relacionar con la energía, con expresiones diferentes en función del a energía inicial de la partícula. 
+
+\begin{itemize}
+\item \textbf{No relativista.} Como $k\propto \sqrt{E_{\rm k}}$,
+\begin{equation}
+\frac{k'}{k}=\sqrt{\frac{E'_{\rm k}}{E_{\rm k}}}.
+\end{equation}
+
+\item \textbf{Relativista } Para $E\gg mc^2$, $p\approx E/c$ y $k\propto p$,
+\begin{equation}
+\frac{k'}{k}\approx \frac{E'}{E}.
+\end{equation}
+\end{itemize} 
+El factor $k'/k$ ya surge al trabajar \emph{en un mismo sistema de referencia} (p.\,ej.\ LAB) a partir de la razón
+\emph{corriente saliente} / \emph{flujo incidente}. Si además se pasa del CM al LAB, aparece un \emph{Jacobiano angular} $d\Omega_{\rm cm}/d\Omega_{\rm lab}$, pero es un factor \emph{distinto} del $k'/k$.
 
 \section{Análisis en ondas parciales}
 

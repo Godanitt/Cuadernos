@@ -5,16 +5,25 @@
 %----------------------------------------------------------------------------
 
 \addto\captionsspanish{\renewcommand{\contentsname}{Índice general}}
-\let\oldtableofcontents\tableofcontents
-\renewcommand{\tableofcontents}{\begingroup\oldtableofcontents\endgroup}
 
-% Comandos para poder hacer la división en lineas -> Aun hay que modificar las líneas 
-\newcommand{\hLinefill}[1]{\rule[0.5ex]{#1\linewidth}{0.4pt}}
-\newcommand{\NewPart}[2]{
-    \addtocontents{toc}{%
-        \begingroup%
-            \setlength{\parindent}{0pt}%
-            \protect \Large\bfseries \hLinefill{#2} \hspace*{4mm} \ #1 \ \hspace*{4mm} \hLinefill{#2} \protect\par%
-        \endgroup%
-    }%
+\newlength{\fraseancho}
+\newcommand{\hLinefill}[1]{\rule[0.5ex]{#1}{0.4pt}}
+
+% Lo que se ejecutará al LEER el .toc
+\DeclareRobustCommand{\TOCNewPart}[1]{%
+  \par\begingroup
+    \parindent=0pt
+    \vspace{0.6\baselineskip}%
+    \Large\bfseries
+    \settowidth{\fraseancho}{#1}%
+    \hLinefill{\dimexpr(0.95\linewidth-\fraseancho)/2\relax}%
+    \hspace*{4mm}#1\hspace*{4mm}%
+    \hLinefill{\dimexpr(0.95\linewidth-\fraseancho)/2\relax}%
+    \par\vspace{0.3\baselineskip}%
+  \endgroup
+}
+
+% Escribimos la llamada al macro anterior dentro del .toc
+\newcommand{\NewPart}[1]{%
+  \addtocontents{toc}{\protect\TOCNewPart{#1}}%
 }

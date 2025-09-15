@@ -7,7 +7,7 @@
 Rutherford describió la dispersión de una partícula $\alpha$ por núcleos atómicos (con $m_\alpha \ll M, z=2$) sobre una trayectoria hiperbólica a través del potencial de Coulomb. La energía total viene dada como la suma de la energía cinética y potencial, y permanece \textit{constante} sobre toda la trayectoria:
 
 \begin{equation}
-    E(r) = E_K(r) + E_p (r) \qquad  E_p (r) = \frac{ z Z e^2}{4\pi \varepsilon_0} \frac{1}{R}
+    E(r) = E_K(r) + E_p (r) \qquad  E_p (r) = \frac{ z Z e^2}{4\pi \varepsilon_0} \frac{1}{R} \qquad E_K (r) = \frac{1}{2} m_\alpha v_\alpha^2
 \end{equation}
 La distancia de máxima aproximación se define como la distancia a la cual se para una partícula con parámetro de impacto $b=0$, i.e. colisión frontal. Así, denotando $E_K$ como la \textit{energía cinética inicial}, tenemos que
 
@@ -34,15 +34,20 @@ cuando la partícula está en el infinito. Además, también se conserva el mome
 \begin{equation}
     v_i b = \omega r^2
 \end{equation}
-siendo $\omega=\dv{\phi}{t}$ en el vértice, definiendo $\phi$ como el ángulo entre el vértice y la partícula desde el núcleo. En el vértice, que es el punto en el cual la posición respecto el átomo y el momento lineal de la partícula son perpendiculares. Por definición $L = m_\alpha r^2 \omega$, y en el infinito se cumple que
+siendo $\omega=\dv{\phi}{t}$ en el vértice, definiendo $\phi$ como el ángulo entre el vértice y la partícula desde el núcleo. En el vértice, que es el punto en el cual la posición respecto el átomo y el momento lineal de la partícula son perpendiculares. Tenemos que en el infinito
 
 \begin{equation}
-    L_\infty = |\rn \times \pn | = m_\alpha b v_i
+    L_\infty = |\rn \times \pn | = m_\alpha b v_i        
 \end{equation}
+mientras que en el vértice: 
+
+\begin{equation}
+    L_a = |\rn \times \pn | = r p \sin 90^\circ = r m_\alpha \left( r \dv{\phi}{t} \right)  = m_\alpha \omega r^2
+\end{equation}  
 El momento transferido $\Delta p$ se calcula como la acción total en el tiempo de la fuerza de Coulomb proyectada sobre el eje de la hipérbola, tal que
 
 \begin{equation}
-    \Delta p = \int_{-\infty}^{\infty} F_{\Delta p} \d t = (\ldots) = 
+    \Delta p = \int_{-\infty}^{\infty} F_{\Delta p} \D t  = A \int_{-\frac{\pi-\theta}{2}}^{\frac{\pi-\theta}{2}} \frac{\cos \phi}{r^2} \pqty{\dv{t}{\phi} \D \phi}  = \frac{A}{b v_i} \int_{-\frac{\pi-\theta}{2}}^{\frac{\pi-\theta}{2}} \cos \phi \D \phi = \frac{2 A}{v_i b} \cos (\theta/2) \quad A = \frac{zZe^2}{4\pi \varepsilon_0}
 \end{equation}
 de lo que se puede deducir que el parámetro de impacto $b$ y el ángulo de dispersión se relacionan tal que:
 
@@ -60,10 +65,20 @@ La dispersión de las partículas alfa que halló Rutherford la describió en fu
     \dv{\sigma_{\Ruth}}{\Omega} =  \pqty{\frac{D_{\alpha-N}}{4}}^2 \frac{1}{\sin^4 \frac{\theta}{2}} \qquad D_{\alpha-N} = \frac{zZe^2}{4\pi\varepsilon_0} \frac{1}{E_K}
 \end{equation}
 \end{Resalte}
-Esta ecuación, aunque fue calculado con la mecánica clásica, también puede ser hallada en la mecánica cuántica, usando las aproximaciones de Born a primer orden ya vistas. Se propone el ejercicio 
+Esta ecuación, aunque fue calculado con la mecánica clásica, también puede ser hallada en la mecánica cuántica, usando las aproximaciones de Born a primer orden ya vistas. 
  
 Como podemos comprobar, \textit{diverge} para $\theta=0$, lo cual es debido al carácter ideal del núcleo puntual. La razón por la que en realidad no diverge, o la solución a esta divergencia, es que la carga nuclear está apantallada por los \textit{electrones orbitales atómicos}, lo que conduce a un ángulo mínimo $\theta_{\min}$. La dispersión hacia atrás ($\theta \to \pi, b \to 0$) tampoco se logra nunca, debido al radio finito del núcleo. 
 
+En ambos casos el punto es el mismo: debido a la localización de la partícula al interaccionar con el potencial, el propio principio de incertidumbre genera un $\Delta p$ relacionado directamente con el rango efectivo del potencial $x$, tal que
+
+\begin{equation}
+\Delta p \approx \frac{\hbar}{x}
+\end{equation}
+y, debido a esto y la geometría, el ángulo medio 
+\begin{equation}
+    \bar{\theta} = \frac{\Delta p}{p} 
+\end{equation}
+que se puede ver geométricamente. De todos modos tampoco hace falta entenderlo físicamente, basta con ver que las correciones físicamente correctas al potencial de Coulomb (al no ser, los átomos, ``objetos cargados'', ni los núcleos ``cargas puntuales'') basta para ver que aparecen un ángulo mínimo y máximo.
 
 \subsection{Ángulo mínimo: corrección por apantallamiento}
 Un modelo que tiene en cuenta el apantallamiento es el \textit{modelo atómico estadístico de Fermi}, el cual introduce una exponencial tabulada por un \textit{radio efectivo} $\alpha_{TF}$ de tal modo que el potencial de Coulomb no caiga ``lentamente''. Así pues: 
@@ -76,9 +91,9 @@ el \textit{radio efectivo} $a_{TF}$ de la nube electrónica (de Thomas-Fermi) de
 La aproximación de Born requiere ahora, con $\Delta k = K=(2p/\hbar) \sin(\theta/2) (p=p_i)$ el momento de onda transferido ($p = \hbar k$), el cálculo de la transformada seno de $V_{TF}(r)$, que es finita. Rutherford reciba entonces un \textit{factor corrector} tal que:
 
 \begin{equation}
-    \dv{\sigma_{\Ruth}}{\Omega} = \vqty{\frac{2m_\alpha}{\hbar^2}\int_{0}^{\infty} r^2 V_{TF}(r) \frac{\sin Kr}{Kr} \D r }^2 = \pqty{\ldots} = \pqty{\frac{D_{\alpha-N}}{4}}^2 \frac{1}{\sin^4 \theta/2} \pqty{\frac{1}{1+\frac{1}{K^2 a_{TF}^2}}}
+    \dv{\sigma_{\Ruth}}{\Omega} = \vqty{\frac{2m_\alpha}{\hbar^2}\int_{0}^{\infty} r^2 V_{TF}(r) \frac{\sin Kr}{Kr} \D r }^2 = \pqty{\frac{D_{\alpha-N}}{4}}^2 \frac{1}{\sin^4 \theta/2} \pqty{\frac{1}{1+\frac{1}{K^2 a_{TF}^2}}}
 \end{equation}
-Cuando $\theta<<1$, tenemos que: 
+Cuando $\theta\ll 1$, tenemos que: 
 
 \begin{equation}
     \dv{\sigma_{\Ruth}}{\Omega} = \frac{D_{\alpha-N}^2}{\theta^4} \frac{1}{\bqty{1+\pqty{\frac{\theta_{\min}^2}{\theta^2}}^2}} = \frac{D_{\alpha-N}^2}{\theta^2+\theta_{\min}^2} 
@@ -86,7 +101,16 @@ Cuando $\theta<<1$, tenemos que:
 donde se introduce el concepto el concepto de ángulo mínimo, que como podemos ver viene expresado: 
 
 \begin{equation}
-    \theta_{\min} = \frac{\hbar}{p a_{TF}} = \frac{\hbar \sqrt[3]{Z}}{pa_{TF}} = \frac{\hbar c \sqrt[3]{Z}}{a_0 \sqrt[root]{E_K(E_K+2Mc^2)}} 
+    \theta_{\min} = \frac{\hbar}{p a_{TF}} = \frac{\hbar \sqrt[3]{Z}}{pa_{TF}} = \frac{\hbar c \sqrt[3]{Z}}{a_0 \sqrt{E_K(E_K+2Mc^2)}}  \label{Ec:02-thetamin}
+\end{equation}
+donde hemos usado que 
+
+\begin{equation*}
+    p^2 c^2 = E^2 - m^2 c^4 \Rightarrow p  = \frac{1}{c} \sqrt{E^2 - m^2 c^4 - M^2 c^4} = \frac{1}{c} \sqrt{(E_K + m c^2 + M c^2)^2 - m^2 c^4  - M^2 c^4} 
+\end{equation*}
+que despreciando la masa de la partícula incidente $m$ frente a $M$
+\begin{equation}
+    p  \approx \frac{1}{c} \sqrt{E_K (E_K + 2 Mc^2) } 
 \end{equation}
 La mejora de la aparición de este ángulo mńimo es que ahora \textit{la sección eficaz total es finita}, lo cual se corresponde a un resultado mucho más físico. Este ángulo mínimo tiene un \textit{origen cuántico} debido al \textit{principio de incertidumbre}. Se produce por la localización de la partícula sobre el radio $a_{TF}$, que le imprime un momento \textit{transversal} inevitable $\Delta p$, relacionado con la longitud de onda: 
 \begin{equation}
@@ -94,28 +118,241 @@ La mejora de la aparición de este ángulo mńimo es que ahora \textit{la secci�
 \end{equation}
 \subsection{Ángulo máximo: corrección por radio finito del núcleo}
 
-El potencial que ve una carga elemental $z$ cerca del núcleo $V(r)$ tiene un plateu en su interior hasta $r=R$ y para $r>R$ adopta la forma de Coulomb $E_p(r)$. 
+El potencial que ve una carga elemental $z$ cerca del núcleo $V(r)$ tiene un plateu en su interior hasta $r=R$ y para $r>R$ adopta la forma de Coulomb $E_p(r)$. Una forma de representar  este potencial es con la ecuación 
+
+\begin{equation}
+    V_{FSN} (r) = \frac{zZe^2}{4 \pi \varepsilon_0} \frac{1}{r} \pqty{1-e^{-\frac{2r}{R}}}
+\end{equation}
+en la \cref{Fig:02.01} vemos la representación de esta función. 
+
+\begin{figure}[H] \centering
+    \includegraphics[width=0.6\linewidth]{Images/Ch_02/02-Vfsn.pdf}
+    \caption{Representación del potencial $V_{FSN}(r)$. Como podemos comprobar no representa un ``plateu'', pero tampoco hace infinito al potencial en el centro, lo que nos basta.}
+    \label{Fig:02.01}
+\end{figure}
+
+La nueva expresión de la sección eficaz de Rutherfrod con este potencial vendrá dada por:
+
+\begin{equation}
+    \dv{\sigma_{\Ruth}}{\Omega} = \pqty{\frac{D_{\alpha-N}}{4}}^2 \frac{1}{\sin^4(\theta/2)} \frac{1}{\bqty{1+\pqty{\frac{\sin (\theta/2)}{\bar{\theta_{\max}}}}^2}^2}
+\end{equation}
+Siendo $\bar{\theta_{\max}}$ un parámetro de origen cuántico que suprime la probabilidad de dispersión hacia atrás, siendo solo significativa para $0<\theta<\theta_{\max}<\pi$. Toma el valor:
+
+\begin{equation}
+    \bar{\theta}_{\max} = \frac{\hbar}{p R} = \frac{\hbar }{R_0 \sqrt[3]{A} \sqrt{E_K (E_K+Mc^2)}}   \label{Ec:02-tehtamax}
+\end{equation}
+Ilustra las fluctuaciones transversales que impiden la localización de la hipérbola clásica hacia atrás. 
+
 
 \section{Dispersión de Mott} 
 
+La dispersión de Mott tiene básicamente 3 correcciones: la correción relativista, es decir, la correción que se hace a la energía y momento cuando partícula tiene una energía cinética inicial de entorno la masa de la partícula; la correción por el espín (para partículas muy relativistas) y la corrección por el retroceso del núcleo (que se da cuando la partícula no tiene una gran masa respecto la de la partícula incidnete). En el marco de la física médica estas tres son suficientes. 
+
 \subsection{Correcciones relativistas}
 
-\subsection{Correcciones por espín del electrón}
+La correción relativista (aunque no ultrarrelativista) implica el simple intercambio de  $2E_K = p v = m \gamma \beta^2  c^2$, es decir, multiplicar por $\gamma$: 
+
+\begin{equation}
+    D_{n-N}  = \pqty{\frac{zZe^2}{4\pi\varepsilon_0}} \frac{1}{\frac{1}{2}m_n \gamma c^2 \beta^2}
+\end{equation}
+Aunque ahora $D_{n-N}$ no se llama distancia de máxima aproximación, sino \textit{distancia característica efectiva.}
+
+
+\subsection{Correcciones por espín}
+
+La correción por el espín está relacionada con la \textit{helicidad} $h$, que se define como la proyección del momento sobre el espín: 
+
+\begin{equation*}
+    h = \frac{\sn \cdot \pn}{|\sn||\pn|}
+\end{equation*}
+Este se conserva edebido a la forma de los espinores en el sistema centro de masas cuando tenemos partículas ultrarrelativistas. Un intercambio de dirección del momento sin modificar también la dirección del espín implicaría que se violaría paridad, lo que no puede ocurrir. Esto es lo que expresa el factor: 
+
+\begin{equation}
+    f_{\text{espin}} = 1 - \beta^2 \sin^2 (\theta/2) \to \frac{1}{2} \pqty{1+\cos \theta}
+\end{equation}
+tal que: 
+
+\begin{equation}
+    \dv{\sigma_{\text{Mott}}}{\Omega} =  \dv{\sigma_{\Ruth}}{\Omega}  f_{\text{espin}}
+\end{equation}
+aunque aún queda una corrección. 
+
+
 
 \subsection{Correcciones por retroceso del núcleo}
 
+La correción por retroceso del núcleo está relacionada con la asunción de que el núcleo tiene una masa infinita, por lo que no adquire momento y la colisión es totalmente elástica. Sin embargo, si hay un momento transferido $\Delta p$ le imprime cierta energía cinética al núcleo: $\Delta E = {\frac{\pqty{\Delta p}^2}{2M}} = E_K'-E_K$, tal que $p_f\neq p_i$. Como hemos visto, ahora tenemos que tener en cuenta el factor $p'/p$ en la expresión de la sección eficaz, debido al cambio en el espacio de fases, tal que
+
+\begin{equation}
+    \dv{\sigma_{\text{Mott}}}{\Omega} = f_{\text{espin}}f_{\text{retroceso}} \dv{\sigma_{\Ruth}}{\Omega}  
+\end{equation}
+siendo 
+
+\begin{equation}
+    f_{\text{retroceso}} = \frac{p'}{p} 
+\end{equation}
+que en el caso relativista: 
+
+\begin{equation}
+    f_{\text{retroceso}} = \frac{p'}{p}  \approx  \frac{E_K'}{E_K}    
+\end{equation}
+Veamos como se llegan a ellas: 
+
+\begin{equation}
+    E_K' = E_K - \Delta E \quad E_K^2 = p^2 c^2 + m_e^2 c^4 \quad \Delta E = {\frac{\pqty{\Delta p}^2}{2M}} \approx \frac{1}{2M} 4 p^2 \sin^2 (\theta/2) = \frac{E_K^2-m_e^2c^4}{2Mc^2} 2 \sin^2 (\theta/2)
+\end{equation}
+donde hemos usado que $\Delta p^2 = 4 p^2 \sin^2 (\theta/2)$. Esto nos lleva a que:
+
+\begin{equation*}
+    \Delta E \approx \frac{E_K^2}{Mc^2} \sin^2 (\theta /2) \Longrightarrow
+\end{equation*}
+\begin{equation} E_K ' = E_K  \pqty{1 - \frac{E_K}{Mc^2} 2 \sin^2 (\theta/2)} = E_K \pqty{1 - \frac{E_K}{Mc^2} (1  - \cos^2 (\theta) )} \approx \frac{1}{1+\pqty{\frac{E_K}{Mc^2} (1  - \cos^2 (\theta) )}}
+\end{equation}
+y, consecuentemente, a que el factor de correción por retroceso sea
+
+\begin{equation}
+    f_{\text{retroceso}}  = \frac{1}{1+\pqty{\frac{E_K}{Mc^2} (1  - \cos^2 (\theta) )}}
+\end{equation}
+
+
 \subsection{Correcciones por factor de forma nuclear}
 
-\section{Poder de frenado másico de partículas cargadas en la materia}
+El factor de forma nuclear se relaciona con la densidad de carga (distribución de carga) dentro del núcleo, tal que $f(k)$ es :
+
+\begin{equation}
+    f(k) = \int_{\text{nucleo}} \rho (\rn) e^{-i \kn \cdot \rn} \D^3 \rn
+\end{equation}
+tal que la sección eficaz experimental real: 
+
+\begin{equation}
+     \dv{\sigma_{\text{exp}}}{\Omega} =  |f_{k}|^2 \dv{\sigma_{\text{Mott}}}{\Omega}
+\end{equation}
+
+\section{Dispersiones individuales}
+ 
+La mayor parte e las interacciones de las partículas y la materia se producen como colisiones elásticas de Coulomb con los átomos. Las colisiones o bien pueden ser con los electrones orbitales de los átomos o con el núcleo. En cualquiera de los casos, la trayectoria de las partículas es una hipérbola, aunque en función del signo relativo tendremos que el foco será interior (atractivo) o exterior (repulsivo).
+
+La sección eficaz individual puede escribirse, cuando el ángulo es muy pequeño $(\theta \ll 1)$, cómo: 
+
+\begin{equation}
+    \dv{\sigma}{\Omega} = \frac{D_{ab}^2}{\pqty{\theta^2 + \theta_{\min}^2}^2}
+\end{equation}
+Este ángulo mínimo ya sabemos de donde procede: del apantallamiento de Coulomb de los electrones en los orbitales, y cómo se puede calcular también lo sabemos, dependiendo únicamente de la energía inicial de la partícula, de la carga de la partícula incidente, y de la carga y masa del blanco. En función de $a$ y $b$, esto es, del blanco y partícula incidente, también dependerá  la expresión de $D_{ab}$, tal y como veremos en el siguiente apartado.
+
+\subsection{Clasificación de las colisiones elásticas con la materia}
+
+Aquí podemos ver que principalmente en función de la masa de la partícula (y por ende, de si es relativista o no) tendremos una expresión u otra de la distancia de máxima aproximación/distancia 
+
+\begin{itemize}
+    \item Por ejemplo un ion pesado o protón frente a un núcleo. En este caso no suele ser relativista, por lo que la expresión correcta sería
+    \begin{equation}
+            D_{\alpha-N} = \frac{zZe^2}{4\pi \varepsilon_0} \frac{2}{p_\alpha v_\alpha }
+    \end{equation}
+    aunque si llegara a ser relativista $p_{\alpha} = m_{\alpha} \gamma_{\alpha} \beta_{\alpha} \beta_{\alpha} c$. 
+    \item Cuando hacemos la colisión electrón-núcleo podemos suponer que es siempre relativista (y $z=1$)
+    \begin{equation}
+            D_{e-N} = \frac{Ze^2}{4\pi \varepsilon_0} \frac{2}{ m_{e} \gamma_{e} \beta_{e}^2 c^2 }
+    \end{equation}
+    \item Cuando hacemos electrón-electrón orbital: 
+    \begin{equation}
+            D_{e-e} = \frac{e^2}{4\pi \varepsilon_0} \frac{2}{p_\alpha v_\alpha }
+    \end{equation}
+    \item Finalmente, cuando hacemos electrón-átomo: 
+    \begin{equation}
+            D_{e-a} = \sqrt{D_{e-N}^2+ZD_{e-e}^2} = \frac{\sqrt{Z(Z+1)}e^2}{4\pi \varepsilon_0} \frac{2}{\gamma_e m_e \beta^2_e c^2 }
+    \end{equation}
+\end{itemize}
+
+\subsection{Ángulos de dispersión mínimo y máximo}
+
+Ya hemos revelado como se originan tanto el ángulo mínimo como el ángulo máximo (desviación de la ley de Coulonmb de su carácter puntual), y se corresponden con parámetro de impacto $b \to \infty$ y $b \to 0$ (al final cuando va hacia atrás $b=0$, dispersión frontal, y vicerversa). Recordando la \cref{Ec:02-thetamin} y \cref{Ec:02-tehtamax}, queda claro que el cociente entre $\bar{\theta}_{\max}$ y $\theta_{\min}$, tal que: 
+
+\begin{equation}
+    \frac{\bar{\theta}_{\max}}{\theta_{\min}} = \frac{a_F}{R_0 \sqrt[3]{A}} = \frac{a_0}{R_0} \frac{1}{\sqrt[3]{AZ}} \label{Ec:02-CocienteAngulos}
+\end{equation}
+siendo $a_F$ el radio efectivo del átomo, $a_0$ el radio de Bohr,  y $R_0 \approx 1.2$ fm, que es el tamaño del núcleo de hidrógeno. El comportamiento respecto la energía tanto de $\bar{\theta}_{\max}$ y $\theta_{\min}$ es parecido, ya que ambos dependen del mismo parámetro $p_i$ en el denominador.
+Cuando $\bar{\theta_{\max}}>\pi$, se asume que $\theta_{\max} = \pi$, esto es: 
+
+\begin{equation}
+    \theta_{\max} = \max \Bqty{\bar{\theta}_{\max}, \pi}
+\end{equation}
+
+\subsection{Ángulo cuadrático promedio}
+
+La sección eficaz total es un parámetro muy importante, ya que nos permite hallar cuantas interacciones entre las partículas de un haz incidente y las del blanco material ocurren. Veamos que, si $\theta \ll 1$: 
+
+\begin{equation*}
+    \sigma = \int \dv{\sigma}{\Omega} \D \Omega = 2 \pi D \int_0^{\bar{\theta}_{\max}} \frac{\theta   \D \theta}{\pqty{\theta^2 + \theta_{\min}^2}^2} =  2 \pi D \bqty{-\frac{1}{2} \frac{1}{\theta^2 + \theta_{\min}^2}}_{0}^{\theta_{\max}}
+\end{equation*}
+de lo que se deduce 
+\begin{equation}
+    \sigma =\pi D^2 \frac{1}{\theta^2_{\min}} \bqty{1-\frac{1}{1+(\theta_{\max}/\theta_{\min})^2}} \approx \frac{\pi D^2}{\theta_{\min}^2}
+\end{equation}
+(donde hemos usado $\cos \theta \approx \theta$). Ahora, lo sguiente es calcular el \textbf{ángulo cuadrático promedio}, ya que es una medida que nos permite hallar luego el ángulo cuadrático medio para dispersiones múltiples. 
+
+\begin{equation}
+    \bar{\theta}^2 = \frac{\int_{0}^{\theta_{\max}} \theta^2  \dv{\sigma}{\Omega} \D \Omega}{\int_{0}^{\theta_{\max}} \dv{\sigma}{\Omega} \D \Omega} = \frac{2\pi D^2}{\sigma} \int_{0}^{\theta_{\max}} \frac{\theta^3 \D \theta}{(\theta^2 + \theta_{\min}^2)^2}
+\end{equation}
+pudiendo obtener:
+
+\begin{equation}
+    \bar{\theta}^2 = \theta_{\min}^2 \bqty{\ln \pqty{1+\frac{\theta^2_{\max}}{\theta^2_{\min}}} - \frac{1}{1+(\theta_{\max}/\theta_{\omega})^2}}  
+\end{equation}
+dado que $ \frac{\bar{\theta}_{\max}}{\theta_{\min}} \propto a_0 /R_0 \gg 1$, podemos asumir la aproximación: 
+
+\begin{equation}
+    \bar{\theta}^2 = \theta_{\min}^2 \ln \pqty{\frac{\theta_{\max}^2}{\theta_{\min}^2}}  \label{Ec:02-AnguloCuadraticoPromedio}
+\end{equation}
+
+
+\section{Dispersiones múltiples}
+
+Las dispersiones múltiples, a diferencia de las dispersiones individuales, están gobernadas (o mejor dicho, están parametrizadas) en función de: la longitud de radiación $X_0$, el ángulo cuadrático promedio múltiple $\overline{\Theta^2}$, y el poder de dispersión angular másico $T/\rho$. 
+
+\subsection{Ángulo Cuadrático Medio}
+
+Cuando un haz paralelo de partículas incide una lámina, siempre y cuando todos los ángulso de deflexión sean pequeños, podemos obtener un ángulo de desviación cuadrático promedio $\overline{\Theta^2}$. El teorema del límite central (que básicamente habla de como la suma de variables aleatorias procedentes de una misma distribución nos lleva a una gaussiana) nos asegura que 
+
+\begin{equation}
+    \overline{\Theta^2} = n \bar{\theta}^2 
+\end{equation} 
+siendo $n$ el número de colisiones de la partícula (para que esto se cumpla $n>20$).  Vamos a obtener entonces cual es el número de colisiones (promedio) en el absorbente de grosor $t$. Si $\sigma$ es la sección eficaz total
+
+\begin{equation}
+    n = \frac{N_a}{V} \sigma t = \rho \frac{N_A}{A} \sigma t \approx \pi \rho \frac{N_A}{A} \frac{D^2}{\theta^2_{\min}} t 
+\end{equation}
+que si lo juntamos con la \cref{Ec:02-AnguloCuadraticoPromedio} tenemos entonces:
+
+\begin{equation}
+    \overline{\Theta^2} = \pi \rho \frac{N_A}{A} D^2 t \ln \pqty{\frac{\theta_{\max}^2}{\theta_{\min}^2}} 
+\end{equation}
+ahora podemos aplicar la ecuación \cref{Ec:02-CocienteDeAngulos} para poder reexpresar $\overline{\Theta^2}$ en función de $Z$ y $A$. 
+
+\subsection{Poder de dispersión angular másico}
+
+\subsection{Longitud de radiación}
+
+\section{Energía trasferida en choque relativista}
+
+\section{Poder de frenado másico}
+
+\subsection{Definición}
+
+\subsection{Poder de frenado másico por radiación}
+
+
+\subsection{Poder de frenado másico por colisión}
+
+
+\subsection{Teoría de Bethe del frenado másico por colisión}
+
+\subsection{Correciones de Bethe y extensión al electrón y positrón}
+
+\subsection{Balance entre colisión y radiación: energía crítica}
+
 
 \section{El rango másico $R_{CSDA}$}
-%\section{Belleza}
 
-\begin{Ejemplo}{mi padre quiere un ejemplo}
-
-    Aqui se pone lo de abajo
-    
-\end{Ejemplo}
 
 
 
