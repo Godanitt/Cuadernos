@@ -474,6 +474,7 @@ Al atraversar un medio las partículas cargadas experimentan deflexiones respect
         \Delta E_{\max} = \frac{2(\gamma+1)m_1m_2}{m_1^2 + m_2^2 + 2 \gamma m_1 m_2} E_K^i \qquad 
         \Delta p_{\max} = \frac{2(m_1\gamma+m_2)m_2}{m_1^2 + m_2^2 + 2 \gamma m_1 m_2} p_i 
     \end{equation}
+    Véase la solución en \cite{Montaruli201x_Exercise4}.
 \end{Ejercicio}
 
 \begin{Ejercicio}{Transferencia de momento y energía por partículas cargadas} \label{Ej:02.03}
@@ -507,16 +508,32 @@ Potencial de ionización / excitación $I$ (eV) & 19 & 166 & 322 & 470 & 790 & 7
     \item Suponiendo un protón incidente con una energía cinética de $E_K=10$ MeV, tal que $E_K\ll m_p c^2$ y por tanto el momento inicial aproximable a la relación clásica:
 
     \begin{equation*}
-        p_i \approx \sqrt{2 m_p E_K} 
+        p_i \approx \sqrt{2 m_p E_K} =  \qquad v_i = \frac{p_i}{m_p} = 
     \end{equation*}
-    El momento máximo y la energía máxima transferibles, dado que estamos en una colisión no relativista, vienen dados por: 
+    El momento máximo y la energía máxima transferibles, dado que estamos en una colisión no relativista, vienen dados por (básicamente $\gamma \to 1$ en las ecuaciones ya vistas): 
 
     \begin{equation*}
         \Delta E_{\max} \approx \frac{4m_p m_N}{m_p^2 + m_N^2 + 2m_p m_N} E_K^i \qquad 
         \Delta p_{\max} \approx \frac{2(m_p+m_N)m_N}{m_p^2 + m_N^2 + 2m_p m_N} p_i
     \end{equation*}
-    donde $m_N$ es la masa del blanco. 
+    donde $m_N$ es la masa del blanco. Esta expresión proviene de la conservación de la energía-momento relativista, es decir, es la máxima energía transferible en una interacción relativista: energías mas altas no verificarían la conservación del cuadrimomento. La mínima transferencia de energía se da cuando el protón interacciona con la energía suficiente para romper el enlace del electró con el átomo. La manera en la que se tabula esta es directamente relacionado con el potencial de ionización \cite{Brau2014}, tal que 
 
+    \begin{equation*}
+        \Delta E_{\min} \approx I \qquad \Delta p_{\min}^2 \approx \frac{1}{c} \sqrt{(\Delta E_{\min}+m_ec^2)^2-m^2 c^4}
+    \end{equation*}
+    Con estos parámetros definidos, ya podemos hacer las tablas: 
+    
+    \item Ahora solo quedaría sustituir los $\Delta E_{\min}$ y $\Delta E_{\max}$ en las definción de $b(\Delta E)$, tal que aplicando la ecuación 
+     \[
+        b = \frac{2 Z r_e m_e c^2}{v \Delta p} = \frac{Z r_e (v/c)}{\sqrt{2 m_e c^2 / \Delta E}}
+    \]
+    añadiendo las dos últimas filas. Por definición $b_{\max} (\Delta E_{\min})$ y $b_{\min} (\Delta E_{\max})$.  
+    
+    Nos queda responder a las preguntas siguientes.¿Es posible la colisión entre una partícula cargada pesada y un electrón orbital del absorbente, estando el parámetro de impacto fuera del rango $b \in (b_{\min}, b_{\max})$? Veamos. 
+    \begin{itemize}
+        \item Veamos el caso para $b>b_{\max}$. Cuando esto ocurre tenemos que la transferencia de energía es mínima. ¿Se puede producir una transferencia de energía por debajo de $I$? La respuesta es que un protón (o cualquier otra partícula) no puede interaccionar con un \textit{electrón orbital} si no es capaz de darle más energía que la de ligadura (al menos en una colisión individual). Para poder aportar esta energía mínima la interacción no puede 
+        \item El caso para $b>b_{\min}$, que sucede para la transferencia de máxima energía, también es relevante. 
+    \end{itemize}
 
 \end{enumerate}
 
@@ -536,8 +553,7 @@ S_\text{col} = 4\pi N_e \left( \frac{e^2}{4\pi \epsilon_0} \right)^2
 
 donde $N_e \equiv ZN_A/A$ es el número de \emph{electrones por gramo} del medio absorbente.  
 
-Para focalizar y separar adecuadamente las dependencias características de $S_\text{col}$ con los 
-parámetros de la partícula y del medio, responde razonadamente a las preguntas siguientes:
+Para focalizar y separar adecuadamente las dependencias características de $S_\text{col}$ con los  parámetros de la partícula y del medio, responde razonadamente a las preguntas siguientes:
 
 \begin{enumerate}[label=\alph*)]
 
