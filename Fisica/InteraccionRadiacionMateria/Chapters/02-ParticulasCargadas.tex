@@ -268,7 +268,7 @@ Aquí podemos ver que principalmente en función de la masa de la partícula (y 
 Ya hemos revelado como se originan tanto el ángulo mínimo como el ángulo máximo (desviación de la ley de Coulonmb de su carácter puntual), y se corresponden con parámetro de impacto $b \to \infty$ y $b \to 0$ (al final cuando va hacia atrás $b=0$, dispersión frontal, y vicerversa). Recordando la \cref{Ec:02-thetamin} y \cref{Ec:02-tehtamax}, queda claro que el cociente entre $\bar{\theta}_{\max}$ y $\theta_{\min}$, tal que: 
 
 \begin{equation}
-    \frac{\bar{\theta}_{\max}}{\theta_{\min}} = \frac{a_F}{R_0 \sqrt[3]{A}} = \frac{a_0}{R_0} \frac{1}{\sqrt[3]{AZ}} \label{Ec:02-CocienteAngulos}
+    \frac{\bar{\theta}_{\max}}{\theta_{\min}} = \frac{a_F}{R_0 \sqrt[3]{A}} = \frac{a_0}{R_0} \frac{1}{\sqrt[3]{AZ}}  =  \frac{0.423 \times 10^5}{(AZ)^{1/3}} \label{Ec:02-CocienteDeAngulos}
 \end{equation}
 siendo $a_F$ el radio efectivo del átomo, $a_0$ el radio de Bohr,  y $R_0 \approx 1.2$ fm, que es el tamaño del núcleo de hidrógeno. El comportamiento respecto la energía tanto de $\bar{\theta}_{\max}$ y $\theta_{\min}$ es parecido, ya que ambos dependen del mismo parámetro $p_i$ en el denominador.
 Cuando $\bar{\theta_{\max}}>\pi$, se asume que $\theta_{\max} = \pi$, esto es: 
@@ -301,9 +301,13 @@ pudiendo obtener:
 dado que $ \frac{\bar{\theta}_{\max}}{\theta_{\min}} \propto a_0 /R_0 \gg 1$, podemos asumir la aproximación: 
 
 \begin{equation}
-    \bar{\theta}^2 = \theta_{\min}^2 \ln \pqty{\frac{\theta_{\max}^2}{\theta_{\min}^2}}  \label{Ec:02-AnguloCuadraticoPromedio}
+    \bar{\theta}^2 = \theta_{\min}^2 \ln \pqty{\frac{\theta_{\max}^2}{\theta_{\min}^2}}    \label{Ec:02-AnguloCuadraticoPromedio}
 \end{equation}
+Si sustituimos $A=2Z$ (y suponemos que $\theta \ll 1, \theta_{\min} \ll \theta_{\max}$ y que $\sigma = \pi D^2 / \theta_{\min}^2$), entonces: 
 
+\begin{equation}
+    \bar{\theta}^2 \approx  4 \theta_{\min}^2 \ln \bqty{183 Z^{-1/3}}  \label{Ec:02-AnguloCuadraticoPromedio2}
+\end{equation}
 
 \section{Dispersiones múltiples}
 
@@ -326,15 +330,103 @@ que si lo juntamos con la \cref{Ec:02-AnguloCuadraticoPromedio} tenemos entonces
 \begin{equation}
     \overline{\Theta^2} = \pi \rho \frac{N_A}{A} D^2 t \ln \pqty{\frac{\theta_{\max}^2}{\theta_{\min}^2}} 
 \end{equation}
-ahora podemos aplicar la ecuación \cref{Ec:02-CocienteDeAngulos} para poder reexpresar $\overline{\Theta^2}$ en función de $Z$ y $A$. 
+ahora podemos aplicar la ecuación \cref{Ec:02-CocienteDeAngulos} para poder reexpresar $\overline{\Theta^2}$ en función de $Z$ y $A$, tal que así 
+
+\begin{equation}
+    \overline{\Theta^2} = \pi \rho \frac{N_A}{A} D^2 t \bqty{2 \ln \pqty{\frac{a_0}{R_0} \frac{1}{\sqrt[3]{AZ}}}}. 
+\end{equation}
+que, en función de la partícula incidente y del blanco, siempre podremos aproximar (bien podemos suponer $A \approx 2 Z$, un valor para $a_0$ y $R_0$...). La aproximación usando esto último es (\cref{Ec:02-AnguloCuadraticoPromedio2}) obtenida es: 
+
+\begin{equation}
+    \overline{\Theta^2} = 4 \pi \rho D^2 t \frac{N_A}{A} \ln \pqty{183 Z^{-1/3}}
+\end{equation}
+
 
 \subsection{Poder de dispersión angular másico}
 
+La siguiente definción de interés es el \textbf{poder de dispersión angular másico}, qeu se define como
+
+\begin{equation}
+    \frac{T}{\rho} = \frac{\overline{\Theta^2}}{\rho t}
+\end{equation}
+con unidades $[\unit{rad^2 cm^2 /g}]$ ($T [\unit{rad^2 cm^{-1}}]$). 
+
+
 \subsection{Longitud de radiación}
+
+La longitud de radiación $X_0$ se define como 
+
+\begin{equation}
+    \frac{1}{X_0} = 4 \alpha \frac{N_A}{A} Z (Z +1) r_e^2 \ln \pqty{\frac{183}{Z^{1/3}}}
+\end{equation}
+que es la expresión que surge de \cref{Ec:02-AnguloCuadraticoPromedio2} entre otras. Esta variable representa la distancia promedio que una partícula cargada relativista viaja en el medio para que su enerǵia se reduzca un factor $1/e$ (al 36.8 \%) respecto su valor inicial. También representa 7/8 del camino libre medio necesario para que se emita un par $e^+e^-$. Puede ser una unidad másica si dividimos por la densidad ($\unit{cm^2}/g$), aunque el significado físico se obtiene cuando es una distancia. 
+
 
 \section{Energía trasferida en choque relativista}
 
+El choque frontar $b=0$ entre un proyectil de masa en reposo $m_1$ y un blanco de masa en reposo $m_2$ produce la máxima energía de trasferencia y el máximo momento trasferido. Para calcularlo tenemos que aplicar las ecuaciones de la \textit{conservación del momento y energía relativista} $p^{\mu}_i = p^{\mu}_f$, tal que 
+\begin{equation}
+    p_i^\mu = (\gamma m_1c^2+ m_2c^2, \pn_1) \qquad 
+    p_f^\mu = (\gamma_1 m_1c^2+ \gamma_2 m_2c^2, \pn_1' + \pn_2')
+\end{equation}
+De aquí se deducen dos expresiones, la conservación de la energía (primer elemento del cuadrimomento)
+\begin{equation}
+    \gamma m_1 c^2 + m_2 c^2 = \gamma_1 m_1 c^2 + \gamma_2 m_2 c^2
+\end{equation}
+y la conservación del momento: 
+\begin{equation}
+    \pn_1 =  \pn_1' + \pn_2 '
+\end{equation}
+donde los momentos primados son los momentos tras la colisión. Llamando a $E_{ki}$ la energía cinética inicial ($E_{ki}=(\gamma-1)m_1c^2$) y a $\Delta E$ la trasferencia de energía (que es básicamene la enerǵia cinética de la partícula 2, tal que $\Delta E = (\gamma-1)m_2 c^2)$ podemos deducir no trivialmente la siguiente relación: 
+
+\begin{equation}
+    \Delta E_{\max} = \frac{2(\gamma+1)m_1m_2}{m_1^2 + m_2^2 + 2 \gamma m_1 m_2} E_K^i = \frac{2 m_2 c^2 \beta^2 \gamma^2}{1+ 2 \gamma \frac{m_2}{m_1} + \pqty{\frac{m_2}{m_1} }^2}
+\end{equation}
+la segunda expresión es la que más podemos encontrar en la literatura, como por ejemplo en la pág. 3 \cite{PDG2020_Passage}. En el ejercicio \ref{Ej:02.02} proponemos llegar a estas expresiones con las definiciones dadas aquí. Luego además tenemos la máxima transferencia de momento: 
+
+\begin{equation}
+    \Delta p_{\max} = \frac{2(m_1\gamma+m_2)m_2}{m_1^2 + m_2^2 + 2 \gamma m_1 m_2} p_i 
+\end{equation}
+Lógicamente se suelen usar aproximaciones en función de los casos que facilitan las expresiones analíticas. Los casos más generales son: 
+
+\begin{itemize}
+    \item Caso $m_2 \ll m_1$. En este caso, sencillamente aplicamos la expresión 
+    \begin{equation}    
+        \Delta E_{\max} =\frac{2 m_2 c^2 \beta^2 \gamma^2}{1+ 2 \gamma \frac{m_2}{m_1} + \pqty{\frac{m_2}{m_1} }^2} \approx  2 m_2 c^2 \beta^2 \gamma^2 \approx 2 m_2 c^2  \pqty{\frac{\beta^2}{1-\beta^2}}
+    \end{equation}
+    y si queremos obtener el caso no relativista ($\beta \to 0$) tenemos que
+    \begin{equation}
+        \Delta E_{\max} \approx 2 m_2 v^2 
+    \end{equation}
+    siendo $v$ la velocidad inicial de la partícula incidente ($v=\beta c$).
+    \item Caso $m_2 \gg m_1$
+    \begin{equation}
+        \Delta E  =\frac{2 m_2 c^2 \beta^2 \gamma^2}{1+ 2 \gamma \frac{m_2}{m_1} + \pqty{\frac{m_2}{m_1} }^2}  \approx   \frac{2m_1c^2 \beta^2 \gamma^2}{2\gamma + \frac{m_2}{m_1}} \pqty{\frac{\beta^2}{1-\beta^2}}
+    \end{equation}
+    de nuevo, si nos alejamos del gaso relativista $\gamma \to 1, \beta \to 0$, tenemos:
+    \begin{equation}
+        \Delta E = 2 \frac{m_1^2}{m_2} v^2  = 4 \frac{m_1}{m_2} E_k
+    \end{equation}
+    \item Caso $m_2 = m_1$ y además partículas distinguibles.
+    \begin{equation}
+        \Delta E = \frac{2(\gamma+1)m_1m_2}{m_1^2 + m_2^2 + 2 \gamma m_1 m_2} E_K^i = E_K^i
+    \end{equation}
+    \item Caso $m_2 = m_1$ y además partículas indénticas.
+    \begin{equation}
+        \Delta E = \frac{E_K^i}{2} 
+    \end{equation}
+    esto se debe a que al ser las dos posibles partículas incidentes (son indistiguibles) debemos reducir la expresión a la mitad (mecánica estadística).
+\end{itemize}
+Existe un parámetro, llamado \textbf{fracción de energía máxima trnasferida} 
+
+\begin{equation}
+    \eta = \pqty{\frac{\Delta E_{\max}}{E_K}} 
+\end{equation}
+A valores muy altos de $E_K$ se transifere toda la energía del proyectil al blanco. En el caso de partículas de la misma y distinguibles la energía transferida es del 100\%, y si son indistiguibles del 50\%.
+
 \section{Poder de frenado másico}
+
+
 
 \subsection{Definición}
 
@@ -353,6 +445,11 @@ ahora podemos aplicar la ecuación \cref{Ec:02-CocienteDeAngulos} para poder ree
 
 \section{El rango másico $R_{CSDA}$}
 
+Al atraversar un medio las partículas cargadas experimentan deflexiones respecto a su camino original, debido a las colisiones tanto ionizantes como elásticas. Estos efectos son mucho más pronunciados para electrones, que además sufrer colisiones radiativas con emisión de fotones. Para describir la \textit{longitud promedio que la partícula penetra en el absorbente} hasta pararse se usa el \textbf{rango en la aproximación de frenado continuo} $R_{CSDA}$, tal que 
+
+\begin{equation}
+    R_{CSDA} \equiv \int_{0}^{E_K^0} \frac{\D E }{S_{tot}(E) } \qquad [\unit{g \ cm^{-2}}]
+\end{equation}
 
 
 
@@ -362,7 +459,7 @@ ahora podemos aplicar la ecuación \cref{Ec:02-CocienteDeAngulos} para poder ree
 
 
 
-\begin{Ejercicio}{Sección eficaz de Rutherford con modelo atómico de Fermi} \label{Ej:02.02}
+\begin{Ejercicio}{Sección eficaz de Rutherford con modelo atómico de Fermi} \label{Ej:02.01}
     Obten la expresión de la sección de eficaz de Rutherford, ahora con el potencial del modelo atómico estadístico de Fermi, usando la aproximación de Born con ondas planas incidentes y salientes
 
     \begin{equation*}
@@ -371,9 +468,59 @@ ahora podemos aplicar la ecuación \cref{Ec:02-CocienteDeAngulos} para poder ree
     y luego llegar a la expresión final cuando $\theta\ll 1$: 
 \end{Ejercicio}
 
+\begin{Ejercicio}{$\Delta E_{\max}$ y $\Delta p_{\max}$ en colisión con blanco fijo.} \label{Ej:02.02}
+    A partir de la conservación del cuadrimomento $p^{\mu}_i = p^{\mu}_f$ encuentra la expresión de máxima trasnferencia de la energía y del momento $\Delta E_{\max}$ y $\Delta p_{\max}$. 
+    \begin{equation}
+        \Delta E_{\max} = \frac{2(\gamma+1)m_1m_2}{m_1^2 + m_2^2 + 2 \gamma m_1 m_2} E_K^i \qquad 
+        \Delta p_{\max} = \frac{2(m_1\gamma+m_2)m_2}{m_1^2 + m_2^2 + 2 \gamma m_1 m_2} p_i 
+    \end{equation}
+\end{Ejercicio}
+
+\begin{Ejercicio}{Transferencia de momento y energía por partículas cargadas} \label{Ej:02.03}
+
+Recuerda las relaciones obtenidas para la transferencia $\Delta p$ y $\Delta E$ en una colisión a través de la ley de Coulomb entre una partícula pesada de masa $M$ y carga $+Ze$ y un electrón orbital (carga $-e$ y masa $m_e$), con un valor fijo del parámetro de impacto $b$, teniendo en cuenta las leyes de conservación de $p$, $E$, y del momento angular $L$. En dicha colisión clásica y no relativista, el electrón orbital se sitúa en el foco interno de una hipérbola. Si la partícula cargada es pesada tenemos $M \gg m_e$ y el ángulo de dispersión es nulo $\theta \approx 0$, entonces:
+
+\[
+\Delta p(b) = \frac{2 Z r_e m_e c^2}{v b}, \qquad 
+\Delta E(b) = \frac{(\Delta p)^2}{2 m_e} = \frac{2 Z^2 r_e^2 m_e c^2}{(v/c)^2 b^2}, \qquad
+b = \frac{2 Z r_e m_e c^2}{v \Delta p} = \frac{Z r_e (v/c)}{\sqrt{2 m_e c^2 / \Delta E}}
+\]
+
+\begin{enumerate}[label=\alph*)]
+\item Tanto $\Delta p$ como $\Delta E$ tienen un valor mínimo y un valor máximo. Recuerda cuál es su fundamento, y determina ambos en cada caso $\Delta p_{\min,\max}$ (en KeV/c) y $\Delta E_{\min,\max}$ (en eV), para un \emph{protón} incidente de energía cinética $E_K = 10$ MeV, añadiendo 4 filas más al Cuadro 3, cada una con los 7 elementos.
+
+\item  Debido a su dependencia con el parámetro de impacto $b$, tenemos también un valor mínimo y máximo de éste. Añade al Cuadro 3 los valores de $b_{\min}$ y $b_{\max}$ (en fm) en dos nuevas filas. ¿Es posible la colisión entre una partícula cargada pesada y un electrón orbital del absorbente, estando el parámetro de impacto fuera del rango $b \in (b_{\min}, b_{\max})$? Discute por separado los casos $b > b_{\max}$ y $b < b_{\min}$, intentando caracterizarlos físicamente, si crees que aún son posibles. Aclara el marco de la aproximación realizada en la derivación de las fórmulas anteriores, especialmente para el segundo caso. ¿Son siempre elásticas las colisiones del proyectil con los \emph{núcleos atómicos}? \\[1em]
+\end{enumerate}
+
+\begin{center}
+\begin{tabular}{lcccccccccccccccccccccccccccc}
+\toprule & H & Al & Cu & Ag & Au & Tl & Pb \\
+\midrule
+Número atómico $Z$ & 1 & 13 & 29 & 47 & 79 & 81 & 82 \\
+Potencial de ionización / excitación $I$ (eV) & 19 & 166 & 322 & 470 & 790 & 727 & 823 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{Ejercicio}
+
+\begin{enumerate}[label=\alph*)]
+    \item Suponiendo un protón incidente con una energía cinética de $E_K=10$ MeV, tal que $E_K\ll m_p c^2$ y por tanto el momento inicial aproximable a la relación clásica:
+
+    \begin{equation*}
+        p_i \approx \sqrt{2 m_p E_K} 
+    \end{equation*}
+    El momento máximo y la energía máxima transferibles, dado que estamos en una colisión no relativista, vienen dados por: 
+
+    \begin{equation*}
+        \Delta E_{\max} \approx \frac{4m_p m_N}{m_p^2 + m_N^2 + 2m_p m_N} E_K^i \qquad 
+        \Delta p_{\max} \approx \frac{2(m_p+m_N)m_N}{m_p^2 + m_N^2 + 2m_p m_N} p_i
+    \end{equation*}
+    donde $m_N$ es la masa del blanco. 
 
 
-\begin{Ejercicio}{Dependencias genéricas de la fórmula de Bethe con $Z, M, \beta$ y $z$} \label{Ej:02.05}
+\end{enumerate}
+
+\begin{Ejercicio}{Dependencias genéricas de la fórmula de Bethe con $Z, M, \beta$ y $z$} \label{Ej:02.04}
     
 
 Se ha visto que el poder de frenado másico $S_\text{col}$ de un medio absorbente $(Z,A)$ para una 
