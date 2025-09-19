@@ -532,7 +532,7 @@ Potencial de ionización / excitación $I$ (eV) & 19 & 166 & 322 & 470 & 790 & 7
     Nos queda responder a las preguntas siguientes.¿Es posible la colisión entre una partícula cargada pesada y un electrón orbital del absorbente, estando el parámetro de impacto fuera del rango $b \in (b_{\min}, b_{\max})$? Veamos. 
     \begin{itemize}
         \item Veamos el caso para $b>b_{\max}$. Cuando esto ocurre tenemos que la transferencia de energía es mínima. ¿Se puede producir una transferencia de energía por debajo de $I$? La respuesta es que un protón (o cualquier otra partícula) no puede interaccionar con un \textit{electrón orbital} si no es capaz de darle más energía que la de ligadura (al menos en una colisión individual). Para poder aportar esta energía mínima la interacción no puede 
-        \item El caso para $b>b_{\min}$, que sucede para la transferencia de máxima energía, también es relevante. 
+        \item El caso para $b>b_{\min}$, que sucede para la transferencia de máxima energía, es bastante curioso. Para que $b=0$ la única condición, segń las ecuaciones, es que $\Delta p \to \infty$, lo cual es imposile, ya que en caso de interacción hay una transferencia de momento máxima limitada por las leyes de conservación fundamentales de la física. 
     \end{itemize}
 
 \end{enumerate}
@@ -540,20 +540,20 @@ Potencial de ionización / excitación $I$ (eV) & 19 & 166 & 322 & 470 & 790 & 7
 \begin{Ejercicio}{Dependencias genéricas de la fórmula de Bethe con $Z, M, \beta$ y $z$} \label{Ej:02.04}
     
 
-Se ha visto que el poder de frenado másico $S_\text{col}$ de un medio absorbente $(Z,A)$ para una 
+Se ha visto que el poder de frenado másico $S_\text{\text{col}}$ de un medio absorbente $(Z,A)$ para una 
 partícula cargada $(z, M, \beta)$ viene dado por la fórmula cuántica y relativista de Bethe--Bloch, 
 reforzada con los factores de Fano $(C,\delta)$:
 
 \[
-S_\text{col} = 4\pi N_e \left( \frac{e^2}{4\pi \epsilon_0} \right)^2 
+S_\text{\text{col}} = 4\pi N_e \left( \frac{e^2}{4\pi \epsilon_0} \right)^2 
 \frac{z^2}{m_e c^2 \beta^2} 
 \left[ \ln \frac{2 m_e c^2}{I} + \ln \frac{\beta^2}{1 - \beta^2} - \beta^2 - \frac{C}{Z} - \delta \right]
-\equiv C_1 \frac{N_e z^2}{\beta^2} \, \bar{B}_\text{col}
+\equiv C_1 \frac{N_e z^2}{\beta^2} \, \bar{B}_\text{\text{col}}
 \]
 
 donde $N_e \equiv ZN_A/A$ es el número de \emph{electrones por gramo} del medio absorbente.  
 
-Para focalizar y separar adecuadamente las dependencias características de $S_\text{col}$ con los  parámetros de la partícula y del medio, responde razonadamente a las preguntas siguientes:
+Para focalizar y separar adecuadamente las dependencias características de $S_\text{\text{col}}$ con los  parámetros de la partícula y del medio, responde razonadamente a las preguntas siguientes:
 
 \begin{enumerate}[label=\alph*)]
 
@@ -566,27 +566,41 @@ Explica por qué son los electrones de la capa $K$ los más afectados en el tér
 \emph{distantes} (suaves) y por qué es negativa?  
 ¿Sabes, sin embargo, si dicha corrección es también importante en el límite ultrarrelativista para electrones y positrones?
 
-\item Observa que la dependencia en $Z$ de $S_\text{col}$ ocurre a través de dos vías distintas: 
+\item Observa que la dependencia en $Z$ de $S_\text{\text{col}}$ ocurre a través de dos vías distintas: 
 una \emph{directa} en $N_e$, y otra \emph{indirecta} a través de $I(Z)$.  
 Comenta separadamente sobre ellas.  
-¿Empujan ambas en la misma dirección de subir o bajar $S_\text{col}$?  
+¿Empujan ambas en la misma dirección de subir o bajar $S_\text{\text{col}}$?  
 ¿Por qué, pese a la gran diferencia de los potenciales de ionización (entre $I=19$ eV para H y $I\sim 900$ eV para el Uranio), la dependencia con $I(Z)$ es suave?
 
 \item ¿Puede decirse que, para una velocidad fija $\beta = v/c$ (o energía cinética fija $E_K$), 
-$S_\text{col}$ es \emph{independiente} de la masa del proyectil $M$?  
+$S_\text{\text{col}}$ es \emph{independiente} de la masa del proyectil $M$?  
 Comenta sobre esto.
 
-\item Analiza la dependencia de $S_\text{col}$ con $\beta$, señalando los términos específicos que 
+\item Analiza la dependencia de $S_\text{\text{col}}$ con $\beta$, señalando los términos específicos que 
 son decisivos en cada una de las \textbf{tres regiones}:  
 baja velocidad (con Fano), velocidad relativista intermedia, y velocidad ultrarrelativista.  
-Comenta sobre el aumento o disminución de $S_\text{col}$ con $E_K$ en cada caso.
+Comenta sobre el aumento o disminución de $S_\text{\text{col}}$ con $E_K$ en cada caso.
 
-\item ¿Cómo depende $S_\text{col}$ de la carga $z$ de la partícula incidente?  
+\item ¿Cómo depende $S_\text{\text{col}}$ de la carga $z$ de la partícula incidente?  
 ¿Existen también aquí dependencias indirectas?
 
 \end{enumerate}
-
 \end{Ejercicio}
+
+Las solución al ejercicio, apartado por apartado: 
+\begin{enumerate}[label=\alph*)]
+    \item Si, efecivamente, Bethe supuso que la velocidad de la partícula era muy superior al a velocidad de los electrones atómicos. Esto efectivamente puede entenderse como un sobreestimamiento de la capacidad de ionización, ya que una partícula puede ser que no tenga la energía suficiente para ionizar, puede que se supriman ciertas transiciones que $I$ está teniendo en cuenta. Las capas $K$ (más internas) son las que más suprimidas se encuentran, ya que son las que tienen energías de ligadura mas altas, y por tanto son más difíciles de ionizar. La corrección de las capas $K$ ya está incluido en ese $C/Z$, sin embargo otras capas cercanas no están (ahí es donde el sobreestimamiento aparece).
+    
+
+    \item Supongamos una partícula que entra en un medio. Las interacciones de colisiónes serán por Coulomb. En general podemos asumir que el medio es neutro, y por tanto que la partícula interacciona con todas las partículas a su alrededor. Sin embargo esto no es así, ya que si una partícula tiene una energía alta (su velocidad es grande) el campo eléctrico que produce se ``aplana'', i.e. tiene una componente transversal más fuerte que longitudinal (ya no es esféricamente simétrico). Esto induce un campo eléctrico fuerte capaz de generar dipolos a su paso, lo que polariza el medio, generando un campo eléctrico que apantalla a los electrones más alejados de la partícula, lo que disminuye su capacidad de interacción y por tanto disminuye el frenado. 
+    
+    En palabras del William R. Leo: ``The density effect arises from the fact that the electric field of the particle also tends  to polarize the atoms along its path. Because of this polarization, electrons far from the  path of the particle will be shielded from the full electric field intensity. Collisions with  these outer lying electrons will therefore contribute less to the total energy loss than  predicted by the Bethe-Bloch formula.'' \cite{Leo1994}.
+
+    Debería ser importante para $S_{\text{col}}$ para los $e^-$ y $e^+$, ya que $\delta$ depende únicamente del material y de la velocidad de la partícula incidente (los electrones y positrones suelen ser relativistas)., no de su masa ni de su carga. Sin embargo podría despreciarse, al menos tanto en cuanto en el poder de frenado total, ya que en el límite ultrarrelativista $S_{rad}$ domina frente a $S_{\text{col}}$.
+
+    \item Como $N_e \propto Z$ y $I \propto Z$, pero $I$ se encuentra dentro de un logaritmo, $S_{\text{col}} \propto Z \ln (C_0/Z)$, en realidad $S_{\text{col}}$ es proporcional a $Z$. Como ya hemos dicho, en realidad $S_{\text{col}}$ depende del logaritmo de la inversa de $I(Z)$, lo que limita mucho el ``poder'' de $I(Z)$ sobre $S_{\text{col}}$, al ser el logaritmo al ser una de las funciones de crecimiento más lento. 
+    \item La dependencia con la masa del proyectil se da, siendo precisos, siempre, aunque el cambio de masa cuando ya estamos hablando de partículas másicas incidentes, es despreciable. Sin embargo debería ser notable cuando pasamos de, por ejemplo, protones a electrones. 
+\end{enumerate}
 
 % Igual estaría bien hacer la demostración aquí, aunque sea trivial
 
