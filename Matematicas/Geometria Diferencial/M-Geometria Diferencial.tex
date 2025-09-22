@@ -15,7 +15,7 @@
 % Documento
 
 \begin{document}
-\MakeTitle{1}{darkgray!80!black}{Snow1}
+\MakeTitle{1}{SlateBlue4!90!black}{Snow1}
 
 
 \setlength{\parskip}{2.2mm} % Cambia el espacio entre párrafos
@@ -24,18 +24,25 @@
 
 \tableofcontents
 
-\NewPart{Elementos de la Geometría Diferecial}{0.14}
-\input{Chapters/01.tex}
+\NewPart{Variedades, tensores y formas exteriores}{0.14}
+\input{Chapters/01-Variedades.tex}
+\input{Chapters/02-Tensores.tex}
+\input{Chapters/03-Integrales.tex}
+\input{Chapters/04-DerivadaLie.tex}
+\input{Chapters/05-LemaPoincare.tex}
 
 
 
+\NewPart{Geometría y Topología}{0.27}
 
-\NewPart{Geometría de Riemann}{0.27}
-\input{Chapters/01.tex}
+\input{Chapters/06-Minkowski.tex}
+\input{Chapters/07-GeometriaSuperficies.tex}
+\input{Chapters/08-Curvatura.tex}
+\input{Chapters/09-Geodesicas.tex}
+\input{Chapters/10-Relatividad.tex}
 
 
-
-\nocite{*}
+\nocite{Frankel2011}
 
 \addcontentsline{toc}{chapter}{Bibliografia}
 \printbibliography 

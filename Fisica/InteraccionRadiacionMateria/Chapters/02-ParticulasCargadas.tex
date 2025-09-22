@@ -438,6 +438,13 @@ A valores muy altos de $E_K$ se transifere toda la energía del proyectil al bla
 
 \subsection{Teoría de Bethe del frenado másico por colisión}
 
+\begin{equation}
+S_\text{\text{col}} = 4\pi N_e \left( \frac{e^2}{4\pi \epsilon_0} \right)^2 
+        \frac{z^2}{m_e c^2 \beta^2} 
+        \left[ \ln \frac{2 m_e c^2}{I} + \ln \frac{\beta^2}{1 - \beta^2} - \beta^2 - \frac{C}{Z} - \delta \right]
+        \equiv C_1 \frac{N_e z^2}{\beta^2} \, \bar{B}_\text{\text{col}}
+\end{equation}
+
 \subsection{Correciones de Bethe y extensión al electrón y positrón}
 
 \subsection{Balance entre colisión y radiación: energía crítica}
@@ -600,7 +607,106 @@ Las solución al ejercicio, apartado por apartado:
 
     \item Como $N_e \propto Z$ y $I \propto Z$, pero $I$ se encuentra dentro de un logaritmo, $S_{\text{col}} \propto Z \ln (C_0/Z)$, en realidad $S_{\text{col}}$ es proporcional a $Z$. Como ya hemos dicho, en realidad $S_{\text{col}}$ depende del logaritmo de la inversa de $I(Z)$, lo que limita mucho el ``poder'' de $I(Z)$ sobre $S_{\text{col}}$, al ser el logaritmo al ser una de las funciones de crecimiento más lento. 
     \item La dependencia con la masa del proyectil se da, siendo precisos, siempre, aunque el cambio de masa cuando ya estamos hablando de partículas másicas incidentes, es despreciable. Sin embargo debería ser notable cuando pasamos de, por ejemplo, protones a electrones. 
+    \item Como podemos ver, la dependencia con la velocidad es complicada. Veamos las tres regiones.
+    \begin{itemize}
+        \item Cuando $\beta$ tiende a cero vemos claramente que la ecuación nos queda como: 
+        \[
+        S_\text{\text{col}} = \underbrace{4\pi N_e \left( \frac{e^2}{4\pi \epsilon_0} \right)^2 
+        z^2}_{\alpha}\frac{1}{m_e c^2 \beta^2} 
+        \left[ \ln \frac{2 m_e \beta^2 c^2}{I} - \beta^2 \right]  = \alpha \frac{M}{m_e} \frac{1}{2E_K} \bqty{\ln \frac{4m_e}{M}\frac{E_K}{I}} - C_0
+        \] 
+        siendo $C_0$ la constante que se sacaría del término $-\beta^2$ dentro del corchete. No depende de la energía cinética. Si hacemos la derivada respecto la energía: 
+        \[
+        \dv{S_{\text{col}}}{E_K} = \frac{\alpha M}{2m_e E_K^2} \bqty{ 1  - \ln \pqty{\frac{4m_e}{M}\frac{E_K}{I}}}
+        \]
+        que como podemos ver tiene un crecimiento positivo y exponencial al principio hasta alcanzar el máximo, en: 
+        \[
+        \left. \dv{S_{\text{col}}}{E_K}  \right|_{\max} =  \dv{S_{\text{col}}}{E_K} (E_{K\max}); \qquad E_{K\max} =2.71 \cdot  \frac{M}{4m_e} I
+        \]
+        (donde 2.71 viene del número $e$) que por ejemplo en el caso de $M=m_p$ (partícula incidente protón) tenemos
+        \[ 
+        \qquad E_{K\max} \approx 1248 \cdot I
+        \]
+        que en el caso de protones en el aluminio implicaría $E_{K\max} \approx 0.207 \unit{MeV}$, lo cual parece coincidir con los datos, al menos en oreden de magnitud. Según la ecuación de Bethe más básica (aproximación a energía clásica $E_K = \frac{1}{2} M\beta^2 c^2$, sin tener en cuenta más correcciones) deberíamos tener un crecimiento exponencial.
+        \item Cuando $E_{K}$ pasa esta barrera, comienza a decrecer rápidamente, hasta un punto en el que alcanzamos un mínimo. Esta región continua dominada principalmente por la parte 
+        \[
+        S_\text{\text{col}} = 4\pi N_e \left( \frac{e^2}{4\pi \epsilon_0} \right)^2 
+        \frac{z^2}{m_e c^2 \beta^2} 
+        \left[ \ln \frac{2 m_e c^2}{I}  \right]
+        \]
+        hasta una región, a partir la cual el término $ \ln \frac{\beta^2}{1 - \beta^2} $ comienza a tomar relevancia. En ese momento aparece un mínimo que marca esta región de decrecimiento proporcional a $S_{\text{col}} \propto \frac{1}{E_K} \ln (E_K)$.        
+        
+        \item Finalmente, el último término, que se da cuando $\beta \to 1$, una vez pasado el mínimo, en el que se tiene en cuenta
+        \[
+        S_\text{\text{col}} = 4\pi N_e \left( \frac{e^2}{4\pi \epsilon_0} \right)^2 
+        \frac{z^2}{m_e c^2 \beta^2} 
+        \left[ \ln \frac{2 m_e c^2}{I} + \ln \frac{\beta^2}{1 - \beta^2} - \beta^2 \right]
+        \]
+        Cuya derivada respecto a $\beta$ es: 
+        \[
+        \dv{S_\text{\text{col}}}{\beta} = \alpha^* \bqty{\frac{-2}{\beta^3} \ln \pqty{\frac{\beta^2}{1-\beta^2}} + \frac{2}{\beta^3} + \frac{2\beta}{1-\beta^2} }
+        \]
+        donde podemos ver que cuando $\beta \to 1$ domina claramente término $ \frac{2\beta}{1-\beta^2} $, con un crecimiento cada vez mayor. Así pues, podemos afirmar que domina claramente 
+        \[ 
+        S_\text{\text{col}} = 4\pi N_e \left( \frac{e^2}{4\pi \epsilon_0} \right)^2 
+        \frac{z^2}{m_e c^2 \beta^2} \ln \pqty{\frac{\beta^2}{1-\beta^2}} 
+        \]
+        Aunque como ya hemos visto $\delta(\beta)$ tiene una gran importancia a energías relativistas, por lo que podemos consierar una expresión más correcta con este factor (en este régimen). 
+    \end{itemize}
+    \item Podemos ver una dependencia directa (cuadrática) en $S_{col}$, sin dependencias indirectas, al menos en la ecuación de Bethe relativista con la corrección de densidad y de capas. Si incluyeramos los términos de Barkas y Bloch tendríamos más dependencias con $z$. 
 \end{enumerate}
+
+\begin{Ejercicio}{Comparativa del frenado en agua de distintos iones ligeros}
+
+Compara de forma sistemática los resultados para el poder de frenado másico en agua ($S_{\text{col}}$) de distintos haces de iones ligeros, de acuerdo con la fórmula (1) de Bethe, despreciando las correcciones de Fano. Para ello:  
+
+\begin{enumerate}[label=\alph*)]
+
+\item Calcula $S_{\text{col}}$ (en MeV$\cdot$cm/g) para un protón incidente en agua de energía cinética $E_K = 51$ MeV. Toma $I = 75$ eV y la densidad electrónica $N_e = 3.343 \times 10^{23}$ e/g (como se determinó en un Problema anterior).  
+
+\item  Calcula la energía cinética incidente $E_K$ (en MeV) de un deuterón cuyo poder de frenado en agua $S_{\text{col}}$ sea idéntico al del protón del apartado a).  
+
+\item Calcula la energía cinética incidente $E_K$ (en MeV) y el poder de frenado másico en agua $S_{\text{col}}$ de las siguientes partículas: $p, d, \alpha, \, C^6$ y $Ne^{10}$ (iones ligeros), con la \emph{misma velocidad incidente} que el protón del apartado a).  
+\end{enumerate}
+Como resumen, elabora una Tabla, indicando en 5 columnas (para $p, d, \alpha, \text{C}^6$ y $\text{Ne}^{10}$) los 6 valores siguientes (por filas):  
+
+\begin{enumerate}
+\item $Mc^2$ (en MeV)  
+\item. $Mc^2/(m_p c^2)$  
+\item energía cinética $E_K$ (MeV) con igual poder de frenado en agua que el protón de 51 MeV  
+\item Cociente $E_K/A$ (MeV/u)  
+\item $z$  
+\item $S_{\text{col}}$ (MeV$\cdot$cm/g)  
+\end{enumerate}
+
+¿Cuál de las filas resulta tener igual valor aproximado en todos los casos? Indica la magnitud física que es común para todos los iones evaluados. Compara el valor obtenido de $S_{\text{col}}$ en agua para partículas $\alpha$ de $E_K = 202.5$ MeV con el que encuentras en NIST.
+
+\end{Ejercicio}
+
+Nos dicen que calculemos $S_{\text{col}}$ usando la ecuación de Bethe despreciando las corecciones de Fano ($\delta, C/Z$), es decir, usando la ecuación 
+
+\begin{equation*}
+S_\text{\text{col}} = 4\pi N_e \left( \frac{e^2}{4\pi \epsilon_0} \right)^2 
+\frac{z^2}{m_e c^2 \beta^2} 
+\left[ \ln \frac{2 m_e c^2}{I} + \ln \frac{\beta^2}{1 - \beta^2} - \beta^2  \right]
+\end{equation*}
+
+\begin{enumerate}
+    \item Facilmente podemos obtener que para $E_K=51$ MeV tenemos una $\beta = 0.32$, que sabiendo $z$, $N_e$ e $I$ podemos sustituir en $S_{col}$, obteniendo 
+    \[ S_{\text{col}} = 12.264 \ \unit{MeV \cdot cm^2 / g}\]
+    \item Dado que $\beta^2$ no es muy grande $(\beta^2 \approx 0.10$), suponemos en este momento que podemos asumir la ecuación de Bethe sin los términos $\ln(\beta^2/(1-\beta^2))$ y $-\beta^2$. Así resulta obvio que la relación $z$ y $\beta$ debe ser
+    \begin{equation*}
+        S_{\text{col}} (\beta_1,z_1) = S_{\text{col}} (\beta_2,z_2) \Rightarrow \frac{z_1}{\beta_1} = \frac{z_2}{\beta_2} \to \beta_1 = \frac{z_1}{z_2} \beta_2
+    \end{equation*}
+    dado que el deuterón y el protón tiene el mismo $z$, $\beta_d = \beta_p$, y por tanto la enerǵia cinética vendrá dada por 
+    \begin{equation*}
+        E_{k,d} = (\gamma(\beta)-1) m_d c^2
+    \end{equation*}
+    lo qeu resulta en poco más del doble de energía cinética $E_{k,d} = 102.07$ MeV (ya que el neutrón pesa un poco más que el protón). 
+    \item Con $\beta$ igual, el único factor que diferencia a los $S_{col}$ es $z$. Obtenemos los resultados en la última fila de la \cref{Tab:02-ex05}.
+\end{enumerate}
+
+\input{Exercises/02-05.tex}
 
 % Igual estaría bien hacer la demostración aquí, aunque sea trivial
 

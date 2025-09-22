@@ -170,7 +170,9 @@
 
 \RequirePackage{unicode-math}
 \setmainfont{Libertinus Serif}
-\setmathfont{XITS Math}             % Matemáticas estilo Times
+%\setmathfont{Libertinus Math}        % Libertinus
+\setmathfont{Latin Modern Math}      % Fuente usual, estandar 
+%\setmathfont{XITS Math}             % Matemáticas estilo Times
 
 % ----------------------------------------------------------------------------
 % CONFIGURACIÓN DE CAPÍTULOS
@@ -275,6 +277,7 @@
 \newcommand{\Ncal}{\mathcal{N}}
 \newcommand{\Ocal}{\mathcal{O}}
 \newcommand{\Pcal}{\mathcal{P}}
+\newcommand{\Ucal}{\mathcal{U}}
 
 
 \newcommand{\cmm}{\text{cm}^{-1}}
