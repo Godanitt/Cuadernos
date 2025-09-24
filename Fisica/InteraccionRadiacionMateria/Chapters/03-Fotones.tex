@@ -104,9 +104,29 @@ La fracción de energía transferida al electrón $\bar{f}_C$ es:
 \right\}
 }
 \end{equation}
+Siendo, en el límite ultrarrelativista $\varepsilon\gg 1$_
+
+
+\begin{equation} 
+\bar{f}_C(\varepsilon) = \frac{\log (2\varepsilon)-0.82}{\log(2\varepsilon)+0.5}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \section*{Ejercicios}
 \addcontentsline{toc}{section}{Ejercicios}
+
 
 \begin{Ejercicio}{Efecto Fotoeléctrico.}
     Calcule la energía de un fotoelectrón arrancado de la capa K del estaño por un fotón de 40 keV de energía.
@@ -117,6 +137,13 @@ Primero lo que tenemos que saber es cual es la energía de ligadura de un electr
 \begin{equation}
     E_k = E_{\gamma} - E_B = 11 \unit{keV}
 \end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{Ejercicio}{Efecto Compton.}
     Calcule la longitud de onda del fotón dispersado, y la velocidad del electrón de retroceso, producidos cuando un haz de rayos X de 0,03 nm de longitud de onda se dispersa Compton un ángulo de 45°.
@@ -135,9 +162,14 @@ Aplicando la ecuación, la longtiud de onda de salida es
 que obtenemos: 
 
 \begin{equation}
-    \lambda' = 0.03243 \ \unit{fm}
+    \lambda' = 0.03024 \ \unit{fm}
 \end{equation}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{Ejercicio}{Efecto Fotoeléctrico}
     Calcule el coeficiente másico de transferencia de energía fotoeléctrico para la capa K del estaño y un fotón de 40 keV de energía.
@@ -150,7 +182,7 @@ El coeficiente de transferencia energético es
 \end{equation}
 siendo
 
-\begin{equation}
+\begin{equation} \small
     E_B (K) = 29.2 \text{keV} \quad  P_K = 0.839 \quad \omega_K = 0.859 \quad \eta_K =0.892 \quad h \nu = 40 \ \unit{keV} \quad \rho = 7365 \unit{kg/m^3}
 \end{equation}
 y finalmente, la sección eficaz: 
@@ -160,7 +192,7 @@ y finalmente, la sección eficaz:
 \end{equation}
 con $n=4$ y y $\tau_K \approx 498$ b. 
 
-\begin{align}
+\begin{align} 
     \sigma_{ph} &= \alpha^4 \, (e\sigma_{Th}) \, Z^n \, \sqrt{\frac{32}{\varepsilon^7}}, \\[1ex]
     \varepsilon &= \frac{h\nu}{m_e c^2} = \frac{40}{511} = 0.0783, \\[1ex]
     Z^n &= 50^4 = 6.25 \times 10^6, \\[1ex]
@@ -192,8 +224,15 @@ Finalmente, el coeficiente de trasmisión
     &= 2.536 \times 0.5307 \\[1ex]
     &= 1.35\ \text{cm}^2/\text{g} \;\;=\;\; 0.135\ \text{m}^2/\text{kg}.
 \end{align}
+Claro que esto es siguiendo el modelo, en la realidad $\tau/\rho=18.87$ cm$^2$/g, que como podemos ver dista mucho del modelo. 
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{Ejercicio}{Efecto Compton}
     Suponga que un fotón de 3 MeV de energía interacciona con un medio material vía efecto Compton. Calcule la energía del electrón emitido y del fotón dispersado si el ángulo de dispersión es de 90°. Repita el cálculo para un ángulo de dispersión de 180°. ¿A qué ángulo saldrá el fotón dispersado si se llevara el 56\% de la energía del fotón incidente?
@@ -219,19 +258,43 @@ Si $E_{\gamma}'=0.56 E_{\gamma}$, tenemos que:
     \frac{E_{\gamma}'}{E_{\gamma}} = \alpha = \frac{1}{1+\varepsilon (1-\cos \theta)} \Rightarrow \alpha (1+\varepsilon (1-\cos \theta)) = 1 
 \end{equation*}
 \begin{equation*}
-    -\varepsilon (1-\cos \theta) = \alpha-1 \Rightarrow \cos \theta =  1 -  \frac{(1-\alpha)}{\epsilon}
+    -\varepsilon (1-\cos \theta) = \alpha-1 \Rightarrow \cos \theta =  1 -  \frac{(1-\alpha + \epsilon)}{\epsilon} = \frac{1-\alpha}{\epsilon}
 \end{equation*}
 que siempre es menor que uno. Así pues, obtenemos el ángulo: 
 
 \begin{equation*}
-    \theta = 22.33 ^\circ
+    \theta \approx 29.8^\circ
 \end{equation*}
 
 
 
-\begin{Ejercicio}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Efecto Comptón y sección eficaz de Klein Nishina}
     Calcule la sección eficaz de Klein-Nishina para fotones de 1 MeV de energía y obtenga el coeficiente de atenuación másico Compton para el cobre.
 \end{Ejercicio}
+
+El resultado nos lleva a: 
+
+\begin{equation}
+    \sigma^{KN} \simeq \pi r_e^2 \frac{2\log(2\epsilon)+1}{2\epsilon} = 0.2373 \ \unit{b}
+\end{equation}
+usando la fórmula $\epsilon\gg 1$, aunque $\epsilon = 1.956$. Por otro lado, el coeficiente de atenuación másico: 
+
+\begin{equation}
+    \frac{\mu}{\rho} = \frac{Z}{N_A}N_A (\sigma^{KN}) = 0.0542 \ \unit{cm^2/g}
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{Ejercicio}{} 
     Calcule la energía máxima y la promedio que adquieren los electrones de retroceso Compton generados por radiación electromagnética de 20 keV y 20 MeV de energía.
@@ -275,8 +338,8 @@ Ahora quedaría multiplicarla por la energía incidente. Por otro lado, la energ
 claramente cuando $\theta=\pi$ tenemos el máximo, siendo la máxima fracción de trasferencia de energía: 
 
 \begin{equation*}
-   f_{C,\max}(20\text{keV}) = 0.073    \quad 
-    f_{C,\max}(20\text{MeV}) = 0.99
+   f_{C,\max}(20\text{keV}) = 7.3 \%   \quad 
+    f_{C,\max}(20\text{MeV}) = 99\%
 \end{equation*}
 Las energías, para $20$ keV:
 \begin{equation*}

@@ -84,6 +84,19 @@
 \captionsetup{font=small, justification=justified, skip=6pt, labelfont={bf,small}, textfont={small}}
 
 %----------------------------------------------------------------------------
+% Float placement
+%----------------------------------------------------------------------------
+
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
+\AtBeginEnvironment{table}{\centering}
+% Por si dentro usan tabular variantes:
+\AtBeginEnvironment{tabular}{\centering}
+\AtBeginEnvironment{tabular*}{\centering}
+\AtBeginEnvironment{tabularx}{\centering}
+% Si el archivo usa table* (dos columnas):
+\AtBeginEnvironment{table*}{\centering}
+%----------------------------------------------------------------------------
 % CONFIGURACIÓN DE Minitoc
 %----------------------------------------------------------------------------
 

@@ -459,13 +459,10 @@ Al atraversar un medio las partículas cargadas experimentan deflexiones respect
 \end{equation}
 
 
-
+\newpage 
 \section*{Ejercicios}
+
 \addcontentsline{toc}{section}{Ejercicios}
-
-
-
-
 \begin{Ejercicio}{Sección eficaz de Rutherford con modelo atómico de Fermi} \label{Ej:02.01}
     Obten la expresión de la sección de eficaz de Rutherford, ahora con el potencial del modelo atómico estadístico de Fermi, usando la aproximación de Born con ondas planas incidentes y salientes
 
@@ -488,10 +485,10 @@ Al atraversar un medio las partículas cargadas experimentan deflexiones respect
 
 Recuerda las relaciones obtenidas para la transferencia $\Delta p$ y $\Delta E$ en una colisión a través de la ley de Coulomb entre una partícula pesada de masa $M$ y carga $+Ze$ y un electrón orbital (carga $-e$ y masa $m_e$), con un valor fijo del parámetro de impacto $b$, teniendo en cuenta las leyes de conservación de $p$, $E$, y del momento angular $L$. En dicha colisión clásica y no relativista, el electrón orbital se sitúa en el foco interno de una hipérbola. Si la partícula cargada es pesada tenemos $M \gg m_e$ y el ángulo de dispersión es nulo $\theta \approx 0$, entonces:
 
-\[
+\[ \scriptsize
 \Delta p(b) = \frac{2 Z r_e m_e c^2}{v b}, \qquad 
 \Delta E(b) = \frac{(\Delta p)^2}{2 m_e} = \frac{2 Z^2 r_e^2 m_e c^2}{(v/c)^2 b^2}, \qquad
-b = \frac{2 Z r_e m_e c^2}{v \Delta p} = \frac{Z r_e (v/c)}{\sqrt{2 m_e c^2 / \Delta E}}
+b = \frac{2 Z r_e m_e c^2}{v \Delta p} = \frac{Z r_e (v/c)}{\sqrt{\Delta E / 2 m_e c^2 }}
 \]
 
 \begin{enumerate}[label=\alph*)]
@@ -509,26 +506,28 @@ Potencial de ionización / excitación $I$ (eV) & 19 & 166 & 322 & 470 & 790 & 7
 \bottomrule
 \end{tabular}
 \end{center}
+\captionsetup[table]{justification=centering}
 \end{Ejercicio}
 
+Lo primero que vamos a definir son los valores fundamentales. Suponiendo un protón incidente con una energía cinética de $E_K=10$ MeV, tal que $E_K\ll m_p c^2$ y por tanto el momento inicial aproximable a la relación clásica:
+
+\begin{equation*}
+    p_i \approx \sqrt{2 m_p E_K} = 136.99 \ \unit{MeV/c^2} \qquad \beta= 0.146  \qquad 
+        v_i = \frac{p_i}{m_p} = 43769 \ \unit{km/s}
+\end{equation*}
+
 \begin{enumerate}[label=\alph*)]
-    \item Suponiendo un protón incidente con una energía cinética de $E_K=10$ MeV, tal que $E_K\ll m_p c^2$ y por tanto el momento inicial aproximable a la relación clásica:
-
+    \item  Veamos ahroa el momento máximo y la energía máxima transferibles. Dado que estamos en una colisión no relativista, vienen dados por (básicamente $\gamma \to 1$ en las ecuaciones ya vistas): 
     \begin{equation*}
-        p_i \approx \sqrt{2 m_p E_K} =  \qquad v_i = \frac{p_i}{m_p} = 
+            \Delta E_{\max} \approx \frac{4m_p m_N}{m_p^2 + m_N^2 + 2m_p m_N} E_K^i \qquad 
+            \Delta p_{\max} \approx \frac{2(m_p+m_N)m_N}{m_p^2 + m_N^2 + 2m_p m_N} p_i
     \end{equation*}
-    El momento máximo y la energía máxima transferibles, dado que estamos en una colisión no relativista, vienen dados por (básicamente $\gamma \to 1$ en las ecuaciones ya vistas): 
-
-    \begin{equation*}
-        \Delta E_{\max} \approx \frac{4m_p m_N}{m_p^2 + m_N^2 + 2m_p m_N} E_K^i \qquad 
-        \Delta p_{\max} \approx \frac{2(m_p+m_N)m_N}{m_p^2 + m_N^2 + 2m_p m_N} p_i
-    \end{equation*}
-    donde $m_N$ es la masa del blanco. Esta expresión proviene de la conservación de la energía-momento relativista, es decir, es la máxima energía transferible en una interacción relativista: energías mas altas no verificarían la conservación del cuadrimomento. La mínima transferencia de energía se da cuando el protón interacciona con la energía suficiente para romper el enlace del electró con el átomo. La manera en la que se tabula esta es directamente relacionado con el potencial de ionización \cite{Brau2014}, tal que 
+    donde $m_N$ es la masa del blanco. Dado que interacciona con un \textit{electrón orbital} $M_N=m_e$ y por tanto $\Delta E_{\max}$ para el protón será igual para todos los átomos con los que colisiona. Esta expresión proviene de la conservación de la energía-momento relativista, es decir, es la máxima energía transferible en una interacción relativista: energías mas altas no verificarían la conservación del cuadrimomento. La mínima transferencia de energía se da cuando el protón interacciona con la energía suficiente para romper el enlace del electró con el átomo. La manera en la que se tabula esta es directamente relacionado con el potencial de ionización \cite{Brau2014}, tal que 
 
     \begin{equation*}
         \Delta E_{\min} \approx I \qquad \Delta p_{\min}^2 \approx \frac{1}{c} \sqrt{(\Delta E_{\min}+m_ec^2)^2-m^2 c^4}
     \end{equation*}
-    Con estos parámetros definidos, ya podemos hacer las tablas: 
+    Los resultados numéricos de las \textit{transferencias de energía y momento} los hallamos en la \cref{Tab:02-ex03}.
     
     \item Ahora solo quedaría sustituir los $\Delta E_{\min}$ y $\Delta E_{\max}$ en las definción de $b(\Delta E)$, tal que aplicando la ecuación 
      \[
@@ -538,11 +537,27 @@ Potencial de ionización / excitación $I$ (eV) & 19 & 166 & 322 & 470 & 790 & 7
     
     Nos queda responder a las preguntas siguientes.¿Es posible la colisión entre una partícula cargada pesada y un electrón orbital del absorbente, estando el parámetro de impacto fuera del rango $b \in (b_{\min}, b_{\max})$? Veamos. 
     \begin{itemize}
-        \item Veamos el caso para $b>b_{\max}$. Cuando esto ocurre tenemos que la transferencia de energía es mínima. ¿Se puede producir una transferencia de energía por debajo de $I$? La respuesta es que un protón (o cualquier otra partícula) no puede interaccionar con un \textit{electrón orbital} si no es capaz de darle más energía que la de ligadura (al menos en una colisión individual). Para poder aportar esta energía mínima la interacción no puede 
-        \item El caso para $b>b_{\min}$, que sucede para la transferencia de máxima energía, es bastante curioso. Para que $b=0$ la única condición, segń las ecuaciones, es que $\Delta p \to \infty$, lo cual es imposile, ya que en caso de interacción hay una transferencia de momento máxima limitada por las leyes de conservación fundamentales de la física. 
+        \item Veamos el caso para $b>b_{\max}$. Cuando esto ocurre tenemos que la transferencia de energía es mínima. ¿Se puede producir una transferencia de energía por debajo de $I$? La respuesta es que un protón (o cualquier otra partícula) no puede interaccionar trasmitiendo energía con un \textit{electrón orbital} si no es capaz de darle más energía que la de ligadura (al menos en una colisión individual). 
+        
+        El valor $I$ es un promedio de las transiciones, obtenida a partir de diferentes dispersiones. En una dispersión individual (considerando que solo hay un átomo en el vacio con un protón incidente), es posible interacción con un $\Delta E_{\min}$, ya que la energía de ligadura de un electrón (como la del hidrógeno, 13.6 eV es menor que $I$). 
+        
+        También es posible una interacción elástica, en la que no se transfiera energía al átomo, conservándose la energía. 
+        
+        \item El caso para $b<b_{\min}$, que sucede para la transferencia de máxima energía, es bastante curioso. Para que $b=0$ la única condición, segń las ecuaciones, es que $\Delta p \to \infty$, lo cual es imposile, ya que en caso de interacción hay una transferencia de momento máxima limitada por las leyes de conservación fundamentales de la física. De hecho, Pogdorsark \cite{Podgorsak2022}: ``Energy transfer larger than $\Delta E_{\max}$ is physically impossible.''. 
     \end{itemize}
-
+    
+    Respecto a las colisiones con los núcleos atómicos, no siempre son elásticas: pueden ocurrir procesos inelásticos como excitación nuclear, emisión de partículas secundarias o reacciones nucleares, especialmente para proyectiles de alta energía. En el caso particular de los protones peude ocurrir la fusión (algunas cadenas de fusión incluyen protones colisionando con isótopos del helio). Las interacciones vistas aquí, donde se transfiere energía cinética no son elásticas. Los resultados numéricos de los \textit{parámetros de impacto} los hallamos en la \cref{Tab:02-ex03}.
 \end{enumerate}
+Siendo el resultado final, la siguiente tabla.
+
+\begingroup
+\makeatletter
+\let\old@floatboxreset\@floatboxreset
+\def\@floatboxreset{\old@floatboxreset\centering} % fuerza centrado dentro del float
+\makeatother
+\let\normalsize\scriptsize
+\input{Exercises/02-03.tex}
+\endgroup
 
 \begin{Ejercicio}{Dependencias genéricas de la fórmula de Bethe con $Z, M, \beta$ y $z$} \label{Ej:02.04}
     
@@ -564,10 +579,8 @@ Para focalizar y separar adecuadamente las dependencias características de $S_\
 
 \begin{enumerate}[label=\alph*)]
 
-\item ¿Hizo Bethe la hipótesis original de que la velocidad de la partícula era muy superior a la 
-velocidad de los electrones atómicos $v \gg v_\text{orb}$?  
-¿Sobreestima esto el potencial de ionización $I$ cuando no lo es?  
-Explica por qué son los electrones de la capa $K$ los más afectados en el término $C/Z$, y por qué la corrección es negativa.
+\item ¿Hizo Bethe la hipótesis original de que la velocidad de la partícula era muy superior a la velocidad de los electrones atómicos $v \gg v_\text{orb}$?  
+¿Sobreestima esto el potencial de ionización $I$ cuando no lo es?   Explica por qué son los electrones de la capa $K$ los más afectados en el término $C/Z$, y por qué la corrección es negativa.
 
 \item ¿Por qué la corrección por densidad $\delta$ es más importante para las colisiones 
 \emph{distantes} (suaves) y por qué es negativa?  
@@ -596,8 +609,13 @@ Comenta sobre el aumento o disminución de $S_\text{\text{col}}$ con $E_K$ en ca
 
 Las solución al ejercicio, apartado por apartado: 
 \begin{enumerate}[label=\alph*)]
-    \item Si, efecivamente, Bethe supuso que la velocidad de la partícula era muy superior al a velocidad de los electrones atómicos. Esto efectivamente puede entenderse como un sobreestimamiento de la capacidad de ionización, ya que una partícula puede ser que no tenga la energía suficiente para ionizar, puede que se supriman ciertas transiciones que $I$ está teniendo en cuenta. Las capas $K$ (más internas) son las que más suprimidas se encuentran, ya que son las que tienen energías de ligadura mas altas, y por tanto son más difíciles de ionizar. La corrección de las capas $K$ ya está incluido en ese $C/Z$, sin embargo otras capas cercanas no están (ahí es donde el sobreestimamiento aparece).
+    \item Si, efecivamente, Bethe supuso que la velocidad de la partícula era muy superior al a velocidad de los electrones atómicos. Esto efectivamente puede entenderse como un sobreestimamiento de la capacidad de ionización,que se manifiesta por ejemplo en la corrección de las capas $K$, a saber, $C/Z$.
     
+    Citando al William R. Leo ``The shell correction accounts for effects which arise when the velocity of the incident particle is comparable or smaller than the orbital velocity of the bound electrons. At such energies, the assumption that the electron is stationary with ;espect to the incident particle is no longer valid and the Bethe-Bloch formula breaks down.'' \cite{Leo1994}.
+
+    Por otro lado, Pogdorsark: ``Orbital electrons stop participating in energy transfer from the charged particle when their  velocity becomes comparable to the charged particle velocity.'' y ``Since the K shell electrons are the fastest of all orbital electrons, they are the first to be affected by low particle velocity with decreasing particle velocity. The shell correction is often addressed as the K shell correction, labeled $C/Z$ and all possible higher shell corrections are usually ignored.'' \cite{Podgorsak2022}.
+
+    Desde un punto de vista individual podemos pensar que este sobreestimamiento puede venir de que la partícula puede ser que no tenga la energía suficiente para ionizar, puede que se supriman ciertas transiciones que $I$ está teniendo en cuenta. $C$ también depende del medio. Sin embargo experimentalmente es un proceso conlectivo. 
 
     \item Supongamos una partícula que entra en un medio. Las interacciones de colisiónes serán por Coulomb. En general podemos asumir que el medio es neutro, y por tanto que la partícula interacciona con todas las partículas a su alrededor. Sin embargo esto no es así, ya que si una partícula tiene una energía alta (su velocidad es grande) el campo eléctrico que produce se ``aplana'', i.e. tiene una componente transversal más fuerte que longitudinal (ya no es esféricamente simétrico). Esto induce un campo eléctrico fuerte capaz de generar dipolos a su paso, lo que polariza el medio, generando un campo eléctrico que apantalla a los electrones más alejados de la partícula, lo que disminuye su capacidad de interacción y por tanto disminuye el frenado. 
     
@@ -691,7 +709,7 @@ S_\text{\text{col}} = 4\pi N_e \left( \frac{e^2}{4\pi \epsilon_0} \right)^2
 \left[ \ln \frac{2 m_e c^2}{I} + \ln \frac{\beta^2}{1 - \beta^2} - \beta^2  \right]
 \end{equation*}
 
-\begin{enumerate}
+\begin{enumerate}[label=\alph*)]
     \item Facilmente podemos obtener que para $E_K=51$ MeV tenemos una $\beta = 0.32$, que sabiendo $z$, $N_e$ e $I$ podemos sustituir en $S_{col}$, obteniendo 
     \[ S_{\text{col}} = 12.264 \ \unit{MeV \cdot cm^2 / g}\]
     \item Dado que $\beta^2$ no es muy grande $(\beta^2 \approx 0.10$), suponemos en este momento que podemos asumir la ecuación de Bethe sin los términos $\ln(\beta^2/(1-\beta^2))$ y $-\beta^2$. Así resulta obvio que la relación $z$ y $\beta$ debe ser
@@ -705,8 +723,14 @@ S_\text{\text{col}} = 4\pi N_e \left( \frac{e^2}{4\pi \epsilon_0} \right)^2
     lo qeu resulta en poco más del doble de energía cinética $E_{k,d} = 102.07$ MeV (ya que el neutrón pesa un poco más que el protón). 
     \item Con $\beta$ igual, el único factor que diferencia a los $S_{col}$ es $z$. Obtenemos los resultados en la última fila de la \cref{Tab:02-ex05}.
 \end{enumerate}
-
+-
+\begingroup
+\makeatletter
+\let\old@floatboxreset\@floatboxreset
+\def\@floatboxreset{\old@floatboxreset\centering} % fuerza centrado dentro del float
+\makeatother
 \input{Exercises/02-05.tex}
+\endgroup
 
 % Igual estaría bien hacer la demostración aquí, aunque sea trivial
 
