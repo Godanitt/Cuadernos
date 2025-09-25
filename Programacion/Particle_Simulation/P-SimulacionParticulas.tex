@@ -3,21 +3,20 @@
 
 \RequirePackage{transparent}
 
-\RequirePackage{revsymb}
-
 \input{../../0_Macros/Titulo.tex}
 \input{../../0_Macros/Indice.tex}
 \input{../../0_Macros/Entornos.tex}
 
 % Definiciones del título
-\title{Interacción \\ Radiación-Materia}
-\subtitle{Partículas Cargadas y No Cargadas}
+\title{Simulación \ en \\ Física \ de \ Partículas}
+\subtitle{Root, Geant4, CMake y Garfield++}
 \author{Daniel Vázquez Lago}
 
 % Documento
 
 \begin{document}
-\MakeTitle{1}{red!80!black}{Snow1}
+\MakeTitle{1}{blue!80!black}{Snow1}
+
 
 \setlength{\parskip}{2.2mm} % Cambia el espacio entre párrafos
 
@@ -25,21 +24,10 @@
 
 \tableofcontents
 
-\NewPart{Introducción}
-\include{Chapters/01-Scattering}
+\input{Chapters/01-Introduccion.tex}
 
-\NewPart{Interacción radiación materia}
 
-\include{Chapters/02-ParticulasCargadas}
-\include{Exercises/02}
 
-\include{Chapters/03-Fotones}
-\include{Exercises/03}
-\chapter{Partículas no cargadas}
-
-\nocite{}
-
-\addcontentsline{toc}{chapter}{Bibliografia}
 \printbibliography 
 
 

@@ -23,7 +23,7 @@ La estructura es sencilla. Tenemos una carpeta donde se almacenan todos las macr
 
   - [PDFs](https://github.com/Godanitt/Cuadernos/tree/main/0_Pdf)
 
-Luego tenemos 4 carpetas: Física, Matemáticas, Ingeniería y Programación, donde se colocarán los diferentes temas. Por cada una de estas tendremos varias. Entre las más destacadas tenemos: 
+Luego tenemos 4 carpetas de Cuadernos: Física, Matemáticas, Ingeniería y Programación, donde se colocarán los diferentes temas. Por cada una de estas tendremos varias. Entre las más destacadas tenemos: 
 
   -  [Física](https://github.com/Godanitt/Cuadernos/tree/main/Fisica):
       - [Astrofísica](https://github.com/Godanitt/Cuadernos/tree/main/Fisica/Astrofisica)
@@ -39,6 +39,9 @@ Luego tenemos 4 carpetas: Física, Matemáticas, Ingeniería y Programación, do
   - [Programación](https://github.com/Godanitt/Cuadernos/tree/main/Ingenieria): 
     - [Deep Learning](https://github.com/Godanitt/Cuadernos/tree/main/Programacion/Deep%20Learning)
     - [Página Web (css, html, php & mysql)](https://github.com/Godanitt/Cuadernos/tree/main/Programacion/Pagina%20Web)
+    - [Linux](https://github.com/Godanitt/Cuadernos/tree/main/Programacion/Linux)
+    - [Python](https://github.com/Godanitt/Cuadernos/Python)
+    - [Simulacion en Fisica de Partículas (geant4, garfield++, root)](https://github.com/Godanitt/Cuadernos/Particle_Simulation)
 
 
 # Plantilla

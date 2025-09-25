@@ -1,0 +1,405 @@
+\section*{Ejercicios}
+\addcontentsline{toc}{section}{Ejercicios}
+
+
+\begin{Ejercicio}{Efecto Fotoeléctrico.}
+    Calcule la energía de un fotoelectrón arrancado de la capa K del estaño por un fotón de 40 keV de energía.
+\end{Ejercicio}
+
+Primero lo que tenemos que saber es cual es la energía de ligadura de un electrón de la capa $K$ del estaño, denotada por $E_B$. Como nos están preguntando concretamente por el ``fotoelecctrón arrancado'' no tenemos por que tener en cuenta los electrones auger (si no la pregunta debería ser ``calcule la energía cinética transferida a electrones en el proceso fotoeléctrico''). Así pues, si $E_B=29$ keV, tenemos que 
+
+\begin{equation}
+    E_k = E_{\gamma} - E_B = 11 \unit{keV}
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Efecto Compton.}
+    Calcule la longitud de onda del fotón dispersado, y la velocidad del electrón de retroceso, producidos cuando un haz de rayos X de 0,03 nm de longitud de onda se dispersa Compton un ángulo de 45°.
+\end{Ejercicio}
+
+La única dependencia de la longitud de onda resultate es la longitud de onda inicial y el ángulo de salida, datos que nos dan directamente. Aplicando entonces la ecuación: 
+
+\begin{equation}
+    \Delta \lambda = \lambda'-\lambda = \frac{h}{cm_e}(1-\cos \theta) 
+\end{equation}
+Aplicando la ecuación, la longtiud de onda de salida es
+
+\begin{equation}
+    \lambda' = \lambda + \frac{h}{cm_e} (1-\cos \theta)
+\end{equation}
+que obtenemos: 
+
+\begin{equation}
+    \lambda' = 0.03024 \ \unit{fm}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Efecto Fotoeléctrico}
+    Calcule el coeficiente másico de transferencia de energía fotoeléctrico para la capa K del estaño y un fotón de 40 keV de energía.
+\end{Ejercicio}
+
+El coeficiente de transferencia energético es 
+
+\begin{equation}
+    \frac{(\tau_K)_{tr}}{\rho} = \frac{\tau}{\rho} \pqty{1-\frac{P_K\omega_K\eta_K E_B(K)}{h \nu}}
+\end{equation}
+siendo
+
+\begin{equation} \small
+    E_B (K) = 29.2 \text{keV} \quad  P_K = 0.839 \quad \omega_K = 0.859 \quad \eta_K =0.892 \quad h \nu = 40 \ \unit{keV} \quad \rho = 7365 \unit{kg/m^3}
+\end{equation}
+y finalmente, la sección eficaz: 
+
+\begin{equation}
+    a\tau_K = \alpha^4 (_e \sigma_{Th}) Z^n  \sqrt{\frac{32}{\epsilon^7}}
+\end{equation}
+con $n=4$ y y $\tau_K \approx 498$ b. 
+
+\begin{align} 
+    \sigma_{ph} &= \alpha^4 \, (e\sigma_{Th}) \, Z^n \, \sqrt{\frac{32}{\varepsilon^7}}, \\[1ex]
+    \varepsilon &= \frac{h\nu}{m_e c^2} = \frac{40}{511} = 0.0783, \\[1ex]
+    Z^n &= 50^4 = 6.25 \times 10^6, \\[1ex]
+    \sqrt{\frac{32}{\varepsilon^7}} &= \sqrt{\frac{32}{(0.0783)^7}} \approx 4.215 \times 10^4, \\[1ex]
+    \alpha^4 (e\sigma_{Th}) &\approx (1/137)^4 \times 0.665\ \text{b} 
+    \approx 1.89 \times 10^{-9}\ \text{b}, \\[1ex]
+    \sigma_{ph} &\approx (1.89 \times 10^{-9})(6.25 \times 10^6)(4.215 \times 10^4)\ \text{b}, \\[1ex]
+    \sigma_{ph} &\approx 498\ \text{b}.
+\end{align}
+Por tanto,
+\[
+    {\tau_K \approx 500\ \text{barns}}
+\]
+para el estaño a \(h\nu = 40\ \text{keV}\), con \(n=4\). Finalmente: 
+
+\begin{align} \small
+    \tau_K &= 500\ \text{b} = 5.0\times 10^{-22}\ \text{cm}^2/\text{átomo}, \\[1ex]
+    \frac{\tau}{\rho} &= \frac{N_A}{M}\,\tau 
+    = \frac{6.022\times 10^{23}}{118.71}\,(5.0\times 10^{-22}) \notag \\
+    &= 2.536\ \text{cm}^2/\text{g}, \\[1ex]
+    1 - \frac{P_K \omega_K \eta_K E_B(K)}{h\nu} 
+    &= 1 - (0.839)(0.859)(0.892)\frac{29.2}{40} \notag \\
+    &= 0.5307, \\[1ex]
+\end{align}
+Finalmente, el coeficiente de trasmisión 
+\begin{align}
+    \frac{(\tau_K)_{tr}}{\rho} 
+    &= \frac{\tau}{\rho}\,\Biggl(1 - \frac{P_K \omega_K \eta_K E_B(K)}{h\nu}\Biggr) \notag \\
+    &= 2.536 \times 0.5307 \\[1ex]
+    &= 1.35\ \text{cm}^2/\text{g} \;\;=\;\; 0.135\ \text{m}^2/\text{kg}.
+\end{align}
+Claro que esto es siguiendo el modelo, en la realidad $\tau/\rho=18.87$ cm$^2$/g, que como podemos ver dista mucho del modelo. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Efecto Compton}
+    Suponga que un fotón de 3 MeV de energía interacciona con un medio material vía efecto Compton. Calcule la energía del electrón emitido y del fotón dispersado si el ángulo de dispersión es de 90°. Repita el cálculo para un ángulo de dispersión de 180°. ¿A qué ángulo saldrá el fotón dispersado si se llevara el 56\% de la energía del fotón incidente?
+\end{Ejercicio}
+
+El efecto Compton dispersa el fotón con una energía con $\theta=\pi/2$:
+
+\begin{equation*}
+    E_{\gamma}' = \frac{E_{\gamma}}{1+\frac{E_{\gamma}}{m_ec^2} (1-\cos(\theta))} = 0.44 \ \unit{MeV}
+\end{equation*}
+obteniendo como enerǵia del electrón: 
+\begin{equation*}
+    E_K = E_{\gamma}'-E_{\gamma} =  2.56 \unit{MeV}
+\end{equation*}
+Y por otro lado, cuando $\theta=\pi$:
+
+$$ E_{\gamma}'  = 0.24 \ \unit{MeV} \qquad 
+E_K = 2.76 \ \unit{MeV}$$
+
+Si $E_{\gamma}'=0.56 E_{\gamma}$, tenemos que: 
+
+\begin{equation*}
+    \frac{E_{\gamma}'}{E_{\gamma}} = \alpha = \frac{1}{1+\varepsilon (1-\cos \theta)} \Rightarrow \alpha (1+\varepsilon (1-\cos \theta)) = 1 
+\end{equation*}
+\begin{equation*}
+    -\varepsilon (1-\cos \theta) = \alpha-1 \Rightarrow \cos \theta =  1 -  \frac{(1-\alpha + \epsilon)}{\epsilon} = \frac{1-\alpha}{\epsilon}
+\end{equation*}
+que siempre es menor que uno. Así pues, obtenemos el ángulo: 
+
+\begin{equation*}
+    \theta \approx 29.8^\circ
+\end{equation*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Efecto Comptón y sección eficaz de Klein Nishina}
+    Calcule la sección eficaz de Klein-Nishina para fotones de 1 MeV de energía y obtenga el coeficiente de atenuación másico Compton para el cobre.
+\end{Ejercicio}
+
+El resultado nos lleva a: 
+
+\begin{equation}
+    \sigma^{KN} \simeq \pi r_e^2 \frac{2\log(2\epsilon)+1}{2\epsilon} = 0.2373 \ \unit{b}
+\end{equation}
+usando la fórmula $\epsilon\gg 1$, aunque $\epsilon = 1.956$. Por otro lado, el coeficiente de atenuación másico: 
+
+\begin{equation}
+    \frac{\mu}{\rho} = \frac{Z}{N_A}N_A (\sigma^{KN}) = 0.0542 \ \unit{cm^2/g}
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Efecto Compton: energía promedio y máxima.} 
+    Calcule la energía máxima y la promedio que adquieren los electrones de retroceso Compton generados por radiación electromagnética de 20 keV y 20 MeV de energía.
+\end{Ejercicio}
+
+La fracción energía transferida al electrón media viene dada por: 
+\begin{equation} \scriptsize
+\bar{f}_C(\varepsilon) =
+\frac{
+\left\{
+\dfrac{2(1+\varepsilon)^2}{\varepsilon^2(1+2\varepsilon)}
+- \dfrac{1+3\varepsilon}{(1+2\varepsilon)^2}
+- \dfrac{(1+\varepsilon)(2\varepsilon^2 - 2\varepsilon - 1)}{\varepsilon^2(1+2\varepsilon)^2}
+- \dfrac{4\varepsilon^2}{3(1+2\varepsilon)^3}
+- \left[\dfrac{1+\varepsilon}{\varepsilon^3} - \dfrac{1}{2\varepsilon} + \dfrac{1}{2\varepsilon^3}\right] \log(1+2\varepsilon)
+\right\}
+}{
+\left\{
+\dfrac{1+\varepsilon}{\varepsilon^2} \left[\dfrac{2(1+\varepsilon)}{1+2\varepsilon} - \dfrac{\log(1+2\varepsilon)}{\varepsilon}\right]
++ \dfrac{\log(1+2\varepsilon)}{2\varepsilon}
+- \dfrac{1+3\varepsilon}{(1+2\varepsilon)^2}
+\right\}
+}
+\end{equation}
+y en el caso ultrarrelativista es: 
+
+\begin{equation} 
+\bar{f}_C(\varepsilon) = \frac{\log (2\varepsilon)-0.82}{\log(2\varepsilon)+0.5}
+\end{equation}
+La fracción de energía media transferida entonces es: 
+
+\begin{equation*}
+    \bar{f}_C(20\text{keV}) = 0.036 \qquad 
+    \bar{f}_C(20\text{MeV}) = 0.73
+\end{equation*}
+Ahora quedaría multiplicarla por la energía incidente. Por otro lado, la energía máxima transferida que pueden adquirir. La máxima transferencia de energía viene dada por el máximo de la función
+
+\begin{equation*}
+    f_C(E_\gamma,\theta) = \frac{\varepsilon(1-\cos(\theta))}{1+\varepsilon(1-\cos \theta)}
+\end{equation*}
+claramente cuando $\theta=\pi$ tenemos el máximo, siendo la máxima fracción de trasferencia de energía: 
+
+\begin{equation*}
+   f_{C,\max}(20\text{keV}) = 7.3 \%   \quad 
+    f_{C,\max}(20\text{MeV}) = 99\%
+\end{equation*}
+Las energías, para $20$ keV:
+\begin{equation*}
+    \bar{E}_K = 0.722 \ \text{keV} \qquad  E_{K,\max}= 1.45 \ \text{keV}
+\end{equation*}
+Para 20 MeV: 
+\begin{equation*}
+    \bar{E}_K = 14.53 \  \text{MeV} \qquad  E_{K,\max}= 19.74 \ \text{MeV}
+\end{equation*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Producción de Pares y Tripletes}
+    Calcule la energía promedio comunicada a partículas cargadas por fotones de $2$ y $20\ \text{MeV}$ respectivamente cuando interaccionan por producción de pares en el campo de un núcleo y en el campo de un electrón.
+\end{Ejercicio}
+
+La energía promedio que se llevan las partículas es básicamente la enerǵia del fotón menos la masa de las partículas creadas (electrón y positrón), dividido entre el número de partículas que salen despedidas. En este contexto, la producción de pares (campo del núcleo)
+
+\begin{equation}
+    \overline{E}_{k}^{\text{NPP}} = \frac{h \nu - 2 m_ec^2}{2} 
+\end{equation}
+mitnras que la producción de triplete
+\begin{equation}
+    \overline{E}_{k}^{\text{TP}}= \frac{h \nu - 4 m_ec^2}{3} 
+\end{equation}
+Luego, facilmente: 
+
+\begin{equation}
+    \overline{E}_{k}^{\text{NPP}} (2 \unit{MeV}) =0.49 \ \unit{MeV} \qquad 
+    \overline{E}_{k}^{\text{NPP}} (20 \unit{MeV}) = 9.49 \ \unit{MeV}
+\end{equation}
+\begin{equation}
+    \overline{E}_{k}^{\text{TP}} (2 \unit{MeV}) = 0.33 \ \unit{MeV} \qquad 
+    \overline{E}_{k}^{\text{TP}} (20 \unit{MeV}) = 6.33 \ \unit{MeV}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Numero de Interacciones por cada tipo}
+    Un haz estrecho que contiene $10^{20}$ fotones de $6\ \text{MeV}$ de energía incide perpendicularmente sobre una lámina de plomo de $12\ \text{mm}$ de espesor. ¿Cuántas interacciones de cada tipo (fotoeléctrico, Compton, producción de pares, y Rayleigh) se producen en el plomo? Considerando que cada interacción elimina un fotón del haz, ¿Cuánta energía es transferida por cada tipo de interacción? ¿Cuánta energía es transferida a partículas cargadas por cada tipo de interacción?
+\end{Ejercicio} 
+
+En este ejercicio tenemos que considerar todas las secciones eficaces. Veamos que la diferencia de intensidad entre el inicio y el punto final del metal $(L)$: 
+\begin{equation}
+   I_0 - I(L) = I_0 \pqty{1-e^{-\mu L}} 
+\end{equation}
+Claramente, la intensidad en este contexto, se puede definir como numero de partículas (fotones) por unidad de superficie, por lo que es obvio que el número de interacciones será: 
+
+\begin{equation}
+    N_{\text{interacciones}}= N_0 \pqty{1-e^{-\mu L}} 
+\end{equation}
+siendo $N_0$ el número de partículas emitidas. Luego, como cada fotón se ``elimina'', la energía de el mismo debe ser transferida (quede en el medio o no), de lo que se deduce que: 
+
+\begin{equation}
+    E_{\text{transferida}} = 6 \cdot N_{\text{interacciones}}  \ \unit{MeV}
+\end{equation}
+en cualquier otro caso, deberíamos considerar el número de interacciones por tipo de interacción y multiplicar cada una de estas por la transferencia de energía media. Además, si no fuera así, también deberíamos considerar que un fotón tras, por ejemplo Comptón, podría volver a interaccionar (y por tanto el número de interacciones podría ser mayor que incluso el número de fotones). El coeficiente de atenuación lineal $\mu$ total se define como la suma de los diferentes coeicientes de atenuación: 
+
+\begin{equation}
+    \mu = \tau_K + \sigma_{KN} + \sigma_R + \kappa 
+\end{equation}
+siendo $\tau_K$ el efecto fotoeléctrico, $\sigma_{KN}$ el efecto Compton (Klein-Nishina), $\sigma_R$ Rayleigh y $\kappa$ producción de pares. ¿Cómo calculamos entonces cuantas interacciones de cada tipo? Pues si definimos la ``fuerza '' o ``peso'' de la interacción $i$ como 
+
+\begin{equation}
+    P_i \equiv \frac{\mu_i}{\mu_{\text{tot}}}
+\end{equation}
+entonces claramente el número de interacciones de esa interacción es: 
+
+\begin{equation}
+    N_{\text{interacciones, i}} =  P_i N_{\text{interacciones}}
+\end{equation}
+Ahora solo quedan hacer los cálculos: 
+
+\begin{equation}
+    \tau_K =        \quad 
+    \sigma_{KN} =   \quad 
+    \sigma_R =      \quad 
+    \kappa =  
+\end{equation}
+Luego el coeficiente de atenuación másico: 
+
+\begin{equation}
+    \mu=            \quad 
+    N_{\text{interacciones}} = 
+\end{equation}
+y finalmente, el número de interacciones por tipo de interacción: 
+\begin{equation}
+    N_{fe} = \quad 
+    N_{\text{compton}} = \quad 
+    N_{\text{Rayleigh}} = \quad 
+    N_{\text{PP}} =  
+\end{equation}
+Que multiplicando por $6$ MeV tendríamos la energía transferida al medio por interacción y total: 
+
+\begin{equation}
+    \Delta E= 
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Sección eficaz y coeficiente de atenuación total} 
+    Un haz estrecho de rayos gamma de $0,15\ \text{MeV}$ de energía se atenúa un factor cuatro al atravesar una lámina de plata de $2\ \text{mm}$ de espesor. Calcule la sección eficaz de interacción de dichos fotones en la plata. Calcule asimismo el coeficiente de atenuación másico.
+\end{Ejercicio}
+
+Si se atenua un factor cuatro tenemos que: 
+
+\begin{equation}
+    I(x_0) = \frac{I_0}{4} \Rightarrow e^{-\mu x} = \frac{1}{4}
+\end{equation}
+Lo que implica 
+
+\begin{equation}
+    \mu = \frac{\ln (4)}{x} = 693\ \unit{m^{-1}} \qquad \frac{\mu}{\rho} = \SI{6.61e-05}{m^2/g} = \SI{6.61e-01}{cm^2/g}
+\end{equation}
+Según en \href{https://physics.nist.gov/cgi-bin/Xcom/xcom3_1}{NIST} $\SI{5.426E-01}{cm^2/g}$, por lo que es un valor similar. La sección eficaz será: 
+
+\begin{equation}
+    \mu = \frac{\sigma}{n} \Rightarrow \sigma = n \mu = \pqty{\rho \frac{N_A}{A}} \mu
+\end{equation}
+Y por tanto, usando los datos de la \href{https://es.wikipedia.org/wiki/Plata}{wikipedia} ($\rho=10490 \unit{kg/m^3}, A=107.86$):
+
+\begin{equation}
+    \sigma = \SI{118.35}{\barn}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Sección eficaz y coeficiente de atenuación total} 
+    Un haz fino plano-paralelo, mono-energético, y estrecho, que contiene $10^{12}$ partículas neutras por segundo, incide perpendicularmente en una lámina de material de densidad $11,3 \times 10^{3}\ \text{kg m}^{-3}$, de $0,02\ \text{m}$ de espesor. Considerando que el coeficiente de atenuación másico para dichas partículas y en dicho material tiene un valor de $1 \times 10^{-3}\ \text{m}^2 \ \text{kg}^{-1}$, calcule el número de partículas primarias que se transmiten a través de la lámina en un minuto. Calcule también el número de partículas transmitidas si el coeficiente de atenuación másico tuviera un valor de $3 \times 10^{-4}\ \text{m}^2 \ \text{kg}^{-1}$ y $1 \times 10^{-4}\ \text{m}^2 \ \text{kg}^{-1}$ y compare los resultados con los obtenidos mediante la aproximación de lámina delgada. Calcule asimismo el recorrido libre medio de tales partículas en dicho material.
+\end{Ejercicio}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Rayos Gamma}
+Calcule el coeficiente de atenuación para rayos gamma de $1,25\ \text{MeV}$ de energía en NaI.
+\end{Ejercicio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Rayos Gamma}
+En un experimento de transmisión, un haz de radiación gamma consistente en una mezcla de dos radiaciones mono-energéticas de energías $E_{1}$ y $E_{2}$, respectivamente, se llevan a cabo las siguientes observaciones,
+
+\begin{enumerate}[label=\alph*)]
+\item Cuando no se interpone absorbente alguno, las intensidades de ambas radiaciones son idénticas
+\item Cuando se hace atravesar al haz por una lámina de aluminio de $60\ \text{cm}$ de espesor, la intensidad de la radiación menos penetrante es un $10\%$ de la correspondiente a la otra radiación.
+\item Al interponer $5\ \text{cm}$ adicionales del absorbente, la intensidad de la radiación se reduce a la mitad de su valor anterior.
+\end{enumerate}
+
+Determine los coeficientes lineal y másico del aluminio para dichas energías.
+\end{Ejercicio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Coeficiente de atenuación }
+Suponga que un haz de radiación neutra está formado en un tercio por partículas de $2\ \text{MeV}$ de energía para las que un determinado medio material tiene un coeficiente de atenuación másico de $1 \times 10^{-3}\ \text{m}^2\ \text{kg}^{-1}$, en otro tercio por partículas de $5\ \text{MeV}$, con un coeficiente de atenuación másico de $3 \times 10^{-4}\ \text{m}^2\ \text{kg}^{-1}$, y en el tercio restante por partículas de $7\ \text{MeV}$, con un coeficiente de atenuación másico de $1 \times 10^{-4}\ \text{m}^2\ \text{kg}^{-1}$. Calcule el valor promedio del coeficiente de atenuación másico que observaría con un contador cuando una lámina delgada del anterior material se interponga, con una geometría de haz estrecho, entre el haz y el contador. Calcule asimismo el valor promedio del coeficiente de atenuación másico que observaría con un contador cuando interpusiera, con una geometría de haz estrecho, un espesor de material de $250\ \text{kg m}^{-2}$.
+\end{Ejercicio}
