@@ -1,4 +1,4 @@
-#!/home/daniel/GitHub/CITIUS/.venv/bin/python3
+#!/home/daniel/GitHub/Cuadernos/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

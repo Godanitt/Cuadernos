@@ -134,3 +134,107 @@ El coeficiente de atenuación lineal $\mu$ total se define como la suma de los d
     \mu = \tau_K + \sigma_{KN} + \sigma_R + \kappa 
 \end{equation}
 siendo $\tau_K$ el efecto fotoeléctrico, $\sigma_{KN}$ el efecto Compton (Klein-Nishina), $\sigma_R$ Rayleigh y $\kappa$ producción de pares. 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%5%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%5%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%5%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%5%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%5%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%5%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%5%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%5%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%5%%%%%%%%%
+
+\newpage
+\section*{\textit{Scripts} en python para cálculos.}
+\addcontentsline{toc}{section}{\textit{Scripts}}
+
+\subsubsection{Paquetes fundamentales}
+\begin{lstlisting}[language=python]
+import numpy as np  
+import matplotlib.pyplot as plt 
+import scipy.constants as cte 
+from scipy.constants import physical_constants
+\end{lstlisting}
+
+\subsubsection{Coeficiente de atenuación y sección eficaz}
+\begin{lstlisting}[language=python]
+r_e = physical_constants["classical electron radius"][0]
+alpha=cte.alpha
+sigmaTh=(8/3)*np.pi*(r_e**2)*1e28
+
+# Fundamentales: 
+
+def sigma(mu,rho,A): 
+    """ Devuelve la sección eficaz [m²] para un coeficiente de atenuación, densidad y número másico"""
+    return mu*A/cte.N_A/rho
+
+def mu(sigma,rho,A): 
+    """ Devuelve el coeficiente de atenuación [m-1] para una sección eficaz [m²], densidad y número másico"""
+    return sigma*(A/cte.N_A/rho)**(-1)
+\end{lstlisting}
+\subsubsection{Sección eficaz}
+\begin{lstlisting}[language=python]
+# Secciones eficaces: 
+
+def sigma_compton(eps):
+    """ Devuelve la sección eficaz de Compton [m²] (Klein-Nishina)"""
+    term1 = (1 + eps) / eps**2 * (2*(1+eps)/(1+2*eps) - np.log(1+2*eps)/eps)
+    term2 = np.log(1+2*eps) / (2*eps)
+    term3 = (1+3*eps) / (1+2*eps)**2
+    return 2 * np.pi * r_e**2 * (term1 + term2 - term3)
+    
+
+def sigma_fotoelec(Z, eps,sigma_Th=sigmaTh, n=4):
+    """  Devuelve el coeficiente de atenuación [m] del efecto fotoeléctrico. """
+    return alpha**4 * sigma_Th * Z**n * np.sqrt(32/(eps**7))
+
+def sigma_pp(epsilon, Z):
+    """     Calcula  seccion eficaz [m²] par produccitoin (kappa).     """
+    # Screening threshold
+    screening_limit = 1 / (alpha * Z**(1/3))
+    # Factor prefactorial común
+    prefactor = alpha * re**2 * Z**2
+    
+    if epsilon > 4:  # Región fuera de los límites anteriores
+        P = (28/9) * np.log(2*epsilon) - (218/27) - 1.027
+    
+    elif epsilon > screening_limit:  # Complete screening
+        P = (28/9) * np.log(183 / Z**(1/3)) - 2/27
+    
+    else:  # No screening
+        P = (28/9) * np.log(2*epsilon) - (218/27)
+    
+    return prefactor * P
+\end{lstlisting}
+\subsubsection{Coeficiente de atenuación}
+\begin{lstlisting}[language=python]
+# Coeficientes de Atenuación: 
+
+def mu_fotoelec(Z, eps, A,rho, sigma_Th=sigmaTh, n=4):
+    """  Devuelve el coeficiente de atenuación [m] del efecto fotoeléctrico. """
+    return mu(sigma_fotoelec(Z,eps,sigma_Th,n),rho,A)
+
+def mu_compton(eps,rho,A):
+    """  Devuelve el coeficiente de atenuación compton """
+    return mu(sigma_compton(eps),rho,A)
+
+def mu_pp(eps,Z,rho,A):
+    """  Devuelve el coeficiente de atenuación por producción de pares """
+
+    return mu(sigma_pp(eps,Z),rho,A)
+
+def mu_rayleith(sigma_raylei,rho,A):
+    """  Devuelve el coeficiente de atenuación por rayleigh """
+    return mu(sigma_raylei,rho,A)
+
+\end{lstlisting}

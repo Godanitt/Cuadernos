@@ -67,6 +67,16 @@
 
 
 
+
+%----------------------------------------------------------------------------
+% Tablas automaticamente centradas
+%----------------------------------------------------------------------------
+
+%\let\old@floatboxreset\@floatboxreset
+%\def\@floatboxreset{\old@floatboxreset\centering} % fuerza centrado dentro del float
+
+
+
 %----------------------------------------------------------------------------
 % Tamaño de secciones y subsecciones 
 %----------------------------------------------------------------------------
@@ -244,27 +254,42 @@
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
+
 \lstset{
-  backgroundcolor=\color{white},
-  basicstyle=\footnotesize\ttfamily,
-  breaklines=true,
-  captionpos=b,
-  commentstyle=\color{mygreen},
-  frame=single,
-  keepspaces=true,
-  keywordstyle=\color{blue},
-  language=VHDL,
-  numbers=left,
-  numbersep=5pt,
-  numberstyle=\tiny\color{mygray},
-  rulecolor=\color{black},
-  showstringspaces=false,
-  stringstyle=\color{mymauve},
-  tabsize=2,
-  title=\lstname
+    basicstyle=\footnotesize\ttfamily, % Default font
+    % numbers=left,              % Location of line numbers
+    numberstyle=\tiny,          % Style of line numbers
+    % stepnumber=2,              % Margin between line numbers
+    numbersep=5pt,              % Margin between line numbers and text
+    tabsize=2,                  % Size of tabs
+    extendedchars=true,
+    breaklines=true,            % Lines will be wrapped
+    keywordstyle=\color{red},
+    frame=lines,                %lines -> liena arriba y abajo
+    % keywordstyle=[1]\textbf,
+    % keywordstyle=[2]\textbf,
+    % keywordstyle=[3]\textbf,
+    % keywordstyle=[4]\textbf,   \sqrt{\sqrt{}}
+    stringstyle=\color{white}\ttfamily, % Color of strings
+    showspaces=false,
+    showtabs=false,
+    xleftmargin=17pt,
+    framexleftmargin=17pt,
+    framexrightmargin=5pt,
+    framexbottommargin=4pt,
+    % backgroundcolor=\color{lightgray},
+    showstringspaces=false
 }
-
-
+\lstloadlanguages{ % Check documentation for further languages ...
+     % [Visual]Basic,
+     % Pascal,
+     % C,
+     % C++,
+     % XML,
+     % HTML,
+     Java,
+     Python
+}
 %----------------------------------------------------------------------------
 % COMANDOS PERSONALIZADOS
 %----------------------------------------------------------------------------
