@@ -294,7 +294,7 @@ entonces claramente el número de interacciones de esa interacción es:
 \begin{equation}
     N_{\text{interacciones, i}} =  P_i N_{\text{interacciones}}
 \end{equation}
-Ahora solo quedan hacer los cálculos, que presentaremos en una tabla para poder comparar los resultados teóricos. 
+Ahora solo quedan hacer los cálculos, que presentaremos en una tabla para poder comparar los resultados teóricos. Sacamos los datos teóricos del \href{https://physics.nist.gov/PhysRefData/Xcom/html/xcom1.html}{NIST} y la densidad del plomo $11340$ kg/m$^3$ y su número maśico $A=207.2$ de la \href{https://es.wikipedia.org/wiki/Plomo}{wikipedia}.
 
 \begingroup
 \makeatletter
@@ -362,7 +362,7 @@ Lo que implica
 \begin{equation}
     \mu = \frac{\ln (4)}{x} = 693\ \unit{m^{-1}} \qquad \frac{\mu}{\rho} = \SI{6.61e-05}{m^2/g} = \SI{6.61e-01}{cm^2/g}
 \end{equation}
-Según en \href{https://physics.nist.gov/cgi-bin/Xcom/xcom3_1}{NIST} $\SI{5.426E-01}{cm^2/g}$, por lo que es un valor similar. La sección eficaz será: 
+Según en \href{https://physics.nist.gov/PhysRefData/Xcom/html/xcom1.html}{NIST} $\SI{5.426E-01}{cm^2/g}$, por lo que es un valor similar. La sección eficaz será: 
 
 \begin{equation}
     \mu = \frac{\sigma}{n} \Rightarrow \sigma = n \mu = \pqty{\rho \frac{N_A}{A}} \mu
@@ -383,7 +383,23 @@ Y por tanto, usando los datos de la \href{https://es.wikipedia.org/wiki/Plata}{w
     Un haz fino plano-paralelo, mono-energético, y estrecho, que contiene $10^{12}$ partículas neutras por segundo, incide perpendicularmente en una lámina de material de densidad $11,3 \times 10^{3}\ \text{kg m}^{-3}$, de $0,02\ \text{m}$ de espesor. Considerando que el coeficiente de atenuación másico para dichas partículas y en dicho material tiene un valor de $1 \times 10^{-3}\ \text{m}^2 \ \text{kg}^{-1}$, calcule el número de partículas primarias que se transmiten a través de la lámina en un minuto. Calcule también el número de partículas transmitidas si el coeficiente de atenuación másico tuviera un valor de $3 \times 10^{-4}\ \text{m}^2 \ \text{kg}^{-1}$ y $1 \times 10^{-4}\ \text{m}^2 \ \text{kg}^{-1}$ y compare los resultados con los obtenidos mediante la aproximación de lámina delgada. Calcule asimismo el recorrido libre medio de tales partículas en dicho material.
 \end{Ejercicio}
 
+Los datos son los siguientes:
 
+\[ \rho=11.3\times 10^3  \ \unit{kg/m^3} \qquad x_0 = 0.02 \ \unit{m} \]
+Las partículas primarias que se trasmiten (con un haz inicial de $N_0$) serán:
+
+\begin{equation}
+    N_{\text{trasmitidas}}(x_0)=N_0 e^{-\mu x_0} \approx N_0 (1-x_0\mu)
+\end{equation}
+siendo la última la \textit{aproximación delgada}. En un pminuto pasan $\SI{6e13}{}$ partículas ($N_0$). Tenemos que probar para 3 coeficientes de atenuación másicos, tanto para la expresión normal y la aproximación a lámina delgada: 
+
+\begingroup
+\makeatletter
+\let\old@floatboxreset\@floatboxreset
+\def\@floatboxreset{\old@floatboxreset\centering} % fuerza centrado dentro del float
+\makeatother
+\input{Exercises/03/03-10-1.tex}
+\endgroup
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -414,6 +430,67 @@ En un experimento de transmisión, un haz de radiación gamma consistente en una
 Determine los coeficientes lineal y másico del aluminio para dichas energías.
 \end{Ejercicio}
 
+Veamos que, al tener dos energías, tenemos dos coeficientes diferentes $\mu_1$ y $\mu_2$. Para cualquier intensidad. Si $\alpha$ es el factor qeu se atenua la intensidad en una distancia $x_0$:
+
+\begin{equation}
+    I(x_0) = \alpha I_0 \to  e^{-\mu x_0}  \qquad \mu = - \frac{\ln(\alpha)}{x_0}\qquad  0 < \alpha \leq 1
+\end{equation}
+¿Cuales son las ecuaciones que tenemos que resolver? Veamos que, al atravesar un $x_0=60$ cm, tenemos que se atenuan factoes diferentes: 
+
+\begin{equation}
+    \mu_1 = -\frac{\ln (\alpha_1)}{x_0} \qquad 
+    \mu_2 = -\frac{\ln (\alpha_2)}{x_0} 
+\end{equation}
+Con la condición b) ``la radiación menos penetrante es un 10\% la otra radiación''(asumiremos la $E_1$), tenemos que:
+
+\begin{equation}
+    \alpha_2 = 0.1 \alpha_1
+\end{equation}
+Con esta podemos deducir: 
+
+\begin{equation}
+    \mu_2 - \mu_1 = \frac{1}{x_0} \pqty{\ln(\alpha_1)-\ln(\alpha_2)} \to \mu_2 - \mu_1 = \underbrace{\frac{\ln(10)}{x_0}}_{C_0}
+\end{equation}
+
+Sin embargo tenemos 3 ecuaciones y 4 parámetros que resolver: falta una ecuación. La siguiente la dará la condición c), que quizás es la más complicada. Teniendo en cuenta que tienen longitudes de onda diferentes y son fuentes monocromáticas, la intensdiad total: 
+
+\begin{equation}
+    I = I_1 + I_2 
+\end{equation}
+y por tanto al atenuarse un 50\% desde 60 a 65 cm, tenemos que estamos usando la siguiente relación: 
+
+\begin{equation}
+    I(x_0+\Delta x) = 0.5 I(x_0)  \Longrightarrow
+\end{equation} 
+\begin{equation}
+    \frac{1}{2} \pqty{\alpha_1 e^{-\mu_1 x_0} + \alpha_2 e^{-\mu x_0}} = \pqty{\alpha_1 e^{-\mu_1 (x_0+\Delta x)} + \alpha_2 e^{-\mu (x_0+\Delta x)}}
+\end{equation}
+Usando la relación anterior  $10\alpha_2 = \alpha_1$ (y multplicando por 2 a ambos lados) tenemos que:
+\begin{equation} 
+    10e^{-\mu_1 x_0} + e^{-\mu_2 x_0} = 20 e^{-\mu_1 (x_0+\Delta x)} +2 e^{-\mu_2 (x_0+\Delta x)}
+\end{equation}
+y $\mu_2 = \mu_1 + C_0$, tenemos que: 
+
+\begin{equation}
+    10 + e^{-C_0 x_0} = 20 e^{-\pqty{\mu_1\Delta x+C_0 \Delta x}} +2 e^{-C_0x_0} e^{\pqty{\mu_1\Delta x+C_0 \Delta x}}
+\end{equation}
+y como $-C_0x_0=\ln(1/10)$, sustituyendo esto y multiplicando ambos lados por 10: 
+
+\begin{equation}
+    101 = 202 e^{-\pqty{\mu_1\Delta x+C_0 \Delta x}}  \to \ln(1/2) = - \Delta x (\mu_1 + C_0) 
+\end{equation}
+tal que:
+\begin{equation}
+    -\mu_1 -  \frac{\ln(10)}{x_0}= -\frac{\ln(2)}{\Delta x}
+\end{equation}
+y por tnato: 
+\begin{equation}
+    \mu_1 =\frac{\ln(2)}{\Delta x} - \frac{\ln(10)}{x_0} = 0.10 \ \unit{cm}
+\end{equation}
+\begin{equation}
+    \mu_2 = \frac{\ln(2)}{\Delta x} = 0.14  \ \unit{cm}
+\end{equation}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -423,3 +500,22 @@ Determine los coeficientes lineal y másico del aluminio para dichas energías.
 \begin{Ejercicio}{Coeficiente de atenuación }
 Suponga que un haz de radiación neutra está formado en un tercio por partículas de $2\ \text{MeV}$ de energía para las que un determinado medio material tiene un coeficiente de atenuación másico de $1 \times 10^{-3}\ \text{m}^2\ \text{kg}^{-1}$, en otro tercio por partículas de $5\ \text{MeV}$, con un coeficiente de atenuación másico de $3 \times 10^{-4}\ \text{m}^2\ \text{kg}^{-1}$, y en el tercio restante por partículas de $7\ \text{MeV}$, con un coeficiente de atenuación másico de $1 \times 10^{-4}\ \text{m}^2\ \text{kg}^{-1}$. Calcule el valor promedio del coeficiente de atenuación másico que observaría con un contador cuando una lámina delgada del anterior material se interponga, con una geometría de haz estrecho, entre el haz y el contador. Calcule asimismo el valor promedio del coeficiente de atenuación másico que observaría con un contador cuando interpusiera, con una geometría de haz estrecho, un espesor de material de $250\ \text{kg m}^{-2}$.
 \end{Ejercicio}
+
+Tenemos que intensidad:
+\begin{equation}
+    I(x) = \frac{I_0}{3}\pqty{e^{-\mu_1 x}+e^{-\mu_2 x} + e^{-\mu_3x}}
+\end{equation}
+lo cual se puede hacer ya que son haces monocromáticos con longitudes de onda diferentes. Si la lámina es delgada ($x \mu_i \ll 1$), podemos usar la media ponderada ($\mu_{\text{eff}} = (\mu_1 + \mu_2 + \mu_3)/x$) obteniendo: 
+
+\begin{equation}
+    \frac{\mu_{\text{eff}}}{\rho} = \SI{0.00047}{m^2 / kg}    
+\end{equation}
+Con un espesor de $d$ no despreciable tendríamos
+
+\begin{equation}
+    I_0 e^{-\mu_{\text{eff}} d} = \frac{I_0}{3}\pqty{e^{-\mu_1 d}+e^{-\mu_2 d} + e^{-\mu_3 d}}
+\end{equation}
+de tal modo que el el \textit{coeficiente de atenuación efectivo} sería
+\begin{equation}
+    \mu_{\text{eff}} =  \frac{1}{3d} \ln \pqty{e^{-\mu_1 d}+e^{-\mu_2 d} + e^{-\mu_3 d}} = \SI{0.00044}{m^2/kg}
+\end{equation}
