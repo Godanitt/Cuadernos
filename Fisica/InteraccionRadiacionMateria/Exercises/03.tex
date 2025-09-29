@@ -333,13 +333,13 @@ Ahora solo quedan hacer los cálculos, que presentaremos en una tabla para poder
 \input{Exercises/03/03-09-4.tex}
 \endgroup
 
-
-
-Que multiplicando por $6$ MeV tendríamos la energía transferida al medio por interacción y total: 
-
-\begin{equation}
-    \Delta E_{\text{teo}} = \qquad \Delta E_{\text{NIST}} =  
-\end{equation}
+\begingroup
+\makeatletter
+\let\old@floatboxreset\@floatboxreset
+\def\@floatboxreset{\old@floatboxreset\centering} % fuerza centrado dentro del float
+\makeatother
+\input{Exercises/03/03-09-5.tex}
+\endgroup
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -411,6 +411,36 @@ siendo la última la \textit{aproximación delgada}. En un pminuto pasan $\SI{6e
 \begin{Ejercicio}{Rayos Gamma}
 Calcule el coeficiente de atenuación para rayos gamma de $1,25\ \text{MeV}$ de energía en NaI.
 \end{Ejercicio}
+
+Cuando tenemos un material mezcla de diferentes átomos: 
+
+\begin{equation}
+    \mu = \sum_j w_j \mu_j
+\end{equation}
+siendo $w_j$ la proporción en peso del cosntituyente. Los coeficientes de atenuación másicos del sodio y el yodo son: 
+
+\begin{equation}
+    \mu_{\text{I}}/\rho=\SI{4.647e-02}{cm^2/g} \qquad 
+    \mu_{\text{Na}}/\rho=\SI{4.968E-02}{cm^2/g}  
+\end{equation}
+y el ioduro de sodio tiene una densidad de 3.67 $\unit{g/cm^3}$ (\href{https://es.wikipedia.org/wiki/Yoduro_de_sodio}{wikipedia}). Dado que el sodio tiene un $A$(Na)=22.98 u y $A$/(Na)=126.90 u, los pesos
+
+\begin{equation}
+    w_{\text{I}} = \frac{126.9}{149.89} \approx 0.8464, 
+    \qquad 
+    w_{\text{Na}} = \frac{22.98}{149.89} \approx 0.1533
+\end{equation}
+De lo que podemos deducir que: 
+
+\begin{equation}
+    \pqty{\frac{\mu}{\rho}}_{\text{NaI}} =  w_{\text{I}}\pqty{\frac{\mu}{\rho}}_{\text{I}} + w_{\text{Na}} \pqty{\frac{\mu}{\rho}}_{\text{Na}}= \SI{4.65e-2} \times 0.85 + \SI{4.97e-2} \times 0.15 \approx \SI{0.047}{cm^2/g}
+\end{equation}
+Con la densidad del material, simplemente multiplicamos tal que: 
+
+\begin{equation}
+    {\mu}_{\text{NaI}} = 0.047 \times 3.67 \approx \SI{0.172}{cm^{-1}}
+\end{equation}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

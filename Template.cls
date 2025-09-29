@@ -254,39 +254,48 @@
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
-
 \lstset{
-    basicstyle=\footnotesize\ttfamily, % Default font
-    % numbers=left,              % Location of line numbers
-    numberstyle=\tiny,          % Style of line numbers
-    % stepnumber=2,              % Margin between line numbers
-    numbersep=5pt,              % Margin between line numbers and text
-    tabsize=2,                  % Size of tabs
-    extendedchars=true,
-    breaklines=true,            % Lines will be wrapped
-    keywordstyle=\color{red},
-    frame=lines,                %lines -> liena arriba y abajo
-    % keywordstyle=[1]\textbf,
-    % keywordstyle=[2]\textbf,
-    % keywordstyle=[3]\textbf,
-    % keywordstyle=[4]\textbf,   \sqrt{\sqrt{}}
-    stringstyle=\color{white}\ttfamily, % Color of strings
-    showspaces=false,
-    showtabs=false,
-    xleftmargin=17pt,
-    framexleftmargin=17pt,
-    framexrightmargin=5pt,
-    framexbottommargin=4pt,
-    % backgroundcolor=\color{lightgray},
-    showstringspaces=false
+    basicstyle=\footnotesize\ttfamily,        % Fuente base para el código
+    numbers=left,                             % Mostrar números de línea (opcional)
+    numberstyle=\tiny,                        % Estilo de números de línea
+    numbersep=5pt,                            % Separación entre números y código
+    stepnumber=1,                             % Mostrar número en cada línea
+    tabsize=2,                                % Tamaño del tabulador
+    extendedchars=true,                       % Soporte extendido de caracteres
+    breaklines=true,                          % Romper líneas largas automáticamente
+    frame=lines,                              % Marco solo arriba y abajo
+    xleftmargin=17pt,                         % Margen izquierdo
+    framexleftmargin=17pt,                    % Ajuste de marco a la izquierda
+    framexrightmargin=5pt,                    % Ajuste de marco a la derecha
+    framexbottommargin=4pt,                   % Ajuste inferior del marco
+    showspaces=false,                         % No mostrar espacios con símbolos
+    showtabs=false,                           % No mostrar tabs con símbolos
+    showstringspaces=false,                   % No marcar espacios dentro de strings
+    %
+    % Estilos de resaltado
+    keywordstyle=\color{red}\bfseries,        % Estilo de palabras clave "default"
+    stringstyle=\color{blue}\ttfamily,        % Estilo de cadenas de texto
+    commentstyle=\color{green!50!black}\itshape, % Estilo de comentarios
+    %
+    % Palabras clave adicionales (grupo 1)
+    morekeywords={function, var, end, include},   % Añade tus propias palabras
+    %
+    % Segundo grupo de palabras clave con estilo distinto
+    keywordstyle=[2]\color{magenta}\bfseries,
+    morekeywords=[2]{if, else, elseif, while, for, return},
+    %
+    % Tercer grupo (puedes seguir añadiendo más si quieres)
+    keywordstyle=[3]\color{orange}\bfseries,
+    morekeywords=[3]{double, int, float, char, string},
 }
+
 \lstloadlanguages{ % Check documentation for further languages ...
      % [Visual]Basic,
      % Pascal,
-     % C,
-     % C++,
-     % XML,
-     % HTML,
+     C,
+     C++,
+     XML,
+     HTML,
      Java,
      Python
 }
