@@ -1,7 +1,7 @@
 \documentclass{../../Template}
 \addbibresource{../../Bibliografia.bib} % si quieres incluir la bibliografía
 
-\RequirePackage{transparent} 
+
 
 \input{../../0_Macros/Titulo.tex}
 \input{../../0_Macros/Indice.tex}
@@ -24,21 +24,11 @@
 
 \tableofcontents
 
-\NewPart{Fundamentos de la teoría cuántica de campos}{0.1}
-\input{Chapters/01-Introduccion.tex}
-\chapter{Mañana}
+\NewPart{Introducción}
 
-\NewPart{Interacciones y teoría de perturbaciones}{0.1}
-\input{Chapters/01-Introduccion.tex}
-
-\NewPart{Renormalización y estructuras avanzadas}{0.1}
-\input{Chapters/01-Introduccion.tex}
-
-\NewPart{Simetrías y teorías de gauge}{0.2}
-\input{Chapters/01-Introduccion.tex}
-
-
-\nocite{*}
+\chapter{Ejercicios}
+\addcontentsline{toc}{chapter}{Ejercicios}
+\input{Exercises/01.tex}
 
 \addcontentsline{toc}{chapter}{Bibliografia}
 \printbibliography 

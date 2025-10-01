@@ -80,7 +80,15 @@ Lo primero que vamos a definir son los valores fundamentales. Suponiendo un prot
             \Delta E_{\max} \approx \frac{4m_p m_N}{m_p^2 + m_N^2 + 2m_p m_N} E_K^i \qquad 
             \Delta p_{\max} \approx \frac{2(m_p+m_N)m_N}{m_p^2 + m_N^2 + 2m_p m_N} p_i
     \end{equation*}
-    donde $m_N$ es la masa del blanco. Dado que interacciona con un \textit{electrón orbital} $M_N=m_e$ y por tanto $\Delta E_{\max}$ para el protón será igual para todos los átomos con los que colisiona. Esta expresión proviene de la conservación de la energía-momento relativista, es decir, es la máxima energía transferible en una interacción relativista: energías mas altas no verificarían la conservación del cuadrimomento. La mínima transferencia de energía se da cuando el protón interacciona con la energía suficiente para romper el enlace del electró con el átomo. La manera en la que se tabula esta es directamente relacionado con el potencial de ionización \cite{Brau2014}, tal que 
+    donde $m_N$ es la masa del blanco. Dado que interacciona con un \textit{electrón orbital} $M_N=m_e$ y por tanto $\Delta E_{\max}$ para el protón será igual para todos los átomos con los que colisiona. Esta expresión proviene de la conservación de la energía-momento relativista, es decir, es la máxima energía transferible en una interacción relativista: energías mas altas no verificarían la conservación del cuadrimomento. De hecho, por definción es la transferencia de energía que ocurre cuando el ángulo de dispersión tiende a cero: 
+
+    \begin{equation}
+        \Delta E_{\max} = \lim_{\theta \to 0} \Delta E(\theta)
+    \end{equation}
+    
+    
+    
+    La mínima transferencia de energía se da cuando el protón interacciona con la energía suficiente para romper el enlace del electró con el átomo. La manera en la que se tabula esta es directamente relacionado con el potencial de ionización \cite{Brau2014}, tal que 
 
     \begin{equation*}
         \Delta E_{\min} \approx I \qquad \Delta p_{\min}^2 \approx \frac{1}{c} \sqrt{(\Delta E_{\min}+m_ec^2)^2-m^2 c^4}
@@ -89,10 +97,22 @@ Lo primero que vamos a definir son los valores fundamentales. Suponiendo un prot
     
     \item Ahora solo quedaría sustituir los $\Delta E_{\min}$ y $\Delta E_{\max}$ en las definción de $b(\Delta E)$, tal que aplicando la ecuación 
      \[
-        b = \frac{2 Z r_e m_e c^2}{v \Delta p} = \frac{Z r_e (v/c)}{\sqrt{2 m_e c^2 / \Delta E}}
+        b = \frac{2 Z r_e m_e c^2}{v \Delta p} = \frac{Z r_e (v/c)}{\sqrt{\Delta E/2 m_e c^2 }}
     \]
-    añadiendo las dos últimas filas. Por definición $b_{\max} (\Delta E_{\min})$ y $b_{\min} (\Delta E_{\max})$.  
+    añadiendo las dos últimas filas. Por definición $b_{\max} (\Delta E_{\min})$ y $b_{\min} (\Delta E_{\max})$. Esta ecuación se deduce a partir de la transferencia de momento $\Delta p$ en la trayectoria hiperbólica que realiza el protón en el \textit{scattering} de Coulomb, y en realidad es: 
+
+    \begin{equation}
+            b = \frac{2 Z r_e m_e c^2}{v \Delta p} \cos(\theta/2)
+    \end{equation}
+    La pregunta es: ¿podemos asumir que $\theta\approx 0$ a la hora de calcular $b_{\min}$ y $b_{\max}$? Lógicamente para calcular $b_{\max}$ nos interesa tener el ángulo más pequeño posible, siendo la única limitación el principio de incertidumbre. Por otro lado, para calcular $b_{\min}$ si podría parecer que nos interesa que $\theta \to \pi$ (aunque ya sabemos que $\theta <\theta_{\max}$ también del ppio. de incertidumbre), sin embargo $\Delta E \propto \cos^2 (\theta)$ (según siecs. relativistas), por lo que si queremos $\Delta E_{\max}$ no podemos tener $\theta \to \theta_{\max}$. 
     
+    La conclusión: en ambos casos queremos un ángulo muy pequeño. Ahora bien, aun no hemos respondido al origen de $\theta_{\min}$ ¿Realmente tiende a cero? Según lo que vimos en clase: 
+
+    \begin{equation}
+        \theta_{\min} \approx \frac{\lambda }{\cdot a_F}
+    \end{equation}
+    siendo $\lambda = \hbar/p \approx 1.45$ fm. Como $a_F$ será $\sim 1 \unit{\angstrom}$ (0.5 para el hidrógeno, 4 para el plomo) tendremos $\theta \sim 1.5 \times 10^{-5}$ rad: podemos asumir que es cero. A pesar de sre un parámetro clásico, lo encontramos bien definido.  
+
     Nos queda responder a las preguntas siguientes.¿Es posible la colisión entre una partícula cargada pesada y un electrón orbital del absorbente, estando el parámetro de impacto fuera del rango $b \in (b_{\min}, b_{\max})$? Veamos. 
     \begin{itemize}
         \item Veamos el caso para $b>b_{\max}$. Cuando esto ocurre tenemos que la transferencia de energía es mínima. ¿Se puede producir una transferencia de energía por debajo de $I$? La respuesta es que un protón (o cualquier otra partícula) no puede interaccionar trasmitiendo energía con un \textit{electrón orbital} si no es capaz de darle más energía que la de ligadura (al menos en una colisión individual). 

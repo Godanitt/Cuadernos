@@ -69,6 +69,7 @@ El esquema para el inversor es extremadamente sencillo pero extremadamente ilust
 
 
 
+
 \subsection{Retardo de la Puerta Lógica}
 
 El \textbf{retardo} es una de las características más importantes de las puertas lógicas, y es el tiempo que tarda una puerta en cambiar su salida del valor lógico 0 a 1 o viceversa. Sin embargo, para entenderl obien tenemos que definir correctamente que valores de voltaje son el 0 y el 1, ya que aunque hallamos trabajado con 0 V y 5 V respectivamente, en realidad habrá un cierto margen, un cierto rango que se considerá un 0 y un 1. Esto está definido por dos voltajes $V_H$ y $V_L$ (de \textit{Hight Voltaje} y \textit{Lower Voltaje}) que nos dan el voltaje inferior para el 1 lógico (5 V) y el valor superior del 0 lógico (0 V).
@@ -84,7 +85,7 @@ El retardo que tenga una puerta lógica se puede modelar en el esquema con una r
 \end{figure}
 
 
-El \textbf{modelo tau ($\boldsymbol{\tau}$)} nos da un valor para el retardo. Este modelo reduce el retardo de la puerta a un RC de tiempo constante $\tau$ para ambos modos. Que un transistor este modelado por una resistencia $R_n$ puede sonar un poco raro, y más cuando el transitor no obedece una ley lineal de entrada-salida (ley de Ohm). Por ello seleccionar una resistencia puede ser un poco complicado. Lo que se hace normalmente es asumir que la resistencia es un promedio del voltaje en saturacion y en el comporamiento lineal: 
+El \textbf{modelo tau ($\symbf{\tau}$)} nos da un valor para el retardo. Este modelo reduce el retardo de la puerta a un RC de tiempo constante $\tau$ para ambos modos. Que un transistor este modelado por una resistencia $R_n$ puede sonar un poco raro, y más cuando el transitor no obedece una ley lineal de entrada-salida (ley de Ohm). Por ello seleccionar una resistencia puede ser un poco complicado. Lo que se hace normalmente es asumir que la resistencia es un promedio del voltaje en saturacion y en el comporamiento lineal: 
 
 \begin{equation}
     R_n = \frac{1}{2} \parentesis{\frac{V_{sat}}{I_{sat}}+\frac{V_{lin}}{I_{lin}}}

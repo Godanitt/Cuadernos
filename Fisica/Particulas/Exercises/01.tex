@@ -1,0 +1,116 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Espinores}
+Sean $\psi_L$ y $\xi_R$ dos espinores de Weyl zurdos y diestros independientes, respectivamente.  Demuestre que $\xi_R^\dagger \sigma^\mu \psi_R$ y $\xi_L^\dagger \bar{\sigma}^\mu \psi_L$ son cuatro-vectores contravariantes,  donde $\sigma^\mu \equiv (1,\symbf{\sigma})$ y $\bar{\sigma}^\mu \equiv (1,-\symbf{\sigma})$.
+\end{Ejercicio}
+
+Al ser $\sigma^\mu = (1,\sigman)$, la demostración se puede dividir en dos fases, en demostrar que $v^0=\xi_L^\dagger \psi_L$ y que $v^i =\xi_L^\dagger  \bar{\sigma}^i \psi_L$ (así mismo para los espinores $R$) son efectivamente invariantes Lorentz. Las transformaciones de Lorentz sobre un eje (por ej. el eje x):
+\begin{eqnarray}
+    V^0 \to V'^0 = \cosh (\eta) V^0 + \sinh (\eta)  V^{1}\\ 
+    V^1 \to V'^1 = \cosh (\eta) V^1 + \sinh (\eta)  V^{0}
+\end{eqnarray}
+siendo $V'^2=V^2$ y $V'^3=V^3$. Con hacerlo sobre un eje basta, ya que siempre podremos encontrar un sistema de referencia donde el boost sea sobre ese eje x. Si nuestros cuatro-vecotres siguen dichas transformaciones, podemos decir que son contravariantes. Veamos uno por uno los dos casos: 
+
+\begin{itemize}
+    \item Caso $\xi_R^\dagger \sigma^\mu \psi_R$. Una transformación Lorenzt para los espinores de Weyl a derechas es:   
+    \begin{equation}
+        \Lambda_R = \exp \pqty{(-i\thetan  + \etan)\cdot \sigman}
+    \end{equation}
+    y recordemos que 
+    \begin{equation}
+        v^0=\xi_R^\dagger \psi_R \qquad v^i =\xi_R^\dagger  \bar{\sigma}^i \psi_R
+    \end{equation}
+
+    Si el boost lo hacemos en el eje $x$, el único valor no nulo de $\etan$ es $\eta_1=\eta$. Así pues:  
+    \begin{equation}
+        \Lambda_R = \exp \pqty{\eta  \sigma_1/2}
+    \end{equation}
+    Ahora tenemos que aplicar esto a nuestro $v_0$: 
+
+    \begin{equation}
+        v^0 \to v^{\prime 0}= \xi_R^{\prime \dagger} \psi_R' = (\Lambda_R \xi_R^\dagger) (\Lambda_R \psi_R) = e^{\pqty{ \eta  \sigma^1}}\xi_R^\dagger \psi_R 
+    \end{equation}
+    Usando que $e^{\pqty{ \eta  \sigma_1}} = \cosh (\eta)+\sigma^1 \eta $, tenemos que: 
+    \begin{equation}
+        v^{\prime 0}= \cosh (\eta) \xi_R^\dagger \psi_R  + \sinh (\eta) \xi_R^\dagger  \sigma^1 \psi_R = \cosh v^0 + \sinh \eta v^1 =  \Lambda v^0 
+    \end{equation}  
+    q.e.d. Por otro lado, nos queda demostrar para $v^i$:
+    
+    \begin{equation}
+        v^1 \to v^{\prime 1}= \xi_R^{\prime \dagger} \sigma_1 \psi_R' = \cosh (\eta) \xi_R^\dagger \sigma^1 \psi_R  + \sinh (\eta) \xi_R^\dagger \psi_R = \cosh (\eta) v^1 + \sinh (\eta) v^0
+    \end{equation}  
+    donde nos hemos saltados algunos de los pasos. Dado que $\eta_2=\eta_3=0$, es trivial que $v^{\prime 2} = v^2$ y $v^{\prime 3} = v^3$, de lo que se deduce que efectivamente $xi_R^{\prime \dagger} \sigma^\mu \psi_R'$ transforma como un \text{4-vector contravariante}.
+    \item El caso para la izquierda es análogo, aunque un poco didferente. En este caso 
+    \begin{equation}
+        \Lambda_L = \exp \pqty{-\eta  \sigma_1/2} \qquad \exp \pqty{-\eta  \sigma_1} = \cosh (\eta) - \sinh (\eta) \eta_1
+    \end{equation}
+    lo cual hace que aparezca un signo menos, pero que debido a $\bar{\sigma}^\mu = (1,-\sigman)$, desaparece. Como hemos dicho, es repetir pasos.   
+\end{itemize}
+pág. 267-268 del Maggiore \cite{Maggiore:2005qv}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Transformaciones de Lorentz}
+Usando la representación quiral, demuestre que las transformaciones de Lorentz de los espinores de Dirac pueden escribirse en términos de las matrices $\gamma$ como
+\[
+\Psi \;\longrightarrow\; \Psi' = \exp\!\left(-\tfrac{i}{4}\omega_{\mu\nu}\sigma^{\mu\nu}\right)\Psi.
+\]
+Esta ecuación nos dice que $S^{\mu\nu} = \sigma^{\mu\nu}/2$ proporciona una representación de dimensión compleja cuatro del álgebra de Lorentz. 
+Compruébelo directamente usando la definición de $\sigma^{\mu\nu}$ en términos de las matrices $\gamma$ y la relación $\{\gamma^\mu,\gamma^\nu\}=2g^{\mu\nu}$, es decir, verifique la siguiente relación de conmutación
+\[
+[S^{\mu\nu},S^{\rho\sigma}] = i\Big[g^{\nu\rho}S^{\mu\sigma} + g^{\mu\sigma}S^{\nu\rho} - g^{\nu\sigma}S^{\mu\rho} - g^{\mu\rho}S^{\nu\sigma}\Big].
+\]
+\end{Ejercicio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{Ejercicio}{Identidad de Dirac}
+Demuestre la relación
+\[
+\frac{i}{\slashed{q}-m} = \frac{i(\slashed{q}+m)}{q^2-m^2}.
+\]
+\end{Ejercicio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{Ejercicio}{Flujo invariante}
+Demuestre la siguiente identidad referente al flujo invariante de Lorentz,
+\[
+F = 4E_aE_b(v_a+v_b) = 4\sqrt{(p_a\cdot p_b)^2 - m_a^2 m_b^2}.
+\]
+\end{Ejercicio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{Ejercicio}{Helicidad y Hamiltoniano de Dirac}
+Demuestre que el operador de helicidad conmuta con el hamiltoniano de Dirac, $[\hat{h},H_D]=0$, donde
+\[
+\hat{h} = \frac{\symbf{\Sigma}\cdot \hat{\mathbf{p}}}{2p}
+= \frac{1}{2p}\begin{pmatrix} \symbf{\sigma}\cdot\hat{\mathbf{p}} & 0 \\ 0 & \symbf{\sigma}\cdot\hat{\mathbf{p}} \end{pmatrix}, 
+\quad
+\hat{H}_D = \symbf{\alpha}\cdot\hat{\mathbf{p}} + \beta m,
+\]
+con
+\[
+\alpha_k = \gamma^0 \gamma^k, \qquad \beta = \gamma^0.
+\]
+\end{Ejercicio}

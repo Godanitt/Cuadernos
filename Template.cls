@@ -17,6 +17,7 @@
 \RequirePackage{amsthm} % Para usar el entorno de teoremas
 \RequirePackage{amsfonts} % 
 \RequirePackage{amssymb} % 
+\RequirePackage{bm}
 \RequirePackage{makeidx}
 \RequirePackage{graphicx}
 \RequirePackage{lmodern}
@@ -63,7 +64,7 @@
 \RequirePackage{slashed}
 \RequirePackage{multicol}
 \RequirePackage{fontawesome} % para los iconos FontAwesome v4
-\RequirePackage{bm}
+\RequirePackage{transparent}
 
 
 
@@ -251,54 +252,32 @@
 %----------------------------------------------------------------------------
 % LISTINGS CONFIGURACIÓN
 %----------------------------------------------------------------------------
-\definecolor{mygreen}{rgb}{0,0.6,0}
-\definecolor{mygray}{rgb}{0.5,0.5,0.5}
-\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+% Hacemos que Listings reconozca nombres con mayúsculas (MediumMagboltz, TH1F, G4...)
 \lstset{
-    basicstyle=\footnotesize\ttfamily,        % Fuente base para el código
-    numbers=left,                             % Mostrar números de línea (opcional)
-    numberstyle=\tiny,                        % Estilo de números de línea
-    numbersep=5pt,                            % Separación entre números y código
-    stepnumber=1,                             % Mostrar número en cada línea
-    tabsize=2,                                % Tamaño del tabulador
-    extendedchars=true,                       % Soporte extendido de caracteres
-    breaklines=true,                          % Romper líneas largas automáticamente
-    frame=lines,                              % Marco solo arriba y abajo
-    xleftmargin=17pt,                         % Margen izquierdo
-    framexleftmargin=17pt,                    % Ajuste de marco a la izquierda
-    framexrightmargin=5pt,                    % Ajuste de marco a la derecha
-    framexbottommargin=4pt,                   % Ajuste inferior del marco
-    showspaces=false,                         % No mostrar espacios con símbolos
-    showtabs=false,                           % No mostrar tabs con símbolos
-    showstringspaces=false,                   % No marcar espacios dentro de strings
+    alsoletter={M,T,G}, 
     %
-    % Estilos de resaltado
-    keywordstyle=\color{red}\bfseries,        % Estilo de palabras clave "default"
-    stringstyle=\color{blue}\ttfamily,        % Estilo de cadenas de texto
-    commentstyle=\color{green!50!black}\itshape, % Estilo de comentarios
-    %
-    % Palabras clave adicionales (grupo 1)
-    morekeywords={function, var, end, include},   % Añade tus propias palabras
-    %
-    % Segundo grupo de palabras clave con estilo distinto
-    keywordstyle=[2]\color{magenta}\bfseries,
-    morekeywords=[2]{if, else, elseif, while, for, return},
-    %
-    % Tercer grupo (puedes seguir añadiendo más si quieres)
-    keywordstyle=[3]\color{orange}\bfseries,
-    morekeywords=[3]{double, int, float, char, string},
+    numbers=none,        % Quita la numeración de líneas
+    basicstyle=\footnotesize\ttfamily,
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    stepnumber=1,
+    tabsize=2,
+    extendedchars=true,
+    breaklines=true,
+    frame=lines,
+    xleftmargin=17pt,
+    framexleftmargin=17pt,
+    framexrightmargin=5pt,
+    framexbottommargin=4pt,
+    showspaces=false,
+    showtabs=false,
+    showstringspaces=false,
+    stringstyle=\color{blue}\ttfamily,
+    commentstyle=\color{green!50!black}\itshape,
 }
 
-\lstloadlanguages{ % Check documentation for further languages ...
-     % [Visual]Basic,
-     % Pascal,
-     C,
-     C++,
-     XML,
-     HTML,
-     Java,
-     Python
-}
 %----------------------------------------------------------------------------
 % COMANDOS PERSONALIZADOS
 %----------------------------------------------------------------------------
@@ -388,13 +367,16 @@
 \newcommand{\qndot}{\dot{\qn}}
 
 
-\newcommand{\alphan}{\boldsymbol{\alpha}}
-\newcommand{\sigman}{\boldsymbol{\sigma}}
-\newcommand{\pin}{\boldsymbol{\pi}}
-\newcommand{\rhon}{\boldsymbol{\rho}}
-\newcommand{\epsilonn}{\boldsymbol{\epsilon}}
-\newcommand{\omegan}{\boldsymbol{\omega}}
-\newcommand{\mun}{\boldsymbol{\mu}}
+\newcommand{\alphan}{\symbf{\alpha}}
+\newcommand{\sigman}{\symbf{\sigma}}
+\newcommand{\pin}{\symbf{\pi}}
+\newcommand{\rhon}{\symbf{\rho}}
+\newcommand{\epsilonn}{\symbf{\epsilon}}
+\newcommand{\omegan}{\symbf{\omega}}
+\newcommand{\mun}{\symbf{\mu}}
+\newcommand{\thetan}{\symbf{\theta}}
+\newcommand{\etan}{\symbf{\eta}}
+
 
 
 
@@ -414,7 +396,7 @@
 \newcommand{\Tn}{\mathbf{T}}
 \newcommand{\In}{\mathbf{1}}
 \newcommand{\Vn}{\mathbf{V}}
-\newcommand{\Encal}{\boldsymbol{\mathcal{E}}}
+\newcommand{\Encal}{\symbf{\mathcal{E}}}
 
 \newcommand{\hnn}{\hat{\mathbf{n}}}
 \newcommand{\hnr}{\hat{\mathbf{r}}}

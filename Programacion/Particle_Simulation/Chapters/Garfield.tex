@@ -1,0 +1,29 @@
+\chapter{Garfield++}
+
+
+\begin{Ejemplo}{\textbf{Tubo de deriva}}
+
+    En est ejemplo vamos a considerar un tubo de deriva con un diámetro de 15 mm y un diámetro del hilo (cable) de 50 $\mu m$, similar a los tubos de derivas de muones del ATLAS (también con un diámetro pequeño) llamados sMDTs. \\
+
+
+    Lo primero que tenemos que hacer es preparar la tabla de los parámetros de transporte (velocidad de deriva, coeficientes de difusión, coeficiente de Townsend, coeficiente de captura) como funciones del campo eléctrico $\Encal$ (y en general, del campo magnético $\Bn$ y el ángulo entre $\Encal$ y $\Bn$). En este ejemplo usaremos un gaz mezcla, a 3 atm y temperatura ambiente: 
+
+    \begin{lstlisting}[language=C++,style=c++]
+    MediumMagboltz gas("ar", 93., "co2", 7);
+    // Set temperature [K] and preasure [Torr]
+    gas.SetPressure(3*760.);
+    gas.SetTemperature(293.15);
+    \end{lstlisting}
+
+    También debemos especificar el número de puntos de la malla campo eléctrico que vamos a usar en la tabla y el rango que va a ser cubierto. Usamos 20 puntos entre 100 V/cm a 100 kV/cm con un espaciado logaritmico:  
+
+    \begin{lstlisting}[language=C++,style=c++]
+    gas.SetFieldGrid(100.,100.e3,20,true)
+    \end{lstlisting}
+    Ahora ejecutamos Magboltz para generar una tabla del gas para esta malla de campo eléctrico. Como un parámetro de entrada tenemos que especificar \textit{el número de colisiones} (en múltiplos de $10^7$) sobre el electrón cuya traza dibuja Magboltz: 
+
+    \begin{lstlisting}[language=C++,style=c++]
+    const int ncolll=10
+    \end{lstlisting} 
+    
+\end{Ejemplo}
