@@ -13,12 +13,12 @@ Como ya hemos visto, la energía de trasferencia máxima es (en el caso de que l
 así pues: 
 
 \begin{equation}
-     (\Delta E)_{\max} \approx \frac{40}{(11)^2} E_k = \frac{40}{121} E_k \approx 0.306 E_k
+     (\Delta E)_{\max} \approx \frac{40}{(11)^2} E_k = \frac{40}{121} E_k \approx 0.3306 E_k
 \end{equation}
 obteniendo así: 
 
 \begin{equation}
-     (\Delta E)_{\max} \approx \SI{1.22}{MeV}
+     (\Delta E)_{\max} \approx \SI{1.32}{MeV}
 \end{equation}
 
 
@@ -267,6 +267,22 @@ El núcleo residual queda en su estado fundamental en un $30\%$ de las reaccione
 Establezca cuál es el núcleo residual y calcule la producción de fotones considerando que la intensidad del haz es de $1\times10^{5}\,\mathrm{s^{-1}}$ y que puede despreciar la dispersión elástica de neutrones por el blanco.
 \end{Ejercicio}
 
+
+Podemos calcular el número de átomos de $^{10}$B por unidad de superficie 
+\begin{equation}
+    N(^{10}\text{B}) = \frac{A(^{10}\text{B})}{A(^{10}\text{B})+4A(^{11}\text{B})} \frac{\rho N_A}{A(^{10}\text{B})} \ \unit{cm^{-2}} \qquad  N(^{10}\text{B}) = \SI{1.115e+21}{cm^{-2}}
+\end{equation}
+siendo $A_1\approx 10$ y $A_2 \approx 11$. El núcleo residual en la reacción $^{10}\text{B}(\text{n},\alpha)^{7}_{3}\text{Li}$ es el litio 7. Podemos suponer, dado que nos da información el ejercicio, que el decaimiento del litio 7 excitado es inmediato, y por tanto la actividad del litio 7 excitado será igual a la tasa de producción del mismo, que es: 
+
+\begin{equation}
+    N(\gamma) = \epsilon A = \epsilon N(^{10}\text{B}) \Phi \sigma
+\end{equation}
+donde $\epsilon=0.3$ es el número de excitaciones que se producen. Así pues: 
+
+\begin{equation}
+    N(\gamma) = \SI{1506.65}{s^{-1}}
+\end{equation}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -274,7 +290,7 @@ Establezca cuál es el núcleo residual y calcule la producción de fotones cons
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%z
 
 \begin{Ejercicio}{Generadores de neutrones basados en aceleradores}\label{Ej:09}
 Un ejemplo de fuente de neutrones son los generadores basados en aceleradores, en los que aceleradores compactos se utilizan para acelerar deuterio, y generar neutrones a través de las siguientes reacciones:
@@ -292,6 +308,30 @@ Un ejemplo de fuente de neutrones son los generadores basados en aceleradores, e
 \end{enumerate}
 \end{Ejercicio}
 
+
+\begin{enumerate}[label=\alph*)]
+    \item Como ya hemos visto, $Q$ es el exceso de energía, que se evalua como la suma de las masas iniciales menos las finales, tal que:
+    \begin{equation}
+        Q =m\pqty{^{2}_{1}\text{H}}+ m \pqty{^{3}_{1}\text{H}} -  m\pqty{^{4}_{2}\text{He}} - \pqty{^{1}_{0}\text{n}} = 
+    \end{equation}
+    tal que (usando datos del \href{https://www.nndc.bnl.gov/nudat3/}{nndc}):
+
+    \begin{equation}
+        Q = 17589  \ \unit{keV}
+    \end{equation}
+    Mientras que la otra reacción: 
+    \begin{equation}
+        Q =m\pqty{^{2}_{1}\text{H}}+ m \pqty{^{2}_{1}\text{H}} -  m\pqty{^{3}_{2}\text{He}} - \pqty{^{1}_{0}\text{n}} = 
+    \end{equation}
+    tal que (usando datos del \href{https://www.nndc.bnl.gov/nudat3/}{nndc}):
+
+    \begin{equation}
+        Q = 3268.9 \ \unit{keV}
+    \end{equation}
+    \item La energía cinética de ambas partículas, suponiendo que se reparte toda la $Q$ en forma de energía cinética $E_k=Q$.
+    \item Pues la que genera más energía cinética será la más probable: tiene más estados en el sistema fásico. Pues depende que queramos: si queremos neutrones rápidos está claro que la deuterio-tritio, si queremos neutrones más lentos la del helio-neutrón. 
+\end{enumerate}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -306,6 +346,16 @@ Un núcleo de tritio de $5\,\mathrm{GeV}$ de energía cinética atraviesa un med
 Calcule el ángulo de emisión de la radiación de Cerenkov.
 \end{Ejercicio}
 
+El núcleo de tritio atraviesa un medio con una velocidad $\beta$, tal que el ángulo de Cerenkov viene dado por: 
+
+\begin{equation}
+    \cos (\theta_{\text{Cer}}) = \frac{1}{\beta n} \qquad \gamma = 2.78 \qquad \beta = \frac{p}{E} = 0.935
+\end{equation}
+\begin{equation}
+    \theta_{\text{Cer}} = 44.40^{\circ}
+\end{equation}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -319,5 +369,14 @@ Calcule el ángulo de emisión de la radiación de Cerenkov.
 Calcule la energía umbral por debajo de la cual no se observa radiación de Cerenkov cuando un electrón se mueve en el aire ($n=1{,}000293$).
 \end{Ejercicio}
 
+El valor mínimo de $\beta$ para el cual ya no se observa Cerenkov es: 
 
+\begin{equation}
+    \beta_{\min} = \frac{1}{n}  = 0.999707 \to 
+\end{equation}
+y por tanto la energía será: 
+
+\begin{equation}
+    E = 20.6 \ \unit{MeV}
+\end{equation}
 

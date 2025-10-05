@@ -366,6 +366,8 @@
 \newcommand{\yn}{\mathbf{y}}
 \newcommand{\qndot}{\dot{\qn}}
 
+\newcommand{\pslash}{\slashed{p}}
+\newcommand{\kslash}{\slashed{k}}
 
 \newcommand{\alphan}{\symbf{\alpha}}
 \newcommand{\sigman}{\symbf{\sigma}}
