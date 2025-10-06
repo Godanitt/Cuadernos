@@ -572,39 +572,35 @@ Así pues, solo tenemos que calcular el elemento de matriz $\Mcal_{fi}$, que se 
 	};
 	\caption{Diagrama de Feynman para \(\pi^- \to \ell^- \bar{\nu}_\ell\).}
 \end{figure}
-La corriente leptónica es, en este caso, con la constante de acoplo $g_X$:
-
+Al hacer un acoplo puramente escalar tenemos que: 
 \begin{equation}
-    j^{\mu}_l = \bar{u}(p_1) g_X \gamma^\mu v(p_2)
+    \Mcal_{fi} = f_\pi p_\pi \frac{g_X}{M_X^2} \bar{u}(p) v(k)
 \end{equation}
-que se acopla con el pión con una partícula escalar masiva (tal que $\frac{g_\mu \nu}{M_X^2}$). La forma de acoplar el pion y la corriente leptónica a través de este es bosón es: 
-
+Luego, la única dificultad para calcular $\vqty{\Mcal_{ij}}^2$ es hacer: 
 \begin{equation}
-   \Mcal_{fi} = p^\mu \frac{g_{\mu \nu}}{M_X^2} \pqty{\bar{u}^s(p_1) g_X \gamma^\nu v^{s'}(p_2)}
+    \sum_{\text{espines}} \pqty{\bar{u}(p) v(k)}  \pqty{\bar{u}(p) v(k)}^\dagger = \tr \pqty{(\pslash+m_l)(\kslash-m_\nu)} = 4 p^\mu k_\mu - 4 m_l m_\nu 
 \end{equation}
-
-
-
-\newpage
-donde $p_1=-p_2$ (conservación del momento). Claramente tenemos que sumar sobre los espines, de lo que se deduce que 
-
+que es, según los cálculos anteriores, y suponiendo que $m_\nu \to 0$: 
 \begin{equation}
-   |\Mcal_{fi}|^2 = \frac{1}{2} \frac{g_X}{M_X^2} \sum_{s,s'} \bqty{p^\mu \pqty{\bar{u}^s(p_1) \gamma_\mu v^{s'}(p_2)}} \bqty{p^\nu \pqty{\bar{u}^s(p_1) \gamma_\nu v^{s'}(p_2)}}
+    |\Mcal_{fi}|^2 = \bqty{f_\pi m_\pi \frac{g_X}{M_X^2} 2 (p \cdot k)}^2
 \end{equation}
-tal que:
-\begin{equation}
-    |\Mcal_{fi}|^2 = \frac{1}{2} \frac{g_X}{M_X^2} \bqty{p_\pi^\mu p_\pi^\nu \pqty{4 p_{\mu} k_\nu + 4 p_\nu k_\mu - 4 g_{\mu \nu} (p\cdot k)-  2g_{\mu \nu}(m_l+m_\nu)}}
-\end{equation}
-Ahora, hacemos directamente: 
-\begin{equation}
-    |\Mcal_{fi}|^2 = \frac{1}{2} \frac{g_X}{M_X^2} \bqty{8 (p_\pi \cdot p)(p_\pi \cdot k_\nu)-4 (p_\pi \cdot p_\pi) (p\cdot k)-  2(p_\pi \cdot p_\pi)(m_l+m_\nu)^2}
-\end{equation}
-aplicando los momentos tenemos: 
+tal que 
 
 \begin{equation}
-    |\Mcal_{fi}|^2 = \frac{1}{2} \frac{g_X}{M_X^2} \bqty{8 m_\pi^2 E_1 E_2 -4 m_\pi^2 (E_1E_2+p^2)-  2 m_\pi^2 (m_l+m_\nu)^2}
+    p_\pi^\mu = p^\mu + k^\mu \to m_\pi^2 = m_l^2 + 2 (p \cdot k) \to (p\cdot k) = \frac{1}{2} (m_\pi^2 - m_l^2)
 \end{equation}
-Ahora asumiendo que $m_\nu = 0$,  $E_2=p$, y $E_l^2={m_l^2+p^2}$:
+y por tanto: 
+
 \begin{equation}
-    |\Mcal_{fi}|^2 = \frac{m_\pi^2}{2} \frac{g_X}{M_X^2} \bqty{4 E_1 p - 4p^2-  2 m_l^2}
+    \Gamma = \frac{p^* }{8\pi m_\pi^2} \bqty{f_\pi m_\pi \frac{g_X}{M_X^2} (m_\pi^2 - m_l^2)}^2
+\end{equation}
+tal que: 
+
+\begin{equation}
+    \Gamma = \frac{f_\pi^2 g_X^2}{8 \pi m_X^2} (m_\pi^2 - m_l^2)^2
+\end{equation}
+De lo que se deduce que 
+
+\begin{equation}
+   \frac{\Gamma(\pi^- \to e^- \bar{\nu}_e)}{\Gamma(\pi^- \to \mu^- \bar{\nu}_\mu)} = \frac{(m_\pi^2 - m_e^2)^2}{(m_\pi^2 - m_\mu^2)^2} = 5.5
 \end{equation}
