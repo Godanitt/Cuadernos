@@ -398,7 +398,7 @@
 \newcommand{\Tn}{\mathbf{T}}
 \newcommand{\In}{\mathbf{1}}
 \newcommand{\Vn}{\mathbf{V}}
-\newcommand{\Encal}{\symbf{\mathcal{E}}}
+\newcommand{\Encal}{\mathcal{\textbf{E}}}
 
 \newcommand{\hnn}{\hat{\mathbf{n}}}
 \newcommand{\hnr}{\hat{\mathbf{r}}}

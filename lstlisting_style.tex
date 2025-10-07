@@ -3,15 +3,15 @@
   language=C++,                         % Base: C++
   numbers=none,        % Quita la numeración de líneas
   basicstyle=\footnotesize\ttfamily,
-  numbers=left,
-  numberstyle=\tiny,
-  numbersep=5pt,
-  stepnumber=1,
+  %numbers=left,
+  %numberstyle=\tiny,
+  %numbersep=5pt,
+  %stepnumber=1,
   tabsize=2,
   breaklines=true,
   frame=lines,
-  xleftmargin=17pt,
-  framexleftmargin=17pt,
+  %xleftmargin=17pt,
+  %framexleftmargin=17pt,
   framexrightmargin=5pt,
   framexbottommargin=4pt,
   showspaces=false,
@@ -35,7 +35,7 @@
   % --- ROOT (magenta)
   emph={TH1F,TH2F,TGraph,TCanvas,TF1,TTree,TChain,
         TFile,TBranch,TMath,TRandom,TRandom3,
-        gROOT,gPad,gStyle,gApplication},
+        gROOT,gPad,gStyle,gApplication,saveAs},
   emphstyle=\color{magenta}\bfseries,
   %
   % --- Geant4 (azul)
@@ -48,9 +48,9 @@
   emphstyle=[2]\color{blue}\bfseries,
   %
   % --- Garfield++ (verde oscuro)
-  emph={[3]MediumMagboltz,MediumSilicon,MediumGas,gas
+  emph={[3]MediumMagboltz,MediumSilicon,MediumGas,gas,
         ComponentAnsys,ComponentElmer,ComponentAnalyticField,
-        Sensor,ViewField,ViewCell,ViewDrift,
+        Sensor,ViewField,ViewCell,ViewDrift,ViewMedium,view,
         AvalancheMicroscopic,AvalancheMC,TrackHeed},
   emphstyle=[3]\color{green!30!black}\bfseries,
   %

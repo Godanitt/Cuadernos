@@ -1,16 +1,14 @@
 {
   "configurations": [
     {
-      "name": "Linux",
+      "name": "linux-gcc-x64",
       "includePath": [
-        "${workspaceFolder}/**",
-        "/home/daniel/root/include",
-        "/home/daniel/ActRootV2/install/include"
+        "${workspaceFolder}/**"
       ],
       "defines": [],
-      "compilerPath": "/usr/bin/g++",
-      "cStandard": "c11",
-      "cppStandard": "c++17",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
       "intelliSenseMode": "linux-gcc-x64"
     }
   ],
