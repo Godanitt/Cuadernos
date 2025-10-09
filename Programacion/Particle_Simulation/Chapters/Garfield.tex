@@ -13,3 +13,193 @@ Para calcular las propiedades de tranpsorte de las partículas en mezclas de gas
 
 
 \input{Chapters/EjemploGarfield/Ej01-TuboDeriva.tex}
+
+\section{Media}
+
+\section{Components}
+
+\section{Tracks}
+
+El propósito de las clases \texttt{Track}\footnote{\textit{Track} se puede traducir como camino, trayectoria, pista, estela, senda...} son simular los procesos de ionización producidos por partículas cargadas atravesando el detector. Básicamente lo primero que hay que hacer es definir la partícula: \\
+
+\begin{lstlisting}[language=C++,style=c++]
+void SetParticle(std::string particle);
+track.SetParticle(std::string particle);
+\end{lstlisting}
+\vspace*{0.7em}
+como por ejemplo puede ser  \texttt{"muon"}. La cinemática de la partícula cargada puede definirse de diferntes formas:
+
+\begin{itemize}
+    \item Con la energía total en eV.
+    \item Con la energía cinética en eV.
+    \item Con el momento en eV/c.
+    \item Con la velocidad $\beta$ adimensional, el factor de Lorenzt $\gamma$ o el producto $\beta\gamma$. 
+\end{itemize}
+
+\begin{lstlisting}[language=C++,style=c++]
+// Métodos de establecimiento de variables físicas
+void SetEnergy(const double e);
+void SetKineticEnergy(const double ekin);
+void SetMomentum(const double p);
+void SetBeta(const double beta);
+void SetGamma(const double gamma);
+void SetBetaGamma(const double bg);
+\end{lstlisting}
+\vspace*{0.7em}
+El track se inicializa mediante:   \\ 
+\begin{lstlisting}[language=C++,style=c++]
+void NewTrack(const double x0, cons double y0, const double z0, const double t0, const double dx0, const double dy0, const double dz0)
+\end{lstlisting}
+\vspace*{0.7em}
+Los marcadores \texttt{x0, y0} y \texttt{z0} marcan la \textit{posición inicial} en cm, \texttt{t0} el \textit{instante inicial} y \texttt{dx0, dy0, dz0} el \textit{vector inicial}. El punto inicial del recorrido tiene que estra dentro del medio. Si la dirección del vector es nula, un vector aleatorio isótropo será generado. Dependiendo del tipo de clase \texttt{Track} que se use, mas restricciones podrán ser impuestas. 
+
+Tras la inicialización, los ``cluster'' se producen a lo largo del recorrido, que se pueden obtener con: \\
+
+\begin{lstlisting}[language=C++,style=c++]
+const std::vector<Cluster>& GetClusters();
+\end{lstlisting}
+\vspace*{0.7em}
+Cuando hablamos de ``cluster'' nos refereimos a la energía cedida en una única interacción ionizante de la partícula primaria cargadam y los electrones  secundarios producidos en este proceso. La implementación concreto de los objetos Cluster dependen de la clase \texttt{Track} de la que estemos hablando. 
+
+\subsection{Heed}
+
+El programa Heed es una implementación del modelo de la ionización por foto-abosrción (también llamado modelo PAI, \textit{photo-absorption model}, PAI), escrito por I. Smirnov. La interfaz Heed está disponible a través de \texttt{TrackHeed}.
+
+Los objetos \texttt{Cluster} se obtienen a través de \texttt{TrackHeed::GetClusters} contiene la posición y tiempo de la colisión ionizante, la energía transferida y el vector de objetos \texttt{Electron} correspondientes a los electrones conductores/libres\footnote{son simplemente los electrones libres en el gas.} asociados al cluster. 
+
+\subsubsection{Transporte de electrones Delta}
+
+Heed simula el tiempo de degradación de los electrones $\delta$ y la producción de electrones secundarios (electrones conductores/libres) usando un modelo fenomenolóicos. \texttt{TrackHeed} recupera los parámetros de entrada necesarios (por ejemplo el el factor de Fano o el valor $W$) del objeto \texttt{Medium}. Si los parámetros son cero, usa los valores por defecto (por ej. $F=0.19$).
+
+
+Si los electrones delta son desactivados, el número de electrones devuelto por el \texttt{GetCluster} es el número de electrones primarios (electrones producidos por la ionización primaria), i.e. foto-electrones y electrones Auger. Las enerǵias cinéticas y posiciones de los electrones son acesibles vía \texttt{GetElectron}. Si el tranpsorte de electrones $\delta$ está activado (por defecto está activado), la función \texttt{GetElectron} devuelve la localización de los electrones de conducción calculados por el factor interno $\delta$ del algoritmo de Heed. Dado que este método no devuelve la energía cinética y dirección de los electrones secundarios, los parámetros de \texttt{GetElectron} no son significativos en este caso.
+
+\subsubsection{Transporte de fotones}
+
+Heed también puede simular la fotoabsorción de rayos-x. 
+
+\subsubsection{Campos magnéticos}
+
+Si el \texttt{sensor} tiene un campo magnético nulo, \texttt{TrackHeed} lo tnedrá en cuenta para calcular la trayectoria de la partícula cargada.
+
+\subsection{SRIM}
+
+SRIM (\textit{Stopping and Range of Ions in Matter}) es un programa que permite simular la perdida de energía iónica por la materia en la materia. Esto produce tablas de frenados energéticos, rangos y parámetros de \textit{stragglings}\footnote{Recordemos que el straggling es el fenómeno que recoge las fluctuaciones estadísticas asociadas a las pérdidas energéticas.} que pueden ser importados en Garfield a través de la clase \texttt{TrackSrim}. La función: \\
+
+\begin{lstlisting}[language=C++,style=c++]
+bool ReadFile(const std::string& file)
+\end{lstlisting}
+\vspace*{0.6em}
+devuelve \texttt{true} si es leido correectamente. Los archivos SRIM contiene la siguiente información: 
+
+\begin{itemize}
+    \item Una lista de energías cinéticas en las que se han calculado pérdidas y rezagos;
+    \item Energía promedio perdida por unidad de longitud vía proceos electromagnéticos, para cada enerǵia. 
+    \item Energía promedio perdida por unidad de longitud vía proceos nucleares, para cada enerǵia. 
+    \item Proyección de l4!a media recorrida, por energía.
+    \item Straggling longitudinal y transversal para cada energía. 
+\end{itemize}
+Se pueden visualizar usando las funciones: \\
+
+\begin{lstlisting}[language=C++,style=c++]
+void PlotEnergyLoss();
+void PlotRange();
+void PlotStraggling(); 
+\end{lstlisting}
+\vspace*{0.6em}
+
+Además de estas tablas, el archivo también contiene la masa y carga del proyectil y la densidad del medio. Estas propiedades son también emportantes y guardadas por \texttt{TrackSrim} cuando leemos el archivo. Al contrario del caso Heed, el tipo de partícula no es especificada por el usuario, aunqeu si tenga que especificar la energía cinética del proyectil.
+
+El \texttt{TrackSrim} genera reocrridos individuales que estadísiticamente representan las cantidades promedio calculadas por SRIM. Una vez se pasa la energía, \texttt{TrackSrim}, interativamente
+
+\begin{itemize}
+    \item Calcula (interpolando las tablas) la energía electromagnética y nuclear perdida por unidad de distancia para dicha energía.
+    \item Calcula la longitud del paso/intervalo (\textit{step}) en el cual la energía producirá una cantidad de electrones promedio. .
+    \item Actualiza la trayectoria basada en el la dispersión longitudinal y transerval para la energía de la partícula. 
+    \item Calcula una pérdida energía electromagnética aleatoria sobre el intervalo y actualiza la energía cinética.
+\end{itemize}
+repitiendo el proceso hasta que la partícula ya no tiene maś energía o deja de estar en la geometría (dispositivo). Se pueden elegir varios modelos por los cuales se aleatoriza la péridda de energía en cada paso
+
+\begin{lstlisting}[language=C++,style=c++]
+void SetModel(const imt m) 
+\end{lstlisting}
+\vspace*{0.6em}
+En función de $m$ tendremos un modelo u otro. Los modelos disponibles son: 
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Modelo} & \textbf{Descripción} \\
+\midrule
+0 & Sin fluctuaciones \\
+1 & Distribución de Landau no truncada \\
+2 & Distribución de Vavilov (siempre que los parámetros cinemáticos estén dentro del \\ & rango de aplicabilidad de lo contrario, las fluctuaciones se desactivan) \\
+3 & Distribución gaussiana \\
+4 & Combinación de los modelos de Landau, Vavilov y Gauss, cada \\
+  &  uno aplicado en su supuesto dominio de aplicabilidad \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Para samplear las pérdidas energéticas, \texttt{TrackSrim} necesita la densidad delectrónica del material, que por defecto se recupera del objeto \texttt{Medium} (y escalada con la densidad de masa del archivo SRIM). Tambień se puuede usar un número $Z$ efectivo y el número másico $A$ usando
+
+\begin{lstlisting}[language=C++,style=c++]
+{TrackSrim::SetAtomicMassNumbers}.
+\end{lstlisting}
+\vspace*{0.6em}
+
+
+Para calcular el número de electrones generados para una energía depositada, \texttt{TrackSrim} necestia la función de trabajo $W$ en eV y el factor de Fano del material, qeu se pedirán al objeto \texttt{Medium}, aunque puede ser dado a mano. El objeto \texttt{Cluster} devuelto por \texttt{TrackSrim::GetClusters} contiene la localización y tiempo inicial del cluster, la energía gastada para producir el cluster, la energía del ion cuando el cluster fue creado y el número de elctrones por cluster. 
+
+\subsection{TRIM}
+
+TRIM (\textit{TRansport of Ions in Matter}) es una simulación montecarlo del mismo conjunto de programas que SRIM, que simula la trayectoria individual de un ión en en el medio y su proceso de pérdida de energía (cascadas de retroceso, daños por desplazamiento...). TRIM produce típicamente un número determinado de archivos de salida, entre los cuales EXYZ.txt que contiene la lista de posición y pérdidas de energía electrónicas para cada ion simulado en pasos regularess.
+
+\subsection{Degrade}
+
+La clase \texttt{TrackDegrade} simula las ionizaciones por electrones primarios en el gas y la subsecuente degradación en electrones $\delta$ (electrón que puede recorrer cierta distancia antes de perder energía y provocar ionización secundaria a lo largo de su camino.), electrones Auger (surgen de la reorganización interna del átomo cuando la energía de una transición electrónica se transfiere a otro electrón que es expulsado) y fotoelectrones (fotoelectrones se originan por la absorción de un fotón, mientras que los electrones Auger), usando una interfaz al programa Degrade, desarrollado por S. Biagi. Degrade tiene muchos puntos en común con Magboltz, en particular la base de datos de secciones eficaces de electrón-átomo/molécula. 
+
+Mientras el programa Degrade puede ser usado para la simulación de rayos X, los decaimientos $\beta$ y doble $\beta$, estas características aún no han sido implementadas, al igual que no contiene las interacccioens en presencia de campo eléctrico y magnético. 
+
+
+Los objetos \texttt{Cluster} devuletos por \texttt{TrackDegrade::GetClusters} contienen la posición y tiempo de las colisiones ionizantes (\texttt{x,y,z,t}) y un \texttt{vector} de objetos \texttt{Electron} correspondientes a electrones termializados asociados al cluster. Además, contiene un vector de electrones delta y Auger. \\
+
+
+\begin{lstlisting}[language=C++,style=c++]
+TrackDegrade track;          // Se crea un objeto de tipo TrackDegrade 
+
+// Variables iniciales de posición y tiempo:
+double x0 = 0., y0 = 0., z0 = 0., t0 = 0.;
+
+// Dirección inicial del movimiento:
+double dx0 = 1., dy0 = 0., dz0 = 0.;
+
+// Se genera una nueva trayectoria con las condiciones iniciales anteriores:
+track.NewTrack(x0, y0, z0, t0, dx0, dy0, dz0);
+
+// Bucle sobre los "clusters" (agrupaciones de ionización o excitación) a lo largo de la trayectoria.
+for (const auto& cluster : track.GetClusters()) {
+
+    // Bucle sobre los electrones termalizados dentro del cluster.
+    for (const auto& electron : cluster.electrons) {
+
+        // Se obtienen las coordenadas y la energía cinética del electrón.
+        double xe = electron.x;
+        double ye = electron.y;
+        double ze = electron.z;
+        double te = electron.t;
+        double ee = electron.energy;
+    }
+}
+\end{lstlisting}
+\vspace*{0.6em}
+Por defecto, los electrones están \textit{trackeados} hasta que su energía cinética cae hasta 2eV. Esto peude ser modificado.  Si la función \\
+
+\begin{lstlisting}[language=C++,style=c++]
+void StoreExcitations(const bool on=true, const double ethr);
+\end{lstlisting}
+\vspace*{0.6em}
+se llama antes de \texttt{NewTrack}, las excitaciones (con una energía de excitación superior a \texttt{ethr}) producidas por los electrones ionizantes primarios y secundarios se guardan en el objeto \texttt{Cluster}.
+
+\section{Transporte de Carga}

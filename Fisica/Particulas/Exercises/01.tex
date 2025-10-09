@@ -142,7 +142,6 @@ donde $\Mcal$ podemos hallarlo a través del siguiente diagrama de Feynmann a pr
 	a -- [photon, edge label=\(\gamma\)] b,
 	i2 [particle=\(\mu^-\)] -- [fermion, momentum=\(k^\mu\)] b -- [fermion, momentum=\(k'^\mu\)] f2 [particle=\(\mu^-\)],
 	};
-
 	\caption{Diagrama de Feynman para \(e^- \mu^- \to e^- \mu^-\).}
 \end{figure}
 Nuestro elemento de matriz
@@ -180,7 +179,26 @@ con $c=\cos (\theta/2)$ y $s=\sin(\theta/2)$, siendo este $\theta$ el ángulo de
     k^\mu= (E,0,0,-E) \qquad 
     k^{\prime\mu}= (E,-E\sin \theta,0,-E \cos \theta)
 \end{equation}
-Son así poruqePor lo que, por ejemplo, para $p$:
+Dado que $\pn(e^-)=-\pn(\mu^-)$, tenemos que algunos $u_\uparrow (p) \neq u_\uparrow (k)$. Usando que 
+
+\[
+u_{\uparrow} = \sqrt{E + m}\,
+\begin{pmatrix}
+c \\[6pt]
+s e^{i\phi} \\[6pt]
+\dfrac{p}{E + m}\, c \\[6pt]
+\dfrac{p}{E + m}\, s e^{i\phi}
+\end{pmatrix},
+\qquad
+u_{\downarrow} = \sqrt{E + m}\,
+\begin{pmatrix}
+-\,s \\[6pt]
+c e^{i\phi} \\[6pt]
+\dfrac{p}{E + m}\, s \\[6pt]
+-\dfrac{p}{E + m}\, c e^{i\phi}
+\end{pmatrix},
+\]
+de Saborido \cite{SaboridoSilva2025ParticlePhysicsI}, podemos ver las siguientes ecuaciones: 
 \begin{equation}
 	u_\uparrow(p) = \sqrt{E} \begin{pmatrix}
 		1 \\ 0 \\ 1 \\ 0
@@ -621,11 +639,20 @@ y cuatro vértices cuárticos gauge
 W^+W^-W^+W^-,\qquad W^+W^-ZZ,\qquad W^+W^-\gamma\gamma,\qquad W^+W^-Z\gamma.
 \]
 \end{Ejercicio}
-
-La parte cinética del lagrangiano es: 
+L manera mas rápida de resolver el ejercicio sería aplicar la siguiente ecuación \cite{thomson_modern_physics}, 
 
 \begin{equation}
-	\Lcal_{\text{kin}} = B^{\mu \nu} B_{\mu \nu} + W^{\mu \nu i} W_{\mu \nu}^i
+	\mathcal{L}_{\text{int}} 
+	= +\frac{1}{2} g_W \, \epsilon_{ijk} 
+	\left( \partial^{\mu} W_i^{\nu} - \partial^{\nu} W_i^{\mu} \right)
+	W_{j\mu} W_{k\nu}
+	- \frac{1}{4} g_W^2 \, \epsilon_{ijk} \epsilon_{imn}
+	W_j^{\mu} W_k^{\nu} W_{m\mu} W_{n\nu}.
+\end{equation}
+con las permutaciones necesarias, de una en una. Aquí decidimos hacerlo por partes, probablemente una decisión equivocada. En cualquier caso ya está resuelto. Veamos que la parte cinética del lagrangiano es: 
+
+\begin{equation}
+	\Lcal_{\text{kin}} = -\frac{1}{4}B^{\mu \nu} B_{\mu \nu} - \frac{1}{4}W^{\mu \nu i} W_{\mu \nu}^i
 \end{equation}
 Queremos llegar a obtener las relaciones entre $W_{\mu}$, $W_{\mu \dagger}$, $Z_\mu$ y $A_\mu$. Tenemos que usar la que relaciona los elementos 1 y 2  de $W^i$ con los bosones $W$  y $W^\dagger$: 
 
@@ -635,7 +662,7 @@ Queremos llegar a obtener las relaciones entre $W_{\mu}$, $W_{\mu \dagger}$, $Z_
 \end{equation}
 \begin{equation}
 	W^1_{\mu} = \frac{1}{\sqrt{2}} (W_\mu + W_\mu^\dagger) \qquad 
-	W^2_{\mu} = \frac{-i}{\sqrt{2}} (W_\mu + - W_\mu^\dagger) 
+	W^2_{\mu} = \frac{-i}{\sqrt{2}} (W_\mu - W_\mu^\dagger) \label{Ec:ej10-01}
 \end{equation}
 y la que relciona $B^\mu$ y $W^3$ con $Z$ y $A$:
 
@@ -679,14 +706,232 @@ Una vez tenemos eto, solo es sutituir. Lo que está claro qes que el término $B
 Veamos término a término: 
 
 \begin{itemize}
-	\item El primer término: 
+	\item El \textbf{primer término}: 
 	\begin{align}  
-		W^{\mu \nu 1} W_{\mu \nu}^1 = & \bqty{\pqty{\partial_\mu W^{\nu 1} - \partial_\nu W^{\mu 1}} - g_W \epsilon^{1ij} W^{\mu j} W^{\nu i}} \times \nonumber \\
-		& \bqty{\pqty{\partial_\mu W^1_\nu - \partial_\nu W^1_\mu} - g_W 	\epsilon^{1kl} W^j_\mu W^k_\nu} 
+		W^{\mu \nu 1} W_{\mu \nu}^1 = & \bqty{\pqty{\partial^\mu W^{\nu 1} - \partial^\nu W^{\mu 1}} - g_W \epsilon^{1ij} W^{\mu i} W^{\nu j}} \times \nonumber \\
+		& \bqty{\pqty{\partial_\mu W^1_\nu - \partial_\nu W^1_\mu} - g_W 	\epsilon^{1kl} W^j_\mu W^k_\nu} \label{Ec:ej10-02}
 	\end{align}
-	Es evidente que el producto entre los dos primeros términos de cada corchete no generan un vértice triple o cuádruple, ya que $W^1$ solo va con los bosones $W$ y $W^\dagger$. Los vértices triples se producirán cuando los primers términos interaccionan con el término que va con la levi-civita se producen los vértices triples. Cuando interaccionan los dos términos de la levi-civita se producen los términos que representan los vértices cuárticos. Así pues, tenemos que: 
+	Es evidente que el producto entre los doss primeros términos de cada corchete no generan un vértice triple o cuádruple, ya que $W^1$ solo va con los bosones $W$ y $W^\dagger$. Los vértices triples $\Ocal(3)$ se producirán cuando los primeros términos interaccionan con el término que va con la levi-civita. Cuando interaccionan los dos términos de la levi-civita se producen los términos que representan los vértices cuárticos $\Ocal(4)$. Así pues, tenemos que, los términos que representen vértices triples son (digamos que $\Ocal(n)$ significa ``términos que contienen vérices con $n$ partículas''):
 
+	\begin{equation} \small
+		\Ocal(3) = - g_W \bqty{\pqty{\partial^\mu W^{\nu 1} - \partial^\nu W^{\mu 1}}\pqty{\epsilon^{1kl} W^k_\mu W^l_\nu} + \pqty{ \epsilon^{1ij} W^{\mu i} W^{\nu j}} \pqty{\partial_\mu W^1_\nu - \partial_\nu W^1_\mu}}
+	\end{equation}
+	Fijemonos en particular en la primera parte: 
+	\begin{align}
+		\pqty{\partial^\mu W^{\nu 1} - \partial^\nu W^{\mu 1}}\pqty{\epsilon^{1kl} W^k_\mu W^l_\nu} &  =  
+		\pqty{\partial^\mu W^{\nu 1} - \partial^\nu W^{\mu 1}}\pqty{ W^2_\mu W^3_\nu} \nonumber \\ & -
+		\pqty{\partial^\mu W^{\nu 1} - \partial^\nu W^{\mu 1}}\pqty{ W^3_\mu W^2_\nu} 
+	\end{align}
+	Trivialmente, si intercambiamos los nombres $\mu \leftrightarrow \nu$ en el segundo término nos podemos dar cuenta que es igual al primero (hay dos signos $-$, uno procedente de la Levi-Civita y otra del intercambio de las posiciones de las parciales que se cancelan), por lo que: 
+
+	\begin{equation}
+		\pqty{\partial^\mu W^{\nu 1} - \partial^\nu W^{\mu 1}}\pqty{\epsilon^{1kl} W^k_\mu W^l_\nu} = 2
+		\pqty{\partial^\mu W^{\nu 1} - \partial^\nu W^{\mu 1 }}\pqty{ W^2_\mu W^3_\nu}
+	\end{equation}
+	donde hemos obvidado los términos que no generan vértices dobles (contenidos en $\Ocal(2)$, y que contiene los términos que multiplica $W-W$ y $W^\dagger-W^\dagger$). Luego esto nos lleva a:
+
+	\begin{align}
+		\pqty{\partial^\mu W^{\nu 1} - \partial^\nu W^{\mu 1}}\pqty{ W^2_\mu W^3_\nu} & =  \frac{i}{2}\pqty{\partial^\mu W^{\nu } - \partial^\nu W^{\mu }}\pqty{ W^\dagger_\mu W^3_\nu} \nonumber \\
+		& - \frac{i}{2}\pqty{\partial^\mu W^{\nu \dagger } - \partial^\nu W^{\mu \dagger}}\pqty{ W_\mu W^3_\nu} \nonumber \\
+		& + \Ocal(2)
+	\end{align}
+	Donde aparece un signo menos y el número imaginario procedente de la definición de $W^2$ (\ref{Ec:ej10-01}). El divisor 2 procede de la multiplicación de las raíces cuadradas. Finalmente nos quedaría expandir $W_{\nu}^3$, de lo que podemos obtener: 
+
+
+	\begin{align}
+		\pqty{\partial^\mu W^{\nu 1} - \partial^\nu W^{\mu 1}}\pqty{ W^2_\mu W^3_\nu} & =  \frac{i\cos \theta_W}{2}\left[ \pqty{\partial^\mu W^{\nu } - \partial^\nu W^{\mu }}\pqty{ W^\dagger_\mu } \nonumber  \right. \\
+		& \left. - \pqty{\partial^\mu W^{\nu \dagger } - \partial^\nu W^{\mu \dagger}}\pqty{ W_\mu } \right] Z_\nu \nonumber \\ & + 
+		 \frac{i\sin \theta_W}{2}\left[ \pqty{\partial^\mu W^{\nu } - \partial^\nu W^{\mu }}\pqty{ W^\dagger_\mu } \nonumber  \right. \\
+		& \left. - \pqty{\partial^\mu W^{\nu \dagger } - \partial^\nu W^{\mu \dagger}}\pqty{ W_\mu} \right] A_\nu \nonumber \\
+		& + \Ocal(2) \label{Ec:ej10-03}
+	\end{align}
+	Sin embargo aun tenemos que fijarnos en la segunda parte del $\Ocal(3)$ (\ref{Ec:ej10-02}). Aunque no parezca trivial, realmente el problema es simétrico respecto lo que acabamos de decir. Así pues, tenemos que el resultado final será dos veces el anterior (\ref{Ec:ej10-03}), por lo que, para el primer término, los \textit{vértices triples} serán: 
+
+
+	\begin{align}
+		\Ocal(3)  = &  - {i2 g_W \cos \theta_W}\left[ \pqty{\partial^\mu W^{\nu } - \partial^\nu W^{\mu }}\pqty{ W^\dagger_\mu } \nonumber  \right. 
+		\left. - \pqty{\partial^\mu W^{\nu \dagger } - \partial^\nu W^{\mu \dagger}}\pqty{ W_\mu } \right] Z_\nu \nonumber \\ & - 
+		 {i2 g_W\sin \theta_W}\left[ \pqty{\partial^\mu W^{\nu } - \partial^\nu W^{\mu }}\pqty{ W^\dagger_\mu } \nonumber  \right. 
+		 \left. - \pqty{\partial^\mu W^{\nu \dagger } - \partial^\nu W^{\mu \dagger}}\pqty{ W_\mu} \right] A_\nu  \label{Ec:ej10-03}
+	\end{align}
+	Ahora queda el término cuártico producido, que es, tal y como dijimos antes, el término producto de multiplicar los dos levi-civita. Así pues: 
+	\begin{equation}
+		\Ocal(4) = g_W^2 \pqty{\epsilon^{1ij} W^{\mu i} W^{\nu j}}\pqty{\epsilon^{1kl} W^k_\mu W^l_\nu} 
+	\end{equation}
+	que usando la propiedad 
+	\begin{equation}
+		\epsilon_{1ij} \epsilon^{1kl}
+		= \delta_i^{\,k} \delta_j^{\,l}
+		- \delta_i^{\,l} \delta_j^{\,k}
+	\end{equation}
+	nos lleva a: 
+
+	\begin{equation}
+		\Ocal(4) = g_W^2 \bqty{W^{\mu  2} W^{\nu 3} \pqty{W_{\mu}^2 W_{\nu}^3-W_{\mu}^3 W_{\nu}^2}+W^{\mu  3} W^{\nu 2} \pqty{W_{\mu}^3 W_{\nu}^2-W_{\mu}^2 W_{\nu}^3} }
+	\end{equation}
+	si en el segundo término hacemos el cambio trivial de $\mu \leftrightarrow \nu$, podemos ver que tenemos el primer término, tal que: 
+	
+	\begin{equation}
+		\Ocal(4) = 2g_W^2 \bqty{W^{\mu  2} W^{\nu 3} \pqty{W_{\mu}^2 W_{\nu}^3-W_{\mu}^3 W_{\nu}^2}}
+	\end{equation}
+	Denemos que desarrollar tres términos para obtener esto en función de $W,W^\dagger,Z$ y $A$: 
+	\begin{itemize}
+		\item El primer término: 
+		\begin{equation}
+			W^{\mu  2} W_{\mu}^2 =  \frac{-1}{2} (W^{\mu \dagger} - W^{\mu})(W_{\mu}^{\dagger} - W_{\mu}) \Longrightarrow
+  		\end{equation}
+		\begin{equation}
+			W^{\mu  2} W_{\mu}^2 =  \frac{-1}{2} \bqty{W^{\mu \dagger} W_{\mu}^{\dagger} + W^{\mu } W_{\mu} -  2(W^{\mu \dagger} W_{\mu})  }
+		\end{equation}
+		\item El segundo término: 
+		\begin{equation}
+			W^{\mu  2} W_{\mu}^3 =  \frac{1}{\sqrt{2}} (W^{\mu \dagger} - W^{\mu})( \cos \theta_W Z_{\mu} + \sin \theta_W A_\mu) \Longrightarrow
+  		\end{equation}
+		\begin{equation}
+			W^{\mu  2} W_{\mu}^3 =  \frac{1}{\sqrt{2}} \bqty{\pqty{W^{\mu \dagger}-W^{\mu}} \cos \theta_W Z_\mu + \pqty{W^{\mu \dagger} - W^{\mu}} \sin \theta_W A_\mu  }
+		\end{equation}
+		\item El tercer término: 
+		\begin{equation}
+			W^{\mu  3} W_{\mu}^3 =   (\cos  \theta_W Z^{\mu } + \sin \theta_W A^{\mu})(\cos  \theta_W Z_{\mu } + \sin \theta_W A_{\mu})
+  		\end{equation}
+		\begin{equation}
+			W^{\mu  3} W_{\mu}^3=  \cos^2  \theta_W  Z^\mu Z_\mu + 2 (\cos  \theta_W \sin \theta_W ) Z^\mu A_\mu + \sin^2 \theta_W  A^\mu A_\mu
+		\end{equation}
+	\end{itemize}
+	Una vez tenemos esto queda claro que: 
+	\begin{align}
+		\Ocal(4)/2g_W^2 = &  - \cos^2 \theta_W \Bqty{\bqty{W^{\mu \dagger} W_{\mu}^{\dagger} + W^{\mu } W_{\mu} -  2(W^{\mu \dagger} W_{\mu})  }Z^\mu Z_\mu} \nonumber \\
+		& -  \sin^2 \theta_W \Bqty{\bqty{W^{\mu \dagger} W_{\mu}^{\dagger} + W^{\mu } W_{\mu} -  2(W^{\mu \dagger} W_{\mu})  }A^\mu A_\mu} \nonumber \\ 
+		& - 2 \sin \theta_W \cos \theta_W \Bqty{\bqty{W^{\mu \dagger} W_{\mu}^{\dagger} + W^{\mu } W_{\mu} -  2(W^{\mu \dagger} W_{\mu})  }Z^\mu A_\mu} 
+	\end{align}
+
+	\item Aún queda evaluar el \textbf{segundo término}, que será: 
+	\begin{align}  
+		W^{\mu \nu 2} W_{\mu \nu}^2 = & \bqty{\pqty{\partial^\mu W^{\nu 2} - \partial^\nu W^{\mu 2}} - g_W \epsilon^{2ij} W^{\mu i} W^{\nu j}} \times \nonumber \\
+		& \bqty{\pqty{\partial_\mu W^2_\nu - \partial_\nu W^2_\mu} - g_W 	\epsilon^{2kl} W^j_\mu W^k_\nu} \label{Ec:ej10-02}
+	\end{align}
+	Trvialmente, los términos de \textit{vértices triples} generados serán exactamente igual a los anteriores, ya que estos contienen igual que antes un producto de $W^\dagger$ y $W$, por lo que da igual que en los términos de tensor de  campo esté $W^2$ y que con la levi-civita este $W^1$, el resultado será el mismo: 
+	\begin{align}
+		\Ocal(3)  = &  - {i2 g_W \cos \theta_W}\left[ \pqty{\partial^\mu W^{\nu } - \partial^\nu W^{\mu }}\pqty{ W^\dagger_\mu } \nonumber  \right. 
+		\left. - \pqty{\partial^\mu W^{\nu \dagger } - \partial^\nu W^{\mu \dagger}}\pqty{ W_\mu } \right] Z_\nu \nonumber \\ & - 
+		 {i2 g_W\sin \theta_W}\left[ \pqty{\partial^\mu W^{\nu } - \partial^\nu W^{\mu }}\pqty{ W^\dagger_\mu } \nonumber  \right. 
+		 \left. - \pqty{\partial^\mu W^{\nu \dagger } - \partial^\nu W^{\mu \dagger}}\pqty{ W_\mu} \right] A_\nu 
+	\end{align}
+	No igual será el término que representa los vértices cuárticos, ya que es diferente $W^{\mu 2}W_{\mu}^2$ a $W^{\mu 1}W_{\mu}^1$. Así pues, veamos que: 
+	\begin{itemize}
+		\item El término
+		\begin{equation}
+			W^{\mu  1} W_{\mu}^1 =  \frac{1}{2} (W^{\mu \dagger} + W^{\mu})(W_{\mu}^{\dagger} + W_{\mu}) \Longrightarrow
+  		\end{equation}
+		\begin{equation}
+			W^{\mu  1} W_{\mu}^1 =  \frac{1}{2} \bqty{W^{\mu \dagger} W_{\mu}^{\dagger} + W^{\mu } W_{\mu} +  2(W^{\mu \dagger} W_{\mu})  }
+		\end{equation}
+		\item El otro término: 
+		\begin{equation}
+			W^{\mu  1} W_{\mu}^3 =  \frac{1}{\sqrt{2}} (W^{\mu \dagger} + W^{\mu})( \cos \theta_W Z_{\mu} + \sin \theta_W A_\mu) \Longrightarrow
+  		\end{equation}
+		\begin{equation}
+			W^{\mu  1} W_{\mu}^3 =  \frac{1}{\sqrt{2}} \bqty{\pqty{W^{\mu \dagger}+W^{\mu}} \cos \theta_W Z_\mu + \pqty{W^{\mu \dagger} + W^{\mu}} \sin \theta_W A_\mu  }
+		\end{equation}
+	\end{itemize}
+	Lo que claramente nos lleva al siguiente resultado: 
+	\begin{align}
+		\Ocal(4)  /2g_W^2 & = \cos^2 \theta_W \Bqty{\bqty{W^{\mu \dagger} W_{\mu}^{\dagger} + W^{\mu } W_{\mu}  + 2(W^{\mu \dagger} W_{\mu})  }Z^\mu Z_\mu} \nonumber \\
+		& + \sin^2 \theta_W \Bqty{\bqty{W^{\mu \dagger} W_{\mu}^{\dagger} + W^{\mu } W_{\mu} +  2(W^{\mu \dagger} W_{\mu})  }A^\mu A_\mu} \nonumber \\ 
+		& + 2 \sin \theta_W \cos \theta_W \Bqty{\bqty{W^{\mu \dagger} W_{\mu}^{\dagger} + W^{\mu } W_{\mu} +  2(W^{\mu \dagger} W_{\mu})  }Z^\mu A_\mu} 
+	\end{align}
+	\item Lo último que tenemos que calcular es el \textbf{tercer término}, con un vértice triple representado por tensor de campo con $Z^\mu$ y $A^\mu$ y términos cuárticos $WWWW$. Como antes: 
+	
+	\begin{equation} \small
+		\Ocal(3) = - g_W \bqty{\pqty{\partial^\mu W^{\nu 3} - \partial^\nu W^{\mu 3}}\pqty{\epsilon^{3kl} W^k_\mu W^l_\nu} + \pqty{ \epsilon^{3ij} W^{\mu i} W^{\nu j}} \pqty{\partial_\mu W^3_\nu - \partial_\nu W^3_\mu}}
+	\end{equation}
+	Dado que el proceso para obtener los resultados finales es igual al del primer término, nos tomamos algunas licencias y vamos directamente a ver que: 
+	\begin{equation} \small
+		\Ocal(3) = - i 4 g_W \Bqty{\cos\theta_W\bqty{\pqty{\partial^\mu Z^{\nu} - \partial^\nu Z^{\mu }} W_\mu W_\nu^\dagger} + \sin \theta_W\bqty{\pqty{\partial^\mu A^{\nu} - \partial^\nu A^{\mu}}W_\mu W_\nu^\dagger}}
+	\end{equation}
+	donde ha hemos descartado todos los términos de orden 2. Aparece un término 2 debido a que ahora debemos tener en cuenta el producto $W^1 W^2$ y no $W^1 W^3$ o $W^2  W^3$. El término cuártico 
+	\begin{equation}
+		\Ocal(4) = g_W^2 \bqty{W^{\mu  1} W^{\nu 2} \pqty{W_{\mu}^1 W_{\nu}^2-W_{\mu}^2 W_{\nu}^1}+W^{\mu 2} W^{\nu 1} \pqty{W_{\mu}^2 W_{\nu}^1-W_{\mu}^1 W_{\nu}^2} } \Longrightarrow
+	\end{equation}
+	\begin{align}
+		\Ocal(4)  /2g_W^2 = \pqty{ (W^{\mu 1}W_{\mu}^1)(W^{\nu 2} W_\nu^2)-(W^{\mu 1}W^{2}_{\mu})(W^{\nu 1} W_\nu^2)}
+	\end{align}
+	ahora contiene el producto de los términos $W^{\mu 1}W_{\mu 1}$, $W^{\mu 2}W_{\mu}^2$ y  $W^{\mu 1}W_{\mu}^2$. Evaluamos este último: 
+
+	\begin{itemize}
+		\item El término
+		\begin{equation}
+			W^{\mu  1} W_{\mu}^2 =  \frac{i}{2} (W^{\mu \dagger} + W^{\mu})(W_{\mu}^{\dagger} - W_{\mu}) \Longrightarrow
+  		\end{equation}
+		\begin{equation}
+			W^{\mu  1} W_{\mu}^2 =  \frac{i}{2} \bqty{W^{\mu \dagger} W_{\mu}^{\dagger} + W^{\mu } W_{\mu} -  2(W^{\mu \dagger} W_{\mu})  }
+		\end{equation}
+	\end{itemize}
+	Por lo que 
+
+	
+	\begin{align}
+		\Ocal(4) /2g_W^2 & =   \frac{-1}{4} \bqty{W^{\mu \dagger} W_{\mu}^{\dagger} + W^{\mu } W_{\mu} -  2(W^{\mu \dagger} W_{\mu})  }\bqty{W^{\mu \dagger} W_{\mu}^{\dagger} + W^{\mu } W_{\mu} +  2(W^{\mu \dagger} W_{\mu})  }  \nonumber \\
+		& +  \frac{1}{4} \bqty{W^{\mu \dagger} W_{\mu}^{\dagger} + W^{\mu } W_{\mu} -  2(W^{\mu \dagger} W_{\mu})  }^2 
+	\end{align}
+
+	Finalmente
+	\begin{align}
+		\Ocal(4) /2g_W^2 = \pqty{ (W^{\mu}W_{\mu})(W^{\nu \dagger} W_\nu^\dagger)-(W^{\mu}W^{\dagger}_{\mu})(W^{\nu} W_\nu^\dagger)}
+	\end{align}
 \end{itemize}
+Una vez tenemos estos resultados, podemos llegar a los resultados de los apuntes. Cabe destacar dos cosas. La primera es que hay términos de $\Ocal(3)$ qeu se anulan entre los generados por el primer término y el segundo, los cuales ya restamos. Lo segundo que hay que destacar es que hemos sustituido ya estas relaciones:
+\begin{equation}
+	g_W = \frac{e}{\sin \theta_W} \qquad \cot \theta_W = \frac{\cos \theta_W}{\sin \theta_W}
+\end{equation}
+Además recordemos que los valores de $\Lcal$ tienen un término 1/4 delante del término $W^{\mu \nu i}W_{\mu \nu}^i$. Ahora sí: 
+
+
+\begin{align*}
+\mathcal{L}_3
+&= {i e \cot\theta_W}
+  \Big\{
+    (\partial^\mu W^\nu - \partial^\nu W^\mu) W_\mu^\dagger Z_\nu
+    - (\partial^\mu W^{\nu\dagger} - \partial^\nu W^{\mu\dagger}) W_\mu Z_\nu
+    + W_\mu W_\nu^\dagger (\partial^\mu Z^\nu - \partial^\nu Z^\mu)
+  \Big\} \notag\\[4pt]
+&\quad
+  + { i e}
+  \Big\{
+    (\partial^\mu W^\nu - \partial^\nu W^\mu) W_\mu^\dagger A_\nu
+    - (\partial^\mu W^{\nu\dagger} - \partial^\nu W^{\mu\dagger}) W_\mu A_\nu
+    + W_\mu W_\nu^\dagger (\partial^\mu A^\nu - \partial^\nu A^\mu)
+  \Big\}.
+\end{align*}
+\begin{align*}
+\mathcal{L}_4
+&= -\,\frac{e^2}{2 \sin^2 \theta_W}
+  \Big\{
+    (W_\mu^\dagger W^\mu)^2
+    - W_\mu^\dagger W^{\mu\dagger} W_\nu W^\nu
+  \Big\} \notag\\[4pt]
+&\quad
+  - {e^2 \cot^2 \theta_W}
+  \Big\{
+    W_\mu^\dagger W^\mu Z_\nu Z^\nu
+    - W_\mu^\dagger Z_\mu W_\nu Z^\nu
+  \Big\} \notag\\[4pt]
+&\quad
+  - { e^2 \cot \theta_W}
+  \Big\{
+    2 W_\mu^\dagger W^\mu Z_\nu A^\nu
+    - W_\mu^\dagger Z_\mu W_\nu A^\nu
+    - W_\mu^\dagger A_\mu W_\nu Z^\nu
+  \Big\} \notag\\[4pt]
+&\quad
+  - { e^2}
+  \Big\{
+    W_\mu^\dagger W^\mu A_\nu A^\nu
+    - W_\mu^\dagger A_\mu W_\nu A^\nu
+  \Big\}.
+\end{align*}
+
+
 
 
 
@@ -713,6 +958,44 @@ verifique la ecuación (2.108), a saber:
 \]
 \end{Ejercicio}
 
+Este es aplicar directamente la ecuaciónon. El \textit{primer término} es 
+\begin{equation}
+- \mu^2 \phi^2 =  \lambda v^2 \phi^2
+\end{equation}
+Veamos que sustituyendo tenemos: 
+
+\begin{equation}
+	- \mu^2 \phi^2 = \frac{\lambda v^2}{2} \bqty{(v + \eta)^2 + \xi^2} =
+	\frac{\lambda v^2}{2} \bqty{v^2 + 2v\eta + \eta^2 + \xi^2}  
+\end{equation}
+mientra que el \textit{segundo término} es 
+\begin{equation}
+	-\lambda \phi^4 
+\end{equation}
+Veamos que sustituyendo tenemos: 
+
+\begin{equation}
+	-\lambda \phi^4  = -\frac{\lambda}{4} \bqty{(v + \eta)^2 + \xi^2}^2 = -
+		\frac{\lambda}{4} \bqty{v^4 + 8v^2\eta^2 + \eta^4 + \xi^4 + 2 v^2 \xi^2 + 4 v \eta \xi^2 + 2 \eta^2 \xi^2}  
+\end{equation}
+Sumando el segundo y tercer término llegamos a: 
+
+\begin{equation}
+	- \Ucal = - \mu^2 \phi^2 -\lambda \phi^4  = \lambda\bqty{\frac{v^4}{4}+ v^3 \eta - {v^2 \eta^2} -   \frac{1}{4}  \eta^4 -  \frac{1}{4} \xi^4 -   v \eta \xi^2 +  \frac{1}{2}  \eta^2 \xi^2 }
+\end{equation}
+o lo que es lo mismo: 
+
+\begin{equation}
+	\Ucal = -\frac{1}{4}\lambda v^4 + \lambda v^2\eta^2 + \lambda v\eta^3 + \frac{1}{4}\lambda\eta^4
++ \frac{1}{4}\lambda\xi^4 + \lambda v\eta\,\xi^2 + \frac{1}{2}\lambda \eta^2\xi^2
+\end{equation}
+tal y como queríamos demostrar, tal que 
+
+\begin{equation}
+	\Ucal_{\text{int}} = + \lambda v\eta^3 + \frac{1}{4}\lambda\eta^4
++ \frac{1}{4}\lambda\xi^4 + \lambda v\eta\,\xi^2 + \frac{1}{2}\lambda \eta^2\xi^2
+\end{equation}
+		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -733,6 +1016,33 @@ B_\mu \;\to\; B'_\mu = B_\mu - \partial_\mu \alpha(x),
 \]
 con el derivado covariante $D_\mu=\partial_\mu + i g B_\mu$.
 \end{Ejercicio}
+Si aplicamos la transformación gauge a nuestro complejo es: 
+\begin{equation}
+	\Lcal' = (D'_\mu \phi')^* (D^{\prime \mu} \phi') - \Ucal (\phi^2) \label{Ec:ej12-02}
+\end{equation}
+Tenemos que: 
+\begin{equation}
+	D_\mu' \phi' = (\partial_\mu + i g  B_\mu') e^{ig\alpha(x)} \phi =  (\partial_\mu - ig\partial_\mu(\alpha(x))+ i g  B_\mu) e^{ig\alpha(x)} \phi \label{Ec:ej12-01}
+\end{equation}
+Por otro lado, tenemos que:
+\begin{equation}
+	\partial_\mu e^{ig\alpha(x)} \phi = e^{ig\alpha(x)} \pqty{\partial_\mu\phi + ig \partial_\mu(\alpha(x))}
+\end{equation}
+Sustituyendo esto en (\ref{Ec:ej12-01}) tenemos que: 
+
+\begin{equation}
+	D_\mu' \phi' =e^{ig\alpha(x)}  \pqty{\partial_\mu + ig\partial_\mu(\alpha(x)) - ig\partial_\mu(\alpha(x)) + i gB_\mu  } \phi = e^{ig\alpha(x)} D_\mu \phi
+\end{equation}
+y dado que
+\begin{equation}
+	(D_\mu' \phi')^* = (e^{ig\alpha(x)}D_\mu \phi)^* = e^{-ig\alpha(x)} (D_\mu \phi)^*
+\end{equation}
+si lo sustituimos en (\ref{Ec:ej12-02}): 
+
+\begin{equation}
+	\Lcal' = e^{-ig\alpha(x)} e^{ig\alpha(x)} (D_\mu\phi)^*(D_\mu \phi) + \Ucal(\phi^2)= \Lcal 
+\end{equation}
+y por tanto es  $\Lcal$ \textit{es invariante bajo transformaciones gauge}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -771,6 +1081,125 @@ y verifique que se obtiene:
 \]
 junto con la expresión explícita para $\mathcal{U}_{\text{int}}$.
 \end{Ejercicio}
+
+Basta con sustituir en el lagrangiano 
+
+\[
+\mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
++ (\partial_\mu \phi)^\ast (\partial^\mu \phi)
+- \mu^2 \phi^2 - \lambda \phi^4
+- i g B_\mu \phi^\ast (\partial^\mu \phi)
++ i g (\partial_\mu \phi^\ast) B^\mu \phi
++ g^2 B_\mu B^\mu \phi^\ast \phi,
+\]
+el término 
+
+\[
+\phi(x) = \frac{1}{\sqrt{2}}\big(v + \eta(x) + i\xi(x)\big),
+\]
+Iremos término por término. 
+
+\begin{itemize}
+	\item El \textit{primer término} es 
+	\begin{equation}
+		(\partial_\mu \phi)^* (\partial^\mu \phi)
+	\end{equation}
+	Veamos que sustituyendo tenemos: 
+
+	\begin{equation}
+		\frac{1}{2}(\partial_\mu (v + \eta(x) + i\xi(x)))^* (\partial^\mu (v + \eta(x) + i\xi(x))) = \frac{1}{2}  \bqty{(\partial_\mu \eta)(\partial^\mu \eta) + (\partial_\mu \xi)(\partial^\mu \xi) } 
+	\end{equation}
+	\item El \textit{segundo término} es 
+	\begin{equation}
+		- \mu^2 \phi^2 =  \lambda v^2 \phi^2
+	\end{equation}
+	Veamos que sustituyendo tenemos: 
+
+	\begin{equation}
+		- \mu^2 \phi^2 = \frac{\lambda v^2}{2} \bqty{(v + \eta)^2 + \xi^2} =
+		\frac{\lambda v^2}{2} \bqty{v^2 + 2v\eta + \eta^2 + \xi^2}  
+	\end{equation}
+	mientra que el \textit{tercer término} es 
+	\begin{equation}
+		-\lambda \phi^4 
+	\end{equation}
+	Veamos que sustituyendo tenemos: 
+
+	\begin{equation}
+		-\lambda \phi^4  = -\frac{\lambda}{4} \bqty{(v + \eta)^2 + \xi^2}^2 = -
+		\frac{\lambda}{4} \bqty{v^4 + 8v^2\eta^2 + \eta^4 + \xi^4 + 2 v^2 \xi^2 + 4 v \eta \xi^2 + 2 \eta^2 \xi^2}  
+	\end{equation}
+	Sumando el segundo y tercer término llegamos a: 
+
+	\begin{equation}
+		- \mu^2 \phi^2 -\lambda \phi^4  = \lambda\bqty{\frac{v^4}{2}+ v^3 \eta - {v^2 \eta^2} - \eta^4 - \xi^4 - v \eta \xi^2 + 2 \eta^2 \xi^2 }
+	\end{equation}
+	Usando que 
+
+	\begin{equation}
+		\Ucal^1_{\text{int}} =  \lambda v\eta^3 + \frac{1}{4}\lambda\eta^4
+	+ \frac{1}{4}\lambda\xi^4 + \lambda v\eta\,\xi^2 + \frac{1}{2}\lambda \eta^2\xi^2 + \frac{1}{4}\lambda v^4
+	\end{equation}
+	que es diferente al del ejercicio 11. Usando esto, tenemos que el segundo y tercer término juntos: 
+	\begin{equation}
+		- \mu^2 \phi^2 -\lambda \phi^4   = - \lambda v^2 \eta^2  - \Ucal_{\text{int}}
+	\end{equation}
+	\textit{aún faltan términso por añadir a esta $\Ucal_{\text{int}}$, por eso lo denotamos por con un índice superior}. 
+	\item El \textit{cuarto término} viene dado por: 
+	\begin{equation}
+		- i g B_\mu \phi^* \partial^\mu \phi = - \frac{i g}{2} B_\mu (v + \eta(x) - i \xi(x)) \partial^{\mu}(\eta(x) + i \xi(x))
+	\end{equation}
+	y el \textit{quinto término} por 
+	\begin{equation}
+		i g B^\mu \phi \partial_\mu \phi^* = \frac{i g}{2} B^\mu  (v + \eta(x) + i \xi(x)) \partial_{\mu}(\eta(x) - i \xi(x)) 
+	\end{equation}
+	que al sumarse: 
+	\begin{equation}
+		- i g B_\mu \phi^* \partial^\mu \phi + i g B^\mu \phi \partial_\mu \phi^* = - i g  B^\mu \eta \partial_\mu \xi + i g B^\mu \xi \partial_\mu \eta+ i g B^\mu v \partial_\mu \eta
+	\end{equation}
+	tal que el término de interacción $\Ucal_{\text{int}}$ generado por estos dos términos: 
+	\begin{equation}
+		\Ucal^2_{\text{int}} =  - i g  B^\mu \eta \partial_\mu \xi + i g B^\mu \xi \partial_\mu \eta
+	\end{equation}
+	denotando el superíndice 2 que es un $\Ucal_{\text{int}}$ no es este término, si no la suma de otros.
+
+	\item El \textit{sexto término}
+	\begin{equation}
+		g^2 B_\mu B^\mu \phi^* \phi  =  
+		\frac{1}{2}g^2 v^2 B_\mu B^\mu  +
+		\frac{1}{2}g^2  \eta^2 B_\mu B^\mu +
+		\frac{1}{2}g^2 v \eta  B_\mu B^\mu +
+		\frac{1}{2}g^2  \xi^2 B_\mu B^\mu 
+	\end{equation}
+	nos lleva a un término de interacción
+	\begin{equation}
+		\Ucal_{\text{int}}^3 = \frac{1}{2}g^2  \eta^2 B_\mu B^\mu +
+		\frac{1}{2}g^2 v \eta  B_\mu B^\mu +
+		\frac{1}{2}g^2  \xi^2 B_\mu B^\mu 
+	\end{equation}
+\end{itemize}
+Finalmente, la suma nos lleva a: 
+
+\begin{equation}
+\mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
++ (\partial_\mu \phi)^\ast (\partial^\mu \phi)
+- \mu^2 \phi^2 - \lambda \phi^4
+- i g B_\mu \phi^\ast (\partial^\mu \phi)
++ i g (\partial_\mu \phi^\ast) B^\mu \phi
++ g^2 B_\mu B^\mu \phi^\ast \phi,
+\end{equation}
+donde 
+
+\begin{align} 
+	\Ucal_{\text{int}} & = \Ucal^1 + \Ucal^2 + \Ucal^3 \nonumber \\
+	& =  \lambda v\eta^3 + \frac{1}{4}\lambda\eta^4
+	+ \frac{1}{4}\lambda\xi^4 + \lambda v\eta\,\xi^2 + \frac{1}{2}\lambda \eta^2\xi^2 + \frac{1}{4}\lambda v^4 + - i g  B^\mu \eta \partial_\mu \xi + i g B^\mu \xi \partial_\mu \eta  \nonumber \\ 
+	& + \frac{1}{2}g^2  \eta^2 B_\mu B^\mu +
+		\frac{1}{2}g^2 v \eta  B_\mu B^\mu +
+		\frac{1}{2}g^2  \xi^2 B_\mu B^\mu    
+\end{align}
+conteniendo todos los vérices triples y cuárticos. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
