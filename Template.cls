@@ -398,6 +398,7 @@
 \newcommand{\Tn}{\mathbf{T}}
 \newcommand{\In}{\mathbf{1}}
 \newcommand{\Vn}{\mathbf{V}}
+\newcommand{\Wn}{\mathbf{W}}
 \newcommand{\Encal}{\mathcal{\textbf{E}}}
 
 \newcommand{\hnn}{\hat{\mathbf{n}}}

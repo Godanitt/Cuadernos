@@ -69,6 +69,8 @@ pág. 267-268 del Maggiore \cite{Maggiore:2005qv}.
 	\]
 \end{Ejercicio}
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -81,6 +83,7 @@ pág. 267-268 del Maggiore \cite{Maggiore:2005qv}.
 		\frac{i}{\slashed{q}-m} = \frac{i(\slashed{q}+m)}{q^2-m^2}.
 	\]
 \end{Ejercicio}
+Este ejercicio es trivial.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -114,6 +117,7 @@ pág. 267-268 del Maggiore \cite{Maggiore:2005qv}.
 		\alpha_k = \gamma^0 \gamma^k, \qquad \beta = \gamma^0.
 	\]
 \end{Ejercicio}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,7 +165,7 @@ O alternativamente con \textit{las amplitudes de helicidad}:
 	\vqty{\Mcal_{fi}}^2 = \frac{1}{4} \pqty{\vqty{\Mcal_{\text{RR}}}^2+\vqty{\Mcal_{\text{RL}}}^2
 		+\vqty{\Mcal_{\text{LR}}}^2+\vqty{\Mcal_{\text{LL}}}^2}
 \end{equation}
-Solo tenemos que considerar los siguientes espinores (al no haber antipartículas con consideramos $v$ y $\bar{v}$) con esta forma ($m_e\approx m_\mu\approx 0$), aunque hay que tener en cuenta que al tener momentso $p_z$ y $-p_z$ cambian algunos signos:
+Solo tenemos que considerar los siguientes espinores (al no haber antipartículas no consideramos $v$ y $\bar{v}$) con  la siguiente forma (ultrarrelativista, masas despreciables)
 \begin{equation}
 	u_\uparrow = \sqrt{E} \begin{pmatrix}
 		c \\ se^{i\phi} \\ c \\ se^{i\phi}
@@ -179,55 +183,41 @@ con $c=\cos (\theta/2)$ y $s=\sin(\theta/2)$, siendo este $\theta$ el ángulo de
     k^\mu= (E,0,0,-E) \qquad 
     k^{\prime\mu}= (E,-E\sin \theta,0,-E \cos \theta)
 \end{equation}
-Dado que $\pn(e^-)=-\pn(\mu^-)$, tenemos que algunos $u_\uparrow (p) \neq u_\uparrow (k)$. Usando que 
+Los autoestados de quiralidad aquí escritos: 
 
-\[
-u_{\uparrow} = \sqrt{E + m}\,
-\begin{pmatrix}
-c \\[6pt]
-s e^{i\phi} \\[6pt]
-\dfrac{p}{E + m}\, c \\[6pt]
-\dfrac{p}{E + m}\, s e^{i\phi}
-\end{pmatrix},
-\qquad
-u_{\downarrow} = \sqrt{E + m}\,
-\begin{pmatrix}
--\,s \\[6pt]
-c e^{i\phi} \\[6pt]
-\dfrac{p}{E + m}\, s \\[6pt]
--\dfrac{p}{E + m}\, c e^{i\phi}
-\end{pmatrix},
-\]
-de Saborido \cite{SaboridoSilva2025ParticlePhysicsI}, podemos ver las siguientes ecuaciones: 
-\begin{equation}
-	u_\uparrow(p) = \sqrt{E} \begin{pmatrix}
+\begin{equation} 
+	u_\uparrow(p,\theta=0) \sqrt{E} \begin{pmatrix}
 		1 \\ 0 \\ 1 \\ 0
-	\end{pmatrix} \quad
-	u_\downarrow(p)= \sqrt{E} \begin{pmatrix}
+	\end{pmatrix} \qquad 
+	u_\downarrow(p,\theta=0)= \sqrt{E} \begin{pmatrix}
 		0 \\ 1 \\ 0 \\ -1
-	\end{pmatrix}\quad
-	u_\uparrow(p') = \sqrt{E} \begin{pmatrix}
+	\end{pmatrix}
+\end{equation}
+\begin{equation} 
+	u_\uparrow(p',\theta) \sqrt{E} \begin{pmatrix}
 		c \\ s \\ c \\ s
-	\end{pmatrix} \quad
-	u_\downarrow(p')= \sqrt{E} \begin{pmatrix}
+	\end{pmatrix} \qquad 
+	u_\downarrow(p',\theta)= \sqrt{E} \begin{pmatrix}
 		-s \\ c \\ s \\ -c
 	\end{pmatrix}
 \end{equation}
 \begin{equation}
-	u_\uparrow(k) = \sqrt{E} \begin{pmatrix}
-		1 \\ 0 \\ -1 \\ 0
-	\end{pmatrix} \quad
-	u_\downarrow(k)= \sqrt{E} \begin{pmatrix}
+	u_\uparrow(k,\theta=\pi) = \sqrt{E} \begin{pmatrix}
 		0 \\ 1 \\ 0 \\ 1
-	\end{pmatrix}  \quad
-	u_\uparrow(k') = \sqrt{E} \begin{pmatrix}
-		c \\ s \\ -c \\ -s
-	\end{pmatrix} \quad
-	u_\downarrow(k')= \sqrt{E} \begin{pmatrix}
-		-s \\ c \\ -s \\ c
-	\end{pmatrix}
+	\end{pmatrix}  \qquad 
+	u_\downarrow(k,\theta=\pi) = \sqrt{E} \begin{pmatrix}
+		-1 \\ 0 \\ 1 \\ 0
+	\end{pmatrix} 
 \end{equation}
-para $k'$ y $p'$ usaremos la expresión general. Usando las relaciones del Thomson \cite{thomson_modern_physics}
+\begin{equation}
+	u_\uparrow(k',\pi+\theta) = \sqrt{E} \begin{pmatrix}
+		-s \\ c \\ -s \\ c
+	\end{pmatrix}  \qquad 
+	u_\downarrow(k',\pi + \theta) = \sqrt{E} \begin{pmatrix}
+		-c \\ -s \\ c \\ s
+	\end{pmatrix} 
+\end{equation}
+donde hemos aplicado que para los muones $\theta_2 = \pi + \theta_1$, recordando que $s=\sin \theta/2$ y $c=\cos\theta/2$,  lo que nos lleva a $c\to -s $y  $s \to c$ en el caso de los muones (espinores con $k$ y $k'$). Usando las relaciones \cite{SaboridoSilva2025ParticlePhysicsI,thomson_modern_physics}. 
 \begin{align}
 	\overline{\psi}\gamma^0\phi & = \psi^\dagger \gamma^0 \gamma^0 \phi
 	= \psi_1^*\phi_1 + \psi_2^*\phi_2 + \psi_3^*\phi_3 + \psi_4^*\phi_4,     \\
@@ -239,7 +229,6 @@ para $k'$ y $p'$ usaremos la expresión general. Usando las relaciones del Thoms
 	= \psi_1^*\phi_3 - \psi_2^*\phi_4 + \psi_3^*\phi_1 - \psi_4^*\phi_2.
 \end{align}
 Tenemos que:
-
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{align*}
@@ -269,7 +258,7 @@ Tenemos que:
     \bar{u}_\downarrow(p') \gamma_3 {u}_\downarrow (p) & = 2Ec
 \end{align*}
 \end{minipage}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\vspace{1em}
 \begin{minipage}[t]{0.48\textwidth}
 \begin{align*}
     \bar{u}_\uparrow (k') \gamma_0 {u}_\uparrow (k) & = 2Ec \\
@@ -1180,18 +1169,20 @@ Iremos término por término.
 \end{itemize}
 Finalmente, la suma nos lleva a: 
 
-\begin{equation}
-\mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
-+ (\partial_\mu \phi)^\ast (\partial^\mu \phi)
-- \mu^2 \phi^2 - \lambda \phi^4
-- i g B_\mu \phi^\ast (\partial^\mu \phi)
-+ i g (\partial_\mu \phi^\ast) B^\mu \phi
-+ g^2 B_\mu B^\mu \phi^\ast \phi,
+\begin{equation} \small
+\mathcal{L} =
+\frac{1}{2}(\partial_\mu \eta)(\partial^\mu \eta)
+- \lambda v^2 \eta^2
++ \frac{1}{2}(\partial_\mu \xi)(\partial^\mu \xi)
+- \frac{1}{4}F_{\mu\nu}F^{\mu\nu}
++ \frac{1}{2}g^2 v^2 B_\mu B^\mu
+- \mathcal{U}_{\text{int}}
++ g v B_\mu (\partial^\mu \xi),
 \end{equation}
 donde 
 
 \begin{align} 
-	\Ucal_{\text{int}} & = \Ucal^1 + \Ucal^2 + \Ucal^3 \nonumber \\
+	\Ucal_{\text{int}} & = \Ucal^1 + \Ucal^2 + \Ucal^3 =  \nonumber \\
 	& =  \lambda v\eta^3 + \frac{1}{4}\lambda\eta^4
 	+ \frac{1}{4}\lambda\xi^4 + \lambda v\eta\,\xi^2 + \frac{1}{2}\lambda \eta^2\xi^2 + \frac{1}{4}\lambda v^4 + - i g  B^\mu \eta \partial_\mu \xi + i g B^\mu \xi \partial_\mu \eta  \nonumber \\ 
 	& + \frac{1}{2}g^2  \eta^2 B_\mu B^\mu +
@@ -1205,7 +1196,8 @@ conteniendo todos los vérices triples y cuárticos.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Ejercicio}{Término del lagrangiano del Modelo Estándar con derivadas covariantes}\label{Ej:20}
+
+\begin{Ejercicio}{Término del lagrangiano del Modelo Estándar con derivadas covariantes}\label{Ej:14}
 Verifique que el término del lagrangiano del Modelo Estándar que contiene las derivadas covariantes del campo de Higgs puede escribirse como:
 \[
 (D_\mu \phi)^\dagger (D^\mu \phi)
@@ -1217,11 +1209,69 @@ Verifique que el término del lagrangiano del Modelo Estándar que contiene las 
 \]
 \end{Ejercicio}
 
+Dado que 
+
+\begin{equation}
+	\phi =  \frac{1}{\sqrt{2}}  \begin{pmatrix}
+		0 \\ 
+		v + h(x) 
+	\end{pmatrix}
+\end{equation}
+y 
+\begin{equation}
+	D_\mu =  \frac{1}{2}\bqty{2\partial_\mu + i (g_W \sigman \Wn_\mu  + g' B_\mu)} 
+\end{equation}
+Tal que, las matrices de Pauli: 
+\[
+\sigma_x = 
+\begin{pmatrix}
+0 & 1 \\[4pt]
+1 & 0
+\end{pmatrix},
+\quad
+\sigma_y = 
+\begin{pmatrix}
+0 & -i \\[4pt]
+i & 0
+\end{pmatrix},
+\quad
+\sigma_z = 
+\begin{pmatrix}
+1 & 0 \\[4pt]
+0 & -1
+\end{pmatrix}.
+\]
+nos llevan a: 
+\begin{equation}
+	D_\mu \phi = \frac{1}{2 \sqrt{2}} \begin{pmatrix}
+		-i g_W\pqty{ W^{1}_{\mu} - i W_\mu^2}(v+h) \\
+		2\partial_\mu h(x) -i \pqty{-g_W W^{3}_{\mu} + g' B_\mu}(v+h)
+	\end{pmatrix}
+\end{equation}
+tal queda
+
+\begin{equation}
+	(D_\mu \phi)^\dagger =  \frac{1}{2 \sqrt{2}} \begin{pmatrix}
+		i \frac{g_W}{2}\pqty{ W_{\mu}^{1} + i W_{\mu}^{2}}(v+h)  & 
+		2\partial_\mu h(x) + i \pqty{-g_W W^{3}_{\mu} + g' B_\mu}(v+h)
+	\end{pmatrix}
+\end{equation}
+y por tanto: 
+
+\begin{align}
+	(D_\mu \phi)^\dagger D^\mu \phi & = \frac{1}{8} \left[ 4 (\partial_\mu h )(\partial^\mu h ) + \pqty{g_W W^{3 \mu} - g' B^\mu}\pqty{g_W W_{3 \mu} - g' B_\mu}(v+h)^2 \right. \nonumber \\
+	& \left. + \frac{g_W}{2}\pqty{ W^{\mu 1} - i W^{\mu 2}}\pqty{ W_{\mu}^{1} + i W_{\mu}^{2}}(v+h)^2
+	\right]
+\end{align}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Ejercicio}{Transformación del doblete de Higgs bajo $SU(2)$}\label{Ej:21}
+
+\begin{Ejercicio}{Transformación del doblete de Higgs bajo $SU(2)$}\label{Ej:15}
 Demuestre que el campo $\phi_c$ transforma bajo $SU(2)$ de la misma forma que $\phi$ (el doblete de Higgs), donde
 \[ \small
 \phi =
@@ -1252,4 +1302,625 @@ i & 0
 \phi^{+\ast}
 \end{pmatrix}.
 \]
+\end{Ejercicio}
+
+Veamos que SU(2) implica la transformación 
+
+
+\begin{equation}
+	\phi \to \phi' = U \phi
+\end{equation}
+siendo $U=e^{\frac{i}{2}\Wn \sigman }$. Así puesm tenemos queda
+
+\begin{equation}
+	\phi_c' = - i \sigma_2 \phi^{\prime *} = - i  \sigma_2 \parentesis{U \phi}^* = - i \sigma_2 U^* \phi^*
+\end{equation}
+Basta ver que 
+
+\begin{equation}
+	U^* = e^{-i\Wn \sigman^*}\approx 1 - i \sigman^* \Wn  \to \sigma_2 U^* \sigma_2 \approx \sigma_2 (1- i \sigman^* \Wn ) \sigma_2 = 1 - i  \sigma_2 \sigman^* \sigma_2 \Wn
+\end{equation}
+lo que demostremos para una rotación infinitesimal se verifica para la rotación completa SU(2). Para evaluar los términos $\sigma_2 \sigman^* \sigma_2$ vemos que:
+
+\begin{align}
+	\sigma_2 \sigma_1^* \sigma_2 & =  \sigma_2 \sigma_1 \sigma_2  = -  (\sigma_2\sigma_2)\sigma_1 = - \sigma_1 \\
+	\sigma_2 \sigma_2^* \sigma_2 & = - \sigma_2 \sigma_2 \sigma_2  = -  (\sigma_2\sigma_2)\sigma_2 = - \sigma_2 \\
+	\sigma_2 \sigma_3^* \sigma_2 & =  \sigma_2 \sigma_3 \sigma_1 = - (\sigma_2\sigma_2)\sigma_3 = -\sigma_3
+\end{align}
+y por tanto: 
+
+\begin{equation}
+	1 - i  \sigma_2 \sigman^* \sigma_2 \Wn = 1 + \sigman
+\end{equation}
+De lo que se deduce que:
+
+\begin{equation}
+	\sigma_2 (1- i \sigman \Wn ) \sigma_2 = 1 + \sigman \Wn \Longrightarrow \sigma^2 U^* \sigma^2 = U
+\end{equation}
+y por tanto
+
+\begin{equation}
+	\phi_c' =  - i \sigma_2 U^* \phi^* = - i \sigma_2 U^* (\sigma_2 \sigma_2) \phi^* = - i U \sigma_2 \phi^* = U (-i\sigma_2 \phi^*) = U \phi_c
+\end{equation}
+demostrando que transforma igual que $\phi$ bajo SU(2).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Estados físicos del fotón y del bosón Z}\label{Ej:16}
+A partir de la matriz de masas de los campos $W^{(3)}$ y $B$, demuestre que los autoestados en la base diagonal son
+\[
+A_\mu = \frac{g' W_\mu^{(3)} + g_W B_\mu}{\sqrt{g_W^2 + g'^2}}, 
+\qquad
+Z_\mu = \frac{g_W W_\mu^{(3)} - g' B_\mu}{\sqrt{g_W^2 + g'^2}},
+\]
+donde $A_\mu$ y $Z_\mu$ son los campos físicos correspondientes al fotón y al bosón $Z$.
+\end{Ejercicio}
+
+Tenemos que que la matriz de masas de los campos $W^{(3)}$ y $B$ es: 
+
+\begin{equation}
+	M = 
+	\begin{pmatrix}
+		g_W^2 &  - g_W g' \\
+		- g_W g' & g'^2 
+	\end{pmatrix}
+\end{equation}
+Primero calculamos los autovalores: 
+
+\begin{equation}
+	\det 
+	\begin{pmatrix}
+		g_W^2 - \lambda &  - g_W g' \\
+		- g_W g' & g'^2 - \lambda
+	\end{pmatrix} = 0 \to \lambda^2 - (g_W^2 + g'^2) \lambda = 0 
+\end{equation}
+Así pues: 
+
+\begin{equation}
+	\lambda_1 = (g_W^2 + g'^2)  \qquad \lambda_2 = 0
+\end{equation}
+Una vez tenemos la matriz de autovalores, sacar los autoestados es trivial:
+
+\begin{itemize}
+	\item  El \textit{primerautoestado}o: 
+	\begin{equation}
+		M Z_\mu = (g_W^2 + g'^2) v \to \begin{pmatrix}
+			g_W^2 - &  - g_W g' \\
+			- g_W g' & g'^2
+		\end{pmatrix}\begin{pmatrix}
+			v_1 \\
+			v_2 
+		\end{pmatrix} = (g_W^2 + g'^2) \begin{pmatrix}
+			v_1 \\
+			v_2 
+		\end{pmatrix}
+	\end{equation}
+	de donde se deducen las ecuaciones: 
+	\begin{equation}
+		v_1 (g_W^2 - (g_W^2 + g'^2)) = g_W g' v_2 \qquad 
+		v_2 (g^{\prime 2} - (g_W^2 + g'^2)) = g_W g' v_1  
+	\end{equation}
+	tal que: 
+	\begin{equation}
+		v_2 = - \frac{g'}{g_W} v_1 
+	\end{equation}
+	y por tanto: 
+	\begin{equation}
+		v = \begin{pmatrix}
+			1 \\ 
+			-g'/g_W
+		\end{pmatrix}v \to \hat{v} = \frac{1}{\sqrt{g^{\prime 2}+g_W^2}} \begin{pmatrix}
+			g_W \\ 
+			-g' 
+		\end{pmatrix}
+	\end{equation}
+	donde $\hat{v}$ es el autovector normalizado. 
+	\item  El \textit{segundo autoestado}: 
+	\begin{equation}
+		M Z_\mu = (g_W^2 + g'^2) u \to \begin{pmatrix}
+			g_W^2 - &  - g_W g' \\
+			- g_W g' & g'^2
+		\end{pmatrix}\begin{pmatrix}
+			u_1 \\
+			u_2 
+		\end{pmatrix} = \begin{pmatrix}
+			0 \\
+			0 
+		\end{pmatrix}
+	\end{equation}
+	de donde se deducen las ecuaciones: 
+	\begin{equation}
+		u_1 (g_W^2 ) = g_W g' u_2 \qquad 
+		u_2 (g^{\prime 2}) = g_W g' u_1  
+	\end{equation}
+	tal que: 
+	\begin{equation}
+		u_2 = \frac{g_W}{g'} u_1 
+	\end{equation}
+	y por tanto: 
+	\begin{equation}
+		u = \begin{pmatrix}
+			1 \\ 
+			g_W/g
+		\end{pmatrix}u \to \hat{u} = \frac{1}{\sqrt{g^{\prime 2}+g_W^2}} \begin{pmatrix}
+			g' \\ 
+			g_W 
+		\end{pmatrix}
+	\end{equation}
+	donde $\hat{u}$ es el autovector normalizado. 
+\end{itemize}
+Con los autovectores calculados queda claro entonces que la matriz $S$ de cambio de base es: 
+
+\begin{equation}
+	S = \frac{1}{\sqrt{g_W^2 + g^{\prime 2}}} 
+	\begin{pmatrix}	
+		g_W &	g' \\ 
+		-g' & 	g_W
+	\end{pmatrix} \qquad 
+	\begin{pmatrix}	
+		W^{(3)}_\mu \\
+		B_\mu
+	\end{pmatrix} = S
+	\begin{pmatrix}	
+		Z_\mu \\
+		A_\mu 
+	\end{pmatrix}
+\end{equation}
+de lo que se deduce que efectivamenet: 
+
+\begin{equation}
+	\begin{pmatrix}	
+		Z_\mu \\
+		A_\mu 
+	\end{pmatrix} = S^T
+	\begin{pmatrix}	
+		W^{(3)}_\mu \\
+		B_\mu
+	\end{pmatrix}
+\end{equation}
+nos lleva a 
+\begin{equation}
+	Z_\mu =\frac{G_W W^{(3)}_\mu - g' B_\mu}{\sqrt{g_W^2 + g^{\prime 2}}}  \qquad A_\mu = \frac{g_WW^{(3)}_\mu +g' B_\mu}{\sqrt{g_W^2 + g^{\prime 2}}}  
+\end{equation}
+que es lo que queríamos demostrar, correspondiendo a $Z_\mu$ asociado con la masa $m_Z = \frac{1}{2} v \sqrt{g_W^2 + g^{\prime 2}}$ y con $m_A = 0$. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Decaimiento del $W^-$}\label{Ej:17}
+Calcule los elementos de matriz para el decaimiento 
+\[
+W^- \to e^- \, \bar{\nu}_e
+\]
+considerando las tres posibles polarizaciones iniciales del bosón $W^-$.  
+Puede trabajar en el límite ultrarrelativista y despreciar las masas de las partículas finales.
+\end{Ejercicio}
+
+Veamos que el diagrama de Feynman de menor orden es: 
+\begin{figure}[H]
+	\centering
+	\feynmandiagram [horizontal=a to b] {
+		a [particle=\(W^-\)] -- [boson,momentum=\(q\)] b,
+		b -- [fermion, momentum'=\(p\)] f1 [particle=\(\ell^-\)],
+		b -- [anti fermion, momentum=\(k\)] f2 [particle=\(\bar{\nu}_\ell\)],
+	};
+	\caption{Diagrama de Feynman para \(W^- \to \ell^- \bar{\nu}_\ell\).}
+\end{figure}
+Y ahora tenemos que: 
+
+\begin{equation}
+	-i\Mcal_{fi} = \frac{-ig_W}{2\sqrt{2}} \epsilon_\mu  \pqty{ \bar{u}(p) (\gamma^\mu  (1-\gamma^5))v(k)}
+\end{equation}
+Como ya se ha dicho, debemos calcularlo para las tres posibles polarizaciones iniciales de $W^-$, que son: 
+
+\begin{equation}
+	\epsilon_- ^\mu = \frac{1}{\sqrt{2}} (0,1,-i,0) \qquad \epsilon_L^\mu = \frac{1}{m_W} (p_Z,0,0,E) \qquad \epsilon_+^\mu = - \frac{1}{\sqrt{2}} (0,1,i,0)
+\end{equation}
+representando $\epsilon_\pm$ el estado donde el espín esta en un estado de polarización circular y $\epsilon_L$ el estado donde está longitudinal.
+\begin{equation}
+	q^\mu = (m_W,0,0,0) \qquad p^\mu = (E_l, p\sin  \theta E,0,p \cos \theta)  \qquad k^\mu = (E_\nu, -p\sin  \theta E,0,-p \cos \theta)
+\end{equation}
+Es obvio que debido al factor $(1-\gamma^5)$ que elige los estados de helicidad -1 para partículas y estados de helicidad +1 para antipartículas actuará sobre nuestros. Sin embargo si las partículas tienen masa (o si la masa es comparable a la energía) helicidad $\neq$ quiralidad. Dado que estamos en el límite ultrarrelativista, podemos suponer que efectivamente $E_l= p$ y $E_\nu = -p$, y que el anterior elemento de matriz se puede reescribir como: 
+
+\begin{equation}
+	-i\Mcal_{fi} = \frac{-ig_W}{2\sqrt{2}} \epsilon_\mu  \pqty{ \bar{u}_\uparrow(p) \gamma^\mu v_\downarrow(k)}, \quad j_l^\mu = \pqty{ \bar{u}_\uparrow(p) \gamma^\mu v_\downarrow(k)}
+\end{equation}
+Los autoestados de quiralidad aquí escritos: 
+
+
+\begin{equation}
+	u_\downarrow(p,\theta_1)= \sqrt{E} \begin{pmatrix}
+		-s \\ c \\ s \\ -c
+	\end{pmatrix}\quad
+	v_\uparrow(k,\theta_2) = \sqrt{E} \begin{pmatrix}
+		s \\ -c \\ -s \\ c
+	\end{pmatrix} 
+\end{equation}
+y como $\theta_2 = \pi + \theta_1$ y $s=\sin \theta/2$ y $c=\cos\theta/2$, tenemos que ($\theta_1 \equiv \theta$)
+
+\begin{equation}
+	u_\downarrow(p,\theta)= \sqrt{E} \begin{pmatrix}
+		-s \\ c \\ s \\ -c
+	\end{pmatrix}\quad
+	v_\uparrow(k,\theta) = \sqrt{E} \begin{pmatrix}
+		c \\ s \\ -c \\ -s
+	\end{pmatrix} 
+\end{equation}
+donde hemos usado también las reglas trigonométricas $\cos (\pi/2 +\theta) = - \sin \theta$ y $\sin (\pi/2+\theta) = \cos \theta$. Usando las relaciones \cite{SaboridoSilva2025ParticlePhysicsI,thomson_modern_physics}
+\begin{align}
+	\overline{\psi}\gamma^0\phi & = \psi^\dagger \gamma^0 \gamma^0 \phi
+	= \psi_1^*\phi_1 + \psi_2^*\phi_2 + \psi_3^*\phi_3 + \psi_4^*\phi_4,     \\
+	\overline{\psi}\gamma^1\phi & = \psi^\dagger \gamma^0 \gamma^1 \phi
+	= \psi_1^*\phi_4 + \psi_2^*\phi_3 + \psi_3^*\phi_2 + \psi_4^*\phi_1,     \\
+	\overline{\psi}\gamma^2\phi & = \psi^\dagger \gamma^0 \gamma^2 \phi
+	= -i(\psi_1^*\phi_4 - \psi_2^*\phi_3 + \psi_3^*\phi_2 - \psi_4^*\phi_1), \\
+	\overline{\psi}\gamma^3\phi & = \psi^\dagger \gamma^0 \gamma^3 \phi
+	= \psi_1^*\phi_3 - \psi_2^*\phi_4 + \psi_3^*\phi_1 - \psi_4^*\phi_2.
+\end{align}
+podemos llegar a: 
+
+\begin{align*}
+    \bar{u}_\downarrow (p) \gamma_0 {v}_\uparrow (k) & = 0 \\
+    \bar{u}_\downarrow (p) \gamma_1 {v}_\uparrow (k) & = 2s^2-2c^2 = - 2E\cos (\theta)  \\
+    \bar{u}_\downarrow (p) \gamma_2 {v}_\uparrow (k) & = -i(-c^2 + s^2 + c^2 + s^2 ) = - i2E \\
+    \bar{u}_\downarrow (p) \gamma_3 {v}_\uparrow (k) & = 4 c s = 2E \sin (\theta)  
+\end{align*}
+tal que
+\begin{equation}
+	j_l^\mu = 2E(0,-\cos \theta, -i,\sin \theta)
+\end{equation}
+y recordando que (hacemos que $q=0$ y $E_W=m_W$)
+\begin{equation}
+	\epsilon_- ^\mu = \frac{1}{\sqrt{2}} (0,1,-i,0) \qquad \epsilon_L^\mu = (0,0,0,1) \qquad \epsilon_+^\mu = - \frac{1}{\sqrt{2}} (0,1,i,0)
+\end{equation}
+que es exactamente lo que se quería demostrar \cite{SaboridoSilva2025ParticlePhysicsI,thomson_modern_physics}. Ahora, veamos el producto de la corriente leptónica con el estado de polarización: 
+
+\begin{align}
+	\Mcal_{-} = \epsilon_{-\mu}j_{l}^{\mu} & = \frac{g_WE}{2} (1+\cos (\theta))  \\
+	\Mcal_{+} = \epsilon_{+\mu}j_{l}^{\mu} & = \frac{g_WE}{2} (1-\cos (\theta))   \\
+	\Mcal_{L} = -\epsilon_{L\mu}j_{l}^{\mu} & = \frac{g_WE}{\sqrt{2}}   \sin \theta
+\end{align}
+y dado que: 
+
+\begin{equation}
+	|\Mcal|^2 = \frac{1}{3}\pqty{\vqty{\Mcal_{-}}^2 + \vqty{\Mcal_{+}}^2 + \vqty{\Mcal_{L}}^2}
+\end{equation}
+tenemos que:
+\begin{equation}
+	|\Mcal|^2 = \frac{1}{3} (g_W M_W)^2
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Elemento de matriz y razón de decaimiento del $Z$}\label{Ej:18}
+Calcule en detalle el elemento de matriz asociado al diagrama de Feynman de orden más bajo para el proceso
+\[
+Z \to f \bar{f},
+\]
+y determine la correspondiente tasa de decaimiento parcial, expresando el resultado en términos de los acoplos vectorial y axial del bosón $Z$.  
+Tomando $\sin^2 \theta_W = 0.2315$, demuestre que
+\[
+R_\mu = 
+\frac{\Gamma(Z \to \mu^+ \mu^-)}{\Gamma(Z \to \text{hadrons})}
+\approx \frac{1}{20}.
+\]
+
+\medskip
+Puede suponer que se trabaja en el límite ultrarrelativista, donde las masas de los fermiones son despreciables y los autoestados quirales se aproximan a autoestados de helicidad.  
+También puede utilizar técnicas de trazas y realizar el cálculo completo.
+\end{Ejercicio}
+
+Veamos que el diagrama de Feynman de menor orden es:
+
+\begin{figure}[H]
+	\centering
+	\feynmandiagram [horizontal=a to b] {
+		a [particle=\(Z\)] -- [boson,momentum=\(q\)] b,
+		b -- [fermion, momentum'=\(p\)] f1 [particle=\(f\)],
+		b -- [anti fermion, momentum=\(k\)] f2 [particle=\(\bar{f}\)],
+	};
+	\caption{Diagrama de Feynman para \(Z \to f^- \bar{f} \).}
+\end{figure}
+
+
+Este ejercicio sería trivial habiendo hecho el anterior (ejercicio \ref{Ej:17}), de no ser porque el acoplatmiento del $Z$ no es puramente a izquierdas, si no que tiene una componente a derechas. Así pues: 
+
+\begin{equation}
+	-i\Mcal_{fi} = \frac{-ig_W}{2\sqrt{2}} \epsilon_\mu  \pqty{ \bar{u}(p) c_L(\gamma^\mu  (1+\gamma^5))v(k) + \bar{u}(p) c_R(\gamma^\mu  (1-\gamma^5))v(k)}
+\end{equation}
+\begin{equation}
+	-i\Mcal_{fi} = \frac{-ig_W}{2\sqrt{2}} \epsilon_\mu  \pqty{ c_L \bar{u}_\uparrow(p) \gamma^\mu v_\downarrow(k) + c_L \bar{u}_\downarrow(p) \gamma^\mu v_\uparrow(k)} = \frac{-ig_W}{2\sqrt{2}} \epsilon_\mu (c_L j_L^\mu + c_R j_R^\mu)
+\end{equation}
+Con los mismos estados de helicidad que el bosón $W$ en ele ejercicio anterior.
+
+\begin{equation}
+	\epsilon_- ^\mu = \frac{1}{\sqrt{2}} (0,1,-i,0) \qquad \epsilon_L^\mu = (0,0,0,1) \qquad \epsilon_+^\mu = - \frac{1}{\sqrt{2}} (0,1,i,0)
+\end{equation}
+Los autoestados de quiralidad aquí escritos: 
+
+\begin{equation} 
+	u_\uparrow(p,\theta_1)= \sqrt{E} \begin{pmatrix}
+		c \\ s \\ c \\ s
+	\end{pmatrix} \qquad 
+	u_\downarrow(p,\theta_1)= \sqrt{E} \begin{pmatrix}
+		-s \\ c \\ s \\ -c
+	\end{pmatrix}
+\end{equation}
+\begin{equation}
+	v_\uparrow(k,\theta_2) = \sqrt{E} \begin{pmatrix}
+		s \\ -c \\ -s \\ c
+	\end{pmatrix}  \qquad 
+	v_\downarrow(k,\theta_2) = \sqrt{E} \begin{pmatrix}
+		c \\ s \\ c \\ s
+	\end{pmatrix} 
+\end{equation}
+y como $\theta_2 = \pi + \theta_1$ y $s=\sin \theta/2$ y $c=\cos\theta/2$, tenemos que ($\theta_1 \equiv \theta$)
+
+\begin{equation} 
+	u_\uparrow(p,\theta)= \sqrt{E} \begin{pmatrix}
+		c \\ s \\ c \\ s
+	\end{pmatrix} \qquad 
+	u_\downarrow(p,\theta)= \sqrt{E} \begin{pmatrix}
+		-s \\ c \\ s \\ -c
+	\end{pmatrix}\quad
+\end{equation}
+\begin{equation}
+	v_\uparrow(k,\theta) = \sqrt{E} \begin{pmatrix}
+		c \\ s \\ -c \\ -s
+	\end{pmatrix} \qquad 
+	v_\downarrow(k,\theta) = \sqrt{E} \begin{pmatrix}
+		-s \\ c \\ -s \\ c
+	\end{pmatrix} 
+\end{equation}
+donde hemos usado también las reglas trigonométricas $\cos (\pi/2 +\theta) = - \sin \theta$ y $\sin (\pi/2+\theta) = \cos \theta$. Usando las relaciones \cite{SaboridoSilva2025ParticlePhysicsI,thomson_modern_physics}
+\begin{align}
+	\overline{\psi}\gamma^0\phi & = \psi^\dagger \gamma^0 \gamma^0 \phi
+	= \psi_1^*\phi_1 + \psi_2^*\phi_2 + \psi_3^*\phi_3 + \psi_4^*\phi_4,     \\
+	\overline{\psi}\gamma^1\phi & = \psi^\dagger \gamma^0 \gamma^1 \phi
+	= \psi_1^*\phi_4 + \psi_2^*\phi_3 + \psi_3^*\phi_2 + \psi_4^*\phi_1,     \\
+	\overline{\psi}\gamma^2\phi & = \psi^\dagger \gamma^0 \gamma^2 \phi
+	= -i(\psi_1^*\phi_4 - \psi_2^*\phi_3 + \psi_3^*\phi_2 - \psi_4^*\phi_1), \\
+	\overline{\psi}\gamma^3\phi & = \psi^\dagger \gamma^0 \gamma^3 \phi
+	= \psi_1^*\phi_3 - \psi_2^*\phi_4 + \psi_3^*\phi_1 - \psi_4^*\phi_2.
+\end{align}
+podemos llegar a: 
+
+\begin{align*}
+    \bar{u}_\downarrow (p) \gamma_0 {v}_\uparrow (k) & = 0 \\
+    \bar{u}_\downarrow (p) \gamma_1 {v}_\uparrow (k) & = 2s^2-2c^2 = - 2E\cos (\theta)  \\
+    \bar{u}_\downarrow (p) \gamma_2 {v}_\uparrow (k) & = -i(-c^2 + s^2 + c^2 + s^2 ) = - i2E \\
+    \bar{u}_\downarrow (p) \gamma_3 {v}_\uparrow (k) & = 4 c s = 2E \sin (\theta)  
+\end{align*}
+
+\begin{align*}
+    \bar{u}_\uparrow (p) \gamma_0 {v}_\downarrow (k) & = 0 \\
+    \bar{u}_\uparrow (p) \gamma_1 {v}_\downarrow (k) & = 2c^2-2s^2 = 2E\cos (\theta) \\
+    \bar{u}_\uparrow (p) \gamma_2 {v}_\downarrow (k) & = - i 2 E \\
+    \bar{u}_\uparrow (p) \gamma_3 {v}_\downarrow (k) & = - 4 c s = -2E \sin (\theta)  
+\end{align*}
+que junto con
+\begin{equation}
+	\epsilon_- ^\mu = \frac{1}{\sqrt{2}} (0,1,-i,0) \qquad \epsilon_L^\mu = (0,0,0,1) \qquad \epsilon_+^\mu = - \frac{1}{\sqrt{2}} (0,1,i,0)
+\end{equation}
+nos permite obtener: 
+
+\begin{align}
+	\Mcal_{-} = \epsilon_{-\mu}j_{l}^{\mu} & = \frac{g_WE}{2} ((c_L+c_R)+(c_L-c_A)\cos (\theta))  \\
+	\Mcal_{+} = \epsilon_{+\mu}j_{l}^{\mu} & = \frac{g_WE}{2} ((c_L+c_R)-(c_L-c_A)\cos (\theta))   \\
+	\Mcal_{L} = -\epsilon_{L\mu}j_{l}^{\mu} & = \frac{g_WE}{\sqrt{2}} (c_L-c_R)  \sin \theta
+\end{align}
+y usando que 
+\begin{equation}
+	|\Mcal|^2 = \frac{1}{3}\pqty{\vqty{\Mcal_{-}}^2 + \vqty{\Mcal_{+}}^2 + \vqty{\Mcal_{L}}^2}
+\end{equation}
+tenemos que, usando $c_V=c_L+c_R$ y $c_A=c_L-c_R$:W
+\begin{equation}
+	|\Mcal|^2 = \frac{1}{3} (g_W M_Z)^2 (c_A^2 + c_V^2)
+\end{equation}
+Como podemos ver tiene un valor diferente en función de la partícula ya que:
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+$f$ & $c_V$ & $c_A$ \\ 
+\midrule
+$e^-,\, \mu^-,\, \tau^-$ & $-0.037$ & $-0.5$ \\
+$u,\, c,\, t$ & $0.192$ & $0.5$ \\
+$d,\, s,\, b$ & $-0.346$ & $-0.5$ \\
+\bottomrule
+\end{tabular}
+\caption{Valores numéricos de los acoplos vectoriales y axiales para $\sin^2\theta_W = 0.2315$.}
+\label{tab:coeficientes_weak_num}
+\end{table}
+
+donde hemos sustituido $\sin^2 \theta_W = 0.2315$ en las respespectivas tablas \cite{SaboridoSilva2025ParticlePhysicsI,thomson_modern_physics}. Así pues: 
+\begin{align*}
+\mu &: c_V^2 + c_A^2 = 0.2516, \quad
+d : c_V^2 + c_A^2 = 0.3725 \quad \text{and} \quad
+u : c_V^2 + c_A^2 = 0.2861,
+\end{align*}
+de lo que se deduce (el cociente de los $\Gamma$ solo depende de $c_V^2 + c_A^2$ ya que en la producción de los quarks o leptones estamos en el régimen ultrarrelativista): 
+\begin{equation}
+	R = \frac{\Gamma(Z \to \mu^+ \mu^-)}{\Gamma(Z \to \text{hadrons})} = \frac{0.2516}{9 \times 0.3725 + 6 \times 0.2861} \approx 0.0497 \approx \frac{1}{20}
+\end{equation}
+teniendo $3$ quarks del tipo $d$ (d,s,b) y 2 del tipo $u$ (u,c, el quark top es demasiado pesado $m_t >m_Z$ como para generarse por una desintegración). El factor 3 extra viene de los 3 posibles estados de color que pueden producirse. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Número de sabores de neutrinos ligeros}\label{Ej:19}
+Tras corregir los efectos de QED (incluyendo la radiación del estado inicial), las secciones eficaces medidas en la resonancia del $Z$ para los procesos 
+$e^+e^- \to \mu^+\mu^-$ y $e^+e^- \to \text{hadrons}$ son:
+\[
+\sigma^0(e^+e^- \to Z \to \mu^+\mu^-) = 1.9993~\text{nb},
+\qquad
+\sigma^0(e^+e^- \to Z \to \text{hadrons}) = 41.476~\text{nb}.
+\]
+Asumiendo la universalidad leptónica, determine $\Gamma_{\ell\ell}$ y $\Gamma_{\text{hadrons}}$.
+Usando el valor medido de $\Gamma_Z = 2.4952 \pm 0.0023~\text{GeV}$ y el valor teórico de $\Gamma_{\nu\nu}$ dado por
+\[
+\Gamma(Z \to f\bar{f}) = \frac{g_Z^2 m_Z (c_V^2 + c_A^2)}{48\pi},
+\]
+obtenga una estimación del número de sabores de neutrinos ligeros.
+\end{Ejercicio}
+Asumiendo que 
+\begin{table}[h!]
+\centering
+\begin{tabular}{lcc}
+\toprule
+$f$ & $c_V$ & $c_A$ \\
+\midrule
+$\nu_e,\, \nu_\mu,\, \nu_\tau$ & $0.5$ & $0.5$ \\
+$e^-,\, \mu^-,\, \tau^-$ & $-0.037$ & $-0.5$ \\
+$u,\, c,\, t$ & $0.192$ & $0.5$ \\
+$d,\, s,\, b$ & $-0.346$ & $-0.5$ \\
+\bottomrule
+\end{tabular}
+\caption{Valores numéricos de los acoplos vectoriales y axiales para $\sin^2\theta_W = 0.2315$.}
+\label{tab:coeficientes_weak_num}
+\end{table}
+Solo tenemos que usar que 
+\begin{equation}
+	m_Z = 91.19 \unit{GeV} \qquad g_Z = 0.745
+\end{equation}
+de lo que se deduce que
+\begin{equation}
+	\frac{g_Zm_Z}{48\pi} \approx 0.336 \unit{GeV}
+\end{equation}
+\begin{equation}
+	\Gamma_{\ell \ell} = 3 (0.336\times (0.5^2 + 0.037^2)) \approx 0.253 \unit{GeV} 
+\end{equation}
+\begin{equation} \small
+	\Gamma_{\text{hadrones}} = 9 (0.336\times (0.5^2 + 0.346^2)) + 6   (0.336\times (0.5^2 + 0.192^2))\approx 1.128+0.578 = 1.706 \unit{GeV} 
+\end{equation}
+Ahora solo tenemos que calcular el número de neutrinos. Primero: 
+
+\begin{equation}
+	\Gamma_{{\nu \nu}} = (0.336\times (0.5^2 + 0.5^2)) \approx 0.168
+\end{equation}
+Tla que entonces: 
+
+\begin{equation}
+	n 	\Gamma_{{\nu \nu}} = \Gamma_Z -\Gamma_{\ell \ell}  - \Gamma_{\text{hadrones}} 
+\end{equation}
+tal que: 
+
+\begin{equation}
+	n = \frac{2.4952-1.706-0.253}{0.168} \approx 3.2 
+\end{equation}
+es decir, tendríamos \textit{tres sabores de neutrinos} (es el entero más proximo). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Asimetría izquierda-derecha en el SLC}\label{Ej:20}
+El colisionador lineal $e^+e^-$ de Stanford (SLC), operando a $\sqrt{s} = m_Z$, utilizó haces longitudinalmente polarizados (izquierda y derecha). 
+Esto permitió medir la sección eficaz $e^+e^- \to Z \to f\bar{f}$ de forma separada para electrones de helicidad izquierda y derecha.
+Suponiendo que el haz de electrones está 100\% polarizado y que el haz de positrones no lo está, demuestre que la asimetría izquierda-derecha está dada por:
+\[
+A_{LR} = \frac{\sigma_L - \sigma_R}{\sigma_L + \sigma_R} 
+= \frac{(c_L^e)^2 - (c_R^e)^2}{(c_L^e)^2 + (c_R^e)^2} = A_e.
+\]
+\end{Ejercicio}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Determinación de $\sin^2\theta_W$ a partir de la asimetría del muón}\label{Ej:21}
+A partir de la medida del parámetro de asimetría del muón, 
+\[
+A_\mu = 0.1456 \pm 0.0091,
+\]
+determine el valor correspondiente de $\sin^2\theta_W$ junto con su incertidumbre.
+\end{Ejercicio}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{Ejercicio}{Decaimiento del quark top}\label{Ej:22}
+Despreciando la masa del quark $b$ y trabajando en el sistema de referencia del centro de masas (CM),
+demuestre que el elemento de matriz al cuadrado promediado sobre los espines para el decaimiento 
+\[
+t \to b\, W^+
+\]
+es
+\[
+\langle |\mathcal{M}|^2 \rangle 
+= \frac{1}{2} g_W^2\, m_t\, p^{\star}
+\left( 2 + \frac{m_t^2}{m_W^2} \right),
+\]
+donde $p^{\star}$ es el momento del quark $b$ o del bosón $W^+$ en el sistema CM.
+\end{Ejercicio}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ç
+
+\begin{Ejercicio}{Producción del bosón de Higgs en el LHC}\label{Ej:23}
+Suponiendo una sección eficaz total de producción del Higgs de $20~\text{pb}$ y una luminosidad integrada de $25~\text{fb}^{-1}$,
+calcule el número esperado de eventos $H \to \gamma\gamma$ y $H \to \mu^+\mu^-\mu^+\mu^-$ en cada uno de los detectores ATLAS y CMS.
+\end{Ejercicio}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Diagramas de Feynman para la producción de Higgs}\label{Ej:24}
+Dibuje los diagramas de Feynman de orden más bajo para los procesos
+\[
+e^+ e^- \to HZ 
+\qquad \text{y} \qquad
+e^+ e^- \to H\nu_e \bar{\nu}_e,
+\]
+que son los mecanismos principales de producción de Higgs en un colisionador lineal de alta energía.
+\end{Ejercicio}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejercicio}{Producción directa del Higgs en un colisionador de muones}\label{Ej:25}
+En el futuro podría ser posible construir un colisionador de muones donde el bosón de Higgs se produzca directamente mediante
+\[
+\mu^+ \mu^- \to H.
+\]
+Compare las secciones eficaces de los procesos
+\[
+e^+e^- \to H \to b\bar{b}, 
+\quad 
+\mu^+\mu^- \to H \to b\bar{b},
+\quad 
+e^+e^- \to \gamma \to b\bar{b}
+\quad \text{a} \quad \sqrt{s} = m_H.
+\]
+Discuta las conclusiones que se pueden extraer de los resultados obtenidos.
 \end{Ejercicio}

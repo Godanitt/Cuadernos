@@ -101,11 +101,11 @@ int main(int argc, char** argv) {
   driftView.SetCanvas(cD);
   drift.EnablePlotting(&driftView);
   track.EnablePlotting(&driftView);
-  cellView.SetCanvas(cD);
-  cellView.Plot2d();
   constexpr bool twod=true;
   constexpr bool drawaxis = false;
   driftView.Plot(twod,drawaxis);
+  cellView.SetCanvas(cD);
+  //cellView.Plot2d();
   cD->SaveAs("drift_view.pdf");
   delete cD;
 
