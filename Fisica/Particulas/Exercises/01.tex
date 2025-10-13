@@ -83,7 +83,7 @@ pág. 267-268 del Maggiore \cite{Maggiore:2005qv}.
 		\frac{i}{\slashed{q}-m} = \frac{i(\slashed{q}+m)}{q^2-m^2}.
 	\]
 \end{Ejercicio}
-Este ejercicio es trivial.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -125,8 +125,8 @@ Este ejercicio es trivial.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{Ejercicio}{Sección eficaz diferencial $e^-\mu^-$}\label{Ej:12}
-	Usando amplitudes de helicidad, calcule la sección eficaz diferencial para el proceso
+\begin{Ejercicio}{Sección eficaz diferencial $e^-\mu^-$}\label{Ej:6}
+	Usando amplitudes de helicidad, calcule la sección eficaz diferencial para el proceso \ref{Ej}
 	\[
 		e^- \mu^- \;\to\; e^- \mu^-,
 	\]
@@ -1838,7 +1838,180 @@ A_{LR} = \frac{\sigma_L - \sigma_R}{\sigma_L + \sigma_R}
 \]
 \end{Ejercicio}
 
+El diagrama de Feynamann que mas nos interesa en este caso es el siguiente
+\begin{figure}[h]
+	\centering
+	\feynmandiagram [horizontal'=a to b] {
+	i1 [particle=\(e^-\)] -- [fermion, momentum=\(p^\mu\)] a -- [fermion,rmomentum=\(k^\mu\)] i2 [particle=\(e^+\)],
+	a -- [photon, edge label=\(Z\)] b,
+	f1 [particle=\( \mu^+\)] -- [fermion,rmomentum=\(k'^\mu\)] b -- [fermion,momentum=\(p'^\mu\)] f2 [particle=\(\mu^-\)],
+	};
+	\caption{Diagrama de Feynman para \(e^+ e^- \to \mu^+ \mu^-\).}
+\end{figure}
+pudiendo despreciar el elemento de QED debido a que $\sqrt{s}=m_Z$ (estamos en una resonancia). El elemento de matriz del diagrama de Feynman es \cite{thomson_modern_physics}
 
+\begin{equation} \small
+\mathcal{M}_{fi} = -
+\frac{g_Z^2}{(s - m_Z^2 + i m_Z \Gamma_Z)} \,
+g_{\mu\nu}
+\Bigl[
+\bar{v}(k) \gamma^\mu \frac{1}{2}
+\left( c_V^e - c_A^e \gamma^5 \right)
+u(p)
+\Bigr]
+\times
+\Bigl[
+\bar{u}(p') \gamma^\nu \frac{1}{2}
+\left( c_V^\mu - c_A^\mu \gamma^5 \right)
+v(k')
+\Bigr].
+\end{equation}
+donde $\Gamma_Z$ es la anchura de la partícula Z, que hemos visto en el ejercicio anterior \ref{Ej:19}. De otra forma: 
+\begin{equation} \small
+\mathcal{M}_{fi} = -
+g(s) \,
+g_{\mu\nu} j^\mu_e j^\nu_\mu 
+\end{equation}
+\begin{equation} 
+	j^\mu_e = c_L j^\mu_{eLR} + c_R j^\mu_{eRL}  \qquad  j^\nu_\mu = c_L j^\mu_{\mu LR} + c_R j^\mu_{\mu RL}
+\end{equation}
+Nos dicen básicamente que el haz de electrones está 100\% polarizado. Es decir, tenemos que calcular dos elementos matriz diferentes. En el primero, los electrones estarán exclusivamente a izquierdas y en el el segundo exclusivamente a derechas. En resumen, básicamente tenemos que calcular los dos siguientes elementos de matriz: 
+
+\begin{equation}
+	\mathcal{M}_{fi \ LR \to LR} = g(s) \frac{1}{2} c_L^e j^\mu_{eLR} c_L^\mu j^\mu_{\mu LR}   \qquad 
+	\mathcal{M}_{fi \ LR \to RL} = g(s) \frac{1}{2} c_L^e j^\mu_{eRL} c_R^\mu j^\mu_{\mu RL}  
+\end{equation}
+\begin{equation}
+	\mathcal{M}_{fi \ RL \to LR} = g(s) \frac{1}{2} c_R^e j^\mu_{eLR}  c_L^\mu j^\mu_{\mu LR}  \qquad 
+	\mathcal{M}_{fi \ RR \to RL} = g(s) \frac{1}{2} c_R^e j^\mu_{eRL}  c_R^\mu j^\mu_{\mu RL}  
+\end{equation}
+Así pues queremos calcular
+
+\begin{equation}
+	\vqty{\Mcal_{L}}^2 = \frac{1}{2} \pqty{\vqty{\mathcal{M}_{fi \ LR \to LR}}^2 + \vqty{\mathcal{M}_{fi \ LR \to RL}}^2}
+\end{equation}
+\begin{equation}
+	\vqty{\Mcal_{R}}^2 = \frac{1}{2} \pqty{\vqty{\mathcal{M}_{fi \ RL \to LR}}^2 + \vqty{\mathcal{M}_{fi \ RL \to RL}}^2}
+\end{equation}
+Lógicamente el primero corresponderá a $\sigma_L$ y el segundo a $\sigma_R$.
+
+Lo primero que hay que hacer es calcular todas las posibilidades con los estados de helicidad (como en el ejercicio \ref{Ej:6}) para luego seleccionar cuales conrresponden al elemento de matriz de izquierdas y cuales al elemento a derechas. Estamos en el caso ultrarrelativista, ya que estamos con $\sqrt{s}=m_Z$ tal que $m_e,m_\mu\ll m_Z$. Así pues, los cuadrimomentos:
+
+\begin{equation}
+    p^\mu= (E,0,0,E) \qquad 
+    k^{\mu}= (E,0,0,-E) \qquad 
+\end{equation}
+\begin{equation}
+    p^{\prime\mu}= (E,E\sin \theta,0,E\cos \theta) \qquad 
+    k^{\prime\mu}= (E,-E\sin \theta,0,-E \cos \theta)
+\end{equation}
+Los espinores que usaremos:
+
+\begin{equation} 
+	u_\uparrow(p,0,0)= \sqrt{E} \begin{pmatrix}
+		1 \\ 0 \\ 1 \\ 0
+	\end{pmatrix} \qquad 
+	u_\downarrow(p,0)= \sqrt{E} \begin{pmatrix}
+		0 \\ 1 \\ 0 \\ -1
+	\end{pmatrix}
+\end{equation}
+\begin{equation}
+	v_\uparrow(k,\pi,\pi) = \sqrt{E} \begin{pmatrix}
+		0 \\ 1 \\ -1 \\ 0
+	\end{pmatrix}  \qquad 
+	v_\downarrow(k,\pi,0) = \sqrt{E} \begin{pmatrix}
+		0 \\ 1 \\ 0 \\ 1
+	\end{pmatrix} 
+\end{equation}
+\begin{equation} 
+	u_\uparrow(p,\theta,0)= \sqrt{E} \begin{pmatrix}
+		c \\ s \\ c \\ s
+	\end{pmatrix} \qquad 
+	u_\downarrow(p,\theta,0)= \sqrt{E} \begin{pmatrix}
+		-s \\ c \\ s \\ -c
+	\end{pmatrix}
+\end{equation}
+\begin{equation}
+	v_\uparrow(k,\pi-\theta,\pi) = \sqrt{E} \begin{pmatrix}
+		c \\ s \\ -c \\ -s
+	\end{pmatrix}  \qquad 
+	v_\downarrow(k,\pi-\theta,\pi) = \sqrt{E} \begin{pmatrix}
+		c \\ c \\ -s \\ c
+	\end{pmatrix} 
+\end{equation}
+(recordamos que cuando $\theta+\pi$ tenemos que hacer el cambio $c \to s, s \to c$, con $\phi=\pi$). Usando las relaciones \cite{SaboridoSilva2025ParticlePhysicsI,thomson_modern_physics}
+\begin{align}
+	\overline{\psi}\gamma^0\phi & = \psi^\dagger \gamma^0 \gamma^0 \phi
+	= \psi_1^*\phi_1 + \psi_2^*\phi_2 + \psi_3^*\phi_3 + \psi_4^*\phi_4,     \\
+	\overline{\psi}\gamma^1\phi & = \psi^\dagger \gamma^0 \gamma^1 \phi
+	= \psi_1^*\phi_4 + \psi_2^*\phi_3 + \psi_3^*\phi_2 + \psi_4^*\phi_1,     \\
+	\overline{\psi}\gamma^2\phi & = \psi^\dagger \gamma^0 \gamma^2 \phi
+	= -i(\psi_1^*\phi_4 - \psi_2^*\phi_3 + \psi_3^*\phi_2 - \psi_4^*\phi_1), \\
+	\overline{\psi}\gamma^3\phi & = \psi^\dagger \gamma^0 \gamma^3 \phi
+	= \psi_1^*\phi_3 - \psi_2^*\phi_4 + \psi_3^*\phi_1 - \psi_4^*\phi_2.
+\end{align}
+podemos llegar a: 
+
+\begin{minipage}{0.48\linewidth}
+\begin{align*}
+    \bar{v}_\downarrow (k) \gamma_0 {u}_\uparrow (p) & = 0 \\
+    \bar{v}_\downarrow (k) \gamma_1 {u}_\uparrow (p) & = 2E \\
+    \bar{v}_\downarrow (k) \gamma_2 {u}_\uparrow (p) & = i2E \\
+    \bar{v}_\downarrow (k) \gamma_3 {u}_\uparrow (p) & = 0
+\end{align*}
+\end{minipage} \hfill
+\begin{minipage}{0.48\linewidth}
+\begin{align*}
+    \bar{v}_\uparrow (k) \gamma_0 {u}_\downarrow (p) & = 0 \\
+    \bar{v}_\uparrow (k) \gamma_1 {u}_\downarrow (p) & = -2E \\
+    \bar{v}_\uparrow (k) \gamma_2 {u}_\downarrow (p) & = i2E \\
+    \bar{v}_\uparrow (k) \gamma_3 {u}_\downarrow (p) & = 0
+\end{align*}
+\end{minipage}
+\vspace*{1em}
+\begin{minipage}{0.48\linewidth}
+\begin{align*}
+    \bar{u}_\downarrow (p') \gamma_0 {v}_\uparrow (k') & = 0 \\
+    \bar{u}_\downarrow (p') \gamma_1 {v}_\uparrow (k') & = -2E\cos \theta \\
+    \bar{u}_\downarrow (p') \gamma_2 {v}_\uparrow (k') & = -i2E \\
+    \bar{u}_\downarrow (p') \gamma_3 {v}_\uparrow (k') & = 2E\sin \theta
+\end{align*}	
+\end{minipage} \hfill
+\begin{minipage}{0.48\linewidth}
+\begin{align*}
+    \bar{u}_\uparrow (p') \gamma_0 {v}_\downarrow (k') & = 0 \\
+    \bar{u}_\uparrow (p') \gamma_1 {v}_\downarrow (k') & = 2E\cos \theta  \\
+    \bar{u}_\uparrow (p') \gamma_2 {v}_\downarrow (k') & = -i2E  \\
+    \bar{u}_\uparrow (p') \gamma_3 {v}_\downarrow (k') & = -2E\sin \theta
+\end{align*}
+\end{minipage}
+Ahora tenemos todos las corrientes leptónicas, por lo que directamente 
+
+\begin{equation}
+	{\mathcal{M}_{fi \ LR \to LR}} = g(s)  c_L^e c_L^\mu 4E(1+\cos \theta)
+\end{equation}
+\begin{equation}
+	{\mathcal{M}_{fi \ LR \to RL}} =  g(s)  c_L^e c_R^\mu  4E(1-\cos \theta)
+\end{equation}
+\begin{equation}
+	{\mathcal{M}_{fi \ RL \to LR}} =  g(s)  c_R^e c_L^\mu  4E(1-\cos \theta)
+\end{equation}
+\begin{equation}
+	{\mathcal{M}_{fi \ RL \to RL}} = g(s)  c_R^e c_R^\mu 4E(1+\cos \theta)
+\end{equation}
+de lo que se deduce ($s=4E^2$, siendo ahora la variable de Mandelstam $s=(p+k)^2$): 
+\begin{equation}
+	\vqty{\Mcal_{L}}^2 = (g(s) s c_L^e)^2 \Bqty{\bqty{c_L^\mu(1+\cos \theta)}^2 +\bqty{c_R^\mu(1-\cos \theta)}^2}
+\end{equation}
+\begin{equation}
+	\vqty{\Mcal_{R}}^2 = (g(s) s c_R^e)^2 \Bqty{\bqty{c_L^\mu(1+\cos \theta)}^2 +\bqty{c_R^\mu(1-\cos \theta)}^2}
+\end{equation}
+Dado que $\sigma_L \propto \vqty{\Mcal_{L}}^2$ y $\sigma_R \propto \vqty{\Mcal_{R}}^2$, y siendo la constante de proporción igual en ambos casos (es cinética, y en ambas polarizaciones las energías cinéticas son iguales) nos llevan a: 
+
+\begin{equation}
+	A_{LR} = \frac{\sigma_L-\sigma_R}{\sigma_L+\sigma_R} = \frac{(c_L^e)^2 - (c_R^e)^2}{(c_L^e)^2 + (c_R^e)^2}
+\end{equation}
+siendo trivial viendo los elementos de matriz arriba. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1853,6 +2026,7 @@ A_\mu = 0.1456 \pm 0.0091,
 determine el valor correspondiente de $\sin^2\theta_W$ junto con su incertidumbre.
 \end{Ejercicio}
 
+Trivial.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1875,6 +2049,115 @@ es
 donde $p^{\star}$ es el momento del quark $b$ o del bosón $W^+$ en el sistema CM.
 \end{Ejercicio}
 
+
+\begin{figure}[H]
+	\centering
+	\feynmandiagram [horizontal=a to b] {
+		a [particle=\( t \)] -- [fermion,momentum=\( q \)] b,
+		b -- [fermion, momentum'=\( p \)] f1 [particle=\( b \)],
+		b -- [boson, momentum=\( k \)] f2 [particle=\( W^+ \)],
+	};
+	\caption{Diagrama de Feynman para \(t \to bW^+\).}
+\end{figure}
+El elemento de matriz de orden mas bajo, del diagrama de Feynman de arriba:
+
+\begin{equation}
+	-i\Mcal_{fi} = \frac{-ig_W}{2\sqrt{2}} \pqty{ \bar{u}(q) (\gamma^\mu  (1-\gamma^5))v(p)} \epsilon_\mu^* (k)
+\end{equation}
+Los cuadrimomentos: 
+\begin{equation}
+	q^\mu = (m_t,0,0,0) \qquad p^\mu = (p, 0,0,p)  \qquad k^\mu = (E_W, 0,0,-p)
+\end{equation}
+donde $p_W=-p_b=-p$, y si suponemso que $m_b\approx 0$ (despreciamos la masa del quark $b$ frente su momento) tenemos que
+\begin{equation}
+	q^\mu = (m_t,0,0,0) \qquad p^\mu = (, 0,0,p_b)  \qquad k^\mu = (E_W, 0,0,p_W)
+\end{equation}
+Debemos calcularlo para las tres posibles polarizaciones iniciales de $W^+$, que son: 
+\begin{equation}
+	\epsilon_-^{\mu*} (k) = \frac{1}{\sqrt{2}} (0,1,i,0) \qquad \epsilon_L^{\mu*} (k)= \frac{1}{m_W} (-p,0,0,E_W) \qquad \epsilon_+^{\mu*} (k) = - \frac{1}{\sqrt{2}} (0,1,-i,0)
+\end{equation}
+representando $\epsilon_\pm^*$ el estado donde el espín esta en un estado de polarización circular y $\epsilon_L^*$ el estado donde está longitudinal.
+Entonces tenemos que calcular la corriente hadrónica 
+
+\begin{equation}
+	j_h^\mu = \pqty{ \bar{u}(q) (\gamma^\mu  (1-\gamma^5))v(p)} = \pqty{ \bar{u}_\downarrow (p) (\gamma^\mu )u (q)}
+\end{equation}
+ya que para el quark top helicidad y quiralidad no coinciden, al no poder considerarlo ultrarrelativista. Entonces para el quark top consideramos los estados más generales posibles, los espinores de Dirac \cite{SaboridoSilva2025ParticlePhysicsI,thomson_modern_physics}:
+\begin{equation} 
+	u_1(q)= \sqrt{2m_t} \begin{pmatrix}
+		1 \\ 0 \\ 0 \\ 0
+	\end{pmatrix} \qquad 
+	u_2(q)= \sqrt{2m_t} \begin{pmatrix}
+		0 \\ 1 \\ 0 \\ 0
+	\end{pmatrix}
+\end{equation}
+\begin{equation} 
+	u_\downarrow(p,0)= \sqrt{p} \begin{pmatrix}
+		0 \\ 1 \\ 0 \\ -1
+	\end{pmatrix}
+\end{equation}
+mientras que para el bottom usamos el espinor de helicidad al ser ultrarrelativista. Usando las relaciones \cite{SaboridoSilva2025ParticlePhysicsI,thomson_modern_physics}
+\begin{align}
+	\overline{\psi}\gamma^0\phi & = \psi^\dagger \gamma^0 \gamma^0 \phi
+	= \psi_1^*\phi_1 + \psi_2^*\phi_2 + \psi_3^*\phi_3 + \psi_4^*\phi_4,     \\
+	\overline{\psi}\gamma^1\phi & = \psi^\dagger \gamma^0 \gamma^1 \phi
+	= \psi_1^*\phi_4 + \psi_2^*\phi_3 + \psi_3^*\phi_2 + \psi_4^*\phi_1,     \\
+	\overline{\psi}\gamma^2\phi & = \psi^\dagger \gamma^0 \gamma^2 \phi
+	= -i(\psi_1^*\phi_4 - \psi_2^*\phi_3 + \psi_3^*\phi_2 - \psi_4^*\phi_1), \\
+	\overline{\psi}\gamma^3\phi & = \psi^\dagger \gamma^0 \gamma^3 \phi
+	= \psi_1^*\phi_3 - \psi_2^*\phi_4 + \psi_3^*\phi_1 - \psi_4^*\phi_2.
+\end{align}
+podemos llegar a: 
+
+\begin{minipage}{0.48\linewidth}
+\begin{align*}
+    \bar{u}_\downarrow (p) \gamma_0 {u}_1 (q) & = 0 \\
+    \bar{u}_\downarrow (p) \gamma_1 {u}_1 (q) & = - \sqrt{2m_tp}\\
+    \bar{u}_\downarrow (p) \gamma_2 {u}_1 (q) & = - i \sqrt{2m_tp} \\
+    \bar{u}_\downarrow (p) \gamma_3 {u}_1 (q) & = 0
+\end{align*}
+\end{minipage} \hfill
+\begin{minipage}{0.48\linewidth}
+\begin{align*}
+    \bar{u}_\downarrow (p) \gamma_0 {u}_2 (q) & =  \sqrt{2m_tp} \\
+    \bar{u}_\downarrow (p) \gamma_1 {u}_2 (q) & = 0 \\
+    \bar{u}_\downarrow (p) \gamma_2 {u}_2 (q) & = 0 \\
+    \bar{u}_\downarrow (p) \gamma_3 {u}_2 (q) & = \sqrt{2m_tp}
+\end{align*}
+\end{minipage}
+\vspace*{0.5em}
+\begin{equation}
+	j_1^\mu = \sqrt{2m_tp} \pqty{0,-1,-i,0} \qquad 
+	j_2^\mu = \sqrt{2m_tp} \pqty{1,0,0,1}
+\end{equation}
+que debemos multiplicar por los estados de  polarización: 
+\begin{equation*}
+	\epsilon_-^{\mu*} (k) = \frac{1}{\sqrt{2}} (0,1,i,0) \qquad \epsilon_L^{\mu*} (k)= \frac{1}{m_W} (-p,0,0,E_W) \qquad \epsilon_+^{\mu*} (k) = - \frac{1}{\sqrt{2}} (0,1,-i,0)
+\end{equation*}
+que nos lleva a dos términos que no se cancelan (trivial, es evidente que el resto se cancela):
+
+\begin{equation}
+	\Mcal_1 = \frac{g_W}{\sqrt{2}} j_1 \cdot \epsilon_+^* = - g_W \sqrt{2m_tp}
+\end{equation} 
+\begin{equation}
+	\Mcal_2 = \frac{g_W}{\sqrt{2}} j_1 \cdot \epsilon_+^* = - \frac{g_W}{m_W}\sqrt{m_tp} (p+E_W)
+\end{equation}
+y por tanto: 
+
+\begin{equation}
+	\langle \vqty{\Mcal}^2 \rangle = \frac{1}{2} \pqty{|\Mcal_1|^2 + |\Mcal_2|^2} = \frac{1}{\sqrt{2}}g_W^2 m_t p (2+\pqty{\frac{p+E_W}{m_W}}^2)
+\end{equation}
+que es casi lo que se nos pide. Está claro que tenemos que hallar $(p+E_W)$. Si nos fijamos en los cuadrimomentos y su conservación es obvio que:
+
+\begin{equation}
+	q^\mu = p^\mu + k^\mu \longrightarrow  m_t = p+E_W
+\end{equation}
+por lo que efectivamente: 
+
+\begin{equation}
+	\langle \vqty{\Mcal}^2 \rangle = \frac{1}{2} \pqty{|\Mcal_1|^2 + |\Mcal_2|^2} = \frac{1}{\sqrt{2}}g_W^2 m_t p \pqty{2+\pqty{\frac{m_t}{m_W}}^2}
+\end{equation}
+que es lo que queríamos demostrar. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1902,7 +2185,82 @@ e^+ e^- \to H\nu_e \bar{\nu}_e,
 que son los mecanismos principales de producción de Higgs en un colisionador lineal de alta energía.
 \end{Ejercicio}
 
+Los vértices que hemos visto en clase que nos intersan son: 
 
+\begin{minipage}{0.33\linewidth}	
+\centering
+	\feynmandiagram [horizontal=a to b] {
+		a [particle=\( H \)] -- [scalar] b,
+		b -- [boson] f1 [particle=\( Z \)],
+		b -- [boson] f2 [particle=\( Z \)],
+	};
+\end{minipage}
+\begin{minipage}{0.33\linewidth}	
+\centering
+	\feynmandiagram [horizontal=a to b] {
+		a [particle=\( H \)] -- [scalar] b,
+		b -- [boson] f1 [particle=\( W^+ \)],
+		b -- [boson] f2 [particle=\( W^- \)],
+	};
+\end{minipage}
+\begin{minipage}{0.33\linewidth}	
+\centering
+	\feynmandiagram [horizontal=a to b] {
+		a [particle=\( H \)] -- [scalar] b,
+		b -- [fermion] f1 [particle=\( f \)],
+		b -- [anti fermion] f2 [particle=\( \bar{f} \)],
+	};
+\end{minipage}
+
+\vspace*{1em}
+Así pues, los diagramas de menor orden son: 
+\vspace*{1em}
+
+\begin{minipage}{0.45\linewidth}	
+\centering
+	\feynmandiagram [horizontal'=a to b] {
+	i1 [particle=\(e^-\)] -- [fermion] a -- [fermion] i2 [particle=\(e^+\)],
+	a -- [boson, edge label=\( Z \)] b,
+	f1 [particle=\( Z \)] -- [boson] b -- [scalar] f2 [particle=\( H \)],
+	};
+	\captionof{figure}{\(e^+ e^- \to Z \to Z H \).}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\linewidth}	
+	\centering
+	\begin{tikzpicture}
+		\begin{feynman}
+			%--- External legs
+			\vertex (eplusL)  at (0,  0.8) {$e^{+}$};
+			\vertex (eminusL) at (0, -0.8) {$e^{-}$};
+			\vertex (nubarR)  at (5,  1.9) {$\bar{\nu}_{e}$};
+			\vertex (nuR)     at (5, -1.9) {$\nu_{e}$};
+			\vertex (hR)      at (5,  0.0) {$H$};
+
+			%--- Emission vertices on the lepton lines
+			\vertex (vtop)    at (1.7,  0.8) {};
+			\vertex (vbot)    at (1.7, -0.8) {};
+			%--- WW–H vertex
+			\vertex (vH)      at (3.0,  0.0) {};
+
+			\diagram*{
+			% e+ line (anti-fermion arrows point to the left)
+			(eplusL) -- [anti fermion] (vtop.center) -- [anti fermion] (nubarR),
+
+			% e- line (fermion arrows point to the right)
+			(eminusL) -- [fermion] (vbot.center) -- [fermion] (nuR),
+
+			% t-channel W's
+			(vtop.center) -- [boson, edge label=\(\small W^+\)] (vH.center),
+			(vbot.center) -- [boson, edge label'=\(\small W^-\)]  (vH.center),
+
+			% Higgs from WW fusion
+			(vH.center) -- [scalar] (hR),
+			};
+		\end{feynman}
+	\end{tikzpicture}
+	\captionof{figure}{\(e^+ e^- \to H\nu_e \bar{\nu}_e \).}
+\end{minipage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1924,3 +2282,128 @@ e^+e^- \to \gamma \to b\bar{b}
 \]
 Discuta las conclusiones que se pueden extraer de los resultados obtenidos.
 \end{Ejercicio}
+
+Como sabemos, para un bosón escalar (espín cero) interno tenemos que la línea es: 
+
+\begin{equation}
+	\frac{1}{q^2 - m_H^2 + i m_H\Gamma_H}
+\end{equation}
+mientras que la constante de interacción es \cite{SaboridoSilva2025ParticlePhysicsI,thomson_modern_physics} (que llamaremos $e'$ para distinguirlo de $e$):
+
+\begin{equation}
+	-ie' = - i m_f \frac{g_W}{2m_W} = - i \frac{m_f}{v}
+\end{equation}
+siendo $m_f$ la masa del fermión que interacciona. Suponiendo que el principal elemento de matriz de transición se corresponde con el diagrama de menor orden (diagrama de árbol $s$): 
+
+
+\begin{minipage}{0.3\linewidth}	
+\centering
+	\feynmandiagram [horizontal'=a to b] {
+	i1 [particle=\(e^-\)] -- [fermion, momentum=\(p^\mu\)] a -- [fermion,rmomentum=\(k^\mu\)] i2 [particle=\(e^+\)],
+	a -- [scalar, edge label=\( H \)] b,
+	f1 [particle=\( \bar{b}\)] -- [fermion,rmomentum=\(k'^\mu\)] b -- [fermion,momentum=\(p'^\mu\)] f2 [particle=\(b\)],
+	};
+	\captionof{figure}{\(e^+ e^- \to H \to b \bar{b}\).}
+\end{minipage}
+\hspace*{0.045\linewidth}
+\begin{minipage}{0.3\linewidth}	
+	\centering
+	\feynmandiagram [horizontal'=a to b] {
+	i1 [particle=\(\mu^-\)] -- [fermion, momentum=\(p^\mu\)] a -- [fermion,rmomentum=\(k^\mu\)] i2 [particle=\(\mu^+\)],
+	a -- [scalar, edge label=\( H \)] b,
+	f1 [particle=\( \bar{b} \)] -- [fermion,rmomentum=\(k'^\mu\)] b -- [fermion,momentum=\(p'^\mu\)] f2 [particle=\( b \)],
+	};
+	\captionof{figure}{ \(\mu^+ \mu^- \to H \to b \bar{b}\).}
+\end{minipage}
+\hspace*{0.045\linewidth}
+\begin{minipage}{0.3\linewidth}	
+	\centering
+	\feynmandiagram [horizontal'=a to b] {
+	i1 [particle=\(e^-\)] -- [fermion, momentum=\(p^\mu\)] a -- [fermion,rmomentum=\(k^\mu\)] i2 [particle=\(e^+\)],
+	a -- [photon, edge label=\(\gamma\)] b,
+	f1 [particle=\( \bar{b}\)] -- [fermion,rmomentum=\(k'^\mu\)] b -- [fermion,momentum=\(p'^\mu\)] f2 [particle=\( b \)],
+	};
+	\captionof{figure}{\(e^+ e^- \to \gamma \to b \bar{b}\).}
+\end{minipage}
+\vspace*{1em}
+Las secciones eficaces vienen dadas por: 
+
+\begin{equation}
+	\dv{\sigma}{\Omega} = \frac{1}{64\pi^2 s} \frac{p_f}{p_i} \langle \vqty{\Mcal}^2 \rangle
+\end{equation}
+El calculo para el fotón ya está resuelto en el ejercicio \ref{Ej:07}, tal que para ese proceso: 
+
+\begin{align}
+	\langle \vqty{\Mcal_{fi,\text{QED}}}^2 \rangle & = \frac{2e^4}{s^2} (t^2 + u^2 + 4s(m_f^2 + m_e^4) - 2(m_f^2+m_e^2)^2) \nonumber \\ &  \approx \frac{2e^4}{s^2}  (t^2 + u^2) = \frac{2e^4}{s^2}  4E^2 (1+\cos^2 \theta) = 2e^4 (1+\cos^2 \theta)
+\end{align}
+El proceso para dos fermiones iniciales cualquiera (con la única condición de que $m_f,m_b\ll m_H$):
+\begin{align}
+	\langle \vqty{\Mcal_{fi,\text{H}}}^2 \rangle & = \frac{m_f^2 m_b^2}{v^4} \frac{s^2}{\Gamma_H^2 m_H^2} \label{Ec:ej25-01}
+\end{align}
+donde $s=m_H^2$. Ahora solo tenemos que integrar. Como podemos ver, en el caso de QED, hay un término con $\cos^2 \theta = \frac{1}{2} (1+\cos 2\theta)$, tal que: 
+
+\begin{equation}
+	\int_0^{2\pi} \D \phi \int (1 + \cos^2 \theta) \D \cos \theta = 2 \pi \pqty{1+\frac{1}{3}} = \frac{8\pi}{3}
+\end{equation}
+Las sección eficaz para el bosón de Higgs es trivial, ya que no hay dependencia angular en el elemento de matriz. Se deduce que, al verificarse $p_f=p_i$ (las masas son despreciables, tanto los quarks bottom como los fermiones incidentes $p\approx m_H/2$):
+
+\begin{equation}
+	\sigma_\text{QED} = \frac{e^4}{4\pi} \frac{1}{3 m_H^2}  = \frac{4\pi \alpha^2}{3 m_H^2}
+\end{equation}
+\begin{equation}
+	\sigma_\text{H} = \frac{1}{16\pi} \frac{m_f^2 m_b^2}{v^4 \Gamma_H^2} 
+\end{equation}
+Ahora, los cálculos, para: 
+\begin{equation}
+	m_H = \SI{126}{GeV} \quad v = \SI{246}{GeV} \quad \alpha = \frac{1}{127} \quad m_b = \SI{5}{GeV} \quad \Gamma_H = \SI{0.004}{GeV}
+\end{equation}
+\begin{equation} \small
+	\sigma_{e^+ e^- H} = \SI{2.2e-12}{GeV^{-2}} \quad 
+	\sigma_{\mu^+ \mu^- H} = \SI{9.5e-8}{GeV^{-2}} \quad 
+	\sigma_{e^+ e^- \text{QED}} = \SI{7.1e-9}{GeV^{-2}} 
+\end{equation}
+que coincide con los valores del  Thomson \cite{thomson_modern_physics}. Es evidente qeu en un colisionador $e^+e^-$ obtener procesos con el Higgs será muy complicado, al haber un orden 3 de diferencia en la sección eficaz. Por otro lado, como hemos visto $\sigma_{\text{QED}}$ no depende de la masa de la partícula incidente (a altas energías), por lo que los muones verificaran que $\sigma_{\text{QED}}<\sigma_{H}$, por lo que será una gran opción y permitirá ver muchos más procesos Higgs.
+
+
+Sin embargo no hemos demostrado la expresión del elemento de matriz para  la dispersión $H$ (\ref{Ec:ej25-01}). No lo hicimos para no perder el hilo, pero lo hacemos a continuación. Tenemos que calcular:  
+
+\begin{equation}
+	\vqty{\Mcal_{s,r}}^2 = g_H \bqty{\pqty{\bar{v}^{s'}(k) u^{s}(p)}\pqty{\bar{u}^{r'}(p') v^{r}(k')}} \bqty{\pqty{\bar{v}^{s'}(k) u^{s}(p)}\pqty{\bar{u}^{r'}(p')v^{r}(k')}}^*
+\end{equation}
+donde $g_H$ agrupa todos la constante de acoplatmiento. Usando el truco de Casimir (Williams \cite{Williams_2022})
+
+\[
+	\sum_{s_1,s_2}
+	\bigl[\bar{u}_1^{s_1}(p_1)\,\Gamma\,u_2^{s_2}(p_2)\bigr]
+	\bigl[\bar{u}_1^{s_1}(p_1)\,\Gamma' u_2^{s_2}(p_2)\bigr]^*
+	= \mathrm{tr}\!\left[ \Gamma \,(\slashed{p}_2+m_2)\,\bar{\Gamma}'\,(\slashed{p}_1+m_1) \right].
+\]
+tenemos que
+\begin{equation}
+	\langle \vqty{\Mcal_{s,r}}^2 \rangle = \frac{g_H^2}{4} \tr \pqty{(\pslash+m_f)(\kslash-m_f)}\tr \pqty{(\pslash'+m_b)(\kslash'-m_b)}
+\end{equation}
+tal que:
+
+\begin{itemize}
+	\item La primera traza:
+	      \begin{equation}
+		      \tr \pqty{ (\pslash+m_f) (\kslash-m_f)} = \tr ( \pslash \kslash) - 4m_f^2  = 4(p \cdot k) - 4m_f^2
+	      \end{equation}
+	\item La segunda traza:
+	      \begin{equation}
+		      \tr \pqty{ (\pslash+m_f) (\kslash-m_f)} = \tr ( \pslash \kslash) - 4m_b^2  = 4(p' \cdot k') - 4m_b^2
+	      \end{equation}
+\end{itemize}
+Directamente  multiplicando:
+\begin{equation}
+	\langle \vqty{\Mcal_{s,r}}^2 \rangle = \frac{g_H^2}{4}(4(p \cdot k) - 4m_f^2)(4(p' \cdot k') - 4m_b^2)
+\end{equation}
+Dado que $s=(p+k)^2 = (p'+k')^2 \to (p\cdot k) =  s/2 - m_f^2 , (p'\cdot k') =  s/2 - m_b^2$
+\begin{equation}
+	\langle \vqty{\Mcal_{s,r}}^2 \rangle = g_H^2 (s-4m_f^2)(s-4m_b^2) 
+\end{equation}
+que si $m_f,m_b\ll s $: 
+\begin{equation}
+	\langle \vqty{\Mcal_{s,r}}^2 \rangle = g_H^2 s^2 = \frac{s^2}{\Gamma_H^2 m_H^2}\frac{m_f^2m_b^2}{v^4}
+\end{equation}
+que es lo mismo que tenemos arriba. 
