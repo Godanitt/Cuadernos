@@ -80,10 +80,29 @@ pág. 267-268 del Maggiore \cite{Maggiore:2005qv}.
 \begin{Ejercicio}{Identidad de Dirac}
 	Demuestre la relación
 	\[
-		\frac{i}{\slashed{q}-m} = \frac{i(\slashed{q}+m)}{q^2-m^2}.
+		\frac{i}{\qslash-m} = \frac{i(\qslash+m)}{q^2-m^2}.
 	\]
 \end{Ejercicio}
 
+Es evidente que si multiplicamos y dividimos por $\qslash+m$, tenemos que:  
+
+\begin{equation}
+	\frac{i}{\slashed{q}-m} \frac{\qslash+m}{\qslash+m} 
+\end{equation}
+y dado que 
+
+\begin{equation}
+	\pqty{{\slashed{q}-m}}\pqty{{\slashed{q}+m}} = \qslash^2 - m^2 
+\end{equation}
+tal que 
+
+\begin{equation}
+	\qslash^2 = q^\mu \gamma_\mu q^\nu \gamma_\nu = g_{\mu \nu} q^\mu q^\nu = q \cdot q = q^2
+\end{equation}
+de lo que se deduce 
+\begin{equation}
+	\frac{i}{\qslash-m} = \frac{i(\qslash+m)}{q^2-m^2}
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -296,7 +315,7 @@ Es decir, \textit{cada vértice debe conservar la helicidad} (que básicamente i
     \vqty{\Mcal_{\text{RR}}}^2 = \vqty{\Mcal_{\text{RR}\to\text{RR}}}^2 = \frac{e^4}{t^2}\vqty{4E^2c^2+4E^2c^2} = \frac{e^4}{t^2}  64 c^4 E^4 = 16 E^4 (1+\cos \theta)^2 =  \frac{e^4}{t^2} 4 u^2
 \end{equation}
 \begin{equation}
-    \vqty{\Mcal_{\text{RL}}}^2 = \vqty{\Mcal_{\text{RL\to\text{RL}}}}^2 = \frac{e^4}{t^2}\vqty{4E^2c^2+4E^2c^2+4E^2s^2+4E^2s^2} = \frac{e^4}{t^2}  64 E^4 = \frac{e^4}{t^2}  4s^2
+    \vqty{\Mcal_{\text{RL}}}^2 = \vqty{\Mcal_{\text{RL}\to\text{RL}}}^2 = \frac{e^4}{t^2}\vqty{4E^2c^2+4E^2c^2+4E^2s^2+4E^2s^2} = \frac{e^4}{t^2}  64 E^4 = \frac{e^4}{t^2}  4s^2
 \end{equation}
 \begin{equation}
     \vqty{\Mcal_{\text{LR}}}^2 = \vqty{\Mcal_{\text{LR}\to\text{LR}}}^2 = \frac{e^4}{t^2}\vqty{4E^2c^2+4E^2c^2} = \frac{e^4}{t^2}  64 c^4 E^4 = 16 E^4 (1+\cos \theta)^2 =  \frac{e^4}{t^2} 4 u^2
@@ -2157,7 +2176,6 @@ por lo que efectivamente:
 \begin{equation}
 	\langle \vqty{\Mcal}^2 \rangle = \frac{1}{2} \pqty{|\Mcal_1|^2 + |\Mcal_2|^2} = \frac{1}{\sqrt{2}}g_W^2 m_t p \pqty{2+\pqty{\frac{m_t}{m_W}}^2}
 \end{equation}
-que es lo que queríamos demostrar. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2169,6 +2187,24 @@ Suponiendo una sección eficaz total de producción del Higgs de $20~\text{pb}$ 
 calcule el número esperado de eventos $H \to \gamma\gamma$ y $H \to \mu^+\mu^-\mu^+\mu^-$ en cada uno de los detectores ATLAS y CMS.
 \end{Ejercicio}
 
+Lo primero que tenemos que caluclar es cuantos Higgs se producen $N$, que dado el valor de la luminosidad integrada $L$ y la sección eficaz total $\sigma$ es trivial: 
+
+\begin{equation}
+	N = L \sigma = \SI{20e-12}{} \times \SI{25e15}{}= \SI{5e5}{} 
+\end{equation}
+Ahora tenemos que usar los \textit{branching ratios} de cada evenento, en este caso
+
+\begin{equation}
+	Br(H\to\gamma\gamma) = 0.2\%  
+\end{equation} 
+\begin{equation}
+	Br(H\to\mu^+\mu^-\mu^+\mu^-) = Br(H\to ZZ)(Br(Z\to\mu^-\mu^+))^2 = (2.7\%)(3.5\%)^2 
+\end{equation}
+Otra opción sería $H\to \tau^+\tau^-$, pero también produciría nuetrinos tauónicos. Así pues: 
+
+\begin{equation}
+	N_{\gamma \gamma} = 10^3 \qquad N_{\mu^+\mu^-\mu^+\mu^-} = 17.5 
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

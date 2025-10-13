@@ -314,7 +314,7 @@
 
 
 \newcommand{\PZB}{\text{{\tiny PZB}}}
-\newcommand{\gap}{\text{{\tiny gap}}}
+\newcommand{\gap}{\text{{\tiny gaSIp}}}
 \newcommand{\SZB}{\text{{\tiny SZB}}}
 \newcommand{\inicial}{\text{{\tiny inicial}}}
 \newcommand{\final}{\text{{\tiny final}}}
@@ -368,6 +368,7 @@
 
 \newcommand{\pslash}{\slashed{p}}
 \newcommand{\kslash}{\slashed{k}}
+\newcommand{\qslash}{\slashed{q}}
 
 \newcommand{\alphan}{\symbf{\alpha}}
 \newcommand{\sigman}{\symbf{\sigma}}
