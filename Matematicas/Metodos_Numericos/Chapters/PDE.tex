@@ -1,0 +1,127 @@
+\chapter{Ecuaciones en Derivadas Parciales}
+
+\section{Estabilidad}
+
+Sea ($t$) y ($y(x,t)$) una función que satisface la ecuación de ondas, la cual en este caso puede escribirse como
+
+\begin{equation}
+\frac{\partial^2 y(x,t)}{\partial t^2} = c^2 \frac{\partial^2 y(x,t)}{\partial x^2}
+\end{equation}
+donde
+\begin{equation}
+c^2 = \frac{\tau}{\rho},
+\end{equation}
+
+con ($\tau$) la tensión de la cuerda y ($\rho$) su densidad lineal. Expresando la ecuación de ondas en diferencias finitas, obtenemos en el punto $(x_i, t_j)$:
+
+\begin{equation}
+\frac{y(x_i,t_j+\Delta t) - 2y(x_i,t_j) + y(x_i,t_j-\Delta t)}{(\Delta t)^2}
+= c^2 \frac{y(x_i+\Delta x,t_j) - 2y(x_i,t_j) + y(x_i-\Delta x,t_j)}{(\Delta x)^2} 
+\end{equation}
+
+Si introducimos la variable ($r$) definida por
+
+\begin{equation}
+r = \frac{c \Delta t}{\Delta x},
+\end{equation}
+
+llegamos a
+
+\begin{equation}
+y(x_i,t_j+\Delta t) = 2y(x_i,t_j) - y(x_i,t_j-\Delta t) + r^2 \left[ y(x_i+\Delta x,t_j) - 2y(x_i,t_j) + y(x_i-\Delta x,t_j) \right]. 
+\end{equation}
+O de manera compacta: 
+
+\begin{equation}
+y_{i}^{j+1} = 2y_{i}^{j} - y_{i}^{j-1}+ r^2 \left( y_{i+1}^{j} + y_{i-1}^{j} - 2y_{i}^{j}\right)
+\end{equation}
+El criterio de estabilidad de Courant dice que esta solución es estable numéricamente (no nos lleva a infinitos) siempre y cuando $r\leq 1$. 
+
+\subsection{Demostración del criterio de Courant}
+
+Consideremos que nuestra solución numérica dista un error $\epsilon$ del valor real: 
+
+\begin{equation}
+    y_i^j = y_{i,\text{exacta}}^{j} + \epsilon_{i}^{j}
+\end{equation}
+
+Entonces es obvio que $\epsilon_{i}^{j}$ verificará la misma ecuación que $y_i^j$, ya que por definición $y_{i,\text{exacta}}^{j}$ también la verifica: 
+
+\begin{equation}
+\epsilon_{i}^{j+1} = 2\epsilon_{i}^{j} - \epsilon_{i}^{j-1}+ r^2 \left( \epsilon_{i+1}^{j} + \epsilon_{i-1}^{j} - 2,\epsilon_{i}^{j}\right) \label{Ec:08}
+\end{equation}
+Dado que estamos hablando de una ecuación de ondas, es evidente que $\epsilon_i^j$ se puede expresar como
+
+\begin{equation}
+    \epsilon_{i}^{j}  = \sum_{n} E_{k_n}(t) e^{ik_nx}
+\end{equation}
+donde $k_n$. No parece tan trivial, pero fijémonos que es válido, ya que cuando sustuímos en la ecuación \ref{Ec:08}: 
+
+\begin{equation}
+     E_{k_n}(t+\Delta t) = 2(1-r^2)E_{k_n}(t) - E_{k_n}(t-\Delta t) + r^2\pqty{E_{k_n}(t) e^{-{i k \Delta x} +E_{k_n}(t)e^{- {i k \Delta x}} 
+\end{equation}
+o lo que es lo mismo: 
+\begin{equation}
+     E_{k_n}(t+\Delta t) +E_{k_n}(t-\Delta t) = 2(1-r^2 + r^2\cos (k \Delta x))E_{k_n}(t)     \label{Ec:11}
+\end{equation}
+Si ahora llamamos a $G$ a
+
+\begin{equation}
+    G_n = \frac{ E_{k_n}(t+\Delta t)}{E_{k_n}(t)}
+\end{equation}
+El significado de $G$ es claro: es la cantidad de error que aumenta en un paso temporal. Si $|G|>1$ el problema será inestable, ya que el error aumenta con cada paso, y si $|G|<0$ no. Si dividimos la ecuación $E_{k_n}(t-\Delta t)$ tenemos que:
+
+\begin{equation}
+     G_n^2 + 1  = 2\pqty{1-r^2 + r^2\cos (k \Delta x)}G_n
+     \label{Ec:11}
+\end{equation}
+donde 
+
+\begin{equation}
+    \frac{E_k(t+\Delta t)}{E_k(t-\Delta t)} =
+    \frac{E_k(t+\Delta t)}{E_k(t)}
+    \frac{E_k(t)}{E_k(t-\Delta t)} = G^2 
+\end{equation}
+Podemos ver claramente que cuando $r=1$, tenemos que: 
+
+\begin{equation}
+     G_n^2  + 2rG_n  +1= 0 \to |G_n|=r=1
+     \label{Ec:11}
+\end{equation}
+Es decir, el error no aumenta ni disminuye. Esto es una buena señal, ya que esta claro que $G=\pm1$ márca el límite de estabilidad e inestabilidad. Luego, tenemos que usando que $2\sin^2 (k \Delta x / 2) =(1-\cos k \Delta x)$: 
+
+\begin{equation}
+     G_n^2 - 2\pqty{1-2r^2 \sin (k \Delta x / 2) }G_n + 1=0
+     \label{Ec:11}
+\end{equation}
+cuya solución es, si $1-\pqty{1-2r^2 \sin (k \Delta x / 2) }^2>0$:
+\begin{equation}
+     G_n = \pqty{1-2r^2 \sin^2 (k \Delta x / 2) } \pm i \sqrt{1-\pqty{1-2r^2 \sin^2 (k \Delta x / 2) }^2} 
+\end{equation}
+tal que
+\begin{equation}
+     |G_n|^2 = {\pqty{1-2r^2 \sin^2 (k \Delta x / 2) }^2 + (1-\pqty{1-2r^2 \sin^2 (k \Delta x / 2) }^2)}
+     \label{Ec:11}
+\end{equation}
+lo que nos lleva a que $|G_n|=1$. Cuando $1-\pqty{1-2r^2 \sin^2 (k \Delta x / 2) }^2<0$ es cuando $|G_n|^2$ es posible que sea mayor de 1, por lo que: 
+\begin{equation}
+     |G_n|^2 = {\pqty{1-2r^2 \sin^2 (k \Delta x / 2) }^2 + (1-\pqty{1-2r^2 \sin^2 (k \Delta x / 2) }^2)} = 1
+     \label{Ec:11}
+\end{equation}
+es decir, cuando $1-\pqty{1-2r^2 \sin^2 (k \Delta x / 2) }^2>0$ tenemos \textit{una solución estable}. Es decir, será inestable cuando: 
+
+\begin{equation}
+    1-\pqty{1-2r^2 \sin^2 (k \Delta x / 2) }^2<0
+\end{equation}
+en otras palabras 
+\begin{equation}
+    \vqty{1-2r^2 \sin^2 (k \Delta x / 2) }^2<|1|
+\end{equation}
+lógicamente si $\sin^2(k \Delta x / 2)<1$ tendríamos posiciones en los que $r>1$ y obtendríamos una solución estable, sin embargo queremos encontrar la condición \textit{más general posible}, lo que implica ponernos en el caso mas restrictivo, es decir, que $\sin^2(k \Delta x / 2)=1$, y por tanto que: 
+
+\begin{equation}
+    \vqty{1-2r^2}^2<|1|
+\end{equation}
+lo que implica directamente que $r<1$ si queremos una propagación de errores que no aumente con el tiempo. Ahora bien, es trivial que si estamos estudiando el ``peor caso'' es posible que haya alguno para el cual $r>1$. Esto es parcialmente cierto, ya que estamos estudiando la condición de un único $G_n$. Para describir una solución hay mas de un modo que considerar, por lo que esta es la condición para cualquier modo, y por tanto para cualquier solución numérica.
+
+

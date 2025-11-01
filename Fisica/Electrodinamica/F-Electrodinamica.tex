@@ -3,22 +3,21 @@
 
 \RequirePackage{transparent}
 
+\RequirePackage{revsymb}
+
 \input{../../_Macros/Titulo.tex}
 \input{../../_Macros/Indice.tex}
 \input{../../_Macros/Entornos.tex}
-\input{../../_Macros/ColorDefinitions.tex}
-
 
 % Definiciones del título
-\title{Algebra}
-\subtitle{Grupos}
+\title{Electrodinámica}
+\subtitle{}
 \author{Daniel Vázquez Lago}
 
 % Documento
 
 \begin{document}
-\MakeTitle{1}{1Purple}{Snow1}
-
+\MakeTitle{1}{red!80!black}{Snow1}
 
 \setlength{\parskip}{2.2mm} % Cambia el espacio entre párrafos
 
@@ -26,16 +25,21 @@
 
 \tableofcontents
 
-\NewPart{Curvas y Superficies}
-\input{Chapters/01-Introduccion.tex}
+\NewPart{Introducción}
+\input{Chapters/EcuacionesMaxwell.tex}
 
-\NewPart{Geometría Riemanniana}
-\input{Chapters/01-Introduccion.tex}
+\NewPart{Electrostática}
+\input{Chapters/Electrostática.tex}
 
+\NewPart{Magnetostática}
+\input{Chapters/Magnetostática.tex}
 
+\NewPart{Electrodinámica}
+\input{Chapters/LeyesConservacion.tex}
 
-\nocite{*}
+\nocite{Zangwill_2012}
 
+\NewPart{Anexo y Bibliografía}
 \addcontentsline{toc}{chapter}{Bibliografia}
 \printbibliography 
 

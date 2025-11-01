@@ -3,21 +3,19 @@
 
 \RequirePackage{transparent}
 
-\input{../../_Macros/Titulo.tex}
-\input{../../_Macros/Indice.tex}
-\input{../../_Macros/Entornos.tex}
-\input{../../_Macros/ColorDefinitions.tex}
-
+\input{../../0_Macros/Titulo.tex}
+\input{../../0_Macros/Indice.tex}
+\input{../../0_Macros/Entornos.tex}
 
 % Definiciones del título
-\title{Algebra}
+\title{Métodos Numéricos}
 \subtitle{Grupos}
 \author{Daniel Vázquez Lago}
 
 % Documento
 
 \begin{document}
-\MakeTitle{1}{1Purple}{Snow1}
+\MakeTitle{1}{darkgray!80!black}{Snow1}
 
 
 \setlength{\parskip}{2.2mm} % Cambia el espacio entre párrafos
@@ -26,12 +24,17 @@
 
 \tableofcontents
 
-\NewPart{Curvas y Superficies}
+\NewPart{Curvas y Superficies}{0.28}
 \input{Chapters/01-Introduccion.tex}
 
-\NewPart{Geometría Riemanniana}
+\NewPart{Geometría Riemanniana}{0.27}
 \input{Chapters/01-Introduccion.tex}
 
+\NewPart{Aplicaciones}{0.31}
+
+\chapter{Aplicaciones}
+
+\chapter{Aplicaciones 2}
 
 
 \nocite{*}

@@ -87,9 +87,9 @@ siendo $\phi$ el ángulo del núcleo. Si queremos calcular la del neutrón tenem
 \begin{equation}
     \sin \theta = \sqrt{\frac{M\Delta E}{m_n(E-\Delta E)}} \sin \phi \to \theta = 32.486^\circ
 \end{equation}
-que tiene una aparente indeterminación cuando $\Delta E \to E$, la cual es falsa ya que cuando se trasnfiere toda la energía cinética del neutrón significa que este se para: no existe $\theta$, i.e., para la indeterminación $\theta$ tampoco está definido.
+que tiene una aparente indeterminación cuando $\Delta E \to E$, la cual es falsa ya que cuando se transfiere toda la energía cinética del neutrón significa que este se para: no existe $\theta$, i.e., para la indeterminación $\theta$ tampoco está definido.
 
-En el sistema de masas no se transfiere energía (en el caso de que la masa de las partículas sea igual, como este), solo cambia el ángulo $\Theta$. 
+En el sistema de masas no se transfiere energía (en el caso de que la masa de las partículas sea igual, como este), solo cambia el ángulo $\Theta$ (ángulo en el centro de masas).
 
 Luego nos preguntan por la energía en el centro de masas del neutrón y protón, que es claramente la  mitad de la disponible en el otro sistema (no relativista)
 \begin{equation}
@@ -111,8 +111,7 @@ Con el centro de masas podemos asociar la mitad de la energía en el sistem labo
 Calcule la energía umbral para la reacción ${}^{32}_{16}\mathrm{S}(\mathrm{n},\mathrm{p}){}^{32}_{15}\mathrm{P}$.
 \end{Ejercicio}
 
-
-La energía umbral, que sería $-Q$, viene dada por la diferencia de las masas (basicamente se llama $Q$ a la energía sobrante, es decir, si $Q>0$ tendríamos que la reacción sería espontánea):
+La energía umbral no coincide exactamente con $-Q$, ya que el blanco se encuentra en reposo y, por tanto, debe considerarse la cinemática relativista mediante el invariante de Mandelstam $s$. Yo al principio pensaba que se hacía con $-Q$, por lo que presento los cálculos. En cualquier caso posteriormente se hace correctamente. La energía umbral, que sería $-Q$, viene dada por la diferencia de las masas (basicamente se llama $Q$ a la energía sobrante, es decir, si $Q>0$ tendríamos que la reacción sería espontánea):
 
 \begin{equation}
     Q =m_n + m \pqty{^{32}_{16}\text{S}} -  m(^{32}_{15}\text{P}) - m_p  
@@ -122,7 +121,65 @@ tal que (usando datos del \href{https://www.nndc.bnl.gov/nudat3/}{nndc}):
 \begin{equation}
     Q = - 928.31 \unit{keV}
 \end{equation}
-sería la energía que tendríamos que aportar con energía cinética (energía umbral).
+sería la energía que tendríamos que aportar con energía cinética (energía umbral). Para una reacción genérica 
+\begin{equation}
+a + A \longrightarrow b + B,
+\end{equation}
+con el núcleo $A$ en reposo en el laboratorio, se cumple que
+\begin{equation}
+s = (p_a + p_A)^2 = m_a^2 + M_A^2 + 2M_A E_a.
+\end{equation}
+En el umbral, los productos se mueven juntos en el sistema del laboratorio, sin momento relativo en el sistema del centro de masas, por lo que:
+\begin{equation}
+s_{\text{th}} = (m_b + M_B)^2.
+\end{equation}
+De esta forma, la energía total del proyectil en el umbral viene dada por:
+\begin{equation}
+E_a^{(\text{th})} = \frac{(m_b + M_B)^2 - m_a^2 - M_A^2}{2M_A},
+\end{equation}
+y la energía cinética umbral:
+\begin{equation}
+T_a^{(\text{th})} = E_a^{(\text{th})} - m_a.
+\end{equation}
+
+Para la reacción considerada:
+\begin{equation}
+{}^{32}_{16}\mathrm{S}(\mathrm{n},\mathrm{p}){}^{32}_{15}\mathrm{P},
+\end{equation}
+las masas atómicas (usando datos del \href{https://www.nndc.bnl.gov/nudat3/}{NNDC}) son:
+\begin{equation}
+\begin{aligned}
+m_n &= 1.0086649159\ \text{u}, \\
+m_p &= 1.0078250322\ \text{u}, \\
+m({}^{32}\mathrm{S}) &= 31.972071174\ \text{u}, \\
+m({}^{32}\mathrm{P}) &= 31.973907274\ \text{u}.
+\end{aligned}
+\end{equation}
+
+El valor de $Q$ (usando masas atómicas, ya que los electrones se conservan) es:
+\begin{equation}
+Q = \big[m_n + m({}^{32}\mathrm{S}) - m({}^{32}\mathrm{P}) - m_p\big]c^2 = -0.928\ \text{MeV}.
+\end{equation}
+
+Aplicando el invariante de Mandelstam:
+\begin{equation}
+T_n^{(\text{th})} = \frac{(m_p + m_{^{32}\!P})^2 - m_n^2 - m_{^{32}\!S}^2}{2m_{^{32}\!S}} - m_n,
+\end{equation}
+se obtiene numéricamente:
+\begin{equation}
+T_n^{(\text{th})} \approx 0.957\ \text{MeV}.
+\end{equation}
+
+También puede expresarse de forma aproximada en función de $Q$:
+\begin{equation}
+T_n^{(\text{th})} \approx -Q\left(1 + \frac{m_n}{m_{^{32}\!S}}\right),
+\end{equation}
+de donde
+\begin{equation}
+T_n^{(\text{th})} \approx 0.928\,\text{MeV} \times \left(1 + \frac{1.0087}{31.972}\right)
+\approx 0.957\,\text{MeV}.
+\end{equation}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -241,11 +298,11 @@ y por tanto la actividad es
     \end{equation}
     \item El flujo máximo es lo mismo la actividad es máxima por unidad de superficie, que claramente ocurre cuando $t\to \infty$:
     \begin{equation}
-        A_{\max} = N_T \sigma \Phi =  \SI{1.15e11}{cm^{-2}}
+        A_{\max} = N_T \sigma \Phi =  \SI{1.15e11}{Bq/cm^{2}}
     \end{equation}
     \item El flujo máximo es lo mismo la actividad es máxima por unidad de superficie, que claramente ocurre cuando $t\to \infty$:
     \begin{equation}
-        A (t)=  \frac{2}{3} A_{\max} \to 1-e^{-\lambda t} = \frac{2}{3} \to t = \frac{\log(3)}{\lambda} = \SI{3.7e5}{s} = \SI{4.3}{dias}
+        A (t)=  \frac{2}{3} A_{\max} \to 1-e^{-\lambda t} = \frac{2}{3} \to t = \frac{\log(3)}{\lambda} = \SI{3.7e5}{s} = \SI{4.28}{dias}
     \end{equation}
 \end{enumerate}
 
@@ -321,14 +378,28 @@ Un ejemplo de fuente de neutrones son los generadores basados en aceleradores, e
     \end{equation}
     Mientras que la otra reacción: 
     \begin{equation}
-        Q =m\pqty{^{2}_{1}\text{H}}+ m \pqty{^{2}_{1}\text{H}} -  m\pqty{^{3}_{2}\text{He}} - \pqty{^{1}_{0}\text{n}} = 
+        Q =m\pqty{^{2}_{1}\text{H}}+ m \pqty{^{2}_{1}\text{H}} -  m\pqty{^{3}_{2}\text{He}} - \pqty{^{1}_{0}\text{n}} 
     \end{equation}
     tal que (usando datos del \href{https://www.nndc.bnl.gov/nudat3/}{nndc}):
 
     \begin{equation}
         Q = 3268.9 \ \unit{keV}
     \end{equation}
-    \item La energía cinética de ambas partículas, suponiendo que se reparte toda la $Q$ en forma de energía cinética $E_k=Q$.
+    \item La energía cinéticama media de ambas partículas en el sistema vendrá dada por la ecuación: 
+    \begin{equation}
+        T_2 = Q \frac{m_1}{m_1+m_2}
+    \end{equation}
+    así pues, tenemos que para la reacción d+t: 
+
+    \begin{equation}
+        T_n = 14.05 \unit{MeV} \qquad T_{\alpha} = 3.54 \unit{MeV} 
+    \end{equation}
+    y para la reacción d+d: 
+
+    \begin{equation}
+        T_n = 2.45 \unit{MeV} \qquad T_{^3\text{He}} = 0.81 \unit{MeV}
+    \end{equation}
+
     \item Pues la que genera más energía cinética será la más probable: tiene más estados en el sistema fásico. Pues depende que queramos: si queremos neutrones rápidos está claro que la deuterio-tritio, si queremos neutrones más lentos la del helio-neutrón. 
 \end{enumerate}
 

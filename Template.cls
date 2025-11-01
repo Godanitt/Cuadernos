@@ -12,7 +12,7 @@
 %----------------------------------------------------------------------------
 % PAQUETES BÁSICOS
 %----------------------------------------------------------------------------
-\RequirePackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\RequirePackage[spanish,es-tabla,es-nodecimaldot]{babel}%----------------------------------------------------------------------------
 \RequirePackage{amsmath} % Para usar el entorno de ecuaciones
 \RequirePackage{amsthm} % Para usar el entorno de teoremas
 \RequirePackage{amsfonts} % 
@@ -65,9 +65,6 @@
 \RequirePackage{multicol}
 \RequirePackage{fontawesome} % para los iconos FontAwesome v4
 \RequirePackage{transparent}
-
-
-
 
 %----------------------------------------------------------------------------
 % Tablas automaticamente centradas

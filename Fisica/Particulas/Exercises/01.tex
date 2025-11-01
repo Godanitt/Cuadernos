@@ -117,6 +117,47 @@ de lo que se deduce
 	\]
 \end{Ejercicio}
 
+Sea $F$ el flujo invariante, definid de la siguiente manera: 
+
+\begin{equation}
+	F = 4 E_a E-b (v_a + v_b)
+\end{equation}
+donde $v$ es la velocidad. Así pues tenemos que: 
+
+\begin{equation}
+	F = 4 E_a E_b (v_a + v_b) = 4 E_a E_b \pqty{\frac{p_a}{E_a} + \frac{p_b}{E_b}} = 4 (E_b p_a + E_a p_b) 
+\end{equation}
+tal que elevando al cuadrado: 
+
+\begin{equation}
+	F^2 = 16 (E_b^2 p_a^2 + E_a^2 p_b^2 + 2 E_a E_b p_a p_b) = 
+\end{equation}
+Fijémonos que:
+
+\begin{equation}
+	(p_a \cdot p_b)^2 = (E_a E_b + p_a p_b)^2 = E_a^2 E_b^2 + p_a^2 p_b^2 + 2 E_a E_b p_a p_b
+\end{equation}
+así pues
+
+\begin{equation}
+	F^2 = 16 \bqty{E_b^2 p_a^2 + E_a^2 p_b^2 + (p_a \cdot p_b)^2 - E_a^2 E_b^2  - p_a^2 p_b^2} 
+\end{equation}
+Así pues, dado que $E_a = p_a + m_a$ y $E_b = p_b + m_b$:
+
+\begin{equation}
+	F^2 = 16 \bqty{(p_a \cdot p_b)^2 + (p_a^2 + m_a^2) p_b^2 + (p_b^2 + m_b^2) p_q^2 - (p_a^2 + m_a^2) (p_a^2 + m_a^2) - p_a^2 p_b^2}
+\end{equation}
+nos lleva, despejando, a: 
+
+\begin{equation}
+	F^2 = 16 \bqty{(p_a \cdot p_b)^2  - m_a^2 m_b^2}
+\end{equation}
+o lo que es lo mismo: 
+
+\begin{equation}
+	F = 4 \bqty{(p_a \cdot p_b)^2  - m_a^2 m_b^2}^{1/2}
+\end{equation}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -137,6 +178,84 @@ de lo que se deduce
 	\]
 \end{Ejercicio}
 
+Recordamos que 
+
+\begin{equation}
+	\gamma^0 = \begin{pmatrix}
+		\mathbb{I} & 0 \\
+		0 & -\mathbb{I}
+	\end{pmatrix} \quad 
+	\gamma^1 = \begin{pmatrix}
+		0 & \sigma_1 \\
+		-\sigma_1 & 0
+	\end{pmatrix} \quad 
+	\gamma^2 = \begin{pmatrix}
+		0 & \sigma_2 \\
+		-\sigma_2 & 0
+	\end{pmatrix} \quad 
+	\gamma^3 = \begin{pmatrix}
+		0 & \sigma_3 \\
+		-\sigma_3 & 0
+	\end{pmatrix}
+\end{equation}
+y que 
+\begin{equation}
+	\gamma^0 \gamma^1 = \begin{pmatrix}
+		0 & \sigma_1 \\
+		\sigma_1 & 0
+	\end{pmatrix} \quad 
+	\gamma^0 \gamma^2 = \begin{pmatrix}
+		0 & \sigma_2 \\
+		\sigma_2 & 0
+	\end{pmatrix} \quad 
+	\gamma^0 \gamma^3 = \begin{pmatrix}
+		0 & \sigma_3 \\
+		\sigma_3 & 0
+	\end{pmatrix}
+\end{equation}
+en verdad esto no lo necesitamos, pero no está de más recordarlo. Dado que $\hnp = (\cos \phi \sin \theta, \sin \phi \sin \theta, \cos \theta)$ (es decir, puede ser cualquier vector). Así pues
+
+\begin{equation} 
+	\hat{h} \hat{H}_D = \frac{1}{2p}   
+	\begin{pmatrix}
+		\sigman\cdot \hnp & 0 \\
+		0 & \sigman\cdot \hnp
+	\end{pmatrix} \pqty{ \begin{pmatrix}
+		0 & \sigman\cdot \hnp \\
+		\sigman\cdot \hnp & 0
+	\end{pmatrix} +
+	\begin{pmatrix}
+		\mathbb{I} & 0 \\
+		0 & -\mathbb{I} 
+	\end{pmatrix}} 
+	= \frac{1}{2p} 
+	\begin{pmatrix}
+		\sigman\cdot \hnp & (\sigman\cdot \hnp )^2 \\
+		(\sigman\cdot \hnp)^2 & -\sigman\cdot \hnp
+	\end{pmatrix}
+\end{equation} 
+Por otro lado 
+\begin{equation} 
+	\hat{H}_D \hat{h} = \frac{1}{2p}   
+	\pqty{ \begin{pmatrix}
+		0 & \sigman\cdot \hnp \\
+		\sigman\cdot \hnp & 0
+	\end{pmatrix} +
+	\begin{pmatrix}
+		\mathbb{I} & 0 \\
+		0 & -\mathbb{I} 
+	\end{pmatrix}} 	
+	\begin{pmatrix}
+		\sigman\cdot \hnp & 0 \\
+		0 & \sigman\cdot \hnp
+	\end{pmatrix} 
+	= \frac{1}{2p} 
+	\begin{pmatrix}
+		\sigman\cdot \hnp & (\sigman\cdot \hnp)^2 \\
+		(\sigman\cdot \hnp)^2 & -\sigman\cdot \hnp
+	\end{pmatrix}
+\end{equation} 
+Y como  $\hat{h}\hat{H}_D=\hat{H}_D\hat{h}$, conmutan. Uno podría pensar que bastaría hacerlo para un $\sigma_i$ y $\sigma_j$ cualquiera (era mi idea inicial). No es correcto, ya que aparece un $[\sigma_i,\sigma_j]$ que evidentemente no es cero. La razón por la que no sucede es porque $[p_i,p_j]=0$. Es decir, los momentos son claves para dicha conmutación.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -145,7 +264,7 @@ de lo que se deduce
 
 
 \begin{Ejercicio}{Sección eficaz diferencial $e^-\mu^-$}\label{Ej:6}
-	Usando amplitudes de helicidad, calcule la sección eficaz diferencial para el proceso \ref{Ej}
+	Usando amplitudes de helicidad, calcule la sección eficaz diferencial para el proceso 
 	\[
 		e^- \mu^- \;\to\; e^- \mu^-,
 	\]
@@ -555,7 +674,77 @@ que es el resultado final \cite{Williams_2022}, y que como podemos ver es igual 
 	\]
 \end{Ejercicio}
 
-En este ejercicio tenemos que usar los cuadrimomentos para ver la energía y momento del protón para el ángulo con el que salen los electrones. 
+Lo primero que tenemos que hacer es deducir la expresión de la energía del protón. Veamos que por cuadrimomentos:
+
+\begin{equation}
+	p_1^\mu = (E_1,\pn_1) \qquad p_2^\mu = (E_2,\pn_2) \qquad 
+	p_3^\mu = (E_3,\pn_3) \qquad p_4^\mu = (E_4,\pn_4)
+\end{equation}
+tal que las leyes de conservación en este caso exigen:
+
+\begin{equation}
+	p_1^\mu +p_2^\mu =p_3^\mu +p_4^\mu 
+\end{equation}
+En particular, dado qeu tenemos un electrón con $529.5$ MeV (ultrarrelativista), si elejimos la dirección de los electrones $e^-$ y un sistema donde el protón está en reposo (el enunciado no nos habla de como es el experimento de dispersión, por lo que son asunciones válidas): 
+
+\begin{equation}
+	p_1^\mu = (E_1,0,0,E_1) \qquad p_2^\mu = (m_p,0,0,0) 
+\end{equation}
+\begin{equation} 
+	p_3^\mu = (E_3,E_3\sin \theta,0,E_3\cos \theta) \qquad p_4^\mu = (E_4,-p_4 \sin \phi,0,p_4\cos \phi)
+\end{equation}
+donde hemos asumido que el electrón saliente sigue siendo relativista (cede poca enerǵia), lo cual es cierto. Las leyes de cosnervación nos llevan a un sistema de ecuaciones triples: 
+
+\begin{equation}
+	E_4 = E_1 + m_p - E_3
+\end{equation}
+\begin{equation} 
+	 p_4 \cos \phi =  E_1-  E_3 \cos \theta 
+\end{equation}
+\begin{equation} 
+	p_4 \sin \phi = E_3 \sin \theta  
+\end{equation}
+Estas dos últimas podemos elevarlas al cuadrado y sumarlas obteniendo: 
+
+\begin{equation}
+	p_4^2 = E_3^2 + E_1^2 - 2 E_1 E_3 \cos \theta
+\end{equation}
+que usando $p_4P 2 = E_4^2 - m_p^2$ y la conservación de la energía:
+
+\begin{equation}
+	(E_1+m_p-E_3)^2 - m_p^2 = E_3^2 + E_1^2 - 2 E_1 E_3 \cos \theta
+\end{equation}
+de lo que se deduce: 
+
+\begin{equation}
+	2m_p(E_1-E_3) + E_1^2 + E_3^2 - 2E_1E_3  = E_3^2 + E_1^2 - 2 E_1 E_3 \cos \theta
+\end{equation}
+que nos lleva a: 
+
+\begin{equation}
+	E_3 (2m_p + 2E_1(1-\cos \theta))  =2 m_p E_1
+\end{equation}
+tal que:
+\begin{equation}
+	E_3  =  \frac{m_p E_1}{m_p + E_1(1-\cos \theta)}
+\end{equation}
+que justamente relaciona las tres variables qu	e nos dan: energía de los electrones salientes, los electrones incidentes y el ángulo. ¿Que pasaría si con los datos los valores no coincidieran? Que estaríamos hablando de un proceso donde por ejemplo aparecería una partícula, u otra partícula se llevaría la energía. Lo que esta claro es que no sería una simple dispersión $e^-p$. 
+
+Sin embargo para la energía dada de $E_1=529.5$  y $\theta=75^\circ$ los valores coinciden, por lo que podemos inferir que efectivamente estamos bajo un régimen de dispersión usual.
+
+Lo siguiente que tenemos que hacer es hallar $-q^2$ siendo $-q^2= (p_1-p_3)^2$ (el momento del fotón virtual), tal que:
+
+\begin{equation}
+	q^2 = (p_1-p_3)^2 = 2m_e^2 - 2p_1\cdot p_3 = 2m_e^2  - 2E_1E_3(1-\cos \theta) \approx 2E_1E_3(1-\cos \theta)
+\end{equation}
+así pues tenemos $Q^2 = -q^2$ tal que
+
+\begin{equation}
+	Q^2 =  \SI{541.3}{MeV}
+\end{equation}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2044,8 +2233,42 @@ A_\mu = 0.1456 \pm 0.0091,
 \]
 determine el valor correspondiente de $\sin^2\theta_W$ junto con su incertidumbre.
 \end{Ejercicio}
+En el caso del muón tenemos que la constante que relaciona $A_\mu$ con $\theta_W$ es: 
 
-Trivial.
+\begin{equation}
+	c_V = -\frac{1}{2}+2\sin^2 \theta_W \qquad c_A = 1/2
+\end{equation}
+En Saborido \cite{SaboridoSilva2025ParticlePhysicsI} tenemso que ya aparece la expresión del parámetro de antisimetría $A$:
+
+\begin{equation}
+	A_\mu = \frac{2c_Vc_A}{c_V^2 + c_A^2 }
+\end{equation}
+donde $c_A=1/2$. Así pues tenemos que 
+
+\begin{equation}
+	c_V^2 - \frac{2c_A}{A_\mu} c_V + c_A^2 = 0
+\end{equation}
+de aquí se deduce que:
+
+\begin{equation}
+	c_V =\frac{1}{2} \pqty{ 6.86\pm \sqrt{6.86^2-1}}\to c_V = \SI{3.66e-2}{},6.82
+\end{equation}
+y por tanto 
+
+\begin{equation}
+	\sin^2 \theta_W = \frac{1}{2} (c_V + \frac{1}{2}) 
+\end{equation}
+tal que $c_V$ solo puede coger el primer valor para dar un resultado físico: 
+
+\begin{equation}
+	\sin^2 \theta_W \approx 0.269
+\end{equation}
+La incertidumbre por otro lado corresponde a: 
+
+\begin{equation}
+	s(\sin^2 \theta_W) = \frac{1}{2} \sin(c_V) =\frac{1}{4}\pqty{1\pm \frac{A_\mu^{-1}}{\sqrt{A_\mu^{-2} - 1}}}\frac{1}{A_\mu^2}s(A_\mu) = 0.00115
+\end{equation}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

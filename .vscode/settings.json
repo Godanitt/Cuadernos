@@ -114,7 +114,7 @@
         "../../.vscode/copy_pdf.lua",
         "%DOC%",
         "build",
-        "../../0_Pdf"
+        "../../_Pdf"
       ]
     }
   ],
