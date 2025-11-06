@@ -1,9 +1,177 @@
 \chapter{Leyes de Conservación}
 
+
+\section{Teoremas de conservación}
+
+En toda la física que hemos estudiado hasta ahora, desde la mecánica cuántica, como la termodinámica y otras ramas, existen ciertas cantidades que se conservan en un proceso físico. Estas cantidades conservadas pueden ayudar muchísimo a resolver un problema, o resolverlo. La física no sería nada sin estas cantidades que se conservan, y el electromagnetismo no será menos. En este tema estudiaremos la conservación de los 3 observables mas importantes: la energía $U$, el momento lineal $\pn$ y el momento angular $\Ln$. Además describiremos la conservación de la carga.  \\
+
+A la hora de estudiar la conservación de la energía, momento o momento angular es necesario desarrollar la densidad de fuerza, mediante el principio de Lorentz, ya que aparece en los 3 términos, aunque de una manera diferente. Definimos densidad de fuerza $\fn$ como la cantidad de fuerza que se ejerce sobre una masa por densidad de volúmen, tal que:
+
+\begin{equation}
+\Fn = \int_V \fn \D \tau
+\end{equation}
+si la única fuerza que se ejerce es la fuerza electromagnética está vendrá dada por la fuerza de Lorentz. Esta nos dice cuanta fuerza se ejerce sobre una carga. Sin embargo si lo que tenemos es una densidad de carga, habrá que integrar dicha fuerza por unidad de volumen, tal que:
+
+\begin{equation}
+\Fn = \int_V (\rho \En + \Jn \times \Bn) \D \tau
+\end{equation}
+de tal modo que se ve claramente que:
+
+\begin{equation}
+\fn = \rho \En + \Jn \times \Bn 
+\end{equation}
+Esto último es fundamental. Con esta definición de fuerza por unidad de volumen desarrollaremos toda la física de esta sección.
+
+
 \section{Conservación de la carga}
 
 \section{Conservación de la energía}
+Como sabemos la energía no es mas que la fuerza ejercida por una partícula en su movimiento, tal que $\D W = \Fn \cdot \D \lnn$, o teniendo en cuenta que $\D W = \Fn \cdot \vn \D t$ siendo $\vn$ la velocidad de la partícula en un instante cualquiera. Entonces tenemos que 
+
+\begin{equation}
+P \equiv \dfrac{\D W}{\D t} = \Fn \cdot \vn
+\end{equation} 
+ahora si dicha partícula posee una carga $q$, y la fuerza ejercida es electromagnética tendremos que :
+
+$$  \Fn \cdot \vn = (\En + \vn \times \Bn) \cdot (q \vn) $$
+
+Como podemos ver tenemos que la fuerza magnética no ejerce ningún tipo de trabajo sobre la carga en movimiento. Es decir, \textit{el campo magnético no ejerce trabajo}. En ese caso tenemos que:
+
+$$ \Fn \cdot \vn = q \vn \cdot \En $$
+
+Esto será para una carga. ¿Que pasa si tenemos muchas cargas? Pues aparecerá un sumatorio. Y como sabemos un sumatorio y una integral de Riemann son exactamente lo mismo, solo que cada carga tendrá ahora un valor infenitesimal $q \rightarrow \rho(\rn)$ que depende de cada punto del espacio, de tal modo que la velocidad asociada también. En ese caso lo que tendremos es un flujo de carga, que tendremos que integrar. De este modo la expresión mas general es que:
+
+\begin{equation}
+\dfrac{\D W_{em}}{\D t} = \int_V \Jn \cdot \En  \ \D  \tau
+\end{equation}
+Tenemos que buscar una expresión más general que esta. Aplicando la ley de Ampere-Maxwell y la ley de Faraday tendremos que:
+
+\begin{equation}
+\Jn  \cdot \En = -\parentesis{\varepsilon_0 \En \cdot \parciales{\En}{t} + \dfrac{1}{\mu_0} \Bn \cdot \parciales{\Bn}{t}}  +  \dfrac{1}{\mu_0} \nabla (\En \times \Bn) 
+\end{equation}
+donde tendremos que $\frac{1}{2}\parciales{E^2}{t} = \En \cdot \parciales{\En}{t}$. De este modo tendremos que se verifica que:
+
+
+\begin{equation}
+\Jn  \cdot \En = -\parentesis{\dfrac{\varepsilon_0}{2} \parciales{E^2}{t} + \dfrac{1}{2 \mu_0} \parciales{B^2}{t}}  -  \dfrac{1}{\mu_0} \nabla (\En \times \Bn) 
+\end{equation}
+Muchas veces al primer término de la segunda igualdad se le conoce como $\parciales{u_{em}}{t}$, ya que
+
+\begin{equation}
+u_{em} \equiv \dfrac{\Bn^2}{\mu_0} + \varepsilon_0 \En^2 
+\end{equation}
+Este término lo llamamos la \textbf{energía de los campos electromagnéticos}, y nos da una medida de la energía electromagnética acumulada en los campos. La energía que tienen los campos podemos verlo como la energía de interacción de los campos. Definimos el \textbf{vector de Poynting} $\Sn$ como: \\
+
+\begin{equation}
+\Sn \equiv \dfrac{1}{\mu_0} \En \times \Bn
+\end{equation}
+Este nos dará una medida del flujo de energía que atraviesa una superficie. Para entender esto debemos trasformar la ecuación diferencial
+
+\begin{equation}
+\Jn \cdot \En = -  \parciales{u_{em}}{t} - \nabla \Sn
+\end{equation}
+en una ecuación integral, tal que integrando en $V$ y aplicando el \textit{teorema de Gauss}; donde ahora $W = U_{mec}$, es decir, la energía mecánica, y $U_T = U_{mec} + U_{em}$; obtenemos el \textbf{teorema de Poynting}:
+
+\begin{equation}
+\derivadas{U_T}{t} = \derivadas{(U_{mec} + U_{em})}{t} = - \oint_S (\Sn \cdot \hnn) \D a
+\end{equation}
+
+Este teorema nos dice que el cambio de la energía en una región del espacio $V$ depende del flujo de energía a través de la superficie que envuelve el volumen. Entonces ya entendemos que significa $\Sn$: es el flujo de energía de los campos a través de una superficie en un instante $t$, y por tanto conocer la dirección del vector de Poyting es fundamental a la hora de estudiar las ondas electromagnéticas, ya que nos dará una medida de hacia donde se propagan. El término $\Jn \cdot \En$ puede asociarse con la energía mecánica de disipación, lo que llamamos \textit{efecto Joule}.  También podemos escribirlo según las ecuaciones de Maxwell para medios materiales, tal que:
+
+\begin{equation}
+u_{em} = \En \cdot \Dn + \Hn \cdot \Bn ; \tquad \parciales{u_{em}}{t} = \En  \cdot \parciales{\Dn}{t} + \Hn \cdot \parciales{\Bn}{t}; \tquad \Sn = \En \times \Hn
+\end{equation}
+donde la expresión del teorema de Poyting es exactamente igual.
+
+
+
 
 \section{Conservación del momento}
 
+La conservación del momento tiene un desarrollo muchísimo mas complejo. La densidad de carga $\rho$ y el flujo de energía $\Jn$ usando las ecuaciones de Maxwell inhomogéneas. El resultado es bastante atroz, ya que también hay que aplicar bastantes igualdades trigonométricas. El resultado final sería:
+
+\begin{equation} \begin{array}{rl}
+\fn =  & \varepsilon_{0} \ccorchetes{(\Div \En) \En + (\En \cdot \nabla) \En} + \dfrac{1}{\mu_0} \ccorchetes{(\Div \Bn)\Bn + (\Bn \cdot \nabla) \Bn}  \\ \\ & - \dfrac{1}{2} \nabla \parentesis{\varepsilon_0 E^2 + \dfrac{1}{\mu_0} B^2} - \varepsilon_0 \dfrac{\partial}{\partial t} (\En \times \Bn)
+\end{array}
+\end{equation}
+Como podemos ver usar esta ecuación de manera natural podría resultar un auténtico quebradero de cabeza. Sin embargo este horror matemático puede simplificarse de una manera muy sencilla: usando el \textbf{tensor de Maxwell}. Definimos el vector de Maxwell $\Tt$ como aquel cuyas componentes se definen como:
+
+\begin{equation}
+T_{ij} = \varepsilon_0 \parentesis{E_i E_j - \dfrac{1}{2} \delta_{ij} E^2} + \dfrac{1}{\mu_0} \parentesis{B_i B_j - \dfrac{1}{2} \delta_{ij} B^2}
+\end{equation}
+o escrito de manera tensorial
+\begin{equation}
+\Tt = \varepsilon_0 \parentesis{\En \otimes \En - \dfrac{1}{2} E^2 \In} + \dfrac{1}{\mu_0}  \parentesis{\Bn \otimes \Bn - \dfrac{1}{2} B^2 \In}
+\end{equation}
+donde el producto externo $\otimes$ es un producto tensorial. Por tanto los campos eléctricos y magnéticos dejan de ser funciones vectoriales y pasan a ser tensores, aunque puedan ser tratados como los primeros. En cualquier caso esto debe ser recordado por el lector, ya que sentará las primeras bases para entender los temas de relatividad. \\ 
+
+Ahora bien ¿Qué diatres tiene que ver el tensor de Maxwell con la densidad de fuerza? Pues que en realidad la densidad de fuerza puede ser descrita como: 
+
+\begin{equation}
+\fn = \nabla \Tt - \varepsilon_0 \mu_0 \parciales{\Sn}{t} 
+\end{equation}
+Entonces usamos ahora que $\Fn_{mec} = \frac{\D \pn_{mec}}{\D t}$ para obtener que:
+
+\begin{equation}
+\Fn_{mec} = \dfrac{\D \pn_{mec} }{\D t} = \int_V  \parentesis{ \mu_0 \varepsilon_0 \parciales{\Sn}{t}} \D \tau + \oint_S ( \Tt \cdot \hnn) \D a
+\end{equation} 
+esta será la \textbf{ecuación de continuidad del momento} o también la \textbf{ecuación de la fuerza electromagnética}. Muchas veces se define el término $\gn$ llamado \textbf{densidad de momento electromagnético} como 
+
+\begin{equation}
+\gn \equiv \mu_0 \varepsilon_0 \Sn = \dfrac{1}{c^2} \Sn
+\end{equation}
+De esta forma si $\Gn$ es la integral de volumen tenemos:
+
+\begin{equation}
+\derivadas{}{t} \parentesis{\pn_{mec} + \Gn } = \oint_S (\Tt \cdot \hnn)\D a
+\end{equation}
+que es la manera mas común de expresarlo. Lo más normal es que el lector siga preguntándose que coño es el tensor de Maxwell. El tensor de Maxwell no es mas que la fuerza por unidad de área que ejerce un campo electromagnético sobre la superficie de un volumen. Mientras que los elementos de la diagonal hablan de la \textbf{presión} ($T_{xx}, T_{yy},T_{zz}$) los otros elementos ($T_ {xy},T_{xz}...$) hablan de como se comportan las \textbf{fuerzas cortantes}. Por ejemplo $T_{xy}$ nos da una medida de la fuerza que se genera en la dirección $\hnx$ debido a los campos en la componente $\hny$ sobre la superficie. Debido a la simetría del tensor $T_{xy}$. Leer Grifiths pag. 370 o Zangwill pag. 513, para más información. \\
+
+
+
+\subsubsection{Fuerzas sobre medios materiales}
+
+El tensor de Maxwell actúa sobre un vector $\hnn$ dando resultado otro vector. Es muy interesante conocer para que casos el vector resultante es paralelo al vector inicial, de tal modo que actúe como un \textit{autovector} ($\hnn$). Dado que en el espacio libre $\Tt$ es un tensor simétrico (o en un medio l.h.i) dando lugar a valores propios reales esto cobra especial relevancia. Diferenciemos entonces el tensor de Maxwell eléctrico $\Tt^E$ (solo las componentes eléctricas) y el tensor de Maxwell magnético  $\Tt^M$ (solo las componentes magnéticas). En ese caso:
+
+\begin{equation} 
+(\Tt^E  \cdot  \hnn )_j = \sum_{i=x,y,z} n_i T_{ij} = \varepsilon \parentesis{ \parentesis{ E_x n_x + E_y n_y + E_z n_z } E_j -  \frac{1}{2} n_j E^2}
+\end{equation}
+tal que para que sea proporcional a $n_j$ debe verificarse que $\En \cdot \hnn = 0$ o que $\En \cdot \hnn = E$, ya que si se cumple lo primero tendremos que la parte de la izquierda, y si es paralelo $E_j = E n_j$. Obteniendo así que $\En \perp \hnn$ o $\En \parallel \hnn$. En ese caso para que 
+
+\begin{equation}
+\begin{array}{rcl} 
+(i) & \En \parallel \hnn & \Longrightarrow \Tt^E  \hnn = \dfrac{\varepsilon}{2} E^2 \hnn \\ \\
+
+(ii) & \En \perp \hnn & \Longrightarrow \Tt^E \hnn = - \dfrac{\varepsilon}{2} E^2 \hnn
+\end{array}
+\end{equation}
+Para el campo magnético ocurre exactamente lo mismo, ya que la forma de resolverlo es completamente análoga:
+
+\begin{equation}
+\begin{array}{rcl} 
+(i) & \Bn \parallel \hnn & \Longrightarrow \Tt^M \hnn = \dfrac{1}{2 \mu}  B^2 \hnn \\ \\
+
+(ii) & \Bn \perp \hnn & \Longrightarrow \Tt^M \hnn = - \dfrac{1}{2 \mu} B^2 \hnn
+\end{array}
+\end{equation}
+
+
+\subsubsection{Presión electromagnética sobre conductores}
+
+En los conductores perfectos solo hay cargas y corrientes libres, por lo que las fuerzas sobre ellos pueden ser calculadas con el tensor de Maxwell usando las condiciones de frontera adecuadas. Para un conductor perfecto lo que pasará es que \textit{no existe ni campo eléctrico ni magnético en el interior}. \\
+
+Además usando la consideración $\fn = \rho \En + \Jn \times \Bn$ podemos hallar las siguientes conclusiones. Dado que el campo eléctrico en la superficie debe ser normal va a existir una fuerza por unidad de área, una presión, dirigida hacia fuera. El campo magnético será además paralelo a la superficie y  por tnato la fuerza será dirigida hacia dentro. P
+
+
 \section{Conservación del momento angular}
+
+El momento angular magnético es exactamente igual al momento lineal pero con la diferencia de que el tensor de inercia está multiplicado vectorialmente por un factor $\rn$. La forma de obtener las ecuaciones son exactamente iguales, obteniendo qu:
+
+\begin{equation}
+\dfrac{\D}{\D t} \parentesis{\Ln_{mec}+\varepsilon_0 \int_V \rn \times (\En \times \Bn) \D \tau } = \int_V \rn \times \Tt \cdot \hnn \ \D a
+\end{equation}
+donde definimos el momento angular electromagnético $\Ln_{em}$ como:
+
+\begin{equation}
+\Ln_{em} = \int_V \rn \times \gn \D \tau = \varepsilon_0 \int_V \rn \times (\En \times \Bn) \D V  = \varepsilon_0 \int_V \ccorchetes{\En ( \rn \cdot \Bn) - \Bn (\rn \cdot \En)} \D \tau
+\end{equation}

@@ -27,6 +27,8 @@
 \RequirePackage{lastpage}		
 \RequirePackage{array}			 % Para fjar tamaño de columnas
 \RequirePackage{relsize}
+%\RequirePackage{esint}      % Para comandos nuevos de integral (gruesos, triples..)
+ 
 
 \RequirePackage{tikz}
 \usetikzlibrary{arrows}
@@ -65,6 +67,10 @@
 \RequirePackage{multicol}
 \RequirePackage{fontawesome} % para los iconos FontAwesome v4
 \RequirePackage{transparent}
+\RequirePackage{unicode-math}
+
+
+
 
 %----------------------------------------------------------------------------
 % Tablas automaticamente centradas
@@ -177,23 +183,96 @@
 	inline-per-mode=single-symbol,
 	display-per-mode=fraction,
 }
-% ----------------------------------------------------------------------------
-% FUENTES
-% ----------------------------------------------------------------------------
 
-%\RequirePackage{newtxtext,newtxmath} % Times
-%\usepackage{helvet} % Helvetica
-%\usepackage{newpxtext,newpxmath} % Palatino
-%\usepackage{lmodern} % Latin Modern
+%----------------------------------------------------------------------------
+% FUENTE
+%----------------------------------------------------------------------------
+%--------------------------------------------------------------
+% Fuentes tipográficas recomendadas para unicode-math
+% Activa solo UNA pareja (\setmainfont / \setmathfont)
+% Compilar con XeLaTeX o LuaLaTeX
+%--------------------------------------------------------------
+%--------------------------------------------------------------
+% Fuentes tipográficas recomendadas para unicode-math
+% Activa solo UNA pareja (\setmainfont / \setmathfont)
+% Compilar con XeLaTeX o LuaLaTeX
+%--------------------------------------------------------------
 
+% --- Latin Modern (por defecto, clásico TeX) ---
+%\setmainfont{Latin Modern Roman}
+%\setmathfont{Latin Modern Math}
 
-%\usepackage{newtxtext,newtxmath} % Cambia la fuente (pero mola)
-
-\RequirePackage{unicode-math}
+% --- Libertinus (elegante, moderna, libre) ---
 \setmainfont{Libertinus Serif}
-%\setmathfont{Libertinus Math}        % Libertinus
-\setmathfont{Latin Modern Math}      % Fuente usual, estandar 
-%\setmathfont{XITS Math}             % Matemáticas estilo Times
+\setmathfont{Libertinus Math}
+
+% --- STIX Two (aspecto técnico, muy completa en símbolos) ---
+%\setmainfont{"STIX Two Text"}
+%\setmathfont{"STIX Two Math"}
+
+% --- XITS (Times-like, clásica, buena legibilidad) ---
+%\setmainfont{XITS}
+%\setmathfont{XITS Math}
+
+% --- TeX Gyre Pagella (estilo Palatino) ---
+%\setmainfont{"TeX Gyre Pagella"}
+%\setmathfont{"TeX Gyre Pagella Math"}
+
+% --- TeX Gyre Termes (estilo Times) ---
+%\setmainfont{"TeX Gyre Termes"}
+%\setmathfont{"TeX Gyre Termes Math"}
+
+% --- TeX Gyre Schola (estilo Century Schoolbook) ---
+%\setmainfont{"TeX Gyre Schola"}
+%\setmathfont{"TeX Gyre Schola Math"}
+
+% --- TeX Gyre Bonum (estilo Bookman) ---
+%\setmainfont{"TeX Gyre Bonum"}
+%\setmathfont{"TeX Gyre Bonum Math"}
+
+% --- Asana Math (Palatino-like solo para matemáticas) ---
+%\setmainfont{"TeX Gyre Pagella"}
+%\setmathfont{Asana Math}
+
+% --- Fira Math (Sans serif matemática, moderna) ---
+%\setmainfont{Fira Sans}
+%\setmathfont{Fira Math}
+
+% --- Erewhon + XITS Math (Times clásico, combinación elegante) ---
+%\setmainfont{Erewhon}
+%\setmathfont{XITS Math}
+
+% --- GFS Didot (griego clásico, estilo elegante) ---
+%\setmainfont{GFS Didot}
+%\setmathfont{XITS Math}
+
+% --- Noto Serif / Noto Math (alta compatibilidad Unicode) ---
+%\setmainfont{"Noto Serif"}
+%\setmathfont{"Noto Math"}
+
+% --- Junicode (aspecto académico / humanista) ---
+%\setmainfont{Junicode}
+%\setmathfont{"STIX Two Math"}
+
+% --- Cambria (Windows, comercial) ---
+%\setmainfont{Cambria}
+%\setmathfont{Cambria Math}
+
+% --- Minion (Adobe, comercial) ---
+%\setmainfont{"Minion Pro"}
+%\setmathfont{"Minion Math"}
+
+% --- Times New Roman + XITS Math (Windows / genérica) ---
+%\setmainfont{"Times New Roman"}
+%\setmathfont{XITS Math}
+
+% --- Palatino Linotype + Asana Math (Windows / genérica) ---
+%\setmainfont{"Palatino Linotype"}
+%\setmathfont{Asana Math}
+
+% --- Georgia + STIX Two Math (opción informal, legible) ---
+%\setmainfont{Georgia}
+%\setmathfont{"STIX Two Math"}
 
 % ----------------------------------------------------------------------------
 % CONFIGURACIÓN DE CAPÍTULOS
@@ -286,6 +365,8 @@
 \newcommand{\ccorchetes}[1]{\left[ #1  \right]}
 \newcommand{\D}{\mathrm{d}}
 \newcommand{\derivadas}[2]{\frac{\D #1}{\D #2}}
+\newcommand{\Div}{\nabla\!\cdot\!}
+\newcommand{\Curl}{\nabla\!\times\!}
 
 \newcommand{\tquad}{\quad \quad \quad}
 
@@ -341,6 +422,9 @@
 
 \newcommand{\Ruth}{\text{Ruth}}
 
+\newcommand{\Kernel}{\text{Ker}}
+\newcommand{\Imagen}{\text{Im}}
+
 
 % Comandos vectoriales
 
@@ -350,8 +434,12 @@
 \newcommand{\dn}{\mathbf{d}}
 \newcommand{\en}{\mathbf{e}}
 \newcommand{\fn}{\mathbf{f}}
+\newcommand{\gn}{\mathbf{g}}
 \newcommand{\jn}{\mathbf{j}}
 \newcommand{\kn}{\mathbf{k}}
+\newcommand{\lnn}{\mathbf{l}}
+\newcommand{\mn}{\mathbf{m}}
+\newcommand{\nn}{\mathbf{n}}
 \newcommand{\pn}{\mathbf{p}}
 \newcommand{\qn}{\mathbf{q}}
 \newcommand{\rn}{\mathbf{r}}
@@ -361,6 +449,7 @@
 \newcommand{\xn}{\mathbf{x}}
 \newcommand{\wn}{\mathbf{w}}
 \newcommand{\yn}{\mathbf{y}}
+\newcommand{\zn}{\mathbf{z}}
 \newcommand{\qndot}{\dot{\qn}}
 
 \newcommand{\pslash}{\slashed{p}}
@@ -376,12 +465,15 @@
 \newcommand{\mun}{\symbf{\mu}}
 \newcommand{\thetan}{\symbf{\theta}}
 \newcommand{\etan}{\symbf{\eta}}
+\newcommand{\varphin}{\symbf{\varphi}}
 
-
+\newcommand{\Tt}{\overleftrightarrow{\mathbf{T}}}
 
 
 \newcommand{\An}{\mathbf{A}}
 \newcommand{\Bn}{\mathbf{B}}
+\newcommand{\Cn}{\mathbf{C}}
+\newcommand{\Dn}{\mathbf{D}}
 \newcommand{\En}{\mathbf{E}}
 \newcommand{\Fn}{\mathbf{F}}
 \newcommand{\Jn}{\mathbf{J}}
@@ -392,12 +484,14 @@
 \newcommand{\Mn}{\mathbf{M}}
 \newcommand{\Nn}{\mathbf{N}}
 \newcommand{\Pn}{\mathbf{P}}
+\renewcommand{\Rn}{\mathbf{R}}
 \newcommand{\Sn}{\mathbf{S}}
 \newcommand{\Tn}{\mathbf{T}}
 \newcommand{\In}{\mathbf{1}}
 \newcommand{\Vn}{\mathbf{V}}
 \newcommand{\Wn}{\mathbf{W}}
 \newcommand{\Encal}{\mathcal{\textbf{E}}}
+
 
 \newcommand{\hnn}{\hat{\mathbf{n}}}
 \newcommand{\hnr}{\hat{\mathbf{r}}}
@@ -412,6 +506,8 @@
 \newcommand{\hni}{\hat{\mathbf{i}}}
 \newcommand{\hnj}{\hat{\mathbf{j}}}
 \renewcommand{\hnk}{\hat{\mathbf{k}}}
+
+ 
  
 
 %% MACROS 

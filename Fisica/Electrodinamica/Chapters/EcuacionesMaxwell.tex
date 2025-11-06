@@ -1,1 +1,324 @@
-\chapter{Ecuaciones de Maxwell}
+
+\chapter{Formulación del campo electromagnético: leyes de Maxwell}
+
+En el primer apartado describiremos las ecuaciones de Maxwell y la fuerza de Lorentz, las ecuaciones mas importantes del electromagnetismo, que permiten resolver cualquier problema electromagnético. En el segundo apartado estudiaremos que es la teorema de Helmholtz, de tal manera que podamos argumentar que las ecuaciones de Maxwell determinan de manera inequívoca los campos electromagnéticos. 
+
+\subsection{Ecuaciones de Maxwell en el vacío}
+
+
+En la electrodinámica clásica nuestro principal problema será resolver cuales son las interacciones entre partículas cargadas. Las partículas cargadas serán para nosotros entes matemáticos que funcionan como fuentes de campos eléctricos o magnéticos, de tal modo que los campos que generan nos permiten describir las interacciones entre las diferentes partículas.  Entonces si conocemos la posición/movimiento de todas las cargas del espacio a lo largo del tiempo podremos conocer con precisión cuales son los campos, y por tanto las interacciones entre las cargas. \\
+
+Las ecuaciones que nos dicen cual es la forma de los campos en función de la posición/movimiento de las cargas se llaman \textbf{ecuaciones de Maxwell}. Decimos que un problema electromangético está resuleto cuando conocemos con precisión los campos eléctromagnéticos, por tanto resolver las ecuaciones de Maxwell es fundamental. Las ecuaciones son:
+
+\begin{equation}
+\begin{array}{rll}
+(i) & \Div \En = \dfrac{\rho}{\varepsilon_0}  & \mathrm{Ley \ de \ Gauss} \\ \\
+(ii) & \Div \Bn = 0  & \mathrm{Divegencia \ de \ B} \\ \\
+(iii) & \Curl \En = \dfrac{\partial \Bn}{ \partial t}  & \mathrm{Ley \ de \ Faraday} \\ \\
+(iv) & \Curl \Bn = \mu_0 \Jn + \mu_0 \varepsilon_0 \dfrac{\partial \En}{\partial t} & \mathrm{Ley \ de \ Ampere-Maxwell} 
+\end{array} \label{Ec:01.1.01}
+\end{equation}
+donde tenemos que la densidad de carga eléctrica es $\rho$ y el flujo de carga es $\Jn$. Ahora bien, hemos que es equivalente conocer los campos electromangéticos a conocer las interacciones de las cargas, pero ¿Cómo podemos deducir que fuerza crea la presencia de un campo eléctrico  magnético sobre una carga cualquiera? Pues esta viene dada por la \textbf{fuerza de Lorentz} para una carga puntual $q$, que es:
+
+\begin{equation}
+\Fn = q (\En + \vn \times \Bn) \label{Ec:01.1.02}
+\end{equation}
+tal que la ecuación del movimiento vendrá dada por la 2ª ley de Newton. 
+
+
+\subsection{Teorema de Helmholtz}
+
+El teorema de Helmholtz nos dice que cualquier campo vectorial está completamente definido por su rotacional y su Divrgencia, de tal modo que:
+
+\begin{Teorema}
+El \textbf{teorema de Hemholtz} nos dice que si un campo vectorial $\Fn$ verifica que:
+
+\begin{equation}
+\Div \Fn = D \tquad \Curl \Fn = \Cn
+\end{equation}
+entonces el campo vectorial viene inequívocamente determinado por su rotacional y su Divrgencia, tal que:
+
+\begin{equation}
+\Fn = - \nabla  U + \Curl \Wn
+\end{equation}
+donde $U$ y $\Wn$ vienen completamente determinados por
+
+\begin{equation}
+U(\rn) \equiv \dfrac{1}{4 \pi} \int \dfrac{D (\rn')}{|\rn - \rn'|} \D \tau' \tquad 
+\Wn (\rn) \equiv \dfrac{1}{4 \pi}  \int \dfrac{\Cn (\rn')}{|\rn - \rn'|} \D \tau' \tquad 
+\end{equation}
+\end{Teorema}
+
+Este teorema sin embargo tiene una pequeña incosistencia, que darán mas adelante lo que llamaremos \textit{gauges}. Además podemos sumar a $D$ una constante cualquiera de tal manera que su gradiente seguirá siendo el mismo. Consecuentemente tendremos una familia de funciones escalares que son igualmente válidas. 
+
+
+\subsection{Potenciales electromagnéticos}
+
+Ahora entra un punto crucial en nuestro estudio de la electromagnetismo: los potenciales y los gauges. Entender lo siguiente es fundamental para el estudio de la materia. Las funciones vectoriales $\En$ y $\Bn$ o campos que verifican las ecuaciones de Maxwell para un problema determinado son únicas, de tal forma que no hay dos campos que verifiquen dichas ecuaciones a la vez. Es decir, no existen dos campos diferentes que solucionen un mismo problema, lo cual es lógico, ya que en la realidad solo vemos una solución, solo podemos medir un campo, no dos a la vez. \\
+
+Ahora bien, como llegamos a la solución, que recursos matemáticos usemos es un tema diferente. Podremos construir funciones auxiliares que, al o mejor, no son unívocas, es decir, podemos obtener una serie de funciones auxiliares pero que todas ellas generen los mismos campos, y por tanto todas sean soluciones para dicho problema. \\
+
+Hemos introducido en el apartado anterior los potenciales. Los potenciales son un recurso matemático que nos ayuda a resolver muchos problemas, y en muchos casos conocerlos es análogo a conocer la solución al problema (conocer los campos). Sin embargo presentan el problema mencionado anteriormente: existe una serie de potenciales, un conjunto de ellos, para cada solución del campo. A cada una de estas soluciones de los potenciales lo llamamos \textbf{gauge}. Es el momento de aplicar el teorema de Hemholtz. Dado que $\Div \Bn = 0$ este campo vendrá dado únicamente por un potencial escalar, tal que:
+
+\begin{equation}
+\Bn = \Curl  \An
+\end{equation}
+Además dado que que $\Curl \En =- \partial \Bn / \partial t$ tenemos que
+\begin{equation}
+\En = - \nabla \Phi - \parciales{\An}{t}
+\end{equation}
+donde hemos añadido el término $\Phi$ ya que $\Curl (\nabla \Phi)= 0$, y por tanto de existir no aparecería en la expresión del rotacional. Además la Divrgencia de $\En$ no es cero, por lo que debe contener un gradiente. Hemos encontrado entonces una forma de evaluar el campo electromagnético a partir de otras funciones escalares y potenciales. \\
+
+Ahora bien, supongamos que existe un $\An'$ que también es solución de las ecuaciones de Maxwell. Obviamente podremos escribir esta ecuación como $\An' = \An + \alphan$, tal que $\alphan$ es una función vectorial cualquiera. Si tenemos que $\Phi '=\Phi + \beta$ es también solución debe verificarse que:
+
+$$
+\En = - \nabla \Phi - \parciales{\An}{t} = - \nabla \Phi ' - \parciales{\An '}{t} = - \nabla \Phi - \parciales{\An}{t}  - \parentesis{  \nabla \beta + \parciales{\alphan}{t}}
+$$
+y consecuentemente obvio que:
+
+$$
+\nabla \beta = - \parciales{\alpha}{t}
+$$
+por lo que debe verificarse entonces que $\alpha = - \nabla \lambda$, es decir, debe ser un campo irrotacional. En ese caso debemos tener que $\beta = \partial \lambda / \partial t$. La relación entonces nos dice que: 
+
+\begin{equation}
+\Phi ' =  \Phi + \parciales{\lambda}{t} \tquad \An' = \An - \nabla \lambda
+\end{equation} 
+donde $\lambda$ es una función escalar cualquiera. Como podemos ver entonces existe una familia entera de posibles soluciones de $\An$ y $\Phi$ de las que podamos obtener los mismos campos. \\
+
+Las ecuaciones de Maxwell son 4 ecuaciones diferenciales de primer orden. Es bien conocida que la información contenida en 4 ecuaciones de primer orden es análoga a la información contenida en 2 ecuaciones de segundo orden, si hacemos el cambio correcto. Entonces tendremos que buscar 2 ecuaciones de segundo orden usando los potenciales que contengan la misma información. Dado que la información de las fuentes está en las ecuaciones inhomogéneas (ecuaciones donde aparecen de forma explícita $\rho,\Jn$), empecemos por $\Div \En = \rho$. Dicha ecuación puede expresarse como:
+
+\begin{equation}
+\nabla^2 \Phi + \parciales{}{t} ( \Div \An ) = - \dfrac{\rho}{\varepsilon_0}\label{Ec:01.3.09}
+\end{equation}
+Ahora para la ecuación de Ampere-Maxwell solo habrá que tener en cuenta que $\Curl \Curl \An \equiv \nabla^2 \An - \nabla (\nabla \cdot \An)$, por lo que:
+
+\begin{equation}
+\parentesis{\nabla^2 \An  - \mu_0 \varepsilon_0 \parciales{^2\An}{t^2}} - \nabla \parentesis{\Div \An + \mu_0 \varepsilon_0 \parciales{\Phi}{t}} = - \mu_0 \Jn\label{Ec:01.3.10}
+\end{equation}
+Estas son las ecuaciones de Maxwell análogas para los potenciales. Si hacemos el cambio $\An \rightarrow \An'$ o $\Phi \rightarrow \Phi'$ podemos ver que no se alteran. En ese caso decimos que las ecuaciones de Maxwell son  \textbf{invariantes Gauge}, ya que \textit{no varían frente a una trasformación Gauge}. En el teorema de relatividad ahondaremos mas en el tema de los invariantes. Sin embargo estas ecuaciones son realmente feas, nadie querría usarlas frente a las elegantes ecuaciones de Maxwell. Por esa misma razón existen dos gauges muy usados en la literatura, y prácticamente son los únicos usados en la electrodinámica clásica. Estos son el gauge de Coulomb y el gauge de Lorenz. En los dos siguientes apartados vamos a explicar la utilidad de ambos y porque se crearon.
+
+\subsubsection{Gauge de Coulomb}
+
+El \textbf{gauge de Coulomb} es, quizás, el gauge mas obvio que hay. Probablemente es el único que se haya visto hasta la fecha. Este gauge verifica la condición de que
+
+\begin{equation} 
+\Div \An = 0
+\end{equation}
+Entonces si cogemos la ley de Gauss $(i)$ de las ecuaciones \ref{Ec:01.1.01}, y substituímos tendremos que:
+
+\begin{equation}
+\nabla^2 \Phi = \dfrac{\rho}{\varepsilon_0}
+\end{equation}
+es decir, la \textit{ecuación de Poisson} para el potencial. Esta ecuación permite entonces resolvere el potencial por la famosa ecuación:
+
+\begin{equation}
+\Phi (\rn,t) = \dfrac{1}{4 \pi \varepsilon_0} \int_V \dfrac{\rho(\rn',t)}{R} \D \tau'
+\end{equation}
+
+\subsubsection{Gauge de Lorenz}
+
+El \textbf{gauge de Lorenz} es bastante menos obvio que el otro gauge. En ese debe verificarse la condición de que:
+
+\begin{equation}
+\Div \An = - \mu_0 \varepsilon_0 \parciales{\Phi}{t}
+\end{equation}
+Si aplicamos a esto a las ecuaciones \ref{Ec:01.3.09} y \ref{Ec:01.3.10} obtenemos que se trasforman en:
+
+\begin{equation} \begin{array}{rl} 
+(i) & \nabla^2 \An - \mu \varepsilon_0 \parciales{^2 \An}{t^2} = - \mu_0 \Jn \\ \\
+(ii) & \nabla^2 \Phi - \mu \varepsilon_0 \parciales{^2 \Phi}{t^2} = - \dfrac{\rho}{\varepsilon_0} 
+\end{array} \label{Ec:01.3.15}
+\end{equation}
+tal que si definimos el operador $\Box^2$ como 
+
+\begin{equation}
+\Box^2 \equiv \nabla^2 - \mu_0 \varepsilon_0 \parciales{^2}{t^2}
+\end{equation}
+tendremos que
+\begin{equation} \begin{array}{rl} 
+(i) & \Box^2 \An = - \mu_0 \Jn \\ \\
+(ii) &  \Box^2 \Phi = - \dfrac{\rho}{\varepsilon_0} \label{Ec:01.3.17}
+\end{array} 
+\end{equation}
+Si queremos hacer una trasformación del tipo $\An, \Phi \rightarrow \An', \Phi'$ tendremos que debe verificarse que
+
+\begin{equation}
+\Box^2 \lambda = 0
+\end{equation}
+
+
+\subsection{Medios materiales}
+
+Existen fenómenos en la naturaleza que hacen que determinados materiales posean una polarización natural o una magnetización natural perceptible macroscópicamente, vease el caso de los imanes o el caso de la carga electroestática en un boli al frotarlo en lana. En general todos estos fenómenos son suficientemente complejos como para desarrollarlos en un tema aparte pero necesitamos mencionarlos brevemente para poder continuar el desarrollo de la asignatura. \\
+
+Los fenómenos anteriormente descritos se deben a la contribución de pequeños fenómenos de escala atómico, que todos juntos por superposición crean campos visibles. De esta forma no es necesario conocer el espín o la ecuación de un electrón para darle un desarrollo matemático a la imanación natural de un cuerpo. De hecho el concepto es sumamente sencillo. \\
+
+\subsubsection{Polarización}
+ 
+El fenómeno de la polarización se debe a la suma de los momentos dipolares en los átomos, de tal manera que, en un material, tenemos una especie de promedio del momento dipolar total llamado \textbf{polarización} $P$. El \textbf{momento dipolar} $\pn$ total se calculará como:
+
+\begin{equation}
+\pn = \int_V \Pn \D V'
+\end{equation}
+
+Ahora bien, necesitamos tener algún tipo de herramienta matemática para calcular los campos que se crean por culpa de los dipolos eléctricos. En principio la única manera que tenemos de calcular los campos es mediante las leyes de Maxwell, por lo que entonces tendremos que tratar de incluir esta polarización en ellas. Para esto tendremos que relacionar el momento dipolar o la polarización con una densidad de carga. \\
+
+Entonces no hay más que usar el potencial $\Phi$ generado por una fuente dipolar, que viene dado por:
+
+\begin{equation}
+\Phi (\rn) = \dfrac{1}{4 \pi \varepsilon_0} \dfrac{\pn \cdot \Rn}{R^2}
+\end{equation}
+
+A partir de esto (suponiendo que $\Bn=0$, de tal modo que $\En = - \nabla \Phi$) podemos usar el \textit{teorema de Gauss} para relacionar de alguna forma la densidad de polarización con la carga. En ese caso tendremos que:
+
+\begin{equation}
+\rho_p \equiv - \Div \Pn \tquad \sigma_p \equiv \hnn \cdot \Pn
+\end{equation}
+siendo estas lo que llamaremos a partir de ahora \textit{fuentes ligadas de polarización}, donde $\rho_p$ es la densidad de carga y $\sigma_p$ la carga superficial. En realidad esto no es mas que un constructo matemático: \textit{la densidad de carga neta es cero}, pero que nos permite incluir esos fenómenos materiales en las leyes de Maxwell. \\
+
+Las cargas de polarización también pueden producir corrientes si la polarización $\Pn$ varía en una región del espacio, tal que:
+
+\begin{equation}
+\Jn_p = \parciales{\Pn}{t}
+\end{equation}
+
+
+\subsubsection{Magnetización}
+
+El fenómeno de la magnetización se debe a la suma de momentos dipolares magnéticos (podemos pensar que son espiras microscópicas) debido al movimiento y espín de los electrones, de tal manera que el promedio del momento magnético lo llamaremos \textbf{Magnetización} y el momento magnético total se calculará como:
+
+\begin{equation}
+\mn = \int_V \Mn \D V' 
+\end{equation}
+
+Al igual que con la polarización, tenemos que buscar un medio para incluirlas en las leyes de Maxwell, y esto se hace creando algun tipo de analogía entre magnetización y corrientes. En ese caso tenemos que el campo vectorial magnético $\An$ para un momento magnético $\mn$:
+
+\begin{equation}
+\An (\rn) = \dfrac{\mu_0}{4 \pi} \dfrac{\mn \times \Rn}{R^2}
+\end{equation}
+
+A partir de esto si suponemos que $\En=0$ tal que $\Bn = \Curl \An$, tenemos que usando el \textit{teorema de Stokes}:
+
+\begin{equation}
+\Jn_m = \Curl \Mn \tquad \Kn_p = \Mn \times \hnn
+\end{equation}
+siendo estas la que llamamos \textit{corrientes ligadas de magnetización}, donde $\Jn_m$ es el flujo de carga y $\Kn_m$ la corriente superficial. Al igual que antes es un constructo matemático, realmente no existe un flujo de carga global, pero actúa como si lo hubiera. 
+
+\subsubsection{Campos D y H}
+
+Antes de continuar vamos a introducir un concepto sumamente importante: la diferencia entre fuentes aplicadas y fuentes inducidas. Las \textit{fuentes aplicadas} ($\rho_a,\Jn_a$) son aquellas fuentes que se introducen en un sistema electromagnético y sobre las que se tienen control. Las \textit{fuentes inducidas} aparecen como consecuencia del medio a la  reacción de las cargas aplicadas (como las cargas superficiales en los conductores sometidos a campos electrostáticos, o las corrientes inducidas en conductores por campos magnéticos variables). \\
+
+Continuando con el temario, a partir de ahora llamaremos cargas libres $\rho_f$ y corrientes libres $\Jn_f$ a todas las cargas y corrientes que no provengán de estes fenómenos materiales, de tal forma que la carga y corriente total se puede calcular como:
+
+\begin{equation}
+\rho = \rho_f + \rho_p
+\end{equation}
+
+\begin{equation}
+\Jn = \Jn_f + \Jn_m + \Jn_p
+\end{equation}
+
+Ahora bien, ¿Que pasa si queremos calcular únicamente el efecto de estas cargas libres? Pues que tendremos que crear unos campos auxiliares \textit{sin ningún significado físico} tales que:
+
+\begin{equation}
+\Dn = \varepsilon_0 \En + \Pn
+\end{equation}
+
+\begin{equation}
+\Hn = \dfrac{1}{\mu_0} \Bn - \Mn
+\end{equation}
+
+De este modo podemos ver claramente que $\Div \Dn = \rho_f$, o que $\Curl \Hn = \Jn_f$. En el siguiente apartado escribiremos las funciones de Maxwell para estos medios. En general estos campos auxiliares son muy interesantes, ya que permiten resolver algunos ejercicios de una manera directa, aunque en otros pueden complicarlos. \\
+
+\subsubsection{Medios l.h.i.}
+
+Experimentalmente se sabe que la mayoría de medios presenta una relación intrínsecamente lineal entre los campos $\En$ y $\Pn$, $\Hn$ y $\Mn$. Tenemos en ese caso que las relaciones son:
+
+\begin{equation}
+\Hn = \chi_m \Mn \tquad \Pn =  \varepsilon_0 \chi_e \En
+\end{equation}
+al término $\chi_e$ se le conoce como \textbf{susceptibilidad eléctrica}, y al término $\chi_m$ se le conoce como \textbf{susceptibilidad magnética}. En ese caso podremos crear varias relaciones lineales tales que:
+
+\begin{equation}
+\Bn = \mu_0 (\Hn + \Mn) = \mu_0 (1 + \chi_m) \Hn = \mu \Hn\label{Ec:01.4.31}
+\end{equation}
+donde a $\mu$ se le conoce como \textbf{permeabilidad magnética del medio}, pudiendo ser mayor o menor que $\mu_0$ ya que $\chi_m$ puede ser negativa. Para el campo eléctrico:
+
+\begin{equation}
+\Dn = \varepsilon_0 \En + \Pn = \varepsilon_0(1+\chi_e) \En = \varepsilon \En \label{Ec:01.4.32}
+\end{equation}
+donde a $\varepsilon$ se le conoce como \textbf{permitividad eléctrica del medio}. En ese caso se verifica para todo material que $\chi_e>0$ y por tanto que $\varepsilon>\varepsilon_0$. En ese caso las relaciones $\Dn ( \En)$ y $\Bn ( \Hn)$ para los medios l.h.i. son las llamadas \textbf{relaciones constitutivas del medio}.
+
+\subsection{Ecuaciones de Maxwell en medios materiales}
+
+Las ecuaciones de Maxwell en medios materiales son exactamente iguales que las ecuaciones de Maxwell solo que cambiamos los campos $\En,\Bn$ por los campos $\Dn,\Hn$ en las ecuaciones de Maxwell inhomogéneas. Llamamos ecuaciones de Maxwell inhomogéneas a aquellas en las que aparecen explícitamente las fuentes (ley de Gauss, ley de Ampere-Maxwell) y homogéneas a las que no (ley de Faraday, Divrgencia de B). Entonces las \textbf{ecuaciones de Maxwell para medios materiales}
+
+\begin{equation}
+\begin{array}{rll}
+(i) & \Div \Dn =  \rho_f & \mathrm{Ley \ de \ Gauss} \\ \\
+(ii) & \Div \Bn = 0  & \mathrm{Divegencia \ de \ B} \\ \\
+(iii) & \Curl \En = \dfrac{\partial \Bn}{ \partial t}  & \mathrm{Ley \ de \ Faraday} \\ \\
+(iv) & \Curl \Hn=  \Jn_f +  \dfrac{\partial \Dn}{\partial t} & \mathrm{Ley \ de \ Ampere-Maxwell} 
+\end{array} \label{Ec:01.5.31}
+\end{equation}
+
+Algunas personas llaman a estas ecuaciones las ``verdaderas'' ecuaciones de Maxwell, pero es importante entender que contienen exactamente la misma información que las ecuaciones \ref{Ec:01.1.01}. \\
+
+ Sin embargo si solo tenemos estas ecuaciones no seremos capaces de resolver ningún problema, ya que no se puede determinar las componentes de los campos en función de las fuentes libres con solo 4 ecuaciones. Por eso mismo necesitamos lo que se llaman \textit{ecuaciones constitutivas del medio}, que serán las relaciones $\Dn(\En)$ y $\Bn (\Hn)$, que dependerán del medio. \\
+ 
+Si estamos en un medio l.h.i. usamos \ref{Ec:01.4.31} y \ref{Ec:01.4.32}.   Luego tenemos las \textbf{ ecuaciones de Maxwell para medios l.h.i.} que son:
+
+\begin{equation}
+\begin{array}{rll}
+(i) & \Div \En =  \dfrac{\rho}{\varepsilon} & \mathrm{Ley \ de \ Gauss} \\ \\
+(ii) & \Div \Bn = 0  & \mathrm{Divegencia \ de \ B} \\ \\
+(iii) & \Curl \En = \dfrac{\partial \Bn}{ \partial t}  & \mathrm{Ley \ de \ Faraday} \\ \\
+(iv) & \Curl \Bn=  \mu \Jn +  \mu \varepsilon \dfrac{\partial \En}{\partial t} & \mathrm{Ley \ de \ Ampere-Maxwell} 
+\end{array} \label{Ec:01.5.32}
+\end{equation}
+
+\subsection{Condiciones de frontera}
+
+Las ecuaciones de Maxwell admiten un desarrollo en integrales usando los \textit{teoremas de Gauss} y \textit{Stokes} Estos admiten que:
+
+
+\begin{equation}
+\begin{array}{rl}
+(i) & \oint_S \Dn \cdot \D \an =  Q_{f_{enc}}  \\ \\
+(ii) & \oint_S \Bn \cdot \D \an = 0   \\ \\
+(iii) & \oint_{\mathcal{P}} \En \cdot \D \lnn = -  \dfrac{\D }{ \D t}  \int_S \Bn \cdot \D \an  \\ \\
+(iv) & \oint_{\mathcal{P}} \Hn \cdot \D \lnn =  I_{f_{enc}} +   -  \dfrac{\D }{ \D t}  \int_S \Dn \cdot \D \an 
+\end{array} \label{Ec:01.4.18}
+\end{equation}
+donde $S$ es una superficie cerrada cualquiera para $(i),(ii)$; $\mathcal{P}$ es una línea cerrada cualquiera y $S$ para $(iii),(iv)$ es una superficie cuya frontera sea $\mathcal{P}$. \\
+
+Lo normal es que ahora nos preguntemos que tiene que ver esto con las condiciones de frontera. Pues veréis, a la hora de calcular que pasa cuando existe una superficie cargada o una superficie donde existe una corriente (básicamente superficies donde $\sigma,\Jn \neq 0$) tenemos que usar estas ecuaciones para deducir cual es la relación entre los campos en una parte de la superficie y otra. La presencia de estas fuentes produce una discontinuidad clara en los campos. \\
+
+Supongamos entonces una superficie cualquiera que divide dos medios: el medio 2, hacia donde apunta la normal a la superficie; y el medio 1, en el otro sentido. En cada libro usan diferentes símbolos para referirse a la componente normal y trasversal (perpendicular) a la superficie. Aquí usaremos el método tradicional: producto escalar y vectorial de $\nn$. Entonces tenemos que:
+
+
+\begin{equation}
+\begin{array}{rl}
+(i) & \hnn \cdot (\Dn_2 - \Dn_1) = \sigma_f  \\ \\
+(ii) & \hnn \cdot (\Bn_2 - \Bn_1) = 0   \\ \\
+(iii) & \hnn \times ( \En_2 - \En_1) = 0 \\ \\
+(iv) & \hnn \times (\Hn_2 - \Hn_1) = - \Kn_f
+\end{array} \label{Ec:01.4.18}
+\end{equation}
+
+Como podemos ver son útiles incluso cuando no existen cargas libres, ya que nos da una medida del efecto de polarización y magnetización si los dos medios son diferentes. Por ejemplo si estamos en un medio l.h.i. tenemos que:
+
+
+
+\begin{equation}
+\begin{array}{rl}
+(i) & \hnn \cdot (\varepsilon_2 \En_2 - \varepsilon_1 \En_1) = \sigma_f  \\ \\
+(ii) & \hnn \cdot (\Bn_2 - \Bn_1) = 0   \\ \\
+(iii) & \hnn \times ( \En_2 - \En_1) = 0 \\ \\
+(iv) & \hnn \times \parentesis{\dfrac{\Bn_2}{\mu_2} - \dfrac{\Hn_1}{\mu_1}} = -  \Kn_f
+\end{array} \label{Ec:01.4.18}
+\end{equation}
+por lo que aún aparecerían disonancias a pesar de no haber cargas libres. Esta es la auténtica utilidad de las ecuaciones de Maxwell para medios materiales, ya que nos dan una idea intuitiva muy rápida del cambio de dos medios, aun sin haber cargas o corrientes libres.
+
+

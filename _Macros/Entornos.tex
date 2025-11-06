@@ -16,6 +16,8 @@
 \newenvironment{Ejercicio}[1]{%
   \refstepcounter{exercise}% <-- ancla de hyperref
   \begin{tcolorbox}[
+  enhanced,
+  breakable,             % permite que el contenido se parta entre páginas
   colback=Gray!40,
   colframe=Gray!40,
   sharp corners,
@@ -70,7 +72,8 @@
 \newenvironment{Teorema}[1][]{%
   \refstepcounter{theorem}% <-- ancla de hyperref
   \begin{tcolorbox}[
-  enhanced,         %
+  enhanced,
+  breakable,             % permite que el contenido se parta entre páginas
   colback=Gray!30,  %
   colframe=Gray!30, %
   sharp corners,    %
@@ -98,7 +101,8 @@
 \newenvironment{Definicion}[1][]{%
   \refstepcounter{definition}% <-- ancla de hyperref
   \begin{tcolorbox}[
-  enhanced,         %
+  enhanced,
+  breakable,             % permite que el contenido se parta entre páginas
   colback=Gray!20,  %
   colframe=Gray!20, %
   sharp corners,    %
@@ -121,7 +125,8 @@
 
 \newenvironment{Resalte}[1][]{%
   \begin{tcolorbox}[
-  enhanced,         %
+  enhanced,
+  breakable,             % permite que el contenido se parta entre páginas
   colback=Gray!30,  %
   colframe=Gray!30, %
   sharp corners,    %

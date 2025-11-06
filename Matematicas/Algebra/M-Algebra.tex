@@ -20,21 +20,24 @@
 \MakeTitle{1}{1Purple}{Snow1}
 
 
-\setlength{\parskip}{2.2mm} % Cambia el espacio entre párrafos
+%\setlength{\parskip}{2.2mm} % Cambia el espacio entre párrafos
 
 \newpage
 
 \tableofcontents
-
-\NewPart{Curvas y Superficies}
-\input{Chapters/01-Introduccion.tex}
-
-\NewPart{Geometría Riemanniana}
-\input{Chapters/01-Introduccion.tex}
+\setlength{\parskip}{{2.2mm}}
 
 
+\input{Chapters/Introduccion.tex}
+\input{Chapters/GruposFinitos.tex}
+\input{Chapters/Representaciones.tex}
+\NewPart{Grupos Continuos}
+\input{Chapters/GruposLie.tex}
+\input{Chapters/GruposRotaciones.tex}
 
-\nocite{*}
+
+
+\nocite{AZee_GroupTheory}
 
 \addcontentsline{toc}{chapter}{Bibliografia}
 \printbibliography 

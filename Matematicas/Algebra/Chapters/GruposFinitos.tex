@@ -1,0 +1,94 @@
+\chapter{Grupos Finitos}
+
+\section{Introducción}
+
+Un grupo con un número finito de elementos se llama \textbf{grupo finito}. El númeor de elementos es el \textbf{orden} del grupo. 
+
+La forma más inmediata de representar un grupo finito conssite en mostrar su \textit{tabla de multiplicación}. 
+
+
+\section{Grupo Cíclico $C_n$}
+
+\begin{Definicion}
+    El \textbf{grupo cíclico} $C_n$ es el grupo de transofrmaciones de simetría de un polígono regular con $n$ lados y direccionando. Por ``direccionar'' entendemos que el polígono lleva asociado un sentido de reocrrido alrededor de su perímetro. Los elementos del grupo son rotaciones discretaas del ángulo $2\pi r/n$ con $r=0,1,...,n-1$, alrededor de un eje de rotación que atraviesa el ``centro de gravedad'' del polígono. 
+\end{Definicion}
+
+
+\section{Grupo Simétrico $S_n$}
+
+\subsection{Definición}
+
+Este es uno de los gurpos finitos más importantes. Desde un punto de vvista físico tiene una relevancia directa en sistemas que involucran conjuntos de partículas idénticas. Dentro del ámbito de la teoría de grupos, juega un papel especial en virtud del teorema de Cayley. 
+
+
+\begin{Definicion}
+    El \textbf{grupo simétrico} $S_n$ se define como las posibles permutaciones o sustituiciones de $n$ elementos (o índices que los etiquetan), conteniendo por tanto $n!$ elementos, de lo que se deduce que el orden de $S_n$ es $n!$. La \textit{ley de composición} es la simple aplicación sucesiva. Claramente es un gurpo no conmutativo. 
+\end{Definicion}
+Existen dos representaciones análogas, a saber, la \textbf{forma canónica} y la \textbf{descomposición en ciclos}. La forma canónica básicamene implica que un \textit{elemento genérico} $p$ se puede escribir como: 
+
+\begin{equation}
+    p = \begin{pmatrix}
+        1 & 2 & ... & n \\
+        p(1) & p(2) & ... & p(n) 
+    \end{pmatrix}
+\end{equation}
+que nos dice que el índice $i$ es cambiado por el índice $p(i)$. Veamos que por ejemplo: 
+
+\begin{equation}
+    \begin{pmatrix}
+        1 & 2 & 3 \\
+        1 & 3 & 2
+    \end{pmatrix}
+\end{equation}
+es el elemento en el que el elemento de índice 2 y 3 se intercambian (parte inferior). Así pues, la múltiplicación es sucesiva, por lo que
+
+
+\begin{equation}
+    \begin{pmatrix}
+        1 & 2 & 3 \\
+        1 & 3 & 2
+    \end{pmatrix}
+    \begin{pmatrix}
+        1 & 2 & 3 \\
+        3 & 1 & 2
+    \end{pmatrix}
+    = 
+    \begin{pmatrix}
+        1 & 2 & 3 \\
+        2 & 1 & 3
+    \end{pmatrix}
+\end{equation}
+véase que el segundo elemento intercambia los elementos ya intercambiados por el primer elemento. No es difícil de ver, pero es un ejercicio abstracto. Una vez se entienda este ejemplo el resto serán prácticamente triviales. La \textbf{descomposición en ciclos} de los elementos anteriores sería 
+\begin{equation}
+    \begin{pmatrix}
+        1 & 2 & 3 \\
+        1 & 3 & 2
+    \end{pmatrix} \equiv (23) \qquad 
+    \begin{pmatrix}
+        1 & 2 & 3 \\
+        3 & 1 & 2
+    \end{pmatrix} \equiv  (123)
+\end{equation}
+Como se puede ver, $23\equiv 2 \to 3 \to 2$ y $123 \equiv 1 \to 2 \to 3 \to 1$. Es decir, el elemento $(ijk...n)$ implica que el elemento $i$ intercambia con el $j$, el $j$ con el $k$, así sucesivamente hasta el último  $n$ que ser intercambia con el primero. 
+\begin{Ejemplo}{$S_3$}
+    El $S_3$ cnosiste en la identidad, 3 ciclos de 2 permutaciones y 2 ciclos de 3 permutaciones (6 elementos igual a $3!$), tales que:
+    \begin{equation}
+        S_E = \{(); (12); (23); (13); (123); (132)\}
+    \end{equation}
+\end{Ejemplo}
+Aunquep parezca tener mayor dificultad, un par de observacioens allanan la tarea por este camino. 
+\begin{itemize}
+    \item Dos ciclos son el mismo si coinciden salvo permutación cíclica de sus elementos.
+    \item Ciclos de un elemento pueden ser omitidos.
+    \item Ciclos disjuntos conmutan entre sí. 
+    \item Ciclos que tengna un sólo elemento en común simpleemente se encadenan: $(253)(45) = (325)(54) = (3254)$. 
+\end{itemize}
+Independientemente de la forma que el lector considere más adecuadas, el punto importante es qeu todo elemento de $S_n$ puede escribirse en forma de un porducto de ciclos disjuntos. En consecuencia el orden en el que escribimos los ciclos es irrelevante.
+
+\subsection{Teorema de Cayley}
+
+La importancia del grupo simétrico dentro del contexto de la Teoría de Grupos finitos tendrá todo el sentido una vez enunciemos el Teorema e Cayley.
+
+\begin{Teorema}
+    El \textbf{teorema de Cayley} nos dice que todo grupo $G$ finito de orden $n$ es isomorfo a algún subgrupo de $S_n$.
+\end{Teorema}

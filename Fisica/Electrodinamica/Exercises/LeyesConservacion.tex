@@ -1,0 +1,78 @@
+
+\section*{Ejercicios}
+\addcontentsline{toc}{section}{Ejercicios}
+
+\begin{Ejercicio}{Cálculo de $\Sn$, $u_{em}$ y $\Jn \cdot \En$ en solenoide de intensidad variable.}
+    Sea un solenoide de radio $a$ con $n$ vueltas por unidad de longitud y intensidad 
+    \begin{equation}
+        I = I_0 \frac{t}{\tau}
+    \end{equation}
+    Calcula $\Sn$ dentro y fuera del solenoide, y compáralo con $u_{em}$ y $\Jn \cdot \En$.
+\end{Ejercicio}
+
+Lo primero que tenemos que calcular es el campo magnético, a través de las ecuaciones de Maxwell:
+
+\begin{equation}
+    \Div \Bn = 0  \qquad \Curl \Bn  = - \mu_0 \Jn 
+\end{equation}
+(en realidad esta sería la componente $\Bn$ generada únicamente por la carga, también deberíamos tener en consideración el campo eléctrico). En este caso tendremos una corriente superficial en el sentido $\varphin$, tal que: 
+
+
+\begin{equation}
+    \Kn = n I(t) \varphin 
+\end{equation}
+Luego tenemos qeu aplicar el teorema de Stokes:
+
+\begin{equation}
+    \int_S \Curl \Bn  \cdot  \D \Sn= \oint_C \Bn \cdot  \D \lnn  \to 
+    \int_S \Jn \cdot \D \Sn = \oint_C \Bn  \cdot \D \lnn
+\end{equation}
+Dado que $\Div \Bn = 0$, tenemos que $\Bn$ solo puede tener dos direcciones: $\varphin$ y $\hnz$. Si además tenemos que $\Curl \Bn = \mu_0 \Jn$ y $\Jn \propto \varphin$, tenemos que $\Bn \propto \hnz$. Debido al propio teorema de Stokes se cumple que $B\neq B(\rho,z,\varphi)$, es decir, debe ser una constante, tanto dentro como fuera del solenoide. Debido también a que $B=0$ en el infinito, tenemos que $\Bn = 0$ fuera del solenoide. Así pues, en el interior del solenoide tenemos un campo uniforme en la dirección $\hnz$: $\Bn = B_0 \hnz$. Tenemos pues que:
+
+\begin{equation}
+    B_0 = \mu_0 n I(t) \to \Bn = \mu_0 n I(t) \hnz 
+\end{equation}
+Ahora el campo eléctrico: 
+
+\begin{equation}
+    \Curl \En = - \pdv{\Bn}{t}
+\end{equation}
+y como $\Div \En = 0$, tenemos pues que $\En \propto \hnz$. Por simetría azimutal y en el eje z, solo puede depender de la dirección radial $r$, i.e. $\En = E(r) \hnz$. Así pues, el campo eléctrico depende de si estamos en el interior o exterior
+
+\begin{equation}
+    E(r) 2\pi \rho =  \dot{\Bn} \qquad \text{si} \ r<a
+\end{equation}
+Dado que $\Div \Bn = 0$, tenemos que $\Bn$ solo puede tener dos direcciones: $\varphin$ y $\hnz$. Si además tenemos que $\Curl \Bn = \mu_0 \Jn$ y $\Jn \propto \varphin$, tenemos que $\Bn \propto \hnz$. Debido al propio teorema de Stokes se cumple que $B\neq B(\rho,z,\varphi)$, es decir, debe ser una constante, tanto dentro como fuera del solenoide. Debido también a que $B=0$ en el infinito, tenemos que $\Bn = 0$ fuera del solenoide. Así pues, en el interior del solenoide tenemos un campo uniforme en la dirección $\hnz$: $\Bn = B_0 \hnz$. Tenemos pues que:
+
+\begin{equation}
+    B_0 = \mu_0 n I(t) \to \Bn = \mu_0 n I(t) \hnz 
+\end{equation}
+Ahora el campo eléctrico: 
+
+\begin{equation}
+    \Curl \En = - \pdv{\Bn}{t}
+\end{equation}
+y como $\Div \En = 0$, tenemos pues que $\En \propto \varphin$. Por simetría azimutal y en el eje z, solo puede depender de la dirección radial $r$, i.e. $\En = E(r) \varphin$. Así pues, el campo eléctrico depende de si estamos en el interior o exterior
+
+\begin{align}
+    \En(r) =  - \frac{r}{2}  \mu_0 n \dot{I} \varphin \quad \Bn = \mu_0 n I(t) \hnz  & \qquad \text{si} \ r<a \\
+    \En(r) =  - \frac{a^2}{2r}  \mu_0 n \dot{I} \varphin \quad  \Bn = 0 & \qquad \text{si} \ r>a
+\end{align}
+Estudianmos $\Sn$ en función del punto. Veamos que:
+
+\begin{align}
+    \Sn = - \frac{r}{2} I(t) \dot{I} \rhon & \quad \text{si}  \ r<a \\
+    \Sn = 0  & \quad \text{si}  \ r>a
+\end{align}
+Por otro lado: 
+
+
+\begin{align}
+    u_{em} = \frac{\epsilon_0}{2} \bqty{\frac{r}{2} \mu_0  \dot{I} }^2 + \frac{1}{2 \mu_0} \bqty{\mu_0  {I}}^2 & \quad \text{si}  \ r<a  \\
+    u_{em} = \frac{\epsilon_0}{2} \bqty{\frac{r}{2} \mu_0  \dot{I} }^2  & \quad \text{si}  \ r>a
+\end{align}
+De lo que se deduce que fuera $\pdv{u_{em}}{t}=0$. Así pues, solo existe un flujo de energía $\Sn$ dentro del solenoide, que se pierde en el efecto joule y en la densidad de energía $u_{em}$. Veamos que
+
+\begin{equation}
+    \Jn \cdot \En =  \frac{a}{2} \mu_0  I \dot{I}
+\end{equation}
