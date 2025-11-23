@@ -71,7 +71,7 @@ Las portadas tiene un color definido para cada archivo (aunque se puede cambiar 
     </td>
     <td align="center">
       <strong style="font-size: 26px;">Matemáticas</strong><br>
-        <img src=".images/M-Geometría_Diferencial.png" width="400px">
+        <img src=".images/M-Geometria_Diferencial.png" width="400px">
       </a>
     </td>
   </tr>
