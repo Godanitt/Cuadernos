@@ -1,0 +1,123 @@
+
+\section{Tema 4.Flujo de fluidos}
+
+En la mecánica de fluidos mediante el experimento de \textbf{Reynolds} se obtuvo la expresión la expresón del \textbf{numero de reynolds $R_e$} que nos permite conocer en que régimen encontramos. El número de reynolds se define en la ecuación \ref{reynolds} donde $v$ es la velocidad en $m/s$, $D$ es el diametro en $m$, $\rho$ es la densidad en $kg/m^3$ y $\mu$ es la vuscosidad en $kg/(m\cdots)$, de modo que el número de reynolds es adimensional.
+
+\begin{equation}
+    R_e=\frac{v\cdot D\cdot \rho}{\mu}
+    \label{reynolds}
+\end{equation}
+
+De modo que si $R_e<2100 $ estamos hablando de régimen laminar, si estamos en el caso $2100<R_e<10000 $ estamos ante el régimen de transición y si $R_e>10000$ estamos ante un régimen turbulento.
+
+Definimos \textbf{Régimen laminar} como el régimen de flujo en el que las partículas de fluido recorren trayectorias paralelas sin entremenzclarse, siendo el mecanismo de transporte exclusivamente molecular. Se da en fluidos con velocidades bajas o viscosidades altas, se comple cuando el número de Reynolds es inferior a $2100$. El perfil de velocidad en este régimen, teniendo en cuenta la figura \ref{fig:régimenes} se representa viene dado por:
+\begin{equation}
+    v_x=v_{max}\cdot\left[ 1-\left(\frac{r}{R}\right)^2\right]
+\end{equation}\\
+
+En este caso se cumple que $v_{media}/v_{max}=0,5$.\\
+
+El \textbf{Régimen turbulento} es el régimen de flujo en el que las pratículas de un fluido se entremexclan al azar, macroscópicamente, desplándose con continuos cambios de dirección, aunque en promedio se mantenga una trayectoria definida. Es un mecanismo más efectivo que el laminar. Se da en fluidos con velocidades altas o viscosidades bajas. En el régimen turbulento el perfil de velocidad viene dado por:
+\begin{equation}
+    v_x=v_{max}\cdot \left(\frac{R-r}{R}\right)^{1/n}
+\end{equation}
+
+En este caso $v_{media}/v_{max}=0,8$. El valor de $n$ depenederá del número de Reynolds $R_e=4000$ se corresponde a $n=6$, $R_e=10000$ que se corresponde con $n=10$ y $R_e=3,2\cdot 10^{6}$ con $n=10$.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Chapters/TrasferenciaCalor/Imagen-0.jpeg}
+    \caption{Representación del régimen laminar y el régimen turbulento.}
+    \label{fig:régimenes}
+\end{figure}
+\subsection{Ecuación de continuidad}
+ Suponemos que el fluido (gas o líquido) circula en régimen estacionario por un conducto, es decir, todas las magnitudes que definen la corriente del fluido permanecem constantes con relación al tiempo en cada punto del sistema. Aplicando el principio de conservación de la materia a dos puntos en una canalización, se llega a que la cantidad de materia que pasa por ambos puntos por unidad de tiempo ($kg/s$) es la misma; o bien, si designamos $S$ al área de sección transversal a flujo, por densidad de fluido $\rho$ y por su velocidad $v$ podemos escribir para los puntos 1 y 2 llegamos a la \textbf{ecuación de continuidad}:
+
+ \begin{equation}
+     S_1\cdot \rho_1\cdot v_1=S_2\cdot \rho_2\cdot v_2
+     \label{eq;continuidad}
+ \end{equation}
+
+ Esta ecuación podemos expresarla en función de diferentes magnitudes. Llamamos \textbf{velocidad másica } ($kg/s\cdot m^2$) a la relación $v/\theta=G$ siendo $\theta$ el columen específico ($m^3/kg$) ($\theta=1/\rho$). Al cociente $Q/\theta=W$ lo nombrarremos como \textbf{flujo de masa} ($kg/s$). Teniendo en cuenta estas dos relaciones podemos escribir la ecuación de continuidad como:
+
+ \begin{equation}
+     W=S_1\cdot G_1=S_2\cdot G_2
+ \end{equation}
+
+ En el caso de que \textbf{la densidad sea constante} podemos decir que se trata de un \textbf{fluido incompresible} reduciendose la ecuación de continuidad a:
+
+ \begin{equation}
+     S_1\cdot v_1=S_2\cdot v_2
+ \end{equation}
+
+ Recordemos que el caudal se define como la velocidad por la sección ($Q=v\cdot S$) de modo que la \textbf{ecuación de continuidad de un fluido incompresible} no es más que la conservación del caudal.
+
+ \begin{equation}
+     Q_1=Q_2
+ \end{equation}
+\subsection{Balance de energía mecánica: Ecuación de Bernouilli}
+
+Recordamos la ecuación de conservación de la energía en estado estacionario (ecuación \ref{eq: conservacion e}). En el caso de que no existe una variación de temperatura la energía interna permenece constante de modo que se anula el termino de la energía interna en dicha ecuación.
+\begin{equation}
+    m\cdot g\cdot(z_2-z_1)+m\cdot\frac{1}{2}\cdot m \cdot(v_2^2-v_1^2) +m\cdot\left[ \frac{P_2}{\rho_2}-\frac{P_1}{\rho_1}\right]=Q+W
+\end{equation}
+En un sistema abierto en régimen estacionario, en el que sólo se intercambia energía mecánica con el exterior, siendo nulos los intercambios caloríficos ($Q=0$). Se puede aplicar el \textbf{Teorena de las fuerzas vivas}: \textit{En un sistema en movimiento, la variacién de energía cinética es igual a la suma del trabajo realizado sobre el sistema por fuerzas externas y del trabajo realizado por las fuerzas interiores.}\\
+
+En este caso podemos aplicar la ecuación de Bernouilli (estado estacionario, isotérmo e incompresible) donde en la ecuación de conservación sustituimos $Q$ por la energía perdida (es negativa) por fricción lateral, son las fuerzas viscosas$=-m\cdot \sum F$ que tienen origen en la viscosidad del fluido, es un trabajo cedido por el exterior.
+
+\begin{equation}
+    g\cdot(z_2-z_1)+\left(\frac{P_2-P_1}{\rho}\right)+\frac{1}{2}(v_2^2-v_1^2)+\sum F= W \text{        ($J/kg$) }
+\end{equation}
+
+
+En régimen laminar podemos utilizar la \textbf{Ecuación de Poiseuille}:
+
+\begin{equation}
+    \frac{\Delta P}{L}=\frac{32\mu\cdot v}{D^2}
+\end{equation}
+
+De modo que las perdidas por rozamiento en las unidades de la ecuación de Bernouilli:
+\begin{equation}
+    \sum F=\frac{\Delta P}{\rho}=\frac{32\mu\cdot v\cdot L}{\rho\cdot D^2}
+\end{equation}
+
+En cambio en régimen tubulento debemos usar la ecuación de Fanning:
+
+\begin{equation}
+    \frac{\Delta P}{L}=\frac{2\cdot f\cdot \rho\cdot v^2}{D}
+\end{equation}
+
+Donde $f$ es el factor de rozamiento que en régimen laminar :
+\begin{equation}
+    f=\frac{16\mu}{v\cdot D\cdot \rho}=\frac{16}{R_e}
+\end{equation}
+
+Expresando en las unidades de Bernouilli:
+\begin{equation}
+    \sum F=\frac{\Delta P}{\rho}=\frac{2\cdot f\cdot v^2\cdot L}{D}
+\end{equation}
+
+Donde $D$ es el \textbf{diametro interno} y $L$ la \textbf{longitud equivalente}.\\
+
+Si la tubería tiene algún tipo de accesorios como llaves, codos, empalmes, etc., se producen pérdidas por fricción asociada a la presencia de los mismos. Estas pérdidas se pueden pueden determinar por medio de gráficas que permiten determinar la longitud de tubo recto a que equivale el accesorio que consideremos. No hay más que sumarle la a la longitud de la tubería recta la equivalente a los accesorios para calcular las pérdidas por fricción. Podemos calcular el factor de fricción $f$ a partir de la \textbf{ecuación de Chen o Diagrama de Moody}, para régimen turbulento. Llamaremos rugosidad relativa en conducciones a $\varepsilon/D$:
+
+\begin{equation}
+    \frac{1}{\sqrt{f}}=4\cdot log \left[\frac{\varepsilon}{3,7065\cdot D}-\frac{5,0452}{R_e}\cdot log\left[ \frac{1}{2,8257}\cdot\left(\frac{\varepsilon}{D}\right)^{1,1098}+5,8506\cdot R_e^{-0,8981}\right]\right] 
+\end{equation}
+
+
+La rugosidad relativa en conducciones ($\varepsilon/D$) se determina a través de datos experimentales, para cada tipo de material y diametro de conducción.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Chapters/TrasferenciaCalor/Imagen-0.jpeg}
+    \caption{Ejemplo de determinación gráfica de la rugosidad relativa $\varepsilon/D$.}
+    \label{fig:rugosidad relativa}
+\end{figure}
+
+El coeficiente de fricción también se puede determinar mediante el \textbf{Diagrama de Moody} mediante el número de Reynolds.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Chapters/TrasferenciaCalor/Imagen-07.jpeg}
+    \caption{Diagrana de Moody para la determinación del coeficiente de fricción.}
+    \label{fig:Moody}
+\end{figure}
+\newpage

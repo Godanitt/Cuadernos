@@ -39,7 +39,6 @@
 \RequirePackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
-
 \RequirePackage{titling}
 \RequirePackage{ragged2e}
 

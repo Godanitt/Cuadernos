@@ -1,0 +1,249 @@
+
+\chapter{Introducción: la Ingeniería Química y los procesos químicos}
+
+\section{Origen y concepto de la industria química}
+
+La industria química es la industria que se ocupa de trasformar mediante procesos químicos y físicos meterias primas en otros productos de mayor interés, valor añadido y utilidad. Las transformaciones suelen implicar cambios de composición y/o contenido energético. Tras estas transformaciones podemos obtener varios tipos de productos denominados como \textbf{producto, subproducto y residuo.}
+
+\begin{itemize}
+    \item Producto: producto objetivo del proceso, de alto valor o interés.
+
+    \item Subproducto: producto secundario de una reacción química, generalmente no deseado, por su menor interés o por la complicación que puede ocasionar en el proceso.
+
+    \item Residuo: subproducto o material residual de un proceso, sin valor o interés, que ademas puede representar un riesgo para el medio ambiente, para su eliminación tendrán que ser tratados para reducir su impacto a la hora de eliminarlos.
+
+    \item Coproducto: subproducto con interés comercial, para vender a otra industria química o de alto valor.
+\end{itemize}
+
+También podemos distinguir distintos tipos de materias primas. Por un lado pueden ser provenientes de la naturaleza llamadas naturales o pueden ser provinientes de un proceso anterior de una industria química llamadas materias primas intermedias (productos intermedios).
+
+\section{Esquema general de la industria química}
+
+Un proceso industrial se basa en la obtención de un producto químico (o varios) con determinadas especificaciones. Podemos ver en la Figura \ref{fig:industria} un esquema simplificado de lo que implica un proceso químico en la industria.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Chapters/Introduccion/Imagen-01.jpeg}
+    \caption{Esquema de la industria química.}
+    \label{fig:industria}
+\end{figure}
+
+
+Dentro de la industría química encontramos diferentes subgrupos de los que se indican los más importantes:
+
+\begin{itemize}
+    \item Química Básica
+    \item Petroquímica
+    \item Fertilizantes
+    \item Solventes
+    \item Plásticos 
+\end{itemize}
+
+En esta industría los productos se obtienen en grandes cantidades y estos tienen gran interes comercial. El proceso químico consiste en una serie de transformaciones químicas y/o físicas interconectadas dando lugar al producto de interes. El proceso químico se puede subdividir en e tres etapas principales: 
+
+\begin{enumerate}
+    \item Preparación de los reactantes
+    \item Transformación o reacción química
+    \item Separación de los productos
+\end{enumerate}
+
+
+\section{Las operacíones unitarias}
+
+Una operación unitaria o básica es cada una de las operaciones individuales con una función especifica diferencida que, coordinadas, permiten llevar a cabo un proceso químico. Sus principales caracteristicas son:
+
+\begin{itemize}
+    \item Fundamentos, desarrollos y técnicas comunes en cada una de ellas independientemente de industria o proceso.
+    \item Cada operación tiene una función especifica.
+    \item Modifican las condiciones de la materia en forma más útil:
+    \begin{itemize}
+        \item Su masa o composición:
+        \begin{itemize}
+            \item Separación de fases.
+            \item Mezcla
+            \item Reacción química
+        \end{itemize}
+        \item El nivel o calidad de energía que posee:
+        \begin{itemize}
+            \item Enfriamiento
+            \item Vaporización
+            \item Aumento de prosión
+        
+        \end{itemize}
+        \item Condiciones de movimiento: aumentando o disminuyendo su velocidad, dirección...
+    \end{itemize}
+\end{itemize}
+
+Teneniendo en cuenta que hay tres leyes por las que se rigen estos procesos:
+\begin{itemize}
+    \item Ley de conservación de la materia.
+    \item Ley de conservación de la energía.
+    \item Ley de conservación de la cantidad de movimientos.
+\end{itemize}
+
+\section{Operaciones continuas y discontinuas}
+
+Según el modo en el que corrientes de alimento y producto enetren y salgan del equipo a lo largo del tiempo, pueden distinguirse tres tipos de operaciones básicas:
+\begin{itemize}
+    \item Continuas
+    \item Discontinuas
+    \item Semicontinuas
+\end{itemize}
+\subsection{Opeaciones continuas }
+
+Operacion que transcurre continuament, sin etapas de carga y de descarga, por lo que las corrientes entran y salen permanentemente del equipo en el que se produce la transformación. Suelen transcurrir en régimen estacionario, es decir, el tiempo no influye sobre valores de las variables intensivas características del proteso (P,T, etc). El comportamineto del sistema es el mismo en cualquier instante lo que se conoce como \textbf{régimen estacionario promedio}.
+\subsection{Discontinuas}
+Operación que consta de una fase inicial (carga), una fase de transformación y una fase final (descarga), que transcurra en régiman no estacionario. También se denomina operación por cargas o intermitente. El tiempo influye y de manera decisiva. El tiempo será una variable clave para determinar el tamaño de los equipos que operan en discontinuo. El régimen de operación es no estacionario. Las variables modifican sus valores desde un valor inicial hasta uno final.
+
+\subsection{Semicontinuas}
+
+Operación en la que unos componenetes siguen el proceso de una operación discontinua (carga, tranformación y descarga) mientras que otros entran y salen en una corriente permanente durante la transformación, como en una operación continua. Son operaciones características intermedias. Operan en régimen no eztacionario, puesto que los valores de la variables evolucionan a lo alrgo del tiempo.\\
+
+
+La productividad normalmente es mayor en las operaciones continuas, por lo que en los procesos industriales es más económicamente rentable operar en continuo. Estas tienen ventajas en la escala de operacón, eficiencia energética y automatización con repecto a las discontinuas. También presentan desventajas como la falta d eversatilidad y requerimientos de uniformidad de las materias primas.
+
+\section{Régimen estacionario y régimen no estacionario}
+
+\subsection{Régimen estacionario}
+
+Régimen de funcionamiento en el que las variables no dependen del tiempo, manteniéndose los valores constantes durante el proceso. Es característico de las operaciones continuas a escala industrial. En este régimen se cumple que en cada punto las condiciones no varías a lo largo del tiempo y que las condiciones no tienen porque ser iguales en todos los puntos.\\
+
+\begin{center}
+\begin{tikzpicture}[node distance=4cm]
+
+% Nodos
+\node (entrada) [block, fill=cyan!40] {Entrada};
+\node (funcionando) [block, fill=green!40, right of=entrada] {FUNCIONANDO};
+\node (salida) [block, fill=orange!50, right of=funcionando] {Salida};
+
+% Flechas
+\draw [arrow] (entrada) -- (funcionando);
+\draw [arrow] (funcionando) -- (salida);
+
+\end{tikzpicture}
+\end{center}
+
+
+
+\subsection{Régimen no estacionario}
+
+Régimen de funcionamiento en el que las variables dependen del tiempo, modificando sus valores durante el transcurso del proceso. Es característico de las operaciones discontinuas. En este régimen se cumple que las condiciones varían a lo largo del tiempo, las variables modifican su valor desde el inicial hatsa el final y las condiciones no tienen por qué ser iguales en todos los puntos. Este tipo de régimen, por ejemplo, se produce:
+
+\begin{itemize}
+    \item Llenando o vaciando de un recipiente (tanques).
+    \item Arranques y paradas de un proceso continuo.
+    \item Desviaciones transitorias de un proceso continuo.
+    \item Procesos \textit{batch} o semicontinuos.
+\end{itemize}
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm]
+
+% Nodos con distintas formas
+\node (carga) [trapezium, trapezium left angle=70, trapezium right angle=110,
+               minimum width=2cm, minimum height=0.5cm,
+               text centered, draw=black, fill=cyan!40] {Llenado de carga};
+
+\node (parada1) [ellipse, minimum width=2cm, minimum height=1.5cm,
+                 text centered, draw=black, fill=green!40, below of=carga] {Parada};
+
+\node (funcionando) [rectangle, minimum width=2.5cm, minimum height=0.5cm,
+                     text centered, draw=black, fill=orange!50, below of=parada1] {FUNCIONANDO};
+
+\node (parada2) [diamond, aspect=2,
+                 text centered, draw=black, fill=green!30, below of=funcionando] {Parada};
+
+\node (vaciado) [trapezium, trapezium left angle=110, trapezium right angle=70,
+                 minimum width=2cm, minimum height=0.5cm,
+                 text centered, draw=black, fill=yellow!30, below of=parada2] {Vaciado/Descarga};
+
+% Flechas
+\draw [arrow] (carga) -- (parada1);
+\draw [arrow] (parada1) -- (funcionando);
+\draw [arrow] (funcionando) -- (parada2);
+\draw [arrow] (parada2) -- (vaciado);
+
+\end{tikzpicture}
+\end{center}
+
+\section{Modos de contacto entre fases}
+
+EL contacto entre dos fases inmiscibles se puede clasificar en dos tipos:
+
+\begin{itemize}
+    \item Contacto continuo: el contacto entre las fases inmiscibles en el que estan en contacto permanente sin interrupción, por lo que no llegan a separarse en el interior del equipo utilizado. En operaciones de transferencia de materia se lleva a cabo, por ejemplo, en columnas de relleno.
+
+    \item Contacto discontinuo (intermitente o por etapas): modo de contacto entre las fases inmiscibles en el que éstas se separan y se vuelven a mezlar en etapas de contacto sucesivas, a lo largo del equipo utilizado. En las operaciones de transferencia de materia se lleva a cabo, por ejemplo, en columnas de platos, con flujo en contracorriente.
+\end{itemize}
+
+
+Cuando las corrientes se mueven en la misma dirección y sentido, se denomina \textbf{flujo en paralelo o contacto en corriente directa}, y en el transporte máximo de propiedad que puede producirse está limitado por las condiciones de equilibrio termodinámico entre las fases a su salida del equipo. Las corrientes entran juntas por un extremo del equipo y salen juntas, por el extremo contraeio. Es poco frecuene por su menos eficacia.\\
+
+Si las corrientes se desplazan en la misma dirección, pero en sentidos opuestos, será posible alcanzar mayores transportes de propiedad extensiva y superar por tamto el límite anterior, independientemente de si el contacto es continuo o intermitente. La entrada de una corriente y la salida de la otra corriente se encuentran en el mismo extremo del equipo. Es muy frecuente, por su mayor eficacia respecto a otro tipos de flujos.\\
+
+Se conoce como \textbf{flujo cruzado} cuando las corrientes se mueven en direcciones diferentes, perpendicularmente entre si. El transporte está limitado por las condiciones de equilibrio entre las diferentes corrientes de salida, pero en cada zona del equipo. Suele ser una alternativa al flujo en contracorriente, cuando una de las fases es gaseosa.
+
+
+\section{Clasificación de las operaciones unitarias}
+
+Las operaciones unitarias se clasifican en dos tipos:
+
+\begin{itemize}
+    \item Químicas: provocan rescciones químicas $\rightarrow$ Reactores químicos.
+    \item Físicas: provocan un cambio en las características físicas:
+
+    \begin{itemize}
+        \item Materia ($\Delta$ Concentración): transferencia de materia entre fases o a través de una barrera. Se produce un cambio en la masa o composición. Por ejemplo en separación de fases y/o componente o mezcla de corrientes.
+        \item Energía ($\Delta$ Temperatura): transferencia de energía calorífica entre fluidos o entre sólido y fluido. Cambio en la cantidad, calidad: enfriamiento, vaporación o cambio de presión.
+        \item Cantidad de movimiento ($\Delta$ Velocidad):transferencia de calidad de movimiento a fluidos y material particulado. Velocidad, dirección: Conducciones, fluidación.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Clasificación de operaciones básicas físicas}
+
+\subsubsection{Gas-líquido y líquido-vapor}
+
+En este tipo de operaciones encontramos la \textbf{absorción} que consiste en cuando se ponen en contacto una fase gaseosa y una fase líquida que contiene un soluto volátil y soluble cuya concentración en ambas fases no se corresponde con la del equilibrio, se produce su transporte desde la fase gaseosa a la líquida o de la líquida a la sólida (desorción), hasta llegar al equilibrio. Un buen absorbente se caracteriza por ser un buen disolvente del soluto, poco volátil, barato, no corrosivo, estable, con baja viscosidad, no espumante y no inflamable. 
+
+\subsubsection{Líquido-Líquido}
+
+Este tipo de operación se conoce como extración. Se trata de una operación de separación por transferencia de materia en las que se ponen en contacto mezclas líquidas inmiscibles con objeto de transferir uno o varios componentes (soluto) de una fase a otra. 
+
+Normalmente se añade un disolvente selectivo a la mezcla líquida original cuyos componentes se deseean separa. El disolvente es inmiscible con ella, y actua como agente extractor. LAs corrientes líquidas obtenidas se denominan refinado (mezcla de la que han extraido los solutos) y extracto (mezcla de disolvente y solutos).
+
+\subsubsection{Sólido-Líquido}
+
+Es análoga a la extracción líquido-líquido. Se denomina lixiviación y consiste en la separación de uno o varios solutos contenidos en una fase sólida mediante su contacto con un disolvente liquido selectivo. Permite separar los productos deseados del conjunto de la estructura sólida original.  
+
+\subsubsection{Sólido-gas}
+
+Se denomina adsorción y consiste en que uno o más componentes de una mezcla, gaseosa o líquida, se adsorben preferentemente sobre la superficie de un sólido, separándose así del resto de componentes. Los componentes (adsorbatos) se incorporan solamente a la suoerficie de la fase receptora (sólido adsorbente) denominada fase adsorbida. Es un fenomeno de superficie, y una de las propiedades más valoradas es la superficie específica de los adsorbentes comerciales (slímins, sílice, carbón activado, zeolitas).
+
+\subsubsection{Gas-líquido}
+
+Se conoce como destilación y consiste en la separación de una mezcla líquida por evaporación parcial y condensación. Se pueden separar componentes con diferente volatilidad (tendencia de una sustancia a pasar a la fase vapor).
+
+
+Existen otro tipo de operaciones como aislamiento térmico, intercambio de calor, impulsión de fluidos, flujo de fluidos, transporte de sólidos, tritiración y molienda, tamizado, almacenamiento y operaciones de menbrana (ósmosis, pervaporación).
+
+
+\subsubsection{Líquido-Líquido}
+
+Este tipo de operación se conoce como extración. Se trata de una operación de separación por transferencia de materia en las que se ponen en contacto mezclas líquidas inmiscibles con objeto de transferir uno o varios componentes (soluto) de una fase a otra. 
+
+Normalmente se añade un disolvente selectivo a la mezcla líquida original cuyos componentes se deseean separa. El disolvente es inmiscible con ella, y actua como agente extractor. LAs corrientes líquidas obtenidas se denominan refinado (mezcla de la que han extraido los solutos) y extracto (mezcla de disolvente y solutos).
+
+\subsubsection{Sólido-Líquido}
+
+Es análoga a la extracción líquido-líquido. Se denomina lixiviación y consiste en la separación de uno o varios solutos contenidos en una fase sólida mediante su contacto con un disolvente liquido selectivo. Permite separar los productos deseados del conjunto de la estructura sólida original.  
+
+\subsubsection{Sólido-gas}
+
+
+Se denomina adsorción y consiste en que uno o más componentes de una mezcla, gaseosa o líquida, se adsorben preferentemente sobre la superficie de un sólido, separándose así del resto de componentes. Los componentes (adsorbatos) se incorporan solamente a la suoerficie de la fase receptora (sólido adsorbente) denominada fase adsorbida. Es un fenomeno de superficie, y una de las propiedades más valoradas es la superficie específica de los adsorbentes comerciales (slímins, sílice, carbón activado, zeolitas).
+
+\subsubsection{Gas-líquido}
+
+Se conoce como destilación y consiste en la separación de una mezcla líquida por evaporación parcial y condensación. Se pueden separar componentes con diferente volatilidad (tendencia de una sustancia a pasar a la fase vapor).
+
+
+Existen otro tipo de operaciones como aislamiento térmico, intercambio de calor, impulsión de fluidos, flujo de fluidos, transporte de sólidos, tritiración y molienda, tamizado, almacenamiento y operaciones de menbrana (ósmosis, pervaporación).

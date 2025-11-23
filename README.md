@@ -86,6 +86,11 @@ Las portadas tiene un color definido para cada archivo (aunque se puede cambiar 
         <img src=".images/P-PaginaWeb.png" width="400px">
       </a>
     </td>
+    <td align="center">
+      <strong style="font-size: 26px;"> Química </strong><br>
+        <img src=".images/Q-Inngenieria_Quimica.png" width="400px">
+      </a>
+    </td>
   </tr>
 </table>
 

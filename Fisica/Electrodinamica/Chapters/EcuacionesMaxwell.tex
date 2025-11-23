@@ -3,7 +3,7 @@
 
 En el primer apartado describiremos las ecuaciones de Maxwell y la fuerza de Lorentz, las ecuaciones mas importantes del electromagnetismo, que permiten resolver cualquier problema electromagnético. En el segundo apartado estudiaremos que es la teorema de Helmholtz, de tal manera que podamos argumentar que las ecuaciones de Maxwell determinan de manera inequívoca los campos electromagnéticos. 
 
-\subsection{Ecuaciones de Maxwell en el vacío}
+\section{Ecuaciones de Maxwell en el vacío}
 
 
 En la electrodinámica clásica nuestro principal problema será resolver cuales son las interacciones entre partículas cargadas. Las partículas cargadas serán para nosotros entes matemáticos que funcionan como fuentes de campos eléctricos o magnéticos, de tal modo que los campos que generan nos permiten describir las interacciones entre las diferentes partículas.  Entonces si conocemos la posición/movimiento de todas las cargas del espacio a lo largo del tiempo podremos conocer con precisión cuales son los campos, y por tanto las interacciones entre las cargas. \\
@@ -26,7 +26,7 @@ donde tenemos que la densidad de carga eléctrica es $\rho$ y el flujo de carga 
 tal que la ecuación del movimiento vendrá dada por la 2ª ley de Newton. 
 
 
-\subsection{Teorema de Helmholtz}
+\section{Teorema de Helmholtz}
 
 El teorema de Helmholtz nos dice que cualquier campo vectorial está completamente definido por su rotacional y su Divrgencia, de tal modo que:
 
@@ -52,7 +52,7 @@ U(\rn) \equiv \dfrac{1}{4 \pi} \int \dfrac{D (\rn')}{|\rn - \rn'|} \D \tau' \tqu
 Este teorema sin embargo tiene una pequeña incosistencia, que darán mas adelante lo que llamaremos \textit{gauges}. Además podemos sumar a $D$ una constante cualquiera de tal manera que su gradiente seguirá siendo el mismo. Consecuentemente tendremos una familia de funciones escalares que son igualmente válidas. 
 
 
-\subsection{Potenciales electromagnéticos}
+\section{Potenciales electromagnéticos}
 
 Ahora entra un punto crucial en nuestro estudio de la electromagnetismo: los potenciales y los gauges. Entender lo siguiente es fundamental para el estudio de la materia. Las funciones vectoriales $\En$ y $\Bn$ o campos que verifican las ecuaciones de Maxwell para un problema determinado son únicas, de tal forma que no hay dos campos que verifiquen dichas ecuaciones a la vez. Es decir, no existen dos campos diferentes que solucionen un mismo problema, lo cual es lógico, ya que en la realidad solo vemos una solución, solo podemos medir un campo, no dos a la vez. \\
 
@@ -98,7 +98,7 @@ Ahora para la ecuación de Ampere-Maxwell solo habrá que tener en cuenta que $\
 \end{equation}
 Estas son las ecuaciones de Maxwell análogas para los potenciales. Si hacemos el cambio $\An \rightarrow \An'$ o $\Phi \rightarrow \Phi'$ podemos ver que no se alteran. En ese caso decimos que las ecuaciones de Maxwell son  \textbf{invariantes Gauge}, ya que \textit{no varían frente a una trasformación Gauge}. En el teorema de relatividad ahondaremos mas en el tema de los invariantes. Sin embargo estas ecuaciones son realmente feas, nadie querría usarlas frente a las elegantes ecuaciones de Maxwell. Por esa misma razón existen dos gauges muy usados en la literatura, y prácticamente son los únicos usados en la electrodinámica clásica. Estos son el gauge de Coulomb y el gauge de Lorenz. En los dos siguientes apartados vamos a explicar la utilidad de ambos y porque se crearon.
 
-\subsubsection{Gauge de Coulomb}
+\subsection{Gauge de Coulomb}
 
 El \textbf{gauge de Coulomb} es, quizás, el gauge mas obvio que hay. Probablemente es el único que se haya visto hasta la fecha. Este gauge verifica la condición de que
 
@@ -116,7 +116,7 @@ es decir, la \textit{ecuación de Poisson} para el potencial. Esta ecuación per
 \Phi (\rn,t) = \dfrac{1}{4 \pi \varepsilon_0} \int_V \dfrac{\rho(\rn',t)}{R} \D \tau'
 \end{equation}
 
-\subsubsection{Gauge de Lorenz}
+\subsection{Gauge de Lorenz}
 
 El \textbf{gauge de Lorenz} es bastante menos obvio que el otro gauge. En ese debe verificarse la condición de que:
 
@@ -148,13 +148,13 @@ Si queremos hacer una trasformación del tipo $\An, \Phi \rightarrow \An', \Phi'
 \end{equation}
 
 
-\subsection{Medios materiales}
+\section{Medios materiales}
 
 Existen fenómenos en la naturaleza que hacen que determinados materiales posean una polarización natural o una magnetización natural perceptible macroscópicamente, vease el caso de los imanes o el caso de la carga electroestática en un boli al frotarlo en lana. En general todos estos fenómenos son suficientemente complejos como para desarrollarlos en un tema aparte pero necesitamos mencionarlos brevemente para poder continuar el desarrollo de la asignatura. \\
 
 Los fenómenos anteriormente descritos se deben a la contribución de pequeños fenómenos de escala atómico, que todos juntos por superposición crean campos visibles. De esta forma no es necesario conocer el espín o la ecuación de un electrón para darle un desarrollo matemático a la imanación natural de un cuerpo. De hecho el concepto es sumamente sencillo. \\
 
-\subsubsection{Polarización}
+\subsection{Polarización}
  
 El fenómeno de la polarización se debe a la suma de los momentos dipolares en los átomos, de tal manera que, en un material, tenemos una especie de promedio del momento dipolar total llamado \textbf{polarización} $P$. El \textbf{momento dipolar} $\pn$ total se calculará como:
 
@@ -184,7 +184,7 @@ Las cargas de polarización también pueden producir corrientes si la polarizaci
 \end{equation}
 
 
-\subsubsection{Magnetización}
+\subsection{Magnetización}
 
 El fenómeno de la magnetización se debe a la suma de momentos dipolares magnéticos (podemos pensar que son espiras microscópicas) debido al movimiento y espín de los electrones, de tal manera que el promedio del momento magnético lo llamaremos \textbf{Magnetización} y el momento magnético total se calculará como:
 
@@ -231,7 +231,7 @@ Ahora bien, ¿Que pasa si queremos calcular únicamente el efecto de estas carga
 
 De este modo podemos ver claramente que $\Div \Dn = \rho_f$, o que $\Curl \Hn = \Jn_f$. En el siguiente apartado escribiremos las funciones de Maxwell para estos medios. En general estos campos auxiliares son muy interesantes, ya que permiten resolver algunos ejercicios de una manera directa, aunque en otros pueden complicarlos. \\
 
-\subsubsection{Medios l.h.i.}
+\subsection{Medios l.h.i.}
 
 Experimentalmente se sabe que la mayoría de medios presenta una relación intrínsecamente lineal entre los campos $\En$ y $\Pn$, $\Hn$ y $\Mn$. Tenemos en ese caso que las relaciones son:
 
@@ -250,7 +250,7 @@ donde a $\mu$ se le conoce como \textbf{permeabilidad magnética del medio}, pud
 \end{equation}
 donde a $\varepsilon$ se le conoce como \textbf{permitividad eléctrica del medio}. En ese caso se verifica para todo material que $\chi_e>0$ y por tanto que $\varepsilon>\varepsilon_0$. En ese caso las relaciones $\Dn ( \En)$ y $\Bn ( \Hn)$ para los medios l.h.i. son las llamadas \textbf{relaciones constitutivas del medio}.
 
-\subsection{Ecuaciones de Maxwell en medios materiales}
+\section{Ecuaciones de Maxwell en medios materiales}
 
 Las ecuaciones de Maxwell en medios materiales son exactamente iguales que las ecuaciones de Maxwell solo que cambiamos los campos $\En,\Bn$ por los campos $\Dn,\Hn$ en las ecuaciones de Maxwell inhomogéneas. Llamamos ecuaciones de Maxwell inhomogéneas a aquellas en las que aparecen explícitamente las fuentes (ley de Gauss, ley de Ampere-Maxwell) y homogéneas a las que no (ley de Faraday, Divrgencia de B). Entonces las \textbf{ecuaciones de Maxwell para medios materiales}
 
@@ -278,7 +278,7 @@ Si estamos en un medio l.h.i. usamos \ref{Ec:01.4.31} y \ref{Ec:01.4.32}.   Lueg
 \end{array} \label{Ec:01.5.32}
 \end{equation}
 
-\subsection{Condiciones de frontera}
+\section{Condiciones de frontera}
 
 Las ecuaciones de Maxwell admiten un desarrollo en integrales usando los \textit{teoremas de Gauss} y \textit{Stokes} Estos admiten que:
 
@@ -310,13 +310,12 @@ Supongamos entonces una superficie cualquiera que divide dos medios: el medio 2,
 Como podemos ver son útiles incluso cuando no existen cargas libres, ya que nos da una medida del efecto de polarización y magnetización si los dos medios son diferentes. Por ejemplo si estamos en un medio l.h.i. tenemos que:
 
 
-
 \begin{equation}
 \begin{array}{rl}
 (i) & \hnn \cdot (\varepsilon_2 \En_2 - \varepsilon_1 \En_1) = \sigma_f  \\ \\
 (ii) & \hnn \cdot (\Bn_2 - \Bn_1) = 0   \\ \\
 (iii) & \hnn \times ( \En_2 - \En_1) = 0 \\ \\
-(iv) & \hnn \times \parentesis{\dfrac{\Bn_2}{\mu_2} - \dfrac{\Hn_1}{\mu_1}} = -  \Kn_f
+(iv) & \hnn \times \parentesis{\dfrac{\Bn_2}{\mu_2} - \dfrac{\Bn_1}{\mu_1}} = -  \Kn_f
 \end{array} \label{Ec:01.4.18}
 \end{equation}
 por lo que aún aparecerían disonancias a pesar de no haber cargas libres. Esta es la auténtica utilidad de las ecuaciones de Maxwell para medios materiales, ya que nos dan una idea intuitiva muy rápida del cambio de dos medios, aun sin haber cargas o corrientes libres.

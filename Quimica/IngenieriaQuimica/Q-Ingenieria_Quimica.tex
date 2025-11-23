@@ -1,0 +1,52 @@
+\documentclass{../../Template}
+\addbibresource{../../Bibliografia.bib} % si quieres incluir la bibliografía
+
+\RequirePackage{transparent}
+
+\input{../../_Macros/Titulo.tex}
+\input{../../_Macros/Indice.tex}
+\input{../../_Macros/Entornos.tex}
+\input{../../_Macros/ColorDefinitions.tex}
+
+% Definiciones del título
+\title{Ingeniería Química}
+\subtitle{}
+\author{Autor: \\[0.1em] 
+María Álvarez Barciela \\[0.4em]
+Editor: \\[0.1em]
+Daniel Vázquez Lago}
+
+\tikzset{
+  block/.style = {rectangle, draw, text centered, rounded corners, minimum height=1cm},
+  arrow/.style = {thick,->,>=stealth}
+}
+
+% Documento
+
+\begin{document}
+\MakeTitle{2}{3Blue}{Snow1}
+
+
+\setlength{\parskip}{2.2mm} % Cambia el espacio entre párrafos
+
+\newpage
+
+\tableofcontents
+
+\input{Chapters/Introduccion..tex}
+\input{Chapters/ConservacionMateria.tex}
+%\input{Chapters/ConservacionEnergia.tex}
+%\input{Chapters/TrasferenciaFluidos.tex}
+%s\input{Chapters/TrasferenciaCalor.tex}
+
+
+\nocite{himmelblau2002principios,calleja2008introduccion}
+
+\NewPart{Anexo y bibliografía}
+\addcontentsline{toc}{chapter}{Bibliografia}
+\printbibliography 
+
+
+
+
+\end{document}

@@ -1,0 +1,410 @@
+
+\chapter{Principios de Conservación: Materia}
+
+La \textbf{Ley de Lavoiser} dice: 
+
+\textit{La materia no puede crearse ni destruirse, solamente transformarse.}
+
+Esta ley es valida para todos los fenómenos físicos y químicos, excepto en los que implican reacciones nucleares, en las que parte de la materia se destruye para convertirse en energía segun la ecuación de Einstein:
+
+\begin{equation}
+    E=m\cdot c^2
+\end{equation}
+
+Puede establecerse que en un proceso que se desarrolla en estado estacionario, la masa total de todas las corrientes de entrada en un determinado recinto o volumen se control ha de ser igual a la masa total de la suma de las corrientes de salida:
+
+\begin{equation}
+    [E]=[S]
+\end{equation}
+
+En el caso de las recciones químicas la masa de los componentes de la reacción de reorganiza.\\
+
+Si el régimen no es estacionario y existen reacciones químicas entre los compuestos presentes, la expresión general de la ley de conservación presenta dos nuevos términos : $[A]$ el cual hace referencia a acumulación de materia y $[G]$ que se corresponde la generación de nuevas materias (debido a reacciones químicas).
+
+\begin{equation}
+    [A]=[E]-[S]+[G]
+    \label{general e n e}
+\end{equation}
+
+\section{Ecuación 
+general de conservación}
+
+Antes de nada necesitamos saber diferenciar lo que es una propiedad intensiva de una extensiva.
+
+\begin{itemize}
+    \item Propiedad extensiva: es aquella que depende de la cantidad de substancia presente, son aditivas (m,V $E_T$ o L).
+    \item Propiedad intensiva: no depende de la cantidad de la materia de la substancia presente, no son aditivas (T, $\rho$ o P).
+\end{itemize}
+
+Una vez conocido la diferencia entre estas propiedades vamos a deducir la ecuación general de la conservación para cuaquier propiedad extensiva.\\
+
+Siendo $\pi$ la concentración de propiedad extensiva en el recinto (cantidad de propiedad por unidad de volumen), variable de un punto a otro:
+
+\begin{equation}
+    \int_V \frac{\delta\pi}{\delta t}dV
+\end{equation}
+
+El caudal neto de propiedad extensiva que abandona el recinto de fluido a través de la superficie S por transporte molecular es :
+
+
+\begin{equation}
+    -\int_S \phi d \Vec{S}
+\end{equation}
+
+Donde $\phi$ es el flujo de la propiedad extensiva debido a gradientes de concentración, variable para cada elemento de superficie (cantidad de propiedad que atraviesa la unidad de superficie S en la unidad de tiempo) y el signo $- $ indica que es un cuadal neto que ale del recinto.\\ 
+
+De la misma manera el caudal neto de propiedad extensiva que abandona el recinto por el mecanismo de convección (movimiento del fluido con velocidad $\Vec{v})$ será:
+
+\begin{equation}
+    -\int_S \pi\cdot \Vec{v}\cdot d \Vec{S}
+\end{equation}
+
+La generación de propiedad extensiva en el interior del propio recinto vendrá dada por:
+
+\begin{equation}
+    \int _V GdV
+\end{equation}
+
+Siendo G la cantidad de propiedad extensiva que se genera en el recinto por unidad de volumen y tiempo. Esta generación en el caso de materia y energía sería siempre causada por las reacciones químicas que tienen lugar en el recinto.\\
+
+Por lo que la ecuación general de conservación de cualquier propiedad extensiva vendrá dada por la ecuación:
+
+\begin{equation}
+    \int_V \frac{\delta\pi}{\delta t} dV=- \int_S \phi d\Vec{S}-\int_V\pi \Vec{v}d\Vec{S} +\int_V GdV
+\end{equation}
+
+Donde $[E]-[S]=- \int_S \phi d\Vec{S}-\int_V\pi \Vec{v}d\Vec{S}$. Además, el caudal se define como $Q_v=\Vec{v}\cdot \Vec{S}$ de tal mal¡nera que aplicando el teorema del valor medio del cálculo integral:
+
+
+\begin{equation}
+    \dv{\pi_m V}{t}=- \sum_i \phi_i \Vec{S}_i+(\pi_1 Q_{v,1}-\pi_2Q_{V,2})+G_mV
+    \label{eq: conservacion extensiva}
+\end{equation}
+
+
+Donde:
+
+\begin{itemize}
+    \item $\pi_m$ y $G_m$ es el valor medio de la concentración y generación de propiedad en el sistema.
+    \item $\sum_i \phi_i\Vec{S}_i$ se trata de la suma de cuadales netos de propiedad que abandonan el sistema a través de las distintas superficies.
+    \item $\pi_1$ y $\pi_2$ los valores medios de concentración de propiedad en las corrientes E y S.
+
+\end{itemize}
+
+\section{Balances macroscópicos de materia}
+
+Partiendo de la ecuación de conservación de cualquier propiedad extensiva ( Ecuación \ref{eq: conservacion extensiva}) pero para balances macroscópicos el término de la difusión se anula ($ \sum_i\phi_i\Vec{S}_i=0$.
+
+
+Dependiendo de que propiedad que se conserva tomemos las unidades de $\pi$ cambiarán:
+
+\begin{itemize}
+    \item Materia: concentración de materia ($kg/m^3$).
+    \item Energía: concentración de energía ($J/m^3$)
+    \item Cantidad de movimiento: concentración de cantidad de movimiento($kg/m^3s$)
+\end{itemize}
+
+Quedando la ecuación macroscópica  de conservación del componente $i$ (masica) (donde $\rho$ es la concentración másica de componente $i$):
+
+\begin{equation}
+    \frac{d(M_{i_T})}{dt}=(\rho_{i_1} Q_{V,1}- \rho_{i2}Q_{V,2})+r_{im}V
+\end{equation}
+
+Donde el último término, el termino de materia total generada, es nulo en unidades masicas ya que la masa no se genera sino que se transforma. Quedando la ecuación macroscópica de conservación de la materia total ecpresada en unidades de masa (OJO: en el caso de numero de moles no se conserva no desaparece el término):
+
+\begin{equation}
+    \frac{d(M_{i_T})}{dt}=(\rho_{i_1} Q_{V,1}- \rho_{i2}Q_{V,2})
+\end{equation}
+
+Definimos ahora lo que es la \textbf{base de cálculo}. Esta consiste en la cantidad de materia adecuada que se toma como referncia o bien una cantidad de tiempo de operación. Para elegir esta base de cálculo se recomienda:
+\begin{itemize}
+    \item Elegir la corriente de la que se dispone más información.
+    \item  Para sistemas líquidos o sólidos la unidad de masa o volumes puede ser más adecuada.
+    \item PAra sistemas de flujo (corrientes de entrada y salida), se eligiría la unidad de tiempo.
+    \item Para gases: cantidad de masa o bien de volumes siempre y cuando se conozcan las condiciones de P y T. ($PV=nRT$).
+\end{itemize}
+
+\section{Balances de materia en estado estacionario}
+\subsection{Sin reacción química}
+En este caso el término de acumulación es nulo de tal modo que:
+\begin{equation}
+    [S]-[E]=[G]\rightarrow Q_{V2}\rho_{i2}-Q_{V1}\rho_{i1}=r_{im}V
+\end{equation}
+
+Donde además si no se produce reacción química el término de generación es nulo, llegando así a la conocida como la ecuación de continuidad:
+
+\begin{equation}
+    Q_{V2}\rho_{i2}=Q_{V1}\rho_{i1} \rightarrow m_{i2}=m_{i1}
+\end{equation}
+
+Si $\rho=cte$, es decir se trata de un fluido incompresible:
+\begin{equation}
+    Q_{V1}=Q_{V2}\rightarrow v_1S_1=v_2S_2
+\end{equation}
+
+Como las secciones no son iguales la velocidad serán diferentes, por lo que donde la superficie sea menor la velocidad será mayor.\\
+
+Con mucha frecuencia, en la industria, se utilizan sistemas de recirculación. Las recirculaciones consisten en el retorno de una fracción de la corriente de salida de una unidad de operación a la entrada de la misma. Principalmente se utliza para aprovechar la conservación calorífico y para una mejora del rendimiento.\\
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Chapters/ConservacionMateria/Imagen-01.jpeg}
+    \caption{Diagrama de bloques con corriente de recirculación}
+    \label{fig:recirculación}
+\end{figure}
+
+Con recirculación podemos plantear distintos tipos de balance (mostrados en la figura \ref{fig:balances}):
+
+\begin{enumerate}
+    \item Balance global: $F\rightarrow{}P$
+    \item Balance referido a la unidad de operación $E\rightarrow{}S$
+    \item Balance en el punto de mezcla de alimentación y la recirculación: $F+R=E$.
+    \item Balance en el punto de partida de la recirculación : $S=R+P$.
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Chapters/ConservacionMateria/Imagen-02.jpeg}
+    \caption{Diferentes tipos de balances posibles en un diagrama d erecirculación.}
+    \label{fig:balances}
+\end{figure}
+
+También son muy utilizados los procesos de purga donde se elimina una parte de la corriente de recirculación. Se emplea cuando en la alimentación hay una sustancia inerte, que se acumula a lo largo del tiempo en el sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Chapters/ConservacionMateria/Imagen-03.jpeg}
+    \caption{Diagrama de bloques correspondiente a un proceso de purga.}
+    \label{fig:purga}
+\end{figure}
+
+Otro tipo de sistema son los sistemas \textit{bypass} que consisten en la separación de una fracción de la corriente de entrada o alimentación que no se hace pasar por la unidad de proceso y se une directamente con la corriente de salida (no experimenta transformación). Se utiliza con la finalidad de modificar las condiciones del producto obtenidos en una unidad de proceso.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Chapters/ConservacionMateria/Imagen-04.jpeg}
+    \caption{Diagrama de bloques de un sistema \textit{bypass}.}
+    \label{fig:placeholder}
+\end{figure}
+
+\subsection{Con reacción química}
+En este caso el término correspondiente a la generación es no nulo. De tal modo que:
+
+\begin{equation}
+    [S]=[E]+[G]
+\end{equation}
+
+Partimos de un caso ideal donde suponemos que la reacción química se completa al $100\%$, cosa que no ocurre realmente a escala industrial. En la realidad tendremos algún reactivo en exceso, también puede ocurrir que se produzcan reacciones secundarias o habría que tener en cuenta el grado de conversión.\\
+
+Como en cualquier cálculo de rendimiento el primer paso que debemos hacer es determinar cual es el \textbf{reactivo limitante}. El reactivo limitante es aquel que está en menor proporción estequimétrica, se consumiría primero en la reacción química y cuando se agota, limita la formación de producto. El reaccitivo limitante se puede obtener dividiendo los moles del reactivo ($N_j$) entre el coeficiente estequimétrico de reactivo ($\alpha_j$). De tal modo que en la siguiente ecuación el reactivo $i$ es el limitante cuando se cumpla para el resto de reactivos $j$:
+
+\begin{equation}
+    \left| \frac{N_j}{\alpha_j} \right|>\left| \frac{N_i}{\alpha_i} \right|
+\end{equation}
+
+Los reactivos que participan en la reacción y no son limitantes y, por lo tanto, sobra una cantidad de estos tras la reacción se conocen como \textbf{Reactivo en exceso}.
+
+Podremos determinar el porcentaje en exceso haciendo la relación entre la cantidad de exceso de reactivo y la cantidad necesaria para reaccionar completamente con el reactivo limitante.
+
+\begin{equation}
+    \% \text{Exceso}=\frac{\text{$N^o$ moles en exceso}}{\text{$N^o$ moles necesarios para reaccionar }}\cdot100
+\end{equation}
+
+
+También definimos el termino \textbf{conversión} que no es más que la fracción de compuesto alimentado que reacciona.
+
+\begin{equation}
+    \chi_A=\frac{\text{$N^o$ moles de A transformado}}{\text{$N^o$ moles de A alimentados}}
+\end{equation}
+
+
+Es interesante determinar el \textbf{rendimiento}:
+
+\begin{equation}
+    \text{Rendimiento}=\frac{\text{$N^ o$ de moles (o masa) de producto formado}}{\text{$N^o$ moles (o masa) inicial de reactivo}}
+\end{equation}
+
+
+Dependiendo de a que reactivo sobre el que se basa el rendimiento tendremos tres tipos de rendimiento:
+
+\begin{itemize}
+    \item \textbf{Rendimiento teórico o máximo}: cantidad de producto que se espera dada la reacción química balanceada cuando ha reaccionado todo el reactivo limitante.
+    \item \textbf{Rendimiento de reacción}: cantidad de producto que realmente es obtenida. Siempre es menor o igual al teórico.
+    \item \textbf{Rendimiento relativo}: porcentaje (o fracción) entre el rendimiento de reacción y el teórico.
+\end{itemize}
+
+Cuando hay dos o más rearcciones tenemos que tener en cuenta la selectividad:
+
+\begin{equation}
+    \text{Selectividad}=\frac{\text{Cantidad de producto formado}}{\text{Cantidad de reactivo limitante consumido}}
+\end{equation}
+
+En sistemas con recirculación como el de la figura \ref{reac rec} hay varios tipos de conversión:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Chapters/ConservacionMateria/Imagen-05.jpeg}
+    \caption{Sistema con reacción química y recirculación.}
+    \label{reac rec}
+\end{figure}
+
+\begin{equation}
+    \text{Conversión global}=\frac{(\text{reactivo en F})}-\text{(Reactivo en P)}{\text{Reactivo en F}}
+\end{equation}
+
+\begin{equation}
+    \text{Conversión por paso}=\frac{(\text{reactivo en F+R})}-\text{(Reactivo en S)}{\text{Reactivo en F+R}}
+\end{equation}
+
+\section{Balances de materia en etado no estacionario}
+
+En el caso de un sistema en estado no estacionario el término de acumulación no se anula. De modo que la ecuación general se corresponde con la ecuación \ref{general e n e}. En este caso el balance de un componente $i$:
+
+\begin{equation}
+    Q_{v1}\cdot \rho_{i1}- Q_{v2}\cdot \rho_{i2}+r_i\cdot V=\frac{dM_{iT}}{dt}
+\end{equation}
+
+Y el balance global:
+
+\begin{equation}
+    Q_{v1}\cdot \rho_{1}- Q_{v2}\cdot \rho_{2}=\frac{dM_T}{dt}
+\end{equation}
+
+En este caso:
+    $$Q_{v1}\cdot \rho_{i1}\not=Q_{v2}\cdot\rho_{i2}$$
+    $$v_2\cdot S_2 \cdot \rho_{2}\not=v_1\cdot S_1\cdot\rho_{1}$$
+    $$m_2\not=m_1$$
+
+En sistemas con reacciones químicas se tiene la misma problemática moles/masa del estado estacionario. En sistemas de estados no estacionario una variable fundamental es el tiempo y se recurren a sistemas de ecuaciones diferenciales.\\
+
+
+En esta clase de sistemas, exceptuando periodos de carga y descarga, no hay corrientes de entrada y de salida del sistema, por lo que la ecuación se simplifica:
+
+\begin{equation}
+    [G]=[A]
+\end{equation}
+
+Para un a componente $i$:
+
+\begin{equation}
+    r_i\cdot V=\frac{dM_{iT}}{dt}
+\end{equation}
+
+En otras ocasiones, uno o más materiales se cargan inicialmente en el equipo, donde permanecen un cierto tiempo en contacto con corrientes que entran y salen continuamente, desarrollándose una operación en semicontinuo. En el caso de régimen no estacionario, no se pueden anukar ningún término de la ecuación \ref{general e n e}.
+
+\section{Reactores químicos}
+
+En función de las fases presentes se pueden clasificar en :
+
+\begin{itemize}
+    \item Reactores homogéneos: las reacciones transcurren solamente en una fase (líquida y gaseosa).
+    \item Reactores heterogéneos: las reacciones requieres al menos la presencia de más de una fase (normalmente G-L/G-S/L-L, S-L-G.
+\end{itemize}
+
+En ambos casos puede influir la presencia de catalizadores. Un catalizados en euna sustancia que cambia la velocidad de reacción y que no es ni un reactivo ni un producto, ni necesita estar presente en grandes cantidades.\\
+
+En función del régimen térmico:
+
+
+\begin{itemize}
+    \item Reaccione sisotérmicos: operan a T constante. Estan equipados con sistemas de intercambio de calor que liberan o aportan calor.
+
+    \item Reactores adiabáticos: no hay intercambio de calor con el exterior. En el interior la T varia con el tiempo (se modifica la velocidad de reacción y equilibrio).
+\end{itemize}
+
+Según el tipo de operación puede clasificarse en \textbf{Continuo, discontinuo o semicontinuo}.\\
+
+
+\textbf{Reactor Discontiuo de tanque agitado (RDTA)}\\
+
+Los reactivos se introducen al principio de la operación y, una vez transcurrida la reacción, se retiran los productos de reacción ( \textbf{DISCONTINUO}). Todas las variables varían con el tiempo hasta alcanzar los valores finales. Pueden operar en condiciones isotermas ( T cte) o no isotermac (T no cte). LA variable clave es el tiempo necesario para alcanzar una determinada conversión.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Chapters/ConservacionMateria/Imagen-06.jpeg}
+    \caption{Esquema RTDA}
+    \label{fig:RTDA}
+\end{figure}
+
+En el caso de una componente A, obviando la carga y descarga. 
+
+\begin{equation}
+    -[G]=[A]
+\end{equation}
+
+Donde aparece un signo negativo debido a la cantidad de A que reacciona y por lo tanto desaparece ($(-r_A)V$ en $mol/s$). El término de acumulación en $mol/s$:
+
+\begin{equation}
+    \frac{dN_A}{dt} =\frac{d[N_A_0](1-x_A)}{dt}=-N_A_0\cdot\frac{dx_A}{dt}
+\end{equation}
+
+De modo que la ecuación de diseño de RDTA:
+
+\begin{equation}
+    (-r_A)V=N_A_0\cdot \frac{dx_A}{dt} \rightarrow t=N_A_0\cdot \int^{x_A}_0\frac{dx_A}{(-r_A)V}
+\end{equation}
+
+
+En reacciones donde el volumen es constante es mejor expresar la ecuación en forma de concentraciones:
+
+\begin{equation}
+    t=\frac{N_A_0}{V}\int_0^{x_A}\frac{dx_A}{(-r_A)}=C_A_0 \int_0^{x_A}\frac{dx_A}{(-r_A)}
+    \label{eq: RDTA}
+\end{equation}
+
+Podemos expresar la conversión  de A como:
+
+\begin{equation}
+    x_A=\frac{N_A_0-N_A}{N_A_0}\rightarrow x_A=\frac{V\cdot(C_A_0-C_A)}{V\cdot C_A_0}
+\end{equation}
+
+Sabemos que:
+
+\begin{equation}
+    N_A=N_A_0\cdot(1-x_A) \rightarrow C_A=C_A_0\cdot (1-x_A) \rightarrow dC_A=-C_A_0 \cdot dx_A
+\end{equation}
+
+De modo que sustituyendo en la eqcuación \ref{eq: RDTA} llegamos a que la ecuación de diseño de un RDTA, con volumen constante, en función de las concentraciones (considerando A reactic¡vo limitante) se puede expresar como:
+
+\begin{equation}
+    t=-\int_{C_A_0}^{C_A} \frac{dC_A}{(-r_A)}
+\end{equation}\\
+
+\textbf{Reactor Continuo de Mezcla Completa (RCTA)}
+
+Si el RDTA estudiado tuviera una corriente de entrada y una corriente de salida, se convertiría en un reactor continuo de tanque agitado o reactor de flujo de mezcla completa. Este tipo de sistema opera en estado estacionario de tal modo que $[A]=0$. De tal modo que expresando el balance a una componente A:
+
+\begin{equation}
+    F_{A_0}-F_{A_0}(1-x_{A_1})-(-r_A)\cdot V_1=0\rightarrow F_{A_0}\cdot x_{A_1}=(-r_A)\cdot V_1
+\end{equation}
+
+Llegando a la ecuación de diseño del reactor la cual nos permite calcular el volumen del reactor para alcanzar la conversión $x_A$.
+
+\begin{equation}
+    \frac{V_1}{F_{A_0}}=\frac{x_{A_1}}{(-r_A)}
+\end{equation}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Chapters/ConservacionMateria/Imagen-07.jpeg}
+    \caption{Reactor Continuo de mezcla completa (RCTA)}
+    \label{fig:RCTA}
+\end{figure}
+
+En el caso que $x_A\not=0$ podemos expresar la ecuación de diseño en base a concentración sabiendo que :
+
+\begin{equation}
+    C_{A_s}=C_{A_e}\cdot(1-x_{A_s})\rightarrow x_A=\frac{C_{A_e}-C_{A_s}}{C_{A_e}}
+\end{equation}
+
+De tal forma que llegamos a la ecuación:
+
+\begin{equation}
+    \frac{V_s\cdot C_{A_e}}{F_{A_e}}=\frac{C_{A_e}-C_{A_s}}{(-r_A)}
+\end{equation}
+
+También la podemos expresar en función de la fracción molar:
+
+\begin{equation}
+    \frac{V_s}{F_{A_e}}=\frac{x_{A_s}-x_{A_e}}{(-r_A)}
+\end{equation}
