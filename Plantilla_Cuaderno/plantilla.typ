@@ -331,6 +331,12 @@
 }
 
 //========================================================================
+// COMANDOS PROPIOS 
+//========================================================================
+
+#let otimes = [#sym.times.circle]
+
+//========================================================================
 // CLASE LIBRO PRINCIPAL
 //========================================================================
 
@@ -339,8 +345,20 @@
   set document(author: author, title: title)
   set text(size: font-size, lang: lang)
   set par(leading: 0.5em)
-  set enum(numbering: "1.a.i.")
-  set list(marker: ([•], [--], [◦]))
+  set enum(
+    numbering: "1.a.i.", 
+    body-indent: 0.5em,
+    indent: 1.5em)
+  set list(
+    indent: 1.5em,
+    spacing: 1em,
+    marker: (
+      [#move(dy:-0.5mm)[#text(size: 1.1em)[$bullet$]]],
+      [#text(size: 0.9em)[$bullet$]],
+      [#text(size: 0.8em)[$bullet$]],
+    )
+  )
+
 
   set ref(supplement: (it)=>{lower(it.supplement)}) if lowercase-references
 
@@ -364,12 +382,20 @@
 
   show terms: set par(first-line-indent: 0em)
 
+//========================================================================
+// ESTILO DE PÁGINA
+//========================================================================
+
   set page( width: width, height: height)   if (width != none and height != none)
   set page( paper: paper-size) if (width == none or height == none)
 
   set page(
+
+    // MARGENES
     margin: margin,
-     header: context{
+
+    // PARTE DE ARRIBA (HEAD)
+    header: context{
       set text(size: title5)
       let page_number = counter(page).at(here()).first()
       let odd_page = calc.odd(page_number)
@@ -393,7 +419,7 @@
           box(width: 100%, inset: (bottom: 5pt), stroke: (bottom: 0.5pt))[
             #text(if appendix != none {numbering("A.1", ..counterInt.slice(0,2)) + " " + before.last().body} else {numbering("1.1", ..counterInt.slice(0,2)) + " " + before.last().body})
             #h(1fr)
-            #page_number
+            #text(weight: "bold", title) //#page_number
           ]
         }
       } else{
@@ -401,14 +427,73 @@
         let counterInt = counter(heading).at(here()).first()
         if before != () and counterInt > 0 {
           box(width: 100%, inset: (bottom: 5pt), stroke: (bottom: 0.5pt))[
-            #page_number
+            #text(weight: "bold", title)  //#page_number
             #h(1fr)
             #text(weight: "bold", if appendix != none {numbering("A.1", counterInt) + ". " + before.last().body} else{before.last().supplement + " " + str(counterInt) + ". " + before.last().body})
           ]
         }
       }
+    },
+    // PARTE DE ABAJO (FOOT)
+    footer: context {
+      set text(size: title5)
+      let page_number = counter(page).at(here()).first()
+      let odd_page = calc.odd(page_number)
+      let part_change = part-change.at(here())
+
+      let all = query(heading.where(level: 1))
+      if all.any(it => it.location().page() == page_number) or part_change {
+        return
+      }
+
+      let appendix = appendix-state.at(here())
+
+      if odd_page {
+        let before = query(selector(heading.where(level: 2)).before(here()))
+        let counterInt = counter(heading).at(here())
+        if before != () and counterInt.len() > 1 {
+          box(width: 100%, inset: (top: 5pt), stroke: (top: 0.0pt))[
+            /*
+            #text(
+              if appendix != none {
+                numbering("A.1", ..counterInt.slice(0,2)) + " " + before.last().body
+              } else {
+                numbering("1.1", ..counterInt.slice(0,2)) + " " + before.last().body
+              }
+            )
+            */
+            #h(1fr)
+            #page_number
+          ]
+        }
+      } else {
+        let before = query(selector(heading.where(level: 1)).before(here()))
+        let counterInt = counter(heading).at(here()).first()
+        if before != () and counterInt > 0 {
+          box(width: 100%, inset: (top: 5pt), stroke: (top: 0.0pt))[
+            #page_number
+            #h(1fr)
+            /*
+            #text(
+              weight: "bold",
+              if appendix != none {
+                numbering("A.1", counterInt) + ". " + before.last().body
+              } else {
+                before.last().supplement + " " + str(counterInt) + ". " + before.last().body
+              }
+            )
+            */
+          ]
+        }
+      }
     }
   )
+
+
+//========================================================================
+// 
+//========================================================================
+
 
   show cite: it => {
     show regex("[\w\W]"): set text(main-color)
@@ -424,6 +509,11 @@
       if pattern != none { numbering(pattern, ..nums) }
     }
   )
+
+//========================================================================
+// 
+//========================================================================
+
 
   show heading.where(level: 1): set heading(supplement: supplement-chapter)
 
@@ -452,7 +542,9 @@
                 right: 0pt,
                 left: 10pt,
             ),
+
             align(left, text(size: title1, it))
+            
           ))))))
           v(8.4cm)
       }
@@ -463,6 +555,7 @@
             inset: (left:0em, rest: 1.6em),
             fill: white,
             radius: 10pt,
+
             align(left, text(size: title1, it, hyphenate: false))
           ))
         v(1.5cm, weak: true)
@@ -599,7 +692,7 @@
       #set text(fill: main-color)
       #it
     ]
-    set par(spacing: 2em)
+    set par(spacing: 1em)
     align(bottom, copyright)
   }
   

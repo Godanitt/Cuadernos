@@ -4,31 +4,55 @@
 // Esta función dibuja UNA fila del índice:
 //  número | título ............ página
 // ======================================================
+// 
+#let my-outline-row(
+  textSize: none,
+  textWeight: "regular",
+  insetSize: 0pt,
+  textColor: blue,
+  number: "",
+  title: none,
+  heading_page: "",
+  location: none,
+  sangria: 0pt,
+  hspace: -0.7em,
+) = {
 
-#let my-outline-row(textSize:none,
-                    textWeight: "regular",
-                    insetSize: 0pt,
-                    textColor: blue,
-                    number: "0",
-                    title: none,
-                    heading_page: "0",
-                    location: none,
-                    sangria: 0pt,
-                    hspace:-0.7em) = {
-  
+  // Estilo base
   set text(size: textSize, fill: textColor, weight: textWeight)
+
+  // Medimos el ancho REAL del número
+  let num-box = measure(text(number))
+
   h(sangria)
-  box(width: 0.9cm, inset: (y: insetSize), align(left, number))
-  h(0.0cm)
-  box(inset: (y: insetSize), width: 100% - (0.9cm+sangria),)[
-    #set align(left) 
+
+  // Caja del número con ancho dinámico
+  box(
+    width: num-box.width + 6pt,
+    inset: (y: insetSize),
+    align(right, number),
+  )
+
+  h(6pt)
+
+  // Caja del título ocupando el resto
+  box(
+    inset: (y: insetSize),
+    width: 100% - (num-box.width + sangria + 16pt),
+  )[
+    #set align(left)
     #link(location, title)
-    #box(width: 1fr, repeat(text(weight: "regular")[. #h(4pt)])) 
+    #box(width: 1fr, repeat(text(weight: "regular")[. #h(4pt)]))
     #link(location, heading_page)
   ]
+
   v(hspace)
 }
 
+// ======================================================
+// INDICE -
+// ======================================================
+// 
 #let my-outline(appendix-state, appendix-state-hide-parent, part-state, part-location,part-change,part-counter, main-color, textSize1:none, textSize2:none, textSize3:none, textSize4:none) = {
   show outline.entry: it => {
     let appendix-state = appendix-state.at(it.element.location())
@@ -77,9 +101,9 @@
       }
     }
     else if it.level ==2 {
-      my-outline-row(insetSize: 2pt, textWeight: "bold", textSize: textSize3, textColor:black, number: number, title: title, heading_page: heading_page, location: it.element.location(), sangria: 0.9cm)
+      my-outline-row(insetSize: 2pt, textWeight: "bold", textSize: textSize3, textColor:black, number: number, title: title, heading_page: heading_page, location: it.element.location(), sangria: 0.7cm)
     } else {
-       my-outline-row(textWeight: "regular", textSize: textSize4, textColor:black, number: number, title: title, heading_page: heading_page, location: it.element.location(),sangria: 1.8cm)
+       my-outline-row(textWeight: "regular", textSize: textSize4, textColor:black, number: number, title: title, heading_page: heading_page, location: it.element.location(),sangria: 1.6cm)
     }
   }
   outline(depth: 3, indent: 0em)
@@ -110,7 +134,7 @@
       v(-0.65em, weak: true)
     }
   }
-  box(width: 9.5cm, outline(depth: depth, indent: 0em, title: none))
+  box(width: 11.5cm, outline(depth: depth, indent: 0em, title: none))
 }
 
 #let my-outline-sec(list-of-figure-title, target, textSize) = {

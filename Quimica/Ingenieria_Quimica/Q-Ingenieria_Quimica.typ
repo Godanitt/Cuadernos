@@ -7,7 +7,7 @@
   subtitle: "A Practical Guide",
   date: datetime.today,
   author: ("Daniel Vázquez Lago","María Álvarez Barciela"),
-  main-color: rgb("#0daeca"),
+  main-color: rgb("#0a6f81"),
   lang: "es",
   cover: none,
   image-index: none,
@@ -42,10 +42,21 @@
 //#part("Ingeniería") 
 
 #chapter("La ingeniería Química y los Procesos Químicos")
+#include "Capitulos/Introduccon.typ"
+
 #chapter("Principios de Conservación: Balances de Materia")
+#include "Capitulos/BalancesMateria.typ"
+
 #chapter("Principios de Conservación: Balances de Energía")
+#include "Capitulos/BalanceEnergia.typ"
+
 #chapter("Flujo de fluidos")
+#include "Capitulos/Flujo_Fluidos.typ"
+
 #chapter("Trasferencia de calor")
+#include "Capitulos/Trasferencia_Calor.typ"
+
 #chapter("Procesos de separación")
+#include "Capitulos/Procesos_Separacion.typ"
 
 

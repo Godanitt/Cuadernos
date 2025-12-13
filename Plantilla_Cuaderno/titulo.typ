@@ -52,7 +52,7 @@
         )[
 
         #align(left)[
-          #block(width: 75%)[
+          #block(width: 80%)[
             #text(size: 42pt, weight: "bold", fill: accent)[#title]
           ]
         ]
