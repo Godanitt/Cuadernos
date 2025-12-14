@@ -1,6 +1,4 @@
-#import "../../Plantilla_Cuaderno/plantilla.typ": *
-
-
+#import "../../plantilla.typ": *
 
 #show: book.with(
   title: "Ingeniería Química",
@@ -15,7 +13,7 @@
   list-of-table-title: "List of Tables",
   supplement-chapter: "Chapter",
   supplement-part: "Part",
-  font-size: 11pt,
+  font-size: 12pt,
   part-style: 0,
   copyright: [
     Copyright © 2023 Flavio Barisi
@@ -42,7 +40,7 @@
 //#part("Ingeniería") 
 
 #chapter("La ingeniería Química y los Procesos Químicos")
-#include "Capitulos/Introduccon.typ"
+#include "Capitulos/Introduccion.typ"
 
 #chapter("Principios de Conservación: Balances de Materia")
 #include "Capitulos/BalancesMateria.typ"

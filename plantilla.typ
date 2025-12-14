@@ -1,7 +1,16 @@
-#import("indice.typ"): *
-#import("indice_aux.typ"): *
-#import("theorems.typ"): *
-#import("titulo.typ"): * 
+
+#import "@preview/cetz:0.3.2"
+#import "@preview/fletcher:0.5.8" as f: diagram, node, edge, 
+#import f.shapes: parallelogram, diamond, ellipse
+
+
+#import("Plantilla_Cuaderno/indice.typ"): *
+#import("Plantilla_Cuaderno/indice_aux.typ"): *
+#import("Plantilla_Cuaderno/theorems.typ"): *
+#import("Plantilla_Cuaderno/titulo.typ"): * 
+#import("Plantilla_Cuaderno/comandos.typ"): * 
+
+
 
 //====================================
 
@@ -259,9 +268,14 @@
     let language = language-state.at(here())
     let main-color = main-color-state.at(here())
     thmbox("example",
-    stroke: none,
+    stroke: (
+      top:  2pt + main-color,
+      bottom:  2pt + main-color,
+      left: none,
+      right: none,
+      ),
     radius: 0em,
-    inset: 0em,
+    inset: 0.8em,
     breakable: true,
     namefmt: x => [*--- #x.*],
     separator: h(0.2em),
@@ -269,6 +283,7 @@
     base_level: 1)(name:name, body)
   }
 }
+
 
 #let problem(name: none, body) = {
   context{
@@ -329,13 +344,6 @@
     base_level: 1)(name:name, body)
   }
 }
-
-//========================================================================
-// COMANDOS PROPIOS 
-//========================================================================
-
-#let otimes = [#sym.times.circle]
-
 //========================================================================
 // CLASE LIBRO PRINCIPAL
 //========================================================================
@@ -381,6 +389,19 @@
   ]
 
   show terms: set par(first-line-indent: 0em)
+
+//========================================================================
+// TIPOGRAFIA
+//========================================================================
+
+
+set text(font: "Libertinus Serif")
+
+//show math.equation: set text(font: "STIX Two Math")
+//show math.equation: set text(font: "XITS Math")
+//show math.equation: set text(font: "Fira Math")
+
+
 
 //========================================================================
 // ESTILO DE PÁGINA

@@ -1,4 +1,4 @@
-#import "../../Plantilla_Cuaderno/plantilla.typ": *
+#import "../../plantilla.typ": *
 
 
 
@@ -47,14 +47,15 @@
 #pagebreak()
 #include "Ejercicios/Introduccion.typ"
 
-#chapter("Grupos de Permutaciones")
+#chapter("Homomorfismos y Reducibilidad")
+#include "Capitulos/Homomorfismos.typ"
+#pagebreak()
+#include "Ejercicios/Homomorfismos.typ"
 
-
-#chapter("Grupos Cíclicos y Diédricos")
-
-
-#chapter("Homomorfismos y Representaciones")
-#include "Capitulos/Representaciones.typ"
+#chapter("Grupos finitos")
+#include "Capitulos/GruposFinitos.typ"
+#pagebreak()
+#include "Ejercicios/GruposFinitos.typ"
 
 
 //==================================================//
@@ -62,4 +63,10 @@
 #part("Grupos Continuos")
 #chapter("Grupos de Lie")
 #include "Capitulos/GruposLie.typ"
+#pagebreak()
+#include "Ejercicios/GruposLie.typ"
 
+
+#chapter("Rotaciones")
+== Grupo $O(3)$
+== Grupo $ S U (2)$

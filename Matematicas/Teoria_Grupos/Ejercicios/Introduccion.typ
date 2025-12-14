@@ -1,4 +1,4 @@
-#import "../../../Plantilla_Cuaderno/plantilla.typ": *
+#import "../../../plantilla.typ": *
 
 == Ejercicios
 
