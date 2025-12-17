@@ -62,7 +62,7 @@ $ (a) = {b|b tilde a} $
 
 de las propiedades de $tilde$ se sigue que la subdivisión de un conjunto en clases de equivalencia es una _partición en subconjuntos disjuntos_, ya que todo elemento pertenece a alguna calse de equivalencia por la propiedad reflexiva $a tilde a arrow.r.double (a) = {a}$. Además, si dos clases $(a)$ y $(b)$ tuvieran algún elemento en común $a tilde c$ y $b tilde c$, por transitividad se verifica que $a tilde b$ y por tanto $(a)=(b)$. Como sabemos, que la propiedad de conjugación es una relación de equivalencia, todo grupo $G$ admite una descomposición en _clases de conjugación_:
 
-$ (g_i) = { g_i | g_j = g g_i g^(-1), "para algún" g in G} $
+$ (g_i) = { g_j | g_j = g g_i g^(-1), "para algún" g in G} $
 
 Lógicamente el número de claes de conjugación es menor que el orden del grupo. Sólo es un grupo abeliano, cada elemento es a la vez toda una clase de conjugación que $a = g b g^(-1) = g g^(-1) b = b$.
 
@@ -134,7 +134,7 @@ $ (g_1 H) dot  (g_2 H) = g_1 H g_2 H = g_1 g_2 H H = g_3 H $
 === Producto Directo
 
 #definition(name: "Producto Directo")[
-  Decimos que un grupo $G$ es el producto directo de dos subgrupos $A$ y $B$, $G=A #sym.times.circle B$, cuando 
+  Decimos que un grupo $G$ es el producto directo de dos subgrupos $A$ y $B$, $G=A otimes B$, cuando 
   + Todos los elementos de $A$ conmutan con todos los de $B$.
   + Todo elemento de $G$ admite una expresión única en forma de $g=a b$ donde $a in A$ y $b in B$. 
 ]

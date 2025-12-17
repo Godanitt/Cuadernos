@@ -1,5 +1,32 @@
 #import "../../../plantilla.typ": *
 
+== Introducción
+
+Un grupo finito de elementos se llama _grupo finito_. El número de elementos es el _orden_ del grupo. 
+
+#v(1em)
+
+La forma más inmediata de representar un grupo finito consiste en mostrar su tabla de multiplicación, también llamado _cuadrado latino_. Por ejemplo, el grupo cíclico $C_3$ es el conjunto de elementos ${e,b,c}$ dotados de la tabla de multiplicación: 
+
+#align(center)[
+#table(
+  columns: 4,
+  align: center,
+  stroke: (x, y) => {
+  (
+    right: if x == 0 { 0.8pt } else { none },
+    bottom: if y == 0 { 0.8pt } else { none },
+  )
+  },
+
+
+  [],  "e", "b", "c",
+  "e",  "e", "b", "c",
+  "b",  "b", "c", "e",
+  "c",  "c", "e", "b",
+)
+]
+Aunque precisa, esta forma de caracterizar un grupo es engorrosa para grupos finitos de orden alto, por ser tan exhaustiva. Otra manera conmunmente utilizada para determinar un grupo finito consiste en especificar su _presentación_. Una presentación consiste en un conjunto de relaciones que indentifican elementos de $cal(F)_n$, el grupo libre de $n$ generadores. por ejemplo, un grupo libre abeliano es un grupo libre ordenado donde imponemos la identificación de elementos $x_i x_j = x_j x_i$ para cualquier $i,j$.
 
 == Grupo Cíclico $C_n$
 
@@ -7,7 +34,50 @@
   El *grupo cíclico $C_n$* es el grupo de transformaciones de simetría de un polígono regular con $n$ lados y direccionado. Por "direccionar" entendemos que el polígono lleva asociado un sentido de recorrido alrededor de su perímetro (equivalente a decir "en el sentido de las agujas del reloj"). Los elementos del grupo son rotaciones discretas del ángulo $2pi r / n$ con $r=0,1,...n-1$ alrededor de este eje de rotación, que atraversaría el "centro de gravedad" del polígono.
 ]
 
+Llamando a estos elementos $c_n^r$ es evidente que podemos obtener este elemento a partir de una rotación elemental $c_n^1 = c$, es decir,
 
+$ c_n^r = c^r $
+
+En principio el grupo está generado por potencias arbitrariamente altas de esta operación elemental, $c$. Sin embargo, notemos que el grupo finito debido a que una rotación de ángulo $2 pi$ es equivalente a la identidad: 
+
+$ c^n = e $
+
+podemos por tanto definir matemáticamente el grupo cíclico de orden $n$ como el grupo de elementos _generados_ por $c$, consistente en elementos ${e,c,c^2, ..., c^{n-1}}$. 
+
+#v(1em)
+
+Obviamente se trata de un grupo Abeliano, ya que 
+
+$ c^r c^s = c^(r+s) = c^s c^r $
+de hecho es _isomorfo_ al grupo $ZZ_n$. La correspondencia es 1:1 tal que 
+
+$ c^r in C_n #sym.arrow.l.r.long r in ZZ_n $ 
+y esta correspondencia es un homomorfismo, lo que hace que preserve las opraciones respectivas de ambos conjuntos. Al tratarse de un grupo abeliano, cada elemento constituye su propia clase de conjugación. 
+
+#example()[
+  Vamos a representar el grupo $C_6$ como el producto directo de subgrupos. Fácilmente $C_6 = A otimes B$ implica que 
+  $ A = {e,c^2,c^4} quad quad B = {e,c^3} $
+]
+
+== Grupo Dihédrico $D_n$
+
+#definition(name:"Grupo Dihédrico")[
+  El *grupo dihédrico $D_n$* es el grupo de transformaciones de simetría de un polígono regular con $n$ lados no direccionado. ]
+
+Ahora, no solo tenemos "rotaciones", como el grupo cíclico. Este grupo contiene otras simetrías, como podrían ser las "simetrías espejo" (por ejemplo, por ejemplo cambiar el lado izquierdo y el derecho de un cuerpo humano, lo cual no se puede hacer con rotaciones). Para entenderlo estudiaremos el grupo $D_3$ y $D_4$
+
+=== Grupo $D_3$
+
+Este grupo contiene trivialmente los elementos ${e,c,c^2}$ del grupo cíclico. Además tendrá los elementos $x,y,z$, que serían las rotaciones de 180 grados en torno a los ejes $x,y,z$. Estas operaciones satisfacen $x^2=y^2=z^2=e$
+
+Se puede entender el grupo $D_3$ como el _grupo de simetrías del triángulo_. Entonces 
+
+$ D_3 = {e,c,c^2,x,y,z} $
+
+Además como $y = c x$ y $z = c^2 x$, Entonces
+
+$ D_3 = {e,c,c^2,x,x c,x c^2} $
+Dado que $e=c^3$ o $e=x^2$, es obvio que todos los elementos de $D_3$ pueden ser construidos a partir de dos elementos $c$ y $x$. 
 
 == Grupo Simétrico $S_n$
 
@@ -85,6 +155,15 @@ mat(
 ) = (123) 
 $
 
+A priori puede parecer que tiene más complicación la descomposición en ciclos, aunque es evidente que ocupan menos espacio. Veamos que: 
+
+- Dos ciclos son el mismo si coinciden salvo permutación cíclica de sus elementos. 
+- Cíclos de un elemento pueden ser omitidos.
+- Ciclos disjuntos conmutan entre sí.
+- Ciclos que tengan un sólo elemento en común se encadenan (1234)(43) = (124)
+
+Independietemente de la forma que el lector considere más adecuadas, el punto más importante que queremos hacer aquí es que todo elemento $S_n$ puede escribirse en forma de un producto de ciclos disjuntos.
+
 #example()[
   Uno podría preguntarse cuales son los elementos del grupo $S_3$. Dado que $3!=6$, sabemos que tiene 6. Estos son: 
 
@@ -93,14 +172,35 @@ $
   Es evidente que $(21)=(12)$, $(123)=(312)$... En ese sentido cada elemento tiene varias representaciones. 
 ]
 
-A priori puede parecer que tiene más complicación la descomposición en ciclos, aunque es evidente que ocupan menos espacio. Veamos que: 
+=== Representación de $D_3$:
 
-- Dos ciclos son el mismo si coinciden salvo permutación cíclica de sus elementos. 
-- Cíclos de un elemento pueden ser omitidos.
-- Ciclos disjuntos conmutan entre sí.
-- Ciclos que tengan un sólo elemento en común se encadenan (1234)(43) = (12)
+Vamos a hacer una representación de $D_3$ Obviamente ccogeremos la representación con los vectores
 
-Independietemente de la forma que el lector considere más adecuadas, el punto más importante que queremos hacer aquí es que todo elemento $S_n$ puede escribirse en forma de un producto de ciclos disjuntos.
+$ hne_1 = mat(1;0;0) quad hne_2 = mat(0;1;0) quad hne_3 = mat(0;0;1) $
+
+Dado que todos los elementos del grupo $S_3 = {(),(123),(132),(12),(23),(13)}$ están compuestos por $(12)$ y $(123)$, basta con conocer las representaciones de $(12)$, $(123)$. Evidentemente en esta base 
+
+$ D(()) = mat(1,0,0;0,1,0;0,0,1) = II $
+y tenemos que 
+
+$ D((12))^2 =  II quad quad D((123))^3 = II $
+Podemos obviamente escribir $D((123))=D((12))=II$, obteniendo la representación trivial, o escribir $D((123)))=II$ y $D((12))=-II$. En general, podemos calcularlo suponiendo que $D((12)))$ y $D((123))$ son matrices $3 times 3$ generales y usar propiedades como la anteriores para deducir término a término. Sin embargo esto sería largo y tedioso. No es dificil ver que para llegar a la representación podemos aplicar conceptos "sencillos".
+
+#v(1em)
+
+Está claro que (12) representa la permutación del 1 con el 2, es decir que si $D((12))hne_1 = hne_2$, y que si $D((12)) hne_2 = hne_1$. La matriz que verifica esto es: 
+
+$ D((12)) = mat(0,1,0;1,0,0;0,0,1)  $
+
+Por otro lado, la matriz D(123) es aquella tal que $D((123))hne_i = hne_i+1$ (para $i=1,2,3$ y $i=4=1$). Así pues: 
+
+$ D((123)) = mat(0,1,0;0,0,1;1,0,0)  $
+
+Con estas dos podmeos encontrar la expresión de las demás, o seguir aplicando estos conceptos sencillos. En cualquier caso la descomposición natural:  
+
+$ D((23)) = mat(1,0,0;0,0,1;0,1,0) quad 
+  D((13)) = mat(0,0,1;0,1,0;1,0,0) quad 
+  D((132)) = mat(0,0,1;1,0,0;0,1,0) $
 
 === Teorema de Cayley
 

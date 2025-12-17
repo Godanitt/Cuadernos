@@ -1,5 +1,4 @@
-
-#import "@preview/cetz:0.3.2"
+#import "@preview/cetz:0.4.2"
 #import "@preview/fletcher:0.5.8" as f: diagram, node, edge, 
 #import f.shapes: parallelogram, diamond, ellipse
 
@@ -284,7 +283,6 @@
   }
 }
 
-
 #let problem(name: none, body) = {
   context{
     let language = language-state.at(here())
@@ -396,9 +394,9 @@
 
 
 set text(font: "Libertinus Serif")
+show math.equation: set text(font: "Libertinus Math") 
 
-//show math.equation: set text(font: "STIX Two Math")
-//show math.equation: set text(font: "XITS Math")
+//set text(font: "Fira")
 //show math.equation: set text(font: "Fira Math")
 
 

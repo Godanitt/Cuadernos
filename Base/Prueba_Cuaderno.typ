@@ -37,6 +37,9 @@
   heading-style-compact: true,
   first-line-indent: false,
 )
+)
+
+
 
 // Custom thmbox
 #let solution(name: none, body) = {
