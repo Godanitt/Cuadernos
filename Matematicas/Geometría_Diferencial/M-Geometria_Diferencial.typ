@@ -1,13 +1,12 @@
 #import "../../plantilla.typ": *
 
-
-
 #show: book.with(
   title: "Geometría Diferencial",
-  subtitle: " ",
+  typography: "Libertinus Serif",
+  math-typography: "Libertinus Math",
   date: datetime.today,
   author: ("Daniel Vázquez Lago",""),
-  main-color: rgb("#7000b1"),
+  main-color: rgb("#400361"),
   lang: "es",
   cover: none,
   image-index: none,
@@ -15,7 +14,7 @@
   list-of-table-title: "List of Tables",
   supplement-chapter: "Chapter",
   supplement-part: "Part",
-  font-size: 11pt,
+  font-size: 12pt,
   part-style: 0,
   copyright: [
     Copyright © 2023 Flavio Barisi
@@ -39,3 +38,28 @@
 )
 
 
+#part("Variedades Diferenciales")
+
+#chapter("Variedades y Campos Vectoriales")
+#include "Capitulos/VariedadesDiferenciales.typ"
+
+
+#chapter("Tensores y Formas Exteriores")
+#include "Capitulos/FormasExteriores.typ"
+
+
+#chapter("Integración en formas diferenciales")
+#include "Capitulos/Integracion.typ"
+
+#chapter("Derivadas Covariantes y Curvatura")
+
+
+#part("Geometría de Riemann")
+
+#chapter("Métrica de Riemann")
+
+#nocite(<FrankelGeometryPhysics>)
+#nocite(<gross2023manifolds>)
+#nocite(<NakaharaGeometryTopologyPhysics>)
+
+#my-bibliography( bibliography("sample.bib"))

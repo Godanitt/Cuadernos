@@ -95,7 +95,7 @@ $
 
 Donde el último término, el termino de materia total generada, es nulo en unidades masicas ya que la masa no se genera sino que se transforma. Quedando la ecuación macroscópica de conservación de la materia total ecpresada en unidades de masa (OJO: en el caso de numero de moles no se conserva no desaparece el término):
 
-$ dif(M_(i_T))(t)=(rho_(i_1) Q_(V,1)- rho_(i 2)Q_(V,2))$
+$ dif(M_(i_T))(t)=(rho_(i_1) Q_(V,1)- rho_(i 2)Q_(V,2)) $
 
 Definimos ahora lo que es la \textbf{base de cálculo}. Esta consiste en la cantidad de materia adecuada que se toma como referncia o bien una cantidad de tiempo de operación. Para elegir esta base de cálculo se recomienda:
 
@@ -228,8 +228,8 @@ En sistemas con recirculación como el de la figura @fig:reac-rec hay varios tip
 ) <fig:reac-rec>
 
 
-$ "Conversión global" = (("reactivo en F"))/- "(Reactivo en P)" "Reactivo en F" $
-$ "Conversión por paso" = (("reactivo en F+R") - "(Reactivo en S)")/"Reactivo en F+R" $
+$ "Conversión global" = (("reactivo en F")- "(Reactivo en P)")/("Reactivo en F") $
+$ "Conversión por paso" = ( ("reactivo en F+R") - "(Reactivo en S)")/"Reactivo en F+R" $
 
 == Balances de materia en etado no estacionario
 

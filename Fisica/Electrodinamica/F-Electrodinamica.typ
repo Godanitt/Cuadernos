@@ -39,11 +39,30 @@
 )
 
 #chapter("Análisis Vectorial")
+
+#part("Electrostática")
 #chapter("Electrostática")
-#chapter("Potenciales")
+#chapter("Condiciones de frontera en Electrostática")
 #chapter("Campos eléctricos en medios materiales")
+
+#part("Magnetostática")
 #chapter("Magnetostática")
 #chapter("Campos magnéticos en medios materiales")
+#chapter("Materiaels Magnéticos")
+
+#part("Electrodinámica")
+
 #chapter("Electrodinámica")
 #chapter("Leyes de Conervación")
 #chapter("Ondas electromagnéticas")
+#chapter("Guidas de Ondas")
+#chapter("Relatividad especial")
+#chapter("Electrodinámica Relativista")
+
+#part("Radiación")
+
+#chapter("Sistemas Radiantes: multipolos")
+#chapter("Radiación de Partículas en Movimiento")
+#chapter("Colisiones entre partículas y pérdidas de energía")
+
+

@@ -535,48 +535,7 @@ mat(
 = 1 oplus mat(-1/2, sqrt(3)/2; -sqrt(3)/2, -1/2) $
 
 
-Por lo que hemos representado $D(g)=A_(1 times 1) oplus B_(2 times 2)$, que es lo que queríamos (representación irreducible), siendo en particular $A_(1 times 1) = 1$ tal y como se habí
-$ D'(()) =mat(1,0,0;0,1,0;0,0,1) = 1 oplus mat(1,0;0,1) $$
-D'((12)) =
-mat(
-  1, 0, 0;
-  0, -1, 0;
-  0,  0, 1
-)
-= 1 oplus mat(-1,0;0,1) 
-$
-$ D'((23)) =
-mat(
-  1, 0, 0;
-  0,  1/2,  sqrt(3)/2;
-  0,  sqrt(3)/2, -1/2
-) =  1 oplus mat(1/2, sqrt(3)/2; sqrt(3)/2, -1/2)  
-$ 
-
-$ D'((13)) =
-mat(
-  1, 0, 0;
-  0,  1/2, -sqrt(3)/2;
-  0, -sqrt(3)/2, -1/2
-)
-= 1 oplus mat(1/2, -sqrt(3)/2; -sqrt(3)/2, -1/2) $
-
-$ D'((123)) =
-mat(
-  1, 0, 0;
-  0, -1/2, -sqrt(3)/2;
-  0,  sqrt(3)/2, -1/2
-)
-= 1 oplus mat(-1/2, -sqrt(3)/2; sqrt(3)/2, -1/2) $ 
-$
-D'((132)) =
-mat(
-  1, 0, 0;
-  0, -1/2,  sqrt(3)/2;
-  0, -sqrt(3)/2, -1/2
-)
-= 1 oplus mat(-1/2, sqrt(3)/2; -sqrt(3)/2, -1/2) $
-a demostrado naifmente antes.
+Por lo que hemos representado $D(g)=A_(1 times 1) oplus B_(2 times 2)$, que es lo que queríamos (representación irreducible), siendo en particular $A_(1 times 1) = 1$ tal y como se había demostrado naifmente antes.
 
 //==================== ==============
 // -- EJERCICIO 8 -----------------

@@ -347,7 +347,7 @@
 //========================================================================
 
 
-#let book(title: "", subtitle: "", date: "", author: (), paper-size: "a4", width: none, height: none, margin: (x: 2cm, bottom: 2.5cm, top: 3cm), logo: none, cover: none, image-index:none, body, main-color: blue, copyright: [], lang: "en", list-of-figure-title: none, list-of-table-title: none, supplement-chapter: "Chapter", supplement-part: "Part", font-size: 10pt, part-style: 0, lowercase-references: false, padded-heading-number: true, outline-small-depth: 2, heading-style-compact: false, first-line-indent: true) = {
+#let book(title: "", subtitle: "", typography:"", math-typography:"", date: "", author: (), paper-size: "a4", width: none, height: none, margin: (x: 2cm, bottom: 2.5cm, top: 3cm), logo: none, cover: none, image-index:none, body, main-color: blue, copyright: [], lang: "en", list-of-figure-title: none, list-of-table-title: none, supplement-chapter: "Chapter", supplement-part: "Part", font-size: 10pt, part-style: 0, lowercase-references: false, padded-heading-number: true, outline-small-depth: 2, heading-style-compact: false, first-line-indent: true) = {
   set document(author: author, title: title)
   set text(size: font-size, lang: lang)
   set par(leading: 0.5em)
@@ -393,10 +393,19 @@
 //========================================================================
 
 
-set text(font: "Libertinus Serif")
-show math.equation: set text(font: "Libertinus Math") 
+set text(font: typography)
+show math.equation: set text(font: math-typography) 
 
-//set text(font: "Fira")
+//set text(font: "Libertinus Serif")
+//show math.equation: set text(font: "Libertinus Math")
+
+//set text(font: "Latin Modern Roman")
+//show math.equation: set text(font: "Latin Modern Math")
+
+//set text(font: "STIX Two Text")
+//show math.equation: set text(font: "STIX Two Math")
+
+//set text(font: "Fira Sans")
 //show math.equation: set text(font: "Fira Math")
 
 
@@ -727,12 +736,13 @@ show math.equation: set text(font: "Libertinus Math")
 
 
   // Main body.
+  /*
   set par(
     first-line-indent: 1em,
     justify: true,
     spacing: 0.5em
   ) if first-line-indent
-
+  */
 
   set par(
     justify: true,
@@ -740,7 +750,10 @@ show math.equation: set text(font: "Libertinus Math")
   ) if not first-line-indent
 
   set block(spacing: 1.2em)
-  show link: set text(fill: main-color)
+  
+  show link: set text(fill: main-color)  
+  show cite: set text(fill: main-color)
+  show ref: set text(fill: main-color)
 
   body
 

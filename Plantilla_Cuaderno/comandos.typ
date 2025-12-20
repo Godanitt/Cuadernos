@@ -6,6 +6,7 @@
 
 
 
+#let Nn = $ bold(N) $
 
 #let en = $ bold(e) $
 #let un = $ bold(u) $

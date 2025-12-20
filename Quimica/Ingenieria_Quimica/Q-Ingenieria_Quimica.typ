@@ -3,6 +3,8 @@
 #show: book.with(
   title: "Ingeniería Química",
   subtitle: "A Practical Guide",
+  typography: "Libertinus Serif",
+  math-typography: "Libertinus Math",
   date: datetime.today,
   author: ("Daniel Vázquez Lago","María Álvarez Barciela"),
   main-color: rgb("#0a6f81"),
@@ -16,20 +18,20 @@
   font-size: 12pt,
   part-style: 0,
   copyright: [
-    Copyright © 2023 Flavio Barisi
+    Template based on "typst-orange-template"
+    
+    © 2023 Flavio Barisi (Apache 2.0)
 
-    PUBLISHED BY PUBLISHER
+    Modifications in the template by
 
-    #link("https://github.com/flavio20002/typst-orange-template", "TEMPLATE-WEBSITE")
+    © 2025 Daniel Vázquez Lago 
 
-    Licensed under the Apache 2.0 License (the “License”).
-    You may not use this file except in compliance with the License. You may obtain a copy of
-    the License at https://www.apache.org/licenses/LICENSE-2.0. Unless required by
-    applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and limitations under the License.
+    and content of "Ingeniería Química" made by
 
+    © 2025 María Álvarez Barciela
 
-    _First printing, July 2023_
+    All original content, modifications, and extensions contained in this document are the intellectual property of the authors.
+
   ],
   lowercase-references: false,
   heading-style-compact: true,
@@ -49,7 +51,7 @@
 #include "Capitulos/BalanceEnergia.typ"
 
 #chapter("Flujo de fluidos")
-#include "Capitulos/Flujo_Fluidos.typ"
+#include "Capitulos/TrasferenciaFluidos.typ"
 
 #chapter("Trasferencia de calor")
 #include "Capitulos/Trasferencia_Calor.typ"
@@ -57,4 +59,7 @@
 #chapter("Procesos de separación")
 #include "Capitulos/Procesos_Separacion.typ"
 
+#nocite(<calleja2008>)
+#nocite(<himmelblau2002>)
 
+#my-bibliography( bibliography("sample.bib"))

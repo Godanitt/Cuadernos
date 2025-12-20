@@ -5,6 +5,8 @@
 #show: book.with(
   title: "Teoría de Grupos",
   subtitle: " ",
+  typography: "Libertinus Serif",
+  math-typography: "Libertinus Math",
   date: datetime.today,
   author: ("Daniel Vázquez Lago",""),
   main-color: rgb("#46006e"),
@@ -59,7 +61,7 @@
 #include "Ejercicios/GruposFinitos.typ"
 
 
-//==================================================//
+//===============================================//
 
 #part("Grupos Continuos")
 #chapter("Grupos de Lie")
@@ -68,6 +70,23 @@
 #include "Ejercicios/GruposLie.typ"
 
 
+
+//==============================================//
+
+#part("Teoría de Grupos aplicada a la física")
+
 #chapter("Rotaciones")
 == Grupo $O(3)$
 == Grupo $ S U (2)$
+
+#chapter("Ecuacón de Dirac")
+
+
+== Hamiton, Clifford y Dirac
+== Álgebra de Dirac
+
+
+#chapter("Campos de Yang-Milles")
+
+== Teorema de Noeteher para Simetrías Internas
+== El Nucleón de Yangs-Milles
