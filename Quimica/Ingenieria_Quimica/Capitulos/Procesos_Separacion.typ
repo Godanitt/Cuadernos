@@ -87,8 +87,8 @@ $
 
  Se denomina *volatilidad absoluta* de un componente en una mezcla a la relación entre su presión parcial de vapor y su concentración de la fase líquida, es decir:
 
-- Volatilidad de A: $alpha_A=p_A/x_A$
-- Volatilidad de B:$alpha_B=p_B/x_B$
+- Volatilidad de A: $alpha_A=p_A\/x_A$
+- Volatilidad de B: $alpha_B=p_B\/x_B$
 
 
 Al cociente de las volatilidades del componente más volátil (A) y el menos volátil (B) se denomina *volatilidad relativa* (de A respecto a B) $alpha_(A B)$.
@@ -126,7 +126,7 @@ La destilación es una operación básica con la que se puede separar mezclas l�
   
 )<fig:p>
  
- También debemos conocer el concepto de platos de borboteo. Estos retienen el líquido a través del cual se ve obligado a pasar el vapor.\\
+ También debemos conocer el concepto de platos de borboteo. Estos retienen el líquido a través del cual se ve obligado a pasar el vapor. 
 
 #figure(
   image("../Imagenes/ProcesosSeparacion/09.png", width: 50%),

@@ -27,7 +27,7 @@ La *temperatura* es una forma indirecta de medir la cantidad de energía térmic
 #v(1em)
 
 
-En cambio, el *calor* es el transporte de energía térmica (flujo) y tiene que haber un gradiente de temperatura (del cuerpo de mayor temperatura al de menor temperatura). Se mide con un calorímetro y tiene unidades de energía (J).ç
+En cambio, el *calor* es el transporte de energía térmica (flujo) y tiene que haber un gradiente de temperatura (del cuerpo de mayor temperatura al de menor temperatura). Se mide con un calorímetro y tiene unidades de energía (J).
 
 #v(1em)
 
@@ -83,7 +83,7 @@ $  Q = (Delta T_("total"))/(sum R_i)  $
 )<fig-placeholder>
 
 
-En el caso de que exista un mal contacto entre las placas se colará aire entre las placas. De modo que aparece la resistencia de contacto, $R_c=1/(h_c A_c)$ la cual también se debe tener en cuenta. Llamamos $h_c$ al coeficiente de contacto expresado en $(W/m^2 dot K)$.
+En el caso de que exista un mal contacto entre las placas se colará aire entre las placas de modo que aparece la resistencia de contacto, $R_c=1/(h_c A_c)$ la cual también se debe tener en cuenta. Llamamos $h_c$ al coeficiente de contacto expresado en $(W/m^2 dot K)$.
 
 #figure(
   image("../Imagenes/TrasferenciaCalor/03.jpg", width: 45%),
@@ -182,7 +182,7 @@ De modo que, aplicado a la @fig:mats:
 
 $  1/(U A) = R_("int") + sum_(i = 1)^(i = 3) R_i + R_("ext") = 1/(h_("int") A) + sum (e_i)/(k_i A) + 1/(h_("ext") A) $
 
-Donde $U dot A$ ($"W" dot "K"^{-1}$) siempre es inferior a la contribución de cada una de las resistencias.
+Donde $U dot A$ ($"W" dot "K"^(-1)$) siempre es inferior a la contribución de cada una de las resistencias.
 
 $ 
 U A <= h_("int") A wide U A <= h_("ext") A wide U A <= (k_i A)/(e_i) $

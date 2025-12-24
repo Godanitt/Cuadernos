@@ -268,8 +268,8 @@
     let main-color = main-color-state.at(here())
     thmbox("example",
     stroke: (
-      top:  2pt + main-color,
-      bottom:  2pt + main-color,
+      top: 0pt,   // 2pt + main-color,
+      bottom: 0pt, //  2pt + main-color,
       left: none,
       right: none,
       ),
@@ -350,10 +350,11 @@
 #let book(title: "", subtitle: "", typography:"", math-typography:"", date: "", author: (), paper-size: "a4", width: none, height: none, margin: (x: 2cm, bottom: 2.5cm, top: 3cm), logo: none, cover: none, image-index:none, body, main-color: blue, copyright: [], lang: "en", list-of-figure-title: none, list-of-table-title: none, supplement-chapter: "Chapter", supplement-part: "Part", font-size: 10pt, part-style: 0, lowercase-references: false, padded-heading-number: true, outline-small-depth: 2, heading-style-compact: false, first-line-indent: true) = {
   set document(author: author, title: title)
   set text(size: font-size, lang: lang)
-  set par(leading: 0.5em)
+  set par(leading: 0.6em)
   set enum(
     numbering: "1.a.i.", 
     body-indent: 0.5em,
+    spacing: 1em,
     indent: 1.5em)
   set list(
     indent: 1.5em,

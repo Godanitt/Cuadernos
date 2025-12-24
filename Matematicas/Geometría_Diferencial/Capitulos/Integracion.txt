@@ -1,6 +1,4 @@
 
-#import "../../../plantilla.typ": *
-
 Las formas exteriores aparecen implicitamente en aspectos de la física y la ingeniería. Lo que se conciven como integrandos de línea, superficies, volúmenes o generalizaciones $n$-dimensionales, son formas exteriores. En este capítulo de hecho lo que vamos a cer es como nosotros _no integramos vectores, integramos formas_. Por ejemplo, la fuerza de un campo eléctrico puede ser determinado moviendo una unidad de carga "lentamente" a lo largo de un camino, es decir, una _integral de línea_. En este sentido, un campo eléctrico es una 1-forma. 
 
 

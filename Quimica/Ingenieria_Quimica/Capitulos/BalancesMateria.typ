@@ -46,7 +46,7 @@ Donde $phi$ es el flujo de la propiedad extensiva debido a gradientes de concent
 
 De la misma manera el caudal neto de propiedad extensiva que abandona el recinto por el mecanismo de convección (movimiento del fluido con velocidad $vec(v)$ será:
 
-$    -integral_S pi dot vec(v) dot dif vec(S)$
+$    -integral_S pi dot arrow(v) dot dif arrow(S) $
 
 La generación de propiedad extensiva en el interior del propio recinto vendrá dada por:
 
@@ -60,12 +60,12 @@ Siendo G la cantidad de propiedad extensiva que se genera en el recinto por unid
 Por lo que la ecuación general de conservación de cualquier propiedad extensiva vendrá dada por la ecuación:
 
 $
-    integral_V (delta pi)(delta t) dif V=-integral_S phi dif vec(S) - integral_V pi vec(v) = dif vec(s) + integral_V G dif V
+    integral_V (delta pi)(delta t) dif V=-integral_S phi dif S - integral_V pi v dif V + integral_V G dif V
 $
 
-Donde $[E]-[S]=- integral_S phi d vec(s)-integral_V pi vec(v)d vec(S)$. Además, el caudal se define como $Q_v= vec(v) dot vec(s)$ de tal mal¡nera que aplicando el teorema del valor medio del cálculo integral:
+Donde $[E]-[S]=- integral_S phi d vec(s)-integral_V pi arrow(v)d arrow(S)$. Además, el caudal se define como $Q_v= arrow(v) dot arrow(S)$ de tal manera que aplicando el teorema del valor medio del cálculo integral:
 
-$ dif(V, t)  = - sum_i phi.alt_i vec(S_i) +(pi_1 Q_(v, 1) - pi_2 Q_(V, 2)) + G_m V
+$ dif(V, t)  = - sum_i phi.alt_i S_i +(pi_1 Q_(v, 1) - pi_2 Q_(V, 2)) + G_m V
 $
 
 
@@ -116,7 +116,7 @@ $
 
 Donde además si no se produce reacción química el término de generación es nulo, llegando así a la conocida como la ecuación de continuidad:
 
-$Q_(V 2) rho_(i 2) = Q_(V 1) rho_(i 1) -> m_(i 2) = m_(i 1)$
+$ Q_(V 2) rho_(i 2) = Q_(V 1) rho_(i 1) -> m_(i 2) = m_(i 1) $
 
 Si $rho="cte"$, es decir se trata de un fluido incompresible:
 
@@ -268,7 +268,7 @@ En otras ocasiones, uno o más materiales se cargan inicialmente en el equipo, d
 En función de las fases presentes se pueden clasificar en :
 
 - Reactores homogéneos: las reacciones transcurren solamente en una fase (líquida y gaseosa).
-- Reactores heterogéneos: las reacciones requieres al menos la presencia de más de una fase (normalmente G-L/G-S/L-L, S-L-G.
+- Reactores heterogéneos: las reacciones requieres al menos la presencia de más de una fase (normalmente G-L/G-S/L-L, S-L-G).
 
 #v(1em)
 
@@ -350,7 +350,7 @@ $ (V_1)/(F_(A_0)) = (x_(A_1))/((-r_A)) $
 
 En el caso que $x_A eq.not 0$ podemos expresar la ecuación de diseño en base a concentración sabiendo que :
 
-$ C_(A_s) = C_(A_e) dot.op(1 - x_(A_s)) -> x_A = (C_(A_e) - C_(A_s))/(C_(A_e)) $
+$ C_(A_s) = C_(A_e) dot.op (1 - x_(A_s)) -> x_A = (C_(A_e) - C_(A_s))/(C_(A_e)) $
 
 De tal forma que llegamos a la ecuación:
 

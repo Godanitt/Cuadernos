@@ -92,7 +92,7 @@
       } 
       
       if (title-text == "Bibliografía" or title-text == "Bibliography" or title-text=="Index"){
-        my-outline-row(insetSize: 2pt, textWeight: "bold", textSize: textSize2, textColor:main-color, number: number, title: title, heading_page: heading_page, location: it.element.location(),sangria: -1cm)
+        my-outline-row(insetSize: 2pt, textWeight: "bold", textSize: textSize2, textColor:main-color, number: number, title: title, heading_page: heading_page, location: it.element.location(),sangria: -0.35cm)
         v(0.5cm, weak: true)
       } 
       else {      
