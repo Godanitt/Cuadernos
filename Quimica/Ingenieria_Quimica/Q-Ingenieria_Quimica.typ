@@ -2,12 +2,14 @@
 
 #show: book.with(
   title: "Ingeniería Química",
-  subtitle: "A Practical Guide",
+  subtitle: "",
   typography: "Libertinus Serif",
   math-typography: "Libertinus Math",
   date: datetime.today,
   author: ("Daniel Vázquez Lago","María Álvarez Barciela"),
-  main-color: rgb("#0a6f81"),
+  main-color: rgb("#0789a0"),
+  seccond-color: rgb("#39a2b5"),
+  third-color: rgb("#87cedb"),
   lang: "es",
   cover: none,
   image-index: none,

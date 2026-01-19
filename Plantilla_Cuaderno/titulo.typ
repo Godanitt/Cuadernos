@@ -1,5 +1,7 @@
 #let make_title(
-  back: color,
+  primary: color,
+  seccond: color,
+  third: color,
   accent: color,
   image: none,
   title: str,
@@ -9,11 +11,21 @@
 ) = [
   // Fondo completo
   #set page(margin: 0cm)
-  #rect(width: 100%, height: 100%, fill: back)[
+  
+  #rect(width: 100%, height: 100%, fill: gradient.linear(
+    angle: 40deg,
+
+    //..color.map.cividis,
+    (primary, 0%),
+    (seccond, 50%),
+    (third, 100%),
+  ))[
     #move(dx: 0cm, dy: 2.5cm)[  ]
     
     #v(1.5cm)
     #h(0.5cm)
+
+
     // Imagen opcional centrada
     #if image != none [
       #align(center)[#image(image, width: 70%)]
@@ -26,7 +38,7 @@
       #box(
         width: 100%,
         inset: (left: 1cm, top: 0.7cm, bottom: 0.7cm),
-        fill: rgb(100%, 100%, 100%, 20%),
+        fill: rgb(100%, 100%, 100%, 10%),
         stroke: 0pt + accent,
         radius: 0pt,
       )[
@@ -46,14 +58,14 @@
       #box(
         width: 100%,
         inset: (left: 1cm, top: 0.7cm, bottom: 20cm),
-        fill: rgb(100%, 100%, 100%, 30%),     // blanco translúcido  
+        fill: rgb(100%, 100%, 100%, 15%),     // blanco translúcido  
         stroke: 0pt + accent,
         radius: 0pt,
         )[
 
         #align(left)[
           #block(width: 80%)[
-            #text(size: 42pt, weight: "bold", fill: accent)[#title]
+            #text(size: 62pt, weight: "bold", fill: accent)[#title]
           ]
         ]
 

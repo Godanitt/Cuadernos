@@ -1,4 +1,5 @@
 #import "@preview/cetz:0.4.2"
+#import "@preview/physica:0.9.8": *
 #import "@preview/fletcher:0.5.8" as f: diagram, node, edge, 
 #import f.shapes: parallelogram, diamond, ellipse
 
@@ -178,6 +179,7 @@
     namefmt: x => [*--- #x.*],
     separator: h(0.2em),
     titlefmt: x => text(weight: "bold", fill: main-color, x), 
+    breakable: true,
     fill: black.lighten(95%), 
     base_level: 1)(name:name, body)
   }
@@ -190,10 +192,12 @@
     thmbox("definition",
     stroke: (left: 4pt + main-color),
     radius: 0em,
-    inset: (x: 0.65em),
+    inset: 0.55em,
     namefmt: x => [*--- #x.*],
     separator: h(0.2em),
-    titlefmt: x => text(weight: "bold", x), 
+    titlefmt: x => text(weight: "bold", x),
+    breakable: true, 
+    fill: main-color.lighten(93%), 
     base_level: 1)(name:name, body)
   }
 }
@@ -253,7 +257,7 @@
     stroke: (left: 4pt + main-color),
     radius: 0em,
     inset: 0.65em,
-    breakable: breakable,
+    breakable: true,
     namefmt: x => [*--- #x.*],
     separator: h(0.2em),
     titlefmt: x => text(fill: main-color, weight: "bold", x),
@@ -267,18 +271,14 @@
     let language = language-state.at(here())
     let main-color = main-color-state.at(here())
     thmbox("example",
-    stroke: (
-      top: 0pt,   // 2pt + main-color,
-      bottom: 0pt, //  2pt + main-color,
-      left: none,
-      right: none,
-      ),
+    stroke: (left: 4pt + gray),
     radius: 0em,
     inset: 0.8em,
     breakable: true,
     namefmt: x => [*--- #x.*],
     separator: h(0.2em),
     titlefmt: x => text(weight: "bold", x), 
+    fill: gray.lighten(95%), 
     base_level: 1)(name:name, body)
   }
 }
@@ -347,7 +347,7 @@
 //========================================================================
 
 
-#let book(title: "", subtitle: "", typography:"", math-typography:"", date: "", author: (), paper-size: "a4", width: none, height: none, margin: (x: 2cm, bottom: 2.5cm, top: 3cm), logo: none, cover: none, image-index:none, body, main-color: blue, copyright: [], lang: "en", list-of-figure-title: none, list-of-table-title: none, supplement-chapter: "Chapter", supplement-part: "Part", font-size: 10pt, part-style: 0, lowercase-references: false, padded-heading-number: true, outline-small-depth: 2, heading-style-compact: false, first-line-indent: true) = {
+#let book(title: "", subtitle: "", typography:"", math-typography:"", date: "", author: (), paper-size: "a4", width: none, height: none, margin: (x: 2cm, bottom: 2.5cm, top: 3cm), logo: none, cover: none, image-index:none, body, main-color: blue, seccond-color: blue,third-color: blue, copyright: [], lang: "en", list-of-figure-title: none, list-of-table-title: none, supplement-chapter: "Chapter", supplement-part: "Part", font-size: 10pt, part-style: 0, lowercase-references: false, padded-heading-number: true, outline-small-depth: 2, heading-style-compact: false, first-line-indent: true) = {
   set document(author: author, title: title)
   set text(size: font-size, lang: lang)
   set par(leading: 0.6em)
@@ -678,7 +678,9 @@ show math.equation: set text(font: math-typography)
    supplement-part-state.update(x => supplement-part)
    outline-small-depth-state.update(x => outline-small-depth)
    make_title(
-      back: main-color,
+      primary: main-color,
+      seccond: seccond-color,
+      third: third-color,
       accent: rgb("#ffffff"),
       author: author,
       title: title,

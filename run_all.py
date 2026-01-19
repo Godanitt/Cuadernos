@@ -17,7 +17,7 @@ carpetas_raiz = [
     "Matematicas",
     "Programacion",
     "Quimica",
-    "Trabajos",
+    #"Trabajos",
 ]
 # ========================
 

@@ -7,7 +7,9 @@
   math-typography: "Libertinus Math",
   date: datetime.today,
   author: ("Daniel Vázquez Lago",""),
-  main-color: rgb("#400361"),
+  main-color: rgb("#e8833f"),
+  seccond-color: rgb("#e06c29"),
+  third-color:rgb("#d13c5c"),
   lang: "es",
   cover: none,
   image-index: none,
@@ -101,4 +103,6 @@
 #nocite(<NakaharaGeometryTopologyPhysics>)
 #nocite(<Szekeres_2004>)
 
-#my-bibliography( bibliography("sample.bib"))
+#my-bibliography( bibliography("sample.bib",
+style: "apa",)
+)
