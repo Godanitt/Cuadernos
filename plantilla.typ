@@ -1,6 +1,7 @@
-#import "@preview/cetz:0.4.2"
+#import "@preview/cetz:0.4.2": *
 #import "@preview/physica:0.9.8": *
 #import "@preview/fletcher:0.5.8" as f: diagram, node, edge, 
+#import "@preview/zero:0.6.1":*
 #import f.shapes: parallelogram, diamond, ellipse
 
 

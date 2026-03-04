@@ -57,3 +57,10 @@
 
 #let otimes = [#sym.times.o]
 #let oplus = [#sym.plus.o]
+
+#let varphi = $phi$
+#let phi = $phi.alt$
+
+#let varepsilon = $epsilon$
+#let epsilon = $epsilon.alt$
+

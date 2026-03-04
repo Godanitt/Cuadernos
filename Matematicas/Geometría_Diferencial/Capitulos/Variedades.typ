@@ -411,11 +411,67 @@ $ tilde(phi)(omega_p) = (x^1(p),...,x^n(p),w^1,...,w^n) quad "donde" quad p = pi
 tal que $T^* M$ va hacia una variedad 2n dimensional. Este proceso peude extenderse a fibrados tensoriales del tipo $T^((r,s)) M$, que irían hacia variedades $n+n^(r+s)$ dimensionales. 
 
 == Mapa tangente y subvariedades 
+
 === Mapa tangente y pullback
+
+Sea $alpha: M arrow N$ un mapa diferenciable entre dos variedades $M$ y $N$ donde $dim M = m$ y $dim N = n$. Este induce un mapa $alpha_*: T_p (M) arrow T_(alpha(p)) (N)$, llamado *mapa tangente* de $alpha$, donde el vector tangente 
+
+$ Y_(alpha(p)) f = (alpha_* X_p) f = X_p (f compose alpha) $ 
+
+para una función $f in Fcal_(alpha(p)) (N)$. Este mapa es normalmente llamado el _diferencial_ del mapa $alpha$, pero suele provocar cofusión. 
+
+#v(1em)
+
+Sea $(U,phi;x^i)$ y $(V,varphi; y^alpha )$ dos cartas en $p$ y $alpha(p)$ respectivamente. El mapa $alpha$ se puede representar con $hat(alpha) = varphi compose alpha phi^(-1): phi(U) arrow psi(V)$, escrito como
+
+$ y^a = alpha^a (x^1,x^2,...,x^n) quad (a=1,...,n) $
+
+Para calcular los componentes de $Y^a$ de $Y_(alpha(p)) = alpha_* X_p = Y^a (partial_(y^a))_(alpha(p))$, que se calcula como: 
+
+$ Y_(alpha(p)) f = X^i evaluated(pdv(y^a,x^i))_(phi(p)) evaluated(pdv(,y^a))_(alpha(p)) f $
+
+tal que 
+
+$ Y^a = X^i evaluated(pdv(y^a,x^i))_(phi(p)) $
+
+Este mapa $alpha: M arrow N$ tambiçen induce un mapa $alpha^*$ entre _espacios contangentes_, pero en este caso actua sobre la dirección inversa, y es llamado el *pullback* inducido por $alpha$: 
+
+$ alpha^*: T_(alpha(p))^* (N) arrow T_p^* (M) $
+
+El pullback es una 1-forma $omega_(alpha(p))$ es definido por
+
+$ braket(alpha^* omega_(alpha(p)) , X_p) = braket(omega_(alpha(p)), alpha_* X_p ) $
+
+para un vector tangente $X_p$.
+
+#v(1em)
+
+La noción de mapa tangente o pullback de un mapa puede extenderse a tensores covariantes y contravariantes, tal y como $r$-vectores o $r$-formas. Sin embargo en el caso de tensores mixtos, solo son posibles si el mapa es un difeomorfismo. 
+
 === Subvariedades
 
 == Conmutadores, corrientes y derivadas de Lie
 === Conmutadores 
+
+Sea $X$ e $Y$ dos campos vectoriales en un conjunto abierto $U$ de una variedad diferencial $M$. Definimos el *conmutador* o *bracket de Lie* $[X,Y]$ como el campo vector en $U$ definido como: 
+
+$ [X,Y] f = X(Y f) - Y (X f) $
+
+para toda función diferenciable $f$ en $U$. Este es un campo vectorial dado que es lineal y satisface la regla de Leibnitz: 
+
+$ [X,Y] (a f + b g) = a [X,Y] f + b [X, Y] g $
+$  [X,Y] (f g) = f[X,Y] g + g [X, Y] f $
+
+El conmutador de Lie posee una gran cantidad de propiedades interesantes: 
+
+$ [X,Y] = - [Y,X] $
+$ [X,a Y + b Z]  =  a[X,Y] + b [X,Z] $
+$ [X,f Y] = - f [X,Y] + X f Y $
+$ [[X,Y],Z] +  [[Y,Z],X] + [[Z,X],Y] = 0 $
+
+siendo la última la *indentidad de Jacobi*. 
+
+
 === Derivada de Lie
 
 == Distribución y Teorema de Frobenius

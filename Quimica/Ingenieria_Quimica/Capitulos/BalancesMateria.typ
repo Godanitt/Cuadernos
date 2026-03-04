@@ -65,7 +65,7 @@ $
 
 Donde $[E]-[S]=- integral_S phi d vec(s)-integral_V pi arrow(v)d arrow(S)$. Además, el caudal se define como $Q_v= arrow(v) dot arrow(S)$ de tal manera que aplicando el teorema del valor medio del cálculo integral:
 
-$ dif(V, t)  = - sum_i phi.alt_i S_i +(pi_1 Q_(v, 1) - pi_2 Q_(V, 2)) + G_m V
+$ dif(V, t)  = - sum_i varphi_i S_i +(pi_1 Q_(v, 1) - pi_2 Q_(V, 2)) + G_m V
 $
 
 
