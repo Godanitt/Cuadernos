@@ -51,19 +51,36 @@
 #chapter("")
 
 #part("Aceleradores")
-#chapter("")
+#chapter("Sincrotrón")
+#include "Capitulos/Sincrotron.typ"
 
 #part("Detectores")
 
+#chapter("Indentificación de Partículas")
+
+#chapter("Detectores Gaseosos")
+
+#chapter("Detectores de Fotones")
+
+#chapter("Detectores Centelleadores")
+
+#chapter("Detectores Semiconductores")
+
+#chapter("Detectores Cherenkov")
+
+#chapter("Espectrómetros de muones")
 
 #chapter("Calorímetros")
 #include "Capitulos/Calorimetros.typ"
 
-#chapter("Detectores en los grandes experimentos")
-#include "Capitulos/DetectoresGrandesExp.typ"
+#chapter("Detectores de Estado Sólido")
 
 #part("Simulación en física de detectores")
 #chapter("")
 
 #part("Aplicaciones")
+
+#chapter("Detectores en Grandes Experimentos")
+#include "Capitulos/DetectoresGrandesExp.typ"
+
 #chapter("")

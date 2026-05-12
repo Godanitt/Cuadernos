@@ -3,6 +3,8 @@
 #import "@preview/fletcher:0.5.8" as f: diagram, node, edge, 
 #import "@preview/zero:0.6.1":*
 #import f.shapes: parallelogram, diamond, ellipse
+#import "@preview/lilaq:0.5.0" as lq
+
 
 
 #import("Plantilla_Cuaderno/indice.typ"): *
@@ -638,7 +640,7 @@ show math.equation: set text(font: math-typography)
       let number = if it.numbering != none {
         let num = counter(heading).display(it.numbering)
         let width = 0cm // measure(num).width
-        let gap = 5mm
+        let gap = 6mm
 
         let is_appendix = appendix-state.at(here()) != none
 

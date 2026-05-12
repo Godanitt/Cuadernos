@@ -29,6 +29,8 @@ Los calorímetros miden la energía depositada por una partícula abosorbiéndol
 
 Además de estos métodos, usados en general para la identificación de electrones, los calorímetros se usan para identificar muones y neutrinos. Los muones muy energéticos depositan una fracción muy pequeña de su energía y producen señales a través de todo el detector (una recta atraviesa el detector). Los neutrinos típicamente no interaccionan con el calorímetro. Si un neutrino muy energético es producido en un experimento de colisiones de haces, este fenómeno llevará a un desbalance en las energías depositdas en los dos hemisferios en el que un detector de ángulo sólido completo ($4pi$) puede medir. Esta no-coincidencia es lo que se conoce como _energía transversal faltante_, y llevó al descubrimiento del bosón _W_. 
 
+
+
 == Propiedades Relevantes de los Calorímetros 
 
 Las propiedades de los calorímetros deberían ser conocidas para entender el rol que pueden jugar en un experimento. Las propiedades más relevantes son: 
