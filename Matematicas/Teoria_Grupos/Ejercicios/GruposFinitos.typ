@@ -290,35 +290,43 @@ podemos asignarle una rotación en 2D. Si definimos los ejes de simetría del tr
 #let l = 0.3   // longitud de los ejes (pequeñitos)
 
 #align(center)[
-#cetz.canvas(length: 3cm, {
-  import cetz.draw: *
-  polygon(
-    (0, 0),3,
-    stroke: 3pt,
-    fill: none,
-    angle: 90deg,
+  #canvas(length: 3cm, {
+    import draw: *
+
+    polygon(
+      (0, 0),
+      3,
+      radius: 1,
+      stroke: 3pt,
+      fill: none,
+      angle: 90deg,
     )
-  content((0, 1.2), [x], anchor: "north")
-  content((-calc.cos(theta/2)-0.2, -calc.sin(theta/2)), [y], anchor: "east")
-  content(( calc.cos(theta/2)+0.2, -calc.sin(theta/2)), [z], anchor: "west")
 
-  content((0.1, -0.8), [$S_x$], anchor: "west")
-  content((calc.cos(theta/2)-0.2, calc.sin(theta/2)), [$S_y$], anchor: "east")
-  content(( -calc.cos(theta/2)+0.2, calc.sin(theta/2)), [$S_z$], anchor: "west")
+    content((0, 1.2), [x], anchor: "north")
+    content((-calc.cos(theta / 2) - 0.2, -calc.sin(theta / 2)), [y], anchor: "east")
+    content((calc.cos(theta / 2) + 0.2, -calc.sin(theta / 2)), [z], anchor: "west")
 
-  line((0,1)
-      ,(0,-1))
+    content((0.1, -0.8), [$S_x$], anchor: "west")
+    content((calc.cos(theta / 2) - 0.2, calc.sin(theta / 2)), [$S_y$], anchor: "east")
+    content((-calc.cos(theta / 2) + 0.2, calc.sin(theta / 2)), [$S_z$], anchor: "west")
 
-  line((-calc.cos(theta/2),-calc.sin(theta/2))
-      ,(calc.cos(theta/2),calc.sin(theta/2)))
+    line((0, 1), (0, -1))
 
-  line((calc.cos(theta/2),-calc.sin(theta/2))
-      ,(-calc.cos(theta/2),calc.sin(theta/2)))
+    line(
+      (-calc.cos(theta / 2), -calc.sin(theta / 2)),
+      (calc.cos(theta / 2), calc.sin(theta / 2)),
+    )
 
-  bezier(
-      (0.6, 0.7),   // inicio
-      (0.9, 0.25),   // fin
-      (1.5, 1),   // control 1
+    line(
+      (calc.cos(theta / 2), -calc.sin(theta / 2)),
+      (-calc.cos(theta / 2), calc.sin(theta / 2)),
+    )
+
+    bezier(
+      (0.6, 0.7),
+      (1.2, 1.2),
+      (1.4, 0.2),
+      (0.9, 0.25),
       stroke: (
         thickness: 1pt,
         cap: "round",
@@ -326,10 +334,14 @@ podemos asignarle una rotación en 2D. Si definimos los ejes de simetría del tr
       mark: (
         begin: ">",
         end: ">",
-      )
-  )
-  
-  content((calc.cos(theta/2)+0.4, calc.sin(theta/2)), [Cambio de simetría y], anchor: "west")
+      ),
+    )
+
+    content(
+      (calc.cos(theta / 2) + 0.4, calc.sin(theta / 2)),
+      [Cambio de simetría y],
+      anchor: "west",
+    )
 
     // eje x
     line(
@@ -348,8 +360,8 @@ podemos asignarle una rotación en 2D. Si definimos los ejes de simetría del tr
       mark: (end: ">"),
     )
     content((1.9, -0.6), [$y$], anchor: "south")
-})
-] 
+  })
+]
 
 En la imagen de arriba, con un ejemplo del cambio de simetría por $x,y,z$, queda claro que es cada cosa. Por ejemplo $c$ sería una rotación de 120º, mientras que $c^2$ de 240º. Por otro lado, $x$ representa una rotacion donde se conserva el vector (0,1), $y$ donde se conserva el vector $(cos 30, sin 30)$ y $z$ donde se conserva el vector $(-cos 30, sin 30)$. Sin embargo, como en realidad $y=x c$ y $z = x c^2$, y dado que una _representación debe conservar la estructura de grupo_, podemos calcualr las representaciones de $c^2,y,z$ a partir de $x,c$. Aśi pues, tenemos por un lado que 
 

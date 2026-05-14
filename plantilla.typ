@@ -1,10 +1,10 @@
-#import "@preview/cetz:0.4.2": *
+#import "@preview/cetz:0.5.2": *
 #import "@preview/physica:0.9.8": *
 #import "@preview/fletcher:0.5.8" as f: diagram, node, edge, 
 #import "@preview/zero:0.6.1":*
 #import f.shapes: parallelogram, diamond, ellipse
 #import "@preview/lilaq:0.5.0" as lq
-
+#import "@preview/fontawesome:0.6.0": *
 
 
 #import("Plantilla_Cuaderno/indice.typ"): *
@@ -12,7 +12,6 @@
 #import("Plantilla_Cuaderno/theorems.typ"): *
 #import("Plantilla_Cuaderno/titulo.typ"): * 
 #import("Plantilla_Cuaderno/comandos.typ"): * 
-
 
 
 //====================================
@@ -350,7 +349,7 @@
 //========================================================================
 
 
-#let book(title: "", subtitle: "", typography:"", math-typography:"", date: "", author: (), paper-size: "a4", width: none, height: none, margin: (x: 2cm, bottom: 2.5cm, top: 3cm), logo: none, cover: none, image-index:none, body, main-color: blue, seccond-color: blue,third-color: blue, copyright: [], lang: "en", list-of-figure-title: none, list-of-table-title: none, supplement-chapter: "Chapter", supplement-part: "Part", font-size: 10pt, part-style: 0, lowercase-references: false, padded-heading-number: true, outline-small-depth: 2, heading-style-compact: false, first-line-indent: true) = {
+#let book(title: "", subtitle: "", series: "", typography:"", math-typography:"", date: "", author: (), paper-size: "a4", width: none, height: none, margin: (x: 2cm, bottom: 2.5cm, top: 3cm), logo: none, cover: none, image-index:none, body, main-color: blue, seccond-color: blue,third-color: blue, copyright: [], lang: "en", list-of-figure-title: none, list-of-table-title: none, supplement-chapter: "Chapter", supplement-part: "Part", font-size: 10pt, part-style: 0, format: "solid", lowercase-references: false, padded-heading-number: true, outline-small-depth: 2, heading-style-compact: false, first-line-indent: true) = {
   set document(author: author, title: title)
   set text(size: font-size, lang: lang)
   set par(leading: 0.6em)
@@ -680,6 +679,7 @@ show math.equation: set text(font: math-typography)
    part-style-state.update(x => part-style)
    supplement-part-state.update(x => supplement-part)
    outline-small-depth-state.update(x => outline-small-depth)
+   
    make_title(
       primary: main-color,
       seccond: seccond-color,
@@ -688,38 +688,13 @@ show math.equation: set text(font: math-typography)
       author: author,
       title: title,
       subtitle: subtitle,
+      serie: series,
+      cover: cover,
+      format: format,
    )
   
-  // Title page.
-  /*
-  page(margin: 0cm, header: none)[
-    #set text(fill: black)
-    #language-state.update(x => lang)
-    #main-color-state.update(x => main-color)
-    #part-style-state.update(x => part-style)
-    #supplement-part-state.update(x => supplement-part)
-    #outline-small-depth-state.update(x => outline-small-depth)
-    //#place(top, image("images/background2.jpg", width: 100%, height: 50%))
-    #if cover != none {
-      set image(width: 100%, height: 100%)
-      place(bottom, cover)
-    }
-    #if logo != none {
-        set image(width: 3cm)
-        place(top + center, pad(top:1cm, logo))
-    }
-    #align(center + horizon, block(width: 100%, fill: main-color.lighten(70%), height: 7.5cm, pad(x:2cm, y:1cm)[
-      #text(size: title-main-1, weight: "black", title)
-      #v(1cm, weak: true)
-      #text(size: title-main-2, subtitle)
-      #v(1cm, weak: true)
-      #text(size: title-main-3, weight: "bold", "d")
-    ]))
-  ]
-  */
-  //
   //===============================================
-  // 
+  
   if (copyright!=none){
     set text(size: 10pt)
     show link: it => [
