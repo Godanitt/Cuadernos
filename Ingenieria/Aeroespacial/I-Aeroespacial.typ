@@ -3,24 +3,23 @@
 
 
 #show: book.with(
-  title: "Detectores en Física Nuclear y de Partículas",
-  subtitle: "Fundamentos, Ejemplos y Simulaciones",
-  series: "Series Ciencias Físicas",
+  title: "Ingeniería Aeroespacial y Aeronáutica",
+  subtitle: "",
+  series: "Series Ingenierías",
   date: datetime.today,
   author: ("Daniel Vázquez Lago",""),
-  main-color: rgb("#0d2871"),
-  seccond-color: rgb("#3c4f82"),
-  third-color: rgb("#60709b"),
+  main-color: rgb("#0c8608"),
+  seccond-color: rgb("#51974e"),
+  third-color: rgb("#4a9b47"),
   lang: "es",
-  cover: "Imagenes/Detectores1.png",
+  cover: none,
   image-index: none,
   list-of-figure-title: "List of Figures",
   list-of-table-title: "List of Tables",
   supplement-chapter: "Chapter",
   supplement-part: "Part",
-  font-size: 12pt,
+  font-size: 11pt,
   part-style: 0,
-  format: "cover1",
   copyright: [
     Copyright © 2023 Flavio Barisi
 
@@ -42,47 +41,6 @@
   first-line-indent: false,
 )
 
+#part("Introducción")
 
-#part("Interacción radiación–materia")
-#chapter("")
-
-#part("Electrónica")
-#chapter("")
-
-#part("Estadística")
-#chapter("")
-
-#part("Aceleradores")
-#chapter("Sincrotrón")
-#include "Capitulos/Sincrotron.typ"
-
-#part("Detectores")
-
-#chapter("Indentificación de Partículas")
-
-#chapter("Detectores Gaseosos")
-
-#chapter("Detectores de Fotones")
-
-#chapter("Detectores Centelleadores")
-
-#chapter("Detectores Semiconductores")
-
-#chapter("Detectores Cherenkov")
-
-#chapter("Espectrómetros de muones")
-
-#chapter("Calorímetros")
-#include "Capitulos/Calorimetros.typ"
-
-#chapter("Detectores de Estado Sólido")
-
-#part("Simulación en física de detectores")
-#chapter("")
-
-#part("Aplicaciones")
-
-#chapter("Detectores en Grandes Experimentos")
-#include "Capitulos/DetectoresGrandesExp.typ"
-
-#chapter("")
+#chapter("Introducción")
