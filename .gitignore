@@ -1,0 +1,21 @@
+# Compilación Typst
+.typst-cache/
+*.synctex.gz
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Fuentes locales: no se versionan ni se redistribuyen
+.fonts/
+fonts/
