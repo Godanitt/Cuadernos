@@ -17,7 +17,8 @@
   seccond-color: rgb("#3c4f82"),
   third-color: rgb("#60709b"),
   lang: "es",
-  cover: "Imagenes/Astrofisica.jpg",
+  format: "fullimage",
+  cover: "Imagenes/astro_generated.png",
   image-index: none,
   list-of-figure-title: "List of Figures",
   list-of-table-title: "List of Tables",
@@ -25,7 +26,9 @@
   supplement-part: "Part",
   font-size: 12pt,
   part-style: 0,
-  format: "cover1",
+  cover-zoom: 1.18,
+  cover-dx: 0cm,
+  cover-dy: 0cm,
   copyright: [
     // Copyright © 2023 Flavio Barisi
 

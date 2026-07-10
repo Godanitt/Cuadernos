@@ -2,7 +2,7 @@
 
 #show: book.with(
   title: "Geometría Diferencial",
-  subtitle: "Introducción a la Geometría de Riemann",
+  //subtitle: "Introducción a la Geometría de Riemann",
   series: "Series Matemáticas",
   typography: "Libertinus Serif",
   math-typography: "Libertinus Math",
@@ -12,7 +12,9 @@
   seccond-color: rgb("#c06d35"),
   third-color:rgb("#d28b5b"),
   lang: "es",
-  cover: none,
+  format: "fullimage",
+  cover: "Imagenes/differencial_geometry.png",
+  cover-text-color: black,
   image-index: none,
   list-of-figure-title: "List of Figures",
   list-of-table-title: "List of Tables",

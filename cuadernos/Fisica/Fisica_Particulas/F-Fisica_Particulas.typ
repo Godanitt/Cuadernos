@@ -4,15 +4,17 @@
 
 #show: book.with(
   title: "Física de Partículas",
-  subtitle: " ",
+  subtitle: "",
   series: "Series Ciencias Físicas",
+  volume: "F-03",
   date: datetime.today,
   author: ("Daniel Vázquez Lago",""),
   main-color: rgb("#0d2871"),
   seccond-color: rgb("#3c4f82"),
   third-color: rgb("#60709b"),
   lang: "es",
-  cover: none,
+  cover: "Imagenes/particle_physics.png",
+  format: "fullimage",
   image-index: none,
   list-of-figure-title: "List of Figures",
   list-of-table-title: "List of Tables",
@@ -20,6 +22,9 @@
   supplement-part: "Part",
   font-size: 11pt,
   part-style: 0,
+  cover-zoom: 1.10,
+  cover-dx: 0cm,
+  cover-dy: 0cm,
   copyright: [
     Copyright © 2023 Flavio Barisi
 

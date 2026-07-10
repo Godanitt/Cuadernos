@@ -69,7 +69,7 @@
       #block(width: 15cm)[
         #if authors.len() > 0 [
           #for a in authors [
-            #text(size: 16pt, weight: "bold", fill: black)[#a]
+            #text(size: 22pt, weight: "bold", fill: black)[#a]
             #v(0.15cm)
           ]
         ]
@@ -82,7 +82,7 @@
     #place(top + left, dx: 2.25cm, dy: 4.3cm)[
       #block(width: 16.5cm)[
         #text(
-          size: 55pt,
+          size: 62pt,
           weight: "bold",
           fill: black,
         )[
@@ -92,7 +92,7 @@
         #if subtitle != "" [
           #v(0.75cm)
           #text(
-            size: 18pt,
+            size: 22pt,
             style: "italic",
             fill: black,
           )[
