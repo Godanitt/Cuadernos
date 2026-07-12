@@ -21,7 +21,7 @@ El porcentaje editorial se calcula automáticamente a partir del contenido Typst
 ### Requisitos
 
 - Python 3.11 o posterior.
-- [Typst](https://typst.app/open-source/) disponible en `PATH`.
+- Tinymist CLI disponible en `PATH`, en `TINYMIST_BIN` o dentro de una instalación habitual de la extensión de VS Code.
 - Poppler (`pdfinfo` y `pdftoppm`) para contabilizar páginas y generar previsualizaciones.
 
 ### Un único comando
@@ -30,7 +30,7 @@ El porcentaje editorial se calcula automáticamente a partir del contenido Typst
 python -m cuadernos update
 ```
 
-Este comando descubre todos los `cuaderno.toml`, sincroniza las partes, genera la configuración Typst, valida el proyecto, compila únicamente lo modificado, extrae automáticamente las portadas de la primera página de cada PDF y reconstruye el README y los catálogos.
+Este comando descubre todos los `cuaderno.toml`, sincroniza las partes, genera la configuración Typst, valida el proyecto, compila únicamente lo modificado con Tinymist, actualiza `tinymist.lock`, extrae las portadas de los PDF y reconstruye el README y los catálogos.
 
 También puede limitarse la compilación:
 
@@ -38,6 +38,7 @@ También puede limitarse la compilación:
 python -m cuadernos update F-08
 python -m cuadernos update Medicina
 python -m cuadernos update --force
+python -m cuadernos update --rebuild-lock  # reparar o reconstruir todas las rutas
 ```
 
 Para actualizar el catálogo sin compilar:
@@ -45,6 +46,8 @@ Para actualizar el catálogo sin compilar:
 ```bash
 python -m cuadernos update --no-build
 ```
+
+La configuración `.vscode/settings.json` activa `lockDatabase`. Al abrir cualquier capítulo, Tinymist usa el documento principal registrado en `tinymist.lock`, evitando falsos avisos de etiquetas inexistentes.
 
 ## Catálogo
 
@@ -164,14 +167,10 @@ cuadernos/<Area>/<Cuaderno>/
 ├── Imagenes/
 └── generated/
     ├── config.typ                # configuración Typst generada
-    └── part_references.typ       # lecturas por parte
+    └── part_references.typ       # lecturas seleccionadas por parte
 ```
 
-Las referencias recomendadas de cada parte se declaran mediante claves BibTeX en `cuaderno.toml`. En el contenido pueden mostrarse con:
-
-```typst
-#part-reading-list("fundamentos")
-```
+Las claves bibliográficas se asignan a cada parte mediante `references = [...]`. Al final de cada parte aparece una lista breve de lecturas recomendadas; al final del PDF se imprime además la bibliografía general completa de `Bibliografia/referencias.bib`.
 
 ## Gestión del proyecto
 
@@ -179,9 +178,10 @@ Las referencias recomendadas de cada parte se declaran mediante claves BibTeX en
 |---|---|
 | `python -m cuadernos update` | Flujo completo: descubrir, sincronizar, validar, compilar y publicar el catálogo. |
 | `python -m cuadernos list` | Lista automáticamente todos los manifiestos encontrados. |
-| `python -m cuadernos build [selector]` | Compilación incremental por hash. |
+| `python -m cuadernos build [selector]` | Compilación incremental con Tinymist y actualización automática de `tinymist.lock`. |
+| `python -m cuadernos update --rebuild-lock` | Reconstruye desde cero las rutas de todos los cuadernos para Tinymist. |
 | `python -m cuadernos check` | Valida IDs, rutas, portadas, partes y bibliografía. |
-| `python -m cuadernos update --no-build` | Regenera configuración, referencias, previews y README sin compilar. |
+| `python -m cuadernos update --no-build` | Regenera configuración, previews y README sin compilar ni modificar `tinymist.lock`. |
 | `python -m cuadernos new ...` | Crea un cuaderno, asigna ID y slug y lo añade al catálogo. |
 | `python -m cuadernos stats` | Muestra y actualiza el panel de salud. |
 

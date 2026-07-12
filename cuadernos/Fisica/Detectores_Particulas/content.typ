@@ -1,24 +1,29 @@
+#import "generated/part_references.typ": part-reading-list
+
 // <cuadernos:auto-imports>
 #import "../../../plantilla/plantilla.typ": *
-#import "generated/part_references.typ": part-references
-
-#let part-reading-list(slug) = part-bibliography(
-  entries: part-references.at(slug, default: ()),
-)
 // </cuadernos:auto-imports>
 
 #part("Interacción radiación–materia")
 #chapter("")
 
+#part-reading-list("interaccion-radiacionmateria")
+
 #part("Electrónica")
 #chapter("")
+
+#part-reading-list("electronica")
 
 #part("Estadística")
 #chapter("")
 
+#part-reading-list("estadistica")
+
 #part("Aceleradores")
 #chapter("Sincrotrón")
 #include "Capitulos/Sincrotron.typ"
+
+#part-reading-list("aceleradores")
 
 #part("Detectores")
 
@@ -41,8 +46,12 @@
 
 #chapter("Detectores de Estado Sólido")
 
+#part-reading-list("detectores")
+
 #part("Simulación en física de detectores")
 #chapter("")
+
+#part-reading-list("simulacion-en-fisica-de-detectores")
 
 #part("Aplicaciones")
 
@@ -50,3 +59,5 @@
 #include "Capitulos/DetectoresGrandesExp.typ"
 
 #chapter("")
+
+#part-reading-list("aplicaciones")

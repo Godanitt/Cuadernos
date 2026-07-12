@@ -1,4 +1,4 @@
-.PHONY: update list build build-all check sync stats new-med clean-cache clean-generated
+.PHONY: update list build build-all rebuild-lock check sync stats new-med clean-cache clean-generated
 
 update:
 	python -m cuadernos update
@@ -11,6 +11,9 @@ build:
 
 build-all:
 	python -m cuadernos update --force
+
+rebuild-lock:
+	python -m cuadernos update --rebuild-lock
 
 check:
 	python -m cuadernos check --write
@@ -26,6 +29,7 @@ new-med:
 
 clean-cache:
 	rm -rf .cuadernos-cache
+	rm -f tinymist.lock
 
 clean-generated:
 	find cuadernos -type d -name generated -prune -exec rm -rf {} +

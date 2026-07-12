@@ -8,7 +8,7 @@
   volume: "F-07",
   date: datetime.today,
   author: ("Daniel Vázquez Lago",),
-  main-color: rgb("#0d2871"),
+  main-color: rgb("#041F68"),
   seccond-color: rgb("#3c4f82"),
   third-color: rgb("#60709b"),
   lang: "es",
@@ -33,5 +33,5 @@
   first-line-indent: false,
 )
 
-#let bibliography-file = "/cuadernos/Fisica/Fisica_Nuclear/Bibliografia/referencias.bib"
+#let bibliography-file = "Bibliografia/referencias.bib"
 #let bibliography-enabled = false

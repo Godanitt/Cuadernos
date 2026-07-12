@@ -23,15 +23,6 @@ def typst_string(value: str) -> str:
     return json.dumps(value, ensure_ascii=False)
 
 
-def typst_project_path(root: Path, path: Path) -> str:
-    """Ruta absoluta de proyecto Typst (empieza por `/`)."""
-
-    root = root.resolve()
-    resolved = path.resolve()
-    relative = resolved.relative_to(root)
-    return "/" + relative.as_posix()
-
-
 def typst_color(value: str, fallback: str) -> str:
     value = value.strip() or fallback
     if value.startswith("#"):
@@ -108,7 +99,7 @@ def generate_config(notebook: Notebook, *, recover_covers: bool = False) -> str:
         f"  first-line-indent: {str(bool(t.get('first_line_indent', False))).lower()},",
         ")",
         "",
-        f"#let bibliography-file = {typst_string(typst_project_path(notebook.root, notebook.bibliography_path))}",
+        f"#let bibliography-file = {typst_string(notebook.bibliography_file)}",
         f"#let bibliography-enabled = {str(bibliography_enabled).lower()}",
         "",
     ]
@@ -119,9 +110,17 @@ def _escape_typst_text(value: str) -> str:
 
 
 def generate_part_references(notebook: Notebook) -> str:
+    """Genera y exporta las lecturas específicas de cada parte.
+
+    El módulo es autocontenido: exporta tanto los datos (`part-references`)
+    como la función `part-reading-list`. De este modo, cada `content.typ`
+    puede importar la función en su propio ámbito sin depender del `main.typ`.
+    La bibliografía BibTeX completa sigue imprimiéndose una sola vez al final.
+    """
     records = {record.key: record for record in bibtex_records(notebook.bibliography_path)}
     lines = [
         "// Generado desde cuaderno.toml y Bibliografia/referencias.bib.",
+        "// No editar a mano: ejecuta `python -m cuadernos update`.",
         "#let part-references = (",
     ]
     for part in notebook.parts:
@@ -141,18 +140,39 @@ def generate_part_references(notebook: Notebook) -> str:
         rendered = ", ".join(rendered_items)
         if len(rendered_items) == 1:
             rendered += ","
-        lines.append(f'  {typst_string(part.slug)}: ({rendered}),')
-    lines += [")", ""]
+        lines.append(f"  {typst_string(part.slug)}: ({rendered}),")
+    lines += [
+        ")",
+        "",
+        '#let part-reading-list(slug, title: "Bibliografía y lecturas recomendadas") = {',
+        "  let entries = part-references.at(slug, default: ())",
+        "  if entries.len() > 0 [",
+        "    #heading(level: 2)[#title]",
+        "    #for entry in entries [",
+        "      - #entry.label",
+        '        #if entry.doi != "" [ · #link("https://doi.org/" + entry.doi)[DOI]]',
+        '        #if entry.url != "" [ · #link(entry.url)[Enlace]]',
+        "    ]",
+        "  ]",
+        "}",
+        "",
+    ]
     return "\n".join(lines)
+
 
 def write_generated_typst(notebook: Notebook, *, recover_covers: bool = False) -> None:
     if not notebook.main_file:
         return
     generated = notebook.path / "generated"
     generated.mkdir(parents=True, exist_ok=True)
-    (generated / "config.typ").write_text(generate_config(notebook, recover_covers=recover_covers), encoding="utf-8")
-    (generated / "part_references.typ").write_text(generate_part_references(notebook), encoding="utf-8")
-
+    (generated / "config.typ").write_text(
+        generate_config(notebook, recover_covers=recover_covers),
+        encoding="utf-8",
+    )
+    (generated / "part_references.typ").write_text(
+        generate_part_references(notebook),
+        encoding="utf-8",
+    )
 
 def _preview_candidates(notebook: Notebook) -> tuple[Path, Path]:
     base = notebook.root / "docs" / "assets" / "previews" / notebook.id
@@ -368,7 +388,7 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "### Requisitos",
         "",
         "- Python 3.11 o posterior.",
-        "- [Typst](https://typst.app/open-source/) disponible en `PATH`.",
+        "- Tinymist CLI disponible en `PATH`, en `TINYMIST_BIN` o dentro de una instalación habitual de la extensión de VS Code.",
         "- Poppler (`pdfinfo` y `pdftoppm`) para contabilizar páginas y generar previsualizaciones.",
         "",
         "### Un único comando",
@@ -377,7 +397,7 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "python -m cuadernos update",
         "```",
         "",
-        "Este comando descubre todos los `cuaderno.toml`, sincroniza las partes, genera la configuración Typst, valida el proyecto, compila únicamente lo modificado, extrae automáticamente las portadas de la primera página de cada PDF y reconstruye el README y los catálogos.",
+        "Este comando descubre todos los `cuaderno.toml`, sincroniza las partes, genera la configuración Typst, valida el proyecto, compila únicamente lo modificado con Tinymist, actualiza `tinymist.lock`, extrae las portadas de los PDF y reconstruye el README y los catálogos.",
         "",
         "También puede limitarse la compilación:",
         "",
@@ -385,6 +405,7 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "python -m cuadernos update F-08",
         "python -m cuadernos update Medicina",
         "python -m cuadernos update --force",
+        "python -m cuadernos update --rebuild-lock  # reparar o reconstruir todas las rutas",
         "```",
         "",
         "Para actualizar el catálogo sin compilar:",
@@ -392,6 +413,8 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "```bash",
         "python -m cuadernos update --no-build",
         "```",
+        "",
+        "La configuración `.vscode/settings.json` activa `lockDatabase`. Al abrir cualquier capítulo, Tinymist usa el documento principal registrado en `tinymist.lock`, evitando falsos avisos de etiquetas inexistentes.",
         "",
         "## Catálogo",
         "",
@@ -449,14 +472,10 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "├── Imagenes/",
         "└── generated/",
         "    ├── config.typ                # configuración Typst generada",
-        "    └── part_references.typ       # lecturas por parte",
+        "    └── part_references.typ       # lecturas seleccionadas por parte",
         "```",
         "",
-        "Las referencias recomendadas de cada parte se declaran mediante claves BibTeX en `cuaderno.toml`. En el contenido pueden mostrarse con:",
-        "",
-        "```typst",
-        '#part-reading-list("fundamentos")',
-        "```",
+        "Las claves bibliográficas se asignan a cada parte mediante `references = [...]`. Al final de cada parte aparece una lista breve de lecturas recomendadas; al final del PDF se imprime además la bibliografía general completa de `Bibliografia/referencias.bib`.",
         "",
         "## Gestión del proyecto",
         "",
@@ -464,9 +483,10 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "|---|---|",
         "| `python -m cuadernos update` | Flujo completo: descubrir, sincronizar, validar, compilar y publicar el catálogo. |",
         "| `python -m cuadernos list` | Lista automáticamente todos los manifiestos encontrados. |",
-        "| `python -m cuadernos build [selector]` | Compilación incremental por hash. |",
+        "| `python -m cuadernos build [selector]` | Compilación incremental con Tinymist y actualización automática de `tinymist.lock`. |",
+        "| `python -m cuadernos update --rebuild-lock` | Reconstruye desde cero las rutas de todos los cuadernos para Tinymist. |",
         "| `python -m cuadernos check` | Valida IDs, rutas, portadas, partes y bibliografía. |",
-        "| `python -m cuadernos update --no-build` | Regenera configuración, referencias, previews y README sin compilar. |",
+        "| `python -m cuadernos update --no-build` | Regenera configuración, previews y README sin compilar ni modificar `tinymist.lock`. |",
         "| `python -m cuadernos new ...` | Crea un cuaderno, asigna ID y slug y lo añade al catálogo. |",
         "| `python -m cuadernos stats` | Muestra y actualiza el panel de salud. |",
         "",

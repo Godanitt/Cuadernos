@@ -1,10 +1,7 @@
+#import "generated/part_references.typ": part-reading-list
+
 // <cuadernos:auto-imports>
 #import "../../../plantilla/plantilla.typ": *
-#import "generated/part_references.typ": part-references
-
-#let part-reading-list(slug) = part-bibliography(
-  entries: part-references.at(slug, default: ()),
-)
 // </cuadernos:auto-imports>
 
 //==========================================//
@@ -24,6 +21,9 @@
 //==========================================//
 // -- GEOMETRÍA DE RIEMANN ----------------
 //==========================================//
+
+#part-reading-list("variedades-diferenciales")
+
 #part("Geometría de Riemann")
 
 #chapter("Métrica de Riemann")
@@ -32,11 +32,13 @@
 #chapter("Geodésicas y Distancias")
 #chapter("Curvatura")
 
-
 /*
 //==========================================//
 // -- RELATIVIDAD GENERAL ---------.-------
 //==========================================//
+
+#part-reading-list("geometria-de-riemann")
+
 #part("Relatividad General")
 
 #chapter("Principio de equivalencia")
@@ -50,8 +52,10 @@
 //==========================================//
 // -- TEORIAS GAUGE  ----------------------
 //==========================================//
-#part("Teorías de Gauge")
 
+#part-reading-list("relatividad-general")
+
+#part("Teorías de Gauge")
 
 #chapter("Simetrías y principios de gauge")
 #chapter("Fibrados principales y asociados")
@@ -69,3 +73,4 @@
 #nocite(<NakaharaGeometryTopologyPhysics>)
 #nocite(<Szekeres_2004>)
 
+#part-reading-list("teorias-de-gauge")

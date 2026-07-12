@@ -10,7 +10,8 @@ venv/
 
 # IDE
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json
 
 # Sistema
 .DS_Store
@@ -22,14 +23,3 @@ fonts/
 
 # Caché del gestor editorial
 .cuadernos-cache/
-
-/completo.zip
-/og.zip
-/*.zip
-
-/completo.zip
-/og.zip
-/*.zip
-
-/*.zip
-.cuadernos-backup/

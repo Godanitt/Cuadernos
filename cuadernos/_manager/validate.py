@@ -2,10 +2,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+import json
 import re
 
 from .models import Notebook, STATUS_LABELS
-from .parser import bibliography_keys, parse_source
+from .parser import bibliography_keys, parse_source, slugify
 
 ALLOWED_COVER_STYLES = {"solid", "fullimage", "wiley", "wiley2"}
 ALLOWED_PART_STATUS = {"planned", "outline", "draft", "review", "stable"}
@@ -48,6 +49,27 @@ def validate(notebooks: list[Notebook]) -> list[Issue]:
     for pdf in (root / "cuadernos").rglob("*.pdf"):
         issues.append(Issue("warning", "PDF001", "PDF mezclado con las fuentes", pdf))
 
+    settings_path = root / ".vscode" / "settings.json"
+    try:
+        editor_settings = json.loads(settings_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        editor_settings = {}
+    expected_editor_settings = {
+        "tinymist.rootPath": "${workspaceFolder}",
+        "tinymist.projectResolution": "lockDatabase",
+        "tinymist.exportPdf": "never",
+    }
+    for key, expected in expected_editor_settings.items():
+        if editor_settings.get(key) != expected:
+            issues.append(
+                Issue(
+                    "warning",
+                    "TIN001",
+                    f"Configura {key}={expected!r} para resolver correctamente los documentos multifichero",
+                    settings_path,
+                )
+            )
+
     for notebook in notebooks:
         if notebook.status not in STATUS_LABELS:
             issues.append(Issue("error", "META001", f"Estado desconocido: {notebook.status}", notebook.manifest_path))
@@ -65,9 +87,6 @@ def validate(notebooks: list[Notebook]) -> list[Issue]:
             generated = notebook.path / "generated" / "config.typ"
             if not generated.exists():
                 issues.append(Issue("error", "GEN001", "Falta generated/config.typ", notebook.manifest_path))
-            generated_refs = notebook.path / "generated" / "part_references.typ"
-            if not generated_refs.exists():
-                issues.append(Issue("error", "GEN002", "Falta generated/part_references.typ", notebook.manifest_path))
         elif notebook.status != "planned":
             issues.append(Issue("warning", "SRC003", "Cuaderno sin fuente que no está marcado como planificado", notebook.manifest_path))
 
@@ -105,6 +124,65 @@ def validate(notebooks: list[Notebook]) -> list[Issue]:
             issues.append(Issue("error", "BIB001", f"Clave bibliográfica no definida: {key}", notebook.manifest_path))
         if notebook.main_file and (notebook.bibliography_path is None or not notebook.bibliography_path.exists()):
             issues.append(Issue("warning", "BIB002", "No existe el archivo de bibliografía", notebook.manifest_path))
+
+        if notebook.main_file and notebook.main_path and notebook.main_path.exists():
+            main_text = notebook.main_path.read_text(encoding="utf-8")
+            if "bibliography(bibliography-file" not in main_text:
+                issues.append(Issue("warning", "BIB004", "La bibliografía global no se imprime al final del documento", notebook.main_path))
+
+            generated_refs = notebook.path / "generated" / "part_references.typ"
+            if not generated_refs.exists():
+                issues.append(
+                    Issue(
+                        "error",
+                        "BIB005",
+                        "No se generó generated/part_references.typ; ejecuta `python -m cuadernos update`",
+                        notebook.manifest_path,
+                    )
+                )
+            else:
+                generated_text = generated_refs.read_text(encoding="utf-8")
+                if "#let part-reading-list" not in generated_text:
+                    issues.append(
+                        Issue(
+                            "error",
+                            "BIB007",
+                            "El módulo generado no exporta part-reading-list",
+                            generated_refs,
+                        )
+                    )
+
+            if notebook.content_path is not None and notebook.content_path.exists():
+                content_text = notebook.content_path.read_text(encoding="utf-8")
+                if (
+                    '#import "generated/part_references.typ": part-reading-list'
+                    not in content_text
+                ):
+                    issues.append(
+                        Issue(
+                            "warning",
+                            "BIB003",
+                            "content.typ no importa automáticamente part-reading-list",
+                            notebook.content_path,
+                        )
+                    )
+                explicit_parts = re.findall(
+                    r'(?m)^\s*#part\(\s*"((?:\\.|[^"\\])*)"[^\n]*\)\s*$',
+                    content_text,
+                )
+                for title in explicit_parts:
+                    clean_title = title.replace(r'\"', '"').replace(r'\n', ' ')
+                    part_slug = slugify(clean_title)
+                    marker = f'#part-reading-list("{part_slug}")'
+                    if marker not in content_text:
+                        issues.append(
+                            Issue(
+                                "warning",
+                                "BIB006",
+                                f"Falta la lista de lecturas al final de la parte: {clean_title}",
+                                notebook.content_path,
+                            )
+                        )
 
         if notebook.output_file and notebook.output_path and not notebook.output_path.exists():
             issues.append(Issue("info", "OUT002", "Todavía no hay PDF compilado", notebook.manifest_path))

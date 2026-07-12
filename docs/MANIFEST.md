@@ -85,7 +85,7 @@ part_style = 0
 
 Las áreas, sus prefijos y sus series por defecto se configuran una sola vez en `cuadernos.toml`.
 
-## Partes y referencias
+## Partes y referencias bibliográficas
 
 ```toml
 [[parts]]
@@ -96,4 +96,4 @@ summary = ""
 references = ["peskin1995", "weinberg1995"]
 ```
 
-`python -m cuadernos update` actualiza automáticamente la lista de partes a partir de `content.typ`, conservando estado, resumen y referencias cuando el slug no cambia.
+`python -m cuadernos update` actualiza automáticamente la lista de partes a partir de `content.typ`, conservando estado, resumen y referencias cuando el slug no cambia. Las claves se validan y cuentan por parte, pero todas las entradas del BibTeX se imprimen una única vez en la bibliografía final del PDF.

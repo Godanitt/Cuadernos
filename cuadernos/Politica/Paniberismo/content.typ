@@ -1,10 +1,7 @@
+#import "generated/part_references.typ": part-reading-list
+
 // <cuadernos:auto-imports>
 #import "../../../plantilla/plantilla.typ": *
-#import "generated/part_references.typ": part-references
-
-#let part-reading-list(slug) = part-bibliography(
-  entries: part-references.at(slug, default: ()),
-)
 // </cuadernos:auto-imports>
 
 #set par(justify: true, leading: 0.65em, spacing: 1.5em)

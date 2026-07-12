@@ -35,5 +35,5 @@
   first-line-indent: false,
 )
 
-#let bibliography-file = "/cuadernos/Quimica/Ingenieria_Quimica/Bibliografia/referencias.bib"
+#let bibliography-file = "Bibliografia/referencias.bib"
 #let bibliography-enabled = true

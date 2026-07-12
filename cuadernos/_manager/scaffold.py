@@ -8,7 +8,6 @@ from .parser import slugify
 from .settings import load_project_settings
 from .toml_io import write_manifest
 from .generate import write_generated_typst
-from .content_scope import ensure_content_scope
 
 
 def next_notebook_id(root: Path, area: str) -> str:
@@ -105,7 +104,7 @@ def create_notebook(
     write_generated_typst(notebook)
     (path / main_file).write_text(
         '#import "../../../plantilla/plantilla.typ": *\n'
-        '#import "generated/config.typ": notebook-config, bibliography-file, bibliography-enabled\n'
+        '#import "generated/config.typ": notebook-config, bibliography-file, bibliography-enabled\n\n'
         '#show: book.with(..notebook-config)\n\n'
         '#include "content.typ"\n\n'
         '#if bibliography-enabled {\n'
@@ -116,6 +115,8 @@ def create_notebook(
         encoding="utf-8",
     )
     content_lines = [
+        '#import "generated/part_references.typ": part-reading-list',
+        "",
         "#set par(justify: true, leading: 0.65em, spacing: 1.5em)",
         "",
     ]
@@ -131,9 +132,9 @@ def create_notebook(
             "",
         ]
     (path / content_file).write_text("\n".join(content_lines), encoding="utf-8")
-    ensure_content_scope(notebook)
     (path / "Bibliografia" / "referencias.bib").write_text(
-        "% Bibliografía del cuaderno. Asigna claves a cada parte en cuaderno.toml.\n",
+        "% Bibliografía general del cuaderno. Se imprime completa al final del PDF.\n"
+        "% Asigna claves concretas a cada parte mediante references = [...] en cuaderno.toml.\n",
         encoding="utf-8",
     )
     return notebook

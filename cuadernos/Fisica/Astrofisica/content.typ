@@ -1,10 +1,7 @@
+#import "generated/part_references.typ": part-reading-list
+
 // <cuadernos:auto-imports>
 #import "../../../plantilla/plantilla.typ": *
-#import "generated/part_references.typ": part-references
-
-#let part-reading-list(slug) = part-bibliography(
-  entries: part-references.at(slug, default: ()),
-)
 // </cuadernos:auto-imports>
 
 #let H1 = $"H"$
@@ -23,6 +20,8 @@
 
 #chapter("Introducción")
 
+#part-reading-list("astrofisica-nuclear")
+
 #part("Nucleosíntesis Estelar y Primordial")
 
 #chapter("Introducción")
@@ -34,7 +33,6 @@
 #chapter("Nucleosíntesis en el Big Bang")
 
 Después del confinamiento de los quarks y de la transición a los hadrones, el universo temprano hecho de hadrones, leptones y fotones, con una pequeña asimetría materia-antimateria.
-
 
 En los primeros modelos del Big-Bang, algunos elementos podían sintetizarse, al menos en el tiempo en el que la temperatura y densidad eran apropiadas para que ocurrieran las reacciones nucleares. En estas condiciones los modelos predicen la creación de las primeras especies ligeras como #H2, #He3, #He4 y #Li7, y se predijo la observación del fondo cósmico de microondas. Podemos obersvar diferentes procesos en función que trascurrió desde el Big-Bang
 
@@ -60,5 +58,8 @@ En los primeros modelos del Big-Bang, algunos elementos podían sintetizarse, al
 
 // #chapter("Evoulción de estrellas masivas: supernovas y remanentes")
 
+#part-reading-list("nucleosintesis-estelar-y-primordial")
 
 #part("Cosmología")
+
+#part-reading-list("cosmologia")

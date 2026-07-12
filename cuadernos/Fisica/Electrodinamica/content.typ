@@ -1,10 +1,7 @@
+#import "generated/part_references.typ": part-reading-list
+
 // <cuadernos:auto-imports>
 #import "../../../plantilla/plantilla.typ": *
-#import "generated/part_references.typ": part-references
-
-#let part-reading-list(slug) = part-bibliography(
-  entries: part-references.at(slug, default: ()),
-)
 // </cuadernos:auto-imports>
 
 #chapter("Análisis Vectorial")
@@ -14,10 +11,14 @@
 #chapter("Condiciones de frontera en Electrostática")
 #chapter("Campos eléctricos en medios materiales")
 
+#part-reading-list("electrostatica")
+
 #part("Magnetostática")
 #chapter("Magnetostática")
 #chapter("Campos magnéticos en medios materiales")
 #chapter("Materiaels Magnéticos")
+
+#part-reading-list("magnetostatica")
 
 #part("Electrodinámica")
 
@@ -28,8 +29,12 @@
 #chapter("Relatividad especial")
 #chapter("Electrodinámica Relativista")
 
+#part-reading-list("electrodinamica")
+
 #part("Radiación")
 
 #chapter("Sistemas Radiantes: multipolos")
 #chapter("Radiación de Partículas en Movimiento")
 #chapter("Colisiones entre partículas y pérdidas de energía")
+
+#part-reading-list("radiacion")

@@ -1,10 +1,7 @@
+#import "generated/part_references.typ": part-reading-list
+
 // <cuadernos:auto-imports>
 #import "../../../plantilla/plantilla.typ": *
-#import "generated/part_references.typ": part-references
-
-#let part-reading-list(slug) = part-bibliography(
-  entries: part-references.at(slug, default: ()),
-)
 // </cuadernos:auto-imports>
 
 //==================================================//
@@ -26,8 +23,9 @@
 #pagebreak()
 #include "Ejercicios/GruposFinitos.typ"
 
-
 //===============================================//
+
+#part-reading-list("introduccion-y-grupos-discretos")
 
 #part("Grupos Continuos")
 #chapter("Grupos de Lie")
@@ -35,9 +33,9 @@
 #pagebreak()
 #include "Ejercicios/GruposLie.typ"
 
-
-
 //==============================================//
+
+#part-reading-list("grupos-continuos")
 
 #part("Teoría de Grupos aplicada a la física")
 
@@ -47,12 +45,12 @@
 
 #chapter("Ecuacón de Dirac")
 
-
 == Hamiton, Clifford y Dirac
 == Álgebra de Dirac
-
 
 #chapter("Campos de Yang-Milles")
 
 == Teorema de Noeteher para Simetrías Internas
 == El Nucleón de Yangs-Milles
+
+#part-reading-list("teoria-de-grupos-aplicada-a-la-fisica")

@@ -33,5 +33,5 @@
   first-line-indent: false,
 )
 
-#let bibliography-file = "/cuadernos/Ingenieria/Telecomunicaciones/Bibliografia/referencias.bib"
+#let bibliography-file = "Bibliografia/referencias.bib"
 #let bibliography-enabled = false

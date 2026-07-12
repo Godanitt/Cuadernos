@@ -1,0 +1,5 @@
+{
+  "tinymist.rootPath": "${workspaceFolder}",
+  "tinymist.projectResolution": "lockDatabase",
+  "tinymist.exportPdf": "never"
+}

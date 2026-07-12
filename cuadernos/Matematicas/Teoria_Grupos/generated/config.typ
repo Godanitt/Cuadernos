@@ -35,5 +35,5 @@
   first-line-indent: false,
 )
 
-#let bibliography-file = "/cuadernos/Matematicas/Teoria_Grupos/Bibliografia/referencias.bib"
+#let bibliography-file = "Bibliografia/referencias.bib"
 #let bibliography-enabled = true

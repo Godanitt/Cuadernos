@@ -33,5 +33,5 @@
   first-line-indent: false,
 )
 
-#let bibliography-file = "/cuadernos/Fisica/Atomica_Molecular/Bibliografia/referencias.bib"
+#let bibliography-file = "Bibliografia/referencias.bib"
 #let bibliography-enabled = false
