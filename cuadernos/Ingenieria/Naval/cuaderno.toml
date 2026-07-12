@@ -1,0 +1,95 @@
+schema = 1
+id = "I-08"
+slug = "ingenieria-naval"
+title = "Ingeniería Naval"
+subtitle = ""
+area = "Ingenieria"
+status = "skeleton"
+language = "es"
+authors = ["Daniel Vázquez Lago"]
+main_file = "I-Naval.typ"
+content_file = "content.typ"
+output_file = "I-Naval.pdf"
+bibliography_file = "Bibliografia/referencias.bib"
+summary = "Esquema editorial organizado en 7 partes; el desarrollo del texto está en fase inicial."
+scope = "Incluye Hidrostática y estabilidad, Hidrodinámica naval, Estructuras navales, Propulsión y energía, Sistemas del buque, Construcción y proyecto, Ingeniería oceánica."
+out_of_scope = ""
+tags = ["ingenieria-naval"]
+
+[progress]
+text = 3
+figures = 0
+exercises = 0
+bibliography = 0
+review = 0
+
+[cover]
+style = "fullimage"
+image = "Imagenes/naval.png"
+theme = "dark"
+zoom = 1.0
+dx_cm = 0.0
+dy_cm = 0.0
+text_color = "black"
+
+[typst]
+series = "Series Ingenierías"
+date = "today"
+font_size_pt = 11
+main_color = "#0c8608"
+secondary_color = "#51974e"
+tertiary_color = "#376335"
+part_style = 0
+github_url = "https://github.com/Godanitt/Cuadernos"
+lowercase_references = false
+heading_style_compact = true
+first_line_indent = false
+
+[[parts]]
+title = "Hidrostática y estabilidad"
+slug = "hidrostatica-y-estabilidad"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Hidrodinámica naval"
+slug = "hidrodinamica-naval"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Estructuras navales"
+slug = "estructuras-navales"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Propulsión y energía"
+slug = "propulsion-y-energia"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Sistemas del buque"
+slug = "sistemas-del-buque"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Construcción y proyecto"
+slug = "construccion-y-proyecto"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Ingeniería oceánica"
+slug = "ingenieria-oceanica"
+status = "outline"
+summary = ""
+references = []

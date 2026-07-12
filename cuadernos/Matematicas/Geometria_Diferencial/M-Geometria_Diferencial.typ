@@ -1,111 +1,17 @@
 #import "../../../plantilla/plantilla.typ": *
+#import "generated/config.typ": notebook-config, bibliography-file, bibliography-enabled
+#import "generated/part_references.typ": part-references
 
-#show: book.with(
-  title: "Geometría Diferencial",
-  //subtitle: "Introducción a la Geometría de Riemann",
-  series: "Series Matemáticas",
-  typography: "Libertinus Serif",
-  math-typography: "Libertinus Math",
-  date: datetime.today,
-  author: ("Daniel Vázquez Lago",""),
-  main-color: rgb("#dc681a"),
-  seccond-color: rgb("#c06d35"),
-  third-color:rgb("#d28b5b"),
-  lang: "es",
-  format: "fullimage",
-  cover: "Imagenes/differencial_geometry.png",
-  cover-text-color: black,
-  image-index: none,
-  list-of-figure-title: "List of Figures",
-  list-of-table-title: "List of Tables",
-  supplement-chapter: "Chapter",
-  supplement-part: "Part",
-  font-size: 12pt,
-  part-style: 0,
-  copyright: [
-    Copyright © 2023 Flavio Barisi
-
-    PUBLISHED BY PUBLISHER
-
-    #link("https://github.com/flavio20002/typst-orange-template", "TEMPLATE-WEBSITE")
-
-    Licensed under the Apache 2.0 License (the “License”).
-    You may not use this file except in compliance with the License. You may obtain a copy of
-    the License at https://www.apache.org/licenses/LICENSE-2.0. Unless required by
-    applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and limitations under the License.
-
-
-    _First printing, July 2023_
-  ],
-  lowercase-references: false,
-  heading-style-compact: true,
-  first-line-indent: false,
+#let part-reading-list(slug) = part-bibliography(
+  entries: part-references.at(slug, default: ()),
 )
 
+#show: book.with(..notebook-config)
 
-//==========================================//
-// -- VARIEDADES --------------------------
-//==========================================//
-#part("Variedades Diferenciales")
+#include "content.typ"
 
-#chapter("Variedades Diferenciales")
-#include "Capitulos/Variedades.typ"
-#chapter("Formas Diferenciables")
-#chapter("Tensores y Formas Exteriores")
-#chapter("Álgebra Exeterior")
-#chapter("Integrales en Variedades")
-#chapter("Derivada de Lie")
-#chapter("Lema de Poincaré")
-
-//==========================================//
-// -- GEOMETRÍA DE RIEMANN ----------------
-//==========================================//
-#part("Geometría de Riemann")
-
-#chapter("Métrica de Riemann")
-#chapter("Conexiones")
-#chapter("Conexiones de Levi-Civita")
-#chapter("Geodésicas y Distancias")
-#chapter("Curvatura")
-
-
-/*
-//==========================================//
-// -- RELATIVIDAD GENERAL ---------.-------
-//==========================================//
-#part("Relatividad General")
-
-#chapter("Principio de equivalencia")
-#chapter("Espaciotiempo y métrica lorentziana")
-#chapter("Conexión y derivada covariante en Relatividad General")
-#chapter("Geodésicas relativistas")
-#chapter("Curvatura del espaciotiempo")
-#chapter("Tensor energía-momento")
-#chapter("Ecuaciones de Einstein")
-
-//==========================================//
-// -- TEORIAS GAUGE  ----------------------
-//==========================================//
-#part("Teorías de Gauge")
-
-
-#chapter("Simetrías y principios de gauge")
-#chapter("Fibrados principales y asociados")
-#chapter("Conexiones en fibrados")
-#chapter("Teoría gauge abeliana: electromagnetismo")
-#chapter("Teorías gauge no abelianas")
-*/
-
-//==========================================//
-// -- BIBLIOGRAFIA -------------------------
-//==========================================//
-
-#nocite(<FrankelGeometryPhysics>)
-#nocite(<gross2023manifolds>)
-#nocite(<NakaharaGeometryTopologyPhysics>)
-#nocite(<Szekeres_2004>)
-
-#my-bibliography( bibliography("sample.bib",
-style: "apa",)
-)
+#if bibliography-enabled {
+  my-bibliography(
+    bibliography(bibliography-file, title: "Bibliografía", full: true)
+  )
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="1754" viewBox="0 0 1240 1754">
+<defs>
+  <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#10172f"/>
+    <stop offset="1" stop-color="#40558d"/>
+  </linearGradient>
+</defs>
+<rect width="1240" height="1754" fill="url(#background)"/>
+<g fill="none" stroke="#ffffff" stroke-opacity=".12">
+  <circle cx="980" cy="430" r="280"/>
+  <circle cx="980" cy="430" r="190"/>
+  <path d="M80 1280 C360 980 660 1480 1160 1110"/>
+</g>
+<text x="96" y="150" fill="#dce5ff" font-family="serif" font-size="48">Filosofía</text>
+<text x="1140" y="150" fill="#dce5ff" font-family="sans-serif" font-size="42" text-anchor="end">FIL-01</text>
+<foreignObject x="96" y="500" width="1048" height="520">
+  <div xmlns="http://www.w3.org/1999/xhtml" style="font:700 98px/1.08 Georgia,serif;color:white">Filosofía Política</div>
+</foreignObject>
+</svg>

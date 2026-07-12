@@ -1,0 +1,88 @@
+schema = 1
+id = "FIL-01"
+slug = "filosofia-politica"
+title = "Filosofía Política"
+subtitle = ""
+area = "Filosofia"
+status = "skeleton"
+language = "es"
+authors = ["Daniel Vázquez Lago"]
+main_file = "Fil-Politica.typ"
+content_file = "content.typ"
+output_file = "Fil-Politica.pdf"
+bibliography_file = "Bibliografia/referencias.bib"
+summary = "Esquema editorial organizado en 6 partes; el desarrollo del texto está en fase inicial."
+scope = "Incluye Fundamentos de filosofía política, Pensamiento antiguo y medieval, Pensamiento moderno, Ideologías contemporáneas, Estado e instituciones, Debates actuales."
+out_of_scope = ""
+tags = ["filosofia-politica"]
+
+[progress]
+text = 3
+figures = 0
+exercises = 0
+bibliography = 16
+review = 0
+
+[cover]
+style = "fullimage"
+image = "Imagenes/political_phylosofy.png"
+theme = "dark"
+zoom = 1.0
+dx_cm = 0.0
+dy_cm = 0.0
+text_color = "auto"
+
+[typst]
+series = "Series Filosofía "
+date = "today"
+font_size_pt = 11
+main_color = "#0f1434"
+secondary_color = "#292c3e"
+tertiary_color = "#0f1434"
+part_style = 0
+github_url = "https://github.com/Godanitt/Cuadernos"
+lowercase_references = false
+heading_style_compact = true
+first_line_indent = false
+
+[[parts]]
+title = "Fundamentos de filosofía política"
+slug = "fundamentos-de-filosofia-politica"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Pensamiento antiguo y medieval"
+slug = "pensamiento-antiguo-y-medieval"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Pensamiento moderno"
+slug = "pensamiento-moderno"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Ideologías contemporáneas"
+slug = "ideologias-contemporaneas"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Estado e instituciones"
+slug = "estado-e-instituciones"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Debates actuales"
+slug = "debates-actuales"
+status = "outline"
+summary = ""
+references = []

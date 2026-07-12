@@ -19,3 +19,17 @@ Thumbs.db
 # Fuentes locales: no se versionan ni se redistribuyen
 .fonts/
 fonts/
+
+# Caché del gestor editorial
+.cuadernos-cache/
+
+/completo.zip
+/og.zip
+/*.zip
+
+/completo.zip
+/og.zip
+/*.zip
+
+/*.zip
+.cuadernos-backup/

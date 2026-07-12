@@ -1,47 +1,17 @@
 #import "../../../plantilla/plantilla.typ": *
+#import "generated/config.typ": notebook-config, bibliography-file, bibliography-enabled
+#import "generated/part_references.typ": part-references
 
-
-
-#show: book.with(
-  title: "Ingeniería Aeroespacial y Aeronáutica",
-  subtitle: "",
-  series: "Series Ingenierías",
-  date: datetime.today,
-  author: ("Daniel Vázquez Lago",""),
-  main-color: rgb("#0c8608"),
-  seccond-color: rgb("#51974e"),
-  third-color: rgb("#4a9b47"),
-  lang: "es",
-  cover: "Imagenes/aeroespacial_enginering.png",
-  image-index: none,
-  list-of-figure-title: "List of Figures",
-  list-of-table-title: "List of Tables",
-  supplement-chapter: "Chapter",
-  supplement-part: "Part",
-  format: "fullimage",
-  font-size: 11pt,
-  part-style: 0,
-  copyright: [
-    Copyright © 2023 Flavio Barisi
-
-    PUBLISHED BY PUBLISHER
-
-    #link("https://github.com/flavio20002/typst-orange-template", "TEMPLATE-WEBSITE")
-
-    Licensed under the Apache 2.0 License (the “License”).
-    You may not use this file except in compliance with the License. You may obtain a copy of
-    the License at https://www.apache.org/licenses/LICENSE-2.0. Unless required by
-    applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and limitations under the License.
-
-
-    _First printing, July 2023_
-  ],
-  lowercase-references: false,
-  heading-style-compact: true,
-  first-line-indent: false,
+#let part-reading-list(slug) = part-bibliography(
+  entries: part-references.at(slug, default: ()),
 )
 
-#part("Introducción")
+#show: book.with(..notebook-config)
 
-#chapter("Introducción")
+#include "content.typ"
+
+#if bibliography-enabled {
+  my-bibliography(
+    bibliography(bibliography-file, title: "Bibliografía", full: true)
+  )
+}

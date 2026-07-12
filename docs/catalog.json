@@ -1,0 +1,2915 @@
+[
+  {
+    "id": "F-01",
+    "slug": "mecanica-clasica",
+    "title": "Mecánica Clásica",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 22,
+    "parts": [
+      {
+        "title": "Fundamentos de la mecánica",
+        "chapters": [
+          "Espacio, tiempo y cinemática",
+          "Leyes de Newton y sistemas de referencia",
+          "Conservación de energía, momento y momento angular"
+        ]
+      },
+      {
+        "title": "Mecánica analítica",
+        "chapters": [
+          "Principio variacional",
+          "Formalismo lagrangiano",
+          "Restricciones y coordenadas generalizadas",
+          "Simetrías y teorema de Noether"
+        ]
+      },
+      {
+        "title": "Mecánica hamiltoniana",
+        "chapters": [
+          "Transformaciones canónicas",
+          "Ecuaciones de Hamilton",
+          "Hamilton-Jacobi",
+          "Teoría canónica de perturbaciones"
+        ]
+      },
+      {
+        "title": "Sistemas de muchas partículas y sólidos rígidos",
+        "chapters": [
+          "Centro de masas y colisiones",
+          "Dinámica del sólido rígido",
+          "Rotaciones y tensores de inercia"
+        ]
+      },
+      {
+        "title": "Oscilaciones, ondas y medios continuos",
+        "chapters": [
+          "Pequeñas oscilaciones",
+          "Modos normales",
+          "Cuerdas, membranas y elasticidad",
+          "Acústica"
+        ]
+      },
+      {
+        "title": "Dinámica no lineal y caos",
+        "chapters": [
+          "Estabilidad y espacio de fases",
+          "Bifurcaciones",
+          "Caos determinista",
+          "Sistemas hamiltonianos no integrables"
+        ]
+      }
+    ],
+    "pages": 59,
+    "pdf": "pdf/F-Mecanica_Clasica.pdf",
+    "source": "cuadernos/Fisica/Mecanica_Clasica"
+  },
+  {
+    "id": "F-02",
+    "slug": "electrodinamica",
+    "title": "Electrodinámica",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 2,
+    "chapters": 16,
+    "parts": [
+      {
+        "title": "Contenido",
+        "chapters": [
+          "Análisis Vectorial"
+        ]
+      },
+      {
+        "title": "Electrostática",
+        "chapters": [
+          "Electrostática",
+          "Condiciones de frontera en Electrostática",
+          "Campos eléctricos en medios materiales"
+        ]
+      },
+      {
+        "title": "Magnetostática",
+        "chapters": [
+          "Magnetostática",
+          "Campos magnéticos en medios materiales",
+          "Materiaels Magnéticos"
+        ]
+      },
+      {
+        "title": "Electrodinámica",
+        "chapters": [
+          "Electrodinámica",
+          "Leyes de Conervación",
+          "Ondas electromagnéticas",
+          "Guidas de Ondas",
+          "Relatividad especial",
+          "Electrodinámica Relativista"
+        ]
+      },
+      {
+        "title": "Radiación",
+        "chapters": [
+          "Sistemas Radiantes: multipolos",
+          "Radiación de Partículas en Movimiento",
+          "Colisiones entre partículas y pérdidas de energía"
+        ]
+      }
+    ],
+    "pages": 45,
+    "pdf": "pdf/F-Electrodinamica.pdf",
+    "source": "cuadernos/Fisica/Electrodinamica"
+  },
+  {
+    "id": "F-03",
+    "slug": "termodinamica-y-mecanica-estadistica",
+    "title": "Termodinámica y Mecánica Estadística",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Fundamentos termodinámicos",
+        "chapters": [
+          "Variables de estado y equilibrio",
+          "Primer principio",
+          "Segundo principio y entropía",
+          "Tercer principio"
+        ]
+      },
+      {
+        "title": "Potenciales y equilibrio",
+        "chapters": [
+          "Potenciales termodinámicos",
+          "Relaciones de Maxwell",
+          "Estabilidad y equilibrio de fases",
+          "Sistemas abiertos y reacciones"
+        ]
+      },
+      {
+        "title": "Mecánica estadística clásica",
+        "chapters": [
+          "Espacio de fases y ergodicidad",
+          "Ensamble microcanónico",
+          "Ensamble canónico",
+          "Ensamble gran canónico"
+        ]
+      },
+      {
+        "title": "Estadística cuántica",
+        "chapters": [
+          "Bosones y fermiones",
+          "Gas de Bose",
+          "Gas de Fermi",
+          "Radiación térmica"
+        ]
+      },
+      {
+        "title": "Transiciones de fase y fenómenos críticos",
+        "chapters": [
+          "Modelos de Ising y campo medio",
+          "Escalado y universalidad",
+          "Grupo de renormalización",
+          "Sistemas desordenados"
+        ]
+      },
+      {
+        "title": "Procesos irreversibles",
+        "chapters": [
+          "Transporte y difusión",
+          "Relaciones de Onsager",
+          "Ecuaciones cinéticas",
+          "Termodinámica fuera del equilibrio"
+        ]
+      },
+      {
+        "title": "Sistemas complejos",
+        "chapters": [
+          "Información y entropía",
+          "Redes y emergencia",
+          "Autoorganización",
+          "Aplicaciones interdisciplinarias"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/F-Termodinamica.pdf",
+    "source": "cuadernos/Fisica/Termodinamica"
+  },
+  {
+    "id": "F-04",
+    "slug": "fisica-cuantica",
+    "title": "Física Cuántica",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Fundamentos de la teoría cuántica",
+        "chapters": [
+          "Experimentos fundacionales",
+          "Estados y observables",
+          "Postulados",
+          "Medición e interpretación"
+        ]
+      },
+      {
+        "title": "Dinámica cuántica",
+        "chapters": [
+          "Ecuación de Schrödinger",
+          "Representaciones de Schrödinger y Heisenberg",
+          "Propagadores",
+          "Límite clásico"
+        ]
+      },
+      {
+        "title": "Sistemas elementales",
+        "chapters": [
+          "Pozos y barreras",
+          "Oscilador armónico",
+          "Momento angular",
+          "Spin"
+        ]
+      },
+      {
+        "title": "Métodos de aproximación",
+        "chapters": [
+          "Teoría de perturbaciones",
+          "Método variacional",
+          "Aproximación WKB",
+          "Perturbaciones dependientes del tiempo"
+        ]
+      },
+      {
+        "title": "Sistemas compuestos y partículas idénticas",
+        "chapters": [
+          "Producto tensorial y entrelazamiento",
+          "Bosones y fermiones",
+          "Segunda cuantización",
+          "Muchos cuerpos"
+        ]
+      },
+      {
+        "title": "Sistemas abiertos e información cuántica",
+        "chapters": [
+          "Matrices densidad",
+          "Decoherencia",
+          "Canales cuánticos",
+          "Computación y comunicación cuánticas"
+        ]
+      },
+      {
+        "title": "Tecnologías cuánticas",
+        "chapters": [
+          "Control cuántico",
+          "Metrología",
+          "Sensores",
+          "Simulación cuántica"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/F-Cuantica.pdf",
+    "source": "cuadernos/Fisica/Fisica_Cuantica"
+  },
+  {
+    "id": "F-05",
+    "slug": "fisica-atomica-y-molecular",
+    "title": "Física Atómica y Molecular",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Estructura atómica",
+        "chapters": [
+          "Átomo de hidrógeno",
+          "Átomos multielectrónicos",
+          "Acoplamiento angular",
+          "Estructura fina e hiperfina"
+        ]
+      },
+      {
+        "title": "Interacción radiación-materia",
+        "chapters": [
+          "Transiciones electromagnéticas",
+          "Reglas de selección",
+          "Átomo de dos niveles",
+          "Campos intensos"
+        ]
+      },
+      {
+        "title": "Física molecular",
+        "chapters": [
+          "Enlace molecular",
+          "Rotaciones y vibraciones",
+          "Estructura electrónica molecular",
+          "Dinámica molecular"
+        ]
+      },
+      {
+        "title": "Espectroscopia",
+        "chapters": [
+          "Espectroscopia atómica",
+          "Espectroscopia molecular",
+          "Resonancia magnética",
+          "Técnicas ultrarrápidas"
+        ]
+      },
+      {
+        "title": "Colisiones y materia fría",
+        "chapters": [
+          "Colisiones atómicas",
+          "Átomos ultrafríos",
+          "Condensados de Bose-Einstein",
+          "Moléculas frías"
+        ]
+      },
+      {
+        "title": "Aplicaciones y métodos experimentales",
+        "chapters": [
+          "Relojes atómicos",
+          "Trampas y enfriamiento láser",
+          "Metrología espectroscópica",
+          "Astrofísica y diagnóstico de plasmas"
+        ]
+      }
+    ],
+    "pages": 63,
+    "pdf": "pdf/F-Atomica.pdf",
+    "source": "cuadernos/Fisica/Atomica_Molecular"
+  },
+  {
+    "id": "F-06",
+    "slug": "fisica-del-estado-solido",
+    "title": "Física del Estado Sólido",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Estructura cristalina",
+        "chapters": [
+          "Redes y simetrías",
+          "Difracción",
+          "Defectos cristalinos",
+          "Superficies e interfaces"
+        ]
+      },
+      {
+        "title": "Electrones en sólidos",
+        "chapters": [
+          "Modelo de electrones libres",
+          "Teorema de Bloch",
+          "Bandas electrónicas",
+          "Superficies de Fermi"
+        ]
+      },
+      {
+        "title": "Dinámica de la red",
+        "chapters": [
+          "Fonones",
+          "Capacidad calorífica",
+          "Interacción electrón-fonón",
+          "Transporte térmico"
+        ]
+      },
+      {
+        "title": "Transporte electrónico",
+        "chapters": [
+          "Conductividad",
+          "Efecto Hall",
+          "Semimetales y aislantes",
+          "Transporte mesoscópico"
+        ]
+      },
+      {
+        "title": "Magnetismo",
+        "chapters": [
+          "Diamagnetismo y paramagnetismo",
+          "Ferromagnetismo",
+          "Antiferromagnetismo",
+          "Espintrónica"
+        ]
+      },
+      {
+        "title": "Superconductividad",
+        "chapters": [
+          "Fenomenología",
+          "Teoría BCS",
+          "Vórtices y superconductores tipo II",
+          "Superconductividad no convencional"
+        ]
+      },
+      {
+        "title": "Materia condensada avanzada",
+        "chapters": [
+          "Sistemas de baja dimensionalidad",
+          "Fases topológicas",
+          "Materia blanda",
+          "Nanomateriales"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/F-Estado_Solido.pdf",
+    "source": "cuadernos/Fisica/Estado_Solido"
+  },
+  {
+    "id": "F-07",
+    "slug": "fisica-nuclear",
+    "title": "Física Nuclear",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Propiedades del núcleo",
+        "chapters": [
+          "Masas y energías de enlace",
+          "Radios y distribuciones",
+          "Spin, paridad y momentos",
+          "Fuerzas nucleares"
+        ]
+      },
+      {
+        "title": "Modelos nucleares",
+        "chapters": [
+          "Modelo de gota líquida",
+          "Modelo de capas",
+          "Modelos colectivos",
+          "Estructura de núcleos exóticos"
+        ]
+      },
+      {
+        "title": "Desintegraciones radiactivas",
+        "chapters": [
+          "Desintegración alfa",
+          "Desintegración beta",
+          "Emisión gamma",
+          "Cadenas y equilibrio radiactivo"
+        ]
+      },
+      {
+        "title": "Reacciones nucleares",
+        "chapters": [
+          "Cinemática y secciones eficaces",
+          "Modelo óptico",
+          "Reacciones directas",
+          "Núcleo compuesto"
+        ]
+      },
+      {
+        "title": "Fisión y fusión",
+        "chapters": [
+          "Fisión nuclear",
+          "Reactores",
+          "Fusión termonuclear",
+          "Confinamiento y combustibles"
+        ]
+      },
+      {
+        "title": "Astrofísica nuclear",
+        "chapters": [
+          "Nucleosíntesis estelar",
+          "Procesos r, s y rp",
+          "Supernovas",
+          "Materia nuclear densa"
+        ]
+      },
+      {
+        "title": "Aplicaciones",
+        "chapters": [
+          "Medicina nuclear",
+          "Datación y análisis",
+          "Energía nuclear",
+          "Seguridad y protección radiológica"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/F-Nuclear.pdf",
+    "source": "cuadernos/Fisica/Fisica_Nuclear"
+  },
+  {
+    "id": "F-08",
+    "slug": "fisica-de-particulas-y-teoria-cuantica-de-campos",
+    "title": "Física de Partículas y Teoría Cuántica de Campos",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 32,
+    "parts": [
+      {
+        "title": "Fundamentos y simetrías",
+        "chapters": [
+          "Partículas relativistas",
+          "Grupos de Lorentz y Poincaré",
+          "Simetrías internas",
+          "Teorema de Noether"
+        ]
+      },
+      {
+        "title": "Mecánica cuántica relativista",
+        "chapters": [
+          "Ecuación de Klein-Gordon",
+          "Ecuación de Dirac",
+          "Espinores y antipartículas",
+          "Campos libres"
+        ]
+      },
+      {
+        "title": "Campos clásicos",
+        "chapters": [
+          "Campos escalares",
+          "Campos fermiónicos",
+          "Campos gauge",
+          "Ruptura espontánea de simetría"
+        ]
+      },
+      {
+        "title": "Teoría cuántica de campos",
+        "chapters": [
+          "Cuantización canónica",
+          "Integral de camino",
+          "Diagramas de Feynman",
+          "Renormalización"
+        ]
+      },
+      {
+        "title": "Teorías gauge y modelo estándar",
+        "chapters": [
+          "Electrodinámica cuántica",
+          "Interacción electrodébil",
+          "Cromodinámica cuántica",
+          "Mecanismo de Higgs"
+        ]
+      },
+      {
+        "title": "Fenomenología de partículas",
+        "chapters": [
+          "Desintegraciones y dispersión",
+          "Quarks y hadrones",
+          "Neutrinos",
+          "Física de sabor"
+        ]
+      },
+      {
+        "title": "Más allá del modelo estándar",
+        "chapters": [
+          "Supersimetría y dimensiones extra",
+          "Materia oscura",
+          "Gran unificación",
+          "Física de neutrinos avanzada"
+        ]
+      },
+      {
+        "title": "Astropartículas y cosmología de partículas",
+        "chapters": [
+          "Universo temprano",
+          "Bariogénesis",
+          "Rayos cósmicos",
+          "Ondas gravitacionales y partículas"
+        ]
+      }
+    ],
+    "pages": 85,
+    "pdf": "pdf/F-Fisica_Particulas.pdf",
+    "source": "cuadernos/Fisica/Fisica_Particulas"
+  },
+  {
+    "id": "F-09",
+    "slug": "gravitacion",
+    "title": "Gravitación",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Relatividad especial",
+        "chapters": [
+          "Postulados y transformaciones de Lorentz",
+          "Cinemática relativista",
+          "Dinámica relativista",
+          "Electromagnetismo covariante"
+        ]
+      },
+      {
+        "title": "Geometría del espacio-tiempo",
+        "chapters": [
+          "Variedades y tensores",
+          "Conexión y geodésicas",
+          "Curvatura",
+          "Cálculo variacional"
+        ]
+      },
+      {
+        "title": "Relatividad general",
+        "chapters": [
+          "Principio de equivalencia",
+          "Ecuaciones de Einstein",
+          "Límite newtoniano",
+          "Formulación inicial"
+        ]
+      },
+      {
+        "title": "Soluciones y objetos compactos",
+        "chapters": [
+          "Schwarzschild",
+          "Kerr",
+          "Estrellas relativistas",
+          "Agujeros negros"
+        ]
+      },
+      {
+        "title": "Ondas gravitacionales",
+        "chapters": [
+          "Aproximación lineal",
+          "Generación y propagación",
+          "Detectores",
+          "Astronomía multimensajero"
+        ]
+      },
+      {
+        "title": "Cosmología relativista",
+        "chapters": [
+          "Modelos de Friedmann",
+          "Inflación",
+          "Perturbaciones cosmológicas",
+          "Energía oscura"
+        ]
+      },
+      {
+        "title": "Gravedad avanzada",
+        "chapters": [
+          "Termodinámica de agujeros negros",
+          "Gravedad cuántica",
+          "Teorías modificadas",
+          "Holografía"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/F-Gravitacion.pdf",
+    "source": "cuadernos/Fisica/Gravitacion"
+  },
+  {
+    "id": "F-10",
+    "slug": "astrofisica-y-cosmologia",
+    "title": "Astrofísica y Cosmología",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 3,
+    "chapters": 3,
+    "parts": [
+      {
+        "title": "Astrofísica Nuclear",
+        "chapters": [
+          "Introducción"
+        ]
+      },
+      {
+        "title": "Nucleosíntesis Estelar y Primordial",
+        "chapters": [
+          "Introducción",
+          "Nucleosíntesis en el Big Bang"
+        ]
+      },
+      {
+        "title": "Cosmología",
+        "chapters": []
+      }
+    ],
+    "pages": 17,
+    "pdf": "pdf/F-Astrofisica.pdf",
+    "source": "cuadernos/Fisica/Astrofisica"
+  },
+  {
+    "id": "F-11",
+    "slug": "fisica-de-fluidos",
+    "title": "Física de Fluidos",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Fundamentos de medios continuos",
+        "chapters": [
+          "Cinemática de fluidos",
+          "Conservación de masa",
+          "Conservación de momento",
+          "Conservación de energía"
+        ]
+      },
+      {
+        "title": "Fluidos ideales",
+        "chapters": [
+          "Ecuaciones de Euler",
+          "Bernoulli",
+          "Flujo potencial",
+          "Vorticidad"
+        ]
+      },
+      {
+        "title": "Fluidos viscosos",
+        "chapters": [
+          "Navier-Stokes",
+          "Flujo de Poiseuille",
+          "Número de Reynolds",
+          "Disipación"
+        ]
+      },
+      {
+        "title": "Capas límite y aerodinámica",
+        "chapters": [
+          "Teoría de capa límite",
+          "Separación",
+          "Sustentación y resistencia",
+          "Flujo alrededor de cuerpos"
+        ]
+      },
+      {
+        "title": "Turbulencia",
+        "chapters": [
+          "Transición",
+          "Cascada de energía",
+          "Modelos estadísticos",
+          "Simulación de turbulencia"
+        ]
+      },
+      {
+        "title": "Flujos compresibles",
+        "chapters": [
+          "Ondas de choque",
+          "Flujo supersónico",
+          "Toberas",
+          "Combustión"
+        ]
+      },
+      {
+        "title": "Fluidos multifásicos y geofísicos",
+        "chapters": [
+          "Tensión superficial",
+          "Burbujas y gotas",
+          "Fluidos estratificados",
+          "Atmósfera y océanos"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/F-Fluidos.pdf",
+    "source": "cuadernos/Fisica/Fisica_Fluidos"
+  },
+  {
+    "id": "F-12",
+    "slug": "detectores-en-fisica-nuclear-y-particulas",
+    "title": "Detectores en Física Nuclear y Partículas",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 3,
+    "chapters": 11,
+    "parts": [
+      {
+        "title": "Interacción radiación–materia",
+        "chapters": []
+      },
+      {
+        "title": "Electrónica",
+        "chapters": []
+      },
+      {
+        "title": "Estadística",
+        "chapters": []
+      },
+      {
+        "title": "Aceleradores",
+        "chapters": [
+          "Sincrotrón"
+        ]
+      },
+      {
+        "title": "Detectores",
+        "chapters": [
+          "Indentificación de Partículas",
+          "Detectores Gaseosos",
+          "Detectores de Fotones",
+          "Detectores Centelleadores",
+          "Detectores Semiconductores",
+          "Detectores Cherenkov",
+          "Espectrómetros de muones",
+          "Calorímetros",
+          "Detectores de Estado Sólido"
+        ]
+      },
+      {
+        "title": "Simulación en física de detectores",
+        "chapters": []
+      },
+      {
+        "title": "Aplicaciones",
+        "chapters": [
+          "Detectores en Grandes Experimentos"
+        ]
+      }
+    ],
+    "pages": 53,
+    "pdf": "pdf/F-DetectoresParticulas.pdf",
+    "source": "cuadernos/Fisica/Detectores_Particulas"
+  },
+  {
+    "id": "F-13",
+    "slug": "fisica-del-plasma",
+    "title": "Física del Plasma",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 32,
+    "parts": [
+      {
+        "title": "Fundamentos del plasma",
+        "chapters": [
+          "Parámetros de plasma",
+          "Apantallamiento de Debye",
+          "Equilibrio e ionización",
+          "Diagnóstico"
+        ]
+      },
+      {
+        "title": "Movimiento de partículas",
+        "chapters": [
+          "Órbitas en campos",
+          "Derivas",
+          "Espejos magnéticos",
+          "Colisiones"
+        ]
+      },
+      {
+        "title": "Teoría cinética",
+        "chapters": [
+          "Ecuación de Boltzmann",
+          "Ecuación de Vlasov",
+          "Funciones de distribución",
+          "Amortiguamiento de Landau"
+        ]
+      },
+      {
+        "title": "Descripción fluida y MHD",
+        "chapters": [
+          "Modelos de dos fluidos",
+          "Magnetohidrodinámica",
+          "Equilibrios",
+          "Reconexión magnética"
+        ]
+      },
+      {
+        "title": "Ondas e inestabilidades",
+        "chapters": [
+          "Ondas electrostáticas",
+          "Ondas electromagnéticas",
+          "Inestabilidades cinéticas",
+          "Inestabilidades MHD"
+        ]
+      },
+      {
+        "title": "Plasmas fríos y descargas",
+        "chapters": [
+          "Descargas eléctricas",
+          "Química de plasmas",
+          "Sheaths",
+          "Plasma tecnológico"
+        ]
+      },
+      {
+        "title": "Fusión y confinamiento",
+        "chapters": [
+          "Tokamaks y stellarators",
+          "Confinamiento inercial",
+          "Calentamiento",
+          "Transporte anómalo"
+        ]
+      },
+      {
+        "title": "Plasmas espaciales y astrofísicos",
+        "chapters": [
+          "Viento solar",
+          "Magnetosferas",
+          "Discos de acreción",
+          "Jets y choques"
+        ]
+      }
+    ],
+    "pages": 85,
+    "pdf": "pdf/F-FisicaPlasma.pdf",
+    "source": "cuadernos/Fisica/Fisica_Plasma"
+  },
+  {
+    "id": "F-14",
+    "slug": "optica",
+    "title": "Óptica",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Óptica geométrica",
+        "chapters": [
+          "Rayos y principio de Fermat",
+          "Lentes y espejos",
+          "Sistemas ópticos",
+          "Aberraciones"
+        ]
+      },
+      {
+        "title": "Óptica ondulatoria",
+        "chapters": [
+          "Ecuación de onda",
+          "Interferencia",
+          "Difracción",
+          "Polarización"
+        ]
+      },
+      {
+        "title": "Coherencia y Fourier",
+        "chapters": [
+          "Coherencia temporal y espacial",
+          "Óptica de Fourier",
+          "Formación de imagen",
+          "Filtrado espacial"
+        ]
+      },
+      {
+        "title": "Instrumentación óptica",
+        "chapters": [
+          "Microscopía",
+          "Telescopios",
+          "Cámaras y detectores",
+          "Espectrómetros"
+        ]
+      },
+      {
+        "title": "Óptica de medios",
+        "chapters": [
+          "Dispersión",
+          "Cristales anisótropos",
+          "Óptica guiada",
+          "Fibras ópticas"
+        ]
+      },
+      {
+        "title": "Óptica no lineal",
+        "chapters": [
+          "Susceptibilidades no lineales",
+          "Generación armónica",
+          "Mezcla de frecuencias",
+          "Solitones"
+        ]
+      },
+      {
+        "title": "Óptica cuántica",
+        "chapters": [
+          "Estados de luz",
+          "Fotodetección",
+          "Entrelazamiento",
+          "Interferometría cuántica"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/F-Optica.pdf",
+    "source": "cuadernos/Fisica/Optica"
+  },
+  {
+    "id": "F-15",
+    "slug": "laser",
+    "title": "Láser",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Interacción luz-materia",
+        "chapters": [
+          "Emisión espontánea y estimulada",
+          "Inversión de población",
+          "Ensanchamiento de líneas",
+          "Ecuaciones de tasa"
+        ]
+      },
+      {
+        "title": "Resonadores ópticos",
+        "chapters": [
+          "Modos de cavidad",
+          "Estabilidad",
+          "Pérdidas y calidad",
+          "Selección modal"
+        ]
+      },
+      {
+        "title": "Dinámica del láser",
+        "chapters": [
+          "Umbral y ganancia",
+          "Ecuaciones de Maxwell-Bloch",
+          "Estabilidad y ruido",
+          "Bloqueo de modos"
+        ]
+      },
+      {
+        "title": "Tipos de láser",
+        "chapters": [
+          "Láseres de gas",
+          "Láseres de estado sólido",
+          "Láseres semiconductores",
+          "Láseres de fibra"
+        ]
+      },
+      {
+        "title": "Pulsos ultracortos",
+        "chapters": [
+          "Generación de pulsos",
+          "Dispersión y chirp",
+          "Amplificación CPA",
+          "Peines de frecuencia"
+        ]
+      },
+      {
+        "title": "Aplicaciones",
+        "chapters": [
+          "Procesado de materiales",
+          "Medicina",
+          "Metrología",
+          "Comunicaciones y sensores"
+        ]
+      }
+    ],
+    "pages": 63,
+    "pdf": "pdf/F-Laser.pdf",
+    "source": "cuadernos/Fisica/Laser"
+  },
+  {
+    "id": "F-16",
+    "slug": "fisica-de-semiconductores-y-electronica",
+    "title": "Física de Semiconductores y Electrónica",
+    "area": "Fisica",
+    "area_label": "Física",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Fundamentos de semiconductores",
+        "chapters": [
+          "Bandas y portadores",
+          "Estadística de portadores",
+          "Dopado",
+          "Transporte y recombinación"
+        ]
+      },
+      {
+        "title": "Uniones y contactos",
+        "chapters": [
+          "Unión p-n",
+          "Diodos",
+          "Contactos metal-semiconductor",
+          "Heterouniones"
+        ]
+      },
+      {
+        "title": "Transistores",
+        "chapters": [
+          "BJT",
+          "MOSFET",
+          "Dispositivos de potencia",
+          "Dispositivos de alta frecuencia"
+        ]
+      },
+      {
+        "title": "Optoelectrónica",
+        "chapters": [
+          "LED",
+          "Láser semiconductor",
+          "Fotodiodos",
+          "Células solares"
+        ]
+      },
+      {
+        "title": "Fabricación y caracterización",
+        "chapters": [
+          "Crecimiento y deposición",
+          "Litografía",
+          "Implantación y difusión",
+          "Metrología de dispositivos"
+        ]
+      },
+      {
+        "title": "Nanoelectrónica y dispositivos avanzados",
+        "chapters": [
+          "Transporte cuántico",
+          "HEMT y FinFET",
+          "Memorias",
+          "Dispositivos 2D"
+        ]
+      }
+    ],
+    "pages": 63,
+    "pdf": "pdf/F-Semiconductores.pdf",
+    "source": "cuadernos/Fisica/Semiconductores"
+  },
+  {
+    "id": "M-01",
+    "slug": "teoria-de-grupos",
+    "title": "Teoría de Grupos",
+    "area": "Matematicas",
+    "area_label": "Matemáticas",
+    "status": "development",
+    "progress": 41,
+    "chapters": 7,
+    "parts": [
+      {
+        "title": "Introducción y Grupos Discretos",
+        "chapters": [
+          "Introducción a la Teoría de Grupos",
+          "Homomorfismos y Reducibilidad",
+          "Grupos finitos"
+        ]
+      },
+      {
+        "title": "Grupos Continuos",
+        "chapters": [
+          "Grupos de Lie"
+        ]
+      },
+      {
+        "title": "Teoría de Grupos aplicada a la física",
+        "chapters": [
+          "Rotaciones",
+          "Ecuacón de Dirac",
+          "Campos de Yang-Milles"
+        ]
+      }
+    ],
+    "pages": 53,
+    "pdf": "pdf/M-Teoria_Grupos.pdf",
+    "source": "cuadernos/Matematicas/Teoria_Grupos"
+  },
+  {
+    "id": "M-02",
+    "slug": "geometria-diferencial",
+    "title": "Geometría Diferencial",
+    "area": "Matematicas",
+    "area_label": "Matemáticas",
+    "status": "skeleton",
+    "progress": 7,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Variedades Diferenciales",
+        "chapters": [
+          "Variedades Diferenciales",
+          "Formas Diferenciables",
+          "Tensores y Formas Exteriores",
+          "Álgebra Exeterior",
+          "Integrales en Variedades",
+          "Derivada de Lie",
+          "Lema de Poincaré"
+        ]
+      },
+      {
+        "title": "Geometría de Riemann",
+        "chapters": [
+          "Métrica de Riemann",
+          "Conexiones",
+          "Conexiones de Levi-Civita",
+          "Geodésicas y Distancias",
+          "Curvatura"
+        ]
+      },
+      {
+        "title": "Relatividad General",
+        "chapters": [
+          "Principio de equivalencia",
+          "Espaciotiempo y métrica lorentziana",
+          "Conexión y derivada covariante en Relatividad General",
+          "Geodésicas relativistas",
+          "Curvatura del espaciotiempo",
+          "Tensor energía-momento",
+          "Ecuaciones de Einstein"
+        ]
+      },
+      {
+        "title": "Teorías de Gauge",
+        "chapters": [
+          "Simetrías y principios de gauge",
+          "Fibrados principales y asociados",
+          "Conexiones en fibrados",
+          "Teoría gauge abeliana: electromagnetismo",
+          "Teorías gauge no abelianas"
+        ]
+      }
+    ],
+    "pages": 45,
+    "pdf": "pdf/M-Geometria_Diferencial.pdf",
+    "source": "cuadernos/Matematicas/Geometria_Diferencial"
+  },
+  {
+    "id": "I-01",
+    "slug": "ingenieria-mecanica",
+    "title": "Ingeniería Mecánica",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Mecánica y materiales",
+        "chapters": [
+          "Estática",
+          "Dinámica",
+          "Resistencia de materiales",
+          "Selección de materiales"
+        ]
+      },
+      {
+        "title": "Diseño mecánico",
+        "chapters": [
+          "Elementos de máquinas",
+          "Fatiga",
+          "Tribología",
+          "Diseño asistido por ordenador"
+        ]
+      },
+      {
+        "title": "Máquinas y vibraciones",
+        "chapters": [
+          "Mecanismos",
+          "Dinámica de máquinas",
+          "Vibraciones",
+          "Mantenimiento"
+        ]
+      },
+      {
+        "title": "Sistemas térmicos y fluidos",
+        "chapters": [
+          "Termodinámica aplicada",
+          "Transferencia de calor",
+          "Mecánica de fluidos",
+          "Máquinas térmicas"
+        ]
+      },
+      {
+        "title": "Fabricación",
+        "chapters": [
+          "Procesos de mecanizado",
+          "Conformado",
+          "Fabricación aditiva",
+          "Metrología y calidad"
+        ]
+      },
+      {
+        "title": "Mecatrónica y control",
+        "chapters": [
+          "Actuadores",
+          "Sensores",
+          "Control",
+          "Robótica"
+        ]
+      },
+      {
+        "title": "Fiabilidad y proyecto",
+        "chapters": [
+          "Fiabilidad",
+          "Seguridad",
+          "Gestión del ciclo de vida",
+          "Proyecto mecánico"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/I-Mecanica.pdf",
+    "source": "cuadernos/Ingenieria/Mecanica"
+  },
+  {
+    "id": "I-02",
+    "slug": "ingenieria-electrica",
+    "title": "Ingeniería Eléctrica",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Circuitos y electromagnetismo",
+        "chapters": [
+          "Circuitos eléctricos",
+          "Sistemas trifásicos",
+          "Campos electromagnéticos",
+          "Medidas eléctricas"
+        ]
+      },
+      {
+        "title": "Máquinas eléctricas",
+        "chapters": [
+          "Transformadores",
+          "Máquinas de corriente continua",
+          "Máquinas síncronas",
+          "Máquinas de inducción"
+        ]
+      },
+      {
+        "title": "Electrónica de potencia",
+        "chapters": [
+          "Rectificadores",
+          "Convertidores",
+          "Inversores",
+          "Accionamientos"
+        ]
+      },
+      {
+        "title": "Generación y redes",
+        "chapters": [
+          "Generación convencional",
+          "Renovables",
+          "Flujo de carga",
+          "Estabilidad"
+        ]
+      },
+      {
+        "title": "Alta tensión y protecciones",
+        "chapters": [
+          "Aislamiento",
+          "Sobretensiones",
+          "Protecciones",
+          "Puesta a tierra"
+        ]
+      },
+      {
+        "title": "Sistemas eléctricos modernos",
+        "chapters": [
+          "Redes inteligentes",
+          "Almacenamiento",
+          "Microredes",
+          "Movilidad eléctrica"
+        ]
+      }
+    ],
+    "pages": 63,
+    "pdf": "pdf/I-Electrica.pdf",
+    "source": "cuadernos/Ingenieria/Electrica"
+  },
+  {
+    "id": "I-03",
+    "slug": "ingenieria-electronica",
+    "title": "Ingeniería Electrónica",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Dispositivos electrónicos",
+        "chapters": [
+          "Semiconductores",
+          "Diodos",
+          "Transistores",
+          "Tecnologías integradas"
+        ]
+      },
+      {
+        "title": "Electrónica analógica",
+        "chapters": [
+          "Amplificadores",
+          "Realimentación",
+          "Filtros",
+          "Conversión de datos"
+        ]
+      },
+      {
+        "title": "Electrónica digital",
+        "chapters": [
+          "Lógica combinacional",
+          "Lógica secuencial",
+          "Arquitecturas digitales",
+          "FPGA"
+        ]
+      },
+      {
+        "title": "Sistemas embebidos",
+        "chapters": [
+          "Microcontroladores",
+          "Interfaces",
+          "Tiempo real",
+          "Sistemas operativos embebidos"
+        ]
+      },
+      {
+        "title": "Electrónica de potencia",
+        "chapters": [
+          "Convertidores",
+          "Control de potencia",
+          "Fuentes",
+          "Gestión térmica"
+        ]
+      },
+      {
+        "title": "Diseño y fabricación",
+        "chapters": [
+          "PCB",
+          "Compatibilidad electromagnética",
+          "Verificación",
+          "Test y fiabilidad"
+        ]
+      }
+    ],
+    "pages": 63,
+    "pdf": "pdf/I-Electronica.pdf",
+    "source": "cuadernos/Ingenieria/Electronica"
+  },
+  {
+    "id": "I-04",
+    "slug": "sensores-e-instrumentacion",
+    "title": "Sensores e Instrumentación",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Ciencia de la medida",
+        "chapters": [
+          "Magnitudes y unidades",
+          "Trazabilidad",
+          "Incertidumbre",
+          "Calibración"
+        ]
+      },
+      {
+        "title": "Sensores físicos",
+        "chapters": [
+          "Temperatura",
+          "Presión y fuerza",
+          "Posición y movimiento",
+          "Ópticos y radiación"
+        ]
+      },
+      {
+        "title": "Sensores químicos y biológicos",
+        "chapters": [
+          "Electroquímicos",
+          "Gases",
+          "Biosensores",
+          "Microfluídica"
+        ]
+      },
+      {
+        "title": "Acondicionamiento de señal",
+        "chapters": [
+          "Puentes y amplificación",
+          "Filtrado",
+          "Ruido",
+          "Conversión A/D"
+        ]
+      },
+      {
+        "title": "Adquisición e instrumentación",
+        "chapters": [
+          "DAQ",
+          "Instrumentación virtual",
+          "Sincronización",
+          "Sistemas distribuidos"
+        ]
+      },
+      {
+        "title": "Integración y aplicaciones",
+        "chapters": [
+          "Sensores inteligentes",
+          "IoT industrial",
+          "Instrumentación científica",
+          "Diagnóstico y mantenimiento"
+        ]
+      }
+    ],
+    "pages": 63,
+    "pdf": "pdf/I-Sensores.pdf",
+    "source": "cuadernos/Ingenieria/Sensores_Instrumentacion"
+  },
+  {
+    "id": "I-05",
+    "slug": "ingenieria-de-telecomunicaciones",
+    "title": "Ingeniería de Telecomunicaciones",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Señales y sistemas",
+        "chapters": [
+          "Señales continuas y discretas",
+          "Fourier y muestreo",
+          "Filtrado",
+          "Procesado digital"
+        ]
+      },
+      {
+        "title": "Comunicaciones analógicas y digitales",
+        "chapters": [
+          "Modulación analógica",
+          "Modulación digital",
+          "Detección",
+          "Sincronización"
+        ]
+      },
+      {
+        "title": "Información y codificación",
+        "chapters": [
+          "Teoría de la información",
+          "Códigos de canal",
+          "Compresión",
+          "Criptografía aplicada"
+        ]
+      },
+      {
+        "title": "Radiofrecuencia y microondas",
+        "chapters": [
+          "Líneas de transmisión",
+          "Circuitos RF",
+          "Microondas",
+          "Medidas"
+        ]
+      },
+      {
+        "title": "Antenas y propagación",
+        "chapters": [
+          "Antenas",
+          "Propagación terrestre",
+          "Canales móviles",
+          "Radar"
+        ]
+      },
+      {
+        "title": "Comunicaciones ópticas",
+        "chapters": [
+          "Fibras",
+          "Transmisores y receptores",
+          "Redes ópticas",
+          "Fotónica integrada"
+        ]
+      },
+      {
+        "title": "Redes y sistemas modernos",
+        "chapters": [
+          "Internet",
+          "Redes móviles",
+          "5G y 6G",
+          "Comunicaciones satelitales"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/I-Teleco.pdf",
+    "source": "cuadernos/Ingenieria/Telecomunicaciones"
+  },
+  {
+    "id": "I-06",
+    "slug": "ingenieria-aeroespacial-y-aeronautica",
+    "title": "Ingeniería Aeroespacial y Aeronáutica",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Aerodinámica",
+        "chapters": [
+          "Flujo potencial",
+          "Perfiles y alas",
+          "Flujo compresible",
+          "Aerodinámica computacional"
+        ]
+      },
+      {
+        "title": "Mecánica de vuelo",
+        "chapters": [
+          "Actuaciones",
+          "Estabilidad",
+          "Control de vuelo",
+          "Navegación"
+        ]
+      },
+      {
+        "title": "Propulsión",
+        "chapters": [
+          "Motores alternativos",
+          "Turbinas de gas",
+          "Cohetes",
+          "Propulsión eléctrica"
+        ]
+      },
+      {
+        "title": "Estructuras y materiales",
+        "chapters": [
+          "Estructuras aeronáuticas",
+          "Materiales compuestos",
+          "Fatiga",
+          "Aeroelasticidad"
+        ]
+      },
+      {
+        "title": "Aviónica y sistemas",
+        "chapters": [
+          "Sensores",
+          "Comunicaciones",
+          "Sistemas embarcados",
+          "Fiabilidad"
+        ]
+      },
+      {
+        "title": "Ingeniería espacial",
+        "chapters": [
+          "Mecánica orbital",
+          "Vehículos espaciales",
+          "Sistemas de misión",
+          "Operaciones"
+        ]
+      },
+      {
+        "title": "Diseño y certificación",
+        "chapters": [
+          "Diseño conceptual",
+          "Optimización multidisciplinar",
+          "Seguridad",
+          "Certificación"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/I-Aeroespacial.pdf",
+    "source": "cuadernos/Ingenieria/Aeroespacial"
+  },
+  {
+    "id": "I-07",
+    "slug": "ingenieria-de-la-automocion",
+    "title": "Ingeniería de la Automoción",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Arquitectura del vehículo",
+        "chapters": [
+          "Sistemas del vehículo",
+          "Prestaciones",
+          "Ergonomía",
+          "Diseño y homologación"
+        ]
+      },
+      {
+        "title": "Propulsión",
+        "chapters": [
+          "Motores térmicos",
+          "Transmisiones",
+          "Vehículo eléctrico",
+          "Híbridos e hidrógeno"
+        ]
+      },
+      {
+        "title": "Dinámica del vehículo",
+        "chapters": [
+          "Neumáticos",
+          "Suspensión",
+          "Dirección",
+          "Frenado"
+        ]
+      },
+      {
+        "title": "Estructuras y fabricación",
+        "chapters": [
+          "Chasis y carrocería",
+          "Materiales",
+          "Aerodinámica",
+          "Producción"
+        ]
+      },
+      {
+        "title": "Electrónica y control",
+        "chapters": [
+          "Redes embarcadas",
+          "Control del tren motriz",
+          "ADAS",
+          "Vehículo autónomo"
+        ]
+      },
+      {
+        "title": "Seguridad y sostenibilidad",
+        "chapters": [
+          "Seguridad pasiva y activa",
+          "Emisiones",
+          "Ciclo de vida",
+          "Movilidad conectada"
+        ]
+      }
+    ],
+    "pages": 63,
+    "pdf": "pdf/I-Automocion.pdf",
+    "source": "cuadernos/Ingenieria/Automocion"
+  },
+  {
+    "id": "I-08",
+    "slug": "ingenieria-naval",
+    "title": "Ingeniería Naval",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Hidrostática y estabilidad",
+        "chapters": [
+          "Geometría del buque",
+          "Flotabilidad",
+          "Estabilidad intacta",
+          "Estabilidad averiada"
+        ]
+      },
+      {
+        "title": "Hidrodinámica naval",
+        "chapters": [
+          "Resistencia",
+          "Propulsión",
+          "Maniobrabilidad",
+          "Comportamiento en la mar"
+        ]
+      },
+      {
+        "title": "Estructuras navales",
+        "chapters": [
+          "Cargas",
+          "Dimensionamiento",
+          "Fatiga",
+          "Materiales y corrosión"
+        ]
+      },
+      {
+        "title": "Propulsión y energía",
+        "chapters": [
+          "Motores marinos",
+          "Hélices",
+          "Propulsión eléctrica",
+          "Eficiencia energética"
+        ]
+      },
+      {
+        "title": "Sistemas del buque",
+        "chapters": [
+          "Sistemas auxiliares",
+          "Electricidad y control",
+          "Seguridad",
+          "Habitabilidad"
+        ]
+      },
+      {
+        "title": "Construcción y proyecto",
+        "chapters": [
+          "Astilleros",
+          "Producción",
+          "Reglamentación",
+          "Diseño integrado"
+        ]
+      },
+      {
+        "title": "Ingeniería oceánica",
+        "chapters": [
+          "Estructuras offshore",
+          "Energías marinas",
+          "Submarinos",
+          "Operaciones marítimas"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/I-Naval.pdf",
+    "source": "cuadernos/Ingenieria/Naval"
+  },
+  {
+    "id": "I-09",
+    "slug": "ingenieria-energetica",
+    "title": "Ingeniería Energética",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Fundamentos energéticos",
+        "chapters": [
+          "Balances y exergía",
+          "Conversión de energía",
+          "Recursos",
+          "Demanda"
+        ]
+      },
+      {
+        "title": "Sistemas térmicos",
+        "chapters": [
+          "Ciclos de potencia",
+          "Turbinas",
+          "Cogeneración",
+          "Refrigeración"
+        ]
+      },
+      {
+        "title": "Energías renovables",
+        "chapters": [
+          "Solar",
+          "Eólica",
+          "Hidráulica",
+          "Bioenergía"
+        ]
+      },
+      {
+        "title": "Almacenamiento e hidrógeno",
+        "chapters": [
+          "Baterías",
+          "Almacenamiento térmico",
+          "Hidrógeno",
+          "Power-to-X"
+        ]
+      },
+      {
+        "title": "Sistemas eléctricos y redes",
+        "chapters": [
+          "Integración renovable",
+          "Redes",
+          "Mercados",
+          "Flexibilidad"
+        ]
+      },
+      {
+        "title": "Energía nuclear",
+        "chapters": [
+          "Reactores",
+          "Ciclo del combustible",
+          "Seguridad",
+          "Fusión"
+        ]
+      },
+      {
+        "title": "Eficiencia y ambiente",
+        "chapters": [
+          "Eficiencia industrial",
+          "Edificios",
+          "Emisiones",
+          "Análisis de ciclo de vida"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/I-Energetica.pdf",
+    "source": "cuadernos/Ingenieria/Energetica"
+  },
+  {
+    "id": "I-10",
+    "slug": "ingenieria-de-minas",
+    "title": "Ingeniería de Minas",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Geología y exploración",
+        "chapters": [
+          "Mineralogía",
+          "Yacimientos",
+          "Prospección",
+          "Estimación de recursos"
+        ]
+      },
+      {
+        "title": "Explotación minera",
+        "chapters": [
+          "Minería a cielo abierto",
+          "Minería subterránea",
+          "Perforación y voladura",
+          "Planificación"
+        ]
+      },
+      {
+        "title": "Mecánica de rocas",
+        "chapters": [
+          "Caracterización",
+          "Estabilidad",
+          "Sostenimiento",
+          "Geotecnia"
+        ]
+      },
+      {
+        "title": "Ventilación y servicios",
+        "chapters": [
+          "Ventilación",
+          "Drenaje",
+          "Transporte",
+          "Energía y comunicaciones"
+        ]
+      },
+      {
+        "title": "Procesamiento de minerales",
+        "chapters": [
+          "Conminución",
+          "Concentración",
+          "Hidrometalurgia",
+          "Pirometalurgia"
+        ]
+      },
+      {
+        "title": "Seguridad y medio ambiente",
+        "chapters": [
+          "Riesgos",
+          "Residuos",
+          "Restauración",
+          "Agua y emisiones"
+        ]
+      },
+      {
+        "title": "Economía y gestión",
+        "chapters": [
+          "Evaluación de proyectos",
+          "Costes",
+          "Legislación",
+          "Cierre de mina"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/I-Minas.pdf",
+    "source": "cuadernos/Ingenieria/Minas"
+  },
+  {
+    "id": "I-11",
+    "slug": "ingenieria-biomedica",
+    "title": "Ingeniería Biomédica",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Fundamentos biomédicos",
+        "chapters": [
+          "Anatomía y fisiología",
+          "Bioelectricidad",
+          "Biomecánica",
+          "Biomateriales"
+        ]
+      },
+      {
+        "title": "Instrumentación biomédica",
+        "chapters": [
+          "Electrodos y sensores",
+          "Acondicionamiento",
+          "Seguridad eléctrica",
+          "Monitorización"
+        ]
+      },
+      {
+        "title": "Señales e imágenes médicas",
+        "chapters": [
+          "ECG, EEG y EMG",
+          "Ultrasonidos",
+          "Tomografía",
+          "Resonancia magnética"
+        ]
+      },
+      {
+        "title": "Dispositivos y prótesis",
+        "chapters": [
+          "Prótesis",
+          "Implantes",
+          "Órganos artificiales",
+          "Rehabilitación"
+        ]
+      },
+      {
+        "title": "Ingeniería clínica",
+        "chapters": [
+          "Gestión tecnológica",
+          "Mantenimiento",
+          "Interoperabilidad",
+          "Hospital digital"
+        ]
+      },
+      {
+        "title": "Regulación y diseño",
+        "chapters": [
+          "Diseño centrado en el paciente",
+          "Validación",
+          "Regulación",
+          "Ética"
+        ]
+      }
+    ],
+    "pages": 63,
+    "pdf": "pdf/I-Biomedica.pdf",
+    "source": "cuadernos/Ingenieria/Biomedica"
+  },
+  {
+    "id": "I-12",
+    "slug": "ingenieria-biotecnologica",
+    "title": "Ingeniería Biotecnológica",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Biología molecular para ingeniería",
+        "chapters": [
+          "Genética",
+          "Proteínas",
+          "Metabolismo",
+          "Biología de sistemas"
+        ]
+      },
+      {
+        "title": "Ingeniería genética y sintética",
+        "chapters": [
+          "Edición genética",
+          "Circuitos biológicos",
+          "Chasis celulares",
+          "Diseño de proteínas"
+        ]
+      },
+      {
+        "title": "Bioprocesos",
+        "chapters": [
+          "Cinética microbiana",
+          "Biorreactores",
+          "Fermentación",
+          "Escalado"
+        ]
+      },
+      {
+        "title": "Operaciones de separación",
+        "chapters": [
+          "Ruptura celular",
+          "Filtración",
+          "Cromatografía",
+          "Purificación"
+        ]
+      },
+      {
+        "title": "Omicas y biología computacional",
+        "chapters": [
+          "Genómica",
+          "Transcriptómica",
+          "Proteómica",
+          "Modelado"
+        ]
+      },
+      {
+        "title": "Aplicaciones",
+        "chapters": [
+          "Biomedicina",
+          "Alimentos",
+          "Industria",
+          "Medio ambiente"
+        ]
+      },
+      {
+        "title": "Calidad y regulación",
+        "chapters": [
+          "Bioseguridad",
+          "GMP",
+          "Regulación",
+          "Bioética"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/I-Biotecnologia.pdf",
+    "source": "cuadernos/Ingenieria/Biotecnologia"
+  },
+  {
+    "id": "I-13",
+    "slug": "ingenieria-militar",
+    "title": "Ingeniería Militar",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Ingeniería de sistemas de defensa",
+        "chapters": [
+          "Requisitos y arquitectura",
+          "Integración",
+          "Verificación",
+          "Ciclo de vida"
+        ]
+      },
+      {
+        "title": "Infraestructuras y movilidad",
+        "chapters": [
+          "Fortificación",
+          "Puentes y rutas",
+          "Campamentos",
+          "Movilidad terrestre"
+        ]
+      },
+      {
+        "title": "Sensores, comunicaciones y mando",
+        "chapters": [
+          "Sensores",
+          "Comunicaciones seguras",
+          "Navegación",
+          "Sistemas de mando y control"
+        ]
+      },
+      {
+        "title": "Plataformas y protección",
+        "chapters": [
+          "Plataformas terrestres",
+          "Navales y aéreas",
+          "Protección y supervivencia",
+          "Mantenimiento"
+        ]
+      },
+      {
+        "title": "Logística y operaciones",
+        "chapters": [
+          "Cadena de suministro",
+          "Fiabilidad",
+          "Planificación",
+          "Ingeniería humanitaria"
+        ]
+      },
+      {
+        "title": "Seguridad y resiliencia",
+        "chapters": [
+          "Protección de infraestructuras",
+          "Ciberseguridad",
+          "Riesgos NRBQ",
+          "Desminado y reconstrucción"
+        ]
+      }
+    ],
+    "pages": 63,
+    "pdf": "pdf/I-Militar.pdf",
+    "source": "cuadernos/Ingenieria/Militar"
+  },
+  {
+    "id": "I-14",
+    "slug": "nanotecnologia-e-ingenieria-de-nanomateriales",
+    "title": "Nanotecnología e Ingeniería de Nanomateriales",
+    "area": "Ingenieria",
+    "area_label": "Ingeniería",
+    "status": "planned",
+    "progress": 0,
+    "chapters": 0,
+    "parts": [
+      {
+        "title": "Fundamentos de la nanoescala",
+        "chapters": []
+      },
+      {
+        "title": "Caracterización",
+        "chapters": []
+      },
+      {
+        "title": "Nanomateriales",
+        "chapters": []
+      },
+      {
+        "title": "Nanofabricación",
+        "chapters": []
+      },
+      {
+        "title": "Nanodispositivos",
+        "chapters": []
+      },
+      {
+        "title": "Aplicaciones, seguridad y regulación",
+        "chapters": []
+      }
+    ],
+    "pages": 0,
+    "pdf": null,
+    "source": "cuadernos/Ingenieria/Nanotecnologia"
+  },
+  {
+    "id": "Q-01",
+    "slug": "ingenieria-quimica",
+    "title": "Ingeniería Química",
+    "area": "Quimica",
+    "area_label": "Química",
+    "status": "development",
+    "progress": 57,
+    "chapters": 6,
+    "parts": [
+      {
+        "title": "Fundamentos y balances",
+        "chapters": [
+          "La ingeniería química y los procesos químicos",
+          "Principios de conservación: balances de materia",
+          "Principios de conservación: balances de energía"
+        ]
+      },
+      {
+        "title": "Fenómenos de transporte",
+        "chapters": [
+          "Flujo de fluidos",
+          "Transferencia de calor"
+        ]
+      },
+      {
+        "title": "Operaciones de separación",
+        "chapters": [
+          "Procesos de separación"
+        ]
+      },
+      {
+        "title": "Diseño, control y seguridad de procesos",
+        "chapters": []
+      }
+    ],
+    "pages": 63,
+    "pdf": "pdf/Q-Ingenieria_Quimica.pdf",
+    "source": "cuadernos/Quimica/Ingenieria_Quimica"
+  },
+  {
+    "id": "Q-02",
+    "slug": "quimica-organica",
+    "title": "Química Orgánica",
+    "area": "Quimica",
+    "area_label": "Química",
+    "status": "planned",
+    "progress": 0,
+    "chapters": 0,
+    "parts": [
+      {
+        "title": "Estructura y enlace",
+        "chapters": []
+      },
+      {
+        "title": "Estereoquímica",
+        "chapters": []
+      },
+      {
+        "title": "Mecanismos de reacción",
+        "chapters": []
+      },
+      {
+        "title": "Síntesis orgánica",
+        "chapters": []
+      },
+      {
+        "title": "Química de grupos funcionales",
+        "chapters": []
+      },
+      {
+        "title": "Espectroscopia y elucidación",
+        "chapters": []
+      },
+      {
+        "title": "Química medicinal y polímeros",
+        "chapters": []
+      }
+    ],
+    "pages": 0,
+    "pdf": null,
+    "source": "cuadernos/Quimica/Quimica_Organica"
+  },
+  {
+    "id": "E-01",
+    "slug": "econofisica",
+    "title": "Econofísica",
+    "area": "Economia",
+    "area_label": "Economía",
+    "status": "skeleton",
+    "progress": 2,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Fundamentos de econofísica",
+        "chapters": [
+          "Sistemas complejos en economía",
+          "Escalas y distribuciones",
+          "Datos financieros",
+          "Hipótesis y límites"
+        ]
+      },
+      {
+        "title": "Mercados y series temporales",
+        "chapters": [
+          "Retornos y volatilidad",
+          "Correlaciones",
+          "Modelos estocásticos",
+          "Riesgo extremo"
+        ]
+      },
+      {
+        "title": "Modelos basados en agentes",
+        "chapters": [
+          "Agentes heterogéneos",
+          "Formación de precios",
+          "Burbujas y crisis",
+          "Calibración"
+        ]
+      },
+      {
+        "title": "Redes económicas y riesgo sistémico",
+        "chapters": [
+          "Redes financieras",
+          "Contagio",
+          "Cadenas productivas",
+          "Resiliencia"
+        ]
+      },
+      {
+        "title": "Macroeconomía compleja",
+        "chapters": [
+          "Crecimiento y ciclos",
+          "Distribución de riqueza",
+          "Dinámica sectorial",
+          "Política económica"
+        ]
+      },
+      {
+        "title": "Métodos computacionales",
+        "chapters": [
+          "Simulación",
+          "Inferencia",
+          "Aprendizaje automático",
+          "Reproducibilidad"
+        ]
+      }
+    ],
+    "pages": 65,
+    "pdf": "pdf/E-Econofisica.pdf",
+    "source": "cuadernos/Economia/Econofisica"
+  },
+  {
+    "id": "FIL-01",
+    "slug": "filosofia-politica",
+    "title": "Filosofía Política",
+    "area": "Filosofia",
+    "area_label": "Filosofía",
+    "status": "skeleton",
+    "progress": 2,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Fundamentos de filosofía política",
+        "chapters": [
+          "Poder, autoridad y legitimidad",
+          "Libertad e igualdad",
+          "Justicia",
+          "Comunidad y ciudadanía"
+        ]
+      },
+      {
+        "title": "Pensamiento antiguo y medieval",
+        "chapters": [
+          "Platón",
+          "Aristóteles",
+          "Estoicismo y Roma",
+          "Tradición medieval"
+        ]
+      },
+      {
+        "title": "Pensamiento moderno",
+        "chapters": [
+          "Maquiavelo",
+          "Contractualismo",
+          "Liberalismo",
+          "Republicanismo"
+        ]
+      },
+      {
+        "title": "Ideologías contemporáneas",
+        "chapters": [
+          "Socialismo y marxismo",
+          "Conservadurismo",
+          "Anarquismo",
+          "Nacionalismo"
+        ]
+      },
+      {
+        "title": "Estado e instituciones",
+        "chapters": [
+          "Constitución y derecho",
+          "Democracia y representación",
+          "Burocracia y administración",
+          "Gobernanza multinivel"
+        ]
+      },
+      {
+        "title": "Debates actuales",
+        "chapters": [
+          "Justicia global",
+          "Feminismos",
+          "Ecología política",
+          "Tecnología y poder"
+        ]
+      }
+    ],
+    "pages": 65,
+    "pdf": "pdf/Fil-Politica.pdf",
+    "source": "cuadernos/Filosofia/Politica"
+  },
+  {
+    "id": "S-01",
+    "slug": "sociofisica",
+    "title": "Sociofísica",
+    "area": "Sociales",
+    "area_label": "Ciencias sociales",
+    "status": "skeleton",
+    "progress": 2,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "Fundamentos de sociofísica",
+        "chapters": [
+          "Modelización social",
+          "Regularidades estadísticas",
+          "Micro-macro",
+          "Límites epistemológicos"
+        ]
+      },
+      {
+        "title": "Redes sociales",
+        "chapters": [
+          "Estructura de redes",
+          "Comunidades",
+          "Difusión",
+          "Centralidad e influencia"
+        ]
+      },
+      {
+        "title": "Opinión y polarización",
+        "chapters": [
+          "Consenso",
+          "Modelos de confianza acotada",
+          "Cámaras de eco",
+          "Desinformación"
+        ]
+      },
+      {
+        "title": "Cooperación y conflicto",
+        "chapters": [
+          "Juegos evolutivos",
+          "Normas sociales",
+          "Segregación",
+          "Movimientos colectivos"
+        ]
+      },
+      {
+        "title": "Ciudades, movilidad y población",
+        "chapters": [
+          "Escalado urbano",
+          "Movilidad humana",
+          "Migraciones",
+          "Demografía"
+        ]
+      },
+      {
+        "title": "Métodos computacionales",
+        "chapters": [
+          "Modelos basados en agentes",
+          "Inferencia causal",
+          "Datos masivos",
+          "Ética y privacidad"
+        ]
+      }
+    ],
+    "pages": 65,
+    "pdf": "pdf/U-Sociofisica.pdf",
+    "source": "cuadernos/Sociales/Sociofisica"
+  },
+  {
+    "id": "H-01",
+    "slug": "roma",
+    "title": "Roma",
+    "area": "Historia",
+    "area_label": "Historia",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Orígenes y monarquía",
+        "chapters": [
+          "Italia prerromana",
+          "Fundación y mitos",
+          "Monarquía",
+          "Sociedad arcaica"
+        ]
+      },
+      {
+        "title": "República romana",
+        "chapters": [
+          "Instituciones republicanas",
+          "Conflicto de los órdenes",
+          "Expansión por Italia",
+          "Guerras púnicas"
+        ]
+      },
+      {
+        "title": "Crisis de la República",
+        "chapters": [
+          "Imperialismo mediterráneo",
+          "Transformaciones sociales",
+          "Guerras civiles",
+          "César y Augusto"
+        ]
+      },
+      {
+        "title": "Alto Imperio",
+        "chapters": [
+          "Principado",
+          "Dinastías",
+          "Administración imperial",
+          "Fronteras y ejército"
+        ]
+      },
+      {
+        "title": "Sociedad, economía y cultura",
+        "chapters": [
+          "Ciudadanía y derecho",
+          "Esclavitud y economía",
+          "Religión",
+          "Literatura y arte"
+        ]
+      },
+      {
+        "title": "Antigüedad tardía",
+        "chapters": [
+          "Crisis del siglo III",
+          "Tetrarquía y Constantino",
+          "Cristianización",
+          "Caída de Occidente"
+        ]
+      },
+      {
+        "title": "Legado e historiografía",
+        "chapters": [
+          "Bizancio y continuidad",
+          "Recepción de Roma",
+          "Arqueología",
+          "Debates historiográficos"
+        ]
+      }
+    ],
+    "pages": 75,
+    "pdf": "pdf/H-Roma.pdf",
+    "source": "cuadernos/Historia/Roma"
+  },
+  {
+    "id": "L-01",
+    "slug": "heroes-en-la-literatura",
+    "title": "Héroes en la Literatura",
+    "area": "Literatura",
+    "area_label": "Literatura",
+    "status": "skeleton",
+    "progress": 2,
+    "chapters": 24,
+    "parts": [
+      {
+        "title": "El héroe mítico",
+        "chapters": [
+          "Arquetipos",
+          "Viaje del héroe",
+          "Mito y ritual",
+          "Héroes trágicos"
+        ]
+      },
+      {
+        "title": "Épica antigua",
+        "chapters": [
+          "Gilgamesh",
+          "Homero",
+          "Virgilio",
+          "Épicas comparadas"
+        ]
+      },
+      {
+        "title": "Héroe medieval",
+        "chapters": [
+          "Cantar de gesta",
+          "Caballería",
+          "Héroes religiosos",
+          "Materia artúrica"
+        ]
+      },
+      {
+        "title": "Modernidad y novela",
+        "chapters": [
+          "Héroe renacentista",
+          "Individuo moderno",
+          "Héroe romántico",
+          "Realismo"
+        ]
+      },
+      {
+        "title": "Antihéroe y crisis del sujeto",
+        "chapters": [
+          "Picaresca",
+          "Héroe absurdo",
+          "Modernismo",
+          "Distopía"
+        ]
+      },
+      {
+        "title": "Héroes contemporáneos",
+        "chapters": [
+          "Cómic y superhéroe",
+          "Cine y televisión",
+          "Fantasía y ciencia ficción",
+          "Relecturas poscoloniales y feministas"
+        ]
+      }
+    ],
+    "pages": 65,
+    "pdf": "pdf/L-Heroes.pdf",
+    "source": "cuadernos/Literatura/Heroes"
+  },
+  {
+    "id": "PR-01",
+    "slug": "python-y-computacion-cientifica",
+    "title": "Python y Computación Científica",
+    "area": "Programacion",
+    "area_label": "Programación",
+    "status": "planned",
+    "progress": 0,
+    "chapters": 0,
+    "parts": [
+      {
+        "title": "Fundamentos del lenguaje",
+        "chapters": []
+      },
+      {
+        "title": "Programación estructurada y funcional",
+        "chapters": []
+      },
+      {
+        "title": "Programación orientada a objetos",
+        "chapters": []
+      },
+      {
+        "title": "Cálculo científico",
+        "chapters": []
+      },
+      {
+        "title": "Datos y visualización",
+        "chapters": []
+      },
+      {
+        "title": "Automatización y herramientas",
+        "chapters": []
+      },
+      {
+        "title": "Buenas prácticas y rendimiento",
+        "chapters": []
+      }
+    ],
+    "pages": 0,
+    "pdf": null,
+    "source": "cuadernos/Programacion/Python"
+  },
+  {
+    "id": "PR-02",
+    "slug": "aprendizaje-automatico",
+    "title": "Aprendizaje Automático",
+    "area": "Programacion",
+    "area_label": "Programación",
+    "status": "planned",
+    "progress": 0,
+    "chapters": 0,
+    "parts": [
+      {
+        "title": "Fundamentos matemáticos",
+        "chapters": []
+      },
+      {
+        "title": "Aprendizaje supervisado",
+        "chapters": []
+      },
+      {
+        "title": "Aprendizaje no supervisado",
+        "chapters": []
+      },
+      {
+        "title": "Redes neuronales",
+        "chapters": []
+      },
+      {
+        "title": "Modelos generativos",
+        "chapters": []
+      },
+      {
+        "title": "Evaluación y despliegue",
+        "chapters": []
+      },
+      {
+        "title": "Interpretabilidad, ética y seguridad",
+        "chapters": []
+      }
+    ],
+    "pages": 0,
+    "pdf": null,
+    "source": "cuadernos/Programacion/Aprendizaje_Automatico"
+  },
+  {
+    "id": "P-01",
+    "slug": "paniberismo",
+    "title": "Paniberismo",
+    "area": "Politica",
+    "area_label": "Ensayos políticos",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Fundamentos del paniberismo",
+        "chapters": [
+          "Conceptos y alcance",
+          "Iberismo e hispanidad",
+          "Lusofonía",
+          "Paniberismo contemporáneo"
+        ]
+      },
+      {
+        "title": "Historia compartida",
+        "chapters": [
+          "Península Ibérica",
+          "Expansión ultramarina",
+          "Independencias",
+          "Cooperación contemporánea"
+        ]
+      },
+      {
+        "title": "Lenguas y culturas",
+        "chapters": [
+          "Español y portugués",
+          "Lenguas cooficiales",
+          "Cultura y educación",
+          "Patrimonio"
+        ]
+      },
+      {
+        "title": "Instituciones y ciudadanía",
+        "chapters": [
+          "Modelos de integración",
+          "Derecho y movilidad",
+          "Representación",
+          "Cooperación territorial"
+        ]
+      },
+      {
+        "title": "Economía e infraestructuras",
+        "chapters": [
+          "Comercio",
+          "Energía",
+          "Transportes",
+          "Ciencia y tecnología"
+        ]
+      },
+      {
+        "title": "Geopolítica y relaciones internacionales",
+        "chapters": [
+          "Atlántico",
+          "Europa",
+          "América Latina",
+          "África y Asia"
+        ]
+      },
+      {
+        "title": "Escenarios y hoja de ruta",
+        "chapters": [
+          "Integración gradual",
+          "Riesgos y críticas",
+          "Políticas públicas",
+          "Indicadores de seguimiento"
+        ]
+      }
+    ],
+    "pages": 75,
+    "pdf": "pdf/P-Paniberismo.pdf",
+    "source": "cuadernos/Politica/Paniberismo"
+  },
+  {
+    "id": "P-02",
+    "slug": "cibercomunismo",
+    "title": "Cibercomunismo",
+    "area": "Politica",
+    "area_label": "Ensayos políticos",
+    "status": "skeleton",
+    "progress": 1,
+    "chapters": 28,
+    "parts": [
+      {
+        "title": "Fundamentos",
+        "chapters": [
+          "Planificación económica",
+          "Cibernética",
+          "Comunismo y cálculo",
+          "Información y coordinación"
+        ]
+      },
+      {
+        "title": "Historia y antecedentes",
+        "chapters": [
+          "Debate del cálculo socialista",
+          "Proyecto Cybersyn",
+          "Planificación computacional",
+          "Economía digital"
+        ]
+      },
+      {
+        "title": "Infraestructura técnica",
+        "chapters": [
+          "Datos y contabilidad",
+          "Optimización",
+          "Simulación",
+          "Sistemas distribuidos"
+        ]
+      },
+      {
+        "title": "Instituciones y gobernanza",
+        "chapters": [
+          "Participación",
+          "Control democrático",
+          "Niveles de planificación",
+          "Auditoría"
+        ]
+      },
+      {
+        "title": "Economía política",
+        "chapters": [
+          "Propiedad",
+          "Asignación y precios",
+          "Trabajo y automatización",
+          "Innovación"
+        ]
+      },
+      {
+        "title": "Derechos y riesgos",
+        "chapters": [
+          "Privacidad",
+          "Seguridad",
+          "Concentración de poder",
+          "Sesgos y transparencia"
+        ]
+      },
+      {
+        "title": "Transición y evaluación",
+        "chapters": [
+          "Prototipos",
+          "Escalado",
+          "Indicadores",
+          "Críticas y alternativas"
+        ]
+      }
+    ],
+    "pages": 73,
+    "pdf": "pdf/P-Cibercomunismo.pdf",
+    "source": "cuadernos/Politica/Cibercomunismo"
+  }
+]

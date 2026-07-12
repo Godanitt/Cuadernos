@@ -1,8 +1,10 @@
-# Matematicas
+# Matemáticas
 
-Cuadernos del área `Matematicas`.
+Colección de 2 cuadernos del área de matemáticas.
 
-## Contenido
+| Código | Cuaderno | Estado | Progreso | Capítulos | PDF |
+|---|---|---|---:|---:|---|
+| `M-01` | [Teoría de Grupos](Teoria_Grupos/) | 🟡 En desarrollo | 41 % | 7 | [PDF](../../pdf/M-Teoria_Grupos.pdf) |
+| `M-02` | [Geometría Diferencial](Geometria_Diferencial/) | 🟤 Esqueleto | 7 % | 24 | [PDF](../../pdf/M-Geometria_Diferencial.pdf) |
 
-- `Geometria_Diferencial/`
-- `Teoria_Grupos/`
+Generado mediante `python -m cuadernos update --no-build`.

@@ -1,0 +1,95 @@
+schema = 1
+id = "F-07"
+slug = "fisica-nuclear"
+title = "Física Nuclear"
+subtitle = ""
+area = "Fisica"
+status = "skeleton"
+language = "es"
+authors = ["Daniel Vázquez Lago"]
+main_file = "F-Nuclear.typ"
+content_file = "content.typ"
+output_file = "F-Nuclear.pdf"
+bibliography_file = "Bibliografia/referencias.bib"
+summary = "Esquema editorial organizado en 7 partes; el desarrollo del texto está en fase inicial."
+scope = "Incluye Propiedades del núcleo, Modelos nucleares, Desintegraciones radiactivas, Reacciones nucleares, Fisión y fusión, Astrofísica nuclear, Aplicaciones."
+out_of_scope = ""
+tags = ["fisica-nuclear"]
+
+[progress]
+text = 3
+figures = 0
+exercises = 0
+bibliography = 0
+review = 0
+
+[cover]
+style = "fullimage"
+image = "Imagenes/Nuclear_physics_4.png"
+theme = "dark"
+zoom = 1.0
+dx_cm = 0.0
+dy_cm = 0.0
+text_color = "auto"
+
+[typst]
+series = "Series Ciencias Físicas"
+date = "today"
+font_size_pt = 12
+main_color = "#0d2871"
+secondary_color = "#3c4f82"
+tertiary_color = "#60709b"
+part_style = 0
+github_url = "https://github.com/Godanitt/Cuadernos"
+lowercase_references = false
+heading_style_compact = true
+first_line_indent = false
+
+[[parts]]
+title = "Propiedades del núcleo"
+slug = "propiedades-del-nucleo"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Modelos nucleares"
+slug = "modelos-nucleares"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Desintegraciones radiactivas"
+slug = "desintegraciones-radiactivas"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Reacciones nucleares"
+slug = "reacciones-nucleares"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Fisión y fusión"
+slug = "fision-y-fusion"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Astrofísica nuclear"
+slug = "astrofisica-nuclear"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Aplicaciones"
+slug = "aplicaciones"
+status = "outline"
+summary = ""
+references = []

@@ -1,0 +1,69 @@
+schema = 1
+id = "M-01"
+slug = "teoria-de-grupos"
+title = "Teoría de Grupos"
+subtitle = " "
+area = "Matematicas"
+status = "development"
+language = "es"
+authors = ["Daniel Vázquez Lago"]
+main_file = "M-Teoria_Grupos.typ"
+content_file = "content.typ"
+output_file = "M-Teoria_Grupos.pdf"
+bibliography_file = "Bibliografia/referencias.bib"
+summary = "Cuaderno organizado en 3 partes y 7 capítulos activos."
+scope = "Incluye Introducción y Grupos Discretos, Grupos Continuos, Teoría de Grupos aplicada a la física."
+out_of_scope = ""
+tags = ["teoria-de-grupos"]
+
+[progress]
+text = 54
+figures = 0
+exercises = 75
+bibliography = 16
+review = 5
+
+[cover]
+style = "fullimage"
+image = "Imagenes/group_theory_2.png"
+theme = "dark"
+zoom = 1.0
+dx_cm = 0.0
+dy_cm = 0.0
+text_color = "black"
+
+[typst]
+series = "Series Matemáticas"
+date = "today"
+font_size_pt = 12
+main_color = "#dc681a"
+secondary_color = "#c06d35"
+tertiary_color = "#d28b5b"
+typography = "Libertinus Serif"
+math_typography = "Libertinus Math"
+part_style = 0
+github_url = "https://github.com/Godanitt/Cuadernos"
+lowercase_references = false
+heading_style_compact = true
+first_line_indent = false
+
+[[parts]]
+title = "Introducción y Grupos Discretos"
+slug = "introduccion-y-grupos-discretos"
+status = "draft"
+summary = ""
+references = []
+
+[[parts]]
+title = "Grupos Continuos"
+slug = "grupos-continuos"
+status = "draft"
+summary = ""
+references = []
+
+[[parts]]
+title = "Teoría de Grupos aplicada a la física"
+slug = "teoria-de-grupos-aplicada-a-la-fisica"
+status = "draft"
+summary = ""
+references = []

@@ -1,0 +1,79 @@
+schema = 1
+
+[project]
+title = "Cuadernos"
+description = "Biblioteca abierta de cuadernos extensos desarrollados en Typst."
+default_author = "Daniel Vázquez Lago"
+github_url = "https://github.com/Godanitt/Cuadernos"
+
+[areas.Fisica]
+label = "Física"
+order = 10
+prefix = "F"
+series = "Series Ciencias Físicas"
+
+[areas.Matematicas]
+label = "Matemáticas"
+order = 20
+prefix = "M"
+series = "Series Matemáticas"
+
+[areas.Ingenieria]
+label = "Ingeniería"
+order = 30
+prefix = "I"
+series = "Series Ingenierías"
+
+[areas.Quimica]
+label = "Química"
+order = 40
+prefix = "Q"
+series = "Series Ciencias Químicas"
+
+[areas.Medicina]
+label = "Medicina y ciencias de la salud"
+order = 50
+prefix = "MED"
+series = "Series Medicina"
+
+[areas.Economia]
+label = "Economía"
+order = 60
+prefix = "E"
+series = "Series Economía"
+
+[areas.Filosofia]
+label = "Filosofía"
+order = 70
+prefix = "FIL"
+series = "Series Filosofía"
+
+[areas.Sociales]
+label = "Ciencias sociales"
+order = 80
+prefix = "SOC"
+series = "Series Ciencias Sociales"
+
+[areas.Historia]
+label = "Historia"
+order = 90
+prefix = "H"
+series = "Series Historia"
+
+[areas.Literatura]
+label = "Literatura"
+order = 100
+prefix = "L"
+series = "Series Literatura"
+
+[areas.Programacion]
+label = "Programación"
+order = 110
+prefix = "PR"
+series = "Series Computación"
+
+[areas.Politica]
+label = "Ensayos políticos"
+order = 120
+prefix = "P"
+series = "Series Ensayos Políticos"

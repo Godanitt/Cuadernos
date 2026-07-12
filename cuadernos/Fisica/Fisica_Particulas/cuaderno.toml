@@ -1,0 +1,102 @@
+schema = 1
+id = "F-08"
+slug = "fisica-de-particulas-y-teoria-cuantica-de-campos"
+title = "Física de Partículas y Teoría Cuántica de Campos"
+subtitle = ""
+area = "Fisica"
+status = "skeleton"
+language = "es"
+authors = ["Daniel Vázquez Lago"]
+main_file = "F-Fisica_Particulas.typ"
+content_file = "content.typ"
+output_file = "F-Fisica_Particulas.pdf"
+bibliography_file = "Bibliografia/referencias.bib"
+summary = "Esquema editorial organizado en 8 partes; el desarrollo del texto está en fase inicial."
+scope = "Incluye Fundamentos y simetrías, Mecánica cuántica relativista, Campos clásicos, Teoría cuántica de campos, Teorías gauge y modelo estándar, Fenomenología de partículas, Más allá del modelo estándar, Astropartículas y cosmología de partículas."
+out_of_scope = ""
+tags = ["fisica-de-particulas"]
+
+[progress]
+text = 3
+figures = 0
+exercises = 0
+bibliography = 16
+review = 0
+
+[cover]
+style = "fullimage"
+image = "Imagenes/particle_physics.png"
+theme = "dark"
+zoom = 1.1
+dx_cm = 0.0
+dy_cm = 0.0
+text_color = "auto"
+
+[typst]
+series = "Series Ciencias Físicas"
+date = "today"
+font_size_pt = 11
+main_color = "#0d2871"
+secondary_color = "#3c4f82"
+tertiary_color = "#60709b"
+part_style = 0
+github_url = "https://github.com/Godanitt/Cuadernos"
+lowercase_references = false
+heading_style_compact = true
+first_line_indent = false
+
+[[parts]]
+title = "Fundamentos y simetrías"
+slug = "fundamentos-y-simetrias"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Mecánica cuántica relativista"
+slug = "mecanica-cuantica-relativista"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Campos clásicos"
+slug = "campos-clasicos"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Teoría cuántica de campos"
+slug = "teoria-cuantica-de-campos"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Teorías gauge y modelo estándar"
+slug = "teorias-gauge-y-modelo-estandar"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Fenomenología de partículas"
+slug = "fenomenologia-de-particulas"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Más allá del modelo estándar"
+slug = "mas-alla-del-modelo-estandar"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Astropartículas y cosmología de partículas"
+slug = "astroparticulas-y-cosmologia-de-particulas"
+status = "outline"
+summary = ""
+references = []

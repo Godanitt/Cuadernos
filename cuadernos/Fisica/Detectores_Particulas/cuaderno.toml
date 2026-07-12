@@ -1,0 +1,95 @@
+schema = 1
+id = "F-12"
+slug = "detectores-en-fisica-nuclear-y-particulas"
+title = "Detectores en Física Nuclear y Partículas"
+subtitle = ""
+area = "Fisica"
+status = "skeleton"
+language = "es"
+authors = ["Daniel Vázquez Lago"]
+main_file = "F-DetectoresParticulas.typ"
+content_file = "content.typ"
+output_file = "F-DetectoresParticulas.pdf"
+bibliography_file = "Bibliografia/referencias.bib"
+summary = "Cuaderno organizado en 7 partes y 11 capítulos activos."
+scope = "Incluye Interacción radiación–materia, Electrónica, Estadística, Aceleradores, Detectores, Simulación en física de detectores, Aplicaciones."
+out_of_scope = ""
+tags = ["detectores-en-fisica-nuclear-y-particulas"]
+
+[progress]
+text = 5
+figures = 3
+exercises = 0
+bibliography = 16
+review = 0
+
+[cover]
+style = "fullimage"
+image = "Imagenes/particle_physics_detector.png"
+theme = "dark"
+zoom = 1.0
+dx_cm = 0.0
+dy_cm = 0.0
+text_color = "auto"
+
+[typst]
+series = "Series Ciencias Físicas"
+date = "today"
+font_size_pt = 12
+main_color = "#0d2871"
+secondary_color = "#3c4f82"
+tertiary_color = "#60709b"
+part_style = 0
+github_url = "https://github.com/Godanitt/Cuadernos"
+lowercase_references = false
+heading_style_compact = true
+first_line_indent = false
+
+[[parts]]
+title = "Interacción radiación–materia"
+slug = "interaccion-radiacionmateria"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Electrónica"
+slug = "electronica"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Estadística"
+slug = "estadistica"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Aceleradores"
+slug = "aceleradores"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Detectores"
+slug = "detectores"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Simulación en física de detectores"
+slug = "simulacion-en-fisica-de-detectores"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Aplicaciones"
+slug = "aplicaciones"
+status = "outline"
+summary = ""
+references = []

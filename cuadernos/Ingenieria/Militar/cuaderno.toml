@@ -1,0 +1,88 @@
+schema = 1
+id = "I-13"
+slug = "ingenieria-militar"
+title = "Ingeniería Militar"
+subtitle = ""
+area = "Ingenieria"
+status = "skeleton"
+language = "es"
+authors = ["Daniel Vázquez Lago"]
+main_file = "I-Militar.typ"
+content_file = "content.typ"
+output_file = "I-Militar.pdf"
+bibliography_file = "Bibliografia/referencias.bib"
+summary = "Esquema editorial organizado en 6 partes; el desarrollo del texto está en fase inicial."
+scope = "Incluye Ingeniería de sistemas de defensa, Infraestructuras y movilidad, Sensores, comunicaciones y mando, Plataformas y protección, Logística y operaciones, Seguridad y resiliencia."
+out_of_scope = ""
+tags = ["ingenieria-militar"]
+
+[progress]
+text = 3
+figures = 0
+exercises = 0
+bibliography = 0
+review = 0
+
+[cover]
+style = "fullimage"
+image = "Imagenes/militar.png"
+theme = "dark"
+zoom = 1.0
+dx_cm = 0.0
+dy_cm = 0.0
+text_color = "white"
+
+[typst]
+series = "Series Ingenierías"
+date = "today"
+font_size_pt = 11
+main_color = "#0c8608"
+secondary_color = "#51974e"
+tertiary_color = "#376335"
+part_style = 0
+github_url = "https://github.com/Godanitt/Cuadernos"
+lowercase_references = false
+heading_style_compact = true
+first_line_indent = false
+
+[[parts]]
+title = "Ingeniería de sistemas de defensa"
+slug = "ingenieria-de-sistemas-de-defensa"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Infraestructuras y movilidad"
+slug = "infraestructuras-y-movilidad"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Sensores, comunicaciones y mando"
+slug = "sensores-comunicaciones-y-mando"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Plataformas y protección"
+slug = "plataformas-y-proteccion"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Logística y operaciones"
+slug = "logistica-y-operaciones"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Seguridad y resiliencia"
+slug = "seguridad-y-resiliencia"
+status = "outline"
+summary = ""
+references = []

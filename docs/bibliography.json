@@ -1,0 +1,518 @@
+[
+  {
+    "global_key": "F-02__Smith:2021qr",
+    "local_key": "Smith:2021qr",
+    "notebook_id": "F-02",
+    "notebook": "Electrodinámica",
+    "area": "Fisica",
+    "label": "Smith, J.~M., Jones, A.~B. — Book Title (2021)",
+    "fields": {
+      "title": "{B}ook {T}itle",
+      "publisher": "Publisher",
+      "author": "Smith, J.~M. and Jones, A.~B.",
+      "year": "2021",
+      "edition": "7th"
+    }
+  },
+  {
+    "global_key": "F-02__Smith:2022jd",
+    "local_key": "Smith:2022jd",
+    "notebook_id": "F-02",
+    "notebook": "Electrodinámica",
+    "area": "Fisica",
+    "label": "Jones, A.~B., Smith, J.~M. — Article Title (2022)",
+    "fields": {
+      "author": "Jones, A.~B. and Smith, J.~M.",
+      "title": "{A}rticle {T}itle",
+      "journal": "Journal title",
+      "year": "2022",
+      "volume": "13",
+      "pages": "123-456",
+      "number": "52",
+      "month": "3",
+      "publisher": "Publisher",
+      "doi": "10.1038/s41586-021-03616-x"
+    }
+  },
+  {
+    "global_key": "F-08__Smith:2021qr",
+    "local_key": "Smith:2021qr",
+    "notebook_id": "F-08",
+    "notebook": "Física de Partículas y Teoría Cuántica de Campos",
+    "area": "Fisica",
+    "label": "Smith, J.~M., Jones, A.~B. — Book Title (2021)",
+    "fields": {
+      "title": "{B}ook {T}itle",
+      "publisher": "Publisher",
+      "author": "Smith, J.~M. and Jones, A.~B.",
+      "year": "2021",
+      "edition": "7th"
+    }
+  },
+  {
+    "global_key": "F-08__Smith:2022jd",
+    "local_key": "Smith:2022jd",
+    "notebook_id": "F-08",
+    "notebook": "Física de Partículas y Teoría Cuántica de Campos",
+    "area": "Fisica",
+    "label": "Jones, A.~B., Smith, J.~M. — Article Title (2022)",
+    "fields": {
+      "author": "Jones, A.~B. and Smith, J.~M.",
+      "title": "{A}rticle {T}itle",
+      "journal": "Journal title",
+      "year": "2022",
+      "volume": "13",
+      "pages": "123-456",
+      "number": "52",
+      "month": "3",
+      "publisher": "Publisher",
+      "doi": "10.1038/s41586-021-03616-x"
+    }
+  },
+  {
+    "global_key": "F-10__Smith:2021qr",
+    "local_key": "Smith:2021qr",
+    "notebook_id": "F-10",
+    "notebook": "Astrofísica y Cosmología",
+    "area": "Fisica",
+    "label": "Smith, J.~M., Jones, A.~B. — Book Title (2021)",
+    "fields": {
+      "title": "{B}ook {T}itle",
+      "publisher": "Publisher",
+      "author": "Smith, J.~M. and Jones, A.~B.",
+      "year": "2021",
+      "edition": "7th"
+    }
+  },
+  {
+    "global_key": "F-10__Smith:2022jd",
+    "local_key": "Smith:2022jd",
+    "notebook_id": "F-10",
+    "notebook": "Astrofísica y Cosmología",
+    "area": "Fisica",
+    "label": "Jones, A.~B., Smith, J.~M. — Article Title (2022)",
+    "fields": {
+      "author": "Jones, A.~B. and Smith, J.~M.",
+      "title": "{A}rticle {T}itle",
+      "journal": "Journal title",
+      "year": "2022",
+      "volume": "13",
+      "pages": "123-456",
+      "number": "52",
+      "month": "3",
+      "publisher": "Publisher",
+      "doi": "10.1038/s41586-021-03616-x"
+    }
+  },
+  {
+    "global_key": "F-12__Smith:2021qr",
+    "local_key": "Smith:2021qr",
+    "notebook_id": "F-12",
+    "notebook": "Detectores en Física Nuclear y Partículas",
+    "area": "Fisica",
+    "label": "Smith, J.~M., Jones, A.~B. — Book Title (2021)",
+    "fields": {
+      "title": "{B}ook {T}itle",
+      "publisher": "Publisher",
+      "author": "Smith, J.~M. and Jones, A.~B.",
+      "year": "2021",
+      "edition": "7th"
+    }
+  },
+  {
+    "global_key": "F-12__Smith:2022jd",
+    "local_key": "Smith:2022jd",
+    "notebook_id": "F-12",
+    "notebook": "Detectores en Física Nuclear y Partículas",
+    "area": "Fisica",
+    "label": "Jones, A.~B., Smith, J.~M. — Article Title (2022)",
+    "fields": {
+      "author": "Jones, A.~B. and Smith, J.~M.",
+      "title": "{A}rticle {T}itle",
+      "journal": "Journal title",
+      "year": "2022",
+      "volume": "13",
+      "pages": "123-456",
+      "number": "52",
+      "month": "3",
+      "publisher": "Publisher",
+      "doi": "10.1038/s41586-021-03616-x"
+    }
+  },
+  {
+    "global_key": "F-13__Smith:2021qr",
+    "local_key": "Smith:2021qr",
+    "notebook_id": "F-13",
+    "notebook": "Física del Plasma",
+    "area": "Fisica",
+    "label": "Smith, J.~M., Jones, A.~B. — Book Title (2021)",
+    "fields": {
+      "title": "{B}ook {T}itle",
+      "publisher": "Publisher",
+      "author": "Smith, J.~M. and Jones, A.~B.",
+      "year": "2021",
+      "edition": "7th"
+    }
+  },
+  {
+    "global_key": "F-13__Smith:2022jd",
+    "local_key": "Smith:2022jd",
+    "notebook_id": "F-13",
+    "notebook": "Física del Plasma",
+    "area": "Fisica",
+    "label": "Jones, A.~B., Smith, J.~M. — Article Title (2022)",
+    "fields": {
+      "author": "Jones, A.~B. and Smith, J.~M.",
+      "title": "{A}rticle {T}itle",
+      "journal": "Journal title",
+      "year": "2022",
+      "volume": "13",
+      "pages": "123-456",
+      "number": "52",
+      "month": "3",
+      "publisher": "Publisher",
+      "doi": "10.1038/s41586-021-03616-x"
+    }
+  },
+  {
+    "global_key": "M-01__Smith:2021qr",
+    "local_key": "Smith:2021qr",
+    "notebook_id": "M-01",
+    "notebook": "Teoría de Grupos",
+    "area": "Matematicas",
+    "label": "Smith, J.~M., Jones, A.~B. — Book Title (2021)",
+    "fields": {
+      "title": "{B}ook {T}itle",
+      "publisher": "Publisher",
+      "author": "Smith, J.~M. and Jones, A.~B.",
+      "year": "2021",
+      "edition": "7th"
+    }
+  },
+  {
+    "global_key": "M-01__Smith:2022jd",
+    "local_key": "Smith:2022jd",
+    "notebook_id": "M-01",
+    "notebook": "Teoría de Grupos",
+    "area": "Matematicas",
+    "label": "Jones, A.~B., Smith, J.~M. — Article Title (2022)",
+    "fields": {
+      "author": "Jones, A.~B. and Smith, J.~M.",
+      "title": "{A}rticle {T}itle",
+      "journal": "Journal title",
+      "year": "2022",
+      "volume": "13",
+      "pages": "123-456",
+      "number": "52",
+      "month": "3",
+      "publisher": "Publisher",
+      "doi": "10.1038/s41586-021-03616-x"
+    }
+  },
+  {
+    "global_key": "M-02__FrankelGeometryPhysics",
+    "local_key": "FrankelGeometryPhysics",
+    "notebook_id": "M-02",
+    "notebook": "Geometría Diferencial",
+    "area": "Matematicas",
+    "label": "Frankel, Theodore — The Geometry of Physics: An Introduction (2011)",
+    "fields": {
+      "author": "Frankel, Theodore",
+      "title": "The Geometry of Physics: An Introduction",
+      "edition": "3",
+      "publisher": "Cambridge University Press",
+      "year": "2011",
+      "isbn": "9780521539277"
+    }
+  },
+  {
+    "global_key": "M-02__NakaharaGeometryTopologyPhysics",
+    "local_key": "NakaharaGeometryTopologyPhysics",
+    "notebook_id": "M-02",
+    "notebook": "Geometría Diferencial",
+    "area": "Matematicas",
+    "label": "Nakahara, Mikio — Geometry, Topology and Physics (2003)",
+    "fields": {
+      "author": "Nakahara, Mikio",
+      "title": "Geometry, Topology and Physics",
+      "edition": "2",
+      "publisher": "CRC Press",
+      "year": "2003",
+      "isbn": "9780750306065"
+    }
+  },
+  {
+    "global_key": "M-02__gross2023manifolds",
+    "local_key": "gross2023manifolds",
+    "notebook_id": "M-02",
+    "notebook": "Geometría Diferencial",
+    "area": "Matematicas",
+    "label": "Gross, G., Meinrenken, E. — Manifolds, Vector Fields, and Differential Forms: An Introduction to Differential Geometry (2023)",
+    "fields": {
+      "title": "Manifolds, Vector Fields, and Differential Forms: An Introduction to Differential Geometry",
+      "author": "Gross, G. and Meinrenken, E.",
+      "isbn": "9783031254086",
+      "series": "Springer Undergraduate Mathematics Series",
+      "url": "https://books.google.es/books?id=7yiSzwEACAAJ",
+      "year": "2023",
+      "publisher": "Springer International Publishing"
+    }
+  },
+  {
+    "global_key": "M-02__Szekeres_2004",
+    "local_key": "Szekeres_2004",
+    "notebook_id": "M-02",
+    "notebook": "Geometría Diferencial",
+    "area": "Matematicas",
+    "label": "Szekeres, Peter — A Course in Modern Mathematical Physics: Groups, Hilbert Space and Differential Geometry (2004)",
+    "fields": {
+      "place": "Cambridge",
+      "title": "A Course in Modern Mathematical Physics: Groups, Hilbert Space and Differential Geometry",
+      "publisher": "Cambridge University Press",
+      "author": "Szekeres, Peter",
+      "year": "2004"
+    }
+  },
+  {
+    "global_key": "Q-01__calleja2008",
+    "local_key": "calleja2008",
+    "notebook_id": "Q-01",
+    "notebook": "Ingeniería Química",
+    "area": "Quimica",
+    "label": "Calleja, G., García, F., de Lucas, A., Prats, D., Rodríguez, J. M. — Introducción a la Ingeniería Química (2008)",
+    "fields": {
+      "author": "Calleja, G. and García, F. and de Lucas, A. and Prats, D. and Rodríguez, J. M.",
+      "title": "Introducción a la Ingeniería Química",
+      "publisher": "Síntesis",
+      "address": "Madrid",
+      "year": "2008",
+      "isbn": "9788499581095",
+      "note": "Online"
+    }
+  },
+  {
+    "global_key": "Q-01__himmelblau2002",
+    "local_key": "himmelblau2002",
+    "notebook_id": "Q-01",
+    "notebook": "Ingeniería Química",
+    "area": "Quimica",
+    "label": "Himmelblau, David M. — Principios Básicos y Cálculos en Ingeniería Química (2002)",
+    "fields": {
+      "author": "Himmelblau, David M.",
+      "title": "Principios Básicos y Cálculos en Ingeniería Química",
+      "edition": "6",
+      "publisher": "Pearson",
+      "year": "2002"
+    }
+  },
+  {
+    "global_key": "E-01__Smith:2021qr",
+    "local_key": "Smith:2021qr",
+    "notebook_id": "E-01",
+    "notebook": "Econofísica",
+    "area": "Economia",
+    "label": "Smith, J.~M., Jones, A.~B. — Book Title (2021)",
+    "fields": {
+      "title": "{B}ook {T}itle",
+      "publisher": "Publisher",
+      "author": "Smith, J.~M. and Jones, A.~B.",
+      "year": "2021",
+      "edition": "7th"
+    }
+  },
+  {
+    "global_key": "E-01__Smith:2022jd",
+    "local_key": "Smith:2022jd",
+    "notebook_id": "E-01",
+    "notebook": "Econofísica",
+    "area": "Economia",
+    "label": "Jones, A.~B., Smith, J.~M. — Article Title (2022)",
+    "fields": {
+      "author": "Jones, A.~B. and Smith, J.~M.",
+      "title": "{A}rticle {T}itle",
+      "journal": "Journal title",
+      "year": "2022",
+      "volume": "13",
+      "pages": "123-456",
+      "number": "52",
+      "month": "3",
+      "publisher": "Publisher",
+      "doi": "10.1038/s41586-021-03616-x"
+    }
+  },
+  {
+    "global_key": "FIL-01__Smith:2021qr",
+    "local_key": "Smith:2021qr",
+    "notebook_id": "FIL-01",
+    "notebook": "Filosofía Política",
+    "area": "Filosofia",
+    "label": "Smith, J.~M., Jones, A.~B. — Book Title (2021)",
+    "fields": {
+      "title": "{B}ook {T}itle",
+      "publisher": "Publisher",
+      "author": "Smith, J.~M. and Jones, A.~B.",
+      "year": "2021",
+      "edition": "7th"
+    }
+  },
+  {
+    "global_key": "FIL-01__Smith:2022jd",
+    "local_key": "Smith:2022jd",
+    "notebook_id": "FIL-01",
+    "notebook": "Filosofía Política",
+    "area": "Filosofia",
+    "label": "Jones, A.~B., Smith, J.~M. — Article Title (2022)",
+    "fields": {
+      "author": "Jones, A.~B. and Smith, J.~M.",
+      "title": "{A}rticle {T}itle",
+      "journal": "Journal title",
+      "year": "2022",
+      "volume": "13",
+      "pages": "123-456",
+      "number": "52",
+      "month": "3",
+      "publisher": "Publisher",
+      "doi": "10.1038/s41586-021-03616-x"
+    }
+  },
+  {
+    "global_key": "S-01__Smith:2021qr",
+    "local_key": "Smith:2021qr",
+    "notebook_id": "S-01",
+    "notebook": "Sociofísica",
+    "area": "Sociales",
+    "label": "Smith, J.~M., Jones, A.~B. — Book Title (2021)",
+    "fields": {
+      "title": "{B}ook {T}itle",
+      "publisher": "Publisher",
+      "author": "Smith, J.~M. and Jones, A.~B.",
+      "year": "2021",
+      "edition": "7th"
+    }
+  },
+  {
+    "global_key": "S-01__Smith:2022jd",
+    "local_key": "Smith:2022jd",
+    "notebook_id": "S-01",
+    "notebook": "Sociofísica",
+    "area": "Sociales",
+    "label": "Jones, A.~B., Smith, J.~M. — Article Title (2022)",
+    "fields": {
+      "author": "Jones, A.~B. and Smith, J.~M.",
+      "title": "{A}rticle {T}itle",
+      "journal": "Journal title",
+      "year": "2022",
+      "volume": "13",
+      "pages": "123-456",
+      "number": "52",
+      "month": "3",
+      "publisher": "Publisher",
+      "doi": "10.1038/s41586-021-03616-x"
+    }
+  },
+  {
+    "global_key": "H-01__Smith:2021qr",
+    "local_key": "Smith:2021qr",
+    "notebook_id": "H-01",
+    "notebook": "Roma",
+    "area": "Historia",
+    "label": "Smith, J.~M., Jones, A.~B. — Book Title (2021)",
+    "fields": {
+      "title": "{B}ook {T}itle",
+      "publisher": "Publisher",
+      "author": "Smith, J.~M. and Jones, A.~B.",
+      "year": "2021",
+      "edition": "7th"
+    }
+  },
+  {
+    "global_key": "H-01__Smith:2022jd",
+    "local_key": "Smith:2022jd",
+    "notebook_id": "H-01",
+    "notebook": "Roma",
+    "area": "Historia",
+    "label": "Jones, A.~B., Smith, J.~M. — Article Title (2022)",
+    "fields": {
+      "author": "Jones, A.~B. and Smith, J.~M.",
+      "title": "{A}rticle {T}itle",
+      "journal": "Journal title",
+      "year": "2022",
+      "volume": "13",
+      "pages": "123-456",
+      "number": "52",
+      "month": "3",
+      "publisher": "Publisher",
+      "doi": "10.1038/s41586-021-03616-x"
+    }
+  },
+  {
+    "global_key": "L-01__Smith:2021qr",
+    "local_key": "Smith:2021qr",
+    "notebook_id": "L-01",
+    "notebook": "Héroes en la Literatura",
+    "area": "Literatura",
+    "label": "Smith, J.~M., Jones, A.~B. — Book Title (2021)",
+    "fields": {
+      "title": "{B}ook {T}itle",
+      "publisher": "Publisher",
+      "author": "Smith, J.~M. and Jones, A.~B.",
+      "year": "2021",
+      "edition": "7th"
+    }
+  },
+  {
+    "global_key": "L-01__Smith:2022jd",
+    "local_key": "Smith:2022jd",
+    "notebook_id": "L-01",
+    "notebook": "Héroes en la Literatura",
+    "area": "Literatura",
+    "label": "Jones, A.~B., Smith, J.~M. — Article Title (2022)",
+    "fields": {
+      "author": "Jones, A.~B. and Smith, J.~M.",
+      "title": "{A}rticle {T}itle",
+      "journal": "Journal title",
+      "year": "2022",
+      "volume": "13",
+      "pages": "123-456",
+      "number": "52",
+      "month": "3",
+      "publisher": "Publisher",
+      "doi": "10.1038/s41586-021-03616-x"
+    }
+  },
+  {
+    "global_key": "P-01__Smith:2021qr",
+    "local_key": "Smith:2021qr",
+    "notebook_id": "P-01",
+    "notebook": "Paniberismo",
+    "area": "Politica",
+    "label": "Smith, J.~M., Jones, A.~B. — Book Title (2021)",
+    "fields": {
+      "title": "{B}ook {T}itle",
+      "publisher": "Publisher",
+      "author": "Smith, J.~M. and Jones, A.~B.",
+      "year": "2021",
+      "edition": "7th"
+    }
+  },
+  {
+    "global_key": "P-01__Smith:2022jd",
+    "local_key": "Smith:2022jd",
+    "notebook_id": "P-01",
+    "notebook": "Paniberismo",
+    "area": "Politica",
+    "label": "Jones, A.~B., Smith, J.~M. — Article Title (2022)",
+    "fields": {
+      "author": "Jones, A.~B. and Smith, J.~M.",
+      "title": "{A}rticle {T}itle",
+      "journal": "Journal title",
+      "year": "2022",
+      "volume": "13",
+      "pages": "123-456",
+      "number": "52",
+      "month": "3",
+      "publisher": "Publisher",
+      "doi": "10.1038/s41586-021-03616-x"
+    }
+  }
+]

@@ -1,8 +1,10 @@
-# Quimica
+# Química
 
-Cuadernos del área `Quimica`.
+Colección de 2 cuadernos del área de química.
 
-## Contenido
+| Código | Cuaderno | Estado | Progreso | Capítulos | PDF |
+|---|---|---|---:|---:|---|
+| `Q-01` | [Ingeniería Química](Ingenieria_Quimica/) | 🟡 En desarrollo | 57 % | 6 | [PDF](../../pdf/Q-Ingenieria_Quimica.pdf) |
+| `Q-02` | [Química Orgánica](Quimica_Organica/) | ⚪ Planificado | 0 % | 0 | PDF pendiente |
 
-- `Ingenieria_Quimica/`
-- `Quimica_Organica/`
+Generado mediante `python -m cuadernos update --no-build`.

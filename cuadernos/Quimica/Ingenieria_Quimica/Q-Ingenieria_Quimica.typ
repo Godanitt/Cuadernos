@@ -1,70 +1,17 @@
 #import "../../../plantilla/plantilla.typ": *
+#import "generated/config.typ": notebook-config, bibliography-file, bibliography-enabled
+#import "generated/part_references.typ": part-references
 
-#show: book.with(
-  title: "Ingeniería Química",
-  subtitle: "",
-  series: "Series Ciencias Químicas",
-  typography: "Libertinus Serif",
-  math-typography: "Libertinus Math",
-  date: datetime.today,
-  author: ("María Álvarez Barciela"),
-  main-color: rgb("#16aeb9"),
-  seccond-color: rgb("#43b6bf"),
-  third-color: rgb("#61afb5"),
-  lang: "es",
-  format: "fullimage",
-  cover: "Imagenes/chemical_enginering_1.png",
-  cover-text-color: black,
-  image-index: none,
-  list-of-figure-title: "List of Figures",
-  list-of-table-title: "List of Tables",
-  supplement-chapter: "Chapter",
-  supplement-part: "Part",
-  font-size: 12pt,
-  part-style: 0,
-  copyright: [
-    Template based on "typst-orange-template"
-    
-    © 2023 Flavio Barisi (Apache 2.0)
-
-    Modifications in the template by
-
-    © 2025 Daniel Vázquez Lago 
-
-    and content of "Ingeniería Química" made by
-
-    © 2025 María Álvarez Barciela
-
-    All original content, modifications, and extensions contained in this document are the intellectual property of the authors.
-
-  ],
-  lowercase-references: false,
-  heading-style-compact: true,
-  first-line-indent: false,
+#let part-reading-list(slug) = part-bibliography(
+  entries: part-references.at(slug, default: ()),
 )
 
+#show: book.with(..notebook-config)
 
-//#part("Ingeniería") 
+#include "content.typ"
 
-#chapter("La ingeniería Química y los Procesos Químicos")
-#include "Capitulos/Introduccion.typ"
-
-#chapter("Principios de Conservación: Balances de Materia")
-#include "Capitulos/BalancesMateria.typ"
-
-#chapter("Principios de Conservación: Balances de Energía")
-#include "Capitulos/BalanceEnergia.typ"
-
-#chapter("Flujo de fluidos")
-#include "Capitulos/TrasferenciaFluidos.typ"
-
-#chapter("Trasferencia de calor")
-#include "Capitulos/Trasferencia_Calor.typ"
-
-#chapter("Procesos de separación")
-#include "Capitulos/Procesos_Separacion.typ"
-
-#nocite(<calleja2008>)
-#nocite(<himmelblau2002>)
-
-#my-bibliography( bibliography("sample.bib"))
+#if bibliography-enabled {
+  my-bibliography(
+    bibliography(bibliography-file, title: "Bibliografía", full: true)
+  )
+}

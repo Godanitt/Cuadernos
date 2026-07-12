@@ -1,0 +1,95 @@
+schema = 1
+id = "F-03"
+slug = "termodinamica-y-mecanica-estadistica"
+title = "Termodinámica y Mecánica Estadística"
+subtitle = ""
+area = "Fisica"
+status = "skeleton"
+language = "es"
+authors = ["Daniel Vázquez Lago"]
+main_file = "F-Termodinamica.typ"
+content_file = "content.typ"
+output_file = "F-Termodinamica.pdf"
+bibliography_file = "Bibliografia/referencias.bib"
+summary = "Esquema editorial organizado en 7 partes; el desarrollo del texto está en fase inicial."
+scope = "Incluye Fundamentos termodinámicos, Potenciales y equilibrio, Mecánica estadística clásica, Estadística cuántica, Transiciones de fase y fenómenos críticos, Procesos irreversibles, Sistemas complejos."
+out_of_scope = ""
+tags = ["termodinamica-y-mecanica-estadistica"]
+
+[progress]
+text = 3
+figures = 0
+exercises = 0
+bibliography = 0
+review = 0
+
+[cover]
+style = "fullimage"
+image = "Imagenes/Thermodynamics.png"
+theme = "dark"
+zoom = 1.1
+dx_cm = 0.0
+dy_cm = 0.0
+text_color = "black"
+
+[typst]
+series = "Series Ciencias Físicas"
+date = "today"
+font_size_pt = 11
+main_color = "#0d2871"
+secondary_color = "#3c4f82"
+tertiary_color = "#60709b"
+part_style = 0
+github_url = "https://github.com/Godanitt/Cuadernos"
+lowercase_references = false
+heading_style_compact = true
+first_line_indent = false
+
+[[parts]]
+title = "Fundamentos termodinámicos"
+slug = "fundamentos-termodinamicos"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Potenciales y equilibrio"
+slug = "potenciales-y-equilibrio"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Mecánica estadística clásica"
+slug = "mecanica-estadistica-clasica"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Estadística cuántica"
+slug = "estadistica-cuantica"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Transiciones de fase y fenómenos críticos"
+slug = "transiciones-de-fase-y-fenomenos-criticos"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Procesos irreversibles"
+slug = "procesos-irreversibles"
+status = "outline"
+summary = ""
+references = []
+
+[[parts]]
+title = "Sistemas complejos"
+slug = "sistemas-complejos"
+status = "outline"
+summary = ""
+references = []

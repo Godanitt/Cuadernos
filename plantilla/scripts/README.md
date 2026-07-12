@@ -1,10 +1,15 @@
-# Scripts
+# Scripts de compatibilidad
 
-- `run_all.py`: compila todos los `.typ` principales de `cuadernos/` y genera PDFs en `pdf/`.
-- `move_pdf.py`: utilidad de limpieza para mover PDFs que hayan quedado dentro de `cuadernos/` hacia `pdf/`.
+La interfaz principal es:
 
-Ejecutar desde cualquier sitio:
+```bash
+python -m cuadernos update
+```
+
+`run_all.py` conserva compatibilidad con el flujo antiguo y ejecuta ese comando desde cualquier directorio:
 
 ```bash
 python plantilla/scripts/run_all.py
 ```
+
+`move_pdf.py` mueve a `pdf/` cualquier PDF antiguo que todavía esté mezclado con las fuentes.

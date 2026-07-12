@@ -1,0 +1,76 @@
+schema = 1
+id = "Q-01"
+slug = "ingenieria-quimica"
+title = "Ingeniería Química"
+subtitle = ""
+area = "Quimica"
+status = "development"
+language = "es"
+authors = ["María Álvarez Barciela"]
+main_file = "Q-Ingenieria_Quimica.typ"
+content_file = "content.typ"
+output_file = "Q-Ingenieria_Quimica.pdf"
+bibliography_file = "Bibliografia/referencias.bib"
+summary = "Cuaderno desarrollado de ingeniería química con balances, transporte y operaciones de separación."
+scope = "Incluye fundamentos de proceso, balances de materia y energía, transporte de cantidad de movimiento y calor, y operaciones de separación."
+out_of_scope = ""
+tags = ["ingenieria-quimica"]
+
+[progress]
+text = 80
+figures = 75
+exercises = 0
+bibliography = 16
+review = 5
+
+[cover]
+style = "fullimage"
+image = "Imagenes/chemical_enginering_1.png"
+theme = "dark"
+zoom = 1.0
+dx_cm = 0.0
+dy_cm = 0.0
+text_color = "black"
+
+[typst]
+series = "Series Ciencias Químicas"
+date = "today"
+font_size_pt = 12
+main_color = "#16aeb9"
+secondary_color = "#43b6bf"
+tertiary_color = "#61afb5"
+typography = "Libertinus Serif"
+math_typography = "Libertinus Math"
+part_style = 0
+github_url = "https://github.com/Godanitt/Cuadernos"
+lowercase_references = false
+heading_style_compact = true
+first_line_indent = false
+
+[[parts]]
+title = "Fundamentos y balances"
+slug = "fundamentos-y-balances"
+status = "draft"
+summary = ""
+references = ["calleja2008", "himmelblau2002"]
+
+[[parts]]
+title = "Fenómenos de transporte"
+slug = "fenomenos-de-transporte"
+status = "draft"
+summary = ""
+references = ["calleja2008", "himmelblau2002"]
+
+[[parts]]
+title = "Operaciones de separación"
+slug = "operaciones-de-separacion"
+status = "draft"
+summary = ""
+references = ["calleja2008"]
+
+[[parts]]
+title = "Diseño, control y seguridad de procesos"
+slug = "diseno-control-y-seguridad-de-procesos"
+status = "draft"
+summary = ""
+references = ["calleja2008"]

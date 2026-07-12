@@ -1,8 +1,10 @@
-# Programacion
+# Programación
 
-Cuadernos del área `Programacion`.
+Colección de 2 cuadernos del área de programación.
 
-## Contenido
+| Código | Cuaderno | Estado | Progreso | Capítulos | PDF |
+|---|---|---|---:|---:|---|
+| `PR-01` | [Python y Computación Científica](Python/) | ⚪ Planificado | 0 % | 0 | PDF pendiente |
+| `PR-02` | [Aprendizaje Automático](Aprendizaje_Automatico/) | ⚪ Planificado | 0 % | 0 | PDF pendiente |
 
-- `Aprendizaje_Automatico/`
-- `Python/`
+Generado mediante `python -m cuadernos update --no-build`.
