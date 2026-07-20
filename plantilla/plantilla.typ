@@ -748,3 +748,69 @@ show math.equation: set text(font: math-typography)
 
 }
 
+
+//========================================================================
+// CUADERNO AUTOCONTENIDO
+//========================================================================
+
+// Adaptador único para los mains de cada cuaderno. Todos los datos editables
+// (título, portada, colores, bibliografía, etc.) viven en el diccionario
+// `notebook` del propio archivo principal; no se genera configuración auxiliar.
+#let cuaderno(meta: (:), cover-source: none, bibliography-source: none, body) = {
+  let style = meta.at("style", default: (:))
+  let cover-data = meta.at("cover", default: (:))
+  let date-value = style.at("date", default: "today")
+  let cover-text = cover-data.at("text_color", default: "auto")
+  let cover-text-value = if cover-text == "auto" {
+    "auto"
+  } else if type(cover-text) == str and cover-text.starts-with("#") {
+    rgb(cover-text)
+  } else {
+    cover-text
+  }
+
+  book(
+    title: meta.at("title", default: ""),
+    subtitle: meta.at("subtitle", default: ""),
+    series: style.at("series", default: ""),
+    volume: meta.at("id", default: ""),
+    typography: style.at("typography", default: "Libertinus Serif"),
+    math-typography: style.at("math_typography", default: "Libertinus Math"),
+    date: if date-value == "today" { datetime.today } else { date-value },
+    author: meta.at("authors", default: ()),
+    main-color: rgb(style.at("main_color", default: "#0d2871")),
+    seccond-color: rgb(style.at("secondary_color", default: "#3c4f82")),
+    third-color: rgb(style.at("tertiary_color", default: "#60709b")),
+    lang: meta.at("language", default: "es"),
+    cover: cover-source,
+    format: cover-data.at("style", default: "solid"),
+    cover-theme: cover-data.at("theme", default: "dark"),
+    cover-zoom: cover-data.at("zoom", default: 1.0),
+    cover-dx: cover-data.at("dx_cm", default: 0.0) * 1cm,
+    cover-dy: cover-data.at("dy_cm", default: 0.0) * 1cm,
+    cover-text-color: cover-text-value,
+    image-index: none,
+    list-of-figure-title: "Lista de figuras",
+    list-of-table-title: "Lista de tablas",
+    supplement-chapter: "Capítulo",
+    supplement-part: "Parte",
+    font-size: style.at("font_size_pt", default: 11) * 1pt,
+    part-style: style.at("part_style", default: 0),
+    github-url: style.at("github_url", default: "https://github.com/Godanitt/Cuadernos"),
+    copyright: [],
+    lowercase-references: style.at("lowercase_references", default: false),
+    heading-style-compact: style.at("heading_style_compact", default: true),
+    first-line-indent: style.at("first_line_indent", default: false),
+  )[
+    #body
+    #if meta.at("bibliography_enabled", default: false) {
+      my-bibliography(
+        bibliography(
+          bibliography-source,
+          title: "Bibliografía",
+          full: true,
+        )
+      )
+    }
+  ]
+}

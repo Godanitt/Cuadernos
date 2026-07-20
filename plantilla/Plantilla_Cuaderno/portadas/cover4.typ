@@ -101,7 +101,7 @@
           ]
         ]
 
-        // Código de cuaderno opcional, por ejemplo F-02, I-01...
+        // Código de cuaderno opcional, por ejemplo Fis-02, I-01...
         #if volume != "" [
           #place(top + right, dx: -1.0cm, dy: 0.8cm)[
             #box(

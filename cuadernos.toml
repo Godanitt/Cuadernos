@@ -9,13 +9,13 @@ github_url = "https://github.com/Godanitt/Cuadernos"
 [areas.Fisica]
 label = "Física"
 order = 10
-prefix = "F"
+prefix = "Fis"
 series = "Series Ciencias Físicas"
 
 [areas.Matematicas]
 label = "Matemáticas"
 order = 20
-prefix = "M"
+prefix = "Mat"
 series = "Series Matemáticas"
 
 [areas.Ingenieria]
@@ -24,16 +24,28 @@ order = 30
 prefix = "I"
 series = "Series Ingenierías"
 
+[areas.Arquitectura]
+label = "Arquitectura"
+order = 35
+prefix = "Arq"
+series = "Series Arquitectura"
+
 [areas.Quimica]
 label = "Química"
 order = 40
 prefix = "Q"
 series = "Series Ciencias Químicas"
 
+[areas.Biologia]
+label = "Biología"
+order = 45
+prefix = "Bio"
+series = "Series Ciencias Biológicas"
+
 [areas.Medicina]
 label = "Medicina y ciencias de la salud"
 order = 50
-prefix = "MED"
+prefix = "Med"
 series = "Series Medicina"
 
 [areas.Economia]
@@ -45,13 +57,13 @@ series = "Series Economía"
 [areas.Filosofia]
 label = "Filosofía"
 order = 70
-prefix = "FIL"
+prefix = "Fil"
 series = "Series Filosofía"
 
 [areas.Sociales]
 label = "Ciencias sociales"
 order = 80
-prefix = "SOC"
+prefix = "Soc"
 series = "Series Ciencias Sociales"
 
 [areas.Historia]
@@ -59,6 +71,12 @@ label = "Historia"
 order = 90
 prefix = "H"
 series = "Series Historia"
+
+[areas.Geografia]
+label = "Geografía"
+order = 95
+prefix = "Geo"
+series = "Series Geografía"
 
 [areas.Literatura]
 label = "Literatura"
@@ -69,11 +87,11 @@ series = "Series Literatura"
 [areas.Programacion]
 label = "Programación"
 order = 110
-prefix = "PR"
+prefix = "Pr"
 series = "Series Computación"
 
 [areas.Politica]
 label = "Ensayos políticos"
 order = 120
-prefix = "P"
+prefix = "Pol"
 series = "Series Ensayos Políticos"

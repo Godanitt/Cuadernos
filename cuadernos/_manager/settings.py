@@ -9,18 +9,21 @@ import unicodedata
 
 
 DEFAULT_AREAS: dict[str, dict[str, object]] = {
-    "Fisica": {"label": "Física", "order": 10, "prefix": "F", "series": "Series Ciencias Físicas"},
-    "Matematicas": {"label": "Matemáticas", "order": 20, "prefix": "M", "series": "Series Matemáticas"},
+    "Fisica": {"label": "Física", "order": 10, "prefix": "Fis", "series": "Series Ciencias Físicas"},
+    "Matematicas": {"label": "Matemáticas", "order": 20, "prefix": "Mat", "series": "Series Matemáticas"},
     "Ingenieria": {"label": "Ingeniería", "order": 30, "prefix": "I", "series": "Series Ingenierías"},
+    "Arquitectura": {"label": "Arquitectura", "order": 35, "prefix": "Arq", "series": "Series Arquitectura"},
     "Quimica": {"label": "Química", "order": 40, "prefix": "Q", "series": "Series Ciencias Químicas"},
-    "Medicina": {"label": "Medicina y ciencias de la salud", "order": 50, "prefix": "MED", "series": "Series Medicina"},
+    "Biologia": {"label": "Biología", "order": 45, "prefix": "Bio", "series": "Series Ciencias Biológicas"},
+    "Medicina": {"label": "Medicina y ciencias de la salud", "order": 50, "prefix": "Med", "series": "Series Medicina"},
     "Economia": {"label": "Economía", "order": 60, "prefix": "E", "series": "Series Economía"},
-    "Filosofia": {"label": "Filosofía", "order": 70, "prefix": "FIL", "series": "Series Filosofía"},
-    "Sociales": {"label": "Ciencias sociales", "order": 80, "prefix": "SOC", "series": "Series Ciencias Sociales"},
+    "Filosofia": {"label": "Filosofía", "order": 70, "prefix": "Fil", "series": "Series Filosofía"},
+    "Sociales": {"label": "Ciencias sociales", "order": 80, "prefix": "Soc", "series": "Series Ciencias Sociales"},
     "Historia": {"label": "Historia", "order": 90, "prefix": "H", "series": "Series Historia"},
+    "Geografia": {"label": "Geografía", "order": 95, "prefix": "Geo", "series": "Series Geografía"},
     "Literatura": {"label": "Literatura", "order": 100, "prefix": "L", "series": "Series Literatura"},
-    "Programacion": {"label": "Programación", "order": 110, "prefix": "PR", "series": "Series Computación"},
-    "Politica": {"label": "Ensayos políticos", "order": 120, "prefix": "P", "series": "Series Ensayos Políticos"},
+    "Programacion": {"label": "Programación", "order": 110, "prefix": "Pr", "series": "Series Computación"},
+    "Politica": {"label": "Ensayos políticos", "order": 120, "prefix": "Pol", "series": "Series Ensayos Políticos"},
 }
 
 
@@ -51,8 +54,9 @@ class ProjectSettings:
 
 def _default_prefix(value: str) -> str:
     normalized = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii")
-    letters = re.sub(r"[^A-Za-z]", "", normalized).upper()
-    return (letters[:3] or "CUA")
+    letters = re.sub(r"[^A-Za-z]", "", normalized)
+    short = (letters[:3] or "Cua").lower()
+    return short[:1].upper() + short[1:]
 
 
 def _default_settings() -> ProjectSettings:

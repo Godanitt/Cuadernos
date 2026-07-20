@@ -1,26 +1,97 @@
-# Esquema de `cuaderno.toml`
+# Metadatos dentro del main Typst
 
-## Metadatos principales
+Ya no existe `cuaderno.toml`. Todos los datos editables están al comienzo del archivo principal:
 
-```toml
-schema = 1
-id = "F-08"
-slug = "fisica-de-particulas-y-teoria-cuantica-de-campos"
-title = "Física de Partículas y Teoría Cuántica de Campos"
-area = "Fisica"
-status = "development"
-authors = ["Daniel Vázquez Lago"]
-main_file = "F-Fisica_Particulas.typ"
-content_file = "content.typ"
-output_file = "F-Fisica_Particulas.pdf"
-bibliography_file = "Bibliografia/referencias.bib"
+```typst
+#import "../../../plantilla/plantilla.typ": *
+
+// <cuadernos:metadata>
+#let notebook = (
+  id: "Mat-03",
+  slug: "analisis-complejo",
+  title: "Análisis Complejo",
+  subtitle: "",
+  area: "Matematicas",
+  status: "development",
+  language: "es",
+  authors: ("Daniel Vázquez Lago",),
+  output: "Mat-03-analisis-complejo.pdf",
+  bibliography: "referencias.bib",
+  bibliography_enabled: true,
+
+  cover: (
+    style: "fullimage",
+    image: "Imagenes/complex_analysis.png",
+    theme: "light",
+    zoom: 1.0,
+    dx_cm: 0.0,
+    dy_cm: 0.0,
+    text_color: "auto",
+  ),
+
+  style: (
+    series: "Series Matemáticas",
+    date: "today",
+    font_size_pt: 11,
+    main_color: "#0d2871",
+    secondary_color: "#3c4f82",
+    tertiary_color: "#60709b",
+    part_style: 0,
+  ),
+
+  progress: (
+    mode: "auto",
+    target_words_per_chapter: 1500,
+    target_figures_per_chapter: 1.0,
+    target_exercises_per_chapter: 2.0,
+    target_references_per_part: 4.0,
+  ),
+)
+// </cuadernos:metadata>
+
+#let cover-source = if notebook.cover.image == "" {
+  none
+} else {
+  read(notebook.cover.image, encoding: none)
+}
+#let bibliography-source = if notebook.bibliography_enabled {
+  read(notebook.bibliography, encoding: none)
+} else {
+  none
+}
+#show: cuaderno.with(
+  meta: notebook,
+  cover-source: cover-source,
+  bibliography-source: bibliography-source,
+)
 ```
 
-No hay que añadir el cuaderno a ninguna lista adicional. `python -m cuadernos update` lo detecta mediante búsqueda recursiva.
+Las dos variables anteriores cargan la portada y la bibliografía desde la carpeta del propio cuaderno. Después del `#show` se escribe directamente la estructura del volumen:
+
+```typst
+#part("Fundamentos")
+
+#chapter("Introducción")
+#include "Capitulos/Introduccion.typ"
+```
+
+## Portada
+
+La imagen se modifica únicamente en `Imagenes/` y la ruta se indica en `notebook.cover.image`. No existe ninguna copia en `generated/` ni en la plantilla.
+
+Estilos admitidos: `solid`, `fullimage`, `wiley` y `wiley2`, además de los nombres internos de las variantes de portada.
+
+## Bibliografía
+
+`referencias.bib` vive junto al main. Activa su impresión al final con:
+
+```typst
+bibliography_enabled: true,
+```
 
 ## Estado editorial
 
-Estados de cuaderno:
+Valores admitidos:
 
 - `planned`
 - `skeleton`
@@ -29,71 +100,4 @@ Estados de cuaderno:
 - `stable`
 - `paused`
 
-Estados de parte:
-
-- `planned`
-- `outline`
-- `draft`
-- `review`
-- `stable`
-
-## Progreso
-
-```toml
-[progress]
-mode = "auto" # auto | manual
-text = 0
-figures = 0
-exercises = 0
-bibliography = 0
-review = 0
-target_words_per_chapter = 1500
-target_figures_per_chapter = 1.0
-target_exercises_per_chapter = 2.0
-target_references_per_part = 4.0
-```
-
-En modo automático, los cinco valores manuales se ignoran y se calculan a partir del contenido. En modo manual, se utilizan exactamente los porcentajes escritos.
-
-## Portada
-
-```toml
-[cover]
-style = "fullimage" # solid | fullimage | wiley | wiley2
-image = "Imagenes/particle_physics.png"
-theme = "dark"
-zoom = 1.1
-dx_cm = 0.0
-dy_cm = 0.0
-text_color = "auto"
-```
-
-Si la imagen no existe, el gestor intenta extraer automáticamente la imagen incrustada de la primera página de un PDF antiguo. Si tampoco hay PDF, genera un fondo SVG provisional para que el cuaderno siga compilando.
-
-## Configuración Typst
-
-```toml
-[typst]
-series = "Series Ciencias Físicas"
-date = "today"
-font_size_pt = 11
-main_color = "#0d2871"
-secondary_color = "#3c4f82"
-tertiary_color = "#60709b"
-part_style = 0
-```
-
-Las áreas, sus prefijos y sus series por defecto se configuran una sola vez en `cuadernos.toml`.
-
-## Partes y referencias bibliográficas
-
-```toml
-[[parts]]
-title = "Teoría cuántica de campos"
-slug = "teoria-cuantica-de-campos"
-status = "outline"
-summary = ""
-references = ["peskin1995", "weinberg1995"]
-```
-
-`python -m cuadernos update` actualiza automáticamente la lista de partes a partir de `content.typ`, conservando estado, resumen y referencias cuando el slug no cambia. Las claves se validan y cuentan por parte, pero todas las entradas del BibTeX se imprimen una única vez en la bibliografía final del PDF.
+El progreso se calcula automáticamente a partir del main y de los capítulos. Para fijarlo manualmente, usa `progress.mode: "manual"` y completa los porcentajes del bloque.

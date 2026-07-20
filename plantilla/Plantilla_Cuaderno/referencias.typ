@@ -1,5 +1,5 @@
 // Bibliografía o lista de lecturas específica de una parte.
-// Las entradas se generan automáticamente desde cuaderno.toml y el BibTeX local.
+// Las entradas proceden del archivo referencias.bib indicado en el main Typst.
 #let part-bibliography(
   title: "Bibliografía y lecturas recomendadas",
   entries: (),

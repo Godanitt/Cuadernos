@@ -12,6 +12,7 @@ venv/
 .idea/
 .vscode/*
 !.vscode/settings.json
+!.vscode/tasks.json
 
 # Sistema
 .DS_Store

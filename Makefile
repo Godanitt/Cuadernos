@@ -1,7 +1,10 @@
-.PHONY: update list build build-all rebuild-lock check sync stats new-med clean-cache clean-generated
+.PHONY: update watch list build build-all rebuild-lock check sync stats clean-cache clean-derived
 
 update:
-	python -m cuadernos update
+	python run_all.py
+
+watch:
+	python -m cuadernos watch
 
 list:
 	python -m cuadernos list
@@ -24,14 +27,11 @@ sync:
 stats:
 	python -m cuadernos stats --write
 
-new-med:
-	python -m cuadernos new --area Medicina --title "Nuevo cuaderno de medicina"
-
 clean-cache:
 	rm -rf .cuadernos-cache
 	rm -f tinymist.lock
 
-clean-generated:
-	find cuadernos -type d -name generated -prune -exec rm -rf {} +
+clean-derived:
 	rm -rf docs/assets/previews
 	rm -f docs/catalog.json docs/bibliography.json docs/HEALTH.md docs/VALIDATION.md
+	rm -f bibliografia/catalogo.bib

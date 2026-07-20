@@ -4,11 +4,11 @@ Informe generado automáticamente por `python -m cuadernos stats --write`.
 
 ## Resumen
 
-- Cuadernos registrados: **43**
-- PDF compilados: **39**
-- PDF actualizados: **39**
-- Páginas compiladas: **2577**
-- Capítulos activos: **941**
+- Cuadernos registrados: **80**
+- PDF compilados: **80**
+- PDF actualizados: **80**
+- Páginas compiladas: **2864**
+- Capítulos activos: **982**
 - Errores de validación: **0**
 - Advertencias: **0**
 
@@ -16,30 +16,32 @@ Informe generado automáticamente por `python -m cuadernos stats --write`.
 
 | Área | Cuadernos | Capítulos | Páginas | Progreso medio |
 |---|---:|---:|---:|---:|
-| Física | 16 | 384 | 1044 | 1 % |
-| Matemáticas | 2 | 31 | 98 | 24 % |
-| Ingeniería | 14 | 340 | 889 | 1 % |
-| Química | 2 | 6 | 63 | 28 % |
-| Economía | 1 | 24 | 65 | 2 % |
-| Filosofía | 1 | 24 | 65 | 2 % |
-| Ciencias sociales | 1 | 24 | 65 | 2 % |
-| Historia | 1 | 28 | 75 | 1 % |
-| Literatura | 1 | 24 | 65 | 2 % |
-| Programación | 2 | 0 | 0 | 0 % |
-| Ensayos políticos | 2 | 56 | 148 | 1 % |
+| Física | 17 | 385 | 1051 | 2 % |
+| Matemáticas | 7 | 36 | 135 | 12 % |
+| Ingeniería | 16 | 343 | 910 | 2 % |
+| Arquitectura | 1 | 1 | 7 | 5 % |
+| Química | 6 | 11 | 96 | 14 % |
+| Biología | 5 | 5 | 35 | 5 % |
+| Medicina y ciencias de la salud | 6 | 6 | 42 | 5 % |
+| Economía | 2 | 25 | 72 | 4 % |
+| Filosofía | 4 | 27 | 86 | 4 % |
+| Ciencias sociales | 5 | 28 | 93 | 4 % |
+| Historia | 4 | 31 | 96 | 4 % |
+| Geografía | 1 | 1 | 7 | 5 % |
+| Literatura | 2 | 25 | 72 | 4 % |
+| Programación | 1 | 1 | 7 | 4 % |
+| Ensayos políticos | 3 | 57 | 155 | 2 % |
 
 ## Estado editorial
 
 - **development**: 2
-- **planned**: 4
+- **planned**: 41
 - **skeleton**: 37
 
 ## Validación
 
 - Errores: **0**
 - Advertencias: **0**
-- Información: **1**
+- Información: **0**
 
-## Información
-
-- **INFO OUT002**: Todavía no hay PDF compilado — `cuadernos/Ingenieria/Nanotecnologia/cuaderno.toml`
+No se detectaron incidencias.

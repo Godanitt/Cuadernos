@@ -1,23 +1,19 @@
-# Corrección de rutas de portada, fuentes y migración
+# Corrección de `missing argument: body`
 
-Desde la raíz del repositorio (`~/GitHub/Cuadernos`), copia el contenido de este
-paquete conservando las rutas y ejecuta:
+Copia el contenido de este parche sobre la raíz del repositorio y permite sobrescribir archivos.
 
-```bash
-python -m cuadernos update --force
+La corrección principal cambia la firma de la plantilla a:
+
+```typst
+#let cuaderno(meta: (:), cover-source: none, bibliography-source: none, body) = {
 ```
 
-La actualización normal ya no mueve ni renombra archivos. Si alguna vez quieres
-ejecutar la antigua migración de forma explícita:
+`meta` debe ser un argumento nombrado porque los mains lo fijan mediante
+`cuaderno.with(meta: notebook, ...)`; así el único argumento que deja pendiente
+el `show` global es `body`.
+
+Después ejecuta:
 
 ```bash
-python -m cuadernos migrate
-```
-
-Los PDF `*-legacy.pdf` fueron creados por la versión anterior para no sobrescribir
-un PDF distinto que ya existía en `pdf/`. No se usan como salida canónica. Se
-pueden borrar si no quieres conservar esas copias históricas:
-
-```bash
-rm -f pdf/*-legacy.pdf
+python3 run_all.py
 ```

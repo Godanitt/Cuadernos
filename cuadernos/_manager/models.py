@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
-import tomllib
 
+from .metadata import read_metadata
 from .settings import load_project_settings
 
 STATUS_LABELS = {
@@ -52,19 +52,10 @@ class Progress:
 
 
 @dataclass(slots=True)
-class Part:
-    title: str
-    slug: str
-    status: str = "outline"
-    references: list[str] = field(default_factory=list)
-    summary: str = ""
-
-
-@dataclass(slots=True)
 class Notebook:
     root: Path
     path: Path
-    manifest_path: Path
+    metadata_path: Path
     id: str
     slug: str
     title: str
@@ -74,9 +65,9 @@ class Notebook:
     language: str
     authors: list[str]
     main_file: str
-    content_file: str
     output_file: str
     bibliography_file: str
+    bibliography_enabled: bool
     summary: str
     scope: str
     out_of_scope: str
@@ -84,27 +75,26 @@ class Notebook:
     progress: Progress
     cover: dict[str, Any]
     typst: dict[str, Any]
-    parts: list[Part]
 
     @property
     def relative_dir(self) -> Path:
         return self.path.relative_to(self.root)
 
     @property
-    def main_path(self) -> Path | None:
-        return self.path / self.main_file if self.main_file else None
+    def main_path(self) -> Path:
+        return self.metadata_path
 
     @property
-    def content_path(self) -> Path | None:
-        return self.path / self.content_file if self.content_file else None
+    def content_path(self) -> Path:
+        return self.metadata_path
 
     @property
-    def output_path(self) -> Path | None:
-        return self.root / "pdf" / self.output_file if self.output_file else None
+    def output_path(self) -> Path:
+        return self.root / "pdf" / self.output_file
 
     @property
-    def bibliography_path(self) -> Path | None:
-        return self.path / self.bibliography_file if self.bibliography_file else None
+    def bibliography_path(self) -> Path:
+        return self.path / self.bibliography_file
 
     @property
     def preview_path(self) -> Path:
@@ -123,14 +113,6 @@ class Notebook:
         return self.area_settings.order
 
     @property
-    def area_series(self) -> str:
-        return self.area_settings.series
-
-    @property
-    def area_prefix(self) -> str:
-        return self.area_settings.prefix
-
-    @property
     def status_label(self) -> str:
         return STATUS_LABELS.get(self.status, self.status)
 
@@ -139,57 +121,57 @@ class Notebook:
         return STATUS_ICONS.get(self.status, "•")
 
 
-def load_notebook(manifest_path: Path, root: Path) -> Notebook:
-    with manifest_path.open("rb") as fh:
-        data = tomllib.load(fh)
+def _list(value: Any, default: list[str] | None = None) -> list[str]:
+    if value is None:
+        return list(default or [])
+    if isinstance(value, (list, tuple)):
+        return [str(item) for item in value]
+    return [str(value)]
 
-    p = data.get("progress", {})
-    progress = Progress(
-        mode=str(p.get("mode", "auto")),
-        text=int(p.get("text", 0)),
-        figures=int(p.get("figures", 0)),
-        exercises=int(p.get("exercises", 0)),
-        bibliography=int(p.get("bibliography", 0)),
-        review=int(p.get("review", 0)),
-        target_words_per_chapter=int(p.get("target_words_per_chapter", 1500)),
-        target_figures_per_chapter=float(p.get("target_figures_per_chapter", 1.0)),
-        target_exercises_per_chapter=float(p.get("target_exercises_per_chapter", 2.0)),
-        target_references_per_part=float(p.get("target_references_per_part", 4.0)),
-    )
-    parts = [
-        Part(
-            title=str(item["title"]),
-            slug=str(item["slug"]),
-            status=str(item.get("status", "outline")),
-            references=[str(x) for x in item.get("references", [])],
-            summary=str(item.get("summary", "")),
-        )
-        for item in data.get("parts", [])
-    ]
+
+def load_notebook(main_path: Path, root: Path) -> Notebook:
+    data = read_metadata(main_path)
     settings = load_project_settings(root)
-    area = str(data["area"])
+    progress_data = data.get("progress", {}) or {}
+    progress = Progress(
+        mode=str(progress_data.get("mode", "auto")),
+        text=int(progress_data.get("text", 0)),
+        figures=int(progress_data.get("figures", 0)),
+        exercises=int(progress_data.get("exercises", 0)),
+        bibliography=int(progress_data.get("bibliography", 0)),
+        review=int(progress_data.get("review", 0)),
+        target_words_per_chapter=int(progress_data.get("target_words_per_chapter", 1500)),
+        target_figures_per_chapter=float(progress_data.get("target_figures_per_chapter", 1.0)),
+        target_exercises_per_chapter=float(progress_data.get("target_exercises_per_chapter", 2.0)),
+        target_references_per_part=float(progress_data.get("target_references_per_part", 4.0)),
+    )
+
+    area = str(data.get("area") or main_path.parent.parent.name)
+    title = str(data.get("title") or main_path.parent.name.replace("_", " "))
+    slug = str(data.get("slug") or title.casefold().replace(" ", "-"))
+    output = str(data.get("output") or f"{main_path.stem}.pdf")
+    bibliography = str(data.get("bibliography") or "referencias.bib")
     return Notebook(
         root=root,
-        path=manifest_path.parent,
-        manifest_path=manifest_path,
-        id=str(data["id"]),
-        slug=str(data["slug"]),
-        title=str(data["title"]),
+        path=main_path.parent,
+        metadata_path=main_path,
+        id=str(data.get("id", "")),
+        slug=slug,
+        title=title,
         subtitle=str(data.get("subtitle", "")),
         area=area,
         status=str(data.get("status", "planned")),
         language=str(data.get("language", "es")),
-        authors=[str(x) for x in data.get("authors", [settings.default_author])],
-        main_file=str(data.get("main_file", "")),
-        content_file=str(data.get("content_file", "content.typ")),
-        output_file=str(data.get("output_file", "")),
-        bibliography_file=str(data.get("bibliography_file", "Bibliografia/referencias.bib")),
+        authors=_list(data.get("authors"), [settings.default_author]),
+        main_file=main_path.name,
+        output_file=output,
+        bibliography_file=bibliography,
+        bibliography_enabled=bool(data.get("bibliography_enabled", False)),
         summary=str(data.get("summary", "")),
         scope=str(data.get("scope", "")),
         out_of_scope=str(data.get("out_of_scope", "")),
-        tags=[str(x) for x in data.get("tags", [])],
+        tags=_list(data.get("tags")),
         progress=progress,
-        cover=dict(data.get("cover", {})),
-        typst=dict(data.get("typst", {})),
-        parts=parts,
+        cover=dict(data.get("cover", {}) or {}),
+        typst=dict(data.get("style", {}) or {}),
     )

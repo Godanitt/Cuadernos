@@ -8,7 +8,6 @@ import os
 import subprocess
 
 from .models import Notebook
-from .generate import write_generated_typst
 from .tinymist import (
     compile_command,
     detect_tinymist,
@@ -34,13 +33,12 @@ def _hash_file(hasher, path: Path, root: Path) -> None:
 
 def notebook_dependency_files(notebook: Notebook) -> list[Path]:
     root = notebook.root
-    files: list[Path] = [notebook.manifest_path]
+    files: list[Path] = [notebook.main_path]
     if notebook.path.exists():
         files.extend(
             path
             for path in notebook.path.rglob("*")
             if path.is_file()
-            and "generated" not in path.parts
             and path.suffix.lower() != ".pdf"
         )
     template_dir = root / "plantilla"
@@ -107,7 +105,6 @@ def _compile_one_tinymist(notebook: Notebook, *, force: bool, cache_entry: dict[
     if not notebook.main_file:
         return BuildResult(notebook, ok=True, skipped=True, message="sin fuente: planificado")
 
-    write_generated_typst(notebook, recover_covers=False)
     main = notebook.main_path
     output = notebook.output_path
     if main is None or not main.exists():
@@ -137,7 +134,6 @@ def _compile_one_tinymist(notebook: Notebook, *, force: bool, cache_entry: dict[
             digest=digest,
         )
 
-    write_generated_typst(notebook, recover_covers=True)
     output.parent.mkdir(parents=True, exist_ok=True)
     env = dict(os.environ)
     env["TYPST_PROJECT_ROOT"] = str(notebook.root)

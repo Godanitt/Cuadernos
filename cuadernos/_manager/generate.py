@@ -4,7 +4,6 @@ from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 import os
 from pathlib import Path
-from typing import Iterable
 import html
 import json
 import re
@@ -12,167 +11,11 @@ import shutil
 import subprocess
 
 from .models import Notebook, Progress
-from .assets import ensure_cover_asset
-from .parser import ParsedPart, bibliography_entries, bibtex_records, parse_source, pdf_page_count, slugify
+from .parser import bibtex_records, parse_source, pdf_page_count
 from .validate import Issue, validate, validation_markdown
 
 _METRICS_CACHE: dict[tuple[object, ...], dict[str, object]] = {}
 
-
-def typst_string(value: str) -> str:
-    return json.dumps(value, ensure_ascii=False)
-
-
-def typst_color(value: str, fallback: str) -> str:
-    value = value.strip() or fallback
-    if value.startswith("#"):
-        return f'rgb("{value}")'
-    if value.startswith("rgb(") or value in {"black", "white", "gray", "blue", "red", "green"}:
-        return value
-    return f'rgb("{fallback}")'
-
-
-def typst_length_cm(value: object, default: float = 0.0) -> str:
-    try:
-        number = float(value)
-    except (TypeError, ValueError):
-        number = default
-    return f"{number:g}cm"
-
-
-def generate_config(notebook: Notebook, *, recover_covers: bool = False) -> str:
-    t = notebook.typst
-    c = notebook.cover
-    authors = ", ".join(typst_string(author) for author in notebook.authors)
-    if len(notebook.authors) == 1:
-        authors += ","
-    date_mode = str(t.get("date", "today"))
-    date_expr = "datetime.today" if date_mode == "today" else typst_string(date_mode)
-    cover_text = str(c.get("text_color", "auto"))
-    if cover_text == "auto":
-        cover_text_expr = typst_string("auto")
-    elif cover_text.startswith("#"):
-        cover_text_expr = typst_color(cover_text, "#ffffff")
-    else:
-        cover_text_expr = cover_text
-    optional: list[str] = []
-    if t.get("typography"):
-        optional.append(f'  typography: {typst_string(str(t["typography"]))},')
-    if t.get("math_typography"):
-        optional.append(f'  math-typography: {typst_string(str(t["math_typography"]))},')
-    bibliography_enabled = bool(bibtex_records(notebook.bibliography_path))
-    resolved_cover = ensure_cover_asset(notebook, recover_from_pdf=recover_covers)
-    lines = [
-        "// Archivo generado automáticamente desde ../cuaderno.toml.",
-        "// No editar a mano: ejecuta `python -m cuadernos update`.",
-        "",
-        "#let notebook-config = (",
-        f"  title: {typst_string(notebook.title)},",
-        f"  subtitle: {typst_string(notebook.subtitle)},",
-        f"  series: {typst_string(str(t.get('series', notebook.area_series)))},",
-        f"  volume: {typst_string(notebook.id)},",
-        f"  date: {date_expr},",
-        f"  author: ({authors}),",
-        *optional,
-        f"  main-color: {typst_color(str(t.get('main_color', '#0d2871')), '#0d2871')},",
-        f"  seccond-color: {typst_color(str(t.get('secondary_color', '#3c4f82')), '#3c4f82')},",
-        f"  third-color: {typst_color(str(t.get('tertiary_color', '#60709b')), '#60709b')},",
-        f"  lang: {typst_string(notebook.language)},",
-        f"  cover: {typst_string(resolved_cover)}," if resolved_cover else "  cover: none,",
-        f"  format: {typst_string(str(c.get('style', 'solid')))},",
-        f"  cover-theme: {typst_string(str(c.get('theme', 'dark')))},",
-        f"  cover-zoom: {float(c.get('zoom', 1.0)):g},",
-        f"  cover-dx: {typst_length_cm(c.get('dx_cm', 0.0))},",
-        f"  cover-dy: {typst_length_cm(c.get('dy_cm', 0.0))},",
-        f"  cover-text-color: {cover_text_expr},",
-        "  image-index: none,",
-        '  list-of-figure-title: "Lista de figuras",',
-        '  list-of-table-title: "Lista de tablas",',
-        '  supplement-chapter: "Capítulo",',
-        '  supplement-part: "Parte",',
-        f"  font-size: {int(t.get('font_size_pt', 11))}pt,",
-        f"  part-style: {int(t.get('part_style', 0))},",
-        f"  github-url: {typst_string(str(t.get('github_url', 'https://github.com/Godanitt/Cuadernos')))},",
-        "  copyright: [],",
-        f"  lowercase-references: {str(bool(t.get('lowercase_references', False))).lower()},",
-        f"  heading-style-compact: {str(bool(t.get('heading_style_compact', True))).lower()},",
-        f"  first-line-indent: {str(bool(t.get('first_line_indent', False))).lower()},",
-        ")",
-        "",
-        f"#let bibliography-file = {typst_string(notebook.bibliography_file)}",
-        f"#let bibliography-enabled = {str(bibliography_enabled).lower()}",
-        "",
-    ]
-    return "\n".join(lines)
-
-def _escape_typst_text(value: str) -> str:
-    return value.replace("\\", "\\\\").replace('"', '\\"').replace("#", "\\#")
-
-
-def generate_part_references(notebook: Notebook) -> str:
-    """Genera y exporta las lecturas específicas de cada parte.
-
-    El módulo es autocontenido: exporta tanto los datos (`part-references`)
-    como la función `part-reading-list`. De este modo, cada `content.typ`
-    puede importar la función en su propio ámbito sin depender del `main.typ`.
-    La bibliografía BibTeX completa sigue imprimiéndose una sola vez al final.
-    """
-    records = {record.key: record for record in bibtex_records(notebook.bibliography_path)}
-    lines = [
-        "// Generado desde cuaderno.toml y Bibliografia/referencias.bib.",
-        "// No editar a mano: ejecuta `python -m cuadernos update`.",
-        "#let part-references = (",
-    ]
-    for part in notebook.parts:
-        rendered_items: list[str] = []
-        for key in part.references:
-            record = records.get(key)
-            label = record.label if record else f"Referencia no definida: {key}"
-            fields = record.fields if record else {}
-            rendered_items.append(
-                "("
-                f"key: {typst_string(key)}, "
-                f"label: {typst_string(label)}, "
-                f"doi: {typst_string(str(fields.get('doi', '')))}, "
-                f"url: {typst_string(str(fields.get('url', '')))}"
-                ")"
-            )
-        rendered = ", ".join(rendered_items)
-        if len(rendered_items) == 1:
-            rendered += ","
-        lines.append(f"  {typst_string(part.slug)}: ({rendered}),")
-    lines += [
-        ")",
-        "",
-        '#let part-reading-list(slug, title: "Bibliografía y lecturas recomendadas") = {',
-        "  let entries = part-references.at(slug, default: ())",
-        "  if entries.len() > 0 [",
-        "    #heading(level: 2)[#title]",
-        "    #for entry in entries [",
-        "      - #entry.label",
-        '        #if entry.doi != "" [ · #link("https://doi.org/" + entry.doi)[DOI]]',
-        '        #if entry.url != "" [ · #link(entry.url)[Enlace]]',
-        "    ]",
-        "  ]",
-        "}",
-        "",
-    ]
-    return "\n".join(lines)
-
-
-def write_generated_typst(notebook: Notebook, *, recover_covers: bool = False) -> None:
-    if not notebook.main_file:
-        return
-    generated = notebook.path / "generated"
-    generated.mkdir(parents=True, exist_ok=True)
-    (generated / "config.typ").write_text(
-        generate_config(notebook, recover_covers=recover_covers),
-        encoding="utf-8",
-    )
-    (generated / "part_references.typ").write_text(
-        generate_part_references(notebook),
-        encoding="utf-8",
-    )
 
 def _preview_candidates(notebook: Notebook) -> tuple[Path, Path]:
     base = notebook.root / "docs" / "assets" / "previews" / notebook.id
@@ -249,8 +92,8 @@ def effective_progress(notebook: Notebook, stats, bibliography_count: int) -> Pr
     if notebook.progress.mode == "manual":
         return notebook.progress
 
-    units = max(stats.chapters, len(stats.parts), len(notebook.parts), 1)
-    part_count = max(len(stats.parts), len(notebook.parts), 1)
+    units = max(stats.chapters, len(stats.parts), 1)
+    part_count = max(len(stats.parts), 1)
     p = notebook.progress
     text = _bounded_percentage(100 * stats.words / max(1, units * p.target_words_per_chapter))
     figures = _bounded_percentage(100 * stats.figures / max(1.0, units * p.target_figures_per_chapter))
@@ -281,12 +124,11 @@ def effective_progress(notebook: Notebook, stats, bibliography_count: int) -> Pr
 
 
 def notebook_metrics(notebook: Notebook) -> dict[str, object]:
-    source_files = [notebook.manifest_path]
+    source_files = [notebook.main_path]
     if notebook.path.exists():
         source_files.extend(
             path for path in notebook.path.rglob("*")
-            if path.is_file() and path.suffix.lower() in {".typ", ".toml", ".bib"}
-            and "generated" not in path.parts
+            if path.is_file() and path.suffix.lower() in {".typ", ".bib", ".png", ".jpg", ".jpeg", ".webp", ".svg", ".csv", ".json"}
         )
     newest_source = max((path.stat().st_mtime for path in source_files), default=0.0)
     source_size = sum((path.stat().st_size for path in source_files), 0)
@@ -297,7 +139,7 @@ def notebook_metrics(notebook: Notebook) -> dict[str, object]:
         return cached
 
     stats = parse_source(notebook.content_path)
-    parts = stats.parts or [ParsedPart(title=part.title, chapters=[]) for part in notebook.parts]
+    parts = stats.parts
     pages = pdf_page_count(notebook.output_path)
     compiled = bool(notebook.output_path and notebook.output_path.exists())
     stale = bool(notebook.main_file and compiled and notebook.output_path and newest_source > output_mtime)
@@ -381,7 +223,7 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "|---:|---:|---:|---:|---:|---:|---:|",
         f"| **{len(notebooks)}** | **{active}** | **{compiled}** | **{current_pdfs}** | **{total_chapters}** | **{total_pages}** | **{overall}%** |",
         "",
-        "El porcentaje editorial se calcula automáticamente a partir del contenido Typst, figuras, ejercicios, referencias y estado de revisión. Puede cambiarse a modo manual en el `cuaderno.toml` de un volumen concreto.",
+        "El porcentaje editorial se calcula automáticamente a partir del contenido Typst, figuras, ejercicios, referencias y estado de revisión. Puede cambiarse a modo manual dentro del bloque `notebook` del archivo principal Typst.",
         "",
         "## Inicio rápido",
         "",
@@ -394,15 +236,15 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "### Un único comando",
         "",
         "```bash",
-        "python -m cuadernos update",
+        "python run_all.py",
         "```",
         "",
-        "Este comando descubre todos los `cuaderno.toml`, sincroniza las partes, genera la configuración Typst, valida el proyecto, compila únicamente lo modificado con Tinymist, actualiza `tinymist.lock`, extrae las portadas de los PDF y reconstruye el README y los catálogos.",
+        "Este comando descubre los archivos principales Typst, lee su bloque `notebook`, valida el proyecto, compila únicamente lo modificado con Tinymist, actualiza `tinymist.lock` y reconstruye el README y los catálogos.",
         "",
         "También puede limitarse la compilación:",
         "",
         "```bash",
-        "python -m cuadernos update F-08",
+        "python -m cuadernos update Fis-Electrodinamica",
         "python -m cuadernos update Medicina",
         "python -m cuadernos update --force",
         "python -m cuadernos update --rebuild-lock  # reparar o reconstruir todas las rutas",
@@ -413,6 +255,10 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "```bash",
         "python -m cuadernos update --no-build",
         "```",
+        "",
+        "Para añadir un cuaderno basta con copiar una carpeta existente, renombrar su archivo principal y editar el bloque `notebook` situado al comienzo. No hay manifiestos ni comandos de alta.",
+        "",
+        "Mientras editas, puedes ejecutar `python -m cuadernos watch` para releer automáticamente los mains y actualizar el catálogo al guardar.",
         "",
         "La configuración `.vscode/settings.json` activa `lockDatabase`. Al abrir cualquier capítulo, Tinymist usa el documento principal registrado en `tinymist.lock`, evitando falsos avisos de etiquetas inexistentes.",
         "",
@@ -458,55 +304,39 @@ def root_readme(notebooks: list[Notebook]) -> str:
     lines += [
         "## Arquitectura editorial",
         "",
-        "Cada cuaderno separa explícitamente configuración, contenido y archivos generados:",
+        "Cada cuaderno es autocontenido: el archivo principal contiene sus metadatos, la configuración de portada y el orden de lectura.",
         "",
         "```text",
         "cuadernos/<Area>/<Cuaderno>/",
-        "├── cuaderno.toml                 # fuente única de metadatos",
-        "├── <principal>.typ               # entrada mínima de compilación",
-        "├── content.typ                   # estructura y contenido",
-        "├── Partes/                       # partes extensas opcionales",
-        "├── Capitulos/                    # capítulos modulares",
-        "├── Ejercicios/                   # problemas y soluciones",
-        "├── Bibliografia/referencias.bib  # bibliografía común",
-        "├── Imagenes/",
-        "└── generated/",
-        "    ├── config.typ                # configuración Typst generada",
-        "    └── part_references.typ       # lecturas seleccionadas por parte",
+        "├── <principal>.typ     # metadatos + configuración + estructura del libro",
+        "├── referencias.bib     # bibliografía del cuaderno",
+        "├── Capitulos/          # texto modular; los ejercicios cierran cada capítulo",
+        "├── Imagenes/           # portada y figuras",
+        "└── data/               # datos, tablas o material auxiliar",
         "```",
         "",
-        "Las claves bibliográficas se asignan a cada parte mediante `references = [...]`. Al final de cada parte aparece una lista breve de lecturas recomendadas; al final del PDF se imprime además la bibliografía general completa de `Bibliografia/referencias.bib`.",
+        "No existen `cuaderno.toml`, `content.typ` ni `generated/`. La portada se usa directamente desde `Imagenes/`, sin copias intermedias.",
         "",
         "## Gestión del proyecto",
         "",
         "| Comando | Función |",
         "|---|---|",
-        "| `python -m cuadernos update` | Flujo completo: descubrir, sincronizar, validar, compilar y publicar el catálogo. |",
-        "| `python -m cuadernos list` | Lista automáticamente todos los manifiestos encontrados. |",
-        "| `python -m cuadernos build [selector]` | Compilación incremental con Tinymist y actualización automática de `tinymist.lock`. |",
-        "| `python -m cuadernos update --rebuild-lock` | Reconstruye desde cero las rutas de todos los cuadernos para Tinymist. |",
-        "| `python -m cuadernos check` | Valida IDs, rutas, portadas, partes y bibliografía. |",
-        "| `python -m cuadernos update --no-build` | Regenera configuración, previews y README sin compilar ni modificar `tinymist.lock`. |",
-        "| `python -m cuadernos new ...` | Crea un cuaderno, asigna ID y slug y lo añade al catálogo. |",
-        "| `python -m cuadernos stats` | Muestra y actualiza el panel de salud. |",
+        "| `python run_all.py` | Lee los mains, valida, compila lo modificado y reconstruye README y catálogos. |",
+        "| `python -m cuadernos update --no-build` | Relee los mains y regenera los metadatos públicos sin compilar. |",
+        "| `python -m cuadernos update Fis-Electrodinamica` | Actualiza o compila únicamente un cuaderno. |",
+        "| `python -m cuadernos watch` | Vigila los mains, capítulos, imágenes, datos y bibliografías. |",
+        "| `python -m cuadernos check` | Valida IDs, rutas, portadas y bibliografía. |",
         "",
-        "Ejemplo de creación:",
-        "",
-        "```bash",
-        'python -m cuadernos new --area Medicina --title "Fundamentos biomédicos de la medicina" --part "Anatomía y fisiología" --part "Patología general"',
-        "```",
-        "",
-        "El ID (`MED-01`, `MED-02`, …), el slug, la carpeta, el manifiesto, el esqueleto Typst y la entrada del README se crean automáticamente. También puedes añadir manualmente una carpeta con `cuaderno.toml`: aparecerá tras ejecutar `python -m cuadernos update`.",
+        "Para crear un cuaderno nuevo, copia una carpeta existente, renombra el main y edita el bloque `notebook` del principio. Esa es la única alta necesaria.",
         "",
         "## Fuentes de verdad",
         "",
-        "- `cuadernos.toml`: configuración global de áreas, orden, prefijos y series.",
-        "- `cuaderno.toml`: título, estado, alcance, portada y bibliografía por parte.",
-        "- `content.typ` y sus inclusiones: partes, capítulos y contenido efectivo.",
-        "- `pdf/`: publicaciones compiladas; nunca se mezclan con las fuentes.",
-        "- `docs/catalog.json`: catálogo legible por otras aplicaciones.",
-        "- `bibliografia/catalogo.bib`: catálogo bibliográfico global con claves namespaced.",
-        "- `docs/HEALTH.md`: informe de salud y cobertura del proyecto.",
+        "- `cuadernos.toml`: áreas, orden, prefijos y series globales.",
+        "- El bloque `notebook` de cada main: título, ID, estado, salida, portada, colores y bibliografía.",
+        "- El propio main y `Capitulos/`: partes, capítulos y contenido efectivo.",
+        "- `referencias.bib`: bibliografía local del volumen.",
+        "- `pdf/`: publicaciones compiladas.",
+        "- `docs/catalog.json`: catálogo derivado para otras aplicaciones.",
         "",
         "## Convenciones",
         "",
@@ -517,91 +347,11 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "",
         "## Licencia y autoría",
         "",
-        "La autoría y las condiciones de uso de cada volumen se indican en su manifiesto y en el propio documento. Las imágenes y referencias externas deben conservar su atribución correspondiente.",
+        "La autoría y las condiciones de uso de cada volumen se indican en el bloque `notebook` de su archivo principal y en el propio documento. Las imágenes y referencias externas deben conservar su atribución correspondiente.",
         "",
         "---",
         "",
-        "Este README se genera automáticamente. Añade o modifica cuadernos y ejecuta `python -m cuadernos update`.",
-        "",
-    ]
-    return "\n".join(lines)
-
-
-def individual_readme(notebook: Notebook) -> str:
-    root = notebook.root
-    metrics = notebook_metrics(notebook)
-    from_dir = notebook.path
-    preview = preview_relative(notebook, from_dir)
-    lines = [
-        f"# {notebook.title}",
-        "",
-        f'<img src="{preview}" width="210" alt="Portada de {html.escape(notebook.title)}">',
-        "",
-        f"**Código:** `{notebook.id}` · **Estado:** {notebook.status_icon} {notebook.status_label} · **Progreso:** {metrics['progress']} %",
-        "",
-    ]
-    if notebook.summary:
-        lines += [notebook.summary, ""]
-    lines += [
-        "## Alcance",
-        "",
-        notebook.scope or "Pendiente de definir.",
-        "",
-        "## Fuera de alcance",
-        "",
-        notebook.out_of_scope or "Pendiente de definir.",
-        "",
-        "## Estructura",
-        "",
-    ]
-    for index, part in enumerate(metrics["parts"], start=1):
-        lines.append(f"### Parte {index}. {part.title}")
-        lines.append("")
-        if part.chapters:
-            lines.extend(f"- {chapter}" for chapter in part.chapters)
-        else:
-            lines.append("- Sin capítulos activos todavía.")
-        meta = next((p for p in notebook.parts if p.title == part.title), None)
-        if meta and meta.references:
-            lines += ["", "**Lecturas recomendadas:** " + ", ".join(f"`{key}`" for key in meta.references)]
-        lines.append("")
-    lines += [
-        "## Estado editorial",
-        "",
-        "| Dimensión | Progreso |",
-        "|---|---:|",
-        f"| Texto | {metrics['progress_details'].text} % |",
-        f"| Figuras | {metrics['progress_details'].figures} % |",
-        f"| Ejercicios | {metrics['progress_details'].exercises} % |",
-        f"| Bibliografía | {metrics['progress_details'].bibliography} % |",
-        f"| Revisión | {metrics['progress_details'].review} % |",
-        f"| **Global ponderado** | **{metrics['progress']} %** |",
-        "",
-        f"Capítulos activos: **{metrics['chapters']}** · Páginas compiladas: **{metrics['pages']}** · PDF: **{'desactualizado' if metrics['stale'] else 'actualizado' if metrics['compiled'] else 'pendiente'}**.",
-        "",
-        "## Compilación",
-        "",
-        "Desde la raíz del repositorio:",
-        "",
-        "```bash",
-        f"python -m cuadernos update {notebook.id}",
-        "```",
-        "",
-        "Para regenerar todo el proyecto sin compilar:",
-        "",
-        "```bash",
-        "python -m cuadernos update --no-build",
-        "```",
-        "",
-        "## Archivos principales",
-        "",
-        f"- Manifiesto: `cuaderno.toml`",
-        f"- Entrada Typst: `{notebook.main_file or 'pendiente'}`",
-        f"- Contenido: `{notebook.content_file}`",
-        f"- Bibliografía: `{notebook.bibliography_file}`",
-        f"- PDF: `{notebook.output_file or 'pendiente'}`",
-        "",
-        "> Este README se genera automáticamente a partir del manifiesto y del contenido Typst.",
+        "Este README se genera automáticamente. Con `python -m cuadernos watch` —iniciado también por la tarea de VS Code— los cambios se reflejan al guardar.",
         "",
     ]
     return "\n".join(lines)
@@ -763,10 +513,10 @@ def generate_central_bibliography(notebooks: list[Notebook]) -> None:
         "",
         "## Organización",
         "",
-        "- Cada cuaderno mantiene su archivo `Bibliografia/referencias.bib` para poder compilarse de forma autónoma.",
+        "- Cada cuaderno mantiene su archivo `referencias.bib` para poder compilarse de forma autónoma.",
         "- `catalogo.bib` agrega todas las entradas y prefija sus claves con el ID del cuaderno.",
         "- `docs/bibliography.json` ofrece los mismos datos para buscadores o una futura web.",
-        "- Las lecturas recomendadas por parte se declaran en `cuaderno.toml` mediante claves locales.",
+        "- La ruta y activación de la bibliografía se declaran en el bloque `notebook` del main.",
         "",
         "## Bibliografías por cuaderno",
         "",
@@ -825,12 +575,9 @@ def sync_project(
 
     workers = max(1, min(4, os.cpu_count() or 1, len(notebooks)))
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        list(pool.map(write_generated_typst, notebooks))
         if generate_previews:
             list(pool.map(lambda notebook: generate_preview(notebook, force=force_previews), notebooks))
 
-    for notebook in notebooks:
-        (notebook.path / "README.md").write_text(individual_readme(notebook), encoding="utf-8")
 
     grouped: dict[str, list[Notebook]] = defaultdict(list)
     for notebook in notebooks:

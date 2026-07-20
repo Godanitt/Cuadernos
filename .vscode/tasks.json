@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Cuadernos: sincronización automática",
+      "type": "shell",
+      "command": "python",
+      "args": ["-m", "cuadernos", "watch"],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "cuadernos",
+        "pattern": {
+          "regexp": "^(?!)$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^Metadatos sincronizados:",
+          "endsPattern": "^Vigilancia automática activa\\."
+        }
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "never",
+        "panel": "dedicated",
+        "clear": false,
+        "close": true
+      }
+    }
+  ]
+}

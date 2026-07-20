@@ -1,26 +1,21 @@
-# Plantilla
+# Plantilla compartida
 
-Aquí vive todo lo común a los cuadernos:
+Aquí vive únicamente el código común de presentación:
 
-- `plantilla.typ`: archivo principal de estilos, entornos, colores, portada, bibliografía y macros.
-- `Plantilla_Cuaderno/`: módulos auxiliares de índice, portada, teoremas, comandos y títulos.
-- `scripts/`: automatización para compilar y recoger PDFs.
+- `plantilla.typ`: macros, entornos y función `cuaderno`.
+- `Plantilla_Cuaderno/`: índices, títulos, teoremas, comandos y diseños de portada.
+- `../run_all.py`: flujo completo del repositorio.
 
-## Imports desde los cuadernos
-
-Los cuadernos importan la plantilla mediante una ruta relativa hacia:
+Cada main importa:
 
 ```typst
 #import "../../../plantilla/plantilla.typ": *
+// El main carga sus recursos locales y los pasa a `cuaderno`.
+#show: cuaderno.with(
+  meta: notebook,
+  cover-source: cover-source,
+  bibliography-source: bibliography-source,
+)
 ```
 
-en los `.typ` principales, o una ruta con un `../` adicional desde `Capitulos/` y `Ejercicios/`.
-
-## Scripts
-
-```bash
-python plantilla/scripts/run_all.py
-python plantilla/scripts/move_pdf.py
-```
-
-`run_all.py` es el flujo recomendado: compila todo y escribe directamente en `pdf/`.
+Las imágenes de portada no se guardan aquí. Cada una vive en `Imagenes/` dentro de su cuaderno.

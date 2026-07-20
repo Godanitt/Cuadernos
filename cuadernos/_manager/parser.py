@@ -6,6 +6,8 @@ import re
 import subprocess
 import unicodedata
 
+from .metadata import METADATA_START, METADATA_END
+
 INCLUDE_RE = re.compile(r'#include\s+"([^"]+)"')
 PART_RE = re.compile(r'#part\(\s*"([^"]+)"')
 CHAPTER_RE = re.compile(r'#chapter\(\s*"([^"]+)"')
@@ -114,6 +116,12 @@ def parse_source(path: Path | None) -> SourceStats:
     if path is None or not path.exists():
         return SourceStats(parts=[], chapters=0, words=0, figures=0, exercises=0, includes=[])
     text, includes = flatten_source(path)
+    # El bloque `notebook` contiene metadatos legibles por Python y Typst, pero
+    # no forma parte del contenido editorial ni debe inflar el recuento de palabras.
+    start = text.find(METADATA_START)
+    end = text.find(METADATA_END)
+    if start >= 0 and end >= start:
+        text = text[:start] + text[end + len(METADATA_END):]
     events: list[tuple[int, str, str]] = []
     events += [(m.start(), "part", m.group(1).strip()) for m in PART_RE.finditer(text)]
     events += [(m.start(), "chapter", m.group(1).strip()) for m in CHAPTER_RE.finditer(text)]
