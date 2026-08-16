@@ -1,4 +1,4 @@
-#import "../../../../plantilla/plantilla.typ": *
+#import "../../../../plantilla/cuaderno.typ": *
 
 == Homomorfismos
 
@@ -72,7 +72,7 @@ Las representaciones irreducibles de un grupo son las "piedras angulares" en el 
 
 // Ejercicios del capítulo
 #pagebreak()
-#import "../../../../plantilla/plantilla.typ": *
+#import "../../../../plantilla/cuaderno.typ": *
 
 == Ejercicios 
 

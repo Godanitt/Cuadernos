@@ -88,7 +88,7 @@ Esta carpeta contiene exclusivamente las publicaciones generadas. Los fuentes vi
 Para compilar los cambios pendientes:
 
 ```bash
-python -m cuadernos build
+python run_all.py build
 ```
 
-> Este índice se genera mediante `python -m cuadernos update --no-build`.
+> Este índice se genera mediante `python run_all.py sync`.

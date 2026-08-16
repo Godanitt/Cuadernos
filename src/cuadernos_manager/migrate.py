@@ -92,8 +92,11 @@ def normalize_notebook_names(root: Path) -> int:
         return 0
 
     mains: list[Path] = []
+    paper_root = base / "paper"
     for candidate in sorted(base.rglob("*.typ")):
         if "_manager" in candidate.parts:
+            continue
+        if paper_root in candidate.parents:
             continue
         try:
             head = candidate.read_text(encoding="utf-8", errors="replace")[:16000]

@@ -1,8 +1,17 @@
 # Arquitectura editorial
 
-Cada cuaderno es una carpeta autocontenida. No hay manifiestos TOML ni archivos Typst generados dentro de los volúmenes.
+El repositorio tiene dos clases de documentos Typst completamente separadas en origen y salida.
 
-## Estructura de un cuaderno
+```text
+cuadernos/<Área>/<Cuaderno>/  ->  pdf/<Cuaderno>.pdf
+cuadernos/paper/<Paper>/      ->  paper/<Paper>.pdf
+```
+
+`cuadernos/paper/` queda excluido del descubrimiento de áreas: un paper nunca se convierte accidentalmente en un cuaderno.
+
+## Cuadernos
+
+Cada cuaderno es una carpeta autocontenida:
 
 ```text
 cuadernos/<Área>/<Cuaderno>/
@@ -13,14 +22,27 @@ cuadernos/<Área>/<Cuaderno>/
 └── data/
 ```
 
-El archivo principal —por ejemplo `F-Electrodinamica.typ` o `M-AnalisisComplejo.typ`— contiene:
+El main contiene el bloque `notebook`, aplica `plantilla/cuaderno.typ` y define el orden de partes/capítulos. La salida vive en `pdf/`.
 
-1. El bloque `notebook` con título, ID, portada, autores, salida PDF y configuración.
-2. La aplicación de la plantilla común.
-3. El orden de partes y capítulos.
-4. Las inclusiones de `Capitulos/`.
+## Papers
 
-Los ejercicios se escriben al final del archivo del capítulo correspondiente. La portada y el resto de figuras viven en `Imagenes/`. Los CSV, JSON, tablas y materiales auxiliares viven en `data/`.
+Los papers viven exclusivamente bajo:
+
+```text
+cuadernos/paper/
+```
+
+La organización recomendada es:
+
+```text
+cuadernos/paper/<Paper>/
+├── <principal>.typ
+├── referencias.bib
+├── Imagenes/
+└── data/
+```
+
+El main contiene un bloque `paper` y declara uno de tres estilos: `ieee`, `elsevier` o `mdpi`. Sus adaptadores comunes viven en `plantilla/paper/`. La salida vive en `paper/`.
 
 ## Flujo principal
 
@@ -28,40 +50,32 @@ Los ejercicios se escriben al final del archivo del capítulo correspondiente. L
 python run_all.py
 ```
 
-Equivale a:
+Actualiza **cuadernos y papers** de forma incremental.
+
+También se puede limitar el target:
 
 ```bash
-python -m cuadernos update
+python run_all.py cuadernos
+python run_all.py cuadernos Fisica
+python run_all.py paper
+python run_all.py paper P-MiArticulo
 ```
 
-El gestor:
-
-1. Busca mains Typst con el bloque `// <cuadernos:metadata>`.
-2. Lee el diccionario `notebook` directamente del main.
-3. Analiza las partes, capítulos, figuras, ejercicios y referencias.
-4. Valida IDs, portadas, bibliografías y rutas.
-5. Compila solo los cuadernos modificados.
-6. Actualiza `tinymist.lock`, README y catálogos.
-
-No crea `generated/`, no extrae portadas dentro del cuaderno y no copia imágenes.
-
-## Añadir un cuaderno
-
-Copia una carpeta existente, renombra su main y edita el bloque `notebook` del principio. Después ejecuta `run_all.py`.
-
-No hay que ejecutar un comando de alta ni editar una lista central.
+`--force` fuerza los documentos seleccionados y `--rebuild-lock` reconstruye el `tinymist.lock` usando todo el inventario.
 
 ## Compilación incremental
 
-El hash incluye el main, `Capitulos/`, `Imagenes/`, `data/`, `referencias.bib`, la plantilla y la configuración global. Si nada cambia y el PDF existe, el cuaderno se omite.
+Cada documento tiene su propio hash. Un cuaderno depende de su carpeta y de la plantilla normal; un paper depende de su carpeta y de `plantilla/paper/`. Por tanto, cambiar una plantilla de paper no invalida los 80 cuadernos normales, y viceversa.
 
 ## Archivos derivados
 
-Fuera de los cuadernos se regeneran:
+Se pueden regenerar y no forman parte de la fuente esencial:
 
-- `README.md` y los README de área.
-- `docs/catalog.json`.
-- `docs/HEALTH.md` y `docs/VALIDATION.md`.
-- `docs/assets/previews/`.
-- `bibliografia/catalogo.bib`.
-- `tinymist.lock`.
+- `pdf/`
+- `paper/`
+- `.cuadernos-cache/`
+- `docs/assets/previews/`
+- `docs/catalog.json`
+- `docs/HEALTH.md`
+- `docs/VALIDATION.md`
+- `tinymist.lock`

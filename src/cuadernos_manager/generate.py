@@ -6,7 +6,6 @@ import os
 from pathlib import Path
 import html
 import json
-import re
 import shutil
 import subprocess
 
@@ -239,26 +238,28 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "python run_all.py",
         "```",
         "",
-        "Este comando descubre los archivos principales Typst, lee su bloque `notebook`, valida el proyecto, compila únicamente lo modificado con Tinymist, actualiza `tinymist.lock` y reconstruye el README y los catálogos.",
+        "Este comando descubre tanto los cuadernos normales como los papers, valida el proyecto y compila únicamente lo modificado con Tinymist. Los cuadernos salen en `pdf/` y los papers en `paper/`.",
         "",
         "También puede limitarse la compilación:",
         "",
         "```bash",
-        "python -m cuadernos update Fis-Electrodinamica",
-        "python -m cuadernos update Medicina",
-        "python -m cuadernos update --force",
-        "python -m cuadernos update --rebuild-lock  # reparar o reconstruir todas las rutas",
+        "python run_all.py cuadernos               # solo cuadernos normales",
+        "python run_all.py cuadernos Fisica        # solo Física",
+        "python run_all.py paper                   # solo papers",
+        "python run_all.py paper P-MiArticulo      # un paper",
+        "python run_all.py --force                 # fuerza ambos targets",
+        "python run_all.py --rebuild-lock          # reconstruye todas las rutas",
         "```",
         "",
         "Para actualizar el catálogo sin compilar:",
         "",
         "```bash",
-        "python -m cuadernos update --no-build",
+        "python run_all.py sync",
         "```",
         "",
-        "Para añadir un cuaderno basta con copiar una carpeta existente, renombrar su archivo principal y editar el bloque `notebook` situado al comienzo. No hay manifiestos ni comandos de alta.",
+        "Para añadir un cuaderno basta con copiar una carpeta existente y editar su bloque `notebook`. Para añadir un artículo, crea su fuente bajo `cuadernos/paper/` con un bloque `paper`; solo esos documentos se compilan hacia `paper/`.",
         "",
-        "Mientras editas, puedes ejecutar `python -m cuadernos watch` para releer automáticamente los mains y actualizar el catálogo al guardar.",
+        "Mientras editas, puedes ejecutar `python run_all.py watch` para releer automáticamente los mains y actualizar el catálogo al guardar.",
         "",
         "La configuración `.vscode/settings.json` activa `lockDatabase`. Al abrir cualquier capítulo, Tinymist usa el documento principal registrado en `tinymist.lock`, evitando falsos avisos de etiquetas inexistentes.",
         "",
@@ -322,10 +323,10 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "| Comando | Función |",
         "|---|---|",
         "| `python run_all.py` | Lee los mains, valida, compila lo modificado y reconstruye README y catálogos. |",
-        "| `python -m cuadernos update --no-build` | Relee los mains y regenera los metadatos públicos sin compilar. |",
-        "| `python -m cuadernos update Fis-Electrodinamica` | Actualiza o compila únicamente un cuaderno. |",
-        "| `python -m cuadernos watch` | Vigila los mains, capítulos, imágenes, datos y bibliografías. |",
-        "| `python -m cuadernos check` | Valida IDs, rutas, portadas y bibliografía. |",
+        "| `python run_all.py sync` | Relee los mains y regenera los metadatos públicos sin compilar. |",
+        "| `python run_all.py Fis-Electrodinamica` | Actualiza o compila únicamente un cuaderno. |",
+        "| `python run_all.py watch` | Vigila los mains, capítulos, imágenes, datos y bibliografías. |",
+        "| `python run_all.py check` | Valida IDs, rutas, portadas y bibliografía. |",
         "",
         "Para crear un cuaderno nuevo, copia una carpeta existente, renombra el main y edita el bloque `notebook` del principio. Esa es la única alta necesaria.",
         "",
@@ -351,7 +352,7 @@ def root_readme(notebooks: list[Notebook]) -> str:
         "",
         "---",
         "",
-        "Este README se genera automáticamente. Con `python -m cuadernos watch` —iniciado también por la tarea de VS Code— los cambios se reflejan al guardar.",
+        "Este README se genera automáticamente. Con `python run_all.py watch` —iniciado también por la tarea de VS Code— los cambios se reflejan al guardar.",
         "",
     ]
     return "\n".join(lines)
@@ -373,7 +374,7 @@ def area_readme(area: str, notebooks: list[Notebook]) -> str:
         lines.append(
             f"| `{n.id}` | [{n.title}]({rel}/) | {n.status_icon} {n.status_label} | {m['progress']} % | {m['chapters']} | {_pdf_link(n, area_dir, bool(m['stale']))} |"
         )
-    lines += ["", "Generado mediante `python -m cuadernos update --no-build`.", ""]
+    lines += ["", "Generado mediante `python run_all.py sync`.", ""]
     return "\n".join(lines)
 
 
@@ -400,10 +401,10 @@ def pdf_readme(notebooks: list[Notebook]) -> str:
         "Para compilar los cambios pendientes:",
         "",
         "```bash",
-        "python -m cuadernos build",
+        "python run_all.py build",
         "```",
         "",
-        "> Este índice se genera mediante `python -m cuadernos update --no-build`.",
+        "> Este índice se genera mediante `python run_all.py sync`.",
         "",
     ]
     return "\n".join(lines)
@@ -419,7 +420,7 @@ def health_markdown(notebooks: list[Notebook], issues: list[Issue] | None = None
     lines = [
         "# Salud del proyecto",
         "",
-        "Informe generado automáticamente por `python -m cuadernos stats --write`.",
+        "Informe generado automáticamente por `python run_all.py stats --write`.",
         "",
         "## Resumen",
         "",
@@ -451,83 +452,6 @@ def health_markdown(notebooks: list[Notebook], issues: list[Issue] | None = None
     return "\n".join(lines)
 
 
-
-def generate_central_bibliography(notebooks: list[Notebook]) -> None:
-    if not notebooks:
-        return
-    root = notebooks[0].root
-    bibliography_dir = root / "bibliografia"
-    bibliography_dir.mkdir(exist_ok=True)
-    bib_lines = [
-        "% Catálogo bibliográfico global generado automáticamente.",
-        "% Las claves se prefijan con el ID del cuaderno para evitar colisiones.",
-        "",
-    ]
-    json_rows: list[dict[str, object]] = []
-    readme_rows: list[str] = []
-    total = 0
-    for notebook in notebooks:
-        records = bibtex_records(notebook.bibliography_path)
-        total += len(records)
-        for record in records:
-            safe_id = re.sub(r"[^A-Za-z0-9]+", "-", notebook.id).strip("-")
-            global_key = f"{safe_id}__{record.key}"
-            rewritten = re.sub(
-                r"(@[A-Za-z]+\s*\{\s*)[^,\s]+",
-                lambda match: match.group(1) + global_key,
-                record.raw,
-                count=1,
-                flags=re.IGNORECASE,
-            )
-            bib_lines += [
-                f"% Fuente: {notebook.id} — {notebook.title}",
-                rewritten,
-                "",
-            ]
-            json_rows.append(
-                {
-                    "global_key": global_key,
-                    "local_key": record.key,
-                    "notebook_id": notebook.id,
-                    "notebook": notebook.title,
-                    "area": notebook.area,
-                    "label": record.label,
-                    "fields": record.fields,
-                }
-            )
-        source_rel = notebook.bibliography_path.relative_to(root).as_posix() if notebook.bibliography_path else ""
-        readme_rows.append(
-            f"| `{notebook.id}` | {notebook.title} | {len(records)} | "
-            f"[`{source_rel}`](../{source_rel}) |"
-        )
-    (bibliography_dir / "catalogo.bib").write_text("\n".join(bib_lines), encoding="utf-8")
-    (root / "docs" / "bibliography.json").write_text(
-        json.dumps(json_rows, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
-    readme = [
-        "# Catálogo bibliográfico",
-        "",
-        "Índice central de las bibliografías locales de todos los cuadernos.",
-        "",
-        f"Referencias registradas: **{total}**.",
-        "",
-        "## Organización",
-        "",
-        "- Cada cuaderno mantiene su archivo `referencias.bib` para poder compilarse de forma autónoma.",
-        "- `catalogo.bib` agrega todas las entradas y prefija sus claves con el ID del cuaderno.",
-        "- `docs/bibliography.json` ofrece los mismos datos para buscadores o una futura web.",
-        "- La ruta y activación de la bibliografía se declaran en el bloque `notebook` del main.",
-        "",
-        "## Bibliografías por cuaderno",
-        "",
-        "| Código | Cuaderno | Referencias | Archivo local |",
-        "|---|---|---:|---|",
-        *readme_rows,
-        "",
-        "> Archivo generado mediante `python -m cuadernos update --no-build`.",
-        "",
-    ]
-    (bibliography_dir / "README.md").write_text("\n".join(readme), encoding="utf-8")
 
 def write_catalog_json(notebooks: list[Notebook]) -> None:
     payload = []
@@ -596,6 +520,5 @@ def sync_project(
     docs.mkdir(exist_ok=True)
     (docs / "HEALTH.md").write_text(health_markdown(notebooks, issues), encoding="utf-8")
     (docs / "VALIDATION.md").write_text(validation_markdown(notebooks, issues), encoding="utf-8")
-    generate_central_bibliography(notebooks)
     write_catalog_json(notebooks)
     return issues

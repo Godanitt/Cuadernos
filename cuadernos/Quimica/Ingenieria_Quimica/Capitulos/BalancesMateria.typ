@@ -1,4 +1,4 @@
-#import "../../../../plantilla/plantilla.typ": *
+#import "../../../../plantilla/cuaderno.typ": *
 
 
 La *Ley de Lavoiser* dice _la materia no puede crearse ni destruirse, solamente transformarse_. 

@@ -3,7 +3,7 @@
 Ya no existe `cuaderno.toml`. Todos los datos editables están al comienzo del archivo principal:
 
 ```typst
-#import "../../../plantilla/plantilla.typ": *
+#import "../../../plantilla/cuaderno.typ": *
 
 // <cuadernos:metadata>
 #let notebook = (

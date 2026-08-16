@@ -1,5 +1,5 @@
 
-#import "../../../../plantilla/plantilla.typ": *
+#import "../../../../plantilla/cuaderno.typ": *
 
 == Introducción
 

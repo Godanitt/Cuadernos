@@ -1,4 +1,4 @@
-#import "../../../../plantilla/plantilla.typ": *
+#import "../../../../plantilla/cuaderno.typ": *
 
 == Energía y tipos de energía
 

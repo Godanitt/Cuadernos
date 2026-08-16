@@ -10,4 +10,4 @@ Colección de 5 cuadernos del área de biología.
 | `Bio-Neurociencia` | [Neurociencia](Neurociencia/) | ⚪ Planificado | 5 % | 1 | [PDF](../../pdf/Bio-Neurociencia.pdf) |
 | `Bio-Virologia` | [Virología](Virologia/) | ⚪ Planificado | 5 % | 1 | [PDF](../../pdf/Bio-Virologia.pdf) |
 
-Generado mediante `python -m cuadernos update --no-build`.
+Generado mediante `python run_all.py sync`.

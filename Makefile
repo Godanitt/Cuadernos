@@ -1,37 +1,42 @@
-.PHONY: update watch list build build-all rebuild-lock check sync stats clean-cache clean-derived
+.PHONY: update cuadernos papers watch list build build-all rebuild-lock check sync stats clean-cache clean-derived
 
 update:
 	python run_all.py
 
+cuadernos:
+	python run_all.py cuadernos
+
+papers:
+	python run_all.py paper
+
 watch:
-	python -m cuadernos watch
+	python run_all.py watch
 
 list:
-	python -m cuadernos list
+	python run_all.py list
 
 build:
-	python -m cuadernos build
+	python run_all.py build
 
 build-all:
-	python -m cuadernos update --force
+	python run_all.py --force
 
 rebuild-lock:
-	python -m cuadernos update --rebuild-lock
+	python run_all.py --rebuild-lock
 
 check:
-	python -m cuadernos check --write
+	python run_all.py check --write
 
 sync:
-	python -m cuadernos update --no-build
+	python run_all.py sync
 
 stats:
-	python -m cuadernos stats --write
+	python run_all.py stats --write
 
 clean-cache:
 	rm -rf .cuadernos-cache
 	rm -f tinymist.lock
 
 clean-derived:
-	rm -rf docs/assets/previews
-	rm -f docs/catalog.json docs/bibliography.json docs/HEALTH.md docs/VALIDATION.md
-	rm -f bibliografia/catalogo.bib
+	rm -rf pdf paper docs/assets/previews
+	rm -f docs/catalog.json docs/HEALTH.md docs/VALIDATION.md

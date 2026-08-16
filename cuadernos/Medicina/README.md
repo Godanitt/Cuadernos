@@ -11,4 +11,4 @@ Colección de 6 cuadernos del área de medicina y ciencias de la salud.
 | `Med-Neurologia` | [Neurología](Neurologia/) | ⚪ Planificado | 5 % | 1 | [PDF](../../pdf/Med-Neurologia.pdf) |
 | `Med-Oncologia` | [Oncología](Oncologia/) | ⚪ Planificado | 5 % | 1 | [PDF](../../pdf/Med-Oncologia.pdf) |
 
-Generado mediante `python -m cuadernos update --no-build`.
+Generado mediante `python run_all.py sync`.

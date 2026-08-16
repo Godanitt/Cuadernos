@@ -21,4 +21,4 @@ Colección de 16 cuadernos del área de ingeniería.
 | `I-Sensores` | [Sensores e Instrumentación](Sensores_Instrumentacion/) | 🟤 Esqueleto | 1 % | 24 | [PDF](../../pdf/I-Sensores.pdf) |
 | `I-Teleco` | [Ingeniería de Teleco](Telecomunicaciones/) | 🟤 Esqueleto | 1 % | 28 | [PDF](../../pdf/I-Teleco.pdf) |
 
-Generado mediante `python -m cuadernos update --no-build`.
+Generado mediante `python run_all.py sync`.

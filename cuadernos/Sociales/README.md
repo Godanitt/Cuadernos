@@ -10,4 +10,4 @@ Colección de 5 cuadernos del área de ciencias sociales.
 | `Soc-Sociologia` | [Sociología](Sociologia/) | ⚪ Planificado | 5 % | 1 | [PDF](../../pdf/Soc-Sociologia.pdf) |
 | `Soc-Urbanismo` | [Urbanismo y Estudios Urbanos](Urbanismo/) | ⚪ Planificado | 5 % | 1 | [PDF](../../pdf/Soc-Urbanismo.pdf) |
 
-Generado mediante `python -m cuadernos update --no-build`.
+Generado mediante `python run_all.py sync`.

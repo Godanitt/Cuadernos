@@ -7,8 +7,15 @@ from typing import Any
 
 METADATA_START = "// <cuadernos:metadata>"
 METADATA_END = "// </cuadernos:metadata>"
-_METADATA_RE = re.compile(
+PAPER_METADATA_START = "// <paper:metadata>"
+PAPER_METADATA_END = "// </paper:metadata>"
+
+_NOTEBOOK_METADATA_RE = re.compile(
     rf"{re.escape(METADATA_START)}\s*#let\s+notebook\s*=\s*(?P<value>.*?)\s*{re.escape(METADATA_END)}",
+    re.DOTALL,
+)
+_PAPER_METADATA_RE = re.compile(
+    rf"{re.escape(PAPER_METADATA_START)}\s*#let\s+paper\s*=\s*(?P<value>.*?)\s*{re.escape(PAPER_METADATA_END)}",
     re.DOTALL,
 )
 
@@ -167,13 +174,19 @@ class _Parser:
         return mapping if is_mapping else entries
 
 
-def extract_metadata_text(source: str) -> str:
-    match = _METADATA_RE.search(source)
+def _extract(source: str, pattern: re.Pattern[str], start: str, end: str) -> str:
+    match = pattern.search(source)
     if not match:
-        raise MetadataError(
-            f"El archivo principal no contiene el bloque {METADATA_START} … {METADATA_END}"
-        )
+        raise MetadataError(f"El archivo principal no contiene el bloque {start} … {end}")
     return match.group("value").strip()
+
+
+def extract_metadata_text(source: str) -> str:
+    return _extract(source, _NOTEBOOK_METADATA_RE, METADATA_START, METADATA_END)
+
+
+def extract_paper_metadata_text(source: str) -> str:
+    return _extract(source, _PAPER_METADATA_RE, PAPER_METADATA_START, PAPER_METADATA_END)
 
 
 def parse_metadata_source(source: str) -> dict[str, Any]:
@@ -183,5 +196,16 @@ def parse_metadata_source(source: str) -> dict[str, Any]:
     return value
 
 
+def parse_paper_metadata_source(source: str) -> dict[str, Any]:
+    value = _Parser(extract_paper_metadata_text(source)).parse()
+    if not isinstance(value, dict):
+        raise MetadataError("`paper` debe ser un diccionario Typst `(clave: valor, ...)`")
+    return value
+
+
 def read_metadata(path: Path) -> dict[str, Any]:
     return parse_metadata_source(path.read_text(encoding="utf-8", errors="replace"))
+
+
+def read_paper_metadata(path: Path) -> dict[str, Any]:
+    return parse_paper_metadata_source(path.read_text(encoding="utf-8", errors="replace"))

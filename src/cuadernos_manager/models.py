@@ -77,6 +77,14 @@ class Notebook:
     typst: dict[str, Any]
 
     @property
+    def kind(self) -> str:
+        return "cuaderno"
+
+    @property
+    def cache_key(self) -> str:
+        return f"cuaderno:{self.id}"
+
+    @property
     def relative_dir(self) -> Path:
         return self.path.relative_to(self.root)
 

@@ -8,4 +8,4 @@ Colección de 3 cuadernos del área de ensayos políticos.
 | `Pol-Cientifica` | [Política Científica y Tecnológica](Cientifica/) | ⚪ Planificado | 5 % | 1 | [PDF](../../pdf/Pol-Cientifica.pdf) |
 | `Pol-Paniberismo` | [Paniberismo](Paniberismo/) | 🟤 Esqueleto | 1 % | 28 | [PDF](../../pdf/Pol-Paniberismo.pdf) |
 
-Generado mediante `python -m cuadernos update --no-build`.
+Generado mediante `python run_all.py sync`.

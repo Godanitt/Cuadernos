@@ -54,7 +54,7 @@ def validate(notebooks: list[Notebook]) -> list[Issue]:
         editor_settings = json.loads(settings_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         editor_settings = {}
-    template_path = root / "plantilla" / "plantilla.typ"
+    template_path = root / "plantilla" / "cuaderno.typ"
     try:
         template_text = template_path.read_text(encoding="utf-8")
     except OSError:
@@ -145,11 +145,6 @@ def validate(notebooks: list[Notebook]) -> list[Issue]:
             candidate = notebook.path / obsolete
             if candidate.exists():
                 issues.append(Issue("warning", "LAY001", f"Elemento antiguo innecesario: {obsolete}", candidate))
-        for dirname in ("Capitulos", "Imagenes", "data"):
-            candidate = notebook.path / dirname
-            if not candidate.is_dir():
-                issues.append(Issue("warning", "LAY002", f"Falta la carpeta {dirname}/", candidate))
-
         style = str(notebook.cover.get("style", "solid"))
         if style not in ALLOWED_COVER_STYLES:
             issues.append(Issue("error", "COV001", f"Portada no permitida: {style}", main))
@@ -175,9 +170,6 @@ def validate(notebooks: list[Notebook]) -> list[Issue]:
         if keys and not notebook.bibliography_enabled:
             issues.append(Issue("warning", "BIB004", "Hay referencias, pero bibliography_enabled es false", main))
 
-        if not notebook.output_path.exists():
-            issues.append(Issue("info", "OUT002", "Todavía no hay PDF compilado", main))
-
     return issues
 
 
@@ -199,3 +191,85 @@ def validation_markdown(notebooks: list[Notebook], issues: list[Issue]) -> str:
     if not issues:
         lines += ["No se detectaron incidencias.", ""]
     return "\n".join(lines)
+
+
+def validate_papers(papers) -> list[Issue]:
+    """Valida únicamente los documentos que viven bajo `cuadernos/paper/`."""
+    if not papers:
+        return []
+
+    from .metadata import PAPER_METADATA_START
+    from .paper import ALLOWED_PAPER_STYLES
+
+    issues: list[Issue] = []
+
+    def duplicates(values: list[str]) -> set[str]:
+        return {value for value in values if value and values.count(value) > 1}
+
+    for value in sorted(duplicates([p.id for p in papers])):
+        issues.append(Issue("error", "PID001", f"ID de paper duplicado: {value}"))
+    for value in sorted(duplicates([p.output_file for p in papers])):
+        issues.append(Issue("error", "POUT001", f"archivo PDF de paper duplicado: {value}"))
+
+    expected_packages = {
+        "ieee": ("@preview/charged-ieee:0.1.4", "plantilla/paper/ieee.typ", "plantilla/paper/paper.typ"),
+        "elsevier": ("@preview/elspub:1.0.0", "plantilla/paper/elsevier.typ", "plantilla/paper/paper.typ"),
+        "mdpi": ("@preview/splendid-mdpi:0.1.0", "plantilla/paper/mdpi.typ", "plantilla/paper/paper.typ"),
+    }
+
+    for paper in papers:
+        main = paper.main_path
+        expected_id = main.stem
+        expected_output = f"{expected_id}.pdf"
+
+        if not paper.id.strip():
+            issues.append(Issue("error", "PMETA000", "ID de paper vacío", main))
+        if paper.id != expected_id:
+            issues.append(Issue(
+                "error", "PMETA001",
+                f"El ID del paper debe coincidir con el nombre del main: {expected_id!r}", main,
+            ))
+        if paper.output_file != expected_output:
+            issues.append(Issue(
+                "error", "POUT003",
+                f"El PDF del paper debe llamarse {expected_output!r}", main,
+            ))
+        if not paper.title.strip():
+            issues.append(Issue("error", "PMETA002", "Título de paper vacío", main))
+        if not paper.authors:
+            issues.append(Issue("warning", "PMETA003", "El paper no declara autores", main))
+        if paper.style not in ALLOWED_PAPER_STYLES:
+            issues.append(Issue(
+                "error", "PSTYLE001",
+                f"Estilo de paper desconocido: {paper.style}. Usa ieee, elsevier o mdpi.", main,
+            ))
+
+        try:
+            main_text = main.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            issues.append(Issue("error", "PSRC001", f"No existe {paper.main_file}", main))
+            continue
+        if PAPER_METADATA_START not in main_text:
+            issues.append(Issue("error", "PMETA004", "Falta el bloque `paper` en el main", main))
+
+        expected_imports = expected_packages.get(paper.style, ())
+        if expected_imports and not any(value in main_text for value in expected_imports):
+            issues.append(Issue(
+                "warning", "PSTYLE002",
+                f"El estilo {paper.style!r} está declarado, pero el main no importa su adaptador/paquete esperado", main,
+            ))
+
+        bib = paper.bibliography_path
+        if paper.bibliography_enabled and not bib.exists():
+            issues.append(Issue(
+                "error", "PBIB001",
+                f"bibliography_enabled es true pero no existe {paper.bibliography_file}", main,
+            ))
+        elif bib.exists():
+            keys = bibliography_keys(bib)
+            if paper.bibliography_enabled and not keys:
+                issues.append(Issue("warning", "PBIB002", "La bibliografía del paper no contiene entradas", main))
+            if keys and not paper.bibliography_enabled:
+                issues.append(Issue("warning", "PBIB003", "Hay referencias, pero bibliography_enabled es false", main))
+
+    return issues

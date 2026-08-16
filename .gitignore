@@ -24,3 +24,6 @@ fonts/
 
 # Caché del gestor editorial
 .cuadernos-cache/
+
+# Generated/local ZIP archives
+*.zip

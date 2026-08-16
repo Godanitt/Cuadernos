@@ -22,4 +22,4 @@ Colección de 17 cuadernos del área de física.
 | `Fis-Semiconductores` | [Física de Semiconductores y Electrónica](Semiconductores/) | 🟤 Esqueleto | 1 % | 24 | [PDF](../../pdf/Fis-Semiconductores.pdf) |
 | `Fis-Termodinamica` | [Termodinámica y Mecánica Estadística](Termodinamica/) | 🟤 Esqueleto | 1 % | 28 | [PDF](../../pdf/Fis-Termodinamica.pdf) |
 
-Generado mediante `python -m cuadernos update --no-build`.
+Generado mediante `python run_all.py sync`.

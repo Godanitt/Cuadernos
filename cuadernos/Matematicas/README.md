@@ -12,4 +12,4 @@ Colección de 7 cuadernos del área de matemáticas.
 | `Mat-Teoria_Grupos` | [Teoría de Grupos](Teoria_Grupos/) | 🟡 En desarrollo | 42 % | 7 | [PDF](../../pdf/Mat-Teoria_Grupos.pdf) |
 | `Mat-Transformadas_Integrales` | [Transformadas Integrales](Transformada_Integral/) | ⚪ Planificado | 5 % | 1 | [PDF](../../pdf/Mat-Transformadas_Integrales.pdf) |
 
-Generado mediante `python -m cuadernos update --no-build`.
+Generado mediante `python run_all.py sync`.

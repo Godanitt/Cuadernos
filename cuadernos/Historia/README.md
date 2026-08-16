@@ -9,4 +9,4 @@ Colección de 4 cuadernos del área de historia.
 | `H-Roma` | [Hisotoria de Roma](Roma/) | 🟤 Esqueleto | 1 % | 28 | [PDF](../../pdf/H-Roma.pdf) |
 | `H-Rusia` | [Historia de Rusia](Rusia/) | ⚪ Planificado | 5 % | 1 | [PDF](../../pdf/H-Rusia.pdf) |
 
-Generado mediante `python -m cuadernos update --no-build`.
+Generado mediante `python run_all.py sync`.

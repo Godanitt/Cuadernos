@@ -7,12 +7,12 @@
 #import "@preview/fontawesome:0.6.0": *
 
 
-#import("Plantilla_Cuaderno/indice.typ"): *
-#import("Plantilla_Cuaderno/indice_aux.typ"): *
-#import("Plantilla_Cuaderno/theorems.typ"): *
-#import("Plantilla_Cuaderno/titulo.typ"): * 
-#import("Plantilla_Cuaderno/comandos.typ"): * 
-#import("Plantilla_Cuaderno/referencias.typ"): *
+#import("componentes/indice.typ"): *
+#import("componentes/indice_aux.typ"): *
+#import("componentes/theorems.typ"): *
+#import("componentes/titulo.typ"): * 
+#import("componentes/comandos.typ"): * 
+#import("componentes/referencias.typ"): *
 
 
 //====================================

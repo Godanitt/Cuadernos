@@ -1,11 +1,11 @@
-#import "portadas/cover1.typ": cover1_title
-#import "portadas/cover2.typ": cover2_title
-#import "portadas/cover3.typ": cover3_title
-#import "portadas/cover4.typ": cover4_title
-#import "portadas/cover5.typ": cover5_title
-#import "portadas/cover6.typ": cover6_title
-#import "portadas/cover7.typ": cover7_title
-#import "portadas/solid.typ": solid_title
+#import "../portadas/wiley-1.typ": cover1_title
+#import "../portadas/cover-2.typ": cover2_title
+#import "../portadas/wiley-2.typ": cover3_title
+#import "../portadas/full-image.typ": cover4_title
+#import "../portadas/full-image-2.typ": cover5_title
+#import "../portadas/wiley-2-1.typ": cover6_title
+#import "../portadas/wiley-2-2.typ": cover7_title
+#import "../portadas/solid.typ": solid_title
 
 #let make_title(
   primary: color,

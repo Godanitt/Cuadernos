@@ -11,4 +11,4 @@ Colección de 6 cuadernos del área de química.
 | `Q-Quimica_Inorganica` | [Química Inorgánica](Quimica_Inorganica/) | ⚪ Planificado | 5 % | 1 | [PDF](../../pdf/Q-Quimica_Inorganica.pdf) |
 | `Q-Quimica_Organica` | [Química Orgánica](Quimica_Organica/) | ⚪ Planificado | 4 % | 1 | [PDF](../../pdf/Q-Quimica_Organica.pdf) |
 
-Generado mediante `python -m cuadernos update --no-build`.
+Generado mediante `python run_all.py sync`.

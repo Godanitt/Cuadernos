@@ -562,6 +562,13 @@ main = "file:cuadernos/Sociales/Urbanismo/Soc-Urbanismo.typ"
 root = "file:."
 system-fonts = true
 
+[[document]]
+id = "file:cuadernos/paper/Photoabsorption_Photoionization_Gases/P-Photoabsorption_Photoionization_Gases.typ"
+inputs = []
+main = "file:cuadernos/paper/Photoabsorption_Photoionization_Gases/P-Photoabsorption_Photoionization_Gases.typ"
+root = "file:."
+system-fonts = true
+
 [[route]]
 id = "file:cuadernos/Arquitectura/Arquitectura/Arq-Arquitectura.typ"
 priority = 256
@@ -683,11 +690,31 @@ id = "file:cuadernos/Geografia/Geografia/Geo-Geografia.typ"
 priority = 256
 
 [[route]]
+id = "file:cuadernos/Historia/China/H-China.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/Historia/Espana/H-Espana.typ"
+priority = 256
+
+[[route]]
 id = "file:cuadernos/Historia/Roma/H-Roma.typ"
 priority = 256
 
 [[route]]
+id = "file:cuadernos/Historia/Rusia/H-Rusia.typ"
+priority = 256
+
+[[route]]
 id = "file:cuadernos/Ingenieria/Aeroespacial/I-Aeroespacial.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/Ingenieria/Agropecuaria/I-Agropecuaria.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/Ingenieria/Alimentaria/I-Alimentaria.typ"
 priority = 256
 
 [[route]]
@@ -700,6 +727,10 @@ priority = 256
 
 [[route]]
 id = "file:cuadernos/Ingenieria/Biotecnologia/I-Biotecnologia.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/Ingenieria/Ciencia_Materiales/I-Ciencia_Materiales.typ"
 priority = 256
 
 [[route]]
@@ -743,7 +774,19 @@ id = "file:cuadernos/Literatura/Heroes/L-Heroes.typ"
 priority = 256
 
 [[route]]
+id = "file:cuadernos/Literatura/Quijote/L-Quijote.typ"
+priority = 256
+
+[[route]]
 id = "file:cuadernos/Matematicas/Analisis_Complejo/Mat-AnalisisComplejo.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/Matematicas/Ecuaciones_Diferenciales/Mat-Ecuaciones_Diferenciales.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/Matematicas/Estadistica/Mat-Estadistica.typ"
 priority = 256
 
 [[route]]
@@ -751,7 +794,15 @@ id = "file:cuadernos/Matematicas/Geometria_Diferencial/Mat-Geometria_Diferencial
 priority = 256
 
 [[route]]
+id = "file:cuadernos/Matematicas/Metodos_Numericos/Mat-Metodos_Numericos.typ"
+priority = 256
+
+[[route]]
 id = "file:cuadernos/Matematicas/Teoria_Grupos/Mat-Teoria_Grupos.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/Matematicas/Transformada_Integral/Mat-Transformadas_Integrales.typ"
 priority = 256
 
 [[route]]
@@ -839,47 +890,7 @@ id = "file:cuadernos/Sociales/Urbanismo/Soc-Urbanismo.typ"
 priority = 256
 
 [[route]]
-id = "file:cuadernos/Historia/China/H-China.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/Historia/Rusia/H-Rusia.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/Historia/Espana/H-Espana.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/Ingenieria/Alimentaria/I-Alimentaria.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/Ingenieria/Agropecuaria/I-Agropecuaria.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/Ingenieria/Ciencia_Materiales/I-Ciencia_Materiales.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/Matematicas/Metodos_Numericos/Mat-Metodos_Numericos.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/Matematicas/Transformada_Integral/Mat-Transformadas_Integrales.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/Matematicas/Ecuaciones_Diferenciales/Mat-Ecuaciones_Diferenciales.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/Literatura/Quijote/L-Quijote.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/Matematicas/Estadistica/Mat-Estadistica.typ"
+id = "file:cuadernos/paper/Photoabsorption_Photoionization_Gases/P-Photoabsorption_Photoionization_Gases.typ"
 priority = 256
 
 [[task]]
@@ -1439,5 +1450,12 @@ when = "never"
 document = "file:cuadernos/Sociales/Urbanismo/Soc-Urbanismo.typ"
 id = "file:cuadernos/Sociales/Urbanismo/Soc-Urbanismo.typ"
 output = "pdf/Soc-Urbanismo"
+type = "export-pdf"
+when = "never"
+
+[[task]]
+document = "file:cuadernos/paper/Photoabsorption_Photoionization_Gases/P-Photoabsorption_Photoionization_Gases.typ"
+id = "file:cuadernos/paper/Photoabsorption_Photoionization_Gases/P-Photoabsorption_Photoionization_Gases.typ"
+output = "paper/P-Photoabsorption_Photoionization_Gases"
 type = "export-pdf"
 when = "never"

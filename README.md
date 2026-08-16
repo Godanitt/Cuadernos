@@ -30,26 +30,28 @@ El porcentaje editorial se calcula automáticamente a partir del contenido Typst
 python run_all.py
 ```
 
-Este comando descubre los archivos principales Typst, lee su bloque `notebook`, valida el proyecto, compila únicamente lo modificado con Tinymist, actualiza `tinymist.lock` y reconstruye el README y los catálogos.
+Este comando descubre tanto los cuadernos normales como los papers, valida el proyecto y compila únicamente lo modificado con Tinymist. Los cuadernos salen en `pdf/` y los papers en `paper/`.
 
 También puede limitarse la compilación:
 
 ```bash
-python -m cuadernos update Fis-Electrodinamica
-python -m cuadernos update Medicina
-python -m cuadernos update --force
-python -m cuadernos update --rebuild-lock  # reparar o reconstruir todas las rutas
+python run_all.py cuadernos               # solo cuadernos normales
+python run_all.py cuadernos Fisica        # solo Física
+python run_all.py paper                   # solo papers
+python run_all.py paper P-MiArticulo      # un paper
+python run_all.py --force                 # fuerza ambos targets
+python run_all.py --rebuild-lock          # reconstruye todas las rutas
 ```
 
 Para actualizar el catálogo sin compilar:
 
 ```bash
-python -m cuadernos update --no-build
+python run_all.py sync
 ```
 
-Para añadir un cuaderno basta con copiar una carpeta existente, renombrar su archivo principal y editar el bloque `notebook` situado al comienzo. No hay manifiestos ni comandos de alta.
+Para añadir un cuaderno basta con copiar una carpeta existente y editar su bloque `notebook`. Para añadir un artículo, crea su fuente bajo `cuadernos/paper/` con un bloque `paper`; solo esos documentos se compilan hacia `paper/`.
 
-Mientras editas, puedes ejecutar `python -m cuadernos watch` para releer automáticamente los mains y actualizar el catálogo al guardar.
+Mientras editas, puedes ejecutar `python run_all.py watch` para releer automáticamente los mains y actualizar el catálogo al guardar.
 
 La configuración `.vscode/settings.json` activa `lockDatabase`. Al abrir cualquier capítulo, Tinymist usa el documento principal registrado en `tinymist.lock`, evitando falsos avisos de etiquetas inexistentes.
 
@@ -232,10 +234,10 @@ No existen `cuaderno.toml`, `content.typ` ni `generated/`. La portada se usa dir
 | Comando | Función |
 |---|---|
 | `python run_all.py` | Lee los mains, valida, compila lo modificado y reconstruye README y catálogos. |
-| `python -m cuadernos update --no-build` | Relee los mains y regenera los metadatos públicos sin compilar. |
-| `python -m cuadernos update Fis-Electrodinamica` | Actualiza o compila únicamente un cuaderno. |
-| `python -m cuadernos watch` | Vigila los mains, capítulos, imágenes, datos y bibliografías. |
-| `python -m cuadernos check` | Valida IDs, rutas, portadas y bibliografía. |
+| `python run_all.py sync` | Relee los mains y regenera los metadatos públicos sin compilar. |
+| `python run_all.py Fis-Electrodinamica` | Actualiza o compila únicamente un cuaderno. |
+| `python run_all.py watch` | Vigila los mains, capítulos, imágenes, datos y bibliografías. |
+| `python run_all.py check` | Valida IDs, rutas, portadas y bibliografía. |
 
 Para crear un cuaderno nuevo, copia una carpeta existente, renombra el main y edita el bloque `notebook` del principio. Esa es la única alta necesaria.
 
@@ -261,4 +263,4 @@ La autoría y las condiciones de uso de cada volumen se indican en el bloque `no
 
 ---
 
-Este README se genera automáticamente. Con `python -m cuadernos watch` —iniciado también por la tarea de VS Code— los cambios se reflejan al guardar.
+Este README se genera automáticamente. Con `python run_all.py watch` —iniciado también por la tarea de VS Code— los cambios se reflejan al guardar.

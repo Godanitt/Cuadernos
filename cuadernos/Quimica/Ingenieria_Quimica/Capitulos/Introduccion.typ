@@ -1,4 +1,4 @@
-#import "../../../../plantilla/plantilla.typ": *
+#import "../../../../plantilla/cuaderno.typ": *
 
 == Origen y concepto de la industria química
 

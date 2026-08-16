@@ -1,21 +1,24 @@
-# Plantilla compartida
+# Plantilla Typst compartida
 
-Aquí vive únicamente el código común de presentación:
+Infraestructura común de maquetación para todos los cuadernos.
 
-- `plantilla.typ`: macros, entornos y función `cuaderno`.
-- `Plantilla_Cuaderno/`: índices, títulos, teoremas, comandos y diseños de portada.
-- `../run_all.py`: flujo completo del repositorio.
+- `cuaderno.typ`: punto de entrada de la plantilla.
+- `componentes/`: índices, títulos, teoremas, comandos y bibliografía local.
+- `portadas/`: diseños de portada reutilizables.
 
-Cada main importa:
+Los cuadernos importan la plantilla con una ruta relativa como:
 
 ```typst
-#import "../../../plantilla/plantilla.typ": *
-// El main carga sus recursos locales y los pasa a `cuaderno`.
-#show: cuaderno.with(
-  meta: notebook,
-  cover-source: cover-source,
-  bibliography-source: bibliography-source,
-)
+#import "../../../plantilla/cuaderno.typ": *
 ```
 
-Las imágenes de portada no se guardan aquí. Cada una vive en `Imagenes/` dentro de su cuaderno.
+## Portadas disponibles
+
+- `solid`
+- `fullimage` / `cover4` → `portadas/full-image.typ`
+- `fullimage2` / `cover5` → `portadas/full-image-2.typ`
+- `wiley` / `wiley1` / `cover1` → `portadas/wiley-1.typ`
+- `wiley2` / `cover3` → `portadas/wiley-2.typ`
+- `wiley2.1` / `cover6` → `portadas/wiley-2-1.typ`
+- `wiley2.2` / `cover7` → `portadas/wiley-2-2.typ`
+- `cover2` → `portadas/cover-2.typ`

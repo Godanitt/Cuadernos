@@ -1,6 +1,6 @@
 # Salud del proyecto
 
-Informe generado automáticamente por `python -m cuadernos stats --write`.
+Informe generado automáticamente por `python run_all.py stats --write`.
 
 ## Resumen
 

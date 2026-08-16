@@ -1,4 +1,4 @@
-#import "../../../../plantilla/plantilla.typ": *
+#import "../../../../plantilla/cuaderno.typ": *
 
 == Introducción a grupos de Lie
 
@@ -67,7 +67,7 @@ Frente a cambios de bae $L_i arrow tilde(L_i)$ con $i=1,...,d$ ...
 
 // Ejercicios del capítulo
 #pagebreak()
-#import "../../../../plantilla/plantilla.typ": *
+#import "../../../../plantilla/cuaderno.typ": *
 
 
 == Ejercicios
