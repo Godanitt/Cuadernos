@@ -38,7 +38,7 @@ El mecanismo de conducción de calor tiene lugar en los cuerpos sólidos y fluid
 
 Cuando existe un gradiente de temperatura en un cuerpo, se produce la transmisión de calor por conducción desde una región de mayor temperatura hacia la de menor temperatura, siendo *el flujo de energía (q)* proporcional al gradiente de temperatura siguiendo la *ley de Fourier*.
 
-$ q = - kappa dot.op (dif T)/(dif  x) "(W/m"^2) $
+$ q = - kappa dot.op (dif T)/(dif  x) "     [W/m"^2] $
 
 Una condición termodinámica es que el flujo de calor se produce en la dirección en la que disminuye la temperatura, es decir, la dirección opuesta al gradiente de temperatura.
 
@@ -51,7 +51,7 @@ La conductividad térmica, $kappa$ ($"W" dot "m"^(-1) dot "K"^(-1)$), de un mate
 
 #v(1em)
 
-La intensidad de paso de calor por conducción ($"J"/"s"$) se denomina *caudal de calor*. El proporcional al área de la sección normal, al flujo de calor, $A$, al gradiente de temperaturas y a la conductividad calorífica, $kappa$.
+La intensidad de paso de calor por conducción ($"J" slash "s"$) se denomina *caudal de calor*. El proporcional al área de la sección normal, al flujo de calor, $A$, al gradiente de temperaturas y a la conductividad calorífica, $kappa$.
 
 $ Q = - kappa dot.op A dot.op (dif T)/(dif x) arrow Q = q dot.op A $ <eq:caudal>
 
@@ -61,7 +61,7 @@ $ Q = kappa dot.op A (T_1 - T_2)/(x_2 - x_1) $
 
 Llamaremos espesor $e= x_2-x_1$ de la placa. Además, la resistencia se define como $R=e/(kappa dot A)$ de modo que podemos expresar el caudal de calor como:
 
-$   Q=(Delta T)(R) $
+$   Q=(Delta T)/(R) $
 
 Vemos que esta solución es análoga a la *ley de Ohm* de conducción eléctrica $I=(Delta V)/R$.
 
@@ -93,12 +93,12 @@ En el caso de que exista un mal contacto entre las placas se colará aire entre 
 
 En *superficies cilíndricas* el área de conducción se corresponde con $A=2 pi r L$ si resolvemos la ecuación diferencial correspondiente llegamos a que el caudal de calor es:
 
-$  Q = (2 pi L kappa)/(L n(r_2 \/r_1)) (T_1 - T_2) = (Delta T)/R $
+$  Q = (2 pi L kappa)/( "ln"(r_2 \/r_1)) (T_1 - T_2) = (Delta T)/R $
 
-Como vemos en este caso, la resistencia se corresponde con:
+siendo $"ln"$ el logaritmo neperiano. Como vemos en este caso, la resistencia se corresponde con:
 
 $ 
-R = (L n(r_2 \/r_1))/(2 pi L kappa) $
+R = ( "ln"(r_2 \/r_1))/(2 pi L kappa) $
 
 #figure(
   image("../Imagenes/TrasferenciaCalor/04.jpg", width: 30%),
@@ -154,7 +154,7 @@ $
 Q = epsilon dot.op sigma dot.op A dot.op (T_1^4 - T_2^4) $
 
 
-Donde $A$ es el área  de intercambio de calor y $sigma$ es la constante de proporcionalidad de Stefan-Boltzmann ($sigma=5,669 dot 10^{-9} "W"/("m"^2"K"^4)$). Se introduce el término de emisividad $epsilon$ (con valor entre $0$ y $1$) que es la fracción de radiación emitida con respecto a un cuerpo negro.
+Donde $A$ es el área  de intercambio de calor y $sigma$ es la constante de proporcionalidad de Stefan-Boltzmann ($sigma=5,669 dot 10^(-9) "W"/("m"^2"K"^4)$). Se introduce el término de emisividad $epsilon$ (con valor entre $0$ y $1$) que es la fracción de radiación emitida con respecto a un cuerpo negro.
 
 == Coeficiente global de transmisión de calor 
 
@@ -163,7 +163,7 @@ El dispositivo  más sencillo para intercambiar calor entre un fluido frío y un
 $ 
     dif Q=U dot dif A dot Delta T $
 
-Donde $U$ ($"W" dot "m"^{-2} dot "K"^{-2}$) es el *coeficiente global de transmisión de calor*  y se relaciona con la *resistencia calorífica total* por la ecuación:
+Donde $U$ ($"W" dot "m"^(-2) dot "K"^(-2)$) es el *coeficiente global de transmisión de calor*  y se relaciona con la *resistencia calorífica total* por la ecuación:
 
 $ 
     U A = 1 / (sum R) $

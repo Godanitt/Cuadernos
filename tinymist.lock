@@ -101,6 +101,20 @@ root = "file:."
 system-fonts = true
 
 [[document]]
+id = "file:cuadernos/Fisica/Detectores_Particulas/Capitulos/DetectoresGaseosos.typ"
+inputs = []
+main = "file:cuadernos/Fisica/Detectores_Particulas/Capitulos/DetectoresGaseosos.typ"
+root = "file:."
+system-fonts = true
+
+[[document]]
+id = "file:cuadernos/Fisica/Detectores_Particulas/Capitulos/InteraccionRadiacionMateria.typ"
+inputs = []
+main = "file:cuadernos/Fisica/Detectores_Particulas/Capitulos/InteraccionRadiacionMateria.typ"
+root = "file:."
+system-fonts = true
+
+[[document]]
 id = "file:cuadernos/Fisica/Detectores_Particulas/Fis-DetectoresParticulas.typ"
 inputs = []
 main = "file:cuadernos/Fisica/Detectores_Particulas/Fis-DetectoresParticulas.typ"
@@ -569,6 +583,39 @@ main = "file:cuadernos/paper/Photoabsorption_Photoionization_Gases/P-Photoabsorp
 root = "file:."
 system-fonts = true
 
+[[document]]
+id = "file:cuadernos/paper/QE/P-Quantum_Efficiency.typ"
+inputs = []
+main = "file:cuadernos/paper/QE/P-Quantum_Efficiency.typ"
+root = "file:."
+system-fonts = true
+
+[[document]]
+id = "file:cuadernos/paper/SEvENS/P-SEvENS.typ"
+inputs = []
+main = "file:cuadernos/paper/SEvENS/P-SEvENS.typ"
+root = "file:."
+system-fonts = true
+
+[[document]]
+id = "file:cuadernos/paper/Secondary_Avalanches/P-Secondary_Avalanches.typ"
+inputs = []
+main = "file:cuadernos/paper/Secondary_Avalanches/P-Secondary_Avalanches.typ"
+root = "file:."
+system-fonts = true
+
+[[route]]
+id = "file:cuadernos/paper/Photoabsorption_Photoionization_Gases/P-Photoabsorption_Photoionization_Gases.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/paper/QE/P-Quantum_Efficiency.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/paper/Secondary_Avalanches/P-Secondary_Avalanches.typ"
+priority = 256
+
 [[route]]
 id = "file:cuadernos/Arquitectura/Arquitectura/Arq-Arquitectura.typ"
 priority = 256
@@ -630,10 +677,6 @@ id = "file:cuadernos/Fisica/Fisica_Cuantica/Fis-Cuantica.typ"
 priority = 256
 
 [[route]]
-id = "file:cuadernos/Fisica/Detectores_Particulas/Fis-DetectoresParticulas.typ"
-priority = 256
-
-[[route]]
 id = "file:cuadernos/Fisica/Electrodinamica/Fis-Electrodinamica.typ"
 priority = 256
 
@@ -642,15 +685,15 @@ id = "file:cuadernos/Fisica/Estado_Solido/Fis-Estado_Solido.typ"
 priority = 256
 
 [[route]]
-id = "file:cuadernos/Fisica/Fisica_Plasma/Fis-FisicaPlasma.typ"
-priority = 256
-
-[[route]]
 id = "file:cuadernos/Fisica/Fisica_Medica/Fis-Fisica_Medica.typ"
 priority = 256
 
 [[route]]
 id = "file:cuadernos/Fisica/Fisica_Particulas/Fis-Fisica_Particulas.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/Fisica/Fisica_Plasma/Fis-FisicaPlasma.typ"
 priority = 256
 
 [[route]]
@@ -890,7 +933,19 @@ id = "file:cuadernos/Sociales/Urbanismo/Soc-Urbanismo.typ"
 priority = 256
 
 [[route]]
-id = "file:cuadernos/paper/Photoabsorption_Photoionization_Gases/P-Photoabsorption_Photoionization_Gases.typ"
+id = "file:cuadernos/Fisica/Detectores_Particulas/Capitulos/DetectoresGaseosos.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/Fisica/Detectores_Particulas/Fis-DetectoresParticulas.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/Fisica/Detectores_Particulas/Capitulos/InteraccionRadiacionMateria.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/paper/SEvENS/P-SEvENS.typ"
 priority = 256
 
 [[task]]
@@ -1457,5 +1512,19 @@ when = "never"
 document = "file:cuadernos/paper/Photoabsorption_Photoionization_Gases/P-Photoabsorption_Photoionization_Gases.typ"
 id = "file:cuadernos/paper/Photoabsorption_Photoionization_Gases/P-Photoabsorption_Photoionization_Gases.typ"
 output = "paper/P-Photoabsorption_Photoionization_Gases"
+type = "export-pdf"
+when = "never"
+
+[[task]]
+document = "file:cuadernos/paper/QE/P-Quantum_Efficiency.typ"
+id = "file:cuadernos/paper/QE/P-Quantum_Efficiency.typ"
+output = "paper/P-Quantum_Efficiency"
+type = "export-pdf"
+when = "never"
+
+[[task]]
+document = "file:cuadernos/paper/Secondary_Avalanches/P-Secondary_Avalanches.typ"
+id = "file:cuadernos/paper/Secondary_Avalanches/P-Secondary_Avalanches.typ"
+output = "paper/P-Secondary_Avalanches"
 type = "export-pdf"
 when = "never"

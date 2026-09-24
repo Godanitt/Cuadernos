@@ -38,7 +38,7 @@ $ integral_V (delta pi)/(delta t) dif V $
 
 El caudal neto de propiedad extensiva que abandona el recinto de fluido a través de la superficie S por transporte molecular es :
 
-$  -integral_S phi dif vec(S) $
+$  -integral_S varphi dif vec(S) $
 
 Donde $phi$ es el flujo de la propiedad extensiva debido a gradientes de concentración, variable para cada elemento de superficie (cantidad de propiedad que atraviesa la unidad de superficie S en la unidad de tiempo) y el signo $-$ indica que es un cuadal neto que ale del recinto. 
 
@@ -63,16 +63,16 @@ $
     integral_V (delta pi)(delta t) dif V=-integral_S phi dif S - integral_V pi v dif V + integral_V G dif V
 $
 
-Donde $[E]-[S]=- integral_S phi d vec(s)-integral_V pi arrow(v)d arrow(S)$. Además, el caudal se define como $Q_v= arrow(v) dot arrow(S)$ de tal manera que aplicando el teorema del valor medio del cálculo integral:
+Donde $[E]-[S]=- integral_S varphi d vec(s)-integral_V pi arrow(v)d arrow(S)$. Además, el caudal se define como $Q_v= arrow(v) dot arrow(S)$ de tal manera que aplicando el teorema del valor medio del cálculo integral:
 
-$ dif(V, t)  = - sum_i varphi_i S_i +(pi_1 Q_(v, 1) - pi_2 Q_(V, 2)) + G_m V
+$ derivative(pi_m V, t)  = - sum_i varphi_i S_i +(pi_1 Q_(v, 1) - pi_2 Q_(V, 2)) + G_m V
 $
 
 
 Donde:
 
 - $pi_m$ y $G_m$ es el valor medio de la concentración y generación de propiedad en el sistema.
-- $sum_i phi_i vec(S)_i$ se trata de la suma de cuadales netos de propiedad que abandonan el sistema a través de las distintas superficies.
+- $sum_i phi_i (arrow(S)_i)$ se trata de la suma de cuadales netos de propiedad que abandonan el sistema a través de las distintas superficies.
 - $pi_1$ y $pi_2$ los valores medios de concentración de propiedad en las corrientes E y S.
 
 
@@ -85,23 +85,23 @@ Partiendo de la ecuación de conservación de cualquier propiedad extensiva, per
 Dependiendo de que propiedad que se conserva tomemos las unidades de $pi$ cambiarán:
 
 - Materia: concentración de materia ($"kg/m"^3$).
-- Energía: concentración de energía ($"J/M"^3$)
+- Energía: concentración de energía ($"J/m"^3$)
 -Cantidad de movimiento: concentración de cantidad de movimiento($upright(k g /m)^3s$)
 
 Quedando la ecuación macroscópica  de conservación del componente $i$ (masica) (donde $rho$ es la concentración másica de componente $i$):
 
-$ dif(M_(i_T))(t)=(rho_(i_1) Q_(V,1)- rho_(i 2) Q_(V,2))+r_(im)V
+$ derivative(M_(i_T),t)=(rho_(i_1) Q_(V,1)- rho_(i 2) Q_(V,2))+r_(im)V
 $
 
-Donde el último término, el termino de materia total generada, es nulo en unidades masicas ya que la masa no se genera sino que se transforma. Quedando la ecuación macroscópica de conservación de la materia total ecpresada en unidades de masa (OJO: en el caso de numero de moles no se conserva no desaparece el término):
+Donde el último término, el termino de materia total generada, es nulo en unidades masicas yavec que la masa no se genera sino que se transforma. Quedando la ecuación macroscópica de conservación de la materia total ecpresada en unidades de masa (OJO: en el caso de numero de moles no se conserva no desaparece el término):
 
-$ dif(M_(i_T))(t)=(rho_(i_1) Q_(V,1)- rho_(i 2)Q_(V,2)) $
+$ derivative(M_(i_T),t)=(rho_(i_1) Q_(V,1)- rho_(i 2)Q_(V,2)) $
 
-Definimos ahora lo que es la \textbf{base de cálculo}. Esta consiste en la cantidad de materia adecuada que se toma como referncia o bien una cantidad de tiempo de operación. Para elegir esta base de cálculo se recomienda:
+Definimos ahora lo que es la *base de cálculo*. Esta consiste en la cantidad de materia adecuada que se toma como referencia o bien una cantidad de tiempo de operación. Para elegir esta base de cálculo se recomienda:
 
 - Elegir la corriente de la que se dispone más información.
 - Para sistemas líquidos o sólidos la unidad de masa o volumes puede ser más adecuada.
-- PAra sistemas de flujo (corrientes de entrada y salida), se eligiría la unidad de tiempo.
+- Para sistemas de flujo (corrientes de entrada y salida), se eligiría la unidad de tiempo.
 - Para gases: cantidad de masa o bien de volumes siempre y cuando se conozcan las condiciones de $P$ y $T$. ($P V = n R T$).
 
 
@@ -122,9 +122,9 @@ Si $rho="cte"$, es decir se trata de un fluido incompresible:
 
 $ Q_(V 1) = Q_(V 2) -> v_1 S_1 = v_2 S_2 $
 
-Como las secciones no son iguales la velocidad serán diferentes, por lo que donde la superficie sea menor la velocidad será mayor.\\
+Como las secciones no son iguales la velocidad serán diferentes, por lo que donde la superficie sea menor la velocidad será mayor.
 
-Con mucha frecuencia, en la industria, se utilizan sistemas de recirculación. Las recirculaciones consisten en el retorno de una fracción de la corriente de salida de una unidad de operación a la entrada de la misma. Principalmente se utliza para aprovechar la conservación calorífico y para una mejora del rendimiento.\\
+Con mucha frecuencia, en la industria, se utilizan sistemas de recirculación. Las recirculaciones consisten en el retorno de una fracción de la corriente de salida de una unidad de operación a la entrada de la misma. Principalmente se utliza para aprovechar el contenido calorífico y para una mejora del rendimiento.
 
 #figure(
   image(
@@ -185,7 +185,7 @@ Partimos de un caso ideal donde suponemos que la reacción química se completa 
 
 #v(1em)
 
-Como en cualquier cálculo de rendimiento el primer paso que debemos hacer es determinar cual es el \textbf{reactivo limitante}. El reactivo limitante es aquel que está en menor proporción estequimétrica, se consumiría primero en la reacción química y cuando se agota, limita la formación de producto. El reaccitivo limitante se puede obtener dividiendo los moles del reactivo ($N_j$) entre el coeficiente estequimétrico de reactivo ($alpha_j$). De tal modo que en la siguiente ecuación el reactivo $i$ es el limitante cuando se cumpla para el resto de reactivos $j$:
+Como en cualquier cálculo de rendimiento el primer paso que debemos hacer es determinar cual es el *reactivo limitante*. El reactivo limitante es aquel que está en menor proporción estequimétrica, se consumiría primero en la reacción química y cuando se agota, limita la formación de producto. El reaccitivo limitante se puede obtener dividiendo los moles del reactivo ($N_j$) entre el coeficiente estequimétrico de reactivo ($alpha_j$). De tal modo que en la siguiente ecuación el reactivo $i$ es el limitante cuando se cumpla para el resto de reactivos $j$:
 
 $ lr(| (N_j)/(alpha_j) |) > lr(| (N_i)/(alpha_i) |) $
 
@@ -233,7 +233,7 @@ $ "Conversión por paso" = ( ("reactivo en F+R") - "(Reactivo en S)")/"Reactivo 
 
 == Balances de materia en etado no estacionario
 
-$Q_(v 1) dot.op rho_1 - Q_(v 2) dot.op rho_2 = (d M_T)/(d t)$
+$ Q_(v 1) dot.op rho_1 - Q_(v 2) dot.op rho_2 = (d M_T)/(d t) $
 
 En el caso de un sistema en estado no estacionario el término de acumulación no se anula. De modo que la ecuación general se corresponde con la ecuación @ec:01. En este caso el balance de un componente $i$:
 
@@ -245,8 +245,8 @@ $ Q_(v 1) dot.op rho_1 - Q_(v 2) dot.op rho_2 = (d M_T)/(d t) $
 
 En este caso:
 
-    $ Q_{v 1} dot rho_{i 1} eq.not Q_{v 2} dot rho_{i 2} $ 
-    $ v_2 dot S_2  dot rho_{2} eq.not v_1 dot S_1 dot rho_{1} $
+    $ Q_(v 1) dot rho_(i 1) eq.not Q_(v 2) dot rho_(i 2) $  
+    $ v_2 dot S_2  dot rho_(2) eq.not v_1 dot S_1 dot rho_(1) $
     $ m_2 eq.not m_1 $
 
 En sistemas con reacciones químicas se tiene la misma problemática moles/masa del estado estacionario. En sistemas de estados no estacionario una variable fundamental es el tiempo y se recurren a sistemas de ecuaciones diferenciales.
@@ -272,23 +272,23 @@ En función de las fases presentes se pueden clasificar en :
 
 #v(1em)
 
-En ambos casos puede influir la presencia de catalizadores. Un catalizados en euna sustancia que cambia la velocidad de reacción y que no es ni un reactivo ni un producto, ni necesita estar presente en grandes cantidades.
+En ambos casos puede influir la presencia de catalizadores. Un catalizador es una sustancia que cambia la velocidad de reacción y que no es ni un reactivo ni un producto, ni necesita estar presente en grandes cantidades.
 
 #v(1em)
 
 En función del régimen térmico:
 
 
-- Reaccione sisotérmicos: operan a T constante. Estan equipados con sistemas de intercambio de calor que liberan o aportan calor.
+- Reacciones isotérmicos: operan a T constante. Estan equipados con sistemas de intercambio de calor que liberan o aportan calor.
 - Reactores adiabáticos: no hay intercambio de calor con el exterior. En el interior la T varia con el tiempo (se modifica la velocidad de reacción y equilibrio).
 
 
-Según el tipo de operación puede clasificarse en *Continuo, discontinuo o semicontinuo*.\\
+Según el tipo de operación puede clasificarse en *Continuo, discontinuo o semicontinuo*. 
 
 
 === Reactor Discontiuo de tanque agitado (RDTA) 
 
-Los reactivos se introducen al principio de la operación y, una vez transcurrida la reacción, se retiran los productos de reacción (*discontinuo*). Todas las variables varían con el tiempo hasta alcanzar los valores finales. Pueden operar en condiciones isotermas ( T cte) o no isotermac (T no cte). LA variable clave es el tiempo necesario para alcanzar una determinada conversión.
+Los reactivos se introducen al principio de la operación y, una vez transcurrida la reacción, se retiran los productos de reacción (*discontinuo*). Todas las variables varían con el tiempo hasta alcanzar los valores finales. Pueden operar en condiciones isotermas ( T cte) o no isoterma (T no cte). La variable clave es el tiempo necesario para alcanzar una determinada conversión.
 
 #figure(
   image(
@@ -305,7 +305,7 @@ $ -[G]=[A] $
 
 Donde aparece un signo negativo debido a la cantidad de A que reacciona y por lo tanto desaparece ($(-r_A)V$ en mol/s). El término de acumulación en mol/s:
 
-$ (d N_A)/(d t) = (d [N_(A_0) ](1 - x_A))/(d t) = - N_(A_0) dot.op (d x_A)/(d t) $
+$ (d N_A)/(d t) = (d [N_(A_0) (1 - x_A)])/(d t) = - N_(A_0) dot.op (d x_A)/(d t) $
 
 De modo que la ecuación de diseño de RDTA:
 
@@ -319,11 +319,11 @@ $ t = (N_(A_0))/V integral_0^(x_A) (d x_A)/((-r_A)) = C_(A_0) integral_0^(x_A) (
 
 Podemos expresar la conversión  de A como:
 
-$ x_A = (N_(A_0) - N_A)/(N_(A_0)) -> x_A = (V dot.op(C_(A_0) - C_A))/(V dot.op C_(A_0)) $
+$ x_A = (N_(A_0) - N_A)/(N_(A_0)) -> x_A = (V (C_(A_0) - C_A))/(V dot.op C_(A_0)) $
 
 Sabemos que:
 
-$ N_A = N_(A_0) dot.op(1 - x_A) -> C_A = C_(A_0) dot.op(1 - x_A) -> dif C_A = - C_(A_0) dot.op dif x_A $ 
+$ N_A = N_(A_0) dot.op (1 - x_A) -> C_A = C_(A_0) dot.op (1 - x_A) -> dif C_A = - C_(A_0) dot.op dif x_A $ 
 
 De modo que sustituyendo en la eqcuación @ec:RTDA llegamos a que la ecuación de diseño de un RDTA, con volumen constante, en función de las concentraciones (considerando A reactic¡vo limitante) se puede expresar como:
 

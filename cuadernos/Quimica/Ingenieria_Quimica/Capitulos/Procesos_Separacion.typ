@@ -189,7 +189,7 @@ En cada una de las etapas hay equilibrio entre el líquido vapor. Si se aumenta 
 $ 
     N_(min) = (log [ ((x_A)/(x_B))_("dest") ] - log [((x_A)/(x_B))_("res") ])/(log alpha_(A B))  $
 
-Donde $N_(min)$ indica la cantidad de contactos de equilibrio, incluyendo al vaporizador parcial neceario a reflujo total. En un sistema binario (AB) $x_B=1-x_A$ siendo $x_A=x$ la fracción molar del componente más volátil. Siendo la $alpha_{A B}$ la volatilidad relativa promedio $alpha_{A B}=sqrt(alpha_("dest") dot alpha_("res"))$
+Donde $N_(min)$ indica la cantidad de contactos de equilibrio, incluyendo al vaporizador parcial neceario a reflujo total. En un sistema binario (AB) $x_B=1-x_A$ siendo $x_A=x$ la fracción molar del componente más volátil. Siendo la $alpha_(A B)$ la volatilidad relativa promedio $alpha_(A B)=sqrt(alpha_("dest") dot alpha_("res"))$
 
 $ 
     N_(min) = (log [ ((x)/(1-x))_("dest") ] - log [((x)/(1-x))_("res") ])/(log alpha_(A B))  $
@@ -208,7 +208,7 @@ Donde $L_(min)$ es el caudal mínimo de reflujo y $alpha_F$ es la volatilidad re
 
 #v(1em)
 
-Para el *reflujo mínimo* implicaría un número infinito de etapas de equilibrio. El reflujo real requiere de una corrección empírica considerando costes de operación y de construcción}.
+Para el *reflujo mínimo* implicaría un número infinito de etapas de equilibrio. El reflujo real requiere de una corrección empírica considerando costes de operación y de construcción.
 
 $ R = 1,3 dot R_(min) quad quad L = 1,3 dot L_(min) $
 

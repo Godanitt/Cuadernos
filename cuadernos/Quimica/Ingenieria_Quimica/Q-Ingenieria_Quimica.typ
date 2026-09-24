@@ -9,7 +9,7 @@
   area: "Quimica",
   status: "development",
   language: "es",
-  authors: ("María Álvarez Barciela",),
+  authors: ("María Álvarez Barciela","Daniel Vázquez Lago"),
   output: "Q-Ingenieria_Quimica.pdf",
   bibliography: "referencias.bib",
   bibliography_enabled: true,
@@ -30,7 +30,7 @@
       series: "Series Ciencias Químicas",
       date: "today",
       font_size_pt: 12,
-      main_color: "#16aeb9",
+      main_color: "#0D6D74",
       secondary_color: "#43b6bf",
       tertiary_color: "#61afb5",
       typography: "Libertinus Serif",
@@ -88,6 +88,6 @@
 
 #chapter("Procesos de separación")
 #include "Capitulos/Procesos_Separacion.typ"
-#part("Diseño, control y seguridad de procesos")
+
 #nocite(<calleja2008>)
 #nocite(<himmelblau2002>)

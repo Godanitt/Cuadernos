@@ -65,40 +65,44 @@
   bibliography-source: bibliography-source,
 )
 
-#part("Interacción radiación–materia")
-#chapter("")
-#part("Electrónica")
-#chapter("")
+#part("Interacción Radiación-Materia")
+#include "Capitulos/InteraccionRadiacionMateria.typ"
+
+#part("Electronica")
+#include "Capitulos/Electronica.typ"
+
 #part("Estadística")
-#chapter("")
+#include "Capitulos/Estadistica.typ"
+
 #part("Aceleradores")
-#chapter("Sincrotrón")
-#include "Capitulos/Sincrotron.typ"
-#part("Detectores")
+#include "Capitulos/Aceleradores.typ"
 
-#chapter("Indentificación de Partículas")
+#part("Tecnologias de Deteccion")
+#include "Capitulos/TecnologiasDeteccion.typ"
 
-#chapter("Detectores Gaseosos")
+#part("Detectores Gaseosos")
+#include "Capitulos/DetectoresGaseosos.typ"
 
-#chapter("Detectores de Fotones")
+#part("Detectores Líquidos")
+#include "Capitulos/DetectoresLiquidos.typ"
 
-#chapter("Detectores Centelleadores")
+#part("Detectores Semiconductores")
+#include "Capitulos/DetectoresSemiconductores.typ"
 
-#chapter("Detectores Semiconductores")
+#part("Detectores de Centelleo")
+#include "Capitulos/DetectoresCentelleo.typ"
 
-#chapter("Detectores Cherenkov")
+#part("Detectores Cherenkov")
+#include "Capitulos/DetectoresCerenkov.typ"
 
-#chapter("Espectrómetros de muones")
-
-#chapter("Calorímetros")
+#part("Calorímetros")
 #include "Capitulos/Calorimetros.typ"
 
-#chapter("Detectores de Estado Sólido")
-#part("Simulación en física de detectores")
-#chapter("")
+#part("Detectores de Neutrones")
+#include "Capitulos/DetectoresNeutrones.typ"
+
+#part("Softwares de Simulación")
+#include "Capitulos/Simulacion.typ"
+
 #part("Aplicaciones")
-
-#chapter("Detectores en Grandes Experimentos")
-#include "Capitulos/DetectoresGrandesExp.typ"
-
-#chapter("")
+#include "Capitulos/Aplicaciones.typ"

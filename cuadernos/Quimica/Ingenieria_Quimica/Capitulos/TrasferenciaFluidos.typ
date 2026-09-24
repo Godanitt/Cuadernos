@@ -1,7 +1,7 @@
 
 == Introducción
 
-En la mecánica de fluidos mediante el experimento de *Reynolds* se obtuvo la expresión @eq:reynolds la expresión del *número de reynolds* $R_e$ que nos permite conocer en que régimen encontramos. El número de reynolds se define en la ecuación  donde $v$ es la velocidad en $m/s$, $D$ es el diámetro en m, $rho$ es la densidad en $"kg"/"m"^3$ y $mu$ es la viscosidad en $"kg"/("m" dot "p" dot "s")$, de modo que el número de reynolds es adimensional.
+En la mecánica de fluidos mediante el experimento de *Reynolds* se obtuvo la expresión @eq:reynolds la expresión del *número de reynolds* $R_e$ que nos permite conocer en que régimen encontramos. El número de reynolds se define en la ecuación  donde $v$ es la velocidad en $m slash s$, $D$ es el diámetro en m, $rho$ es la densidad en $"kg" slash "m"^3$ y $mu$ es la viscosidad en $"kg" slash ("m" dot "s")$, de modo que el número de reynolds es adimensional.
 
 $
   R_e = (v dot.op D dot.op rho)/mu 
@@ -14,7 +14,7 @@ De modo que si $R_e<2100 $ estamos hablando de régimen laminar, si estamos en e
 Definimos *régimen laminar* como el régimen de flujo en el que las partículas de fluido recorren trayectorias paralelas sin entremezclarse, siendo el mecanismo de transporte exclusivamente molecular. Se da en fluidos con velocidades bajas o viscosidades altas, se cumple cuando el número de Reynolds es inferior a $2100$. El perfil de velocidad en este régimen, teniendo en cuenta la @fig:regimenes se representa, viene dado por:
 
 $
-    v_x=v_(max) dot [1- (((r)/(R))^2 ]
+    v_x=v_(max) dot [1- ((r)/(R))^2 ]
 $
 
 En este caso se cumple que $v_{"media"}/v_{max}=0.5$.
@@ -74,7 +74,7 @@ $ F_("vis") =-m dot sum_i F_i $
 
  que tienen origen en la viscosidad del fluido, es un trabajo cedido por el exterior.
 
-$ g dot.op(z_2 - z_1) +((P_2 - P_1)/rho) + 1/2 (v_2^2 - v_1^2) + sum F = W " ($J/kg$) " $
+$ g dot (z_2 - z_1) +((P_2 - P_1)/rho) + 1/2 (v_2^2 - v_1^2) + sum F = dot(W) "     [J / kg] " $
 
 En régimen laminar podemos utilizar la *ecuación de Poiseuille*:
 
@@ -109,7 +109,7 @@ $
 La rugosidad relativa en conducciones ($epsilon/D$) se determina a través de datos experimentales, para cada tipo de material y diámetro de conducción.
 
 #figure(
-  image("../Imagenes/TrasferenciaFluidos/Imagen-02.jpeg", width: 50%),
+  image("../Imagenes/TrasferenciaFluidos/Imagen-02.jpeg", width: 60%),
   caption: [
     Ejemplo de determinación gráfica de la rugosidad relativa $epsilon / D$.
   ],
@@ -120,7 +120,7 @@ La rugosidad relativa en conducciones ($epsilon/D$) se determina a través de da
 El coeficiente de fricción también se puede determinar mediante el *diagrama de Moody* mediante el número de Reynolds.
 
 #figure(
-  image("../Imagenes/TrasferenciaFluidos/Imagen-03.jpeg", width: 50%),
+  image("../Imagenes/TrasferenciaFluidos/Imagen-03.jpeg", width: 100%),
   caption: [Diagrama de Moody para la determinación del coeficiente de fricción.
   ],
 ) <fig:Moody>

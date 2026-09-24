@@ -185,53 +185,127 @@
     "area": "Fisica",
     "area_label": "Física",
     "status": "skeleton",
-    "progress": 4,
-    "chapters": 11,
+    "progress": 1,
+    "chapters": 46,
     "parts": [
       {
-        "title": "Interacción radiación–materia",
-        "chapters": []
+        "title": "Interacción Radiación-Materia",
+        "chapters": [
+          "Radiación y Materia",
+          "Estructura Molecular y Atómica",
+          "Secciones Eficaces",
+          "Partículas Cargadas",
+          "Colisiones Electrón-Átomo y Electrón-Molécula",
+          "Transporte de Electrones en Materia",
+          "Positrones",
+          "Fotones",
+          "Neutrones"
+        ]
       },
       {
-        "title": "Electrónica",
-        "chapters": []
+        "title": "Electronica",
+        "chapters": [
+          "Señales en Detectores",
+          "Preamplificadores",
+          "Conformación de Pulsos",
+          "Medidas de Energía",
+          "Conteo y Medidas de Corriente",
+          "Medidas de Tiempo",
+          "Medidas de Posición",
+          "Discriminación por Forma de Pulso",
+          "Digitalización y Procesamiento de Señales",
+          "Trasmisión de Señales",
+          "Aquisición de Datos"
+        ]
       },
       {
         "title": "Estadística",
-        "chapters": []
+        "chapters": [
+          "Introducción",
+          "Estimación de Parámetros",
+          "Ajuste e Inferencia",
+          "Técnicas de Remuestreo y Monte Carlo",
+          "Estimación de Densidades de Probabilidad",
+          "Preprocesado y Transformación de Datos",
+          "Reducción Dimensional",
+          "Clasificación Estadística"
+        ]
       },
       {
         "title": "Aceleradores",
         "chapters": [
-          "Sincrotrón"
+          "Introducción"
         ]
       },
       {
-        "title": "Detectores",
+        "title": "Tecnologias de Deteccion",
         "chapters": [
-          "Indentificación de Partículas",
-          "Detectores Gaseosos",
-          "Detectores de Fotones",
-          "Detectores Centelleadores",
-          "Detectores Semiconductores",
-          "Detectores Cherenkov",
-          "Espectrómetros de muones",
-          "Calorímetros",
-          "Detectores de Estado Sólido"
+          "Fotocatodos",
+          "Tecnologia CMOS"
         ]
       },
       {
-        "title": "Simulación en física de detectores",
-        "chapters": []
+        "title": "Detectores Gaseosos",
+        "chapters": [
+          "Introducción",
+          "Detectores de Placas Paralelas",
+          "Contadores Proporcionales",
+          "Cámaras de Deriva",
+          "Lectura Óptica de Detectores Gaseosos",
+          "Estabilidad, Descargas y Degradación",
+          "Ejemplos Concretos"
+        ]
+      },
+      {
+        "title": "Detectores Líquidos",
+        "chapters": [
+          "Introducción"
+        ]
+      },
+      {
+        "title": "Detectores Semiconductores",
+        "chapters": [
+          "Introducción"
+        ]
+      },
+      {
+        "title": "Detectores de Centelleo",
+        "chapters": [
+          "Introducción"
+        ]
+      },
+      {
+        "title": "Detectores Cherenkov",
+        "chapters": [
+          "Introducción"
+        ]
+      },
+      {
+        "title": "Calorímetros",
+        "chapters": [
+          "Introducción"
+        ]
+      },
+      {
+        "title": "Detectores de Neutrones",
+        "chapters": [
+          "Introducción"
+        ]
+      },
+      {
+        "title": "Softwares de Simulación",
+        "chapters": [
+          "Introducción"
+        ]
       },
       {
         "title": "Aplicaciones",
         "chapters": [
-          "Detectores en Grandes Experimentos"
+          "Introducción"
         ]
       }
     ],
-    "pages": 53,
+    "pages": 139,
     "pdf": "pdf/Fis-DetectoresParticulas.pdf",
     "source": "cuadernos/Fisica/Detectores_Particulas"
   },

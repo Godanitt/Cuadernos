@@ -118,7 +118,7 @@ Régimen de funcionamiento en el que las variables no dependen del tiempo, mante
 
 === Régimen no estacionario
 
-Régimen de funcionamiento en el que las variables dependen del tiempo, modificando sus valores durante el transcurso del proceso. Es característico de las operaciones discontinuas. En este régimen se cumple que las condiciones varían a lo largo del tiempo, las variables modifican su valor desde el inicial hatsa el final y las condiciones no tienen por qué ser iguales en todos los puntos. Este tipo de régimen, por ejemplo, se produce:
+Régimen de funcionamiento en el que las variables dependen del tiempo, modificando sus valores durante el transcurso del proceso. Es característico de las operaciones discontinuas. En este régimen se cumple que las condiciones varían a lo largo del tiempo, las variables modifican su valor desde el inicial hasta el final y las condiciones no tienen por qué ser iguales en todos los puntos. Este tipo de régimen, por ejemplo, se produce:
 
 - Llenando o vaciando de un recipiente (tanques).
 - Arranques y paradas de un proceso continuo.
@@ -175,7 +175,7 @@ Se conoce como *flujo cruzado* cuando las corrientes se mueven en direcciones di
 
 Las operaciones unitarias se clasifican en dos tipos:
 
-- Químicas: provocan rescciones químicas $arrow$ Reactores químicos.
+- Químicas: provocan reacciones químicas $arrow$ Reactores químicos.
 - Físicas: provocan un cambio en las características físicas:
     - Materia ($Delta$ Concentración): transferencia de materia entre fases o a través de una barrera. Se produce un cambio en la masa o composición. Por ejemplo en separación de fases y/o componente o mezcla de corrientes.
     - Energía ($Delta$ Temperatura): transferencia de energía calorífica entre fluidos o entre sólido y fluido. Cambio en la cantidad, calidad: enfriamiento, vaporación o cambio de presión.

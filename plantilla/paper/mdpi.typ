@@ -1,30 +1,39 @@
+#import "common.typ": common-authors, author-name, author-department, author-institution, author-city, author-country, author-email, normalized-date
 #import "@preview/splendid-mdpi:0.1.0"
 
-// Adaptador común para papers MDPI.
-// `authors` y `date` usan la estructura nativa de splendid-mdpi.
+// Adaptador MDPI. Recibe SOLO el esquema común `meta` y lo convierte
+// internamente a la estructura nativa de splendid-mdpi.
 #let mdpi-paper(
   meta: (:),
-  authors: (),
-  date: none,
-  doi: "",
   bibliography-source: none,
   body,
-) = [
-  #show: splendid-mdpi.template.with(
-    title: [#meta.title],
-    authors: authors,
-    date: date,
-    keywords: meta.keywords,
-    doi: doi,
-    abstract: [#meta.abstract],
-  )
+) = {
+  let native-authors = common-authors(meta).map(author => (
+    name: author-name(author),
+    department: author-department(meta, author),
+    institution: author-institution(meta, author),
+    city: author-city(meta, author),
+    country: author-country(meta, author),
+    mail: author-email(meta, author),
+  ))
 
-  #body
-
-  #if bibliography-source != none {
-    bibliography(
-      bibliography-source,
-      style: "multidisciplinary-digital-publishing-institute",
+  [
+    #show: splendid-mdpi.template.with(
+      title: [#meta.title],
+      authors: native-authors,
+      date: normalized-date(meta),
+      keywords: meta.at("keywords", default: ()),
+      doi: meta.at("doi", default: ""),
+      abstract: [#meta.at("abstract", default: "")],
     )
-  }
-]
+
+    #body
+
+    #if bibliography-source != none {
+      bibliography(
+        bibliography-source,
+        style: "multidisciplinary-digital-publishing-institute",
+      )
+    }
+  ]
+}

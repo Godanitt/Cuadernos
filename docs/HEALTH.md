@@ -7,8 +7,8 @@ Informe generado automáticamente por `python run_all.py stats --write`.
 - Cuadernos registrados: **80**
 - PDF compilados: **80**
 - PDF actualizados: **80**
-- Páginas compiladas: **2864**
-- Capítulos activos: **982**
+- Páginas compiladas: **2950**
+- Capítulos activos: **1017**
 - Errores de validación: **0**
 - Advertencias: **0**
 
@@ -16,7 +16,7 @@ Informe generado automáticamente por `python run_all.py stats --write`.
 
 | Área | Cuadernos | Capítulos | Páginas | Progreso medio |
 |---|---:|---:|---:|---:|
-| Física | 17 | 385 | 1051 | 2 % |
+| Física | 17 | 420 | 1137 | 2 % |
 | Matemáticas | 7 | 36 | 135 | 12 % |
 | Ingeniería | 16 | 343 | 910 | 2 % |
 | Arquitectura | 1 | 1 | 7 | 5 % |

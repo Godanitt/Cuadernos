@@ -5,6 +5,7 @@
 #import f.shapes: parallelogram, diamond, ellipse
 #import "@preview/lilaq:0.5.0" as lq
 #import "@preview/fontawesome:0.6.0": *
+#import "@preview/unify:0.8.1": *
 
 
 #import("componentes/indice.typ"): *
@@ -98,7 +99,30 @@
           #move(dx: -4pt, block(text(fill: main-color, size: 6em, weight: "bold", part-state.get())))
         ]
       ]
-      align(bottom+right, my-outline-small(title, appendix-state, part-state, part-location,part-change,part-counter, main-color, textSize1: outline-part, textSize2: outline-heading1, textSize3: outline-heading2, textSize4: outline-heading3, depth: outline-small-depth))
+      // La tabla de contenidos local de una parte vive exclusivamente en los
+      // dos tercios inferiores de la página. Darle una altura fija es importante:
+      // además de impedir que invada el número romano/título, permite que
+      // `columns(2)` tenga una región vertical real y reparta las entradas entre
+      // ambas columnas.
+      align(
+        bottom + right,
+        block(width: 100%, height: 66%)[
+          #my-outline-small(
+            title,
+            appendix-state,
+            part-state,
+            part-location,
+            part-change,
+            part-counter,
+            main-color,
+            textSize1: outline-part,
+            textSize2: outline-heading1,
+            textSize3: outline-heading2,
+            textSize4: outline-heading3,
+            depth: outline-small-depth,
+          )
+        ],
+      )
     } 
   ]
 }
@@ -735,7 +759,7 @@ show math.equation: set text(font: math-typography)
 
   set par(
     justify: true,
-    spacing: 0.5em
+    spacing: 1.5em
   ) if not first-line-indent
 
   set block(spacing: 1.2em)

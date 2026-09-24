@@ -5,10 +5,26 @@
   id: "P-Photoabsorption_Photoionization_Gases",
   slug: "photoabsorption-photoionization-gases",
   title: "Photoabsorption and Photoionization in Gases",
-  // Cambia únicamente esta línea por "ieee" o "mdpi" para probar otro estilo.
-  // Si se omite `style`, el gestor y la plantilla usan Elsevier por defecto.
+
+  // Solo cambia esta línea: "elsevier", "ieee" o "mdpi".
+  // Si se omite, Elsevier es el estilo por defecto.
   style: "elsevier",
-  authors: ("Daniel Vázquez Lago",),
+
+  // Esquema COMÚN para los tres estilos.
+  authors: (
+    (
+      name: "Daniel Vázquez Lago",
+      department: "Department of Particle Physics",
+      institution: "Cuadernos project",
+      city: "Santiago de Compostela",
+      country: "Spain",
+      email: "daniel@example.com",
+      corresponding: true,
+    ),
+  ),
+
+  date: (year: 2026, month: "September", day: 6),
+  doi: "",
   output: "P-Photoabsorption_Photoionization_Gases.pdf",
   bibliography: "referencias.bib",
   bibliography_enabled: false,
@@ -18,47 +34,7 @@
 )
 // </paper:metadata>
 
-// The body is common to all styles. Only the author dictionaries below adapt
-// the same metadata to the native API of each external template.
-#let elsevier-authors = (
-  (
-    name: [Daniel Vázquez Lago],
-    affiliations: ("a",),
-    corresponding: true,
-    email: "daniel@example.com",
-  ),
-)
-#let elsevier-affiliations = (
-  "a": [Cuadernos project, Spain],
-)
-
-#let ieee-authors = (
-  (
-    name: [Daniel Vázquez Lago],
-    organization: [Cuadernos project],
-    location: [Spain],
-    email: "daniel@example.com",
-  ),
-)
-
-#let mdpi-authors = (
-  (
-    name: "Daniel Vázquez Lago",
-    department: "Test paper",
-    institution: "Cuadernos project",
-    city: "Madrid",
-    country: "Spain",
-    mail: "daniel@example.com",
-  ),
-)
-
-#show: paper-template.with(
-  meta: paper,
-  elsevier-authors: elsevier-authors,
-  elsevier-affiliations: elsevier-affiliations,
-  ieee-authors: ieee-authors,
-  mdpi-authors: mdpi-authors,
-)
+#show: paper-template.with(meta: paper)
 
 = Introduction
 

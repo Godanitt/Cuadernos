@@ -21,7 +21,7 @@ Trataremos diferentes tipos de sistemas:
 
 + *Sistema abierto*: en estos sistemas hablaremos de procesos continuos. El sistema permite la entrada y la salida de materia y energía ( $[E]eq.not 0$ y $[S]eq.not 0$.
 + *Sistema cerrado*: en estos sistemas hablaremos de procesos discontinuos. Se trata de un sistema que no permite la entrada y salida de materia pero si de energía.
-+ *Sistema adiabático*: sistema que no intercambia materia y energía con los alrededores. ($[E]=0$ y$[S]=0$).
++ *Sistema adiabático y discontinuo*: sistema que no intercambia materia y energía con los alrededores. ($[E]=0$ y$[S]=0$).
 
 
 === Clasificación de las energías 
@@ -30,7 +30,7 @@ También tenemos que tener claro las diferentes formas de expresión de la energ
 
 #v(1em)
 
-La *enerǵia electromagnética* incluye las diferentes manifestaciones de la energía debida a los campos electrostático y magnético y a la corriente electrica.  También trataremos la *energía química* que es la energía de los compuestos relacionada con las reacciones químicas. La *energía metabólica* es la energía generada por los organismos vivos por oxidaión de los alimentos digeridos. La *energía nuclear* es un caso particular de energía química, que está relacionada con las reacciones de fusión y fisión nuclear. 
+La *enerǵia electromagnética* incluye las diferentes manifestaciones de la energía debida a los campos electrostático y magnético y a la corriente electrica.  También trataremos la *energía química* que es la energía de los compuestos relacionada con las reacciones químicas. La *energía metabólica* es la energía generada por los organismos vivos por oxidación de los alimentos digeridos. La *energía nuclear* es un caso particular de energía química, que está relacionada con las reacciones de fusión y fisión nuclear. 
 
 #v(1em)
 
@@ -68,12 +68,11 @@ Para un cuerpo de masa $m $ (kg) que se encuentra a una temperatura $T$, $C_p$ e
 
 === Calor y Trabajo 
 
-La transferencia de energía entre un sistema cerrado y sus alrededores puede darse en forme de calor o de trabajo (son formas de energía de transito: nunca se almacenan). El aporte de calor y/o tra
-#v(1em)bajo son formas de aumentar su contenido en energía en alguna de sus formas anteriores (potencial, cinética o interna).
+La transferencia de energía entre un sistema cerrado y sus alrededores puede darse en forme de calor o de trabajo (son formas de energía de transito: nunca se almacenan). El aporte de calor y/o trabajo son formas de aumentar su contenido en energía en alguna de sus formas anteriores (potencial, cinética o interna).
 
 #v(1em)
 
-El *calor (Q)* es la energía en tránsito debida a una diferencia de temperaturas entre un sistema y sus alrededores. Siempre se transmite del foco caliente al frio, sienso el gradiente de temperaturas la fuerza impulsora. Se representa en la @ec:calor donde $dot(U)$ es el coeficiente empírico ($"W" dot"m"^{-2} dot "K"^{-1}$.\\
+El *calor (Q)* es la energía en tránsito debida a una diferencia de temperaturas entre un sistema y sus alrededores. Siempre se transmite del foco caliente al frio, sienso el gradiente de temperaturas la fuerza impulsora. Se representa en la @ec:calor donde $dot(U)$ es el coeficiente empírico ($"W" dot"m"^(-2) dot "K"^(-1)$.
 
 $ Q= dot(U) dot A dot Delta T $ <ec:calor>
 
@@ -130,7 +129,7 @@ $ Delta E=E_(t 2)-E_(t 1)= Delta U + Delta E_c + Delta E_p =Q+W $
 
 Un *sistema abierto* es un sistema continuo por lo que existe una transferencia de materia. Recordemos la expresión del balance de materia obtenida en el Tema 2:
 
-$  (dif (pi_m V))/(dif t)=- sum_i phi_i vec(S)_i+ pi_1 Q_(v,1)- pi_(2 Q_(V,2))+G_(m V) $
+$  (dif (pi_m V))/(dif t)=- sum_i phi_i vec(S)_i+ pi_1 Q_(v,1)- pi_(2) Q_(V,2) +G_(m) V $
 
 La energía asociada a la materia recordemos que es la energía interna $U$, la energía cinética $E_c$ y la energía potencial $E_p$. De modo que la energía del sistema.
 $
@@ -155,14 +154,14 @@ $
 Además sabemos que la entalpía se puede expresar como $H=U+P/rho$ por lo que sustituyendo llegamos a la *ecuación de conservación de energía en régimen estacionario*: 
 
 
-$ g dot (z_1-z_2)+(H_1-H_2)+1/2 dot (v_1^2-v_2^2)+dot(Q)+dot(W)=0 $
+$ g dot (z_1-z_2)+ m dot (H_1-H_2)+1/2 dot (v_1^2-v_2^2)+dot(Q)+dot(W)=0 $
 
 == Balances entálpicos
 
-Partu¡iendo de la ecuación de valance de enegía expresada en vatios ($W$):
+Partiendo de la ecuación de valance de enegía expresada en vatios ($W$):
 
 $
-    m dot g dot (z_1-z_2)+(H_1-H_2)+1/2 dot (v_1^2-v_2^2)+Q+W=0
+    m dot g dot (z_1-z_2)+(H_1-H_2)+1/2 dot m dot (v_1^2-v_2^2)+Q+W=0
 $
 
 En muchos de los procesos de la industría química en régimen estacionario las variaciones de energía potencial ($Delta E_p$) y cinética ($Delta E_c$) son despreciables. Además si no existe una máquina el trabajo también es nulo por lo que llegamos a la ecuación de *balance entálpico*.
@@ -179,7 +178,7 @@ La entalpía de una sustancia depende de su composición química, estado de agr
 
 Suponiendo como despreciable la variación de la entalpía especifica con la presión, para un *compuesto puro*, ésta se podróa calcular respecto a una temperatura de referencia ($T_("ref")$) mediante la ecuación:
 
-$  H_T=H_("ref")+integral_(T_("ref"))^T C_p dif T=H _("ref")+ (T_("ref")+(C_p) dot (T-T_("ref")) $
+$  H_T=H_("ref")+integral_(T_("ref"))^T C_p dif T=H _("ref")+ dash(C_p) dot (T-T_("ref")) $
 
 Ecuación que es rigurosamente cierta para transformaciones a $P $ constante y cualquier tranformación de un gas ideal. La capacidad calorífica especifica $dash(C_P)$ se calcula de forma rápida como el valor de $C_p$ correspondiente al intermedio entre $T_1$ y $T_2$ ($dash(C_P)=(Delta H)/(Delta T)$). 
 
@@ -242,7 +241,7 @@ $
   caption: "Sistema de un componente para cálculo de entalpía entre 1 y 2.",
 ) <fig:cambio-fase-2>
 
-Cuando tenemos N componentes tenemso que tener en cuenta que :
+Cuando tenemos N componentes tenemos que tener en cuenta que :
 
 - Cada componente i tiene un calor específico en cada estado .($C_(p,i)^A,C_(p,i)^B$)
 - En el cambio de estado, cada componente tiene su calor latente.($lambda_(A arrow B,i)$
@@ -250,9 +249,9 @@ Cuando tenemos N componentes tenemso que tener en cuenta que :
 
 #v(1em)
 
-Por lo que si consideramos N componentes a la misma $T_("inicial"}$($T_1$) que cambian de estado y son calentados hasta la misma $T_("final")$($T_2$):
+Por lo que si consideramos N componentes a la misma $T_("inicial")$($T_1$) que cambian de estado y son calentados hasta la misma $T_("final")$($T_2$):
 
-$
+$ 
     Delta H_(T_1 arrow T_2)^(A arrow B)= sum_(i=1)^N x_i dot C_(p,i)^A dot (T_(A arrow B)-T_1)+sum_(i=1)^N x_i dot lambda_(A arrow B,l)+sum_(i=1)^N x_i dot C_(p,i)^B dot (T_2-T_(A arrow B))
 $
 \

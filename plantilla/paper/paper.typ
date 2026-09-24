@@ -3,25 +3,27 @@
 #import "mdpi.typ": mdpi-paper
 
 // Dispatcher editorial común.
-// Si `style` no está definido en los metadatos, Elsevier es el valor por defecto.
+//
+// IMPORTANTE: todos los estilos consumen exactamente el MISMO `meta`.
+// Cambiar de Elsevier a IEEE o MDPI solo requiere cambiar `style`.
+//
+// Los argumentos específicos antiguos se mantienen temporalmente en la firma
+// para que los papers creados con la primera versión sigan compilando, pero ya
+// no se usan. La información editorial sale siempre de `meta`.
 #let paper-template(
   meta: (:),
   style: none,
   bibliography-source: none,
 
-  // Elsevier
+  // Compatibilidad con la primera versión del sistema (ignorados).
   elsevier-authors: (),
   elsevier-affiliations: (:),
   elsevier-journal: none,
   elsevier-paper-type: none,
   elsevier-paper-info: (:),
-
-  // IEEE
   ieee-authors: (),
   ieee-paper-size: "us-letter",
-  ieee-figure-supplement: "Fig.",
-
-  // MDPI
+  ieee-figure-supplement: [Fig.],
   mdpi-authors: (),
   mdpi-date: none,
   mdpi-doi: "",
@@ -37,8 +39,6 @@
   if selected-style == "elsevier" {
     elsevier-paper.with(
       meta: meta,
-      authors: elsevier-authors,
-      affiliations: elsevier-affiliations,
       journal: elsevier-journal,
       paper-type: elsevier-paper-type,
       paper-info: elsevier-paper-info,
@@ -47,7 +47,6 @@
   } else if selected-style == "ieee" {
     ieee-paper.with(
       meta: meta,
-      authors: ieee-authors,
       bibliography-source: bibliography-source,
       paper-size: ieee-paper-size,
       figure-supplement: ieee-figure-supplement,
@@ -55,9 +54,6 @@
   } else if selected-style == "mdpi" {
     mdpi-paper.with(
       meta: meta,
-      authors: mdpi-authors,
-      date: mdpi-date,
-      doi: mdpi-doi,
       bibliography-source: bibliography-source,
     )(body)
   } else {

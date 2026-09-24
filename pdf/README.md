@@ -7,7 +7,7 @@ Esta carpeta contiene exclusivamente las publicaciones generadas. Los fuentes vi
 | `Fis-Astrofisica` | Astrofísica y Cosmología | 17 | Actualizado | [`Fis-Astrofisica.pdf`](Fis-Astrofisica.pdf) |
 | `Fis-Atomica` | Física Atómica y Molecular | 63 | Actualizado | [`Fis-Atomica.pdf`](Fis-Atomica.pdf) |
 | `Fis-Cuantica` | Física Cuántica | 73 | Actualizado | [`Fis-Cuantica.pdf`](Fis-Cuantica.pdf) |
-| `Fis-DetectoresParticulas` | Detectores en Física Nuclear y Partículas | 53 | Actualizado | [`Fis-DetectoresParticulas.pdf`](Fis-DetectoresParticulas.pdf) |
+| `Fis-DetectoresParticulas` | Detectores en Física Nuclear y Partículas | 139 | Actualizado | [`Fis-DetectoresParticulas.pdf`](Fis-DetectoresParticulas.pdf) |
 | `Fis-Electrodinamica` | Electrodinámica | 45 | Actualizado | [`Fis-Electrodinamica.pdf`](Fis-Electrodinamica.pdf) |
 | `Fis-Estado_Solido` | Física del Estado Sólido | 73 | Actualizado | [`Fis-Estado_Solido.pdf`](Fis-Estado_Solido.pdf) |
 | `Fis-Fisica_Medica` | Física Médica | 7 | Actualizado | [`Fis-Fisica_Medica.pdf`](Fis-Fisica_Medica.pdf) |

@@ -1,32 +1,58 @@
 # Plantillas de paper
 
-`paper.typ` es la entrada común para todos los artículos. Actúa como dispatcher
-y mantiene el cuerpo del paper independiente del formato editorial.
+Todos los papers usan **un único esquema de metadatos**. Los adaptadores de esta
+carpeta traducen ese esquema internamente al formato nativo de cada paquete.
 
-## Estilos
+Estilos disponibles:
 
-- `elsevier` (por defecto) → `@preview/elspub:1.0.0`
-- `ieee` → `@preview/charged-ieee:0.1.4`
-- `mdpi` → `@preview/splendid-mdpi:0.1.0`
+- `elsevier` — por defecto; siempre a dos columnas.
+- `ieee` — `charged-ieee`.
+- `mdpi` — `splendid-mdpi`.
 
-Los adaptadores específicos son:
-
-```text
-paper.typ
-├── elsevier.typ
-├── ieee.typ
-└── mdpi.typ
-```
-
-Un paper normal importa únicamente `paper.typ`:
+Cambiar de estilo debe requerir únicamente:
 
 ```typst
-#import "../../../plantilla/paper/paper.typ": paper-template
+style: "elsevier",
 ```
 
-El estilo se selecciona en `paper.style`. Si no existe ese campo, el dispatcher
-usa Elsevier.
+por:
 
-La carpeta `cuadernos/paper/Photoabsorption_Photoionization_Gases/` contiene un
-ejemplo mínimo que define los perfiles de autor de los tres formatos y reutiliza
-exactamente el mismo cuerpo científico.
+```typst
+style: "ieee",
+```
+
+ó:
+
+```typst
+style: "mdpi",
+```
+
+## Esquema común
+
+```typst
+#let paper = (
+  title: "Paper title",
+  style: "elsevier",
+  authors: (
+    (
+      name: "Author Name",
+      department: "Department",
+      institution: "Institution",
+      city: "City",
+      country: "Country",
+      email: "author@example.com",
+      orcid: "0000-0000-0000-0000",
+      corresponding: true,
+    ),
+  ),
+  date: (year: 2026, month: "September", day: 6),
+  doi: "",
+  abstract: "Abstract...",
+  keywords: ("keyword 1", "keyword 2"),
+)
+
+#show: paper-template.with(meta: paper)
+```
+
+También se acepta el formato abreviado `authors: ("Author Name",)`. Los campos
+ausentes reciben valores seguros por defecto dentro de los adaptadores.

@@ -18,6 +18,26 @@ def _list(value: Any, default: list[str] | None = None) -> list[str]:
     return [str(value)]
 
 
+def _author_names(value: Any, default: list[str] | None = None) -> list[str]:
+    """Extrae nombres del esquema común de autores de paper.
+
+    Admite tanto `authors: ("Nombre",)` como
+    `authors: ((name: "Nombre", ...),)`.
+    """
+    if value is None:
+        return list(default or [])
+    items = value if isinstance(value, (list, tuple)) else [value]
+    names: list[str] = []
+    for item in items:
+        if isinstance(item, dict):
+            name = item.get("name")
+            if name:
+                names.append(str(name))
+        elif item is not None:
+            names.append(str(item))
+    return names or list(default or [])
+
+
 @dataclass(slots=True)
 class Paper:
     root: Path
@@ -80,7 +100,7 @@ def load_paper(main_path: Path, root: Path) -> Paper:
         slug=slug,
         title=title,
         style=str(data.get("style") or "elsevier").casefold(),
-        authors=_list(data.get("authors"), [settings.default_author]),
+        authors=_author_names(data.get("authors"), [settings.default_author]),
         main_file=main_path.name,
         output_file=output,
         bibliography_file=bibliography,
