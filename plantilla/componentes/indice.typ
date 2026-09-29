@@ -21,6 +21,7 @@
   // Estilo base
   set text(size: textSize, fill: textColor, weight: textWeight)
 
+
   // Medimos el ancho REAL del número
   let num-box = measure(text(number))
 
@@ -110,10 +111,25 @@
 }
 
 #let my-outline-small(partTitle, appendix-state, part-state, part-location,part-change,part-counter, main-color, textSize1:none, textSize2:none, textSize3:none, textSize4:none, depth: 2) = {
+  // El índice local de cada #part tiene su propio espaciado y NO hereda
+  // el espaciado amplio usado en los párrafos del cuerpo del cuaderno.
+  set par(
+    spacing: 0em,
+    leading: 0.35em,
+  )
+  // Evita que el espaciado global de bloques del cuerpo se cuele en el outline.
+  set block(spacing: 0em)
+
   // El índice local de cada #part se muestra de forma compacta en dos columnas.
   // Reducimos ligeramente la tipografía respecto al índice general para aprovechar
   // mejor la página de apertura de parte sin alterar el resto del libro.
-  let compact-size(size) = if size == none { none } else { size * 0.84 }
+  let compact-size(size) = if size == none { none } else { size * 0.90 }
+
+  set par(
+      leading: 0.35em,
+      spacing: 1.3em,
+    )
+
 
   show outline.entry: it => {
     let appendix-state = appendix-state.at(it.element.location())
@@ -128,9 +144,9 @@
     let part-state = part-state.at(it.element.location())
     if (part-state == partTitle and counterInt.first() >0 and appendix-state==none){
       if it.level == 1 {
-        v(0.28cm, weak: true)
+        v(0.12cm, weak: true)
         my-outline-row(
-          insetSize: 1pt,
+          insetSize: 11pt,
           textWeight: "bold",
           textSize: compact-size(textSize2),
           textColor: main-color,
@@ -139,7 +155,7 @@
           heading_page: heading_page,
           location: it.element.location(),
           sangria: 0.15cm,
-          hspace: 0.0cm,
+          hspace: -1.5em,
         )
       }
       else if it.level ==2 {
@@ -152,7 +168,7 @@
           heading_page: text(fill: black, heading_page),
           location: it.element.location(),
           sangria: 0.55cm,
-          hspace: 0.0cm,
+          hspace: -0.10em,
         )
       }
     }

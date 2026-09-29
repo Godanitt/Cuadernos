@@ -605,6 +605,18 @@ root = "file:."
 system-fonts = true
 
 [[route]]
+id = "file:cuadernos/Fisica/Detectores_Particulas/Capitulos/DetectoresGaseosos.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/Fisica/Detectores_Particulas/Capitulos/InteraccionRadiacionMateria.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/paper/SEvENS/P-SEvENS.typ"
+priority = 256
+
+[[route]]
 id = "file:cuadernos/paper/Photoabsorption_Photoionization_Gases/P-Photoabsorption_Photoionization_Gases.typ"
 priority = 256
 
@@ -674,6 +686,10 @@ priority = 256
 
 [[route]]
 id = "file:cuadernos/Fisica/Fisica_Cuantica/Fis-Cuantica.typ"
+priority = 256
+
+[[route]]
+id = "file:cuadernos/Fisica/Detectores_Particulas/Fis-DetectoresParticulas.typ"
 priority = 256
 
 [[route]]
@@ -893,10 +909,6 @@ id = "file:cuadernos/Quimica/Bioquimica/Q-Bioquimica.typ"
 priority = 256
 
 [[route]]
-id = "file:cuadernos/Quimica/Ingenieria_Quimica/Q-Ingenieria_Quimica.typ"
-priority = 256
-
-[[route]]
 id = "file:cuadernos/Quimica/Quimica_Analitica/Q-Quimica_Analitica.typ"
 priority = 256
 
@@ -933,19 +945,7 @@ id = "file:cuadernos/Sociales/Urbanismo/Soc-Urbanismo.typ"
 priority = 256
 
 [[route]]
-id = "file:cuadernos/Fisica/Detectores_Particulas/Capitulos/DetectoresGaseosos.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/Fisica/Detectores_Particulas/Fis-DetectoresParticulas.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/Fisica/Detectores_Particulas/Capitulos/InteraccionRadiacionMateria.typ"
-priority = 256
-
-[[route]]
-id = "file:cuadernos/paper/SEvENS/P-SEvENS.typ"
+id = "file:cuadernos/Quimica/Ingenieria_Quimica/Q-Ingenieria_Quimica.typ"
 priority = 256
 
 [[task]]

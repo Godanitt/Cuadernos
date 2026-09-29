@@ -377,15 +377,15 @@
 #let book(title: "", subtitle: "", series: "", volume: "", typography: "Libertinus Serif", math-typography: "Libertinus Math", date: "", author: (), paper-size: "a4", width: none, height: none, margin: (x: 2cm, bottom: 2.5cm, top: 3cm), logo: none, cover: none, image-index:none, body, main-color: blue, seccond-color: blue,third-color: blue, copyright: [], lang: "en", list-of-figure-title: none, list-of-table-title: none, supplement-chapter: "Chapter", supplement-part: "Part", font-size: 10pt, part-style: 0, format: "solid", cover-theme: "dark", cover-zoom: 1.0, cover-dx: 0cm, cover-dy: 0cm, github-url: "https://github.com/Godanitt/Cuadernos", cover-text-color: "auto", lowercase-references: false, padded-heading-number: true, outline-small-depth: 2, heading-style-compact: false, first-line-indent: true) = {
   set document(author: author, title: title)
   set text(size: font-size, lang: lang)
-  set par(leading: 0.6em)
+  set par(leading: 0.65em)
   set enum(
     numbering: "1.a.i.", 
     body-indent: 0.5em,
-    spacing: 1em,
+    spacing: 0.5em,
     indent: 1.5em)
   set list(
     indent: 1.5em,
-    spacing: 1em,
+    spacing: 0.5em,
     marker: (
       [#move(dy:-0.5mm)[#text(size: 1.1em)[$bullet$]]],
       [#text(size: 0.9em)[$bullet$]],
@@ -757,9 +757,11 @@ show math.equation: set text(font: math-typography)
   ) if first-line-indent
   */
 
+  // Espaciado general del cuerpo. Se controla aquí para todos los cuadernos.
   set par(
     justify: true,
-    spacing: 1.5em
+    leading: 0.65em,
+    spacing: 1.1em,
   ) if not first-line-indent
 
   set block(spacing: 1.2em)

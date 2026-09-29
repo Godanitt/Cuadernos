@@ -148,7 +148,7 @@ $  0=m dot (U+E_p+E_c)_1-m dot (U+E_p+E_c)_2+Q+W+m [(P_1)/(rho_1)-(P_2)/(rho_2) 
 Si sustituimos en esta ecuación las expresiones de la energía cinética ($E_c=1/2 dot m dot v^2$) y de la energía potencial ($E_p=m  dot g dot z$) llegamos a :
 
 $
-    g dot (z_1-z_2)+(U_1-U_2)+1/2 dot (v_1^2-v_2^2)+dot(Q)+dot(W)+((P_1))/(rho_1)-(P_2)/(rho_2))=0
+    g dot (z_1-z_2)+(U_1-U_2)+1/2 dot (v_1^2-v_2^2)+dot(Q)+dot(W)+( (P_1)/(rho_1)-(P_2)/(rho_2) )=0
 $ 
 
 Además sabemos que la entalpía se puede expresar como $H=U+P/rho$ por lo que sustituyendo llegamos a la *ecuación de conservación de energía en régimen estacionario*: 
@@ -233,7 +233,7 @@ $
 Donde $lambda_{A arrow B}$ se corresponde al calor latente de la transición de fase. De modo que la difenrencia de entalpía entre 1 y 2 es:
 
 $
-    Delta H_(T_1 arrow T_2)^{A arrow B}=dash(C_(p,A)) dot (T_(A arrow B)-T_(1))+lambda_(A arrow B)+dash(C_(p,B))dot (T_2-T_(A arrow B)))
+    Delta H_(T_1 arrow T_2)^{A arrow B}=dash(C_(p,A)) dot (T_(A arrow B)-T_(1))+lambda_(A arrow B)+dash(C_(p,B))dot (T_2-T_(A arrow B))
 $
 
 #figure(
@@ -277,7 +277,8 @@ $
 Donde la diferencia de calor sensible viene dada por:
 
 $
-Delta H_1 = sum_(i = 1)^N x_(i, 1) dot.op dash(C)_(p, i) dot.op (T_("ref") - T_1)$
+Delta H_1 = sum_(i = 1)^N x_(i, 1) dot.op dash(C)_(p, i) dot.op (T_("ref") - T_1)
+$
 $
 Delta H_2 = sum_(i=1)^N x_(i,1) dot macron(C)_(p,i) dot (T_2-T_("ref"))
 $

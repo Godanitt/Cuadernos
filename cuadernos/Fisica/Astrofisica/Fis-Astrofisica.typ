@@ -71,11 +71,6 @@
 #let He4 = $""^4"He"$
 #let Li7 = $""^7"Li"$
 
-#set par(
-  justify: true,
-  leading: 0.65em,
-  spacing: 1.5em,
-)
 
 #part("Astrofísica Nuclear")
 

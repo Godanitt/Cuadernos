@@ -70,7 +70,6 @@
   bibliography-source: bibliography-source,
 )
 
-#set par(justify: true, leading: 0.65em, spacing: 1.5em)
 
 #part("Medidas de frecuencia y asociación")
 

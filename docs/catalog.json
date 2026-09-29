@@ -185,14 +185,14 @@
     "area": "Fisica",
     "area_label": "Física",
     "status": "skeleton",
-    "progress": 1,
-    "chapters": 46,
+    "progress": 2,
+    "chapters": 45,
     "parts": [
       {
         "title": "Interacción Radiación-Materia",
         "chapters": [
           "Radiación y Materia",
-          "Estructura Molecular y Atómica",
+          "Estructura Atómico-Molecualar",
           "Secciones Eficaces",
           "Partículas Cargadas",
           "Colisiones Electrón-Átomo y Electrón-Molécula",
@@ -250,7 +250,6 @@
           "Introducción",
           "Detectores de Placas Paralelas",
           "Contadores Proporcionales",
-          "Cámaras de Deriva",
           "Lectura Óptica de Detectores Gaseosos",
           "Estabilidad, Descargas y Degradación",
           "Ejemplos Concretos"
@@ -305,7 +304,7 @@
         ]
       }
     ],
-    "pages": 139,
+    "pages": 133,
     "pdf": "pdf/Fis-DetectoresParticulas.pdf",
     "source": "cuadernos/Fisica/Detectores_Particulas"
   },
@@ -2529,13 +2528,9 @@
         "chapters": [
           "Procesos de separación"
         ]
-      },
-      {
-        "title": "Diseño, control y seguridad de procesos",
-        "chapters": []
       }
     ],
-    "pages": 61,
+    "pages": 59,
     "pdf": "pdf/Q-Ingenieria_Quimica.pdf",
     "source": "cuadernos/Quimica/Ingenieria_Quimica"
   },

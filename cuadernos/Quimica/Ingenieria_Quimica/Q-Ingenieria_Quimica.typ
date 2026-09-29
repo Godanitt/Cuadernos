@@ -19,7 +19,7 @@
   tags: ("ingenieria-quimica",),
   cover: (
       style: "fullimage",
-      image: "Imagenes/chemical_enginering_1.png",
+      image: "Imagenes/chemical_enginering_4.png",
       theme: "dark",
       zoom: 1.0,
       dx_cm: 0.0,

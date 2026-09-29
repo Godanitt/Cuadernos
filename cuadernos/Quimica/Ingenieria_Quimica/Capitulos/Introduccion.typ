@@ -5,7 +5,7 @@
 La industria química es la industria que se ocupa de trasformar mediante procesos químicos y físicos meterias primas en otros productos de mayor interés, valor añadido y utilidad. Las transformaciones suelen implicar cambios de composición y/o contenido energético. Tras estas transformaciones podemos obtener varios tipos de productos denominados como *producto, subproducto y residuo*.
 
 - Producto: producto objetivo del proceso, de alto valor o interés.
--Subproducto: producto secundario de una reacción química, generalmente no deseado, por su menor interés o por la complicación que puede ocasionar en el proceso.
+- Subproducto: producto secundario de una reacción química, generalmente no deseado, por su menor interés o por la complicación que puede ocasionar en el proceso.
 - Residuo: subproducto o material residual de un proceso, sin valor o interés, que ademas puede representar un riesgo para el medio ambiente, para su eliminación tendrán que ser tratados para reducir su impacto a la hora de eliminarlos.
 - Coproducto: subproducto con interés comercial, para vender a otra industria química o de alto valor.
 
@@ -209,25 +209,3 @@ Se conoce como destilación y consiste en la separación de una mezcla líquida 
 
 Existen otro tipo de operaciones como aislamiento térmico, intercambio de calor, impulsión de fluidos, flujo de fluidos, transporte de sólidos, tritiración y molienda, tamizado, almacenamiento y operaciones de menbrana (ósmosis, pervaporación).
 
-
-==== Líquido-Líquido
-
-Este tipo de operación se conoce como extración. Se trata de una operación de separación por transferencia de materia en las que se ponen en contacto mezclas líquidas inmiscibles con objeto de transferir uno o varios componentes (soluto) de una fase a otra. 
-
-Normalmente se añade un disolvente selectivo a la mezcla líquida original cuyos componentes se deseean separa. El disolvente es inmiscible con ella, y actua como agente extractor. LAs corrientes líquidas obtenidas se denominan refinado (mezcla de la que han extraido los solutos) y extracto (mezcla de disolvente y solutos).
-
-==== Sólido-Líquido
-
-Es análoga a la extracción líquido-líquido. Se denomina lixiviación y consiste en la separación de uno o varios solutos contenidos en una fase sólida mediante su contacto con un disolvente liquido selectivo. Permite separar los productos deseados del conjunto de la estructura sólida original.  
-
-==== Sólido-gas
-
-
-Se denomina adsorción y consiste en que uno o más componentes de una mezcla, gaseosa o líquida, se adsorben preferentemente sobre la superficie de un sólido, separándose así del resto de componentes. Los componentes (adsorbatos) se incorporan solamente a la suoerficie de la fase receptora (sólido adsorbente) denominada fase adsorbida. Es un fenomeno de superficie, y una de las propiedades más valoradas es la superficie específica de los adsorbentes comerciales (slímins, sílice, carbón activado, zeolitas).
-
-==== Gas-líquido
-
-Se conoce como destilación y consiste en la separación de una mezcla líquida por evaporación parcial y condensación. Se pueden separar componentes con diferente volatilidad (tendencia de una sustancia a pasar a la fase vapor).
-
-
-Existen otro tipo de operaciones como aislamiento térmico, intercambio de calor, impulsión de fluidos, flujo de fluidos, transporte de sólidos, tritiración y molienda, tamizado, almacenamiento y operaciones de menbrana (ósmosis, pervaporación).
