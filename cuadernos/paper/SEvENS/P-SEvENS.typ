@@ -59,12 +59,21 @@
   ),
 )
 
+// La ruta del .bib se resuelve aquí, junto al paper, y se pasan sus bytes
+// a la plantilla editorial común.
+#let bibliography-source = if paper.bibliography_enabled {
+  read(paper.bibliography, encoding: none)
+} else {
+  none
+}
+
 #show: paper-template.with(
   meta: paper,
   elsevier-authors: elsevier-authors,
   elsevier-affiliations: elsevier-affiliations,
   ieee-authors: ieee-authors,
   mdpi-authors: mdpi-authors,
+  bibliography-source: bibliography-source,
 )
 
 #let cevens = $"CE"nu"NS"$
@@ -342,16 +351,37 @@ caption: "Distribuciones temporales de los neutrinos.",
 
 == Reactores Nucleares
 
-Los reactores nucleares han sido propuestos desde hace tiempo como fuentes de antineutrinos electrónicos. Los neutrinos procedentes de reactores han sido detectados usando el decaimiento beta inverso $dash(nu)_e + p arrow e^+ + n $, observando el positrón coincidente con el neutrón. Hay 4 isótopos cuya fisión produce un flujo de neutrinos: $""^235"U", ^241"P", ^239"P" " y " ^238"U"$. Los flujos de neutrinos se determinan a partir de la potencia generada en el reactor, con una incertidumbre ya estimada en 
+Los reactores nucleares han sido propuestos desde hace tiempo como fuentes de antineutrinos electrónicos. Los neutrinos procedentes de reactores han sido detectados usando el decaimiento beta inverso $dash(nu)_e + p arrow e^+ + n $, observando el positrón coincidente con el neutrón. Hay 4 isótopos cuya fisión produce un flujo de neutrinos: $""^235"U", ^241"P", ^239"P" " y " ^238"U"$. Los flujos de neutrinos se determinan a partir de la potencia generada en el reactor, con una incertidumbre ya estimada en @Huber2011 @Mueller2011.
 
-== Otras fuentes
+La energía característica de estos neutrinos es de $<= 1 "MeV"$, que es de un orden de energía menor que los neutrinos producidos por los aceleradores. Debido a estas bajas energías, la condición de coherencia para el retroces se mantiene, en general, para todo el rango de energía del reactor, de tal modo que no hay ninguna dependencia de la propia estructura interna del núcleo.
+
+== $""^51"Cr"$
+
+El $""^51"Cr"$ es un isótopo que captura electrones mediante decaimiento, con una vida media de 27.7 días. El espectro de neutrinos producidos consiste en 4 líneas monocromáticas, siendo las más energéticas la de 747 keV (81%) y 752 (9%).
+
+== Geo-neutrinos
+
+Los geo-neutrinos provienen de la emisión de los isótopos $""^238"U", " "^232"Th" "y " ^40"k"$, que la Tierra puede proveer desde su interior. Mientras que el flujo de geo-neutrinos es suprimido, los #cevens tienen el potencial de explorar el más allá del límite cinemático de 1.8 MeV basado en la señal IBD.    
+
+== Futuros haces de neutrinos
+
+La _Long Baseline Neutrino Facility_ (LBNF) en Fermilab puede ser ustada para #cevens. La LBNF produce neutrinos en una escala energética completamente diferente a neutrinos de reactores. Esto aporta una nueva escala de energía en la que la sección eficaz de los #cevens puede ser estudiada. 
 
 = Fuentes astrofísicas de neutrinos
 
 == Neutrinos solares
 
+El campo de los neutrinos solares lleva siendo estudiado más de 50 años. El primer objetivo de estos estudios era medir las diferentes componentes del flujo de neutrinos, y suar estas medidas para entender la física en el interior del Sol. Los primeros experimentos usaron capturas de neutrinos en Cl, Ga, con la intención específica de estudiar la cantidad de neutrinos electrónicos en el haz. Experimentos basados en radiación cherenkov de una tonelada de agua miden el scattering elástico neutrino-electrón, con sensibilidad tanto a los sabores electrónicos y muónicos. El flujo total del boro $""^8"B"$ se contabilizo por $5.25 times 10^6 " cm"^(-2)" s"^(-1)$. 
+
+Borexino @Alimonti2009Borexino midió las componentes de baja energía del flujo de neutrinos solares de las reacciones $p + e^- + p$ (pep),  $""^7"Be"$, $p + p$ (pp) y ciclos CNO. La combinación de todos los datos de flujos de neutrinos, tanto del Sol como de la Tierra, apoyó la solución LMA-MSW al problema de la transformación de sabor de los neutrinos que venían del Sol. A bajas energías $(<5" MeV")$ oscilaciones de vacío describen esta transformación de sabor, con una supervivencia del neutrino electrónico $>50%$. A energías altas $(>5" MeV")$ es la masa de los neutrinos la que describe esta transofrmación, con una supervivencia de $>1 slash 3$. 
+
+Incluso con la tremenda cantidad de progreso tanto experimental como teórico en el campo de neutrinos solares, existen todavía preguntas abiertas en el campo, como por ejemplo que los 3 principales experimentos sensibles al retroceso de los electrones de la dispersión electrón-neutrino  en la escala de unos pocos MeV (Super-Kamiokande, SNO y Borexino) tengan datos incompatibles en $tilde 2 sigma$ relativo a la mejor predicción de la solución LMA-MSA. Esto puede indicar nueva física. Además, las medidas recientes de la _diferencia de masas cuadrática_ de los neutrinos en particular de los datos día-noche de Super-Kamiokande y KamLAND discreptan en un $tilde 2 sigma$, de nuevo, indicativo de nueva física. 
+
+Aún hay mas preguntas en lo correspondiente a como se miden los flujos del interior solar. Los modelos de absorción solar y heliosismología sugieren una abundacia baja de metales en el núcleo del sol, i.e. un SSM (_Standar Solar Model_) de bajo Z, a diferencia del anteriormente establecido SSM de alto Z. Sin embargo, algunos de los conjuntos de datos aun están a favor de estos últimos, por tanto el análisis global del flujo de neutrinos solares está inconcluso. 
+
 == Neutrinos de supernovas
 
+== Neutrinos atmosféricos
 
 = Física Más Allá del Modelo Estándar
 
@@ -359,7 +389,27 @@ Usando tanto fuentes terrestres como astrofísicas, los #cevens pueden ser usado
 
 == Neutrinos estériles
 
+Nuevos fermiones de un gauge singlete serían una extensión mínima del SM. Dado que no hay neuvas simetrías que prohiban dicho término, las invariancias gauge y de Lorentz permitirían escribir un nuevo término en el lagrangiano: 
+
+$ Lcal supset gamma N H L $
+
+Donde $y$ sería el acople de Yukawa, $H$ y $L$ los dobletes de Higgs y leptónicos, mientra que $N$ sería este nuevo gauge singlete de fermiones, mas comunmente denominado "neutrino estéril" o "leptón pesado neutro". Aqui uno puede darse cuenta que tras la ruptura de la simetría $N H L arrow <H> N nu$, la masa de los neutrinos no estériles y la del neutrino estéril se mezclan. La existencia de estos estados BSM podrían explicar la observación de las masas de los neutrinos. 
+
+Dependiendo del modelo, el neutrino estéril \(N\) puede tener también una masa de Majorana, es decir, puede ser su propia antipartícula.
+A diferencia de lo que ocurre con otras partículas del Modelo Estándar, la teoría no nos obliga a que existan exactamente tres neutrinos estériles, ni uno, ni ningún número concreto. No hay una condición tipo “cancelación de anomalías” que fije cuántos debe haber. Y tampoco sabemos qué masa deberían tener. La teoría permite construir modelos razonables donde esos neutrinos estériles son extremadamente ligeros, por debajo del eV, pero también modelos donde son enormemente pesados, incluso por encima de la escala de gran unificación (GUT).
+
+Los neutrinos estériles descritos arriba pueden ser buscados en varios tipos de experimentos. La mayoría de estos caen en dos categorías: oscilaciones de neutrinos o producción directa. La segunda categoría explora la posibilidad de que estos neutrinos estériles hereden una porción de la interacción débil debido a su mezcla con los neutrinos activos (electrónico, muónico, tauónico). Esto permitiría su producción en decaimientos mesónicos o en neutrino _scattering_.
+
+En la búsqueda por indicios de los neutrinos estériles, parece que la forma mas sencilla de interpretar los datos experimentales es la llamada "imagen de dos neutrinos". Esta imagen aproxima la diferencia cuadrática de masas entre los neutrinos activos por cero, y que las oscilaciones vengan precisamente de una diferencia de masas grande entre los activos y los estériles. Dependiendo de la fuente, los experimentos serían capaces de demostrar la aparición de un flujo de neutrinos nuevo ($nu_mu arrow nu_e, dash(nu)_mu arrow dash(nu)_e$) o su desaparición ($nu_mu arrow nu_mu, dash(nu)_e arrow dash(nu)_e$).
+
+Dado que los experimentos de #cevens serían sensibles al flujo total de neutrinos activos, estos se encuentran en una posición en la búsqueda de neutrinos estériles. A una distancia fija del lugar de origen de los neutrinos se podría percibir perfectamente una variación significativa del flujo de un tipo de neutrinos esperado por el SM (lo que sería una señal de neutrinos estériles). Sin embargo esto implica directramente conocer con precisión las incertidumbres sistemáticas del flujo de neutrinos de la fuente. Los neutrinos estériles podrían ser identificadps, por ejemplo, comparando el espectro de energía del retroceso de los núcleos a diferentes distancias de la fuente. Esta técnica sería directamente independiente de las incertidumbres sistemáticas asociadas al flujo de neutrinos, auqnue requiere detectores con suficiente resolución energética. 
+
+Los detectores #cevens en un detector de frenado de piones podría ser usado precisamente para la búsqueda de estros neutrinos estériles. Además, la sensibilidad a los neutrinos estériles es maximizado colocando múltiples detectores a distancias de 20 a 40 de la fuente. Colocados cerca de reactores a unos 2-20 m podría también ver el estado de mezcla con neutrinos estériles, pero en este caso solo de los neutrinos electrónicos.
+
+
 == Interacciones fuera del Modelo Estándar
+
+En esta seción podemos ver las diferentes implicaciones fenomenológicas que se deducen de la adicción de operadores adicionales o modificcaiones de las interacciones vectoriales y axio-vectoriales en el SM con una estrucutra de sabor no trivial. También veremos como se aplican nuevos operadores con una diferente estructura de Lorentz (escalar o tensorial), y 
 
 === NSI: interacciones vectoriales y axial-vectorial
 
